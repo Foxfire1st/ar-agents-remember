@@ -194,12 +194,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
             "content": "sha256:bb1e4654147146462bd319bb37fdd0381d2a77b78720f305b8c591560dead28f",
             "locator": {
-              "end": 177,
+              "end": 175,
               "kind": "line_range",
-              "start": 153
+              "start": 151
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },
@@ -207,12 +207,12 @@
         },
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
             "content": "sha256:261360cc53456518e6e9c505bc9d3b6571679db63361a8cea94697d121702f05",
             "locator": {
-              "end": 643,
+              "end": 641,
               "kind": "line_range",
-              "start": 633
+              "start": 631
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },

@@ -10,7 +10,9 @@
 
 The file defines two example targets: `examples/coordinator/` for workspace-wide
 coordinator files and `examples/memory-repo/` for repository-specific
-memory-layer files. It states that coordinator files can define global defaults
+memory-layer files. It states that coordinator files route agents through
+product context resolution (`context_packet`, with a link to the l-01 tool
+reference) before repository-specific work, and that they can define global defaults
 but should not encode one-repository rules, while memory-layer rules win for
 their own repository. It also notes that the memory-repo examples include a
 `task-publication.md` landing-flow starter (for repos that land through a gated
@@ -18,7 +20,7 @@ branch) and a code quality report template for implementation validation summari
 
 ### Conventions
 
-Examples are arranged by destination folder shape so users can copy a whole directory and preserve normal target file names such as `AGENTS.md`, `settings.md`, and `tools.md`.
+Examples are arranged by destination folder shape so users can copy a whole directory and preserve normal target file names such as `settings.md` and `tools.md`.
 
 ### Invariants And Boundaries
 
@@ -48,7 +50,9 @@ The source file itself is the active example index.
 
 
 
-- The README defines coordinator examples as workspace-wide/global, memory-repo examples as repository-specific, and names the memory-repo `task-publication.md` landing-flow starter and quality-report template. Source caption: `## Memory Repo` [2]
+- The README defines coordinator examples as workspace-wide instructions and tools, memory-repo examples as rules for their own code repository, and names the memory-repo task-publication.md landing-flow starter and the code quality report template. [2]
+
+- Coordinator files route agents through product context resolution before repository-specific work. [3]
 
 
 

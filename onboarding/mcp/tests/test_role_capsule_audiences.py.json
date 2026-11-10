@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
             "content": "sha256:91071933f1c686b8f234b0a11efb836dc1eab70ceb306a6e399c7e24b57c6653",
             "locator": {
               "kind": "symbol",
@@ -24,8 +24,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:7a4c0727538b39e58b20906dd75d050b98a6995eb137ed614d7b802eaee02be5",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:e8ceabeeced1beb4ad2d3ed532afa9ea6c76d7c9591ce5f33809ff0ad60a188d",
             "locator": {
               "kind": "symbol",
               "name": "test_curator_execution_support_is_an_unconditional_inline_output"
@@ -40,8 +40,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:ad69a0d54643829a2ec85a838cbb41b03f1195571d619a238271422741a3ec91",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:cb0062659e90e270e4d9f9368a770e2e663b4fbcbd4667ed037653e52465721d",
             "locator": {
               "kind": "symbol",
               "name": "test_d301_external_backing_output_stays_inline"
@@ -56,8 +56,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:3b994685ffd3365c3f52fc3f886687779ecb8c668df42767bab00718aa8c0a4d",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:1d26b97611f3e4318e314a75821372cc452abac71010ac0bce958a630ab68827",
             "locator": {
               "kind": "symbol",
               "name": "test_d301_bootstrap_requires_reproducibility_not_reader_execution"
@@ -72,8 +72,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:b049b2fe0ac9a533a198fcbc2f90a37215dbdadd8c666bb48ab8f81c5126afa5",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:639c5931e83b26fdf3ca2f8dbf11a609e42258325cd357d7c0b95c2b3a772a2a",
             "locator": {
               "kind": "symbol",
               "name": "test_d301_delivered_authoring_resolves_actual_capsule_routing"
@@ -88,8 +88,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:d576b961bc52f0cf27528eec3847c720c5558a4f3ec7d156e94748340445fa7d",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:0f6d2b76ebc346c524b50a1cc9d1fb69bd80bfaabbc68155ae0c4e4490ee9340",
             "locator": {
               "kind": "symbol",
               "name": "test_d301_handoff_file_is_read_for_first_review_then_reused_for_repairs"
@@ -100,28 +100,15 @@
       ]
     },
     "15": {
-      "note": "The ordinary Curator detail labels are checked against curation workflow numbers and titles. Standing details retain when-you-reach/not-before labels; writer-command and correct-write-refusal details instead use their explicitly declared conditional triggers.",
+      "note": "The Curator's delivered curation workflow is numbered one to five with the checks, fact-check and repair headings; its delivered details equal its role and curation pointer actions, each bound to its read action, and its role section carries no numbered workflow.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:baa3c008790677e6deb53abdfa9cba17ac1a2d6368f65d40e2f567fff85f0cb8",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:783fd85e932b9bca1b99eebd05d6ca428a174484c688ce18dc1450340c7bdefd",
             "locator": {
-              "end": 519,
-              "kind": "line_range",
-              "start": 466
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:3a12d78e08c614567a632793ae55c7b4588a8c1a24f3ec539fe804b698a7339a",
-            "locator": {
-              "end": 706,
-              "kind": "line_range",
-              "start": 695
+              "kind": "symbol",
+              "name": "test_curator_detail_names_use_only_curation_workflow_numbers_and_titles"
             }
           },
           "kind": "test"
@@ -129,16 +116,15 @@
       ]
     },
     "16": {
-      "note": "Nested Curator detail checks keep card and writer record-format references at Curation workflow2 Before ingest, while separately retaining the serving-build command read before a CLI deciding run or write.",
+      "note": "Nested Curator details are read through their launch artifacts: the prose-and-history detail binds card history to the card-formats detail, the knowledge-ingest detail binds a deciding or writing command-line run to the serving-build detail, and the serving-build detail binds such a run to `server_info.servingBuild` and names Orientation as the authority owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:b95b6a1862686f6d81b690762d0ceb2f8bed003284fbfc3faed6673f37a3e793",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:9d2c15993f8cb4cf7bc74f4c1b3c21c280219c8709832d9fd4889d1d0a045fd9",
             "locator": {
-              "end": 545,
-              "kind": "line_range",
-              "start": 522
+              "kind": "symbol",
+              "name": "test_nested_curator_file_names_use_the_same_operation_titles"
             }
           },
           "kind": "test"
@@ -150,8 +136,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:9548486710eb48e7e53b3bd8b63868d1ec7d7eaf5402a8f7d54cb17b68142c72",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:f2432aeb8ed9662fb66d535d41610862ea8cc8f3cc24166151ce558731d1e3d3",
             "locator": {
               "kind": "symbol",
               "name": "test_leaf_role_texts_mark_only_their_own_completed_steps"
@@ -166,8 +152,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:4f3279d1061c4b4f1a8954ca08ba9095aa6ce52567f9aabc2cd0619336fa274d",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:ee3c00544d5c3a3f72e04e93e6e2f3fcbbbddf0101e9319fbe36b9acbf50175d",
             "locator": {
               "kind": "symbol",
               "name": "test_every_curator_stage_keeps_the_serving_build_producer_boundary"
@@ -182,8 +168,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:0b1b67f8d87bfe4138c74b45e1000ba34cb0fd45ff796fb37cc41f8471e35bfc",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:a3869613bf30ae52651ea38cb3b1e4a14551aa1f1b9d41be09305c686ff5cacb",
             "locator": {
               "kind": "symbol",
               "name": "test_memory_review_instructions_select_the_independent_recorded_lane"
@@ -198,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
             "content": "sha256:c98a1ab4d0f1e269e52ea3b5adb3da6970f714c5515f40636ac29b94ef5c78f6",
             "locator": {
               "kind": "symbol",
@@ -210,28 +196,15 @@
       ]
     },
     "20": {
-      "note": "For every manifest-declared role/operation pair, the real-operation audience test compiles the addressed capsule, rejects leaked audience markers and compares that operation block’s content hash with its D656_STAGE_SHA256 entry; its final census must cover every declared pair.",
+      "note": "For every manifest-declared role/operation pair, the real-operation audience test compiles the addressed capsule, rejects leaked audience markers and compares that operation block's content hash with its `V13_STAGE_SHA256` entry; undoing the admitted short-rule edits must match `V13_PRE_SHORT_STAGE_SHA256` and then undoing the pinned path moves must match `D656_STAGE_SHA256`; its final census must cover every declared pair.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:33da26c54db9377f9418a33f5037d2d17898a01c95eb23e96ac0ed1f4e7ae94f",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:913099a13bb26ed68637a9fa89084b6dbfa0251efc4a0a69f288bb5e47ccc150",
             "locator": {
-              "end": 675,
-              "kind": "line_range",
-              "start": 607
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:789e374d7058b0ed65865125aabbeb62c9b3ea0dbc964c5e0c362624e6c33e78",
-            "locator": {
-              "end": 750,
-              "kind": "line_range",
-              "start": 709
+              "kind": "symbol",
+              "name": "test_real_operation_audiences_preserve_pinned_common_and_only_addressed_paragraphs"
             }
           },
           "kind": "test"
@@ -239,28 +212,15 @@
       ]
     },
     "21": {
-      "note": "The operation-source test compares raw source bytes against D656_OPERATION_SHA256. authorized-closeout must keep audience=all and operations/closeout.md; every other operation must use sections and begin with the common audience marker.",
+      "note": "The operation-source test compares raw source bytes against `V13_OPERATION_SHA256`, the short-rule-restored bytes against `V13_PRE_SHORT_OPERATION_SHA256` and the path-restored bytes against `D656_OPERATION_SHA256`. authorized-closeout must keep audience=all and operations/closeout.md; every other operation must use sections and begin with the common audience marker.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:d5f295531dcbe35e1d746f98a93c21c984270b2a25cb6dfa707e7f326131814b",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:71c5525c381d40d8ca59a846aff30773ddf2115d667abd9a046f29a8ecb10c8f",
             "locator": {
-              "end": 606,
-              "kind": "line_range",
-              "start": 596
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:7b9894604f36cbe8dfeb30ec82f3312111afcae6d51cf662d9a22edd07be7931",
-            "locator": {
-              "end": 765,
-              "kind": "line_range",
-              "start": 753
+              "kind": "symbol",
+              "name": "test_operation_audience_markings_preserve_pinned_bytes_and_immutable_closeout"
             }
           },
           "kind": "test"
@@ -272,8 +232,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:e804ad9ab4431399ffc1d8767b9a813871843a650032f330930ab9372797b31a",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:3a7560d2d9ca3ff634cf305bc50b8e12d0b69db3c3b78bfe9c19e2f35e901c56",
             "locator": {
               "kind": "symbol",
               "name": "test_repairing_roles_stop_after_three_repairs_of_the_same_check_or_finding"
@@ -288,251 +248,64 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-            "content": "sha256:c30637b87f47fa5c9f508424020f6fc969b8fcdc734d921ad0435a9781dc7101",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:6d6c044c515d8a9d4c5f6655e86b094789d473a302ab286442f4117960acd9dc",
             "locator": {
-              "end": 33,
+              "end": 77,
               "kind": "line_range",
-              "start": 31
+              "start": 75
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:33da26c54db9377f9418a33f5037d2d17898a01c95eb23e96ac0ed1f4e7ae94f",
-            "locator": {
-              "end": 675,
-              "kind": "line_range",
-              "start": 607
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:e69fc56632aa97db6205397265eae28a14a204c6726250ade885699b1930a42b",
-            "locator": {
-              "end": 750,
-              "kind": "line_range",
-              "start": 723
-            }
-          },
-          "kind": "test"
         }
       ]
     },
     "24": {
-      "note": "The expected-operation table records current implementation and review SHA-256 seals alongside the other operations, and the operation-source test compares actual source bytes with those recorded values. This describes stored assertions, not a new approval or repinning event.",
+      "note": "`V13_OPERATION_SHA256` records the current implementation and review source seals alongside the other operations, and the operation-source test compares actual source bytes with those recorded values. This describes stored assertions, not a new approval or repinning event.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:d5f295531dcbe35e1d746f98a93c21c984270b2a25cb6dfa707e7f326131814b",
+            "blob": "05d7fbcb100194513ef16a70cdd18fde43e76323",
+            "content": "sha256:db45098fa112274d313fe99617eaa66729e02b19e77c978a66e7a77f4a000aa8",
             "locator": {
-              "end": 606,
-              "kind": "line_range",
-              "start": 596
-            }
+              "kind": "symbol",
+              "name": "V13_OPERATION_SHA256"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_fixtures.py"
           },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:7b9894604f36cbe8dfeb30ec82f3312111afcae6d51cf662d9a22edd07be7931",
-            "locator": {
-              "end": 765,
-              "kind": "line_range",
-              "start": 753
-            }
-          },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     },
     "25": {
-      "note": "The current planning text asks the developer once “go, or review first?”, discloses planned comparison without a task workspace and explainer-workspace creation on first Explain, and records the intentReview answer. Current coordination says intent-review-open waits for Architect go and is not retried. The audience tests retain separate source and addressed-stage seal tables for those operation texts.",
+      "note": "The current planning text asks the developer once \"go, or review first?\", discloses planned comparison without a task workspace and explainer-workspace creation on first Explain, and records the intentReview answer. Current coordination says intent-review-open waits for Architect go and is not retried. The audience tests retain separate source and addressed-stage seal tables for those operation texts.",
       "targets": [
         {
           "anchor": {
-            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
-            "content": "sha256:e93611f63134daae52ebd94a9f00452b1f25077f69089cc5f1de5f3839954029",
+            "blob": "46f59b0c9f749bf68245a1871eed5dbac5d1adad",
+            "content": "sha256:10550187e9fe19bfe335b30824eefb735f35a8f835520452d23a5deeaad738af",
             "locator": {
-              "end": 29,
+              "end": 47,
               "kind": "line_range",
-              "start": 29
+              "start": 45
             },
             "path": "skills/l-01-agent-lifecycles/operations/planning.md"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-            "content": "sha256:c498fba3dfc0ef7a7e7c4419be7371e706e963e1684b85878f73d905d42b5657",
-            "locator": {
-              "end": 23,
-              "kind": "line_range",
-              "start": 23
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:5844bdc0b11cd8ffa3e87ba5592532aa361172a5f3af4215f0a38b4b01032c2e",
-            "locator": {
-              "end": 675,
-              "kind": "line_range",
-              "start": 596
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:8514591dd4de6bba381cd35792ed039ecf701e4629e07f8e1b3a489bbfb1a207",
-            "locator": {
-              "end": 765,
-              "kind": "line_range",
-              "start": 723
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "26": {
-      "note": "The expected operation corpus retains implementation and review source hashes among the D656_OPERATION_SHA256 entries; the existing byte-comparison test checks each admitted operation source against its entry. This asserts retained pins rather than a fresh approval or repinning event.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:d5f295531dcbe35e1d746f98a93c21c984270b2a25cb6dfa707e7f326131814b",
-            "locator": {
-              "end": 606,
-              "kind": "line_range",
-              "start": 596
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:7b9894604f36cbe8dfeb30ec82f3312111afcae6d51cf662d9a22edd07be7931",
-            "locator": {
-              "end": 765,
-              "kind": "line_range",
-              "start": 753
-            }
-          },
-          "kind": "test"
         }
       ]
     },
     "27": {
-      "note": "Complete D656 operation and per-recipient stage digest literals pin the reviewed audience projections, including closeout bytes. Detail checks cover all declared role/operation pairs and distinguish standing, knowledge-use and conditional writer/refusal triggers. Writer syntax/report semantics remain separate from inline serving-build authority. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "note": "Complete V13 operation and per-recipient stage digest literals pin the current audience projections, including closeout bytes, and the inverse transforms tie them back to the D656 digests. Detail checks cover all declared role/operation pairs and require every declared read action to bind to exactly one link to its emitted detail. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:3bf46cd8b877cd6198e80670f90c88e8942aa69e90f5550e21f03c1888fbbaf4",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:64ec88943f0a06a58a65af2b148a5ea862c48b30fe4e2282c553e4ec4e8f92fb",
             "locator": {
-              "end": 214,
-              "kind": "line_range",
-              "start": 156
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:172682876d71d6e7be1f6e9e65695f69dc2a02c6e9209c17ab26c18ea8b083e0",
-            "locator": {
-              "end": 373,
-              "kind": "line_range",
-              "start": 312
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:baa3c008790677e6deb53abdfa9cba17ac1a2d6368f65d40e2f567fff85f0cb8",
-            "locator": {
-              "end": 519,
-              "kind": "line_range",
-              "start": 466
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:b95b6a1862686f6d81b690762d0ceb2f8bed003284fbfc3faed6673f37a3e793",
-            "locator": {
-              "end": 545,
-              "kind": "line_range",
-              "start": 522
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:bba8e17df437e7b7731f2e757670cc34bdbd9174c1c17d145f439bb17dcde1d5",
-            "locator": {
-              "end": 645,
-              "kind": "line_range",
-              "start": 569
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:845da1cc054e55aff9af58adccf75b7fa0af7cd3deb654ed421865da78617602",
-            "locator": {
-              "end": 708,
-              "kind": "line_range",
-              "start": 693
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:e69fc56632aa97db6205397265eae28a14a204c6726250ade885699b1930a42b",
-            "locator": {
-              "end": 750,
-              "kind": "line_range",
-              "start": 723
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:7b9894604f36cbe8dfeb30ec82f3312111afcae6d51cf662d9a22edd07be7931",
-            "locator": {
-              "end": 765,
-              "kind": "line_range",
-              "start": 753
+              "kind": "symbol",
+              "name": "_assert_step_detail_timing"
             }
           },
           "kind": "test"
@@ -544,7 +317,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
             "content": "sha256:cf23f1a7e71ee7a0ed7e0ee30266b5760c4e65efe4b3a41b47bc4273aecc5e8b",
             "locator": {
               "kind": "symbol",
@@ -560,7 +333,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
             "content": "sha256:f31c621fc3c74a5e9810361fdca56d4a9cac811c4efb3ec5d6608124c0c02aed",
             "locator": {
               "kind": "symbol",
@@ -572,12 +345,12 @@
       ]
     },
     "5": {
-      "note": "The Curator receives ruled step details separately and keeps the writer boundaries. Anchor: `test_curator_receives_ruled_step_details_separately_and_keeps_writer_boundaries`",
+      "note": "The Curator receives ruled step details separately and keeps the writer boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:3bf46cd8b877cd6198e80670f90c88e8942aa69e90f5550e21f03c1888fbbaf4",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:176d908900c927f5e3fc0ca8dc8106ba01d5ebdb25e4a41850e813ed57ab1c4e",
             "locator": {
               "kind": "symbol",
               "name": "test_curator_receives_ruled_step_details_separately_and_keeps_writer_boundaries"
@@ -592,8 +365,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:3ebccfe96adcabdd0f45ebfd9609ef6745e190cc78cd42123c656a1c405500ff",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:6b52e629c07b228e9b4a538b9933d7701f1e77613cbac1e0dce84e4240f0cee6",
             "locator": {
               "kind": "symbol",
               "name": "test_manager_curation_does_not_receive_curators_card_or_writer_steps"
@@ -608,8 +381,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:ac7a423f01a1837f56f31846216bf8587e02febca9dd284250ce794b69cf3917",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:ef4cac984994b64a31c01a4b181d84b819cea937f68f80f94e69b25037e6b08f",
             "locator": {
               "kind": "symbol",
               "name": "test_d301_real_capsules_deliver_named_step_files_as_frozen_launch_artifacts"
@@ -624,8 +397,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:f570561660614bd8702e84a3d0af96cdbe370d81df1081a30aa022e7916ee812",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:9c4c6188224c02a8090563ef9a063517f5b6a38bdbef30c89a171441398555ee",
             "locator": {
               "kind": "symbol",
               "name": "test_d301_curator_keeps_whole_handover_and_step_limits_in_capsule"
@@ -636,28 +409,15 @@
       ]
     },
     "9": {
-      "note": "Every declared role/operation’s delivered details are checked for an exact reach-step trigger and not-before wording. Knowledge-use details have role-specific reach triggers; writer-command and refused-write details keep their explicit conditional triggers. An intake-wording mutation must fail and the seen-source census must equal all declared details.",
+      "note": "For every declared role/operation pair the delivered detail records equal the role's and operation's pointer actions; each read action binds to exactly one link to the detail's emitted file, each emitted detail round-trips its revision, size and read-only mode, and intake-wording, missing-target, duplicated-paragraph and empty-step mutations must fail; the census covers every declared pair and every declared detail.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:172682876d71d6e7be1f6e9e65695f69dc2a02c6e9209c17ab26c18ea8b083e0",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:50127267f544d4d72ed97ba5661b4f8a8c7562fedc8933011a79987d3e7d0ecb",
             "locator": {
-              "end": 373,
-              "kind": "line_range",
-              "start": 312
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
-            "content": "sha256:05250ef5e51766c4d4cf4233806aa1e0b01556e5aae8cc62bc1dd1f1b09e5c20",
-            "locator": {
-              "end": 706,
-              "kind": "line_range",
-              "start": 697
+              "kind": "symbol",
+              "name": "test_step_details_are_named_for_reaching_their_step_not_intake"
             }
           },
           "kind": "test"

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+        "blob": "4ecf2133f150c01104cd07d2e1586a5c4881c0fa",
         "content": "sha256:0a682a032a3451bbf5c84b4a72c3c94979d829f0b26a4fe5d28d417836df7419",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+        "blob": "4ecf2133f150c01104cd07d2e1586a5c4881c0fa",
         "content": "sha256:10aab3547f46f304e4afbbac613cedc01d472b61f316d52a4ff7ab8efe5c6c82",
         "locator": {
           "kind": "symbol",
@@ -36,6 +36,44 @@
       },
       "rationale": "What the command knows about its own hand-off and authorization, so the remedy names real paths rather than a placeholder.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "4ecf2133f150c01104cd07d2e1586a5c4881c0fa",
+        "content": "sha256:61636b67e077f1ac33ebc6cfb8aea468faa1b7b18a8f2f6ab57f4c6421a2bd38",
+        "locator": {
+          "end": 88,
+          "kind": "line_range",
+          "start": 88
+        }
+      },
+      "id": "RLZ-951BMQ",
+      "invariant": "INV-S18ZC5",
+      "origin": {
+        "handoffEntry": "L84-K3C-S18ZC5-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The write command reads its settings through the discovery function, which selects the user authority.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4ecf2133f150c01104cd07d2e1586a5c4881c0fa",
+        "content": "sha256:7e3957c68a3cb471e46c93e9bf2267ff810fd38c1e37d4c18a85d38d1061d889",
+        "locator": {
+          "end": 74,
+          "kind": "line_range",
+          "start": 74
+        }
+      },
+      "id": "RLZ-WD6V3R",
+      "invariant": "INV-S18ZC5",
+      "origin": {
+        "handoffEntry": "L84-K3C-S18ZC5-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The write command reads its settings through the discovery function, which selects the user authority.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -44,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+            "blob": "4ecf2133f150c01104cd07d2e1586a5c4881c0fa",
             "content": "sha256:10aab3547f46f304e4afbbac613cedc01d472b61f316d52a4ff7ab8efe5c6c82",
             "locator": {
               "kind": "symbol",
@@ -60,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+            "blob": "4ecf2133f150c01104cd07d2e1586a5c4881c0fa",
             "content": "sha256:0a682a032a3451bbf5c84b4a72c3c94979d829f0b26a4fe5d28d417836df7419",
             "locator": {
               "kind": "symbol",
@@ -76,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+            "blob": "4ecf2133f150c01104cd07d2e1586a5c4881c0fa",
             "content": "sha256:1464503be33a81003dcb598870266362431695d54a8a86303c6cd47e209d46b4",
             "locator": {
               "kind": "symbol",
@@ -88,12 +126,12 @@
       ]
     },
     "6": {
-      "note": "`discovered_settings` sorts the causes in the order met — no trusted settings at or above the working directory, the guard, an unloadable settings file, else the loaded settings — and leaves the other-root comparison to the caller.",
+      "note": "`discovered_settings` takes no working directory and sorts the causes in the order met — no trusted settings in the user config directory, the guard, an unloadable settings file, else the loaded settings — and leaves the other-root comparison to the caller.",
       "targets": [
         {
           "anchor": {
-            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
-            "content": "sha256:4ebda96a846be0189ac7e4a511de99d1843e4ec9a5ec48568ed863e81f50f838",
+            "blob": "4ecf2133f150c01104cd07d2e1586a5c4881c0fa",
+            "content": "sha256:3c76ca0b7f63277d6c29c6379fe3a41dabc8d80c4c3d3a77b627c7147fedd9a5",
             "locator": {
               "kind": "symbol",
               "name": "discovered_settings"
@@ -104,12 +142,12 @@
       ]
     },
     "7": {
-      "note": "The command-line route's own value, its sorted causes and the remedy sentence live in this module and are what a refusal emits; `mcp/src/agents_remember/cli/knowledge_write_route.py` keeps its own copy of the guard constant.\n\nAnchor: `discovered_settings`, `checked_guard`",
+      "note": "The command-line route's own value, its sorted causes and the remedy sentence live in this module and are what a refusal emits; `mcp/src/agents_remember/cli/knowledge_write_route.py` keeps its own copy of the guard constant.",
       "targets": [
         {
           "anchor": {
-            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
-            "content": "sha256:4ebda96a846be0189ac7e4a511de99d1843e4ec9a5ec48568ed863e81f50f838",
+            "blob": "4ecf2133f150c01104cd07d2e1586a5c4881c0fa",
+            "content": "sha256:3c76ca0b7f63277d6c29c6379fe3a41dabc8d80c4c3d3a77b627c7147fedd9a5",
             "locator": {
               "kind": "symbol",
               "name": "discovered_settings"
@@ -119,7 +157,7 @@
         },
         {
           "anchor": {
-            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+            "blob": "4ecf2133f150c01104cd07d2e1586a5c4881c0fa",
             "content": "sha256:1464503be33a81003dcb598870266362431695d54a8a86303c6cd47e209d46b4",
             "locator": {
               "kind": "symbol",
@@ -135,7 +173,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+            "blob": "4ecf2133f150c01104cd07d2e1586a5c4881c0fa",
             "content": "sha256:1464503be33a81003dcb598870266362431695d54a8a86303c6cd47e209d46b4",
             "locator": {
               "kind": "symbol",

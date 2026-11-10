@@ -4,10 +4,29 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-        "content": "sha256:2d9776e4a3ae508fe360dda1dc084865dc3f14f9afba8325080f7ac3728d93c6",
+        "blob": "0705377736134c9767d83a7e83487069840a4592",
+        "content": "sha256:527858aaaf2a6ebe16c028201fbd79c8c09ed72cf4237f0f087a999d6d5295c3",
         "locator": {
-          "end": 18,
+          "end": 25,
+          "kind": "line_range",
+          "start": 25
+        }
+      },
+      "id": "RLZ-05PN1D",
+      "invariant": "INV-4AQ26N",
+      "origin": {
+        "handoffEntry": "MIK-R136 rule 3",
+        "leaf": "260928-MIK-L136"
+      },
+      "rationale": "The Worker role's candidate-environment instruction is now the only product surface for this rule: build each worktree's environment as system/tools.md says, run every candidate command in it, report a command the tool notes lack, and record the interpreter each run used. No interpreter is named.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0705377736134c9767d83a7e83487069840a4592",
+        "content": "sha256:9e14f531628bbd38986e0a5fcdbec565f0e857fc2854176f29b897f2483d310c",
+        "locator": {
+          "end": 19,
           "kind": "line_range",
           "start": 8
         }
@@ -23,31 +42,31 @@
     },
     {
       "anchor": {
-        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-        "content": "sha256:ca6cdb5fc75b7c49a984bdeebe4f334d7008a0ba253a0f38cee9f44653968188",
+        "blob": "0705377736134c9767d83a7e83487069840a4592",
+        "content": "sha256:f4e250ab37d40e626029d5d9c5b9c489d9a456c70ce4ef69701a9c60193dc5f5",
         "locator": {
-          "end": 33,
+          "end": 86,
           "kind": "line_range",
-          "start": 33
+          "start": 86
         }
       },
-      "id": "RLZ-6P4D1B",
-      "invariant": "INV-MTRR08",
+      "id": "RLZ-6CNJRF",
+      "invariant": "INV-3F80Q2",
       "origin": {
-        "handoffEntry": "L100-R100-doctrine-coherence",
-        "leaf": "260928-MIK-L100"
+        "handoffEntry": "MIK-R84@v5 part1 / L62 producer handoff ownership",
+        "leaf": "260928-MIK-L84"
       },
-      "rationale": "Worker first tells Manager to start Reviewer, then hands the exact freeze directly to the started Reviewer; the same clause sends the producer list only after code PASS.",
-      "role": "primary-authority"
+      "rationale": "This Worker step requires the producer-list shape for the hand-off list and a handoff-check run against the exact freeze before sending it; the per-freeze list is the Worker's own.",
+      "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-        "content": "sha256:e41fafc8b37c5fbba5c971104e2036dcedb4e59cfeec8b6dc49db480c0a4190e",
+        "blob": "0705377736134c9767d83a7e83487069840a4592",
+        "content": "sha256:00bfa25cb4c2368e093552ba29f9542611ceb5f9471ff681191392d05d048f38",
         "locator": {
-          "end": 93,
+          "end": 29,
           "kind": "line_range",
-          "start": 91
+          "start": 29
         }
       },
       "id": "RLZ-6QVTKY",
@@ -61,8 +80,8 @@
     },
     {
       "anchor": {
-        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-        "content": "sha256:8cc45eaf2fac5f180dbd904da6575fffab0eb238e11e03a70772c0a7bd318825",
+        "blob": "0705377736134c9767d83a7e83487069840a4592",
+        "content": "sha256:6cc4d9b5ed318057baea9ff639d5a082328e99df6706c9a4e70984f76151212f",
         "locator": {
           "kind": "file"
         }
@@ -78,8 +97,8 @@
     },
     {
       "anchor": {
-        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-        "content": "sha256:8cc45eaf2fac5f180dbd904da6575fffab0eb238e11e03a70772c0a7bd318825",
+        "blob": "0705377736134c9767d83a7e83487069840a4592",
+        "content": "sha256:6cc4d9b5ed318057baea9ff639d5a082328e99df6706c9a4e70984f76151212f",
         "locator": {
           "kind": "file"
         }
@@ -95,10 +114,10 @@
     },
     {
       "anchor": {
-        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-        "content": "sha256:2d9776e4a3ae508fe360dda1dc084865dc3f14f9afba8325080f7ac3728d93c6",
+        "blob": "0705377736134c9767d83a7e83487069840a4592",
+        "content": "sha256:9e14f531628bbd38986e0a5fcdbec565f0e857fc2854176f29b897f2483d310c",
         "locator": {
-          "end": 18,
+          "end": 19,
           "kind": "line_range",
           "start": 8
         }
@@ -109,15 +128,15 @@
         "handoffEntry": "L71-CURRENT242-W-19",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "Canonical Worker inputs retain its primary task/enclosure, exact rendered/canonical reader arguments and scoped reader context, including a direct knowledge-use detail; the package copy propagates the source.",
+      "rationale": "Canonical Worker inputs keep the primary task, requirement, roots, contract and report path, the exact rendered and canonical reader locations, and the task_context that context_packet and read_ar_files take; the package copy propagates this source.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-        "content": "sha256:481b1b4174d8392ed173bcfd263b1313329cc21e4124133669c44be859187e70",
+        "blob": "0705377736134c9767d83a7e83487069840a4592",
+        "content": "sha256:703583dc80142aec8b3966ff45c1c894965ec15ed21ade9b019988d1423e2ced",
         "locator": {
-          "end": 55,
+          "end": 57,
           "kind": "line_range",
           "start": 51
         }
@@ -133,12 +152,12 @@
     },
     {
       "anchor": {
-        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-        "content": "sha256:974804726dae704bf04bb40ef1d6dfc1535e6b36c8751e5aa82fccfeba1eabcc",
+        "blob": "0705377736134c9767d83a7e83487069840a4592",
+        "content": "sha256:ee2f521c1418f1b7c0ebcf7d8bc0c7ee2ef3ddec4659de2a446d8c374ac23975",
         "locator": {
-          "end": 69,
+          "end": 117,
           "kind": "line_range",
-          "start": 33
+          "start": 82
         }
       },
       "id": "RLZ-MXJ3HX",
@@ -147,17 +166,17 @@
         "handoffEntry": "R99-1-direct-loop",
         "leaf": "260928-MIK-L99"
       },
-      "rationale": "Owns the factual freeze and repaired-code handover to Reviewer, producer handoff to Curator and pending delivery obligations.",
+      "rationale": "The Worker role hands over its frozen candidate by following the implementation operation's frozen-candidate handover (Manager stage notice, the freeze directly to the Reviewer, the Curator list after code PASS), keeps the producer data verbatim for that freeze, and sends its messages and refused-handover reports through the assigned routes.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-        "content": "sha256:671084707903e241574fc040c5d94a760c6b658aa6824f0ff9132d88400c5cb3",
+        "blob": "0705377736134c9767d83a7e83487069840a4592",
+        "content": "sha256:561b9a9d62bade49cdeadc466602db301b88c0db89c3f7cb0f1a6c6b08ec6e53",
         "locator": {
-          "end": 87,
+          "end": 155,
           "kind": "line_range",
-          "start": 71
+          "start": 129
         }
       },
       "id": "RLZ-QDM8GH",
@@ -166,17 +185,17 @@
         "handoffEntry": "L116-W3-wording-oracle",
         "leaf": "260928-MIK-L116"
       },
-      "rationale": "This section is the worker stage-end contract: end state with final-byte conditions, repair-own-slips, four stops, last-line rule, and the record-only sentence.",
+      "rationale": "The Worker's stage contract spans 'Repair findings and failed checks' (own-slip repair, the report naming repairs, the record-only repair rule) and 'Stop conditions and stage completion' (the stops, the last-line rule and the end state with clean-copy handover checks).",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-        "content": "sha256:8c78244e5ce782799ccdd415ce8742937f1b223ea4ea330170d8e61bbee5458a",
+        "blob": "0705377736134c9767d83a7e83487069840a4592",
+        "content": "sha256:61e5581f71a234466784c2854f3180ca251705dc41e6369cf1b2fab8b662df2d",
         "locator": {
-          "end": 59,
+          "end": 121,
           "kind": "line_range",
-          "start": 59
+          "start": 121
         }
       },
       "id": "RLZ-X136N6",
@@ -195,8 +214,37 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:c661956f16ca4d2976257208691e0519a39d9b7a8be8fdd3ceeec432287cde95",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:2d59e1cc31b317521c7f69762ad9bde9d2f2520ed56cc80dc715d982b880592e",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:78ed27080efd4c1cdb04a4588a7ab8a2eea07f9fa4c7ca0b9b803c1e95418145",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The worker implements one selected leaf and writes one report at the handover's report path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:26c5524067439977845bf33105a7ed49edf803137809ee57ead9185bb7d52e9d",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -207,29 +255,12 @@
         },
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:5c5dbddc974494517fb6a7686321a8c4d504dd969768ba4a766b7db6abb8fd6e",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:2e23914a6671eb3c1e56dcdfedc4fb8189713f26106881cad9a97025bb2e4ba5",
             "locator": {
-              "end": 83,
+              "end": 67,
               "kind": "line_range",
-              "start": 81
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The worker builds one leaf in one session and delivers one scoped change set plus one report.\n\nAnchor: \"**You build one leaf.**\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:9488bb0fa5ef244884263bd378263ac1cf511273fbedaaa16b1b734cdf575e9c",
-            "locator": {
-              "end": 9,
-              "kind": "line_range",
-              "start": 8
+              "start": 67
             }
           },
           "kind": "code"
@@ -241,24 +272,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:086f99e83f31cf34a0acb867a6f28f9b17f1e5278d1dcd850d7b2d281b9cce8a",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:61e5581f71a234466784c2854f3180ca251705dc41e6369cf1b2fab8b662df2d",
             "locator": {
-              "end": 63,
+              "end": 121,
               "kind": "line_range",
-              "start": 57
+              "start": 121
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:005723300ba47ccbda6dae6f5c998d481739b3bf54feef8d184497f146df0842",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:5c615ca78f94f3ed1ef066c3e1eba70bf5211fa491d377a32b37e659cacd3b81",
             "locator": {
-              "end": 87,
+              "end": 141,
               "kind": "line_range",
-              "start": 76
+              "start": 137
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:bb000470db2a684a9380885b06d2c210ef228319c2bd0d3fd0a2c54d70ce21a3",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 149
             }
           },
           "kind": "code"
@@ -270,36 +313,49 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:f2911aaab97d7e45cf7d35fd1887c28e90e2b2ceb2a2c7e3db405146aa5e9e88",
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:a214d72d4436bafca4d0b439d16882af5e8466e5a38d4c4674dbd4c8f1060d2e",
             "locator": {
-              "end": 34,
+              "end": 48,
               "kind": "line_range",
-              "start": 30
+              "start": 45
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:4055cd69440822175f799f64d5a075499248b2e603f3d97668b4db9cdaa5624d",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 121
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:c8a5d5ff6915bf72510d15091db9cc0ac50ec258fc3ca530992f586d58849594",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:f6a8fdc84d2725623d945c07e06c062d04d2b31337403488d272893639f061b8",
             "locator": {
-              "end": 65,
+              "end": 135,
               "kind": "line_range",
-              "start": 57
+              "start": 135
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:3f2fbc0772e1b942fa1b3d90eac10ba59f156f0e1bae16c42285440b9a0354bf",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:078c3b7cecbd344a1295d7d5c08b59d86cc4d3c220078b366b936e1baa61f6bf",
             "locator": {
-              "end": 89,
+              "end": 143,
               "kind": "line_range",
-              "start": 81
+              "start": 143
             }
           },
           "kind": "code"
@@ -311,12 +367,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:ee42876c43fd986af94493c6c204b25633d84f5418368908b67cabc92848becc",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:231477f4c7fad9821ac1ee82ec8951d16d093ccfd9fb82429ec3a49eae2c1ad4",
             "locator": {
-              "end": 74,
+              "end": 153,
               "kind": "line_range",
-              "start": 71
+              "start": 153
             }
           },
           "kind": "code"
@@ -328,7 +384,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
             "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 76,
@@ -345,12 +401,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:f7e0de0e769f280e73027b60d5ddc401d3d5cb8e6f5d96c5b13877defe681cd2",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:78ed27080efd4c1cdb04a4588a7ab8a2eea07f9fa4c7ca0b9b803c1e95418145",
             "locator": {
-              "end": 85,
+              "end": 155,
               "kind": "line_range",
-              "start": 81
+              "start": 155
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:f6a8fdc84d2725623d945c07e06c062d04d2b31337403488d272893639f061b8",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 135
             }
           },
           "kind": "code"
@@ -362,12 +430,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:0e3c78487e2b84ed400bc4c0e046801dbef466e8d7aab873fade44b3daa453e6",
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:2a67283b79019c7469fb5a39a5e4dc0e156b2a87199c7b96b29c6ab664a5ec26",
             "locator": {
-              "end": 69,
+              "end": 68,
               "kind": "line_range",
-              "start": 69
+              "start": 68
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:9bf0e44306aa8f5a1bb283b6b5c2836ea6f7722c304e9177eb362748a971e1b8",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 127
             }
           },
           "kind": "code"
@@ -379,12 +460,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:675267e149aa2dfa168bf041dd2dc82035f9e476aeb477c2e151b6adb51a0ce3",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:07333f30c29d1bf5eae21903cd1ead7accad1e52f39bcf7e6964c6bfc3196af1",
             "locator": {
-              "end": 18,
+              "end": 17,
               "kind": "line_range",
-              "start": 16
+              "start": 14
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:00c140b746b03cfd6e5666c63ebc59003394a12cf124139e67513f2c66212ae5",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:92120f50ce323c0d19b5cf5a87e3a666cf945af2da461312559d580bedf750fc",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
             }
           },
           "kind": "code"
@@ -396,12 +501,60 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:f731f4198dbb23a776d9f65654622afad141ed327c0f78c7ff3a6c51a4fa8b94",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:b4749c187a63f15a87d4e89227c4f363fd419967a3b38f7dbd838668e626037c",
             "locator": {
-              "end": 20,
+              "end": 14,
               "kind": "line_range",
               "start": 14
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:00c140b746b03cfd6e5666c63ebc59003394a12cf124139e67513f2c66212ae5",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:b2f194a85057074361d4141d723f7c580221f0fe4374e2fb41627b34bbc37e1d",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:d7841c6a78b0b518201a5a93b2f99132dc8762819e41c1c4ed1e6c31d96c204a",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:822115ca8e28c59ed5b21be9609d09526a49c91ba75bb3a680d9039c0f9a4e1f",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
             }
           },
           "kind": "code"
@@ -413,12 +566,49 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:f2911aaab97d7e45cf7d35fd1887c28e90e2b2ceb2a2c7e3db405146aa5e9e88",
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:a214d72d4436bafca4d0b439d16882af5e8466e5a38d4c4674dbd4c8f1060d2e",
             "locator": {
-              "end": 34,
+              "end": 48,
               "kind": "line_range",
-              "start": 30
+              "start": 45
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:f640afccb884091254869352840d254da88070e10f70804288c7d417a84cd40f",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:7af253a1c3cdaa290fe48b701a909a0470b094adabe96d6050520557a2125e82",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:f4e250ab37d40e626029d5d9c5b9c489d9a456c70ce4ef69701a9c60193dc5f5",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 86
             }
           },
           "kind": "code"
@@ -430,12 +620,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:34f8ef7de2fbe7243339b861543b76759005c4d94514c385edc932fb5840cbde",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:2e23914a6671eb3c1e56dcdfedc4fb8189713f26106881cad9a97025bb2e4ba5",
             "locator": {
-              "end": 34,
+              "end": 67,
               "kind": "line_range",
-              "start": 28
+              "start": 67
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:f640afccb884091254869352840d254da88070e10f70804288c7d417a84cd40f",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
             }
           },
           "kind": "code"
@@ -447,12 +649,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
             "content": "sha256:d695de79ad60074db55cdb9229b15e5f5352ae844b2988c96694eb52db7aa65f",
             "locator": {
-              "end": 32,
+              "end": 81,
               "kind": "line_range",
-              "start": 30
+              "start": 79
             }
           },
           "kind": "code"
@@ -464,24 +666,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:086f99e83f31cf34a0acb867a6f28f9b17f1e5278d1dcd850d7b2d281b9cce8a",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:61e5581f71a234466784c2854f3180ca251705dc41e6369cf1b2fab8b662df2d",
             "locator": {
-              "end": 63,
+              "end": 121,
               "kind": "line_range",
-              "start": 57
+              "start": 121
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:ee42876c43fd986af94493c6c204b25633d84f5418368908b67cabc92848becc",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:231477f4c7fad9821ac1ee82ec8951d16d093ccfd9fb82429ec3a49eae2c1ad4",
             "locator": {
-              "end": 74,
+              "end": 153,
               "kind": "line_range",
-              "start": 71
+              "start": 153
             }
           },
           "kind": "code"
@@ -489,14 +691,16 @@
       ]
     },
     "8": {
-      "note": "The worker records the complete acceptance envelope once for every stable requirement ID.\n\nAnchor: `## Outputs`; \"the one Requirement Acceptance Envelope for your owned primary\"",
+      "note": "The worker records the complete acceptance envelope exactly once for its owned primary stable requirement ID and version.",
       "targets": [
         {
           "anchor": {
-            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
-            "content": "sha256:7bfa72bddfaf0b83f79f80e4bd4627b3d06545f16dbe27c01ff8d1af83c47840",
+            "blob": "90fd7edc80943b84e31d2e6db8b935979cbab7ca",
+            "content": "sha256:a3d3b9073d5896cb150982fa42867cccce5f6134081034039c410b07085bd9e0",
             "locator": {
-              "kind": "file"
+              "end": 98,
+              "kind": "line_range",
+              "start": 95
             },
             "path": "skills/l-01-agent-lifecycles/templates/turn-report.md"
           },
@@ -509,12 +713,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:f7e0de0e769f280e73027b60d5ddc401d3d5cb8e6f5d96c5b13877defe681cd2",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:78ed27080efd4c1cdb04a4588a7ab8a2eea07f9fa4c7ca0b9b803c1e95418145",
             "locator": {
-              "end": 85,
+              "end": 155,
               "kind": "line_range",
-              "start": 81
+              "start": 155
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:e7aa2be9cc80eba84381c746c6722494aa02ccd3163b463aaf77d49d244bf7cd",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 135
             }
           },
           "kind": "code"

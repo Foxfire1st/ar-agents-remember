@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The selection hook records the selecting element and the workspace's landing logic checks that focus still belongs to that request before moving it to the selected row or target-state notice."
+  },
   "applicability": "The focus move applied after a selected subject's answer lands in the mounted workspace.",
   "conditions": [
     "Focus moves to the workspace's main-content target-state notice when one is shown, else to the selected tree node, and only when the active element is still the one recorded at selection time or has fallen to body."

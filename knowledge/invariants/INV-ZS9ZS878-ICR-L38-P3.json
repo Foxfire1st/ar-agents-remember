@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The coherent-review family requires continuation merging to preserve exact delivered members and claims, so sparse pages or repeated first pages cannot erase evidence already shown."
+  },
   "applicability": "Sparse family-member updates within one successfully admitted family-side-revision continuation walk.",
   "conditions": [
     "A recorded member retains its exact invariant revision and payload identity.",

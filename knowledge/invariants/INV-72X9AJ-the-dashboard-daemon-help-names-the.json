@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The help in cli/dashboard.py must name the causes serving/daemon.py acts on, and a test fails when the source-digest cause is missing; without it a user cannot tell why an equal-version daemon was restarted."
+  },
+  "applicability": "The dashboard command's --daemon help.",
+  "conditions": [
+    "The help lists every cause that makes ensure() restart a running daemon: version, Python source digest, host and port."
+  ],
+  "exclusions": [
+    "The restart behaviour itself, which the dashboard-replacement invariant states."
+  ],
+  "id": "INV-72X9AJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-sealed-findings.md (sealed acceptance); /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round8-fix-verification-verdict.md (closed in round 8 at a867665b); defect at 8e7d5b2e: cli/dashboard.py:748-750 (Curator 20261109T232050Z, c3bd7048); /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round9-fix-verification-verdict.md (round 9: unchanged at 40475ce5)"
+      ],
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "L84-CUR-02",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The dashboard --daemon help names the Python source-digest mismatch among the causes that restart a running daemon, beside version, host and port, as serving/daemon.py does.",
+  "status": "proposed",
+  "supersedes": []
+}

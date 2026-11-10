@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The canonical catalog owns report-verification doctrine rather than the generated bundle.\n\nAnchor: `# Criteria Catalog — Report Verification`",
+      "note": "The canonical catalog owns report-verification doctrine rather than the generated bundle.",
       "targets": [
         {
           "anchor": {
-            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
-            "content": "sha256:4567047561af0de0e464f04e27fe1035d20edafa9215b4a10f84b041636f586b",
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:4ce75540c5a4383bb63a1500246f9c47845f4f94db7898b694ff82091cba813b",
             "locator": {
-              "end": 10,
+              "end": 5,
               "kind": "line_range",
               "start": 1
             }
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
-            "content": "sha256:9f889a4ad9845380ffdc551cc8e0e57cc7fb2b042a1203bfe18610db4ecfb37d",
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:deceb948e92cc11ebc7d98677140300a5879f0edb519bc9ced8465c655bbec65",
             "locator": {
-              "end": 105,
+              "end": 53,
               "kind": "line_range",
-              "start": 100
+              "start": 47
             }
           },
           "kind": "code"
@@ -73,16 +73,16 @@
       ]
     },
     "4": {
-      "note": "The reviewer binding table includes report-verification in every listed review type.\n\nAnchor: \"`report-verification`\"",
+      "note": "The reviewer binding table includes report-verification in every listed review type.",
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:313d6ae5d5d3eea6d4393cfae149e951e5d6fd2f165516d17d276b153d78b921",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:1f762636392a1025af19edf0cff6729b687350a2575e221e185d8ea49c58d5f3",
             "locator": {
-              "end": 57,
+              "end": 62,
               "kind": "line_range",
-              "start": 48
+              "start": 44
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -91,16 +91,16 @@
       ]
     },
     "5": {
-      "note": "RV-1 requires artifacts behind claims and checks both content and mode in the same filesystem view.\n\nAnchor: `### RV-1 — Report-vs-artifact on EVERY claim`",
+      "note": "RV-1 requires artifacts behind claims and checks both content and mode in the same filesystem view.",
       "targets": [
         {
           "anchor": {
-            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
-            "content": "sha256:82fff9cace9b4cc5830e527e3d81a796d30a40a0636efb363c2dec0bc152d2e0",
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:8932219663840f03feec649f153bee9a0ece02174cc5c3d95d9d376e314925d2",
             "locator": {
-              "end": 25,
+              "end": 15,
               "kind": "line_range",
-              "start": 14
+              "start": 9
             }
           },
           "kind": "code"
@@ -108,16 +108,16 @@
       ]
     },
     "6": {
-      "note": "RV-1 adds path-safe untracked enumeration, no-follow inspection, bounded content and explicit race/intent handling.\n\nAnchor: `**every nonignored untracked path**`",
+      "note": "RV-1 adds path-safe untracked enumeration, no-follow inspection, bounded content and explicit race/intent handling.",
       "targets": [
         {
           "anchor": {
-            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
-            "content": "sha256:fb758055f17c5605ff7c13f6f217871b28ed0fe06aac6076ce73d034c2d94b08",
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:722c03158cf09e491c8edb62a1d072e4bc5d9736c59907de7ae92ef09268d6d0",
             "locator": {
-              "end": 46,
+              "end": 29,
               "kind": "line_range",
-              "start": 27
+              "start": 17
             }
           },
           "kind": "code"
@@ -125,16 +125,16 @@
       ]
     },
     "7": {
-      "note": "RV-2 enumerates sibling classes; RV-4 records load-bearing disclosures in the decision log.\n\nAnchor: `### RV-2 — CLASS-completeness`",
+      "note": "RV-2 enumerates sibling classes; RV-4 records load-bearing disclosures in the decision log.",
       "targets": [
         {
           "anchor": {
-            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
-            "content": "sha256:c34489b8b6468023c56eb0766c5924a91959718fa75db23f81be90df0c0ca93c",
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:adc9f707e83fb55a0f929dce8f294af0d0b6cea5756b641f7ffd0b559be275aa",
             "locator": {
-              "end": 81,
+              "end": 39,
               "kind": "line_range",
-              "start": 56
+              "start": 31
             }
           },
           "kind": "code"
@@ -142,16 +142,16 @@
       ]
     },
     "8": {
-      "note": "RV-5 proves the resolved invocation source and contract rather than trusting nominally canonical commands.\n\nAnchor: `### RV-5 — Canonical invocation target provenance`",
+      "note": "RV-5 proves the resolved invocation source and contract rather than trusting nominally canonical commands.",
       "targets": [
         {
           "anchor": {
-            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
-            "content": "sha256:435c38a8b6ccec6945a58cda9d5969d4eb573c709bbc5e13a10bf82be9142e95",
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:090d83eb5de4f685dc40736941cbeb2f00f2cb76e31aa0b0a7b1d1b62b90d5fd",
             "locator": {
-              "end": 98,
+              "end": 45,
               "kind": "line_range",
-              "start": 83
+              "start": 41
             }
           },
           "kind": "code"
@@ -159,16 +159,16 @@
       ]
     },
     "9": {
-      "note": "RV-3 remains a candidate; baseline exploration and promotion do not expand sealed fix-verification.\n\nAnchor: `### RV-3 — Partial-fix-creates-falsehoods`",
+      "note": "RV-3 remains a candidate; baseline exploration and promotion, under the shared catalog rules, do not expand sealed fix-verification.",
       "targets": [
         {
           "anchor": {
-            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
-            "content": "sha256:6e65a3317092a75d950e5f15f1657498a9cd681780c1a95f81bd698693e894c3",
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:c7895820d7b57b7a1b22b4582fd6566e3c7ee85a8969a760b1cea92020bc05cd",
             "locator": {
-              "end": 141,
+              "end": 61,
               "kind": "line_range",
-              "start": 106
+              "start": 55
             }
           },
           "kind": "code"

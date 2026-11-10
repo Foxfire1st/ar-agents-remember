@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c25d6c32df6325e952b7053581771d40e25c8906",
+        "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
         "content": "sha256:914eed466c6bd6919b7aea83dac7bb2af53d99df9590daaef43dad15224a6097",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "c25d6c32df6325e952b7053581771d40e25c8906",
+        "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
         "content": "sha256:cb5f3fe3d9f307c4b2c73e7f26d924335dea542d9b4c0d0b33bf41bbf9529a51",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "c25d6c32df6325e952b7053581771d40e25c8906",
+        "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
         "content": "sha256:cb5f3fe3d9f307c4b2c73e7f26d924335dea542d9b4c0d0b33bf41bbf9529a51",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "c25d6c32df6325e952b7053581771d40e25c8906",
+        "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
         "content": "sha256:cb5f3fe3d9f307c4b2c73e7f26d924335dea542d9b4c0d0b33bf41bbf9529a51",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,24 @@
     },
     {
       "anchor": {
-        "blob": "c25d6c32df6325e952b7053581771d40e25c8906",
+        "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
+        "content": "sha256:e393358d1122abf2d6daac6848d175891b2ac931958b260774a0e3a8ad4fbbb4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_host_preview_lists_setting_only_and_provider_reload_without_secret"
+        }
+      },
+      "facet": "A setting-only change is previewed as the same ordered actions the real run reports, without a secret value.",
+      "id": "PRF-JMGN30",
+      "invariant": "INV-WK67MP",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v2 preview parity as amended v3/v4",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
         "content": "sha256:bd22f3dea875e5cb1587fae19af501d35bfc12a7841d7291fe50a3d699dcadce",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "c25d6c32df6325e952b7053581771d40e25c8906",
+        "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
         "content": "sha256:cb5f3fe3d9f307c4b2c73e7f26d924335dea542d9b4c0d0b33bf41bbf9529a51",
         "locator": {
           "kind": "symbol",
@@ -102,19 +119,70 @@
         "handoffEntry": "L96 reconciliation: five required facts (INV-X5E9WH)",
         "leaf": "260928-MIK-L96"
       }
+    },
+    {
+      "anchor": {
+        "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
+        "content": "sha256:d4c39cdf02a490b66ad8a2b5551eb4d795287527492a1923d9e532be786d89a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_host_preview_names_deferred_transition_without_promising_actions"
+        }
+      },
+      "facet": "A held restart is named as deferred with its reason and the preview promises no change.",
+      "id": "PRF-ZBVQ2E",
+      "invariant": "INV-WK67MP",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v2 preview parity as amended v3/v4",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
+        "content": "sha256:d90f890579f2228f2217b7a6e8ee50e5eb7527f85b3d3366ab4c5135f81365f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_host_preview_matches_plugin_copy_reload_enable_and_replacement"
+        }
+      },
+      "facet": "Plug-in copy, reload, enable and replacement appear in the preview as the real run records them.",
+      "id": "PRF-ZHHZPC",
+      "invariant": "INV-WK67MP",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v2 preview parity as amended v3/v4",
+        "leaf": "260928-MIK-L84"
+      }
     }
   ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The one-provision call-time read case.\n\nAnchor: `test_install_reads_added_shared_block_at_call_and_provisions_once`",
+      "note": "The one-provision call-time read case.",
       "targets": [
         {
           "anchor": {
-            "blob": "c25d6c32df6325e952b7053581771d40e25c8906",
-            "content": "sha256:77032ab77bba6ccc482f0a821a4e0c1474ae7b2e68e9bacf6cea9431ffe16907",
+            "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
+            "content": "sha256:914eed466c6bd6919b7aea83dac7bb2af53d99df9590daaef43dad15224a6097",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_install_reads_added_shared_block_at_call_and_provisions_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Node acquisition and Node leftover cleanup previews match, with the daemon untouched",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
+            "content": "sha256:862d678441866a97ddb41ba380f1f9faf9b678dffe90dade3b62b1bb9dc1a36b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_preview_observes_existing_cli_before_node_acquisition_and_cleanup"
             }
           },
           "kind": "test"
@@ -122,14 +190,15 @@
       ]
     },
     "2": {
-      "note": "The preview and failure-composition case.\n\nAnchor: `test_preview_and_absent_host_make_no_mutation_and_host_error_preserves_earlier_steps`",
+      "note": "The preview and failure-composition case.",
       "targets": [
         {
           "anchor": {
-            "blob": "c25d6c32df6325e952b7053581771d40e25c8906",
-            "content": "sha256:77032ab77bba6ccc482f0a821a4e0c1474ae7b2e68e9bacf6cea9431ffe16907",
+            "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
+            "content": "sha256:bd22f3dea875e5cb1587fae19af501d35bfc12a7841d7291fe50a3d699dcadce",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_preview_and_absent_host_make_no_mutation_and_host_error_preserves_earlier_steps"
             }
           },
           "kind": "test"
@@ -137,14 +206,111 @@
       ]
     },
     "3": {
-      "note": "The build-pin-wins case.\n\nAnchor: `test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored`",
+      "note": "The build-pin-wins case.",
       "targets": [
         {
           "anchor": {
-            "blob": "c25d6c32df6325e952b7053581771d40e25c8906",
-            "content": "sha256:77032ab77bba6ccc482f0a821a4e0c1474ae7b2e68e9bacf6cea9431ffe16907",
+            "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
+            "content": "sha256:cb5f3fe3d9f307c4b2c73e7f26d924335dea542d9b4c0d0b33bf41bbf9529a51",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The preview-equals-real helper: no file or host mutation, then the same ordered actions as the real provision",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
+            "content": "sha256:27d8c5c23eb982cd5da59e1a2569a8463b64ac5ad45e1d1fb24db3736c9e29e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "preview_matches_real"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "First-install preview lists settings, destinations, plugin and start; a repeat lists nothing",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
+            "content": "sha256:994f5ad1f1f107f765cfe1776099f3b01d2b848f954d2ec86433b14a1f9245da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_preview_lists_first_install_settings_destinations_and_start"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Setting-only and provider reload previews name no secret value",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
+            "content": "sha256:e393358d1122abf2d6daac6848d175891b2ac931958b260774a0e3a8ad4fbbb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_preview_lists_setting_only_and_provider_reload_without_secret"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Plugin copy, reload, enable and replacement previews match the real provision",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
+            "content": "sha256:d90f890579f2228f2217b7a6e8ee50e5eb7527f85b3d3366ab4c5135f81365f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_preview_matches_plugin_copy_reload_enable_and_replacement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A restart-only setting is named as deferred without promised actions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
+            "content": "sha256:d4c39cdf02a490b66ad8a2b5551eb4d795287527492a1923d9e532be786d89a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_preview_names_deferred_transition_without_promising_actions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Stopped-host recovery, stale-record and install-leftover cleanup previews match",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c549cdcb49de3553d6363ad9a5d89360aa17eb",
+            "content": "sha256:bb97fa192d305b7d7652e08d79a9646e006955c37bd244d8de6770e60346df51",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_preview_matches_stopped_recovery_record_and_install_cleanup"
             }
           },
           "kind": "test"

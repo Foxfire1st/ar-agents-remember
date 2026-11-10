@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[tests overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -14,8 +14,6 @@ reaches a worker capsule; requested tools are narrowed while skill references ar
 every documented refusal happens for its own reason and advertises its remedy; composition needs
 neither model nor network; and an unknown role or operation is refused instead of falling back.
 
-**Historical source account, superseded by the current clause below:** The frozen source has **47 test function definitions** (static inspection). Collected case totals and execution results were not measured by this pass. [Historical source custody: `mcp/tests/test_role_capsule_compiler.py` blob `9946e7fc31fa11992782193f4af92050e7c18e46` at code base `59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0`; this is no current implementation claim.]
-
 ## Code Commentary
 
 ### Logic
@@ -23,80 +21,77 @@ neither model nor network; and an unknown role or operation is refused instead o
 The fixture is a small **in-memory corpus built to the canonical manifest schema**, so a case
 varies exactly one fact. That is deliberate: *a fixture that mirrors the whole shipped corpus could
 only be mutated by editing the things under test, which is how a vacuous assertion gets written.*
-Since this leaf's review repairs, the fixture also carries a declared **skill reference**, so the
+The fixture also carries a declared **skill reference**, so the
 carried channel is exercised in the same one-fact style as everything else.
 
-Fixture helpers and test extents below are read from the frozen source. The fixture still varies one admitted fact per case and retains a declared skill-reference channel.
+Fixture helpers and test extents below are line ranges in the current source. The fixture still varies one admitted fact per case and retains a declared skill-reference channel.
 
-- `fixture_manifest_document`: lines 140-188.
-- `manifest_bytes`: lines 191-194.
-- `source_text`: lines 197-198.
-- `skill_source`: lines 201-218.
-- `make_source`: lines 221-236.
-- `manifest_source`: lines 239-249.
-- `all_sources`: lines 252-273.
-- `selection_for`: lines 276-294.
-- `worker_binding`: lines 297-318.
-- `launcher_binding`: lines 321-331.
-- `compile_worker`: lines 334-349.
-- `failure`: lines 352-355.
-- `replaced`: lines 358-373.
+- `fixture_manifest_document`: lines 135-184.
+- `manifest_bytes`: lines 187-190.
+- `source_text`: lines 193-194.
+- `skill_source`: lines 197-214.
+- `make_source`: lines 217-232.
+- `manifest_source`: lines 235-245.
+- `all_sources`: lines 248-269.
+- `selection_for`: lines 272-290.
+- `worker_binding`: lines 293-314.
+- `launcher_binding`: lines 317-327.
+- `compile_worker`: lines 330-345.
+- `failure`: lines 348-351.
+- `replaced`: lines 354-369.
 
-The two native-composition properties now assert role then operation and an inert admitted shared core. The separately selected legacy launcher case does not grant a role inherited operation. The combined unreadable-source case checks both blank text and non-UTF8 while distinguishing their errors.
+The two native-composition properties now assert role then operation and an inert admitted shared core. The separately selected legacy launcher case does not grant a role inherited operation. The combined unreadable-source case checks both blank text and non-UTF8 while distinguishing their errors. The unrelated-role case rewrites the unselected `role:curator` source, first proving the rewrite changed its bytes, and requires the worker capsule's digest and rendered text to stay identical.
 
 Current source test inventory:
 
-- `test_identical_input_compiles_to_identical_ordered_content_and_digest`: lines 381-390.
-- `test_instruction_order_is_role_then_operation`: lines 393-411.
-- `test_a_declared_but_unselected_specialization_changes_diagnostics_not_identity`: lines 414-433.
-- `test_reordering_the_composed_blocks_changes_the_semantic_digest`: lines 436-458.
-- `test_a_real_binding_change_does_move_the_semantic_digest`: lines 461-467.
-- `test_changing_an_unrelated_role_leaves_the_worker_capsule_untouched`: lines 475-483.
-- `test_changing_an_applicable_operation_block_changes_that_capsule`: lines 486-495.
-- `test_a_shared_core_change_does_not_reach_a_role_capsule`: lines 498-518.
-- `test_unknown_role_is_refused_and_never_acquires_a_capsule`: lines 526-542.
-- `test_unknown_operation_is_refused_instead_of_falling_back`: lines 545-550.
-- `test_operation_the_role_cannot_run_is_refused_instead_of_substituted`: lines 553-558.
-- `test_the_launcher_seat_composes_its_own_core_and_inherits_no_role_operation`: lines 561-580.
-- `test_missing_mandatory_material_is_refused_rather_than_omitted`: lines 588-611.
-- `test_a_source_the_manifest_does_not_declare_is_refused`: lines 614-618.
-- `test_a_source_read_from_the_wrong_composition_root_is_refused`: lines 621-628.
-- `test_repository_specialization_must_be_admitted_on_the_binding`: lines 631-636.
-- `test_an_admitted_specialization_is_composed_after_the_operation`: lines 639-647.
-- `test_duplicate_identity_with_byte_identical_content_collapses_to_one_block`: lines 655-674.
-- `test_duplicate_identity_with_a_different_body_stops_compilation`: lines 677-695.
-- `test_an_explicit_override_records_its_provenance_and_selects_the_winner`: lines 698-729.
-- `test_an_override_that_supersedes_an_unselected_identity_is_refused`: lines 732-748.
-- `test_an_override_that_pulls_an_earlier_tier_over_a_role_is_refused`: lines 751-769.
-- `test_an_override_may_replace_a_block_from_a_later_tier`: lines 772-792.
-- `test_two_overrides_for_one_identity_are_refused_as_unorderable`: lines 795-816.
-- `test_a_tool_request_inside_the_policy_is_carried_but_not_granted`: lines 824-833.
-- `test_a_tool_request_outside_the_admitted_policy_is_refused`: lines 836-843.
-- `test_a_supplied_task_projection_is_carried_in_its_own_channel`: lines 851-866.
-- `test_a_projection_whose_bytes_do_not_match_its_digest_is_refused`: lines 869-881.
-- `test_no_projection_means_no_task_context_and_a_stable_digest`: lines 884-890.
-- `test_a_refusal_still_produces_an_explanation_manifest`: lines 898-912.
-- `test_composition_succeeds_with_network_and_model_access_denied`: lines 915-934.
-- `test_the_compiler_modules_import_no_network_client`: lines 937-966.
-- `test_a_source_whose_revision_is_not_its_own_digest_is_refused`: lines 978-990.
-- `test_a_source_with_no_readable_instruction_text_is_refused_by_name`: lines 993-1020.
-- `test_a_selection_with_a_blank_anchor_is_refused`: lines 1023-1032.
-- `test_a_digest_field_that_is_not_a_sha256_is_refused`: lines 1035-1048.
-- `test_a_blank_required_field_is_refused`: lines 1051-1055.
-- `test_a_negative_instruction_unit_index_is_refused`: lines 1058-1064.
-- `test_an_instruction_unit_labelling_a_missing_composition_root_is_refused`: lines 1067-1075.
-- `test_a_skill_identity_needs_both_an_origin_and_a_name`: lines 1078-1082.
-- `test_a_specialization_path_outside_its_directory_is_refused`: lines 1085-1090.
-- `test_a_compilation_outcome_that_is_both_a_capsule_and_a_refusal_is_refused`: lines 1093-1101.
-- `test_a_compilation_outcome_that_is_neither_is_refused`: lines 1104-1110.
-- `test_a_skill_reference_without_its_admitted_root_file_is_refused`: lines 1113-1142.
-- `test_the_worker_fixture_carries_the_skill_reference_it_declares`: lines 1145-1154.
-- `test_a_source_with_a_blank_identity_or_path_is_refused`: lines 1182-1189.
-- `test_a_digest_value_that_is_not_a_sha256_is_refused_by_the_shared_guard`: lines 1192-1199.
-
-### Historical recorded run totals
-
-The earlier card recorded **50 passed** here and **104 passed** with the admission module (**54 collected** there). It supplied no exact code-tree identity for that sentence. Those original values remain earlier card evidence; this inspection made no fresh test run or collected-case claim at C.
+- `test_identical_input_compiles_to_identical_ordered_content_and_digest`: lines 377-386.
+- `test_instruction_order_is_role_then_operation`: lines 389-407.
+- `test_a_declared_but_unselected_specialization_changes_diagnostics_not_identity`: lines 410-429.
+- `test_reordering_the_composed_blocks_changes_the_semantic_digest`: lines 432-454.
+- `test_a_real_binding_change_does_move_the_semantic_digest`: lines 457-463.
+- `test_changing_an_unrelated_role_leaves_the_worker_capsule_untouched`: lines 471-486.
+- `test_changing_an_applicable_operation_block_changes_that_capsule`: lines 489-498.
+- `test_a_shared_core_change_does_not_reach_a_role_capsule`: lines 501-521.
+- `test_every_role_digest_is_sealed_without_composing_its_content`: lines 524-563.
+- `test_unknown_role_is_refused_and_never_acquires_a_capsule`: lines 571-587.
+- `test_unknown_operation_is_refused_instead_of_falling_back`: lines 590-595.
+- `test_operation_the_role_cannot_run_is_refused_instead_of_substituted`: lines 598-603.
+- `test_the_launcher_seat_composes_its_own_core_and_inherits_no_role_operation`: lines 606-625.
+- `test_missing_mandatory_material_is_refused_rather_than_omitted`: lines 633-670.
+- `test_a_source_the_manifest_does_not_declare_is_refused`: lines 673-677.
+- `test_a_source_read_from_the_wrong_composition_root_is_refused`: lines 680-687.
+- `test_repository_specialization_must_be_admitted_on_the_binding`: lines 690-695.
+- `test_an_admitted_specialization_is_composed_after_the_operation`: lines 698-706.
+- `test_duplicate_identity_with_byte_identical_content_collapses_to_one_block`: lines 714-733.
+- `test_duplicate_identity_with_a_different_body_stops_compilation`: lines 736-754.
+- `test_an_explicit_override_records_its_provenance_and_selects_the_winner`: lines 757-788.
+- `test_an_override_that_supersedes_an_unselected_identity_is_refused`: lines 791-807.
+- `test_an_override_that_pulls_an_earlier_tier_over_a_role_is_refused`: lines 810-828.
+- `test_an_override_may_replace_a_block_from_a_later_tier`: lines 831-851.
+- `test_two_overrides_for_one_identity_are_refused_as_unorderable`: lines 854-875.
+- `test_a_tool_request_inside_the_policy_is_carried_but_not_granted`: lines 883-892.
+- `test_a_tool_request_outside_the_admitted_policy_is_refused`: lines 895-902.
+- `test_a_supplied_task_projection_is_carried_in_its_own_channel`: lines 910-925.
+- `test_a_projection_whose_bytes_do_not_match_its_digest_is_refused`: lines 928-940.
+- `test_no_projection_means_no_task_context_and_a_stable_digest`: lines 943-949.
+- `test_a_refusal_still_produces_an_explanation_manifest`: lines 957-971.
+- `test_composition_succeeds_with_network_and_model_access_denied`: lines 974-993.
+- `test_the_compiler_modules_import_no_network_client`: lines 996-1025.
+- `test_a_source_whose_revision_is_not_its_own_digest_is_refused`: lines 1037-1049.
+- `test_a_source_with_no_readable_instruction_text_is_refused_by_name`: lines 1052-1079.
+- `test_a_selection_with_a_blank_anchor_is_refused`: lines 1082-1091.
+- `test_a_digest_field_that_is_not_a_sha256_is_refused`: lines 1094-1107.
+- `test_a_blank_required_field_is_refused`: lines 1110-1114.
+- `test_a_negative_instruction_unit_index_is_refused`: lines 1117-1123.
+- `test_an_instruction_unit_labelling_a_missing_composition_root_is_refused`: lines 1126-1134.
+- `test_a_skill_identity_needs_both_an_origin_and_a_name`: lines 1137-1141.
+- `test_a_specialization_path_outside_its_directory_is_refused`: lines 1144-1149.
+- `test_a_compilation_outcome_that_is_both_a_capsule_and_a_refusal_is_refused`: lines 1152-1160.
+- `test_a_compilation_outcome_that_is_neither_is_refused`: lines 1163-1169.
+- `test_a_skill_reference_without_its_admitted_root_file_is_refused`: lines 1172-1201.
+- `test_the_worker_fixture_carries_the_skill_reference_it_declares`: lines 1204-1213.
+- `test_a_source_with_a_blank_identity_or_path_is_refused`: lines 1241-1248.
+- `test_a_digest_value_that_is_not_a_sha256_is_refused_by_the_shared_guard`: lines 1251-1258.
 
 ### Conventions
 
@@ -131,7 +126,7 @@ None recorded.
 
 ## Current audience, delivery and evidence contract
 
-The minimal manifest fixture explicitly declares `audience: all` for every operation, keeping its unsectioned synthetic text whole under the expanded schema. The existing compiler property assertions and their source bodies are unchanged. Audience projection and malformed-marker launch behavior belong to the separate audience/manifest-edge suites; old recorded run totals stay historical.
+The minimal manifest fixture explicitly declares `audience: all` for every operation, keeping its unsectioned synthetic text whole under the expanded schema. Audience projection and malformed-marker launch behavior belong to the separate audience/manifest-edge suites.
 
 A one-byte equal-length change to the declared every-role source changes semantic_digest while rendered role/operation instructions stay identical and no shared core instruction block composes. Omission of that required source refuses by identity and path. Static parsing of the final file finds 48 test function definitions; this is not collection or execution. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
@@ -146,38 +141,13 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 
-- The module under test and its pipeline. [Past-epoch source caption, detached from live reference 1. Recorded citation custody: mcp/src/agents_remember/models/role_capsules/compiler.py blob 762c104a0bcdc0375416163993d106dc37c5fb18 (available); historical event commit not identified. No historical event or intent inferred.]
-
-Current source: compile_role_capsule parses and selects the manifest scope, admits and resolves the source set, reads typed contract markers, projects operation audiences and strips those markers. It verifies the separate task projection, narrows tools, carries skills/details, seals the selected content plus every-role/detail revisions, and returns the capsule with an explanation manifest.
-
 - The carried skill channel these cases pin. [2]
 - The `source-not-utf8` and revision/blank-content refusals the source-value cases pin. [3]
 - The refusal codes the refusal cases assert. [4]
 - The identity-resolution outcomes the duplicate and override cases pin. [5]
 - The tool-policy narrowing the tool cases pin. [6]
 
-- The outcome shape whose exactly-one-of rule the two outcome cases pin. [Past-epoch source caption, detached from live reference 7. Recorded citation custody: mcp/src/agents_remember/application/role_capsules/compilation.py blob 0de84f83644c391b29759b1623034309cabc8c72 (available); historical event commit not identified. No historical event or intent inferred.]
-
-Current source: CapsuleCompilationOutcome requires exactly one of result and error while retaining a manifest in both shapes; the two compiler-suite controls construct both-present and both-absent outcomes and require ValueError.
-
 - The admission cases live in the sibling module, not here, where the capsule composes only the operations its own role declares and the independently compared routing side is retired. [8]
-
-- The corpus test preserved by the earlier leaf; this pass retains that historical evidence and asserts no fresh execution result. [Past-epoch source caption, detached from live reference 9. Recorded citation custody: mcp/tests/test_role_instruction_corpus.py blob d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09 (available); historical event commit not identified. No historical event or intent inferred.]
-
-[Past-epoch source caption, detached from live reference 9. Recorded citation custody: mcp/tests/test_role_instruction_corpus.py blob d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09 (available); historical event commit not identified. No historical event or intent inferred.]
-
-Anchor: `ROLE_ORDER` `OPERATION_KEYS`
-
-Current source: The current instruction-corpus test declares the canonical role order and operation keys, checks every manifest role/operation source resolves, keeps launcher routing metadata separate, and rejects copied instruction prose in the manifest. These source-defined assertions establish no fresh run or earlier-leaf execution event.
-
-
-The falsifiability probe that exercised these cases (seeds M01–M10, `all 10 seeded mutations were
-caught`) is **not** a product artifact and is deliberately not promoted into `mcp/tests/`. It lives
-in the coordination task tree at
-`tasks/agents-remember/260915_role-capsules-and-native-eve/notes/reports/caps-l2-mutation-probe.py`,
-outside this repository, so it is named here rather than linked. It expires on the next change to
-`mcp/tests/test_role_capsule_*.py`, at which point these shipped cases are its executable
-replacement and its seed table must be re-anchored or retired.
 
 ### Cross-Repo References
 
@@ -186,17 +156,11 @@ No sibling-repository contract is exercised by these cases.
 No meaningful cross-repo references found.
 
 
-- The semantic test change is only audience=all in fixture_manifest_document. One introductory determinism bullet is rewrapped without changing words. Existing property assertions, test definitions and synthetic source bodies are unchanged; sections projection is covered separately. [Past-epoch source caption, detached from live reference 10. Recorded citation custody: mcp/tests/test_role_capsule_compiler.py blob 9946e7fc31fa11992782193f4af92050e7c18e46 (available); historical event commit not identified. No historical event or intent inferred.]
-
-[Past-epoch source caption, detached from live reference 10. Recorded citation custody: mcp/tests/test_role_capsule_compiler.py blob 9946e7fc31fa11992782193f4af92050e7c18e46 (available); historical event commit not identified. No historical event or intent inferred.]
-
-Anchor: Current test/support source
-
-Current source: fixture_manifest_document defines a complete synthetic registry whose operations use audience=all. The compiler suite declares determinism, instruction ordering, selected/unrelated-source digest and refusal cases; audience-section projection is exercised in the distinct audience module. The source does not itself prove that these are the only semantic changes since an earlier leaf.
-
 - compile_role_capsule parses and selects the manifest scope, admits and resolves the source set, reads typed contract markers, projects operation audiences and strips those markers. It verifies the separate task projection, narrows tools, carries skills/details, seals the selected content plus every-role/detail revisions, and returns the capsule with an explanation manifest. [1]
 - CapsuleCompilationOutcome requires exactly one of result and error while retaining a manifest in both shapes; the two compiler-suite controls construct both-present and both-absent outcomes and require ValueError. [7]
+
 - The current instruction-corpus test declares the canonical role order and operation keys, checks every manifest role/operation source resolves, keeps launcher routing metadata separate, and rejects copied instruction prose in the manifest. These source-defined assertions establish no fresh run or earlier-leaf execution event. [9]
+
 - fixture_manifest_document defines a complete synthetic registry whose operations use audience=all. The compiler suite declares determinism, instruction ordering, selected/unrelated-source digest and refusal cases; audience-section projection is exercised in the distinct audience module. The source does not itself prove that these are the only semantic changes since an earlier leaf. [10]
 
 - A one-byte equal-length change to the declared every-role source changes semantic_digest while rendered role/operation instructions stay identical and no shared core instruction block composes. Omission of that required source refuses by identity and path. Static parsing of the final file finds 48 test function definitions; this is not collection or execution. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [11]

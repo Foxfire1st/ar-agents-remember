@@ -1,0 +1,76 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/worklist.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Row, reconsideration, invariant-entry and rationale-correction procedures are reached through the hand-off templates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6559fa750bc433a6c1d4bd48510f14d15d42b01",
+            "content": "sha256:2731f068fdfda56ac33362b74d2ebdc6886a1376688b9d1e47bc1047a7ad1be1",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The worklist block summarizes the computed worklist and is not a verdict; an absent block is not a pass.\n\nAnchor: `knowledgeWorklist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6559fa750bc433a6c1d4bd48510f14d15d42b01",
+            "content": "sha256:a6a8325892ced8a76847ff6839f63a38e67cf50b49c3e73c1869fd1c02477257",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The gate block's fields, and the rule against summing subtotals or counting report-only observations.\n\nAnchor: `knowledge-gate-refused`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6559fa750bc433a6c1d4bd48510f14d15d42b01",
+            "content": "sha256:ed52e6d93f0857f68a7b475a88cc103dc7f6651fa64075267e34acb24c28a6cb",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The hand-off ingestion template links the response-block section.\n\nAnchor: `worklist.md#worklist-and-gate-response-blocks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:c9dff28f1fccfe45d8212e8fb2ea89204a74707e48e2c5d3f0ba8c9dbdca378e",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

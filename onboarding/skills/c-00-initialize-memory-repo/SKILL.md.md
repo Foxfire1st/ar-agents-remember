@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Repository overview](../../overview.md)
+[overview](../../overview.md)
 
 ## Purpose
 
@@ -14,11 +14,11 @@ The normal installed input is `repo_id`; a code root is for conceptual review or
 
 Before creation, the skill asks for the foundation branch, states the exact external memory path and explains the separate repository, its directories, the automatically produced `memory.md` view and baseline/adoption, and deliberate branch migration in plain language. This describes the skill's setup explanation; it does not grant publication, commit, landing, or ledger ownership to the reader.
 
-Initialization owns missing memory scaffolding only. Runtime repair remains with `runtime_install`, whose scaffold carries no skills copy. Skills are never installed as files: the tool server serves the canonical tree from its packaged copy as MCP resources, so an absent `skills/` directory in a harness, project or coordination root is the expected state. `c-03-repo-bootstrap` owns onboarding generation. Existing files are preserved without explicit overwrite approval. The removed repo-local `ar-memory/` layout is reported by exact path with its route out, not read, migrated, deleted, or recreated by this skill. Legacy content without `knowledge/layout.json` is not initialized around: the source names the first-conversion procedure and `legacy-format` refusal before ordinary memory operations resume. Machine policy and path rules belong to memory-layer `system/settings.json`, not coordinator runtime settings or the explanatory Markdown.
+Initialization owns missing memory scaffolding only. Runtime repair remains with `runtime_install`, whose scaffold carries no `AGENTS.md` file or skills copy. Skills are never installed as files: the tool server serves the canonical tree from its packaged copy as MCP resources, so an absent `skills/` directory in a harness, project or coordination root, and an absent coordination-root `AGENTS.md`, are the expected state. Inspecting an existing repository's active context follows the `context_packet` guidance of the l-01 knowledge-commands reference; this skill only creates or repairs missing scaffolding. `c-03-repo-bootstrap` owns onboarding generation. Existing files are preserved without explicit overwrite approval. The removed repo-local `ar-memory/` layout is reported by exact path with its route out, not read, migrated, deleted, or recreated by this skill. Legacy content without `knowledge/layout.json` is not initialized around: the source names the first-conversion procedure and `legacy-format` refusal before ordinary memory operations resume. Machine policy and path rules belong to memory-layer `system/settings.json`, not coordinator runtime settings or the explanatory Markdown.
 
 ## Current Source Qualification
 
-The current source names no skill carrier at all. It states that skills are not installed as files, that the tool server serves the canonical tree from its packaged copy as MCP resources, that the coordination root carries no `skills/` directory, and that root `skills/` is the source repository's authoring source rather than a runtime dependency of a project. The scaffold list it checks therefore omits `skills/`, and an absent skill folder is not a missing-runtime defect. Earlier starter-package, generated-copy and `skills_install` statements below describe superseded distribution, not current capability.
+The current source names no skill carrier at all. It states that skills are not installed as files, that the tool server serves the canonical tree from its packaged copy as MCP resources, that the coordination root carries no `skills/` directory, and that root `skills/` is the source repository's authoring source rather than a runtime dependency of a project. The scaffold list it checks therefore omits `AGENTS.md` and `skills/`, and their absence is not a missing-runtime defect. Earlier starter-package, generated-copy and `skills_install` statements below describe superseded distribution, not current capability.
 
 ## Retained Prior Commentary And Historical Claims
 

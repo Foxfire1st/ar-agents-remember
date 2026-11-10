@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The read cycle retains a frame for one task context and record while the selected slot and review grid preserve the mounted workspace during a different subject's pending read."
+  },
   "applicability": "The Intent Reviewer surface (ReviewSurface) when the reader selects a family, an invariant or the whole task after the task context has at least one admitted review payload.",
   "conditions": [
     "An admitted frame exists for the same repository, task, leaf and record.",

@@ -114,7 +114,7 @@ No relevant documentation found after checking live sources.
 - The frozen vocabulary this parser is validated against. [1]
 
 
-- The frozen compiler vocabulary declares ten roles and nine operations including Bootstrap; compiler vocabulary and native task-seat dispatch availability are distinct. [17]
+- The frozen compiler vocabulary declares eight roles and nine operations including Bootstrap; compiler vocabulary and native task-seat dispatch availability are distinct. [17]
 
 - The canonical authored metadata this module parses. [2]
 - The tracked generated copy under the governed `mcp/**` surface, produced by the propagation owner. [3]

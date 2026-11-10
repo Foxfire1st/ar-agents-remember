@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6db7c75557a5d040db6cc2938c3f8a53f658bebe",
-    "commit": "59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0",
+    "codeTree": "40475ce5dbd82a4b45ebd637b4ffcfa2dc2e7e02",
+    "commit": "81180617aed517835314526b8309d37d5be8b3b7",
     "role": "curator",
-    "statement": "The revised settings reference’s catalog fallback and ID-before-label rules still agree with launcher_catalog and named, and its recorded host-authority and role-initialization dependencies remain intact.",
-    "task": "260928-MIK-L62",
+    "statement": "The settings reference now places the tool-server settings beside the user's settings.json, documents provider env for harness homes and the harness-home-would-change refusal, and lists the designer and strategist keys as accepted but ignored, all as the code does, while its catalog, ID-before-label and role-initialization statements still agree with the unchanged functions it stands on.",
+    "task": "260928-MIK-L84",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -34,7 +34,7 @@
     },
     {
       "anchor": {
-        "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
+        "blob": "5fa43f169fb341dff7f3842ee51d822ef98b1e32",
         "content": "sha256:fe2c9c9853b4fe5448816a275677328298baaedf989141461565f4781ad80948",
         "locator": {
           "kind": "symbol",

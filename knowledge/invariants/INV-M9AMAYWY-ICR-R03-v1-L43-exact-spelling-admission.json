@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "Comparison-bound unchanged context requires exact requested path spelling, because normalizing a padded request could establish a link for a different Git path than the caller named."
+  },
   "applicability": "Review source-content reads (/api/review/intent/source-content) of one leaf's review comparison, for a path its requested measured tree pair does not list as changed.",
   "conditions": [
     "The requested string validates as a path seed and the validated value equals the requested string exactly."

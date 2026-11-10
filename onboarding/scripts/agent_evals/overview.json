@@ -6,23 +6,25 @@
       "targets": [
         {
           "anchor": {
+            "blob": "9829c85469f6567f78c02cbdd5ded57935235641",
+            "content": "sha256:1e1bc5030ca29e120318c4ede051b8d275f15ca52b9afc75f9bd4252c66a4b61",
+            "locator": {
+              "end": 1177,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "scripts/agent_evals/trials.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "d950d14d90314b8229a636873c196e6114992be8",
             "content": "sha256:5ed177cc2fcc5cec1aee61e4dd19aff01648bec9d1167bd612441c9df2149b07",
             "locator": {
               "kind": "file"
             },
             "path": "scripts/agent_evals/run_curator.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "76baa8a7d10eebd94b44b8df971220de4edbf08b",
-            "content": "sha256:eacc2dfaae337d1ae2ad0de8bfd896b1eae9b465df0517ab0dcca8f31647ef52",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "scripts/agent_evals/trials.py"
           },
           "kind": "code"
         }
@@ -33,10 +35,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "691792ddb56e8277470d1df5a4d4326fe77f71c9",
-            "content": "sha256:a65952786eac426e9ca782a54266cbc121deb229ea605265f1d4e0fc283b4e65",
+            "blob": "2efbb441081879b9a24eeed0cb14f14617df1679",
+            "content": "sha256:2ee0caa9866f709c53eaf7c89f146358eec910a67dff944d3c6f0dac8c7cb3aa",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "provision_trial"
             },
             "path": "scripts/agent_evals/trial_setup.py"
           },

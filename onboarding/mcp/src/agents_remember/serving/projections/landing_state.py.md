@@ -57,9 +57,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 Successful atomic replacement of a final file invalidates the writer's parsed-final cache for that exact path, including an equal old/new mtime. The next read serves the new valid facts without an additional observation or historical retry; failed writes keep the existing reported failure path.
 
 
-- Projector owns startup and cancellation.
-
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projector.py:220-323 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 58161c69b8254fe8080805650a2b3984000059d8. Retired means the anchor no longer stands, not that the cited subject was deleted [1]
+- Projector owns the landing refresher's startup and cancellation. [1]
 
 - Landing facts are merged into projected status.  Anchor: "def _safe_status_payload(  # pragma: no cover"; "def refresh_engine_process_landing(  # pragma: no cover" [2]
 - Exact completed arcs with no valid final are eligible once, including startup, under bounded admissions. [3]

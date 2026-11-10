@@ -14,7 +14,7 @@ Pure wire-model validation and token finalization for tool-shaped responses.
 
 Module-level surface:
 
-- `finalize_tool_response` (function, lines 15-26) — Validate one declared response, apply optional caller enrichment, and count tokens.
+- `finalize_tool_response` (function, lines 15-31) — Validate one declared response, apply optional caller enrichment, and count tokens. It validates through the tool's `TOOL_RESPONSE_MODELS` entry, except that a payload whose `code` is `server-build-stale` validates through `models.base.StaleBuildRefusalResponse`, so the shared stale-build refusal needs no writer-specific success fields.
 
 ### Conventions
 
@@ -34,4 +34,4 @@ None.
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-- Defines the function `finalize_tool_response` (lines 15-26) — Validate one declared response, apply optional caller enrichment, and count tokens.. [1]
+- Defines the function `finalize_tool_response`, which validates a declared response (or the stale-build refusal), applies optional caller enrichment and counts tokens. [1]

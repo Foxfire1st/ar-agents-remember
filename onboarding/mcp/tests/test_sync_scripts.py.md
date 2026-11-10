@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -13,11 +13,11 @@ executable statement that it happened.
 
 ## Current source account
 
-The projection guard retains two completion-truth clauses: (core/acceptance.md, "Terminal truth is mechanical; acceptance is the owner's.") and (roles/worker.md, "A finished turn is not AR acceptance."). The two formerly listed clauses (manager deliverable inspection; worker parent report notice) stay out under the retired-wording register (test_sync_scripts.py:114-118). A third projected clause now comes from `reference/shared-writing-profile.md`: “A clearer rewrite is never proof of preserved meaning.” It is a reach check for guidance, not another completion-truth owner or a semantic validator. Canonical and all declared generated targets must retain each marker; removing one from a packaged copy is detected. Copy/swap recovery and exact inventory guards remain.
+The projection guard carries three completion-truth clauses: two from core/acceptance.md ("A canonical terminal or finalizer outcome of `completed` means only that the provider turn ended normally." and "On wake, the current gate owner opens and validates the required artifact, candidate identity, evidence and acceptance envelope before advancing lifecycle state.") and one from roles/worker.md ("A finished turn is not AR acceptance."). The manager deliverable-inspection and worker parent-report-notice clauses stay out under the retired-wording register (test_sync_scripts.py:116-119). A fourth projected clause comes from `reference/writing/technical-english-profile.md`: “Clearer wording is not proof that meaning was preserved.” It is a reach check for guidance, not another completion-truth owner or a semantic validator. Canonical and all declared generated targets must retain each marker; removing one from a packaged copy is detected. Copy/swap recovery and exact inventory guards remain.
 
 ## Code Commentary
 
-New declaration/profile cases project a synthetic skill target into the generated-skills input and recompute the digest without changing other modeled profile content. The byte projector leaves its input profile file unchanged. A temporary two-target normal-sync matrix rejects missing, invalid-JSON and digest-mismatched profiles before any target mutation; the valid arm asserts projected profile bytes and canonical copy digests. The inventory and boundary loops call `skill_targets()` rather than a fixed `TARGETS` tuple. This source inspection ran no sync/check command, read no generated/private mirror and supplies no new projection or test grade.
+Declaration/profile cases project a synthetic skill target into the generated-skills input and recompute the digest without changing other modeled profile content. The byte projector leaves its input profile file unchanged. A temporary two-target normal-sync matrix rejects missing, invalid-JSON and digest-mismatched profiles before any target mutation; the valid arm asserts projected profile bytes and canonical copy digests. The inventory and boundary loops call `skill_targets()` rather than a fixed `TARGETS` tuple.
 
 ### Logic
 
@@ -29,16 +29,16 @@ Four readings, each defended by a different case class:
 - **The drift reader itself can still fail** — `ReplaceTreeSequenceTests` hand-edits, deletes and adds
   files in a throwaway tree and requires all three failure kinds to be reported. The copy-then-swap
   sequence is characterized at the two places it can fail, including the rename interruption
-  (`RenameInterruption`, 246).
+  (`RenameInterruption`, 256).
 - **The declared inventory is the certified one** — `DeclaredProjectionInventoryTests` requires the
   script's declaration-backed `skill_targets()` to equal the paths `mcp/certification-profile-v1.json` declares as the
   `generated-skills` generated input, so a target silently dropped from the script fails.
-- **The corrected boundary clauses reach every copy** — `BoundaryPropagationTests` (459) re-asserts the
+- **The corrected boundary clauses reach every copy** — `BoundaryPropagationTests` (593) re-asserts the
   shipped completion-truth clauses against canonical **plus** every declared packaged target through
   `boundary_locations()` / `boundary_surface_texts()` / `missing_clause_locations()`, and
   `test_a_clause_missing_from_one_...` deletes the Worker acceptance clause from one copy to prove that reach case bites.
 
-`BoundaryClause` (101) is deliberately a **reach** table, not a second vocabulary: *which* clauses each
+`BoundaryClause` (102) is deliberately a **reach** table, not a second vocabulary: *which* clauses each
 surface owes is the doctrine guard's subject (`mcp/tests/test_lifecycle_turn_truth_doctrine.py`), and
 this table quotes that module's shipped wording rather than paraphrasing it, so the two guards cannot
 drift into two spellings of one boundary.
@@ -65,7 +65,7 @@ drift into two spellings of one boundary.
 
 ## Current scoped contract
 
-The new shared-profile marker is included in `PROJECTED_BOUNDARY_CLAUSES`, so the positive canonical/generated-copy reach loop checks that document too. The seeded missing-copy case explicitly selects the Worker acceptance clause; it is not a separately seeded shared-profile negative control. The two completion-truth markers and retirement exclusions remain. Executed reach checks would establish declared propagation, never equivalence of any rewritten invariant; this curation is source inspection only.
+The writing-profile marker is included in `PROJECTED_BOUNDARY_CLAUSES`, so the positive canonical/generated-copy reach loop checks that document too. The seeded missing-copy case explicitly selects the Worker acceptance clause; it is not a separately seeded writing-profile negative control. The three completion-truth markers and retirement exclusions remain. Executed reach checks would establish declared propagation, never equivalence of any rewritten invariant.
 
 ## Evidence
 
@@ -94,11 +94,13 @@ No external repository boundary is exercised; the declared targets are this repo
 No meaningful cross-repo references found.
 
 
-- The shared-profile marker participates in the positive canonical/copy loop; the seeded missing-copy case selects the Worker acceptance clause, not the profile. The two completion-truth markers and retired omissions remain. [7]
+- The writing-profile marker participates in the positive canonical/copy loop; the seeded missing-copy case selects the Worker acceptance clause, not the profile. The three completion-truth markers and retired omissions remain. [7]
 
 - The projection mechanism whose behavior this module pins. [1]
 - The generated-skills profile scope and declaration select the single MCP package tree from canonical skills. [2]
+
 - The doctrine guard that owns which clauses each surface owes, whose wording this table quotes. [4]
+
 - The projected current acceptance and Worker boundaries retain their canonical owners and must reach every declared package copy; this is propagation evidence rather than a second meaning definition.
 
 - The projected current acceptance and Worker boundaries retain their canonical owners and must reach every declared package copy; this is propagation evidence rather than a second meaning definition. [5]

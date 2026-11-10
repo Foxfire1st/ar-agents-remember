@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:46581d226307c277a2fa78c445d0167598651cfbfd7372b75d03fc294405b30f",
+            "blob": "830d89bb301c2fd59337d82f6f8aa7abf676b4e6",
+            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
-              "end": 609,
+              "end": 653,
               "kind": "line_range",
-              "start": 609
+              "start": 653
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -38,22 +38,11 @@
       ]
     },
     "11": {
-      "note": "The fixture's repositories are real temporary Git repositories created per case, not mocks.\n\nAnchor: `QueueFixture`",
+      "note": "The fixture's repositories are real temporary Git repositories created per case, not mocks.",
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_closeout_queue.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:8152e6a4d868803287c8564f0f256429d97aa4579380f2f284344cb4cebd99dd",
             "locator": {
               "kind": "symbol",
@@ -66,22 +55,11 @@
       ]
     },
     "12": {
-      "note": "The fixture's repositories are real temporary Git repositories created per case, not mocks.\n\nAnchor: `QueueFixture`",
+      "note": "The fixture's repositories are real temporary Git repositories created per case, not mocks.",
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_closeout_queue.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:8152e6a4d868803287c8564f0f256429d97aa4579380f2f284344cb4cebd99dd",
             "locator": {
               "kind": "symbol",
@@ -206,14 +184,15 @@
       ]
     },
     "8": {
-      "note": "The fixture this module composes instead of rebuilding the world.\n\nAnchor: `QueueFixture` `REPO` `SPRINT`",
+      "note": "The fixture constants this module composes. The fixture this module composes instead of rebuilding the world.",
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:f40f91721ef63ccd60878bf41fbde04857b0a319dc11883acf140d00a5cfb55b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "SPRINT"
             },
             "path": "mcp/tests/test_closeout_queue.py"
           },
@@ -221,7 +200,7 @@
         },
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:8152e6a4d868803287c8564f0f256429d97aa4579380f2f284344cb4cebd99dd",
             "locator": {
               "kind": "symbol",
@@ -233,7 +212,7 @@
         },
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:910790e222ac3e8bfc7ada5a2211c67caf04d4ace58f37d95f461738f55c3c3c",
             "locator": {
               "kind": "symbol",
@@ -242,30 +221,18 @@
             "path": "mcp/tests/test_closeout_queue.py"
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:f40f91721ef63ccd60878bf41fbde04857b0a319dc11883acf140d00a5cfb55b",
-            "locator": {
-              "kind": "symbol",
-              "name": "SPRINT"
-            },
-            "path": "mcp/tests/test_closeout_queue.py"
-          },
-          "kind": "test"
         }
       ]
     },
     "9": {
-      "note": "The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence.",
+      "note": "The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence. The `curator_coherence_test_support.py` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. The `writer_worklist_test_support.py` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:0a6ea03efe9703712535f05efeacc13a561b6fd40cb34b4ed9fe1a7122ed7558",
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:a9d8b09eb50388628ef55bf6ed59706200eb5b4d03bcabff21dac134be54c478",
             "locator": {
-              "end": 821,
+              "end": 199,
               "kind": "line_range",
               "start": 65
             },
@@ -275,12 +242,12 @@
         },
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:27ada4a3d5995ef2a9e4ed6de487ad9bb21a156504da9369d7c0736bdec39c61",
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:2022631d835b3d5287be3f8a30eb4093c0e0e355c9ae0e5cde8dacc159220766",
             "locator": {
-              "end": 1257,
+              "end": 1142,
               "kind": "line_range",
-              "start": 1109
+              "start": 1107
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -288,12 +255,12 @@
         },
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:e8d358fc83b0cd78d30c45fd0bf4727490538eac4f97a69b212a2078f94c56cf",
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:126271695e2868da4a119ab2e39c4a8edc93d985b10285a7f17451ec98d9f7f0",
             "locator": {
-              "end": 3096,
+              "end": 2487,
               "kind": "line_range",
-              "start": 2340
+              "start": 2353
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -301,12 +268,12 @@
         },
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:55832b86db8f103522bffa6daa408f2814ebfd4bf834663babad9154e9add2d8",
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:71e0e8dd532e5e964b42dff0a29f536e667e4b521825cefafa8ed31450ec8c00",
             "locator": {
               "end": 4691,
               "kind": "line_range",
-              "start": 4621
+              "start": 4665
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

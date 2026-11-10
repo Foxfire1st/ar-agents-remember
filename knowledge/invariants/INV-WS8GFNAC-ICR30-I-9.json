@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The disposable-projection family requires paired reads to tolerate an absent generated route index, so deleting a regenerable cache does not make authored sidecars unreadable."
+  },
   "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
   "conditions": [],
   "exclusions": [],

@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -22,8 +22,8 @@ bridge reads are replaced at their owners, so no test touches a live host.
 
 - **The retained scaffold (L188-B01).** `test_the_installed_scaffold_is_what_the_cold_path_accepts` runs over the
   `legacy` and `capsule` modes: stage `scaffold` is `created` with the mode as its delivery, `docs/` and `tasks/`
-  exist, no coordination-root `skills/` copy is made, and `AGENTS.md` exists only in legacy mode — the instruction
-  target capsule mode withholds is not part of the predicate.
+  exist, no coordination-root `skills/` copy is made, and no retired instruction file (`AGENTS.md`,
+  `system/AGENTS.md`, `tasks/AGENTS.md`) exists in either mode.
   `test_the_cold_path_crosses_the_scaffold_gate_to_the_host_stage` reads the four stages in order (`scaffold`,
   `host-authority`, `host`, `host-verify`), the authority stage's path as the MCP settings file, the written block's
   five keys, the recorded roots, a block the build loads back, and no user settings file (MIK-R137).
@@ -66,7 +66,8 @@ fixture is parameterised over the two modes and asserts the root is genuinely ab
 
 ## Evidence
 
-- The installed scaffold satisfies the cold path's predicate in both delivery modes, with no skills copy.
+- The installed scaffold satisfies the cold path's predicate in both delivery modes, with no skills copy and no
+  retired instruction file.
 - The cold path crosses the gate to the host stage and writes a block this build loads back as a usable host.
 - A same-request retry converges with unchanged bytes, and only a receipt or a binding skips preparation.
 - A refused document reference, an archived request id and an unknown mode all stop before any effect.

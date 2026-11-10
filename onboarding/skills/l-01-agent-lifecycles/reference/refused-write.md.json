@@ -3,10 +3,29 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "77193c73e40d8dcf1ac8b7158debe508e2d02065",
-        "content": "sha256:52ce87cbd8720457b6cdffb7d69b8f1e24e421042c4946c15de23a9e9daeeb87",
+        "blob": "c5c547f2f6818f886972bce92087be9d041c1fc9",
+        "content": "sha256:ddd19dc1462d05620b4ccdb86d21e3f6702f71e19b1c3cc5d91a8102d95c2aaf",
         "locator": {
-          "end": 38,
+          "end": 9,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-AHDGQB",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The two lines distinguish a correct-input writer refusal from missing admitted capability. Only the former reaches the named same-tool ladder; the latter remains unwritten and reported.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c5c547f2f6818f886972bce92087be9d041c1fc9",
+        "content": "sha256:4491fffd1a27e78f6a2b3732efc075754c27900d0bfac4fe42ca26aa8276b209",
+        "locator": {
+          "end": 51,
           "kind": "line_range",
           "start": 3
         }
@@ -27,12 +46,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "77193c73e40d8dcf1ac8b7158debe508e2d02065",
-            "content": "sha256:c1c9eaecfc614b2b83262b80580096eb99d1d34056cc4439649c71ddad0e5b72",
+            "blob": "c5c547f2f6818f886972bce92087be9d041c1fc9",
+            "content": "sha256:83d69507881a091ffbaaa473a3deb5e9b87c86593df19ce16067dbd0bc9e7fb0",
             "locator": {
-              "end": 38,
+              "end": 51,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stops section keeps every refusal and gate, requires immediate repair of findings and limits `--no-verify` to a developer-allowed occasion.\n\nAnchor: `--no-verify`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5c547f2f6818f886972bce92087be9d041c1fc9",
+            "content": "sha256:041a4ae269ba2db6e13cd80d5194d77a8f1362860c3f57d0021df2262b891c77",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 47
             }
           },
           "kind": "code"

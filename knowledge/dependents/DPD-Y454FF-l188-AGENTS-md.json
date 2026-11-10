@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e2057915c8ea285fadecb95170528e37fa162fcf",
-    "commit": "2f699606998a68c42994b9cc102cd22d56cfae37",
+    "codeTree": "b42c8d51a964d240cdda819287aab852aa00dfe3",
+    "commit": "81180617aed517835314526b8309d37d5be8b3b7",
     "role": "curator",
-    "statement": "AGENTS.md no longer asks for a provider check or an include_providers request, so its instruction to call context_packet without provider selection still stands.",
-    "task": "260928-MIK-L192",
+    "statement": "AGENTS.md now points task authoring, collaboration, closeout and knowledge use at existing l-01 files instead of the removed skills, and still describes the package-served skill copy correctly.",
+    "task": "260928-MIK-L84",
     "uncommitted": true
   },
   "document": "AGENTS.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {

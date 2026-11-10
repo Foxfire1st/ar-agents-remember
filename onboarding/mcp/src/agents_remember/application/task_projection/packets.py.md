@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[application overview](../overview.md)
+[overview](../overview.md)
 
 ## Purpose
 
@@ -45,7 +45,7 @@ guess at. A heading outside the table is never dropped: every section stays in
 
 ### Conventions
 
-The canonical packet shape comes from `skills/w-02-light-task-workflow/requirement-packet-template.md`.
+The canonical packet shape comes from `skills/l-01-agent-lifecycles/templates/requirement-packet.md`.
 A new injected role is one entry in `PacketSectionRole`, `INJECTED_PACKET_ROLES` and
 `PACKET_SECTION_HEADINGS` in the same edit — the three must stay in step.
 
@@ -85,7 +85,9 @@ absent obligation.
 - Exact heading lookup, and the headings that travel as references instead. [4]
 - The refusal an absent or unreadable packet raises, naming both admissible remedies. [5]
 - The kernel's non-symlink artifact guard this module reuses for a consumer-supplied path. [6]
+
 - The canonical packet shape the heading table follows, including its template section headings. [7]
+
 - The case that proves an owned obligation is carried verbatim and a missing section is a gap. [8]
 
 ### Cross-Repo References

@@ -55,7 +55,7 @@ This account controls the named changed seams; contradictory earlier card wordin
 The independent MEMORY review reads both landing populations in the quality result. Removed text without a named task change is a finding; an added file outside the knowledge without a place in the task requirement is a finding. These are human judgments, not automatic refusing diagnostics. CODE evidence, MEMORY findings/pass count and Manager acceptance/transaction authority stay separate.
 
 
-- The separate memory review judges cut reasons and requirement ownership of outside-knowledge additions. [33]
+- When reviewing the Curator's memory change the Reviewer inspects the quality result's cutCards and addedFiles reports: text removed without a named change and a file added outside the knowledge without a place in the task's requirement are findings. [33]
 
 
 ## Message/file transport
@@ -67,7 +67,7 @@ This packaged copy makes role messages short wake-ups naming requested work or a
 
 ## Current operative account — MIK-R112
 
-The review budget comes from `orchestration.loops.defaults.maxRounds`, read when the next round begins; agents read the effective task limit, including approved extra rounds, from `task_doc`’s `reviewState.limit` on `agents-remember-task`. Code and memory reviews use the same settings limit with separate counts and sealed findings. Beyond-limit work needs a recorded architect or developer approval; the Manager asks the task’s Architect, not the developer.
+The review budget comes from `orchestration.loops.defaults.maxRounds`, read when the next round begins; agents read the effective task limit, including approved extra rounds, from `task_doc`’s `reviewState.limit` on `agents-remember-task`. Code and memory reviews use the same settings limit with separate counts and sealed findings. Beyond-limit work needs a recorded architect or developer approval, which the Manager requests through its assigned reporting route and records.
 
 The Reviewer’s stage ends when the verdict over the whole requirement, findings and coverage is recorded. Each of these stages repairs faults in its own work or instrument and corrects invalid input through the same tool, reports the repair, and continues. It stops for an open permission prompt, a guard/tool refusal that survives correct input or names unowned state, a requirement-meaning question, or an effect outside its own worktree, scratch folder and task. An unfinished final turn names what it awaits and from whom; the existing role-specific stops and write boundaries remain.
 
@@ -125,7 +125,7 @@ No self-review, implementation, task acceptance/publication, packet rewrite, ver
 
 ## Code Commentary
 
-Current intake opens exactly rendered_path and json_path supplied by taskDocReadArgs through own file tools. task_doc writes and never supplies a read; knowledge_read takes memoryRoot, while only read_ar_files uses canonical task_context. Missing capability is reported, not bypassed through another server or an unscoped route; independent review and peer transport ownership remain unchanged.
+Current intake opens exactly rendered_path and json_path supplied by taskDocReadArgs through own file tools. task_doc writes and never supplies a read; `knowledge_read` takes `workspace.memoryRoot`; `context_packet` and `read_ar_files` take `task_context` with the canonical task reference and enclosure contract. Missing capability is reported, not bypassed through another server or an unscoped route; independent review and peer transport ownership remain unchanged.
 
 
 ### Logic
@@ -211,57 +211,56 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 > Retained earlier citation wording: - Reviewer leaf communications use role_message on agents-remember-task with the handover's sibling role and exact leaf task references; product-supplied IDs remain whole and unchanged. [29]
 
-- The reviewer returns fix leaves to the seat it reports to. [30]
+- The Reviewer returns exit-seam fix leaves to the seat it reports to: the owning Manager at master-exit, the Orchestrator at super-exit. [30]
 
 
-- The Reviewer scopes one seam or loop round, refutes or confirms against brief-bound catalogs, writes its verdict and ends. [2]
+- The Reviewer independently examines one assigned seam or review round, refutes or confirms the claims against the bound criteria catalogs, and writes and hands over the verdict. [2]
 
 
-- The reviewer receives the brief as its session start. [3]
+- The Reviewer's brief starts the work, and the verdict artifact is its durable handoff. [3]
 
 
-- Dashboard-owned sessions keep this seat's role fixed for the session lifetime. [4]
 
 
-- A pasted brief for another seat is refused and reported to the seam's decider; the Reviewer never absorbs the other seat's work. [5]
+- The Reviewer refuses another seat's pasted brief and reports it to the seam's decider, and never absorbs another seat's work. [5]
 
 
-- Review retrieval is refute-or-confirm, and findings must survive attempted refutation. [6]
+- A baseline review runs the bound catalogs, required routes and exploratory mandate, covers all three lenses explicitly, and tries to refute each claim before confirming it. [6]
 
-- Review criteria are not made up on the spot. [7]
+- The Reviewer requires the catalogs bound by its review type and does not choose catalogs during the review. [7]
 
-- A first review runs the standing catalogs its review type binds. [8]
-
-
-- The completion lens accounts for every master requirement, leaf, substep, and accepted blank-fill. [10]
+- Each review type binds a fixed set of criteria catalogs, listed in the role's review-type table from master-exit and super-exit to leaf, integration, full-loop and plan review. [8]
 
 
-- No unfinished leaf work is hidden inside the handover packet. [12]
+- At master-exit the Reviewer accounts for every master requirement, leaf, substep and accepted gap fill; completion against task documents is an affirmative duty, not a formatting check. [10]
 
 
-- The scoped evidence checks the Worker's targeted tests and regressions and uses resolved system/tools.md for repository-specific check commands; unrequested full suites and drift reporting remain excluded. [13]
+- A master handover packet that reads as complete while silently omitting unfinished leaf work, a substep or an accepted gap fill has a blocking finding. [12]
 
 
-- The onboarding-vs-code lens diffs sidecars and route overviews against as-landed code and rejects history-only refreshes. [14]
+- Baseline review checks the Worker's targeted checks and regressions against the past for the requested scope; full suites and drift reporting run only on an explicit developer request. [13]
 
-- Route overviews are among the memory surfaces the onboarding-vs-code lens diffs against as-landed code. [15]
 
-- Repository-scoped review checks and explicitly requested full suites or drift reporting remain distinct from the Curator's mandatory complete memory_quality_check; the review surface names requested drift reporting, not a drift_check tool. [16]
+- The onboarding staleness criterion checks every present-tense card or overview sentence against the as-landed code, keeps historical accounts in history rows, and does not accept a true paragraph added beside a contradictory claim. [14]
 
-- A master-exit block returns to the owning manager as fix leaves. [17]
-- A super-exit block returns to the orchestrator as fix leaves. [18]
+- Super-exit review inspects changed paths and sidecars and route overviews among the integrated portfolio evidence. [15]
 
-- Reviewer duties include writing the verdict artifact and returning a baseline block as decomposable fix leaves. [19]
+- Full suites and drift reporting run only on an explicit developer request, while the normal curation authoring pass always runs the complete memory_quality_check, which a subset cannot replace. [16]
 
-- The verdict artifact and terminal/finalizer truth are the completion signal; the reviewer does not author a duplicate completion row. [21]
+- At master-exit a baseline BLOCK goes to the owning Manager as decomposable fix leaves. [17]
+
+- At super-exit a baseline BLOCK goes to the Orchestrator as decomposable fix leaves. [18]
+
+- The Reviewer writes the verdict under the seam's notes/reports path using the verdict template and writes fix-leaf descriptors for non-leaf baseline blocks. [19]
+
 
 - The permitted review surface is read-only retrieval and scoped checks, report/journal artifacts, bound leaf messages, and ordinary review-round begin/result recording.
 
 
-- The role presents Inputs, Process and Outputs in order. Its operator-knob passage is a prohibition on setting harness, model, effort and serviceTier, not a launch-default block. [23]
+- The role's operator-settings passage is a prohibition: harness, model, effort and serviceTier are not the Reviewer's to set. [23]
 
 
-- The role keeps the two seam rubrics and the three review lenses. [24]
+- The role keeps the master-exit and super-exit seam rubrics and their blocking rule. [24]
 
 
 ### Cross-Repo References
@@ -324,14 +323,19 @@ a malformed handed-off attempt requires independent rejection before successor h
 - Bound explicit review intake and parent/dashboard transport.
 
 
-- Reviewer leaf communications use role_message on agents-remember-task with the handover's sibling role and exact leaf task references; product-supplied IDs remain whole and unchanged. [29]
+- Reviewer leaf messages use role_message on agents-remember-task with the handover's sibling role and exact leaf task references; product-supplied agent identifiers stay whole and unchanged. [29]
 
 
-- Reviewer opens supplied canonical file locations; independent authority and no-alternate-server/read-scope boundaries remain. [34]
+- The Reviewer reads the rendered task document and canonical JSON at the supplied taskDocReadArgs paths, reads only the seam's required documents, and uses the Agents Remember tools on agents-remember-task only. [34]
 
-- The permitted review surface is read-only retrieval and scoped checks, report/journal artifacts, bound leaf messages, and ordinary review-round begin/result recording. [22]
-- Bound explicit review intake and parent/dashboard transport. [26]
-- Complete diff, required evidence, standing criteria, exact attempts and sealed findings. [27]
-- Permitted read surface, role/recording prohibitions and retained seam duties. [28]
-- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. Messages wake and complete payloads travel as files; retained operator knobs are harness, model, effort and serviceTier. [31]
-- The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane. [32]
+- The Reviewer may write its review artifacts, retrieve read-only through read_ar_files, use scoped system/tools.md checks and report templates, inspect full memory_quality_check curation evidence, run requested drift reporting and send the direct leaf messages and Manager notices; ordinary leaf begin/result records are evidence, not gate acceptance. [22]
+
+- Review starts only on the owner's assignment, reads the rendered task document and canonical JSON at the handover's taskDocReadArgs paths, and requires every applicable intake input before candidate inspection. [26]
+
+- A baseline review reports every standing criterion, the sealed baseline findings with stable identifiers, evidence and fix-acceptance criteria, and a complete route-coverage table. [27]
+
+- The Reviewer's permitted read and check surface and its prohibitions on implementing, recording task acceptance, starting roles, publishing Git, deciding gates and absorbing another seat's work. [28]
+
+- The Reviewer reads the current review-state limit from the task_doc answer and never runs an unapproved round or splits the scope to avoid that limit. [31]
+
+- The stage ends with a recorded verdict covering the whole requirement, its findings and coverage; the review step is marked done through task_doc only after the last round is recorded as passed. [32]

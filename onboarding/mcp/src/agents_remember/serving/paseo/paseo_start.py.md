@@ -10,9 +10,11 @@ Read-only host status and start-only supervision: it never installs, reloads or 
 
 ## Code Commentary
 
-`observe_host` bounds every host read by its own five-second deadline and returns one line per state — `running`, `not running`, `not answering` (a live unanswering supervisor), `not installed` and `not configured` — with version, listen, home, carried session names and the remedy. `ensure_host` returns the observation immediately unless the state is `not running` or `not answering`. Only an installed, configured, down-and-startable host reaches `_start_locked` (after the locked re-observation): it takes the home lock, removes a stale record, requires a free settings port and starts the daemon once; a live unanswering supervisor never gets a second start, `not configured`/`not installed` start nothing, and a contending caller reuses the attempt's outcome receipt instead of starting again.
+`observe_host` bounds every host read by its own five-second deadline and returns one line per state — `running`, `not running`, `not answering` (a live unanswering supervisor), `not installed` and `not configured` — with version, listen, home, carried session names, inherited harness-home names and the remedy. `ensure_host` returns the observation immediately unless the state is `not running` or `not answering`. Only an installed, configured, down-and-startable host reaches `_start_locked` (after the locked re-observation): it takes the home lock, removes a stale record, requires a free settings port and starts the daemon once; a live unanswering supervisor never gets a second start, `not configured`/`not installed` start nothing, and a contending caller reuses the attempt's outcome receipt instead of starting again.
 
 A running host observation includes the expected contract Node and observed executable. An earlier executable reports the Node restart requirement and existing terminal provision remedy even when the new target already exists. This is read-only: status and dashboard start do not replace that running host.
+
+The status read of an owned supervisor goes through `PaseoCli`'s communication Node, so a build whose product Node is not installed still observes a host running on its earlier Node; the start itself uses the product Node only. `inheritedHarnessHomes` is `unknown` when no owned supervisor's process was read, and the line carries the harness-home remedy when the running host inherited a harness home the settings do not carry.
 
 ## Evidence
 
@@ -25,6 +27,8 @@ A running host observation includes the expected contract Node and observed exec
 
 
 - The observed Node comparison and explicit provision remedy. [4]
+
+- The observation reports the owned host's inherited harness homes. [6]
 
 ## The authority file the host is read from
 

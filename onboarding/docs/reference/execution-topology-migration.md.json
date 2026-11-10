@@ -7,11 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
-            "content": "sha256:2916fa2af635f3a12d455b347784dcf6cbe7feea35457e909d941fc3fc143d0c",
+            "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
+            "content": "sha256:2903aaafcb2c22460572227de513be728dc4b047e8000c4e61968b459be93796",
             "locator": {
-              "kind": "symbol",
-              "name": "inventory_execution_topology"
+              "end": 728,
+              "kind": "line_range",
+              "start": 663
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
           },
@@ -24,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
+            "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
             "content": "sha256:c1cb47083688bd094e270a8e868c48206d6f1b4bf0b9bdf43a6d1c223aa4aaab",
             "locator": {
               "kind": "symbol",
@@ -36,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
+            "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
             "content": "sha256:eadae61edd383633e5cda4bc34c5294cb3d9b6c01250744d1670e144bb70955b",
             "locator": {
               "kind": "symbol",

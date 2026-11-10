@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The coherent-review family needs the displayed statement comparison to use the selected subject’s owner operands, because an inferred revision pair would detach the visible intent from its bound source review."
+  },
   "applicability": "The central statement comparison for a selected invariant.",
   "conditions": [
     "The primary owner revision_selection matches the requested subject kind and identity.",

@@ -1,0 +1,93 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/writing/visual-explainers.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The guidance applies the shared profile and is not a second style guide.\n\nAnchor: `technical-english-profile.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9f23ec078ccfc9cb61f7c753716b7bdb85596ee",
+            "content": "sha256:db784712e03218a5ee6436049494d36ed3a01b27de7c8dc7d662312fdbe21be8",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Walkthroughs bind the exact candidate and keep conditions visible; promise, realization and proof stay separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9f23ec078ccfc9cb61f7c753716b7bdb85596ee",
+            "content": "sha256:d419b60b25bb4bd4c931eac91e3f299d0c05f1fed735160833e5f20786d9d3f5",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Paraphrases go to independent meaning review, and frozen history is never edited to match a diagram.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9f23ec078ccfc9cb61f7c753716b7bdb85596ee",
+            "content": "sha256:257c6636cafe9635c8803c1ef79f65ed542991c464650c67f534f0f591c9510c",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "An optional walkthrough replaces no check, review or acceptance record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9f23ec078ccfc9cb61f7c753716b7bdb85596ee",
+            "content": "sha256:c21879e371184495dcefb5e2b748f4aea8cf3a2b08fba8c92f05cb2cb141b8de",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Worker role points here before adding an optional walkthrough.\n\nAnchor: `visual-explainers.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:ae77c7eff1226d8870397005080d03c0f99eabf310dcbc00e03863b866aeb500",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

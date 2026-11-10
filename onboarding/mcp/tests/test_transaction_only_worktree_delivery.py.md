@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Tests route overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -14,7 +14,7 @@ moved branch refuses and a retry completes, and a refused memory publication giv
 
 ### Logic
 
-The transaction cases remain in this module. Shared fixtures, executable hooks, branch-race helpers and attribution assertions live in `transaction_only_worktree_delivery_test_support.py`; the cache-refresh cases live in `test_transaction_only_worktree_delivery_cache.py`. Their extraction changes the source owners, not the transaction, restoration or hook guarantees described here.
+The transaction cases remain in this module. Shared fixtures, executable hooks, branch-race helpers and attribution assertions live in `transaction_only_worktree_delivery_test_support.py`; the cache-refresh cases live in `test_transaction_only_worktree_delivery_cache.py`.
 
 The cases drive `worktree_closeout_apply`, the integration lifecycle and the worktree modules over a real
 repository pair, with `applications.worktree_tool_requests`, `memory_cache` and `memory_ledger` supplying the
@@ -40,8 +40,7 @@ request and the cache witness.
   head after a sync rather than the stale record.
 - **Certification and hooks.** `test_l56_required_references_separate_requested_dagger_from_ordinary_closeout`
   keeps certification requested rather than an automatic gate, `test_l56_publication_code_pins_both_live_commit_hook_mechanisms`
-  and `test_l56_closeout_skill_names_the_live_hook_guarantee_without_prepared_policy` remove the retired policy
-  claims without weakening the live hook guarantee, and the renderer and reader prose cases name only surviving
+  keeps the retired policy claims out of the publication code without weakening the live hook guarantee, and the renderer and reader prose cases name only surviving
   routes and analytics.
 
 ### Conventions
@@ -65,6 +64,7 @@ publication that wrote a plausible record over the wrong tree fails.
 
 
 - Closeout commits code and memory as one transaction without any acceptance tool. [9]
+
 - A refused converted-memory publication gives back every preparation it made. [10]
 
 - Named acceptance-tool prohibition and real failing-hook probes — `_forbid_acceptance_tools`, `_install_failing_pre_commit_hooks` in mcp/tests/test_transaction_only_worktree_delivery.py. [1]

@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
         "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
         "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-        "content": "sha256:3928dc7286631ed6f0f447d9c406201da902895761c897cff651fee3db69dc5f",
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "content": "sha256:28f0991ce10bdda3b9e5662782fac693640e4fd9d9be5448dcdc27c6aeb9cb13",
         "locator": {
           "kind": "file"
         }
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
         "content": "sha256:dba96b8c08af914511729e5126b08cd46a0f5a6b454fceb6d5edc330361a2f0e",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
         "content": "sha256:0c62c6e66b6c2221581f305c6b13a1ad415712f4221e4a0f70bca68bbd907758",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
         "content": "sha256:b8d99303481809c049f573d0bee3c0f80dbe790543257fbc06276db6d40cbc14",
         "locator": {
           "kind": "symbol",
@@ -111,12 +111,11 @@
     },
     {
       "anchor": {
-        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-        "content": "sha256:e631bdc8a4c9fcab371427777b9139400aace8d80ffd6e2bd681fc8f28773f66",
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "content": "sha256:8061f6fe7812b5ab10b00cd8e4e8b8bfb476711f345649512273cc4291852368",
         "locator": {
-          "end": 494,
-          "kind": "line_range",
-          "start": 458
+          "kind": "symbol",
+          "name": "_fit_error"
         }
       },
       "id": "RLZ-SVSZ9P",
@@ -125,13 +124,13 @@
         "handoffEntry": "MIK-R108@v1 §4 error-cut",
         "leaf": "260928-MIK-L108"
       },
-      "rationale": "The entry says `_fit_error` owns the error trimming from the end wherever a short form is built; at C that function is 461-497 and does exactly the 600-character cut, the end reduction to a measured 400, and the `errorCut` marker. The recorded 458-494 holds C's content only because it starts in `_attach_log_location` and stops at line 494, inside the search, so 461-497 is the extent that shows the claimed behaviour.",
+      "rationale": "`_fit_error` owns the error trimming wherever a short form is built: it cuts a string error to TOOL_ANSWER_ERROR_MAX_CHARS (600) characters and marks `errorCut`, and when the measured form is still above TOOL_ANSWER_OVERFLOW_MAX_TOKENS (400) it shrinks the error from its end by binary search until the form fits.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-        "content": "sha256:e6bab7b8ca5f483bc4622bbaee7fbaafdc33c4221e6716cb90615ae71b30806d",
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "content": "sha256:d27c374ab2475cbc6f9c16cd6eead51a38511940a00549bef8cee6d5497d260c",
         "locator": {
           "kind": "symbol",
           "name": "_fixed_short_part"
@@ -153,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
             "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
             "locator": {
               "kind": "symbol",
@@ -165,14 +164,64 @@
       ]
     },
     "10": {
-      "note": "explainer_control is attributed to L183 in the retained interim answer vocabulary while its leaf is unlanded; existing tool limits are unchanged.\n\nAnchor: `INTERIM_TOOL_LEAF`",
+      "note": "explainer_control is attributed to L183 in the retained interim answer vocabulary; its source comment says it stands interim until its leaf lands. Existing tool limits are unchanged. Anchor: `INTERIM_TOOL_LEAF`",
       "targets": [
         {
           "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-            "content": "sha256:3928dc7286631ed6f0f447d9c406201da902895761c897cff651fee3db69dc5f",
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
             "locator": {
-              "kind": "file"
+              "end": 225,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The fixed short part carries `ok`, a checked `code` and any build-currentness reading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:d27c374ab2475cbc6f9c16cd6eead51a38511940a00549bef8cee6d5497d260c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixed_short_part"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The installation answer projection includes the running-server inventory and dashboard part.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:e29ca367e9f77af9b742ae560442ad52bde0f61efabe5d356100de61fb732e59",
+            "locator": {
+              "kind": "symbol",
+              "name": "RUNTIME_INSTALL_ANSWER_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Framework keys admit the build-currentness reading on every answer row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:3756404cc1c750dc62cdf95e2ca410745bd547204ac8e0a4a0bd01c362ac0239",
+            "locator": {
+              "kind": "symbol",
+              "name": "FRAMEWORK_ANSWER_KEYS"
             }
           },
           "kind": "code"
@@ -184,7 +233,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
             "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
             "locator": {
               "kind": "symbol",
@@ -200,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
             "content": "sha256:dba96b8c08af914511729e5126b08cd46a0f5a6b454fceb6d5edc330361a2f0e",
             "locator": {
               "kind": "symbol",
@@ -216,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
             "content": "sha256:2e99ebc88b34119361b6f1e751e9d985b9048cc76430a5c331272b689bb45d44",
             "locator": {
               "kind": "symbol",
@@ -228,11 +277,11 @@
       ]
     },
     "5": {
-      "note": "**Retained historical source account — superseded by the current contract:** The grant tool has explicit L111 interim ownership.",
+      "note": "Interim ownership is an explicit tool-to-leaf map; `direct_execution_grant` has no entry and takes its shaped 150-token bound.",
       "targets": [
         {
           "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
             "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
             "locator": {
               "kind": "symbol",
@@ -248,41 +297,18 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-            "content": "sha256:e5639cff8348ca42dbcd284c125ffce7ed0a3ccfd2bb8853f71f4667db65b792",
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:073375c21901f5c3efc5913b9f4c23941b7904ce8c52cad35aba88ac01eda632",
             "locator": {
-              "end": 660,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "SHAPED_TOOL_BOUNDS"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-            "content": "sha256:468fd1fbdb3ea15ffcb8cbdf5a6e0fc636dde3828211d1c92416d70a2096a8db",
-            "locator": {
-              "end": 234,
-              "kind": "line_range",
-              "start": 232
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-            "content": "sha256:3928dc7286631ed6f0f447d9c406201da902895761c897cff651fee3db69dc5f",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
             "content": "sha256:468fd1fbdb3ea15ffcb8cbdf5a6e0fc636dde3828211d1c92416d70a2096a8db",
             "locator": {
               "kind": "symbol",
@@ -294,21 +320,11 @@
       ]
     },
     "9": {
-      "note": "The shaped-bound table, which carries the settings answer's ceiling.\n\nAnchor: `SHAPED_TOOL_BOUNDS`",
+      "note": "The shaped-bound table, which carries the settings answer's ceiling.",
       "targets": [
         {
           "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-            "content": "sha256:3928dc7286631ed6f0f447d9c406201da902895761c897cff651fee3db69dc5f",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
             "content": "sha256:073375c21901f5c3efc5913b9f4c23941b7904ce8c52cad35aba88ac01eda632",
             "locator": {
               "kind": "symbol",

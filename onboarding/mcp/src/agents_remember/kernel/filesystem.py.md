@@ -55,13 +55,11 @@ Same-repository closeout code and tests are the direct evidence for this helper.
 
 
 
-- Worktree closeout planning uses the helper to filter changed worktree and committed paths, to plan sidecar refreshes over working and committed-range paths, and to recompute the changed entity fingerprints in the onboarding catalog. Source caption: `onboarding_refresh_plan_for_context` `refresh_entity_fingerprints_for_context` `refresh_onboarding_metadata_for_context` [1]
+- Worktree closeout planning uses the helper to filter changed worktree and committed paths, to plan sidecar refreshes over working and committed-range paths, and to recompute the changed entity fingerprints in the onboarding catalog. [1]
 
 
 
 
-> Retained earlier card wording; superseded by the current account above:
-> - `c-09-git-worktree-manager` skill closeout planning uses the helper to filter changed worktree and committed paths, to plan sidecar refreshes over working and committed-range paths, and to recompute the changed entity fingerprints in the onboarding catalog. [1]
 
 
 - The missing-onboarding pre-commit check uses the helper for sidecar existence and inline source reads. [2]

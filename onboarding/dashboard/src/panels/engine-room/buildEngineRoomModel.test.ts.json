@@ -80,16 +80,15 @@
       ]
     },
     "5": {
-      "note": "EngineProcessNode is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface EngineProcessNode {\"",
+      "note": "EngineProcessNode is the generated projection contract consumed by this surface.",
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:76e4fbb0eebd8fbc52351462221a1e750d6f4a16012323e44a5facfd2407b8bf",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "content": "sha256:8ad3ab8e99817b1e4b23b7b6259fc08e02b0810861d5f984fa3479bfc83258a5",
             "locator": {
-              "end": 188,
-              "kind": "line_range",
-              "start": 188
+              "kind": "symbol",
+              "name": "EngineProcessNode"
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -98,38 +97,32 @@
       ]
     },
     "6": {
-      "note": "LifecycleProjection is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface LifecycleProjection {\"",
+      "note": "`buildEngineRoomModel` takes one `EngineProcessNode[]` argument; the surface consumes no separate lifecycle projection type.",
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:9c97a2a1316b26d14fd7d2d975e85561044602a8a023706230bc96b06ab704f1",
+            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "content": "sha256:4790a1fc8280785656b495a24bbd1981e77e612a7ea4a0016c05f37047defa44",
             "locator": {
-              "end": 365,
+              "end": 26,
               "kind": "line_range",
-              "start": 365
+              "start": 26
             },
-            "path": "dashboard/src/types/projection.ts"
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "ProviderNode is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface ProviderNode {\"",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "blob": "96aec8b27873ce7787e5ed066e0b68e34d739955",
+            "content": "sha256:1d03280a36d4ca44b376796d7f3cf4a6c79f75b8e0e3fff72470dd82cacfc69c",
             "locator": {
-              "end": 403,
+              "end": 4,
               "kind": "line_range",
-              "start": 403
-            },
-            "path": "dashboard/src/types/projection.ts"
+              "start": 3
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },

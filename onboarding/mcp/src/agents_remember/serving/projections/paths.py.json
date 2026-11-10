@@ -90,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed196c9e349d46271a38ab6a543fb27f6a21c07a",
+            "blob": "66849a0b573249f620bfbe8d70538cd8ae11cd38",
             "content": "sha256:7e36ee1c3550c28c52b2b70c6efc634fc591a11d6d742d00595ceac075b300c9",
             "locator": {
               "end": 199,
@@ -104,16 +104,16 @@
       ]
     },
     "6": {
-      "note": "create_server invokes the application startup owner; it does not install an ambient lifecycle.  Anchor: server startup call",
+      "note": "create_server invokes the application startup owner; it does not install an ambient lifecycle. Anchor: server startup call",
       "targets": [
         {
           "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
-            "content": "sha256:e2669e785e5838f22e405f93315bbeabb44c6d22606a145d7c021a074a2d2f31",
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:db410a3e3c4b61c729360d2ae1219b7a4171297870328a99a74ffe21e4dcc7ba",
             "locator": {
-              "end": 206,
+              "end": 302,
               "kind": "line_range",
-              "start": 200
+              "start": 293
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

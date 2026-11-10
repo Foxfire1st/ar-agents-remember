@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Tests route overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -34,8 +34,8 @@ and `PassingHookTests`/`FailingHookTests`/`UnrunnableHookTests` drive the check 
   before the move, integration trusts a commit carrying the fact and checks one without it, and a failing
   candidate without a fact never moves the master line.
 - **Answer and texts.** `AnswerAndTextTests` keeps the answer to result, failing step and log path. Its text case
-  reads `closeout_texts()`: the canonical `w-02-light-task-workflow/workflows/closeout.md` and its single packaged
-  serving copy. The generator check invokes `scripts/sync-skills.py --check` with the current Python interpreter.
+  reads the `publish_tree_commit` docstring and the head of `.githooks/pre-commit`, neither of which may state the
+  old hook-skipping behavior. The generator check invokes `scripts/sync-skills.py --check` with the current Python interpreter.
   The cases also protect the no-skip policy, commit-tree census and baseline-adoption check.
 - **Round-one findings.** `RoundOneFindingTests` covers closed pipe readers, a group-escaped holder that ignores
   `TERM`, a tracked rewrite after the pass, a descendant that holds the pipe, whole streaming of hook output with
@@ -60,12 +60,12 @@ decide the outcome rather than a mocked runner.
 - StashRecoveryTests: qualified source contract — `StashRecoveryTests` in mcp/tests/test_landing_commit_check.py. [4]
 - TrailerFactTests: qualified source contract — `TrailerFactTests` in mcp/tests/test_landing_commit_check.py. [5]
 
-- RoundOneFindingTests: qualified source contract — `RoundOneFindingTests` in mcp/tests/test_landing_commit_check.py. [6]
+- `RoundOneFindingTests` guards the sealed round-1 findings F01/F02/F08/F10/F12: byte-level guards, group kill, unrunnable prepared hooks, elapsed logs and bounded output. [6]
 
 - Remaining-route fixtures protect exact-tree ordinary/direct publication refusal and pass facts — `RemainingRouteProductionTests` in mcp/tests/test_landing_commit_check.py. [7]
 
-- AnswerAndTextTests owns the skill-sync subprocess using the current interpreter; this is source attribution, not execution. [8]
+- AnswerAndTextTests owns the skill-sync check subprocess (`scripts/sync-skills.py --check`) run with the current interpreter; this is source attribution, not execution. [8]
 
-- The landing text case reads the transferred w-02 closeout workflow through the shared canonical/package helper, and its generator check uses the current interpreter; this is source attribution, not a fresh run. [9]
+- The landing text case reads the publication docstring and the pre-commit hook head, and its generator check runs the skill-sync check for every generated copy with the current interpreter; this is source attribution, not a fresh run. [9]
 
 

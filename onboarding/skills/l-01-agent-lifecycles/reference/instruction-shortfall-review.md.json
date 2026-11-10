@@ -1,0 +1,93 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/instruction-shortfall-review.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The review runs only on request, with a named window and seven parallel sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fe2957059c4c48dd10b13cd983ccff8b2e60045",
+            "content": "sha256:7dd228ab7c5e7179fc663e5d9c98a41d6f26f16d07d6a4ee2c51b21fb20c1226",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shortfall kinds and the three-cases-across-two-leaves-or-roles threshold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fe2957059c4c48dd10b13cd983ccff8b2e60045",
+            "content": "sha256:e24146156e1ba4b26755969e232d7a0123bcc041e5f028f47f5e5102f301d2ba",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Each theme records whether its fix reached compiled first messages, and themes are ranked by visible cost.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fe2957059c4c48dd10b13cd983ccff8b2e60045",
+            "content": "sha256:009add96b21a088d2915c65262e70e55191a005d0aa244c1501c1eb2606060f2",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The report and sidecar evidence, and the read-only boundary.\n\nAnchor: `role_message`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fe2957059c4c48dd10b13cd983ccff8b2e60045",
+            "content": "sha256:f59131b981370f5aa6235bc9b381e32526bbc014c47072099a2ee00f6f6a5b50",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Investigator role points here before reviewing a named instruction shortfall.\n\nAnchor: `instruction-shortfall-review.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6b9ea88e1d9cce0a3389bf96bd60791329b9aca",
+            "content": "sha256:8c62b18757d19287f52e995e6b9036407d02fbf608d1be9d8090466a23214be9",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -11,9 +11,8 @@ agent-driven and starts with one call after the MCP server is installed and regi
 harness: `role_start(role="bootstrap", request_id="<fresh UUID>")` prepares a missing coordinator
 scaffold and host, verifies the plug-in and starts one instructed Bootstrap seat whose dashboard
 chat continues setup. The page names no starter package, renderer or skill folder, says the MCP
-server serves canonical skills from its package as resources, keeps optional harness-native
-instruction and hook files under the per-harness install guides, gives the source-built wheel
-registration command with an absolute MCP settings path, and states that the authored settings
+server serves canonical skills from its package as resources, points registration at the common
+example adapted per harness with the absolute user-config settings path, and states that the authored settings
 authority is separate from the user settings file that records the harness choice for each role. It
 closes by saying setup authors no onboarding or knowledge and starts no other role: at exit it tells
 the developer how to start an Architect, which organises optional onboarding and the knowledge
@@ -26,8 +25,7 @@ absolute settings path, restart the harness if it needs that to discover the con
 call from your own chat — `role_start(role="bootstrap", request_id="<fresh UUID>")` — whose answer
 names the Bootstrap seat and the dashboard chat where setup continues. The page says no skill folder,
 starter package or renderer is required, because the MCP server serves canonical skills from its
-package as resources, and the optional harness-native instruction or hook file carries only the
-first-action directive. In that dashboard conversation Bootstrap previews settings, chooses new or
+package as resources, and registration uses the common example from the install guide. In that dashboard conversation Bootstrap previews settings, chooses new or
 existing memory, initializes or reads the external memory scaffold, reports an existing user settings
 file instead of overwriting it, and at exit tells the developer to start an Architect, which organizes
 optional onboarding and the knowledge foundation as a regular task, master or sprint. Nothing provider-side starts: the two former search providers are retired, and setup begins no provider indexing or watcher.

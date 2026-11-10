@@ -308,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:d2414fde98b5fac3676d9457812d28a6f36aa1735bd880339a492fb99d6c8b64",
             "locator": {
               "kind": "symbol",
@@ -456,22 +456,11 @@
       ]
     },
     "18": {
-      "note": "The HTTP handler that calls the body read: 503 before the first projection, 404 when the read returns `None`.\n\nAnchor: `_task_document_response`",
+      "note": "The HTTP handler that calls the body read: 503 before the first projection, 404 when the read returns `None`.",
       "targets": [
         {
           "anchor": {
-            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
-            "content": "sha256:f439b773bf39e580bd8927aa89a82039a5ea056a0b58f680dbd48b82ae7d662b",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/serving/_app_routes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
             "content": "sha256:185e3a48375bc5974a9dfaeffff14b387f9632b99a55cd42b637fc719977748c",
             "locator": {
               "kind": "symbol",
@@ -846,7 +835,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:0f8da6cf1800ebe9d9fddec24e4a2847ae52c5c26c23067dc0ffb8302d2e405c",
             "locator": {
               "kind": "symbol",
@@ -858,7 +847,7 @@
         },
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:1f35917c2a19b29f3f3955f0c52b501e5891932257b5dcf30f54beef87e97471",
             "locator": {
               "end": 139,
@@ -871,7 +860,7 @@
         },
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:33f48f246c2109e91baf88f5b616f534fe229ad8dc1d3e318be51af05935a3c7",
             "locator": {
               "end": 143,

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
+        "blob": "cabc32e07d3729616a174486c43624dd58bcbb7b",
         "content": "sha256:8231e420630317f165fea1146ac7cb9f724e0579c8428f36d48c43eb9e2af86b",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
+        "blob": "cabc32e07d3729616a174486c43624dd58bcbb7b",
         "content": "sha256:8231e420630317f165fea1146ac7cb9f724e0579c8428f36d48c43eb9e2af86b",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
+        "blob": "cabc32e07d3729616a174486c43624dd58bcbb7b",
         "content": "sha256:40a62f1c987b26223a1cbf9bcd1fc4e67b2dfba0f7716dc3c107f6b2a9d2231d",
         "locator": {
           "kind": "symbol",
@@ -60,10 +60,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
-            "content": "sha256:b373e25f6cc968bf705c800070fb810233eee04c7ed9a7f999cd479feef86bb6",
+            "blob": "cabc32e07d3729616a174486c43624dd58bcbb7b",
+            "content": "sha256:2c8f4376e717707dd6ed5cc8f86ce200e99865cd45ef039bdca8c79c0d2e5f86",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "PaseoRuntimeTests"
             }
           },
           "kind": "test"
@@ -75,33 +76,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
-            "content": "sha256:41e1127542f894ff3b6a9dec2153ed0b93846c4547115449d35a280aa9b0b011",
+            "blob": "cabc32e07d3729616a174486c43624dd58bcbb7b",
+            "content": "sha256:606b1bf54d5745fcb7088bc909065ddfee5403da1f4b64edd5e95d58aec40799",
             "locator": {
               "kind": "symbol",
-              "name": "PaseoRuntimeTests"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
-            "content": "sha256:38d2150088ce4db950d4017d0aef1ec4c29e13f3fec00d28643d7487883640b9",
-            "locator": {
-              "end": 260,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
-            "content": "sha256:b373e25f6cc968bf705c800070fb810233eee04c7ed9a7f999cd479feef86bb6",
-            "locator": {
-              "kind": "file"
+              "name": "test_reload_or_untouched_follows_what_changed"
             }
           },
           "kind": "test"

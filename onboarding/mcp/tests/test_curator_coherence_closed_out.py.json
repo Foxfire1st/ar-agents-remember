@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "66bac1d2656394169414a2c104e800a11b4064b2",
-        "content": "sha256:0656045846a2dbe92f1ceee595fd92d0ffeec6500803557fb0e54fdd3053d9ec",
+        "blob": "f39eaaf8ff33d0bc9b518526621852da00d48253",
+        "content": "sha256:691c6ee3be6ee33ca222794dfa8ed0750579f3ed60e6c894353040184c823415",
         "locator": {
           "kind": "symbol",
           "name": "test_status_and_validate_answer_closed_out_after_the_closeout"
@@ -22,12 +22,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Completed closeout returns its two commits and coherence digest.",
+      "note": "For both status and validate, a completed closeout answers `closed-out` with its code and memory-content commits and the coherence record digest, without comparing the live candidate.",
       "targets": [
         {
           "anchor": {
-            "blob": "66bac1d2656394169414a2c104e800a11b4064b2",
-            "content": "sha256:0656045846a2dbe92f1ceee595fd92d0ffeec6500803557fb0e54fdd3053d9ec",
+            "blob": "f39eaaf8ff33d0bc9b518526621852da00d48253",
+            "content": "sha256:691c6ee3be6ee33ca222794dfa8ed0750579f3ed60e6c894353040184c823415",
             "locator": {
               "kind": "symbol",
               "name": "test_status_and_validate_answer_closed_out_after_the_closeout"
@@ -42,11 +42,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66bac1d2656394169414a2c104e800a11b4064b2",
+            "blob": "f39eaaf8ff33d0bc9b518526621852da00d48253",
             "content": "sha256:aca1fddd80b07ca6c37fc3b7169ab38acdd8009ff386b8891b7d846397d6650d",
             "locator": {
               "kind": "symbol",
               "name": "test_a_completed_closeout_without_a_record_answers_absent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Before the closeout, status and validate answer current or valid without code or memory commit fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f39eaaf8ff33d0bc9b518526621852da00d48253",
+            "content": "sha256:c5e550b04a49e72d97e0ca608d9c7c9b2ed152926e51d97e438964f313e74568",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_status_before_the_closeout_is_not_closed_out"
             }
           },
           "kind": "test"

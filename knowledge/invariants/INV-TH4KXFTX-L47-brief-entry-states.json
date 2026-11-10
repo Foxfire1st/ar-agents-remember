@@ -1,5 +1,11 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "The change-set control supplies brief typed states while the shared disclosure retains the owner's full explanation, allowing the honest-entry family to stay compact without losing refusal or recovery information."
+  },
   "applicability": "The Intent review and change-set controls in a leaf task document's change-set bar.",
   "conditions": [
     "A control's read is loading, unrecorded, unmeasured, known-empty, refused, unreadable or unanswered."

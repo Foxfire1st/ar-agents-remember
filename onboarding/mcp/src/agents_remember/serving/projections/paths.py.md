@@ -67,4 +67,4 @@ between the two sides (North-Star #5).
 
 - The application startup writer installs workspace-river ToolEventWriter, using observer_root imported from the observer facade rather than this serving module.  Anchor: startup import and writer initialization [1]
 
-- create_server invokes the application startup owner; it does not install an ambient lifecycle.  Anchor: server startup call [6]
+- create_server invokes the application startup owner; it does not install an ambient lifecycle. Anchor: server startup call [6]

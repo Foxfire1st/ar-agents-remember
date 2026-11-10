@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[governing route overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -57,19 +57,19 @@ No configured Domain Documentation source applies; queue doctrine is repository-
 
 No external repository owns this queue.
 
-## 260815-DAG-L4 Integration-Authority Impact
+## Integration-Authority Boundary
 
-L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+Task-derived integration refs are mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
-## 260821-CLIVE Status/Rebuild Facade
+## Status/Rebuild Facade
 
-The command processor is reduced to sprint-scoped `status` and idempotent `rebuild`, plus
+The command processor offers sprint-scoped `status` and idempotent `rebuild`, plus
 `require_first_ready_generation` for the short claim admission fence. That fence runs while the
-caller holds the task/door CAS and requires the exact first ready waiting generation. Declare,
-grade, claim, certify, block, release, abort, and integration-completion mutations are removed. Task
+caller holds the task/door CAS and requires the exact first ready waiting generation. There is no
+declare, grade, claim, certify, block, release, abort, or integration-completion mutation. Task
 authoring is never gated by this facade.
 
-## IAS Activation Projection Boundary
+## Activation Projection Boundary
 
 The facade remains status/rebuild plus first-ready admission. For graph-less atomic work,
 projection helpers derive active/reconciling/paused/vacant waiting reasons from the exact selector
@@ -77,9 +77,8 @@ snapshot. Contract presence is not a lane owner, selector corruption makes only 
 projection invalid-empty, and no queue action mutates activation or operation lifecycle.
 
 
-## PDLS Reconciliation
+## Projection Access
 
-Projection access now recognizes the exact sprint planning actor and commanded manager set; queue authorization no longer subordinates task authoring or infers managers from unrelated topology.
+Projection access recognizes the exact sprint planning actors — the sprint document's `architect` or `orchestrator` — and the commanded manager set; any other caller is refused with `closeout-projection-caller-refused`. Queue authorization does not subordinate task authoring or infer managers from unrelated topology.
 
-This change preserves the file's existing authority boundary. No threshold exception, silent
-fallback, or compatibility reader was added.
+- The sprint planning actors are the sprint document's architect and orchestrator. [3]

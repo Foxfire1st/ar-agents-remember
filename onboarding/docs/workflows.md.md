@@ -28,15 +28,19 @@ implementation, update onboarding live per completed plan section, and run the c
 memory's `system/tools.md` lists.
 
 At `decide` the architect picks one of three modes. A research-only exit answers and changes no
-code — no worktree, no task file, no closeout. A durable task takes the minimal
-`w-02-light-task-workflow` artifact under `ar-coordination/tasks/<repo>/<task-slug>/task.md`, whose
-checklist is the live execution state. Work that outgrows one page escalates to a master plus flat,
-numbered sub-task series: one wrapper folder, one master task file, one shared worktree, a commit
-per slice and a single release at the end. [3]
+code — no worktree, no task file, no closeout. A durable task takes the minimal leaf-task
+artifact (`skills/l-01-agent-lifecycles/templates/leaf-task.md`), or the full form under
+`ar-coordination/tasks/<repo>/<task-slug>/task.md`, whose checklist is the live execution state.
+Work that outgrows one page escalates to a master plus light sub-task series: a wrapper task folder
+with a canonical master JSON document and numbered leaf JSON documents rendered to Markdown;
+ordinary leaves own paired code and memory worktree enclosures, an explicit direct-execution grant
+can select the master checkout instead, and each slice keeps its own approval and landing gates. [3]
 
 Worktree-backed tasks follow the ladder task doc (approved) → branch (intent) → worktree (only what
-is built), with a `contract.md` beside the task file, and a series runs in one shared worktree for
-the whole series. Closeout and commit approval are separate from implementation approval, and the
+is built), created by the `worktree_start` tool. The canonical contract is `series-contract.md`, at
+the master task folder or at `enclosures/<leaf>/` for a leaf enclosure; ordinary leaves have their
+own paired code and memory worktrees, and a direct-execution grant binds a leaf to the master
+checkout instead. Closeout and commit approval are separate from implementation approval, and the
 landing flow — direct or pull-request gated — is deferred to the repository's
 `system/task-publication.md` when present, together with the `landing.workflow` setting that decides
 which of the two the repository runs. [4]
@@ -53,8 +57,11 @@ Historical source account (detached from live reference 2; docs/workflows.md blo
 - The source lists the five shared-discipline rules.
 
 - Shared Discipline now puts current card, sidecar and knowledge-record curation against approved changes in the leaf memory worktree before publication, alongside context, drift, implementation approval and configured checks. Knowledge in a Leaf separately requires fresh full quality/worklist/gate evidence and validated coherence without granting Git approval.
+
 - The source names the three build modes and what each produces. [3]
+
 - The source states the worktree ladder and defers landing to `system/task-publication.md` with the `landing.workflow` setting. [4]
+
 - The source's closing table maps situations to build modes. [5]
 
-- Shared Discipline now puts current card, sidecar and knowledge-record curation against approved changes in the leaf memory worktree before publication, alongside context, drift, implementation approval and configured checks. Knowledge in a Leaf separately requires fresh full quality/worklist/gate evidence and validated coherence without granting Git approval. [2]
+- Shared Discipline puts current card, sidecar and knowledge-record curation against approved changes in the leaf memory worktree before publication, alongside context, drift, implementation approval and configured checks. Knowledge in a Leaf separately requires fresh full quality/worklist/gate evidence and validated coherence without granting Git approval. [2]

@@ -20,8 +20,10 @@ Command examples, retained fixtures and documented test coverage do not establis
 
 ## Evidence
 
-- Development ownership and CLI trial, tooling-check and measurement boundaries. \[1] [1]
+- Development ownership and CLI trial, tooling-check and measurement boundaries. [1]
+
 - Documented non-GPT whole-file versus GPT selected-entry auth observations and their limits. \[2] [2]
 - Selected-entry canonicalization and single-use whole-file/selected-subject comparison implementation. \[3] [3]
 - Case preflight, native quality intake and before/after eval attribution preserve the product whole-tree validators. \[4] [4]
-- Usage documentation distinguishes command hooks and focused tests from measurements, and census/regrade from actor reruns. \[5] [5]
+
+- Usage documentation distinguishes command hooks and focused tests from measurements, and census/regrade from actor reruns. [5]

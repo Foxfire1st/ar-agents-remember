@@ -4,8 +4,20 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Worktree closeout planning uses the helper to filter changed worktree and committed paths, to plan sidecar refreshes over working and committed-range paths, and to recompute the changed entity fingerprints in the onboarding catalog. Source caption: `onboarding_refresh_plan_for_context` `refresh_entity_fingerprints_for_context` `refresh_onboarding_metadata_for_context`",
+      "note": "Worktree closeout planning uses the helper to filter changed worktree and committed paths, to plan sidecar refreshes over working and committed-range paths, and to recompute the changed entity fingerprints in the onboarding catalog.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:f20b3ec96b013658e5c4dc9e3c36f97ae92d98afa975af2b4ad7e0305754dbbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_refresh_plan_for_context"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
@@ -42,19 +54,6 @@
               "start": 949
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
-            "locator": {
-              "end": 775,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },
           "kind": "code"
         }

@@ -7,10 +7,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1577cc0fdabb3c0a14229e230b6b5670d5f37077",
-            "content": "sha256:9a893d9b61b6ca304e4b9196bf92e2433e0b4963a340d00995761c671dcc24d3",
+            "blob": "f1b2b3de1a638425b411dc78e0caa40ef3c8559f",
+            "content": "sha256:c5e7ab9a1b161ef4d4c72904b1139dcd5a5b464b49ec3c6ee636ab992db27e7b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "fragment_one_surfaces"
             }
           },
           "kind": "test"

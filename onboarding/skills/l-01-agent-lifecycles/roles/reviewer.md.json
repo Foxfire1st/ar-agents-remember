@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-        "content": "sha256:645812bbeb8e8200eee7cefe24883c419f8d92206cdf1f4751b5486f17720fa8",
+        "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+        "content": "sha256:411f521fe0a2ff6b5d7a0b2922cb1328de40ffbf1b4599ac7f6050ebab2f7b23",
         "locator": {
-          "end": 206,
+          "end": 144,
           "kind": "line_range",
-          "start": 190
+          "start": 140
         }
       },
       "id": "RLZ-165F81",
@@ -18,17 +18,17 @@
         "handoffEntry": "L116-W3-wording-oracle",
         "leaf": "260928-MIK-L116"
       },
-      "rationale": "The actual Reviewer stage section carries whole-verdict completion, own-slip repair, the protected stops/last-line account and authority-proven record-only handling; the prohibition list is not that construct.",
+      "rationale": "The Reviewer's stage facets sit in 'Organise and continue the assigned work': the stage ends with a recorded verdict covering the whole requirement, own-slip repair and the stops, and the last-line rule. The pointer to the record-only recheck in the review operation is not here; it sits in 'Report problems without expanding review' (reviewer.md:132), where the wording guard looks for it.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-        "content": "sha256:e41fafc8b37c5fbba5c971104e2036dcedb4e59cfeec8b6dc49db480c0a4190e",
+        "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+        "content": "sha256:9bce3e8b47b96e049dad37d042804cffffcbfc7ba8f2c3804c05ce91301225e5",
         "locator": {
-          "end": 218,
+          "end": 152,
           "kind": "line_range",
-          "start": 216
+          "start": 152
         }
       },
       "id": "RLZ-AHY1E5",
@@ -42,12 +42,12 @@
     },
     {
       "anchor": {
-        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-        "content": "sha256:9cdf0cb0253ce239318b566967690b3293390a447d4163b0479afdf091cacf5a",
+        "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+        "content": "sha256:75bdfd1e3392bb1485d7b16d3e2f9f098e4198177a4104b1dac2c20f566f78d5",
         "locator": {
-          "end": 14,
+          "end": 16,
           "kind": "line_range",
-          "start": 13
+          "start": 14
         }
       },
       "id": "RLZ-CG94JY",
@@ -56,17 +56,17 @@
         "handoffEntry": "L71-CURRENT242-W-19",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The canonical roles/reviewer.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
+      "rationale": "Lines 14-16 of the canonical roles/reviewer.md carry the Reviewer's first read of the rendered task document and canonical JSON and its tool binding on agents-remember-task; this canonical file is the source the generator propagates to the packaged runtime tree.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-        "content": "sha256:4f4b17e51a3b10b84fe3b50da827ba57928eb6ac61c423e0360597c162e6cef2",
+        "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+        "content": "sha256:c5303f1940c60fc47d8f0a07ff08d4d9488470b597b43580950cc05aafc0ba67",
         "locator": {
-          "end": 126,
+          "end": 102,
           "kind": "line_range",
-          "start": 87
+          "start": 75
         }
       },
       "id": "RLZ-JH0BAQ",
@@ -75,17 +75,17 @@
         "handoffEntry": "R99-1-direct-loop",
         "leaf": "260928-MIK-L99"
       },
-      "rationale": "Owns independent verdict delivery to Worker and Curator, memory findings, action evidence and the closeout-ready notice.",
+      "rationale": "The Reviewer writes and records its verdict and follows the review operation's leaf verdict handover: the verdict straight to the Worker, the passed freeze and code-PASS verdict straight to the Curator once it exists, memory findings returned to the Curator, and the ready-for-closeout notice to the Manager after both pass.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-        "content": "sha256:9cdf0cb0253ce239318b566967690b3293390a447d4163b0479afdf091cacf5a",
+        "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+        "content": "sha256:75bdfd1e3392bb1485d7b16d3e2f9f098e4198177a4104b1dac2c20f566f78d5",
         "locator": {
-          "end": 14,
+          "end": 16,
           "kind": "line_range",
-          "start": 13
+          "start": 14
         }
       },
       "id": "RLZ-PC6PG7",
@@ -99,8 +99,8 @@
     },
     {
       "anchor": {
-        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-        "content": "sha256:7243360414c46e081ffc5bb33d3fb9eec4031b82f97bff0f7c9304b888558cba",
+        "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+        "content": "sha256:3cc934db3bdcd4610e1637e63bfdb359aa33caf8ddd1df5a3834cb9ff95fdb77",
         "locator": {
           "kind": "file"
         }
@@ -116,12 +116,12 @@
     },
     {
       "anchor": {
-        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-        "content": "sha256:2dbd11202571d80781d9a5f8866e2e82d509699d6d81446284a59dd36f2f47ff",
+        "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+        "content": "sha256:cd017a728ddfaa3a025198a2bd8fcd67bd9cda71438a7dbbf14488fb49da1307",
         "locator": {
-          "end": 124,
+          "end": 102,
           "kind": "line_range",
-          "start": 120
+          "start": 102
         }
       },
       "id": "RLZ-QBXQTV",
@@ -130,17 +130,17 @@
         "handoffEntry": "MIK-R70@v1 rule 4",
         "leaf": "260928-MIK-L70"
       },
-      "rationale": "The reviewer role's closing sentences state that terminal/finalizer truth attests only that the turn ended, not acceptance.",
+      "rationale": "The Reviewer's 'Handover and other seats' section closes by stating that a terminal or finalizer result attests only that the turn ended; gate acceptance stays with the Manager.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-        "content": "sha256:9100dd9f9032e5e530a035fc3432e10f34aeeb41dc03f560e7380ca46f583345",
+        "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+        "content": "sha256:8a99b34d6915bd56c76579e50d87820d41943481067246e24591a2bb097e7221",
         "locator": {
-          "end": 95,
+          "end": 136,
           "kind": "line_range",
-          "start": 95
+          "start": 134
         }
       },
       "id": "RLZ-R22534",
@@ -154,8 +154,8 @@
     },
     {
       "anchor": {
-        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-        "content": "sha256:7243360414c46e081ffc5bb33d3fb9eec4031b82f97bff0f7c9304b888558cba",
+        "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+        "content": "sha256:3cc934db3bdcd4610e1637e63bfdb359aa33caf8ddd1df5a3834cb9ff95fdb77",
         "locator": {
           "kind": "file"
         }
@@ -172,16 +172,16 @@
   ],
   "references": {
     "1": {
-      "note": "Every exact requirement attempt and candidate receives a separate independent accepted/rejected record.\n\nAnchor: \"Adjudicate every requirement revision separately\"",
+      "note": "Every exact requirement attempt and candidate receives a separate independent accepted/rejected record.",
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:2ac074a6324aa5874ca21f3989a7aca619112418d86aa5808e979eced3aa25eb",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:cf142a867815ef3ee89223ac52a09f657d439c8f670980abec71f134a2fc98eb",
             "locator": {
-              "end": 111,
+              "end": 74,
               "kind": "line_range",
-              "start": 108
+              "start": 73
             }
           },
           "kind": "code"
@@ -193,12 +193,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:932d78d8a601259ac0243380be58f3a910dbad430082f84d1ad5542b6a42272e",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:332e7c01e55327f3f472bb1dc1812c6d38391401c493fd1f17e33989998128de",
             "locator": {
-              "end": 16,
+              "end": 18,
               "kind": "line_range",
-              "start": 13
+              "start": 14
             }
           },
           "kind": "code"
@@ -206,16 +206,16 @@
       ]
     },
     "11": {
-      "note": "Reviewer requires the dispatched exact stable IDs and versions, durable corpus ruling, exact candidate and Worker attempts, and its bound catalogs and repository tools rather than choosing a rubric on the spot.",
+      "note": "Reviewer requires the dispatched exact stable IDs and versions, the durable approval record, exact candidate and Worker attempts, and its bound catalogs and repository tools rather than choosing a rubric on the spot.",
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:ba1b1a8463eb343052c7e3ee06e62444de10650506fb67846118eed190067695",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:5433b91f716c0f1986aa7c8347d8ab50f80f15e437b505ea3150448b7185da6c",
             "locator": {
-              "end": 61,
+              "end": 37,
               "kind": "line_range",
-              "start": 44
+              "start": 33
             }
           },
           "kind": "code"
@@ -223,16 +223,16 @@
       ]
     },
     "12": {
-      "note": "Reviewer inspects every changed file of the complete candidate diff and reads the step-3 baseline detail at that step; a subset never replaces the Curator's complete authoring memory-quality operation.",
+      "note": "Reviewer inspects every changed file of the complete candidate diff and reads the baseline detail at step 4; a subset never replaces the Curator's complete authoring memory-quality operation.",
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:e0c5eb248c26443bae64df3c133ec553c0da28d6f389be94c22cdf9cc12c35c6",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:dae7a8a2593f005648b4f30cd2b4ef62bc920fd59241eb17b2c020a1b7a2c292",
             "locator": {
-              "end": 78,
+              "end": 71,
               "kind": "line_range",
-              "start": 69
+              "start": 68
             }
           },
           "kind": "code"
@@ -240,16 +240,16 @@
       ]
     },
     "13": {
-      "note": "Baseline is sealed under the step-3 instructions; fix verification reuses that sealed evidence and only listed IDs without a new-lens or whole-seam rediscovery mandate.",
+      "note": "Baseline is sealed under the step-4 baseline detail; fix verification reuses that sealed evidence and only listed IDs without a new-lens or whole-seam rediscovery mandate.",
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:a4d4c7e8371cc1b3b0f486c9809721cdfe1bd3bfc3f67d30902f3523bf31fd65",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:55bb9c485826644337caf548b44bd5795b41936b60150a927b8e74066d17a50e",
             "locator": {
-              "end": 81,
+              "end": 72,
               "kind": "line_range",
-              "start": 79
+              "start": 70
             }
           },
           "kind": "code"
@@ -261,12 +261,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:fc7c89abf0caaf1c71a406cb61fa85bc5927a74e92c87fd66d9c4c2337d386a8",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:cf142a867815ef3ee89223ac52a09f657d439c8f670980abec71f134a2fc98eb",
             "locator": {
-              "end": 85,
+              "end": 74,
               "kind": "line_range",
-              "start": 82
+              "start": 73
             }
           },
           "kind": "code"
@@ -278,12 +278,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:5ef26f69bb29d9cc5b0e491d364db663562b6582fa5be88820a948e592ee221a",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:e635657a39a52958496c7cb10c95ce16b846b3ebdde1a32f9dc447b6147d1423",
             "locator": {
-              "end": 113,
+              "end": 94,
               "kind": "line_range",
-              "start": 97
+              "start": 89
             }
           },
           "kind": "code"
@@ -291,18 +291,18 @@
       ]
     },
     "16": {
-      "note": "The baseline steps bind the catalogs, all three lenses and the exploratory mandate, require evidence of the requirement's own class, and hold that a recorded weakness or a document's staleness outside the task's scope is never a finding.",
+      "note": "The baseline detail binds the catalogs, the three lenses and the exploratory mandate, and holds that a recorded weakness or a document's staleness is never a finding, while an unrepaired in-scope weakness is.",
       "targets": [
         {
           "anchor": {
-            "blob": "acdc11f4c305feba661be10ff8499978b4877cc1",
-            "content": "sha256:6b65e897e4373fef42a68e4f8bb8db66c0e6ba571849e812ff3bdb36bf768310",
+            "blob": "0eb41ca41e71fe01629cea89a1b74f46f8dc7f9e",
+            "content": "sha256:08de0ac08202fc4ad82748e59c6e4c843c0b465114dbed60fd2928e1d8259db7",
             "locator": {
-              "end": 19,
+              "end": 26,
               "kind": "line_range",
-              "start": 10
+              "start": 11
             },
-            "path": "skills/l-01-agent-lifecycles/reference/reviewer-baseline-d301.md"
+            "path": "skills/l-01-agent-lifecycles/reference/review-baseline.md"
           },
           "kind": "code"
         }
@@ -313,13 +313,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:4d24bc63b7d995c31341c99a332799b3935b93aa8bb65cb15e0c6ff4a3340115",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:7c0dd38e30c539ade85749ce78f0b16d2e33d8459d20d8bd4680c15a501f4dce",
             "locator": {
-              "end": 166,
+              "end": 84,
               "kind": "line_range",
-              "start": 158
-            }
+              "start": 84
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:9e9944d63194f324901c323ea44e17de128c1ec91130b5f6db17f985d0bdda27",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
           "kind": "code"
         }
@@ -330,12 +344,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:e9664b62cad00251a2c54920169743a73021c3ad41aff15865a0af2e0e49b14c",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:9a3679ff1f4256818b52bbfdffe4b2f75b450cc34b0de2a1178d0d26e7c2fd2b",
             "locator": {
-              "end": 184,
+              "end": 130,
               "kind": "line_range",
-              "start": 179
+              "start": 130
             }
           },
           "kind": "code"
@@ -347,12 +361,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:6cc98f093574e054c268add5fb44883f4e945e0fd894a304518b358747f7ae7b",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:4f2f17ddbd2db73eac599a91725f176a4d0295861b0742c576b9ba16eecbaf28",
             "locator": {
-              "end": 195,
+              "end": 140,
               "kind": "line_range",
-              "start": 190
+              "start": 140
             }
           },
           "kind": "code"
@@ -364,12 +378,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "blob": "7901a9511eb661965a87ed68569e6aa6ddeeec59",
             "content": "sha256:7626ba80bd5da998b74d17dd724a798b3b59af5f9c42c97f8b4d56b9c918b552",
             "locator": {
-              "end": 55,
+              "end": 42,
               "kind": "line_range",
-              "start": 55
+              "start": 42
             },
             "path": "skills/l-01-agent-lifecycles/templates/verdict.md"
           },
@@ -382,29 +396,42 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:ffef43e8ed2ad63fe19504d74ed4cfb44eb3c4da6a9cfa9ee30bd246a6ced845",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:7f4e35050009885633fa89c4aa74e734636b400374d397a4111010cd2418bcdb",
             "locator": {
-              "end": 208,
+              "end": 142,
               "kind": "line_range",
-              "start": 196
+              "start": 142
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:41f9de9a713c3271a0ae2eb70ba8597c21c2113bd07cedd961f480ab970b0da2",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The reviewer emits its own curator hand-off list in the shared producer shape.\n\nAnchor: \"Your own curator hand-off list\"",
+      "note": "The reviewer emits its own curator hand-off list in the shared producer shape.",
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:7c76fe404a6ed73da027bb9f3296acfcade1280d427d5355e91aea6741cae9ef",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:002b3fa67a14cb1fb2224dc4ff823c9f96ec9141e47c020d5bee031e1c3edb7e",
             "locator": {
-              "end": 142,
+              "end": 93,
               "kind": "line_range",
-              "start": 135
+              "start": 93
             }
           },
           "kind": "code"
@@ -416,12 +443,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:8a6c6e964393cbbbe5653c41cd6ae1374733c30ce6206c0f9c74e1d0804a7a7f",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:a8b37c5577da29eb6667c8851b75226ade5feaa77060d1719b784fce45ae9ebc",
             "locator": {
-              "end": 42,
+              "end": 54,
               "kind": "line_range",
-              "start": 30
+              "start": 46
             }
           },
           "kind": "code"
@@ -433,24 +460,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:4d24bc63b7d995c31341c99a332799b3935b93aa8bb65cb15e0c6ff4a3340115",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:7c0dd38e30c539ade85749ce78f0b16d2e33d8459d20d8bd4680c15a501f4dce",
             "locator": {
-              "end": 166,
+              "end": 84,
               "kind": "line_range",
-              "start": 158
-            }
+              "start": 84
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:11742e4220c2f728a4d74d5b7a867426a9569424b636b52f6b96597d2b7433e6",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:9e9944d63194f324901c323ea44e17de128c1ec91130b5f6db17f985d0bdda27",
             "locator": {
-              "end": 184,
+              "end": 114,
               "kind": "line_range",
-              "start": 182
+              "start": 112
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:f74aef61c9ab9702980b7cf1c39bead164c8055b722f9e86c19ea8b2af543020",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 132
             }
           },
           "kind": "code"
@@ -462,24 +503,37 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:1578fcd9ece14bad5e4d31ebe4127bdc3dcad7f6fb29afc752b05466df31fe31",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:4f2f17ddbd2db73eac599a91725f176a4d0295861b0742c576b9ba16eecbaf28",
             "locator": {
-              "end": 208,
+              "end": 140,
               "kind": "line_range",
-              "start": 190
+              "start": 140
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:c4cbbc8b8e67712d490d99ed4a0b8cc70288161d346e546f0efb05327f2fa172",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:41f9de9a713c3271a0ae2eb70ba8597c21c2113bd07cedd961f480ab970b0da2",
             "locator": {
-              "end": 164,
+              "end": 91,
               "kind": "line_range",
-              "start": 160
+              "start": 89
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:570a5c719359d5010cba9cb540c1cbf16bd03fc7a0dd9e86810148d277d0c209",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
             }
           },
           "kind": "code"
@@ -491,37 +545,39 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:9847789dc2208a5088e875cc466cced23ae1a8719a9778bf2c357eeca7455d1a",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:affa535e1ec46c4be1fb90d5bae5a14274e36be1eb320509d7a89e2abd917c40",
             "locator": {
-              "end": 42,
+              "end": 48,
               "kind": "line_range",
-              "start": 32
+              "start": 48
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:641f73c56243b1980919e3d0d0ad0bfa6f27b6a735652ab36f988c6bbed6a9f5",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:5096aee15573cde31b4c8216091887fae42bcf581cb8508a366538b8f7a6529a",
             "locator": {
-              "end": 85,
+              "end": 67,
               "kind": "line_range",
-              "start": 84
-            }
+              "start": 64
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:3b253a096882760919d478d3729b655e0dfd0e709d676ad04b003d68a604b536",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:134469903097cc2218a6667bc9d2bd9d79a70b88044c7ad55c6d08bb4ead9a75",
             "locator": {
-              "end": 122,
+              "end": 116,
               "kind": "line_range",
-              "start": 114
-            }
+              "start": 116
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
           "kind": "code"
         }

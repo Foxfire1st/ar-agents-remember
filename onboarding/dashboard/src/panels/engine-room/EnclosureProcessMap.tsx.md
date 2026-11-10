@@ -134,7 +134,6 @@ is `aria-hidden` pure atmosphere, never state. Shell hooks are `process-map` and
 
 - The honest-motion gate. [7]
 - EngineProcessNode is the generated projection contract consumed by this surface. [8]
-- ProviderNode is the generated projection contract consumed by this surface. [9]
 
 
 

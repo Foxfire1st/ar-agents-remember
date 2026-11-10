@@ -193,7 +193,7 @@ No configured domain documentation could be checked.
 
 
 
-- The carrier-parity case that holds the retrieval instructions to the payload's real field spellings. [42]
+- The carrier-parity case that holds the retrieval instructions to the answer's real field spellings. [42]
 
 
 

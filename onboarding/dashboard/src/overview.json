@@ -8,10 +8,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "VIEWS"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -78,10 +79,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:daaaf9f80d95ac50acc42b4097c5fcc9293b51a91e135d7b45f3ae87ee7e947f",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "content": "sha256:3392bfcc22276f192aed9fa84c970db0395da4b0b61a2f84855546c3b833b504",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "Metrics"
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -157,12 +159,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
-              "end": 282,
+              "end": 292,
               "kind": "line_range",
-              "start": 253
+              "start": 263
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -170,12 +172,12 @@
         },
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:516e1efcab915cbb3d91c8d2699f5aa34c47dd203545c1688e71b29b0b6880d1",
             "locator": {
-              "end": 293,
+              "end": 303,
               "kind": "line_range",
-              "start": 264
+              "start": 274
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -184,16 +186,16 @@
       ]
     },
     "17": {
-      "note": "The fixture supplies a meaningful revision for the sample operation.  Anchor: \"\\\"meaningfulRevision\\\": 1,\"",
+      "note": "The fixture supplies a meaningful revision for the sample operation.\n\nAnchor: `meaningfulRevision`",
       "targets": [
         {
           "anchor": {
-            "blob": "40e0d9e4a1a7dcf17a7264a394299e3ee3b020d1",
-            "content": "sha256:c3a793e90b55340a7a8e14448885f302b3921b243cc63d5669a6c779903dc7bc",
+            "blob": "9b8a418329ea075dc4649d2cc2c5317cf2871254",
+            "content": "sha256:7cb94c53a35ca6b3b3e5beae9ada33afec15c308a60ee91655f97dae7eb83208",
             "locator": {
-              "end": 1308,
+              "end": 689,
               "kind": "line_range",
-              "start": 1307
+              "start": 689
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -206,10 +208,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:ee59bf32cd91e8947c89a98d01bb5870d522a6f8a849945813e9bf77551d943c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "shellFlags"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -229,25 +232,16 @@
       ]
     },
     "19": {
-      "note": "ReviewMain forwards task-context or named-subject targets to ReviewSurface; its retained comparison overlay separately mounts ChangeSetViewer.",
+      "note": "ReviewMain forwards task-context or named-subject targets to ReviewSurface; its retained comparison overlay separately mounts ChangeSetViewer.\n\nAnchor: `ReviewSurface`",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
-            "content": "sha256:da4915cfff8d499a9702bb95735d546d1a905086e7c6763bb5571e5e34568cfb",
+            "content": "sha256:9c898e23808c604be33f2c071b32853c61789e1eb88b9f826b62c46c105aa1f0",
             "locator": {
-              "kind": "file"
+              "end": 62,
+              "kind": "line_range",
+              "start": 24
             },
             "path": "dashboard/src/cockpit/reviewPage.tsx"
           },
@@ -260,12 +254,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:2904cbaaef74b12270b2eeea27b4484ce6d496cea04f23f964364e6adec9c0a3",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:409540b125e4c7c5d65447dd5bea00a6a6188f9aabc75858d21842e3030eaa16",
             "locator": {
-              "end": 404,
+              "end": 126,
               "kind": "line_range",
-              "start": 403
+              "start": 124
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -274,14 +268,16 @@
       ]
     },
     "20": {
-      "note": "Operations’ conditional ReviewMain forwards optional subject/history; non-review change sets retain ChangeSetTakeover.",
+      "note": "Operations’ conditional ReviewMain forwards optional subject/history; non-review change sets retain ChangeSetTakeover.\n\nAnchor: `ReviewMain`",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:777253fc05f1a97f04505f792ccf18d28c6e1900222422cbeb565baa32ce04aa",
             "locator": {
-              "kind": "file"
+              "end": 788,
+              "kind": "line_range",
+              "start": 781
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -527,25 +523,16 @@
       ]
     },
     "27": {
-      "note": "ReviewMain mounts ReviewSurface for a target with or without a selector.",
+      "note": "ReviewMain mounts ReviewSurface for a target with or without a selector.\n\nAnchor: `ReviewSurface`",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
-            "content": "sha256:da4915cfff8d499a9702bb95735d546d1a905086e7c6763bb5571e5e34568cfb",
+            "content": "sha256:de0f222b8bf74d7cf7b209bef410afa439bdbc389c6def791f3585dcd2fe9504",
             "locator": {
-              "kind": "file"
+              "end": 58,
+              "kind": "line_range",
+              "start": 36
             },
             "path": "dashboard/src/cockpit/reviewPage.tsx"
           },
@@ -586,14 +573,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:d3cd82a04dab366b0e7ba554d8a187a7f36ec5cdac27f85ee13fa6dae914a435",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:6c298755fc2ec4b5aede20cb8c8a61fc89c2534a04840780d97a5902059bdcbe",
             "locator": {
-              "end": 814,
+              "end": 719,
               "kind": "line_range",
-              "start": 813
+              "start": 717
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:fbe21d52e1d8d8c83153d9ca4ed20ac9707c3a8afe0e459a982f0e2694c00e25",
+            "locator": {
+              "end": 902,
+              "kind": "line_range",
+              "start": 888
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:e08ce2f044305ed910cacee750b6b34aa85f69321357643e1fc0907ab65e1289",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
           },
           "kind": "code"
         }
@@ -674,14 +687,16 @@
       ]
     },
     "34": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "Current imported source owns this scoped route boundary: the cockpit's persistent Chats layer mounts the Role-chats pane.\n\nAnchor: `RoleChatsPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:0e083528be45ad099dc01a9c0c450064660ea4947830ae120697f07fd2b38969",
             "locator": {
-              "kind": "file"
+              "end": 723,
+              "kind": "line_range",
+              "start": 720
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -846,8 +861,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:8189ecde22980bf4a90f4c94bce16f262bb8a98345963d38eeecf48644d80b3a",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:921e455be43c5f1c647d35565a6cba24b9ae6ee6e59f1fd30d46f9bec932c12d",
             "locator": {
               "end": 89,
               "kind": "line_range",
@@ -859,12 +874,12 @@
         },
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:4c059057ea4e82331815ca502e0e6c3410ba875340c5569c75d7aa10d7ed62b7",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
-              "end": 676,
+              "end": 75,
               "kind": "line_range",
-              "start": 669
+              "start": 70
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -872,12 +887,12 @@
         },
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:771f677b03ec8454b57f83a55b6e2b3e41b143e066ef988539cdab6591d75dbe",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:dcdf7b26bdc676b80b0311450589915c44d94af9f9d33e708a387ca83267569b",
             "locator": {
-              "end": 816,
+              "end": 691,
               "kind": "line_range",
-              "start": 811
+              "start": 687
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -886,22 +901,11 @@
       ]
     },
     "44": {
-      "note": "The four-entry product bar and retained product layers remain distinct from injected views; review URL state can override ordinary opening view.\n\nAnchor: `VIEWS` `MainLayers` `useCockpitShellState`",
+      "note": "The four-entry product bar and retained product layers remain distinct from injected views; review URL state can override ordinary opening view.",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
             "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
               "kind": "symbol",
@@ -913,7 +917,7 @@
         },
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
             "content": "sha256:60bc25696b100ddfbef71aa797ce37aced694af3c96337092f369c0042e28c6f",
             "locator": {
               "kind": "symbol",
@@ -1143,12 +1147,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
             "content": "sha256:61f4119dc547de7388a12cc2047abdf3393b90ab2c79160ba4fff37be16691c2",
             "locator": {
-              "end": 449,
+              "end": 450,
               "kind": "line_range",
-              "start": 435
+              "start": 436
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -1156,12 +1160,12 @@
         },
         {
           "anchor": {
-            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
             "content": "sha256:de6218b26cd4693cba6753856b42753af4f2a95cc8ba1bcee4f4d7252b6ee9e3",
             "locator": {
-              "end": 500,
+              "end": 501,
               "kind": "line_range",
-              "start": 471
+              "start": 472
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -1169,12 +1173,12 @@
         },
         {
           "anchor": {
-            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
             "content": "sha256:ddf496f5974ca1e88639b14b88f629c7c2d2e8ca40bb642f3713d6cb0e2ac01a",
             "locator": {
-              "end": 516,
+              "end": 517,
               "kind": "line_range",
-              "start": 501
+              "start": 502
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -1268,14 +1272,15 @@
       ]
     },
     "6": {
-      "note": "Shell navigation, persistent layers and shared drivers.\n\nAnchor: `CockpitShell`",
+      "note": "Shell navigation, persistent layers and shared drivers.",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:57e2f656bc20222f62328519d9d1cb2e901ebceaae50dfbc50c5bceaa6af534f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "CockpitShell"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1644,25 +1649,15 @@
       ]
     },
     "74": {
-      "note": "Responsive shell style and the actual narrow railed/takeover consumers are separate from reviewer-local scroll ownership.\n\nAnchor: `shell` `RailedBody` `ChangeSetTakeover`",
+      "note": "Responsive shell style and the actual narrow railed/takeover consumers are separate from reviewer-local scroll ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
-            "content": "sha256:02d7a66ba412684679f12e38224087695dba6d0ca84b73e921c353290813ee81",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:2f0351b4a30042357bf94304cc67490467c7f2061f43c0a18180d68c26f92010",
             "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/cockpit/layout.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
-            "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RailedBody"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1679,18 +1674,31 @@
             "path": "dashboard/src/cockpit/layout.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:02d7a66ba412684679f12e38224087695dba6d0ca84b73e921c353290813ee81",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/layout.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
     "75": {
-      "note": "Current shell owners for the review page account.",
+      "note": "Current shell owners for the review page account.\n\nAnchor: `ReviewMain`",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:1eff69e5c56a21b35d68e856cfc14df01eb74c55b851910912f9e64261692075",
             "locator": {
-              "kind": "file"
+              "end": 788,
+              "kind": "line_range",
+              "start": 776
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1824,14 +1832,16 @@
       ]
     },
     "79": {
-      "note": "Current chat owners for the review page account.",
+      "note": "Current chat owners for the review page account.\n\nAnchor: `DocumentChat`",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:9e29a6f39a93a440da8f1d2d92bd0a81f51c92296063aab804777b188d187de0",
             "locator": {
-              "kind": "file"
+              "end": 600,
+              "kind": "line_range",
+              "start": 551
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1862,14 +1872,16 @@
       ]
     },
     "80": {
-      "note": "Current tray owners for the review page account.",
+      "note": "Current tray owners for the review page account.\n\nAnchor: `TrayLayer`",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:43a1c97bd022af137cd909968fba7bff200f95c7b44ae4c9dffd2703f21f5a5c",
             "locator": {
-              "kind": "file"
+              "end": 882,
+              "kind": "line_range",
+              "start": 876
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

@@ -1,13 +1,50 @@
 {
   "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
+        "content": "sha256:ebab7a90111a508b1555ff8649d4494215fcd6c5cb72754a2ae8e05003b771f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "install_host"
+        }
+      },
+      "id": "RLZ-FZ4A2X",
+      "invariant": "INV-WK67MP",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v2 preview parity as amended v3/v4",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Chooses preview_host for dry_run and real provision otherwise while retaining configured-host settings attribution and structured failure data.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
+        "content": "sha256:af2af33d368513b1cdea63feda1898b8afc3152af36cb9dae8999bb8df5ca46b",
+        "locator": {
+          "kind": "symbol",
+          "name": "preview_host"
+        }
+      },
+      "id": "RLZ-W21PJ5",
+      "invariant": "INV-WK67MP",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v2 preview parity as amended v3/v4",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Observes configured host state and emits structured planned/deferred changes without lockfile, installation, settings writes or daemon start.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "The install host entry point and its configured/absent result.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ba99edfcc42e4a14d029370b586330f8c0a82c9",
+            "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
             "content": "sha256:ebab7a90111a508b1555ff8649d4494215fcd6c5cb72754a2ae8e05003b771f8",
             "locator": {
               "kind": "symbol",
@@ -18,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "6ba99edfcc42e4a14d029370b586330f8c0a82c9",
+            "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
             "content": "sha256:e6c6716d95d5a31ead17cd8300db17e5a2c357739b5c4e09e3189c184d37669d",
             "locator": {
-              "end": 88,
+              "end": 89,
               "kind": "line_range",
-              "start": 44
+              "start": 45
             }
           },
           "kind": "code"
@@ -35,8 +72,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ba99edfcc42e4a14d029370b586330f8c0a82c9",
-            "content": "sha256:d12c187488683a4c1069726c6776362feafd0210b0d554adf01bd24622e52067",
+            "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
+            "content": "sha256:af2af33d368513b1cdea63feda1898b8afc3152af36cb9dae8999bb8df5ca46b",
             "locator": {
               "kind": "symbol",
               "name": "preview_host"
@@ -51,11 +88,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ba99edfcc42e4a14d029370b586330f8c0a82c9",
+            "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
             "content": "sha256:ebab7a90111a508b1555ff8649d4494215fcd6c5cb72754a2ae8e05003b771f8",
             "locator": {
               "kind": "symbol",
               "name": "install_host"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The preview's action list, daemon action and deferred restart come from the shared install plan.\n\nAnchor: `planned_changes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
+            "content": "sha256:af2af33d368513b1cdea63feda1898b8afc3152af36cb9dae8999bb8df5ca46b",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 84
             }
           },
           "kind": "code"

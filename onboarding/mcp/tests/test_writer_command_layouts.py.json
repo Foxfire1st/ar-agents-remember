@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c17c7f10f65a39025b5d67ddd571a3264de8526f",
-        "content": "sha256:5b772d9859ec8e32469fd97bf7b064e0df8a9e0e13b6a5275af0e4d033f4c0dc",
+        "blob": "336799dad6bb38e9879763b486fdfa5d643d7001",
+        "content": "sha256:8d33ef3d2f4b1608f0ac9aff5b1f44f8ea9b6b632da1863bee6b4ef4bc36f63e",
         "locator": {
           "kind": "symbol",
           "name": "test_the_real_command_writes_from_a_linked_checkout"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "c17c7f10f65a39025b5d67ddd571a3264de8526f",
-        "content": "sha256:d5862bc790526124922f1509aca2fcf217e7d8571c3d3f74fa55da1ac57c963a",
+        "blob": "336799dad6bb38e9879763b486fdfa5d643d7001",
+        "content": "sha256:b3d7d0b27fb92ef0bf6b2829982b4745f5ecfd89c776f59b299ca1e4c60f6694",
         "locator": {
           "kind": "symbol",
           "name": "test_the_real_command_refuses_from_a_primary_checkout"
@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c17c7f10f65a39025b5d67ddd571a3264de8526f",
-            "content": "sha256:d5862bc790526124922f1509aca2fcf217e7d8571c3d3f74fa55da1ac57c963a",
+            "blob": "336799dad6bb38e9879763b486fdfa5d643d7001",
+            "content": "sha256:b3d7d0b27fb92ef0bf6b2829982b4745f5ecfd89c776f59b299ca1e4c60f6694",
             "locator": {
               "kind": "symbol",
               "name": "test_the_real_command_refuses_from_a_primary_checkout"
@@ -55,14 +55,15 @@
       ]
     },
     "2": {
-      "note": "A linked worktree refuses the batch on the disposable-root and contract-root mismatch, then the ordinary row alone commits and reads back\n\nAnchor: `test_the_real_command_writes_from_a_linked_checkout`",
+      "note": "A linked worktree refuses the batch on the disposable-root and contract-root mismatch, then the ordinary row alone commits and reads back",
       "targets": [
         {
           "anchor": {
-            "blob": "c17c7f10f65a39025b5d67ddd571a3264de8526f",
-            "content": "sha256:e2398f1f794b3e34d3e8e82b5d0dedcacdd54bbbde11aff05bdd87a8fb47b9ac",
+            "blob": "336799dad6bb38e9879763b486fdfa5d643d7001",
+            "content": "sha256:8d33ef3d2f4b1608f0ac9aff5b1f44f8ea9b6b632da1863bee6b4ef4bc36f63e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_real_command_writes_from_a_linked_checkout"
             }
           },
           "kind": "test"

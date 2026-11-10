@@ -9,20 +9,20 @@
 
 The runtime-layout reference: what the source checkout holds, what `runtime_install`
 reconciles into `ar-coordination/`, and what the installed tree owns — including what the
-`providers/` subtree is now, which callers may stop a provider, and the skill-install
+`providers/` subtree is now, which callers may stop a provider, and the skill-resource
 contract.
 
 ## What The Page Establishes
 
 - Source checkout: canonical skills at repository root, runtime and benchmark assets under
-  `mcp/src/agents_remember/package_data/`, generated skill copies and harness starter packages
-  refreshed only by `scripts/sync-skills.py`, and provider Docker topology (Dockerfiles, base
+  `mcp/src/agents_remember/package_data/`, a generated package-served skill tree refreshed
+  only by `scripts/sync-skills.py`, and provider Docker topology (Dockerfiles, base
   Compose files, override templates) kept as source-controlled package data.
 - Installed runtime: one `ar-coordination/` tree holding `AGENTS.md`, `providers/`
   (`requirements/`, `patches/`, `runners/<provider>/<instance-id>/`, `data/<provider>/`,
-  `logs/<provider>/`), `skills/`, `system/AGENTS.md`, `tasks/AGENTS.md`, `memory-repos/`,
+  `logs/<provider>/`), `system/AGENTS.md`, `tasks/AGENTS.md`, `memory-repos/`,
   `benchmarks/`, `notes/`, `worktrees/` and `temp/`.
-- `runtime_install` reconciles the coordinator `AGENTS.md` templates, skills, provider defaults
+- `runtime_install` reconciles the coordinator `AGENTS.md` templates, provider defaults
   (pinned requirement files and patch assets) and, with `--include-benchmarks`, benchmark
   fixtures; it then provisions the build-pinned host and product Node from the packaged
   contract and whole npm lock, preserving a running host when a transition needs a stop. It
@@ -64,12 +64,12 @@ contract.
   declared, a stop selects nothing and stops nothing, the safety loop still records the attempt
   and its result in the degradation event, and `providers-remove` additionally refuses while a
   live process still holds a provider folder.
-- The benchmark and skill-install sections keep their contracts: benchmark content reconciles
-  under `ar-coordination/benchmarks/` with user runs preserved, each generated case workspace
-  keeps `workspaces/<case-id>/repos/` and its own coordination root; `skills_install` copies
-  packaged skills flat into a harness skill root for maintenance and non-package installs and
-  never creates symlinks, while the package-based first-run path gets skills from the copied
-  starter package.
+- Benchmark contract: benchmark content reconciles under `ar-coordination/benchmarks/` with
+  user runs preserved, and each generated case workspace has separate `source-only/` and
+  `with-memory/` environments under `workspaces/<case-id>/`. Skill resource contract: the MCP
+  server serves its generated package tree as resources (`skill://index.json` lists them);
+  there is no installed skill root or skill-install operation, and installation and benchmark
+  preparation create no harness or coordination-root skill copy.
 
 ## Boundaries
 
@@ -89,11 +89,19 @@ Nothing here is a build, test, install or acceptance claim.
 ## Evidence
 
 - Source checkout keeps canonical skills, package data and provider Docker topology as source-controlled assets. [1]
+
 - The installed runtime tree, including the `providers/` subtree paths. [2]
-- `runtime_install` reconciles templates, skills, provider defaults and optional benchmarks, then provisions the pinned host; it writes no live settings and owns no provider database. [3]
+
+- `runtime_install` reconciles templates, provider defaults and optional benchmarks, then provisions the pinned host; it writes no live settings and owns no provider database. [3]
+
 - `providers/` is leftover state: no product path installs, starts, indexes or queries a provider; `runtime_install` reports folders and sizes but never deletes them. [4]
+
 - Compose overrides are described as past-tense execution input that was never written into the coordination tree or workspace. [5]
+
 - Per-provider leftover layout and the `providers-remove` dry-run/report-first removal. [6]
+
 - Three stop callers, none of which starts a provider, including the dashboard safety loop's 30-second sampling and fail-safe transition. [7]
+
 - All three read the authority settings `contextProviders` block, not the generated document that declares no providers. [8]
-- Benchmark and skill-install contracts. [9]
+
+- Benchmark contract and the skill-resource contract: skills are served as MCP resources, with no installed skill root or skill-install operation. [9]

@@ -3,44 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Codex needs the MCP server in config plus skills and startup instructions from `.codex/`.\n\nAnchor: `docs/install/codex.md:3-5`",
+      "note": "Codex needs the MCP server in its config plus one call that starts Bootstrap; skills arrive from the tool server as MCP resources and nothing is copied into the harness.\n\nAnchor: `MCP resources`",
       "targets": [
         {
           "anchor": {
-            "blob": "945b38c6576b5e2305d67cd86426652fe36c7857",
-            "content": "sha256:44d1ed21712e7106004a9fc13136d5f899d974abd35b8078672d326c9eb1dd9f",
+            "blob": "68ce793a303b1ae8bdc350861627099e6c025e69",
+            "content": "sha256:3b041bcee07f8155df350a7af6e0349ffc7d2ed6be6180b54304730692130c8b",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Copy `.codex/`, render with `--repo`, restart once; manual replacement is the stated alternative.\n\nAnchor: `docs/install/codex.md:16-29`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "945b38c6576b5e2305d67cd86426652fe36c7857",
-            "content": "sha256:44d1ed21712e7106004a9fc13136d5f899d974abd35b8078672d326c9eb1dd9f",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Package contents include `config.toml` with MCP and hook registration, the hook files, authority settings and skills.\n\nAnchor: `docs/install/codex.md:31-37`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "945b38c6576b5e2305d67cd86426652fe36c7857",
-            "content": "sha256:44d1ed21712e7106004a9fc13136d5f899d974abd35b8078672d326c9eb1dd9f",
-            "locator": {
-              "kind": "file"
+              "end": 8,
+              "kind": "line_range",
+              "start": 3
             }
           },
           "kind": "code"
@@ -48,29 +20,16 @@
       ]
     },
     "4": {
-      "note": "`c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts.\n\nAnchor: `docs/install/codex.md:39-44`",
+      "note": "One `role_start(role=\"bootstrap\", …)` call prepares the runtime scaffold and starts Bootstrap, which ends at memory setup and hands the knowledge foundation to the Architect; nothing provider-side starts.\n\nAnchor: `role_start`",
       "targets": [
         {
           "anchor": {
-            "blob": "945b38c6576b5e2305d67cd86426652fe36c7857",
-            "content": "sha256:44d1ed21712e7106004a9fc13136d5f899d974abd35b8078672d326c9eb1dd9f",
+            "blob": "68ce793a303b1ae8bdc350861627099e6c025e69",
+            "content": "sha256:31aea129a054bb70fe0d7b4a05dbc34d3998ddce562f7a07b68277ef90ebe0fb",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The copied `SessionStart` hook is the first-run instruction surface; root `AGENTS.md` is left alone; skills stay flat under `.codex/skills/`.\n\nAnchor: `docs/install/codex.md:46-78`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "945b38c6576b5e2305d67cd86426652fe36c7857",
-            "content": "sha256:44d1ed21712e7106004a9fc13136d5f899d974abd35b8078672d326c9eb1dd9f",
-            "locator": {
-              "kind": "file"
+              "end": 38,
+              "kind": "line_range",
+              "start": 24
             }
           },
           "kind": "code"

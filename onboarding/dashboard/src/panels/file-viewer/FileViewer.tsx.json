@@ -198,16 +198,16 @@
       ]
     },
     "5": {
-      "note": "The shell that registers + keeps this view mounted across tab switches.",
+      "note": "The shell that registers + keeps this view mounted across tab switches.\n\nAnchor: `FileViewer`",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:054d4cc1aaabba6284f7cdfeae8f609aba3d6af75651bac7e4bba96a06df3b1c",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:569306adb3dd290f840dcaeb5ddc42fb8bbced63e529270a4bc4f7df6cdc0292",
             "locator": {
-              "end": 707,
+              "end": 716,
               "kind": "line_range",
-              "start": 426
+              "start": 711
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -215,10 +215,12 @@
         },
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:054d4cc1aaabba6284f7cdfeae8f609aba3d6af75651bac7e4bba96a06df3b1c",
             "locator": {
-              "kind": "file"
+              "end": 706,
+              "kind": "line_range",
+              "start": 425
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

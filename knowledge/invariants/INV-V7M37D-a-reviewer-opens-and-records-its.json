@@ -10,7 +10,7 @@
   "conditions": [
     "Code uses reviewState; newly begun memory reviews use reviewKind=memory and memoryReviewState after rollout.",
     "Each lane preserves its sealed baseline and shrinking IDs, current settings limit and approved extra rounds.",
-    "Record-only unchanged-candidate checks add no try; existing underway checks are not migrated or backfilled."
+    "Record-only unchanged-candidate checks add no try."
   ],
   "exclusions": [
     "The Manager's acceptance of the verdict for the gate, which stays the Manager's."
@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L99",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "The Reviewer owns ordinary code rounds and newly begun post-landing memory rounds in separate task-document lanes, with independent sealed findings, reports and counts under the same settings limit and recorded approvals. Memory recording never resets passed code. Underway pre-rollout memory reviews finish through their existing sealed-file lane without backfill.",
+  "statement": "The Reviewer owns ordinary code rounds and newly begun post-landing memory rounds in separate task-document lanes, with independent sealed findings, reports and counts under the same settings limit and recorded approvals. Memory recording never resets passed code.",
   "status": "proposed",
   "supersedes": []
 }

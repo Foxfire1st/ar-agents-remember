@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Tests route overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -26,10 +26,9 @@ Cases drive the CLI, `install.runtime`, `paseo_provision`, `paseo_start` and the
   refuses an invalid, live or equal pair before anything acts.
 - **One notice.** `test_retired_selector_notice_once_on_each_public_command_and_dashboard_line` prints the
   retired-selector notice once per public command and on the dashboard line.
-- **Old location.** The historically named
-  `test_host_and_all_standalone_starters_refuse_old_location_before_any_write` now calls only
+- **Old location.** `test_host_and_all_standalone_starters_refuse_old_location_before_any_write` calls only
   `require_user_settings_path`: it refuses before parsing an old file or an existing user file, and preserves
-  both byte sequences. The retired starters no longer provide a renderer path to invoke.
+  both byte sequences.
 - **Upgrade.** `test_whole_file_upgrade_retains_configured_host_and_all_other_families` upgrades the settings
   file as a whole and retains the configured host and every other family.
 - **Sandbox isolation.** `test_sandbox_environment_reads_only_its_own_user_settings` keeps a sandbox reading

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "16a71f6d77830e0f962c81ab013cbbf98166c0a7",
+        "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
         "content": "sha256:36619c9d8e1b0de03f22fa80021619e453a171348c64e63977d783531b929eb0",
         "locator": {
           "end": 7,
@@ -19,6 +19,44 @@
       },
       "rationale": "The stop-semantics note pins the release whose stopDaemonInstance behavior it describes, now bootId-first with age fallback.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
+        "content": "sha256:6482cf2320845c9faec45f6ebf5dc9d5d8e34cb6df521f5cdcaa1f484f9098d9",
+        "locator": {
+          "end": 43,
+          "kind": "line_range",
+          "start": 43
+        }
+      },
+      "id": "RLZ-8GP5BH",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-06",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
+        "content": "sha256:dcfdf587dff67a56e5a8529786a589deb29aa6b5d1f0b342e17122417b9ea283",
+        "locator": {
+          "end": 96,
+          "kind": "line_range",
+          "start": 92
+        }
+      },
+      "id": "RLZ-KSDZB8",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-07",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -27,7 +65,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16a71f6d77830e0f962c81ab013cbbf98166c0a7",
+            "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
             "content": "sha256:89ca2b671107da33d70a1214d576e719008cf92e3e9b9da985b899a554edfbda",
             "locator": {
               "kind": "symbol",
@@ -39,12 +77,12 @@
       ]
     },
     "2": {
-      "note": "The process facts include executable and session-variable names, never values.",
+      "note": "The process facts include the executable, carried session-variable names without values, and the values of the catalogued harness-home variables.",
       "targets": [
         {
           "anchor": {
-            "blob": "16a71f6d77830e0f962c81ab013cbbf98166c0a7",
-            "content": "sha256:e84fc71115ff5a8c0e1fe632c3eb844e3b7d9d15b950bbab8d7939a5b82cfa80",
+            "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
+            "content": "sha256:42a45851cdcf3a33159f8893529cf007484a7c01887e414fdd9e57b463b4859e",
             "locator": {
               "kind": "symbol",
               "name": "read_process"
@@ -59,10 +97,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16a71f6d77830e0f962c81ab013cbbf98166c0a7",
-            "content": "sha256:9717f41d831710507148e329e4a547f047686e5172cc3c72883e4ecbd201dd85",
+            "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
+            "content": "sha256:e365b6d127ac062fd9735a4da8f987f6c2fbc9eecedfe8336f12b4651a14d460",
             "locator": {
-              "kind": "file"
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Harness-home values are kept out of the process facts' representation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
+            "content": "sha256:6482cf2320845c9faec45f6ebf5dc9d5d8e34cb6df521f5cdcaa1f484f9098d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_homes"
             }
           },
           "kind": "code"

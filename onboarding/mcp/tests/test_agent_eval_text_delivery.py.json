@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "43b226d3d982d07269e28e31c0e29f7844c49ed7",
-        "content": "sha256:fa8b33282d30e498f3d59dcdda8aedc9d3225934dc76113758d299fa8a07761c",
+        "blob": "1f2ab1ecef3bb7ccdfa70bba807351d825641baf",
+        "content": "sha256:18dadce292dd20f946ca1d819cd2191b7cb39f87d52b3ffb51869fdceb371382",
         "locator": {
           "kind": "file"
         }
@@ -25,12 +25,105 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43b226d3d982d07269e28e31c0e29f7844c49ed7",
-            "content": "sha256:fa8b33282d30e498f3d59dcdda8aedc9d3225934dc76113758d299fa8a07761c",
+            "blob": "1f2ab1ecef3bb7ccdfa70bba807351d825641baf",
+            "content": "sha256:5a4dea3e09c52f1df2d2a5a7891c1a62db672e5a09e2dafbb50ba08da30c209d",
             "locator": {
-              "end": 830,
+              "end": 1,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The current curator capture keeps the every-role shared prefix as the first origin and every compiled instruction unit's origin contiguously after it, and binding freezes the shipped detail body without mutating the capture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f2ab1ecef3bb7ccdfa70bba807351d825641baf",
+            "content": "sha256:4125d7863946405f47997d8fc634c2093d2d0420ec61f1bdeca3594cb5fefb04",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_capture_keeps_every_compiled_origin_after_the_shared_prefix"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Missing, empty, gapped, overlapping, short, duplicated, non-integer, absolute, escaping or wrongly shaped origins are refused with a detail fault and nothing is written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f2ab1ecef3bb7ccdfa70bba807351d825641baf",
+            "content": "sha256:cf06c0efb80f3021d97cfb7711e414a4d654b82f07608a9251eeec692a6c5ed2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_capture_never_guesses_missing_or_malformed_origins"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1f2ab1ecef3bb7ccdfa70bba807351d825641baf",
+            "content": "sha256:c427b46a772e905a96486c925997afa87ef42e14c2fc1130e4d83760f4711a01",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A compiled manifest whose every-role source is missing, duplicated or at another revision makes the capture refuse as ambiguous provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f2ab1ecef3bb7ccdfa70bba807351d825641baf",
+            "content": "sha256:37c1a04d45c228744ddfa7412be0442dde780051b31f5c23b34708215cb03798",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_capture_refuses_ambiguous_compiler_shared_provenance"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A rewritten detail is identified by its emitted bytes (size and digest), and same-size or size-changing damage stays a validation unknown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f2ab1ecef3bb7ccdfa70bba807351d825641baf",
+            "content": "sha256:ba17b855cc15625b080af7dda903b02936fb57a02222fa85a7702c5a195093fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rewritten_detail_uses_emitted_identity_and_keeps_corruption_refusals"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The module takes its compiled-capsule helper from the capsule-delivery proof module.\n\nAnchor: `_compiled`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f2ab1ecef3bb7ccdfa70bba807351d825641baf",
+            "content": "sha256:e3928bf89c10ba380160b19ec95ae3b5d28a6fd084516173ba3fd0d5f70573b3",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
             }
           },
           "kind": "test"

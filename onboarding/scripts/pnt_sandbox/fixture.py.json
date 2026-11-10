@@ -7,10 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c2ab49d5fdeb8efc50046b95fcc0ebcee3ff560",
-            "content": "sha256:d29d17494452460e66c80522d1bd1fddcd4c5b36ebb6c49c47d50bccef70cc51",
+            "blob": "1b07d3169a50d86d99b479b840c87abdaee4fa4c",
+            "content": "sha256:75f03b14c5f9d30834bf80620f026132c41e160c7172eb6fc1e3797bef387516",
             "locator": {
-              "kind": "file"
+              "end": 363,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

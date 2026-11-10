@@ -55,7 +55,10 @@ The incoming card had no cross-repository reference section. Boundary-pack field
 The citation rows below preserve the incoming template-evidence meanings while retargeting them to the canonical authored source and narrowing ranges to the information described. They prove the shape of a template, not execution or acceptance of its values. Inherited cross-file skill claims remain qualified above.
 
 - The coverage plan template captures strategy, area goals, route classification, file classification, and evidence pack queues. [1]
+
 - The template records deferred routes/files, slice cleanup decisions, developer review questions, and decisions for later waves. [2]
+
 - Existing-memory slice cleanup identifies affected memory, disposition and review needed for moved or disappeared routes. [3]
 - Developer review challenges ordering, risk, deprecation, classification, first wave and historical preservation before recording decisions. [4]
+
 - The skill places coverage planning before governing-route mapping and the later overview/file waves. [5]

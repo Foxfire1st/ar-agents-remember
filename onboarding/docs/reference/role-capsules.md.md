@@ -15,4 +15,5 @@ The launch points to serving-package skill resources rather than installed harne
 ## Evidence
 
 - Launch resources and held-message semantics distinguish delivery state from consumption. [1]
+
 - Message-file and receipt scope is tied to the narrowest shared task and actual receipt store. [2]

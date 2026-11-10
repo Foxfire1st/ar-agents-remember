@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This area owns the canonical instruction file for each lifecycle role: the seat's responsibility, assignment, permitted work, refusals, communication and durable handoff. Its governing source overview is the parent `skills/l-01-agent-lifecycles` route. The native launcher exposes Architect, Investigator, Orchestrator, Manager, Worker, Reviewer, Curator and Bootstrap; the larger capsule registry also retains Designer and Strategist. Registry membership, native-launch admission and repository-foundation admission are distinct contracts.
+This area owns the canonical instruction file for each lifecycle role: the seat's responsibility, assignment, permitted work, refusals, communication and durable handoff. Its governing source overview is the parent `skills/l-01-agent-lifecycles` route. The native launcher exposes Architect, Investigator, Orchestrator, Manager, Worker, Reviewer, Curator and Bootstrap. The capsule registry and the composition manifest hold the same eight roles. Each role file states its duties and reaches procedures through "Before you …, read" pointers to operations, templates and the detail files under `reference/` (`coordination/{architect,shared}`, `curator`, `knowledge`, `tasks`, `writing`, `bootstrap`, plus the flat files).
 
 Architect owns the developer conversation, requirement meaning and semantic plan. One master normally receives one Manager; concurrent work on two or more masters receives one Orchestrator on the sprint and one Manager per master. Only the developer chooses direct Architect coordination or an Orchestrator above a single master. Worker implements the approved leaf; Reviewer independently examines the assigned candidate; Curator reconciles current intent, ruled intent and implemented reality and authors affected memory through its admitted surfaces. Coordinators retain acceptance and paired publication authority. Native host execution changes none of these ownership boundaries.
 
@@ -20,6 +20,8 @@ The Architect hands execution coordination to its Manager or Orchestrator and co
 
 For normal leaf delivery, the Manager uses individual `role_start` calls: Worker at build, Reviewer at the Worker freeze, Curator after code PASS. Worker first tells Manager to start Reviewer and then sends its freeze directly once the seat exists. Reviewer first tells Manager of code PASS, then supplies its passed freeze and producer list to Curator. A separately assigned packet cold read remains possible before a candidate exists. Curator sends its memory candidate to Reviewer in a separate sealed lane. The Manager reads reports, receives the specified authority/recovery notices and readiness notice, inspects the complete diff and both verdicts, and decides acceptance and landing. It does not relay routine freezes, findings, verdicts or memory changes.
 
+When the requirement's planned structure leaves types, modules or signatures open, the Worker completes the skeleton first, without bodies, and sends it to its Manager. The Manager passes it to the Architect at once, also past an Orchestrator; the Architect shows the developer a skeleton that changes the planned shape, and the Worker writes the bodies after the Architect's answer.
+
 Every handover names the leaf, exact object identity, report or verdict path and whole next stretch requested. Delivery alone is insufficient: a reply or report must name that object and show the requested work or its start. A busy refusal remains pending and is retried; a message accepted as held is retained and later delivered by the product without being resent. The leaf resolver refuses two live occupants rather than choosing by age. A repeated busy refusal, empty or doubled seat, or non-work reply is reported with its actual text. Agents continue independent work and never choose an uncertain recipient or create duplicate ownership. Cross-leaf messages require a dependency named by a requirement or Manager; other cross-leaf matters go through Manager.
 
 A code concern from Curator reaches both Worker and Reviewer even after code PASS. Reviewer takes a valid concern into its findings and reopens that point, or explains why it does not hold; Curator records the answer. An unresolved disagreement returns to Manager. This duty coexists with the sealed-baseline restriction: it grants no general rediscovery or reset of review scope.
@@ -32,7 +34,7 @@ Ready leaves land successively; the coordination operation describes a train in 
 
 The current files do not share the universal section order claimed by the dated L22 account. Architect uses establishment, delegation and boundaries sections; Manager, Orchestrator and Investigator likewise use responsibility-specific layouts. Worker, Reviewer, Curator and retained roles use their own useful input/process/output sections. The enduring construction intent is one canonical responsibility source per role and referenced operation/template owners, rather than a mandatory historical heading scheme or line-count target.
 
-Architect authors requirements, plans, tasks and rulings, preserving exact stable IDs, versions, corpus authority and developer approvals across reconnects. Before planning repository work, its doctrine requires relevant source and invariant/family context; contradictions are surfaced rather than silently reconciled. It neither writes onboarding nor lets its own checks stand in for a leaf's build, review, curation or gate: it may check, measure, run and read on a copy for its own rulings, and only a check or investigation it does not do itself goes under delegation to the coordinators and their owning roles. In the developer-chosen direct-coordination exception, Architect may coordinate the existing paired transaction only under the already-delegated authority of the kept closeout procedures (`operations/closeout.md` with `w-02-light-task-workflow`'s `workflows/closeout.md`) and the required independent review/curation evidence.
+Architect authors requirements, plans, tasks and rulings, preserving exact stable IDs, versions, corpus authority and developer approvals across reconnects. Before planning repository work, its doctrine requires relevant source and invariant/family context; contradictions are surfaced rather than silently reconciled. It neither writes onboarding nor lets its own checks stand in for a leaf's build, review, curation or gate: it may check, measure, run and read on a copy for its own rulings, and only a check or investigation it does not do itself goes under delegation to the coordinators and their owning roles. In the developer-chosen direct-coordination exception, Architect may coordinate the existing paired transaction only under the already-delegated authority of the authorized closeout operation (`operations/closeout.md`) and the required independent review/curation evidence.
 
 Copied developer words in a `From explainer ·` message count as those words only after their SHA-256 matches the filed message in `developer-messages/`. When no master-to-architect record names this Architect for a master, it claims that master with `explainer_control` on `agents-remember-task`, action `claim`.
 
@@ -52,7 +54,7 @@ Master-exit reviews the accumulated master change and affirmatively accounts for
 
 Curator owns the normal leaf reconciliation and affected onboarding, not code repair, task decisions or Git publication. Intake binds the actual pre-closeout change set, approved packet revisions and corpus ruling, builder report, applicable candidate-bound verdict, existing affected contracts/entities, exact roots and enclosure contract. Producer hand-off fields are carried unchanged; Curator fills its own resolution, validation, record action, supersession, scope, admission, records and history judgments. Missing, unapproved, mismatched, rejected or builder-blocked requirements are reported as blockers/contradictions rather than written as ruled intent.
 
-Converted cards follow c-05: no metadata or Update History; the citation owner resolves numbered references into sidecars. Ordinary updated/no_impact rows bind current source blobs, with updated requiring authored Markdown/reference change and source movement reopening a judgment. Realizes/proves-only edits do not count; sourceless legacy rows answer only from their own closed files. Amended rule 1 separately allows this leaf's own measured changed card with no unsupported updated/no_impact row or backfill. Overviews retain purpose-first construction/boundaries and trailing citations, not leaf/date logs. Changes use actual file/route/entity homes before Operational Notes. Continuing decisions preserve weighed alternatives rather than task-only sequencing. Citation phases remain batched over affected onboarding-relative documents.
+Converted cards follow `reference/curator/card-formats-and-citations.md`: no metadata or Update History; the citation owner resolves numbered references into sidecars. Ordinary updated/no_impact rows bind current source blobs, with updated requiring authored Markdown/reference change and source movement reopening a judgment. Realizes/proves-only edits do not count; sourceless legacy rows answer only from their own closed files. Amended rule 1 separately allows this leaf's own measured changed card with no unsupported updated/no_impact row or backfill. Overviews retain purpose-first construction/boundaries and trailing citations, not leaf/date logs. Changes use actual file/route/entity homes before Operational Notes. Continuing decisions preserve weighed alternatives rather than task-only sequencing. Citation phases remain batched over affected onboarding-relative documents.
 
 For converted memory, ordinary leaf knowledge authoring uses `knowledge-ingest` with the selected contract, hand-off list, authorization reference and explicit file-write word `--commit`, or the mounted `knowledge_write`, which runs the same writer with the same arguments. Only a covered correct-input refusal admits the declared recovery for that same tool and input class; other writes keep their tools. This writes records, sidecar realization/proof entries and history into the leaf's memory worktree. It publishes no dataset and performs no Git commit. The CLI has no old baseline/publication options. Without the write word it plans, validates and reports without writing; legacy memory is refused rather than sent to a retired database route. The report's state, paths, IDs and individual refusal reasons establish what happened; a zero exit does not prove writing, and partial/refused work is never rounded up to success.
 
@@ -68,9 +70,9 @@ Before converted closeout, a non-author second reader checks each changed card/s
 
 Curator scopes leaf tools by the enclosure contract and checks returned roots; unscoped resolution can reach official memory, and route-index refresh writes. It uses the source-bound serving build admitted for that runtime, names its ruler and does not use the leaf's changed producer, another installation, an internal writer or a switched-off guard to evade refusal. Missing writer admission means required records are reported unwritten. An explicitly report-only assignment writes only its requested report and bound message; it performs no onboarding, indexing, MQC, coherence or comparison work and claims none of normal curation complete.
 
-Repository-foundation curation is regular task work: after setup reports memory and baseline state, the user starts the Architect, which opens the real foundation task — standalone, or a leaf under a master or sprint — and this seat starts on that task document with its actual enclosure contract for the registered repository, resolved context, available sources and current knowledge state. Onboarding is optional input; the procedure neither requires it nor writes it. No fake leaf, task, worktree or enclosure is made to satisfy an argument list. The 2026-09-24 generic taskless-Curator admission is historical, not present launch authority, and no instructed session substitutes for task admission: without a task, Bootstrap reads and reports the state and names the Architect. The writer is the task's leaf writer, `knowledge-ingest` under the contract (or the mounted `knowledge_write`), with authorization and the developer's write word. Partial scope remains partial with unreached areas named. Existing onboarding and baseline readiness do not establish knowledge-foundation completeness.
+Repository-foundation curation is regular task work: after setup reports memory and baseline state, the user starts the Architect, which opens the real foundation task — a registered leaf under a master — and this seat starts on that task document with its actual enclosure contract for the registered repository, resolved context, available sources and current knowledge state. Onboarding is optional input; the procedure neither requires it nor writes it. No fake leaf, task, worktree or enclosure is made to satisfy an argument list. No instructed session substitutes for task admission: without a task, Bootstrap reads and reports the state and names the Architect. The writer is the task's leaf writer, `knowledge-ingest` under the contract (or the mounted `knowledge_write`), with authorization and the developer's write word. Partial scope remains partial with unreached areas named. Existing onboarding and baseline readiness do not establish knowledge-foundation completeness.
 
-Bootstrap retains the read-and-report foundation responsibility and setup-surface boundaries; it does not author onboarding or knowledge. Its report preserves resolved state, actual steps, decisions, failures and absent capabilities. It never turns a working installation's later maintenance request into setup authority or rewrites/migrates an existing artifact around a refusal. The retained Designer owns a master-scoped design and declared blind spot, leaving cross/future-master collisions to downstream portfolio review. Material reframing waits for confirmation, truth gaps remain explicit and unnameable surfaces are findings. The retained Strategist drafts an evidence-cited sprint plan, distinguishes detection from judgment, explicitly chooses justified graph scheduling or the graph-less default, and leaves ruling/adoption to Architect/Orchestrator. Its limited draft attachment exception does not grant execution, acceptance or Git authority. Designer and Strategist remain registry-only roles; Bootstrap is admitted by the eight-role native launcher for its taskless setup procedure.
+Bootstrap retains the read-and-report foundation responsibility and setup-surface boundaries; it does not author onboarding or knowledge. Its report preserves resolved state, actual steps, decisions, failures and absent capabilities. It never turns a working installation's later maintenance request into setup authority or rewrites/migrates an existing artifact around a refusal. Bootstrap is admitted by the eight-role launcher for its taskless setup procedure.
 
 Investigator handles one scoped concern of any kind at Projects, sprint or sprint/master scope; a leaf may be named in the concern but is never its selected start scope. The parent's first message supplies the concern, or a parentless launch uses the developer request. It distinguishes observations from root-cause hypotheses, writes a report before any explicitly authorized provider/system remediation, and respects active prohibitions on starts. Checks belong in scratch or an admitted repository sandbox. Code, memory, task, lifecycle and Git changes remain with their owners; a separate order does not grant Worker/Curator authority. The historical `system-specialist` spelling remains a canonicalized input alias. The selected Investigator capacity owner declares eight open IDs; taskless and selected-task identity must not be conflated with primary coordinator ownership.
 
@@ -80,7 +82,7 @@ For converted memory, the Curator names the family’s stable invariant-member I
 
 ### Landing evidence duties
 
-The Curator keeps knowledge outputs in memory, but evidence in the task record and working files in the admitted scratch root. Its handover names the change of this task that made each reported cut's removed text untrue; text is never removed to clear a quality finding. The Reviewer's independent MEMORY check reads both reports and raises missing named cut changes and extra-knowledge added files lacking a place in the requirement. The reports themselves are descriptive, refuse no quality/gate/closeout operation and add no actionable count. The single generated packaged serving copy propagates these canonical duties without acquiring authority. Normal full contract-scoped MQC/coherence and the bounded report-only assignment exception remain distinct.
+The Curator keeps knowledge outputs in memory, but evidence in the task record and working files in the admitted scratch root. For every card cut by the quality check, it names the source evidence that makes the removed text untrue; text is never removed merely to clear a quality finding. The Reviewer's independent MEMORY check reads both reports and raises missing named cut changes and extra-knowledge added files lacking a place in the requirement. The reports themselves are descriptive, refuse no quality/gate/closeout operation and add no actionable count. The single generated packaged serving copy propagates these canonical duties without acquiring authority. Normal full contract-scoped MQC/coherence and the bounded report-only assignment exception remain distinct.
 
 ## Invariants And Boundaries
 
@@ -98,25 +100,9 @@ Within an assignment, each seat may organize harness work and helpers without a 
 
 Developer decisions go upward to the actual parent, with the question, held dependent work and recommendation; independent work continues. Busy-refused delivery stays recorded and is retried, not rerouted to the developer. Held delivery, including permission-pending delivery, is retained by the product and must not be resent; the named-chat permission notice still travels upward. Own-chat escalation is allowed without a parent or when it is genuinely unreachable, with the actual refusal stated. Parent coordinators answer within their authority or relay the unchanged question and originating identity, separating their recommendation. A relayed developer answer must identify the receiving agent and quote the developer's words; silence and the parent's own answer are not approval. Only the developer answers harness prompts in the waiting child's chat. Denied or unanswered permissions cannot be bypassed by another command, tool, helper or later turn. Permission notices travel upward unchanged; busy-refusal retries are occasion-driven. Seats add no background poller or second scheduler; the product's serving-lifetime loop delivers persisted held messages without a sender/model turn, and messages remain held while that loop is unavailable.
 
-## Historical And Verification Limits
+## Stage boundaries and review budget
 
-This proposal is source-only at the named source HEAD and input digest. It makes no test, execution, synchronization, certification, delivery or publication verdict. Historical generated-copy equality and delivery claims are not fresh acceptance.
-
-CAPS-L1 and CAPS-L22 record earlier nine-/ten-file structures and totals: 2,792 to 2,322 lines, later 1,578. Their universal heading, knob and `Inherits` descriptions do not describe current role layout. CAPS-L10's retained measurement is explicitly historical: worker 11,828 versus 5,928 tokens (+5,900), like-for-like 11,645 (+5,717); Manager and Architect UNMEASURED with `binding-unresolved`; adoption acceptance FAILED, disposition REVISE; obligation preservation reported as 36/36. These witnesses were not re-established here. They justify no current context-saving claim or acceptance, and smaller role-file counts are not capsule measurements.
-
-ICR-L20/L28's published-dataset invocation, retained-sibling membership IDs/authored bases, independent family/source/publication planes, deliberate no-family bases and non-recorded-plane null counts describe the retired database-era account. Their semantic intent—explicit examined scope, justified joint obligations, preserved member intent, exact evidence and honest unexamined/unchanged/refused results—remains relevant. Current authoring uses files, family records and history, not those retired fields or plane counters. The old exact successor-family roster and null-count witnesses were not re-established, so this proposal neither silently reinstates them as current writer predicates nor discards them as disproved historical limits. ICR-L27's refusal of taskless Curator was explicitly superseded by L32's recorded admission; generic seat admission still differs from native leaf-launch admission.
-
-The legacy `onboarding/skills/**` mirror's govern-or-remove defect remains named: the inherited account says this route was outside `pathRules.include`, changed-scope checking still reached it, sibling cards were knowingly stale and no fingerprint/stamp was advanced. Active settings, census and sibling freshness were not examined here; this is a retained unresolved historical governance finding, not a newly verified current coverage statement. Parent-owned status, coverage and route metadata remain outside this replacement body.
-
-CAPS-R18's full curation intent and CAPS-R19's correction remain distinct: raw quality ends the repair loop; combined readiness depends on coherence and can legitimately remain `ready-for-closeout`. The current controller supports that three-path distinction, but the old loop-gate fragment matcher, its fresh-vocabulary blind spot, D35 attribution, L11 whole-layer frozen-tip discharge and exemption of already-finalized leaves were not reverified. Those claims remain historical limits and establish no current whole-layer completeness.
-
-L23's same-master-behind-super recovery, current master/leaf edges, mandatory last pre-Curator `worktree_status` projection and independent native reproof of full code/memory `sourceLineage` are inherited lineage intent. Current native preparation reads contract-scoped status and refuses unsuccessful enclosure preparation; generic task binding explicitly exempts Curator from its structural branch. Neither observation establishes the entire call path's absence of lineage checks, nor re-establishes the historical mandatory last-action/reproof claim. That exact L23 enforcement remains unconfirmed. Later closeout/integration ancestry protection is a separate responsibility.
-
-The inherited IAS quality ladder—one targeted Dagger leaf closeout, no leaf-integration/series rerun, one full master gate and explicit diff base—does not become a current role requirement merely through retention. Current role/closeout doctrine carries repository-defined targeted evidence and does not automatically run certification. Historical wrapper deletion, quality timing/caps, automatic hook suppression and ledger refresh behavior were not re-established across their runtime owners. The old wording treating Radon as an enforcing static check is not retained as current authority. These are named historical verification limits, not fresh runner or hook verdicts.
-
-The retained corpus and native seams are not perfectly interchangeable: Strategist/Designer doctrine remains registry-only while Bootstrap is a supported native role; Reviewer doctrine describes master/sprint seams while native selected leaf scope has its own resolver. This proposal does not repair those differences or invent a new admission invariant.
-
-The review budget is settings-owned (`orchestration.loops.defaults.maxRounds`), read at each begin; the task’s effective limit, including approved extras, is exposed by `task_doc.reviewState.limit`. CODE and MEMORY have separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval, with the Manager asking the task Architect.
+The review budget is settings-owned (`orchestration.loops.defaults.maxRounds`), read at each begin; the task’s effective limit, including approved extras, is exposed by `task_doc.reviewState.limit`. CODE and MEMORY have separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval, which the Manager requests through its assigned reporting route and records.
 
 Worker ends with requirement-satisfying bytes, focused checks and report with Reviewer; Reviewer records whole-requirement coverage and verdict; Curator writes, checks and publishes knowledge through the installed build and obtains clean full quality/coherence evidence before handing MEMORY directly to the independent Reviewer. Each stage repairs its own input/instrument slips through the same admitted tool and continues; permission prompts, other correct-input refusals or unowned state, requirement-meaning questions and out-of-scope effects remain stops; covered correct writes follow only their scoped recovery.
 
@@ -142,426 +128,110 @@ Manager receives the clean-sync focused-test result for its own preview; no clea
 
 ## Evidence
 
-Retained authoring-row wording:
+- The serving-build and ingest-report details supply the writer invocation and written/planned/refused report reading; the Curator report names writer state, written record and entry identifiers and paths, history rows and refusal reasons. [5]
 
-Finding: Worker repairs owned findings directly and retains the per-finding freeze trail.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/worker.md:8-89
-
-Retained authoring-row wording:
-
-Finding: Finding
-
-Anchor: Anchor
-
-Source: Source
-
-Retained authoring-row wording:
-
-Finding: ---
-
-Anchor: ---
-
-Source: ---
-
-Retained authoring-row wording:
-
-Finding: Manager settles covered precedents and adds no pre-repair go-ahead.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/manager.md:8-84
-
-
-Past-epoch caption (retained wording): - Manager leaves native operation stage/mirror publication to its owner; explicit corrections and organizational-master completion retain their task-document route.
-
-Original-target custody: `skills/l-01-agent-lifecycles/roles/manager.md`, blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, 22–22, declared “Read each leaf's reports and task records yourself. Direct leaf handover flow and relay limits follow `../operations/coordination.md`. Inspect the complete changed-file diff and both verdicts before deciding th”. The retained caption is detached from the live number; the table now carries only the current clause and current targets.
-
-Retained authoring-row wording:
-
-Finding: Native start, finalize and abandon publish task stage and its parent mirror; Manager avoids a redundant status write while retaining explicit corrections and organizational-master completion.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/manager.md:8-84
-
-
-
-
-
-
-Retained authoring-row wording:
-
-Finding: The step-local authoring and writer details supply the invocation and written/planned/refused report consumption; the role output supplies durable file/record/entry/history identities, not a dataset publication.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md:19-68; skills/l-01-agent-lifecycles/reference/curator-writer-details.md:10-75; skills/l-01-agent-lifecycles/roles/curator.md:8-177
-
-
-
-
-Retained authoring-row wording:
-
-Finding: Curation retains the scope/producer boundaries; its step-local authoring and writer details contain invocation and report-consumption method.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/operations/curation.md:5-205; skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md:19-68; skills/l-01-agent-lifecycles/reference/curator-writer-details.md:10-75
-
-
-Retained authoring-row wording:
-
-Finding: The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; source code, task and lifecycle writes stay outside the seat.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/curator.md:8-177
-
-
-Retained authoring-row wording:
-
-Finding: Manager is one master-scoped owner of the builder/reviewer/curator closeout chain.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/manager.md:8-84
-
-
-Retained authoring-row wording:
-
-Finding: Worker is one leaf-scoped builder whose terminal artifact is the turn report.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/worker.md:8-89
-
-
-Retained authoring-row wording:
-
-Finding: The full capsule vocabulary and composition manifest enumerate remaining registry roles; the native router supports eight roles including Bootstrap and does not launch Designer/Strategist.
-
-Anchor:
-
-Source: mcp/src/agents_remember/models/role_capsules/vocabulary.py:80-91; skills/l-01-agent-lifecycles/composition-manifest.json:584-954; mcp/src/agents_remember/models/role_launcher.py:23-68
-
-
-Retained authoring-row wording:
-
-Finding: Worker and reviewer roles define the two independent halves of per-ID acceptance.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/reviewer.md:8-220; skills/l-01-agent-lifecycles/roles/worker.md:8-89
-
-
-Retained authoring-row wording:
-
-Finding: The graph-less atomic-sequential default describes sprint shape; nothing serializes the masters.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/criteria/plan-review.md:63-68; docs/reference/execution-topology-migration.md:1-12; skills/l-01-agent-lifecycles/roles/architect.md:8-106
-
-
-Retained authoring-row wording:
-
-Finding: The curator's file-writer step.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/reference/curator-writer-details.md:10-75
-
-
-Retained authoring-row wording:
-
-Finding: Bound uncommitted Worker duty.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/worker.md:8-89; skills/l-01-agent-lifecycles/operations/implementation.md:8-34
-
-
-Retained authoring-row wording:
-
-Finding: Independent exact assigned review and sealed findings.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/reviewer.md:8-220
-
-
-Retained authoring-row wording:
-
-Finding: Bound and preserved normal Curator duties.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/curator.md:8-177
-
-
-Retained authoring-row wording:
-
-Finding: Taskless real concern and report-first remediation.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/investigator.md:8-36
-
-
-Past-epoch caption (retained wording): - The Curator must keep the existing admitted knowledge writer and never hand-write records, sidecar entries, history or derived index.
-
-Original-target custody: `skills/l-01-agent-lifecycles/roles/curator.md`, blob `c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6`, 106–107, declared “- The **knowledge authoring routes**, including a repository foundation under `c-14-knowledge-bootstrap`: `agents-remember knowledge-ingest` with this task's leaf contract, hand-off list and `--commit` (`commit”. The retained caption is detached from the live number; the table now carries only the current clause and current targets.
-
-Retained authoring-row wording:
-
-Finding: The Curator keeps the admitted writer for normal records, sidecar entries and history, and never edits the derived index. A covered correct-input write refusal uses only its declared same-tool/input-class recovery, with owner notice, manual provenance and working checks.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/curator.md:8-177; skills/l-01-agent-lifecycles/reference/refused-write.md:1-38
-
-
-Retained authoring-row wording:
-
-Finding: The canonical role owns this concern and mutation boundary.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/investigator.md:8-36
-
-
-Retained authoring-row wording:
-
-Finding: Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/architect.md; skills/l-01-agent-lifecycles/roles/curator.md; skills/l-01-agent-lifecycles/roles/manager.md; skills/l-01-agent-lifecycles/roles/reviewer.md; skills/l-01-agent-lifecycles/roles/strategist.md:1-133; skills/l-01-agent-lifecycles/roles/worker.md
-
-
-
-
-
-
-
-Past-epoch caption (retained wording): - The permitted routes are task-contract knowledge-ingest and mounted knowledge_write; no other route writes knowledge from the seat.
-
-Original-target custody: `skills/l-01-agent-lifecycles/roles/curator.md`, blob `c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6`, 106–107, declared “- The **knowledge authoring routes**, including a repository foundation under `c-14-knowledge-bootstrap`: `agents-remember knowledge-ingest` with this task's leaf contract, hand-off list and `--commit` (`commit”. The retained caption is detached from the live number; the table now carries only the current clause and current targets.
-
-Retained authoring-row wording:
-
-Finding: Normal knowledge authoring uses mounted knowledge_write or the admitted serving-build knowledge-ingest route. Only a covered correct-input refusal admits recovery for that same tool and input class; no other write gains the exception.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/curator.md:8-177; skills/l-01-agent-lifecycles/reference/curator-writer-details.md:10-49; skills/l-01-agent-lifecycles/reference/refused-write.md:1-38
-
-Retained authoring-row wording:
-
-Finding: Taskless subject and one coordinating agent under the Architect.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/architect.md:8-106
-
-Retained authoring-row wording:
-
-Finding: Master coordination under the Architect and exact paired scope.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/manager.md:8-84
-
-
-Retained authoring-row wording:
-
-Finding: Role registry and native supported-role vocabulary are distinct; the prior Investigator spelling is canonicalized on input.
-
-Anchor:
-
-Source: mcp/src/agents_remember/models/role_capsules/vocabulary.py:80-91; mcp/src/agents_remember/models/role_launcher.py:23-37; mcp/src/agents_remember/models/role_launcher.py:51-68; skills/l-01-agent-lifecycles/roles/curator.md:8-177
-
-
-
-
-
-
-Retained authoring-row wording:
-
-Finding: Architect delegates one master to Manager and concurrent masters to Orchestrator; direct coordination requires the developer.
-
-Anchor:
-
-Source: mcp/src/agents_remember/memory_quality/landing_report.py:353-401; skills/l-01-agent-lifecycles/roles/architect.md:8-106
-
-
-Past-epoch caption (retained wording): - Manager prepares the leaf's three sibling seats with role_start_set; direct peer handovers leave gate acceptance and transactions with Manager, and held delivery is not resent. Anchor: Operation — Coordination
-
-Original-target custody: `skills/l-01-agent-lifecycles/operations/coordination.md`, blob `dee346f3da2aa768e464f5895f9489da5f4ad6bd`, 30–32, declared “When `role_message` on `agents-remember-task` answers `held` because a child waits at a permission prompt, or its wait returns `permission-pending`, tell your parent at once. Name the child's role, task number ”; `skills/l-01-agent-lifecycles/operations/coordination.md`, blob `dee346f3da2aa768e464f5895f9489da5f4ad6bd`, 12–32, declared “The Manager starts a leaf's Worker, Reviewer and Curator as a set in one `role_start_set` call on `agents-remember-task`: the Worker opens at once, and the Reviewer and the Curator are held until their first me”. The retained caption is detached from the live number; the table now carries only the current clause and current targets.
-
-Retained authoring-row wording:
-
-Finding: Normal leaf starts are individual role_start calls: Worker at build, Reviewer at freeze, Curator after code PASS. Start notices reach Manager first; exact-object peer handovers remain direct, Manager retains gate and transaction ownership, and held delivery is not resent.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/operations/coordination.md:4-40; skills/l-01-agent-lifecycles/roles/manager.md:24-32; skills/l-01-agent-lifecycles/reference/message-handover.md:1-21
-
-
-Retained authoring-row wording:
-
-Finding: Worker leaves code uncommitted; sync conflict content, staging and continuation have separate owners.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/operations/implementation.md:8-34
-
-
-Retained authoring-row wording:
-
-Finding: Reviewer independently checks exact attempts, knowledge-effect declarations and separately sealed memory evidence.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/roles/reviewer.md:8-220; skills/l-01-agent-lifecycles/operations/review.md:12-62
-
-
-Retained authoring-row wording:
-
-Finding: Settings-bound fix verification preserves existing findings; beyond-limit work requires recorded architect/developer approval through Manager.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/operations/review.md:12-62
-
-
-
-
-Retained authoring-row wording:
-
-Finding: Curator authors scope, completes full MQC and coherence, and records no separate Reviewer-owned Git comparison.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/operations/curation.md:5-205
-
-
-
-
-Retained authoring-row wording:
-
-Finding: The retained repository-context admission helper refuses enclosure_in_scope; the current authoring route is separately admitted inside the actual Architect task/enclosure.
-
-Anchor:
-
-Source: mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:267-285; skills/l-01-agent-lifecycles/roles/curator.md:8-177; skills/l-01-agent-lifecycles/reference/curator-repository-foundation.md:3-7
-
-
-Retained authoring-row wording:
-
-Finding: Developer answers require receiving identity and quoted words; unanswered/denied permissions have no bypass, and held messages are not resent.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/operations/orientation.md:27-40
-
-
-Retained authoring-row wording:
-
-Finding: Current closeout doctrine consumes exact authority and evidence without substituting raw Git or blanket full-suite gates.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/operations/closeout.md:3-11
-
-
-
-Retained authoring-row wording:
-
-Finding: Independent MEMORY review reads both landing reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/reference/reviewer-memory-d301.md:3-5; skills/l-01-agent-lifecycles/roles/reviewer.md:8-220
-
-
-
-Retained authoring-row wording:
-
-Finding: Ordinary converted-card row/source authoring duty.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md:19-68; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:594-605
-
-- The step-local authoring and writer details supply the invocation and written/planned/refused report consumption; the role output supplies durable file/record/entry/history identities, not a dataset publication. [5]
 - Normal knowledge authoring uses mounted knowledge_write or the admitted serving-build knowledge-ingest route. Only a covered correct-input refusal admits recovery for that same tool and input class; no other write gains the exception. [6]
-- Curation retains the scope/producer boundaries; its step-local authoring and writer details contain invocation and report-consumption method. [8]
-- The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; source code, task and lifecycle writes stay outside the seat. [9]
+
+- Curation keeps scope and producer-ownership boundaries; the serving-build and ingest-report details hold the invocation and report-reading method. [8]
+
+- The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; code, gate, lifecycle and closeout writes stay outside the seat, and task-document edits stay within its own assignment. [9]
+
 - Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. [10]
+
 - Worker is one leaf-scoped builder whose terminal artifact is the turn report. [11]
-- The full capsule vocabulary and composition manifest enumerate remaining registry roles; the native router supports eight roles including Bootstrap and does not launch Designer/Strategist. [12]
+
+- The capsule vocabulary holds eight roles — architect, orchestrator, manager, worker, curator, reviewer, investigator and bootstrap — the same set the launcher can select; the launcher also accepts the system-specialist alias. [12]
+
 - Worker and reviewer roles define the two independent halves of per-ID acceptance. [13]
+
 - The graph-less atomic-sequential default describes sprint shape; nothing serializes the masters. [14]
-- Ordinary converted-card row/source authoring duty. [17]
-- The curator's file-writer step. [18]
+
+- The ordinary converted-memory onboarding row is updated with a counted card change or no_impact, and the writer binds it to every covered source file's blob. [17]
+
+- The Curator's file-writer step uses mounted knowledge_write or the admitted serving-build command-line writer. [18]
+
 - Taskless subject and one coordinating agent under the Architect. [19]
+
 - Master coordination under the Architect and exact paired scope. [20]
+
 - Bound uncommitted Worker duty. [22]
+
 - Independent exact assigned review and sealed findings. [23]
+
 - Bound and preserved normal Curator duties. [24]
+
 - Taskless real concern and report-first remediation. [25]
+
 - The Curator keeps the admitted writer for normal records, sidecar entries and history, and never edits the derived index. A covered correct-input write refusal uses only its declared same-tool/input-class recovery, with owner notice, manual provenance and working checks. [26]
+
 - The canonical role owns this concern and mutation boundary. [27]
-- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [28]
+
+- Stage boundaries, the settings-owned review budget and recorded approval duties are carried by the role instruction sources, for example the Manager's stop list. [28]
+
 - Role registry and native supported-role vocabulary are distinct; the prior Investigator spelling is canonicalized on input. [29]
+
 - Independent MEMORY review reads both landing reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place. [31]
+
 - Architect delegates one master to Manager and concurrent masters to Orchestrator; direct coordination requires the developer. [32]
+
 - Normal leaf starts are individual role_start calls: Worker at build, Reviewer at freeze, Curator after code PASS. Start notices reach Manager first; exact-object peer handovers remain direct, Manager retains gate and transaction ownership, and held delivery is not resent. [33]
+
 - Worker leaves code uncommitted; sync conflict content, staging and continuation have separate owners. [34]
+
 - Reviewer independently checks exact attempts, knowledge-effect declarations and separately sealed memory evidence. [35]
+
 - Settings-bound fix verification preserves existing findings; beyond-limit work requires recorded architect/developer approval through Manager. [36]
+
 - Curator authors scope, completes full MQC and coherence, and records no separate Reviewer-owned Git comparison. [39]
+
 - The retained repository-context admission helper refuses enclosure_in_scope; the current authoring route is separately admitted inside the actual Architect task/enclosure. [42]
+
 - Developer answers require receiving identity and quoted words; unanswered/denied permissions have no bypass, and held messages are not resent. [45]
+
 - Current closeout doctrine consumes exact authority and evidence without substituting raw Git or blanket full-suite gates. [46]
+
 - Native start, finalize and abandon publish task stage and its parent mirror; Manager avoids a redundant status write while retaining explicit corrections and organizational-master completion. [49]
+
 - Worker repairs owned findings directly and retains the per-finding freeze trail. [63]
+
 - Manager settles covered precedents and adds no pre-repair go-ahead. [64]
 
-- The retained-sibling process is read under its storage interface: converted families use invariant-member identities and stored family/revision readback, not legacy membership-row selectors. [3]
-- The per-target authored rationale and report-state duty now lives in the step-local Curator authoring detail. [4]
-- The current knowledge handoff names writer state, durable record/entry paths and IDs, history rows and per-refusal reasons; no dataset identity is published. [7]
+- Families are authored as records with their own guarantee, members, routes and admission, name members only by identifier, and are read back through knowledge_read with view family. [3]
+
+- The per-target authored rationale lives in the knowledge-ingest preparation detail and the report-state reading in the ingest-report detail. [4]
+
+- The Curator report names writer-report state, written record and entry identifiers and paths, history rows and each refusal's own reason. [7]
+
 - Lifecycle publication and recovery carry the actual code/memory outputs. [16]
-- The decision-lifting duty is read in curator-authoring14–17: lift decisions that keep governing code; task-only choices remain in the task. [1]
-- The declaration check in step 7. Anchor: "check that declaration against the" [2]
-- The strategist lifecycle makes topology an explicit choice and refuses an unreasoned default.  Anchor: "or explicitly adopt the graph-less atomic-sequential default" [15]
-- Sprint coordination above one Manager per master and separate evidence.  Anchor: `You coordinate one selected sprint` [21]
-- Role selection checks operation applicability and selects no shared core for a dispatched role. Anchor: `_role_scope`, `_require_operation_allowed` For every reported cut, the Curator handover names this task change making the text untrue; text is not removed to clear a quality finding. [30]
+
+- The decision-lifting duty is read in the governing-sources detail: lift decisions that keep governing code; task-only choices remain in the task. [1]
+
+- The Reviewer's step 7 compares declared expectedKnowledgeEffects with the leaf's requirement packet; a mismatch is a finding. [2]
+
+- Sprint coordination above one Manager per master and separate evidence. [21]
+
+- Role selection checks operation applicability and selects no shared core for a dispatched role. For every card cut by the quality check, the Curator names the source evidence that makes the removed text untrue; text is never removed merely to clear a quality finding. [30]
+
 - Canonical skills feed the declaration-owned single package target through the shared generator; this source inventory is not a synchronization verdict. [48]
 - Converted leaf ingest requires a contract/list/authorization, writes only with the file-write flag, and routes converted memory to the file writer. Anchor: `add_arguments`, `run` [37]
-- Current family and external-document authoring supersede retired database entry keys.  Anchor: The curator's authored keys beside the thirteen fields [38]
+
+- Families are authored as records items and external documents as card references; the file writer does not read the entry keys family and external_sources. [38]
+
 - Current native Curator launch resolves and validates the canonical sprint/master/leaf chain; the removed generic task-binding module supplies no current taskless Curator admission, and the foundation task the Architect opens is an ordinary leaf on that chain. [41]
 - Native enclosure preparation reads contract-scoped status and refuses unsuccessful preparation; this alone does not prove the historical whole-path lineage claim. [43]
 - Graph absence declares no dependencies and resolves the atomic shape without serializing masters.  Anchor: `resolve_scheduling_mode`, `effective_execution_nature` [44]
+
 - Non-author second-reader fact-check before closeout. [47]
-- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [50]
-- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [51]
-- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [52]
-- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [53]
-- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [54]
-- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [55]
-- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [56]
-- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [57]
-- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [58]
-- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [59]
-- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [60]
-- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [61]
-- Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [62]
+
+- The composition manifest declares each operation's section audience ("sections", or "all" for authorized closeout) and the roles it applies to; these are source declarations, not execution acceptance. [50]
+- The shared writing profile governs invariant statements, family guarantees, history reasons and walkthrough prose, and preserves conditions, exceptions, quantifiers and negation. [51]
+- Worker, Curator and Reviewer each mark only the task step naming their own part done; with no such step they report and set nothing, and the Reviewer marks its step only after the last round is recorded passed. [52]
+- Memory review keeps separate sealed reports, finding identifiers and pass count, recorded with reviewKind=memory, and changes no code review state. [53]
+
 - The Architect verifies copied developer words against the filed message and claims a master when its record does not name this Architect. [65]
+
 - Raw quality is retained separately; combined readiness changes only when coherence validation fails after quality is ready. [40]
+
 - The first message also delivers the shared every-role digest beside the rendered capsule. The manifest declares it separately, and compilation returns its text apart from render_instructions(); the admitted digest revision contributes to semantic identity. This separate delivery does not prepend the larger retained core doctrine to the role/operation instruction stream. [66]
+
 - Current curation continues from a report to the next authorized step without a new Manager go. It verifies card sentences against source, repairs wrong or missing memory encountered along its way beyond quality-check findings, names each repair and makes no broad sweep. Code changes, requirement decisions and another leaf’s work return to their owner. A correction qualifies every affected false body claim; full checks and the independent fact-check run before handover. [67]

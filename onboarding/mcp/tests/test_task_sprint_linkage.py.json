@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eed37fd37dac04438b5471f02b63de52c3fb2ab7",
+            "blob": "365e3f21c404b74d68c545666097cdc20cd3966d",
             "content": "sha256:79406cc65017db175f9f0d3ae913f8940be4d45b99671397f08b7d05a44f0ff8",
             "locator": {
               "kind": "symbol",
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eed37fd37dac04438b5471f02b63de52c3fb2ab7",
-            "content": "sha256:111c4909058fce7d9e758605337e3c4f0648e6fc7a5635d8f048f82b35cd5247",
+            "blob": "365e3f21c404b74d68c545666097cdc20cd3966d",
+            "content": "sha256:e2191cbd3629d82524ded25d01f5d8c087598c8a55f5fce053498800f0b98006",
             "locator": {
               "kind": "symbol",
               "name": "_judgment_row"
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eed37fd37dac04438b5471f02b63de52c3fb2ab7",
+            "blob": "365e3f21c404b74d68c545666097cdc20cd3966d",
             "content": "sha256:d2f66314228a20ff60bd9f3decfcef70c64f4017cb5540d460b192bcf7188e66",
             "locator": {
               "kind": "symbol",
@@ -51,14 +51,31 @@
       ]
     },
     "4": {
-      "note": "SprintLinkageTests now defines test_linkage_report_answers_with_counts_and_location. It asserts counts/updated/reportPath and equality of the report's facts to logged whole linkageFacts; its dry answer has no reportPath. Its deterministic 100-token content assertion excludes log with the coordination root fixed to40. Shared helpers remain; this adapter fixture is not a whole server/session proof or a no-tests module.",
+      "note": "SprintLinkageTests defines test_linkage_report_answers_with_counts_and_location. It asserts counts/updated/reportPath and equality of the report's facts to logged whole linkageFacts; its dry answer has no reportPath. Its deterministic 100-token content assertion excludes log with the coordination root fixed to 40 characters. Shared helpers remain; this adapter fixture is not a whole server/session proof or a no-tests module.",
       "targets": [
         {
           "anchor": {
-            "blob": "eed37fd37dac04438b5471f02b63de52c3fb2ab7",
-            "content": "sha256:1f530560ed976b728aa6c2db27ad865df5a00f811e8a19e4b87af2a16869d49d",
+            "blob": "365e3f21c404b74d68c545666097cdc20cd3966d",
+            "content": "sha256:24795a9d6ef21cb7b58f750db95137295b106f7464ef3abeec92e6e3207d285b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_linkage_report_answers_with_counts_and_location"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A judgment-register row's author defaults to `architect`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "365e3f21c404b74d68c545666097cdc20cd3966d",
+            "content": "sha256:e2191cbd3629d82524ded25d01f5d8c087598c8a55f5fce053498800f0b98006",
+            "locator": {
+              "kind": "symbol",
+              "name": "_judgment_row"
             }
           },
           "kind": "test"

@@ -45,12 +45,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
             "content": "sha256:ac1d11f8dcec1fbbaf192dec3dc2a73f56f9cd3a9144cdea6cc963328541dbba",
             "locator": {
-              "end": 13,
+              "end": 15,
               "kind": "line_range",
-              "start": 13
+              "start": 15
             },
             "path": "mcp/src/agents_remember/models/base.py"
           },

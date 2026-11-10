@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:432c9c5cdad977352024ad9824dfef05e5fdda879f965d7f21f243e6b177ae76",
+            "blob": "830d89bb301c2fd59337d82f6f8aa7abf676b4e6",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 643,
+              "end": 686,
               "kind": "line_range",
-              "start": 643
+              "start": 686
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -38,16 +38,16 @@
       ]
     },
     "11": {
-      "note": "The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support.",
+      "note": "The lifecycle catalog names this suite among the consumers of the checkpoint-landing and curator-coherence shared-support artifacts.",
       "targets": [
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:c0903a56313e2fceba8ec882d6a09c24c522ee9f2a785d8231308ea7ca5c403c",
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 972,
+              "end": 1015,
               "kind": "line_range",
-              "start": 972
+              "start": 1015
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -55,25 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:4a0549275f06c8838c2414fc5b4419f0c67e94663ddf35d404c907ab21437576",
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 1102,
+              "end": 1187,
               "kind": "line_range",
-              "start": 1102
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:a7f601ca1cdfee3358ddd4679b51670bf5ef345ff997f8137f3fd93d390bd6d8",
-            "locator": {
-              "end": 920,
-              "kind": "line_range",
-              "start": 920
+              "start": 1187
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -104,12 +91,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:432c9c5cdad977352024ad9824dfef05e5fdda879f965d7f21f243e6b177ae76",
+            "blob": "830d89bb301c2fd59337d82f6f8aa7abf676b4e6",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 643,
+              "end": 686,
               "kind": "line_range",
-              "start": 643
+              "start": 686
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -468,12 +455,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:c6b7b1da32b994340b543c3df6653e8c8ab448860c97c832832b4e443965f4ca",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:53756c310b0aee9df4aee40e78be86bc72c40b60ed4c04a4a9fd28de9c6580e7",
             "locator": {
-              "end": 694,
+              "end": 830,
               "kind": "line_range",
-              "start": 184
+              "start": 289
             },
             "path": "mcp/tests/test_closeout_queue.py"
           },
@@ -481,12 +468,12 @@
         },
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:910790e222ac3e8bfc7ada5a2211c67caf04d4ace58f37d95f461738f55c3c3c",
             "locator": {
-              "end": 63,
+              "end": 72,
               "kind": "line_range",
-              "start": 63
+              "start": 72
             },
             "path": "mcp/tests/test_closeout_queue.py"
           },
@@ -495,76 +482,11 @@
         {
           "anchor": {
             "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
-            "content": "sha256:e7d89d00b82951853068c4c431c4482266e4c537f6aaa528749c3d74a2a4b6e2",
+            "content": "sha256:1ed969015bd506110327582dfc0076628d6aac8490f66e46ad668cebd92b28fe",
             "locator": {
-              "end": 84,
+              "end": 86,
               "kind": "line_range",
               "start": 77
-            },
-            "path": "mcp/tests/test_worktree_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
-            "content": "sha256:6d62f4bde76d0dd8498787b116e2e9f8f6e4ac60059203b47477f55571189b69",
-            "locator": {
-              "end": 76,
-              "kind": "line_range",
-              "start": 76
-            },
-            "path": "mcp/tests/test_worktree_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
-            "content": "sha256:4e8997294a63c7e1076e2a37b7827523027ca3943dbac58f353e5b6cfbb9c3a3",
-            "locator": {
-              "end": 90,
-              "kind": "line_range",
-              "start": 90
-            },
-            "path": "mcp/tests/test_worktree_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
-            "content": "sha256:1651138f5421267b07ed1b32bab2afeae8e787d5d0214ceb31d3d6a3f9812af7",
-            "locator": {
-              "end": 351,
-              "kind": "line_range",
-              "start": 351
-            },
-            "path": "mcp/tests/test_worktree_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
-            "content": "sha256:b8a0df81701d3c8da37bf1a1a217729aea5378c4d839e242d5c99cb166b57476",
-            "locator": {
-              "end": 361,
-              "kind": "line_range",
-              "start": 361
-            },
-            "path": "mcp/tests/test_worktree_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
-            "content": "sha256:8f9ca25069e78298a983e492a45bbe8352e1bfc02e6db63361cec88a8c5e0951",
-            "locator": {
-              "end": 760,
-              "kind": "line_range",
-              "start": 760
             },
             "path": "mcp/tests/test_worktree_support.py"
           },

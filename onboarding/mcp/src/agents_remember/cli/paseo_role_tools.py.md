@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Route overview](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
@@ -12,20 +12,20 @@ Implements single-role starts, the Manager-owned leaf-set start and receipt-boun
 
 Caller binding decides may-start pairs and sprint/master containment. Starts call launcher dispatch with native parent, and only starter or dashboard may replay a stored request. Recipients resolve through current-line receipts. Self-addresses, ambiguous live-agent selections and cut taskless candidate sets refuse; a leaf seat with two live agents is ambiguous too. An unfinished start, permission prompt or unwritable running turn instead holds a message in the recipient workspace when its receipt locates that store. Native message delivery/resume/wait results keep explicit refusal and uncertain-delivery shapes; no second hosted AR seat is created here.
 
-Closed-recipient resume calls `role_activity.resume_role_agent` with the saved receipt, publishing its identity before native resume. `_started` only builds the start answer; post-success role-facts publication was removed from it. The launch-receipt owner publishes before launch/replay. Best-effort publication does not imply host consumption, delivery or task acceptance.
+Closed-recipient resume calls `role_activity.resume_role_agent` with the saved receipt, publishing its identity before native resume. `_started` only builds the start answer and publishes no role facts. The launch-receipt owner publishes before launch/replay. Best-effort publication does not imply host consumption, delivery or task acceptance.
 
-Since 260928-MIK-L114 `send_role_message` carries the resolved recipient's role for the
+`send_role_message` carries the resolved recipient's role for the
 river (`_carry_resolved_target_role`): the payload builder only sees the call, whose role
 is absent for id-addressed recipients, so the durable receipt's recorded role is set on
 the context variable the completed event reads. Nothing is guessed — with no role on
 receipt or call the event stays literal.
 
 
-**L184 — INV-1ZKP4R.** This module builds the tool answer a limited recipient's message returns. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+This module builds the tool answer a limited recipient's message returns.
 
-## R93 refusal-remedy account — local and shared recovery owners
+## Refusal-remedy account — local and shared recovery owners
 
-Four `nextAction` remedies that still leave the message transportable (`_archived`, `_resume` scope-changed, `_resume` cannot-resume, `_undelivered`) now name the parent with `role_message` on `agents-remember-task` first and the own chat only for an agent without one. The no-runtime and host-unreachable remedies keep their own-chat advice, while unavailable-recipient delivery now uses the held-store owner rather than asking the sender to repeat a message that was taken as held.
+Four `nextAction` remedies that still leave the message transportable (`_archived`, `_resume` scope-changed, `_resume` cannot-resume, `_undelivered`) name the parent with `role_message` on `agents-remember-task` first and the own chat only for an agent without one. The no-runtime and host-unreachable remedies keep their own-chat advice, while unavailable-recipient delivery uses the held-store owner rather than asking the sender to repeat a message that was taken as held.
 
 ## Leaf sets and held-message admission
 
@@ -35,13 +35,13 @@ Only the leaf’s owning Manager may call `start_leaf_set`; the ordinary caller 
 
 ## Current role-message facade and recovery owner
 
-The supported successor composition is not the Attempt-4 thin facade. `role_message_limit` reloads effective settings and `send_role_message` applies the shared text refusal. Only after recipient resolution succeeds does the ordinary prologue collect reports, locate the recipient, file the message and dispatch locally. An unfinished-start resolution instead returns through `_hold_for_unresolved` before report collection and `_file_message`; its `_MessageSend` has no filed identity, so this branch does not establish a retained body/attachment file or file/hash wake pointer. That implementation gap does not weaken the normative filing obligation.
+`role_message_limit` reloads effective settings and `send_role_message` applies the shared text refusal. Only after recipient resolution succeeds does the ordinary prologue collect reports, locate the recipient, file the message and dispatch locally. An unfinished-start resolution instead returns through `_hold_for_unresolved` before report collection and `_file_message`; its `_MessageSend` has no filed identity, so this branch does not establish a retained body/attachment file or file/hash wake pointer. That implementation gap does not weaken the normative filing obligation.
 
 `_deliver_or_hold` preserves held-message ordering. Its unheld branch enters facade-local `_deliver`, admits Investigator capacity before native send/resume, waits outside the lock and invokes the imported long-reply helper only when `filed` exists. `_held_then_delivered` merges `wait_for_turn` directly without that helper, so a successful held drain does not establish the ordinary character-cut/full-reply-file guarantee. The local capacity refusal is caught by the prologue and retains the filed refusal record; `role_message_delivery` holds no private delivery dispatcher to contrast it with. These are source-attribution limits for Owner/Worker disposition, not a new runtime result, waiver or CODE repair. Body/attachments travel as a file/hash line only on branches whose filed identity exists.
 
-`role_message_delivery` is the selected shared library for file preparation/storage, links, text refusal, successor naming and long-reply filing; its remaining recipient-resolution helpers are not this public call path, and its uncalled duplicate `_deliver`/`_send` routines are gone. The prologue's shared archived answer can name a known live successor, while local resume/refusal constructors preserve their own explicit recovery boundaries. No-runtime/host-unreachable advice, actual-parent-ID questions and ordinary role/task returns remain separate; no remedy unarchives an old agent.
+`role_message_delivery` is the selected shared library for file preparation/storage, links, text refusal, successor naming and long-reply filing; its remaining recipient-resolution helpers are not this public call path. The prologue's shared archived answer can name a known live successor, while local resume/refusal constructors preserve their own explicit recovery boundaries. No-runtime/host-unreachable advice, actual-parent-ID questions and ordinary role/task returns remain separate; no remedy unarchives an old agent.
 
-Historical Worker successor/addendum: the then-composed 1835-line file breached the 1200-line F04 rail, unlike its earlier 583-line facade. ONE D140 recorded that limitation, and Architect ruling b17b9a0a permitted size-named landing and assigned the later split to L68 without waiving the rail. The current A6b file has 1145 physical lines: caller binding, recipient resolution and role starts now live in `paseo_role_caller.py`, `paseo_role_recipients.py` and `paseo_role_start.py`, imported by this message facade. This current source observation neither rewrites the earlier report nor claims that L68 performed this extraction, and it is not MEMORY acceptance or a new CODE PASS.
+Caller binding, recipient resolution and role starts live in `paseo_role_caller.py`, `paseo_role_recipients.py` and `paseo_role_start.py`, which this message facade imports.
 
 ## Hold-versus-send decision and the delivery answers
 
@@ -68,11 +68,9 @@ The role-message facade, native held ordering, recipient identity, parent contai
 ## Evidence
 
 
-
 - Frozen implementation of _start_role supporting the stated file behavior. [2]
 
 - Frozen implementation of _resolve_recipient supporting the stated file behavior. [3]
-
 
 
 - Checks foreign IDs and self-addresses are refused. [6]
@@ -82,12 +80,12 @@ The role-message facade, native held ordering, recipient identity, parent contai
 - Exceeding 24 reads refuses and discloses list cut rather than selecting newest agent. [8]
 
 
-## MIK-R95 Preparation Answer
+## Preparation Answer
 
 A `RolePreparationError` cause is projected into the `launch-refused` answer with its exact owner status, detail and next action, and `preparationStatus`; a successful answer carries the receipt's `preparation` block and appends `_projects_preparation_note`, which states that a masterless Projects workspace was opened and that the host reports no creation outcome. Nothing infers the outcome from timing or a pre-call list.
-## 260928-MIK-L96 Host remedy texts
+## Host remedy texts
 
-The role-start host remedies now name the install step where the host is not installed and the one start where it is down, so an agent started by a dashboard without a reachable host is told the same thing the dashboard line says.
+The role-start host remedies name the install step where the host is not installed and the one start where it is down, so an agent started by a dashboard without a reachable host is told the same thing the dashboard line says.
 
 - The host-unreachable remedy that names the install step and the one start. [9]
 
@@ -97,17 +95,12 @@ The role-start host remedies now name the install step where the host is not ins
 Architect, Orchestrator and Manager may start Investigator only within their admitted Projects/sprint/master containment; Investigator, Worker, Reviewer and Curator start no role. A role-addressed selected Investigator is resolved against the complete open request set, with exact IDs in an ambiguity refusal. A message that would start a new turn on a completed selected-task Investigator enters the shared selection capacity owner before send/resume; steering an already open execution keeps its slot. Host wait remains outside that short admission operation.
 
 
-
-- The current source implements this file’s stated Investigator boundary. [10]
-
-
+- A message that would start a turn on a selected-task Investigator passes the shared selection capacity owner (`investigator_message_capacity`) before native send/resume, and a full selection refuses with `investigator-capacity`. [10]
 
 
 ## Refreshed current evidence
 
 - Frozen implementation of start_rule_violation supporting the stated file behavior. [1]
-
-
 
 
 ## Refreshed current evidence
@@ -122,30 +115,22 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 - After ordinary recipient resolution succeeds, the prologue constructs the filed identity from shared attachment/link/store primitives before that resolved-recipient delivery; unfinished-start holding returns through _hold_for_unresolved before _file_message and has no filed identity.
 
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_role_tools.py:211-264 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cfc2f235c62d76d292e999f651b5b689d85c4f55; mcp/src/agents_remember/cli/paseo_role_tools.py:267-329 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e4bbcd82e3d6205d277d58a07867a72af3663d2c; mcp/src/agents_remember/cli/paseo_role_tools.py:214-267 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cfc2f235c62d76d292e999f651b5b689d85c4f55; mcp/src/agents_remember/cli/paseo_role_tools.py:270-332 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e4bbcd82e3d6205d277d58a07867a72af3663d2c; mcp/src/agents_remember/cli/paseo_role_tools.py:208-261 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ac1eb07f71a35c1093e2e3ee45e585db52f3138c; mcp/src/agents_remember/cli/paseo_role_tools.py:264-326 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e4bbcd82e3d6205d277d58a07867a72af3663d2c. Retired means the anchor no longer stands, not that the cited subject was deleted [12]
 
 - Unheld native dispatch owns capacity/send/resume and invokes shared long-reply filing after its wait. [13]
 
 - Upstream held-message ordering is decided before native send; permission holding never answers a prompt. [14]
 
 
-
 - The public message call uses the imported recipient-resolution owner, report collection, prologue filing and held/native dispatch. Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.
-
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_role_tools.py:243-305 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 621ae79abc7e21eec42484b9ffc9a4da811a9a80. Retired means the anchor no longer stands, not that the cited subject was deleted [11]
-
 
 
 - Typed public start conversion includes stepUp. [15]
 
 
-
 - The extracted answer owner derives second-copy status from the applied task-server flag and recorded exclusion. [16]
 
 
-
 - Readback, provenance and retry advice are extracted without changing receipt identity. [17]
-
 
 
 - On valid saved receipt context, role-facts publication belongs to pre-launch/replay and receipt-aware resume, not to the post-answer projection; filesystem/runtime publication is best effort, not host execution or plugin-consumption evidence. [18]
@@ -159,9 +144,3 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_role_too
 
 
 - The start carries the client harness; configured-host choices are checked before dispatch, while a cold root defers binding and validation until after preparation. [20]
-
-## Retirements
-
-- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_role_tools.py:243-305 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 621ae79abc7e21eec42484b9ffc9a4da811a9a80. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
-- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_role_tools.py:211-264 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cfc2f235c62d76d292e999f651b5b689d85c4f55; mcp/src/agents_remember/cli/paseo_role_tools.py:267-329 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e4bbcd82e3d6205d277d58a07867a72af3663d2c; mcp/src/agents_remember/cli/paseo_role_tools.py:214-267 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cfc2f235c62d76d292e999f651b5b689d85c4f55; mcp/src/agents_remember/cli/paseo_role_tools.py:270-332 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e4bbcd82e3d6205d277d58a07867a72af3663d2c; mcp/src/agents_remember/cli/paseo_role_tools.py:208-261 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ac1eb07f71a35c1093e2e3ee45e585db52f3138c; mcp/src/agents_remember/cli/paseo_role_tools.py:264-326 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e4bbcd82e3d6205d277d58a07867a72af3663d2c. Retired means the anchor no longer stands, not that the cited subject was deleted.

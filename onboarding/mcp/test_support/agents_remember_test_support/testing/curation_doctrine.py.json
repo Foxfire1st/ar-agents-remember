@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-        "content": "sha256:9235a1574c2d317f0c529fd1bb8c55903b32cf7f90555c9cd044076400210e4a",
+        "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+        "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-        "content": "sha256:9235a1574c2d317f0c529fd1bb8c55903b32cf7f90555c9cd044076400210e4a",
+        "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+        "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-        "content": "sha256:9235a1574c2d317f0c529fd1bb8c55903b32cf7f90555c9cd044076400210e4a",
+        "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+        "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -57,12 +57,12 @@
     },
     {
       "anchor": {
-        "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+        "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
         "content": "sha256:8f981c11f1290686733d9086a5107bdf08e1dfc3328aa7937b4143a226db6598",
         "locator": {
-          "end": 579,
+          "end": 571,
           "kind": "line_range",
-          "start": 563
+          "start": 555
         }
       },
       "id": "RLZ-MNMZ2H",
@@ -77,28 +77,15 @@
   ],
   "references": {
     "1": {
-      "note": "The retired-sentence registry carries the exact statement, its shipped sources, its probe and its packet fragment.",
+      "note": "The retired-sentence registry carries the exact statement, its shipped sources, its probe and its reason.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:9235a1574c2d317f0c529fd1bb8c55903b32cf7f90555c9cd044076400210e4a",
+            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
             "locator": {
-              "end": 587,
-              "kind": "line_range",
-              "start": 82
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:599fc5b2e8d68a0717607857e2c6dc1986be4368085e13a9c0c7176939fe8840",
-            "locator": {
-              "end": 87,
-              "kind": "line_range",
-              "start": 66
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
             }
           },
           "kind": "code"
@@ -106,16 +93,15 @@
       ]
     },
     "2": {
-      "note": "The required-rule table names the exact form each canonical surface must state, keyed by shipped path.",
+      "note": "The required-rule table names the exact clauses each compact curation source must state, keyed by shipped path.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:baa16b101a04f9636bafa89ddf47efdccb6c782aa875f28cd4e8cb3e00ea9119",
+            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "content": "sha256:261b62cab695890333ccdcc5fde705a49532d741ccda1d4d049b5a3a18246c87",
             "locator": {
-              "end": 631,
-              "kind": "line_range",
-              "start": 623
+              "kind": "symbol",
+              "name": "CURATION_POLICY_STATEMENTS"
             }
           },
           "kind": "code"
@@ -127,12 +113,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:56c4159db1eaa20651d6411e00c537b4e9de889724ad8e2bc0acf35452bfd771",
+            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "content": "sha256:80e23f169ad36abba8bc3cc96a01cb023726735e99839b386125c1821c2b0461",
             "locator": {
-              "end": 57,
-              "kind": "line_range",
-              "start": 36
+              "kind": "symbol",
+              "name": "CURATION_DOCTRINE_SURFACES"
             }
           },
           "kind": "code"
@@ -140,12 +125,12 @@
       ]
     },
     "4": {
-      "note": "The readers answer the per-surface and per-tree questions separately, and the completeness reader is the required-rule half.",
+      "note": "The readers answer the per-surface and per-tree questions separately, and the completeness reader is the required-rule half, requiring every declared clause.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:67a7b91537aa4ee924ffc0f7791af8cf4ade43ee51ad27b8bae097057a50126f",
+            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "content": "sha256:debeac8cac97a796bf8a8abb553c6449ce20d0ebe002c6f53f4f7a95202fdee2",
             "locator": {
               "kind": "symbol",
               "name": "missing_curation_policy_statements"
@@ -160,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2aa34ce785d08c8720a6440e2f97c04f950e1ce",
+            "blob": "71ccc2132582d64927138c5ee287ee17091b1824",
             "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
             "locator": {
               "kind": "symbol",
@@ -193,12 +178,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:56c4159db1eaa20651d6411e00c537b4e9de889724ad8e2bc0acf35452bfd771",
+            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "content": "sha256:47e847ec3a92737fe465f022a2037299013b89d5f11fe48345571a8a93b54840",
             "locator": {
-              "end": 57,
-              "kind": "line_range",
-              "start": 36
+              "kind": "symbol",
+              "name": "GENERATED_SKILL_COPIES"
             }
           },
           "kind": "code"
@@ -206,40 +190,31 @@
       ]
     },
     "8": {
-      "note": "The current Curator tuple carries the intake/after-repair full-operation marker, while the operation keeps COMPLETE_CURATION_RULE and prepare/publish/validate. Retired matching remains source-confined whole-sentence matching and the positive reader accepts any declared marker.",
+      "note": "The operation tuple carries `COMPLETE_CURATION_RULE` and the six other curation clauses; the Curator tuple carries two pointer sentences into the operation's sections.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:baa16b101a04f9636bafa89ddf47efdccb6c782aa875f28cd4e8cb3e00ea9119",
+            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "content": "sha256:261b62cab695890333ccdcc5fde705a49532d741ccda1d4d049b5a3a18246c87",
             "locator": {
-              "end": 631,
-              "kind": "line_range",
-              "start": 623
+              "kind": "symbol",
+              "name": "CURATION_POLICY_STATEMENTS"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "9": {
+      "note": "A compact source passes only when every declared clause is present.",
+      "targets": [
         {
           "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:f501de5fba55ac19a3d1165849963968b6552e733acff6d61b4a5f20d04c22e7",
+            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "content": "sha256:debeac8cac97a796bf8a8abb553c6449ce20d0ebe002c6f53f4f7a95202fdee2",
             "locator": {
-              "end": 659,
-              "kind": "line_range",
-              "start": 640
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:67a7b91537aa4ee924ffc0f7791af8cf4ade43ee51ad27b8bae097057a50126f",
-            "locator": {
-              "end": 756,
-              "kind": "line_range",
-              "start": 743
+              "kind": "symbol",
+              "name": "missing_curation_policy_statements"
             }
           },
           "kind": "code"

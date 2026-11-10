@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "27bc7cb29b4c698532f752259d96f7929ecc87c7",
-        "content": "sha256:d798305e60a711a3f5a733eaedc4b1bfcef145f66764c00fcc5fe92799a2ad52",
+        "blob": "d2c4d7200862e9e53334db5468d41858438df1ea",
+        "content": "sha256:9cbd9daa1c98cab9ca6b1e0bb113e5220a01e7da496d4b5211ca079bbfc41db1",
+        "locator": {
+          "end": 154,
+          "kind": "line_range",
+          "start": 154
+        }
+      },
+      "id": "RLZ-03JVX5",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3D-E4E4N1-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The stop path builds PaseoCli with the process reader, so stopping drives the proven running host Node rather than a missing product Node.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d2c4d7200862e9e53334db5468d41858438df1ea",
+        "content": "sha256:6537f682230d11cd56af574cb174530471c77161f338d5300ac54f10b97fe451",
         "locator": {
           "kind": "symbol",
           "name": "runtime_status"
@@ -18,6 +37,82 @@
       },
       "rationale": "The public Paseo status owner merges owned process facts with the Node comparison without starting or reconfiguring the host.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d2c4d7200862e9e53334db5468d41858438df1ea",
+        "content": "sha256:8e02c4752fd56c8cb82cdec4d04a1e41f94d6a8a9d28b799777e47e328764c7b",
+        "locator": {
+          "end": 180,
+          "kind": "line_range",
+          "start": 180
+        }
+      },
+      "id": "RLZ-F4Y5PT",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-03",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The bridge drives the proven running host Node through PaseoCli and reports paseo_cli_unavailable when the product executable is absent.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d2c4d7200862e9e53334db5468d41858438df1ea",
+        "content": "sha256:9cbd9daa1c98cab9ca6b1e0bb113e5220a01e7da496d4b5211ca079bbfc41db1",
+        "locator": {
+          "end": 144,
+          "kind": "line_range",
+          "start": 144
+        }
+      },
+      "id": "RLZ-P6487T",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-05",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Stopping the runtime builds its PaseoCli with the process reader, so the stop command runs on this build's Node or, when that is absent, on the proven running host's Node (PaseoCli.call, paseo_command.py:104-109; communication_node, paseo_running_node.py:17-33).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d2c4d7200862e9e53334db5468d41858438df1ea",
+        "content": "sha256:57a1d8dd76194d82710f16b3a473c4e7f521c9e413026d06df887ffee7d6e394",
+        "locator": {
+          "end": 107,
+          "kind": "line_range",
+          "start": 106
+        }
+      },
+      "id": "RLZ-S80TEN",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Supporting status only: the status of a home with no running daemon reports no inherited harness homes and no harness-home remedy. This file neither records homes nor refuses a restart; the refusal is require_preserved_harness_homes (paseo_harness_homes.py:64-90), which provisioning calls before stopping the daemon (paseo_provision.py:265-271).",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d2c4d7200862e9e53334db5468d41858438df1ea",
+        "content": "sha256:8142a81a0fc7fac4c89e82f6282e13cc15aa96e613909cc1c04d33e4e92fa5c3",
+        "locator": {
+          "end": 188,
+          "kind": "line_range",
+          "start": 188
+        }
+      },
+      "id": "RLZ-WQJ82F",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-04",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The bridge drives the proven running host Node through PaseoCli and reports paseo_cli_unavailable when the product executable is absent.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -26,8 +121,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27bc7cb29b4c698532f752259d96f7929ecc87c7",
-            "content": "sha256:5398bf50a3e1c803e9b4d2d9a68678863eefe473657c09d67ca2d94f2da4ae2a",
+            "blob": "d2c4d7200862e9e53334db5468d41858438df1ea",
+            "content": "sha256:6e63d114842aed8dfa2ee8e8704754bbcf3b53720aeb2b8e66e6ad37863c27ef",
             "locator": {
               "kind": "symbol",
               "name": "stop_runtime"
@@ -38,15 +133,49 @@
       ]
     },
     "2": {
-      "note": "Public Paseo status includes the Node restart reason and remedy.",
+      "note": "Public Paseo status includes the Node restart reason and remedy.\n\nAnchor: `node_status`",
       "targets": [
         {
           "anchor": {
-            "blob": "27bc7cb29b4c698532f752259d96f7929ecc87c7",
-            "content": "sha256:d798305e60a711a3f5a733eaedc4b1bfcef145f66764c00fcc5fe92799a2ad52",
+            "blob": "d2c4d7200862e9e53334db5468d41858438df1ea",
+            "content": "sha256:753f43545b6264da62f01bea46d678d78b9f2a7e2f8aaa0fe720ad8dfe2adf04",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The running status carries the inherited harness-home names and their remedy.\n\nAnchor: `harness_home_status`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2c4d7200862e9e53334db5468d41858438df1ea",
+            "content": "sha256:6537f682230d11cd56af574cb174530471c77161f338d5300ac54f10b97fe451",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A missing CLI with a process record refuses as `paseo_cli_unavailable`; the product Node is not checked here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2c4d7200862e9e53334db5468d41858438df1ea",
+            "content": "sha256:9ab26931cd1dc53617a80352f17c8b472eea065b32cbb0a2e8dcb0cdfabcef9f",
             "locator": {
               "kind": "symbol",
-              "name": "runtime_status"
+              "name": "_home_record"
             }
           },
           "kind": "code"

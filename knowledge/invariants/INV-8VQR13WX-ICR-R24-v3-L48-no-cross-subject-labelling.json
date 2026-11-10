@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The held-navigation test checks that selecting an unanswered invariant removes the prior family’s reading and identities under the new heading while preserving the workspace, preventing cross-subject evidence from appearing current."
+  },
   "applicability": "Everything the review surface renders under a selected subject's heading while that subject has not answered: the reading area, scope header subject lines, technical record panes and the tree's selection mark.",
   "conditions": [
     "The surface is handed only the read keyed to the question on screen.",

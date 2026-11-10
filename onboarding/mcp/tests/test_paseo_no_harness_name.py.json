@@ -8,10 +8,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "040c6193be9368525f9cfd815b56a0ee2aeeaf6f",
-            "content": "sha256:c268d7e6826b798928b621f46a30e348dfdca28158520ba8c35761c931e333e3",
+            "blob": "a44a2d5ad3c564eaec588ee96f188dbd41276d94",
+            "content": "sha256:a323e2927453e328a579caf375b242ee97469d0a2ae8c47f034ee2f8e67f61b2",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "NoHarnessNameTests"
             }
           },
           "kind": "test"
@@ -23,10 +24,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "040c6193be9368525f9cfd815b56a0ee2aeeaf6f",
-            "content": "sha256:c268d7e6826b798928b621f46a30e348dfdca28158520ba8c35761c931e333e3",
+            "blob": "a44a2d5ad3c564eaec588ee96f188dbd41276d94",
+            "content": "sha256:2d6e3414611fe3a6ff762e24bc40bd048c871db156b2fc18af435ab53622301c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_launch_code_names_no_harness"
             }
           },
           "kind": "test"
@@ -38,12 +40,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "040c6193be9368525f9cfd815b56a0ee2aeeaf6f",
+            "blob": "a44a2d5ad3c564eaec588ee96f188dbd41276d94",
             "content": "sha256:49c1e655ee924641da7dcb36490eeff3c88b2d74b36feced400a25e2eea54d4a",
             "locator": {
-              "end": 68,
+              "end": 64,
               "kind": "line_range",
-              "start": 58
+              "start": 54
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "No phrase exception is admitted to the scan.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a44a2d5ad3c564eaec588ee96f188dbd41276d94",
+            "content": "sha256:68ae0f617cfebe2e3e50cb19d92669a5fe80b01e029275620cb2306f138956b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "NAMED_EXCEPTIONS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The phrase-excepting scan removes only its phrase and still finds a harness name outside it.\n\nAnchor: `.claude/mcp/agents-remember-settings.json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a44a2d5ad3c564eaec588ee96f188dbd41276d94",
+            "content": "sha256:4adddca69ae29de7be315a612c58c751853ec21c5f62bb05d0e7d885be4fa6f6",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 236
             }
           },
           "kind": "test"

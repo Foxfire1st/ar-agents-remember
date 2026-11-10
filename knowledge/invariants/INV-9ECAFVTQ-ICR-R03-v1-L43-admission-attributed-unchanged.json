@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The source-admission owner labels unchanged context only after the separate realization-link owner establishes an exact-path link from the requested comparison's own knowledge."
+  },
   "applicability": "Review source-content reads (/api/review/intent/source-content) of one leaf's review comparison, for a path its requested measured tree pair does not list as changed.",
   "conditions": [
     "The requested pair's change set was measured and does not list the path.",

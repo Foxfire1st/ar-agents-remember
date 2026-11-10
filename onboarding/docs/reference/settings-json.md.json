@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
         "content": "sha256:012d7f3d967f181785205f452f928dff02fd7fe94ebb2a02a58b7aecf0995ad2",
         "locator": {
-          "end": 967,
+          "end": 1002,
           "kind": "line_range",
-          "start": 952
+          "start": 987
         }
       },
       "id": "RLZ-DYXENX",
@@ -23,8 +23,27 @@
     },
     {
       "anchor": {
-        "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
-        "content": "sha256:241831e1c92c1ebd1e9cae46ad458c4d6cbf5478cd9c49d5af4ad4127b16672d",
+        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+        "content": "sha256:37ab52d75cfba4752d4e9a645af8035b5afdf0b780c127d4bb69f64466a4dc51",
+        "locator": {
+          "end": 1159,
+          "kind": "line_range",
+          "start": 1159
+        }
+      },
+      "id": "RLZ-FFEWN8",
+      "invariant": "INV-8VNSKJ",
+      "origin": {
+        "handoffEntry": "L84-R1-05",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The settings reference repeats the recovery where the refused-write setting is documented.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+        "content": "sha256:c98b0e3e3c5cb5b8e117bf4f2398fa964cda9744bcd8c4a19aa0a5083029993a",
         "locator": {
           "kind": "file"
         }
@@ -40,12 +59,12 @@
     },
     {
       "anchor": {
-        "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
         "content": "sha256:c1d8008db2562e414b16242dddf7a3d460e6ed3ef52e590cb835a8e1feb3e99d",
         "locator": {
-          "end": 496,
+          "end": 517,
           "kind": "line_range",
-          "start": 487
+          "start": 508
         }
       },
       "id": "RLZ-JV8KJG",
@@ -59,12 +78,12 @@
     },
     {
       "anchor": {
-        "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
-        "content": "sha256:c0c988e3a5aa7cfc196905181be4425b87e970b3cc912c7532f2829f9572c522",
+        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+        "content": "sha256:eb492c0f0960ad99c02c5eaa495514433ef989d5886a8905f08d590fae501a85",
         "locator": {
-          "end": 54,
+          "end": 57,
           "kind": "line_range",
-          "start": 22
+          "start": 24
         }
       },
       "id": "RLZ-KM0Q5C",
@@ -78,8 +97,8 @@
     },
     {
       "anchor": {
-        "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
-        "content": "sha256:241831e1c92c1ebd1e9cae46ad458c4d6cbf5478cd9c49d5af4ad4127b16672d",
+        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+        "content": "sha256:c98b0e3e3c5cb5b8e117bf4f2398fa964cda9744bcd8c4a19aa0a5083029993a",
         "locator": {
           "kind": "file"
         }
@@ -95,8 +114,8 @@
     },
     {
       "anchor": {
-        "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
-        "content": "sha256:241831e1c92c1ebd1e9cae46ad458c4d6cbf5478cd9c49d5af4ad4127b16672d",
+        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+        "content": "sha256:c98b0e3e3c5cb5b8e117bf4f2398fa964cda9744bcd8c4a19aa0a5083029993a",
         "locator": {
           "kind": "file"
         }
@@ -113,16 +132,16 @@
   ],
   "references": {
     "4": {
-      "note": "The reference states five settings homes/cadences, explicit user-owned open/close commands and nonmutating exact-path mode reporting; role agents do not acquire user-settings write authority.",
+      "note": "The reference states five settings homes/cadences, explicit user-owned open/close commands and nonmutating exact-path mode reporting; role agents do not acquire user-settings write authority.\n\nAnchor: `openUserSettings`",
       "targets": [
         {
           "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
-            "content": "sha256:6218019904e7118fb33056307ef55ecfe213f44da6519d2635c2c6722e705804",
+            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+            "content": "sha256:923c4fe233b04dfb4d4b44e0f3ec044b469b1478e892c428827e0d388c34a203",
             "locator": {
-              "end": 54,
+              "end": 57,
               "kind": "line_range",
-              "start": 1
+              "start": 3
             }
           },
           "kind": "code"
@@ -130,64 +149,52 @@
       ]
     },
     "5": {
-      "note": "The reference distinguishes per-use host/role choices and permission authority from retained accepted-but-unread settings. Its new receipt-scope and same-tool correct-input canonical-amendment passages preserve permission, read/check/validation/sync and transaction stops.",
+      "note": "The reference distinguishes per-use host/role choices and permission authority from retained accepted-but-unread settings. Its correct-input canonical-amendment passage keeps read/check/validation/sync refusals, starts, product guards and commit gates as stops, and when no admitted route works the write is made openly by hand and logged.\n\nAnchor: `correct-input write-refusal procedure`",
       "targets": [
         {
           "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+            "content": "sha256:101fef371e5a1826dda080bd40e1152d87cbe0a145295e40dc8e6cba404bb926",
+            "locator": {
+              "end": 1163,
+              "kind": "line_range",
+              "start": 1155
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
             "content": "sha256:5819bd68e8f485b8358e37dc1901bc0d027bc82378c1eff8886d681860720cb5",
             "locator": {
-              "end": 165,
+              "end": 168,
               "kind": "line_range",
-              "start": 151
+              "start": 154
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
-            "content": "sha256:79a6cc08c93430273c2a97d0180cce1084240081de73d1af68b9861f508044c5",
-            "locator": {
-              "end": 640,
-              "kind": "line_range",
-              "start": 583
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
             "content": "sha256:10b3111502fc934ea5f0ab2b030343c4aaa3f324af00625ecbd4008cc4ca650c",
             "locator": {
-              "end": 926,
+              "end": 961,
               "kind": "line_range",
-              "start": 922
+              "start": 957
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
             "content": "sha256:28ff62537aaecc3db74413a7a3ac1aaae69677d74a6eaa9e2cc17a03354a066e",
             "locator": {
-              "end": 371,
+              "end": 392,
               "kind": "line_range",
-              "start": 361
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
-            "content": "sha256:3ad549ed4fd69d45f35af71c8ca37b124c901c96c29f70b0eb904a99a77b349e",
-            "locator": {
-              "end": 1136,
-              "kind": "line_range",
-              "start": 1118
+              "start": 382
             }
           },
           "kind": "code"
@@ -199,12 +206,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
             "content": "sha256:f54ae3e12143bd244243086141999177a99a01f1e4c488ffa4fa16d0b19a1cd1",
             "locator": {
-              "end": 640,
+              "end": 669,
               "kind": "line_range",
-              "start": 613
+              "start": 642
             }
           },
           "kind": "code"
@@ -216,12 +223,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
             "content": "sha256:68586d44d8715931aba2bde00f066e1b337863af624d87df6615a32e1dbdfb30",
             "locator": {
-              "end": 611,
+              "end": 640,
               "kind": "line_range",
-              "start": 606
+              "start": 635
             }
           },
           "kind": "code"

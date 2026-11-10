@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
         "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
         "locator": {
           "end": 29,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
         "content": "sha256:ebeceafc3cd5734abb69e12126f6e87e91b186250179f61e612e2ac7f2834ef9",
         "locator": {
           "end": 20,
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-        "content": "sha256:7da9256f29c0ba6f5dbffc96f2d35c4639c2edfd478623f9532d13710f0e5811",
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:a6ca6e023d6e9d0625d458a8810349cac7a6ada8436e2de635f993be78a16a5d",
         "locator": {
           "end": 16,
           "kind": "line_range",
@@ -60,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-        "content": "sha256:8f7265928b549cfa8543b3e613a844fb9ac2d76619825d24d71fccdb1ca1505f",
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:51faace386d6ef11d98fda499b703d41f8bb6187ffab236fc30058351cf6f56d",
         "locator": {
           "end": 12,
           "kind": "line_range",
@@ -74,12 +74,12 @@
         "handoffEntry": "MIK-PNT-DOCTRINE-CAPSULE-SELECTION@draft1",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "The current router admits eight native roles including Bootstrap, composes one selected role and applicable operation, and refuses missing or unsupported selection without injecting shared core.",
+      "rationale": "The router admits eight native role IDs including Bootstrap and composes the selected role file with one applicable operation; the first message also carries the every-role digest and the handover facts, and no other core file is loaded. A handover lacking a supported role or one applicable operation is reported by its exact field and the launch stops.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
         "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
         "locator": {
           "end": 31,
@@ -93,13 +93,13 @@
         "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "The thin router states the default and both exceptions for any capsule it selects.",
+      "rationale": "The role-capsule router states the default and both exceptions for any capsule it selects.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-        "content": "sha256:6c8851c74d00d29d5ed65c302ae546e6e1b1f75e4d50adcd5d1a661a48d67f69",
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:b5b828ca3f1723854efcf693215244c88075189d5581b7ea2c8de1e47a71d5da",
         "locator": {
           "kind": "file"
         }
@@ -115,7 +115,7 @@
     },
     {
       "anchor": {
-        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
         "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
         "locator": {
           "end": 29,
@@ -134,8 +134,8 @@
     },
     {
       "anchor": {
-        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-        "content": "sha256:6c8851c74d00d29d5ed65c302ae546e6e1b1f75e4d50adcd5d1a661a48d67f69",
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:b5b828ca3f1723854efcf693215244c88075189d5581b7ea2c8de1e47a71d5da",
         "locator": {
           "kind": "file"
         }
@@ -151,8 +151,8 @@
     },
     {
       "anchor": {
-        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-        "content": "sha256:6c8851c74d00d29d5ed65c302ae546e6e1b1f75e4d50adcd5d1a661a48d67f69",
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:b5b828ca3f1723854efcf693215244c88075189d5581b7ea2c8de1e47a71d5da",
         "locator": {
           "kind": "file"
         }
@@ -168,7 +168,7 @@
     },
     {
       "anchor": {
-        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
         "content": "sha256:372b0095be3b7d9666f19b698f1d54b7f3fc95a937c444a882d9fc120b9e34e4",
         "locator": {
           "end": 35,
@@ -188,12 +188,12 @@
   ],
   "references": {
     "11": {
-      "note": "One explicit supported role and applicable operation select the two instruction blocks; the router injects no shared core.\n\nAnchor: line 8-12",
+      "note": "One explicit supported role and applicable operation select the role and operation files; the first message adds the every-role digest and the handover facts, and no other core file is loaded.\n\nAnchor: `roles/<role>.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-            "content": "sha256:8f7265928b549cfa8543b3e613a844fb9ac2d76619825d24d71fccdb1ca1505f",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:51faace386d6ef11d98fda499b703d41f8bb6187ffab236fc30058351cf6f56d",
             "locator": {
               "end": 12,
               "kind": "line_range",
@@ -205,12 +205,12 @@
       ]
     },
     "12": {
-      "note": "The native launcher names eight roles, including Bootstrap; System Specialist remains the earlier Investigator spelling, and other manifest registry entries are not launched here.\n\nAnchor: line 12",
+      "note": "The native launcher names eight role IDs, including Bootstrap.\n\nAnchor: `bootstrap`",
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-            "content": "sha256:4230329a55832157e75cf3c4846656878c853b4db81df245fe3f5752b787019f",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:c19b914b14c301420b2405564d0667f15f985580fc08a14822ed236af95d6848",
             "locator": {
               "end": 12,
               "kind": "line_range",
@@ -222,12 +222,12 @@
       ]
     },
     "13": {
-      "note": "Canonical task/workspace facts arrive separately in the handover; task-bound selection uses its supplied canonical reference and paired workspace. Projects is an execution location.\n\nAnchor: the cited source extents",
+      "note": "Canonical task/workspace facts arrive separately in the handover; task-bound selection uses its supplied canonical reference and paired workspace. Projects is an execution location.",
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-            "content": "sha256:94e015e104f30a1ca74fccfe69524d73d513a997a7822271fcbb9f0cbe3376b4",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:71ade18fa481d49c0b75dbbc129e1655591985ff39f7789ef7528cd77a265216",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -238,10 +238,10 @@
         },
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-            "content": "sha256:7da9256f29c0ba6f5dbffc96f2d35c4639c2edfd478623f9532d13710f0e5811",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:21f812e972299c0dd24e239d227f61e09e64a2f3d7c47d3c2302c332dae0f387",
             "locator": {
-              "end": 16,
+              "end": 14,
               "kind": "line_range",
               "start": 14
             }
@@ -255,7 +255,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
             "content": "sha256:726e2fc9729719af993f688485b1c2eb8b66bb514513c8276faaa1936b02b641",
             "locator": {
               "end": 35,
@@ -272,7 +272,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
             "content": "sha256:38e2ffae55983bd0a9adf38a91c8a8422e73a95ab2a74488f334261cad70c040",
             "locator": {
               "end": 29,
@@ -289,7 +289,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
             "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
             "locator": {
               "end": 31,
@@ -302,23 +302,23 @@
       ]
     },
     "17": {
-      "note": "Investigator takes a scoped concern from the actual parent's first message, or the developer without a parent; its selected scope creates no fake task identity. Developer decisions go to the actual parent when one is named.\n\nAnchor: the cited source extents",
+      "note": "Investigator takes a scoped concern from the actual parent's first message, or the developer without a parent; its selected scope creates no fake task identity. Developer decisions go to the actual parent when one is named.",
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-            "content": "sha256:7da9256f29c0ba6f5dbffc96f2d35c4639c2edfd478623f9532d13710f0e5811",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:f21fc20197bfcc82e0474481da336035dac17b4e5b9ec87f77676adad3c3f3f4",
             "locator": {
               "end": 16,
               "kind": "line_range",
-              "start": 14
+              "start": 16
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
             "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
             "locator": {
               "end": 29,
@@ -331,12 +331,12 @@
       ]
     },
     "18": {
-      "note": "Canonical role-capsule doctrine and the packaged byte-equal carrier have one authored owner; the package is a generated distribution extent.\n\nAnchor: current canonical and distribution owners",
+      "note": "Canonical role-capsule doctrine and the packaged byte-equal carrier have one authored owner; the package is a generated distribution extent.",
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-            "content": "sha256:8f7265928b549cfa8543b3e613a844fb9ac2d76619825d24d71fccdb1ca1505f",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:51faace386d6ef11d98fda499b703d41f8bb6187ffab236fc30058351cf6f56d",
             "locator": {
               "end": 12,
               "kind": "line_range",
@@ -347,8 +347,8 @@
         },
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-            "content": "sha256:8f7265928b549cfa8543b3e613a844fb9ac2d76619825d24d71fccdb1ca1505f",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:51faace386d6ef11d98fda499b703d41f8bb6187ffab236fc30058351cf6f56d",
             "locator": {
               "end": 12,
               "kind": "line_range",
@@ -402,7 +402,9 @@
             "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
             "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
             "locator": {
-              "kind": "file"
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "generated-copies.json"
           },
@@ -411,41 +413,16 @@
       ]
     },
     "19": {
-      "note": "The composition manifest registers `curator-handoff-list.md` alongside brief templates. That template defines the producers’ curator hand-off output shape. The thin router names the manifest as the routing metadata authority.  Historical source caption: \"Anchor: \\\"the **producer's output shape**\\\"\"",
+      "note": "`curator-handoff-list.md` is the producers' contract for the Curator hand-off: Workers and Reviewers send their own lists directly, and Managers and Orchestrators relay none.",
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-            "content": "sha256:94e015e104f30a1ca74fccfe69524d73d513a997a7822271fcbb9f0cbe3376b4",
+            "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+            "content": "sha256:bf929dec36a9c0e207d3e3c529116a19e656b7889dff973e81af75d69b559481",
             "locator": {
-              "end": 8,
+              "end": 9,
               "kind": "line_range",
-              "start": 8
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:58e059b7c8b5f73b806483acc5531824790614e851b70da7ba9a4d918c564e8b",
-            "locator": {
-              "end": 262,
-              "kind": "line_range",
-              "start": 255
-            },
-            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:96ecb699456bf2edd25cf87113b5f91c9bff08055f3387d8978c33d3509bf48c",
-            "locator": {
-              "end": 6,
-              "kind": "line_range",
-              "start": 3
+              "start": 1
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
           },
@@ -454,29 +431,16 @@
       ]
     },
     "7": {
-      "note": "Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion.\n\nAnchor: `## Acceptance is per stable ID and version, never aggregate`; `## Acceptance is per stable ID and version, never aggregate`; \"independent of requirement acceptance\"",
+      "note": "Requirement acceptance binds one requirement revision, needs a complete acceptance block and is judged independently for that exact manifestation; an aggregate claim never closes one.",
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:90e216c8cb79625314d2f7efee1239ec0d54a8df0ad1aaad3dfd9b32f1efc00a",
             "locator": {
-              "end": 78,
+              "end": 60,
               "kind": "line_range",
-              "start": 45
-            },
-            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:4e970b2fc818c268b67c85b9dc3ee85bab842a29bbf01d44f80c80bd56ac0fce",
-            "locator": {
-              "end": 139,
-              "kind": "line_range",
-              "start": 137
+              "start": 37
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
           },
@@ -485,60 +449,34 @@
       ]
     },
     "8": {
-      "note": "Semantic requirement versions and exact-candidate formal attempts keep separate immutable lineage; internal reruns mint no attempt. Reviewer records bind the exact attempt and candidate. In the requested-review completion workflow, an accepted attempt remains closed unless the independent reviewer proves direct regression and the owning Manager (Architect in a flat run) records bounded invalidation, or an approved requirement revision affects that manifestation. Outside-list observations alone go through the parent to the developer without adding or reopening findings or resetting review.",
+      "note": "Semantic requirement versions and exact-candidate formal attempts keep separate immutable lineage; internal reruns mint no attempt. Reviewer records bind the exact attempt and candidate. Accepted attempts stay closed, and observations outside the sealed findings list go through the parent to the developer without adding or reopening findings or resetting review.\n\nAnchor: `non-attempt-correction`",
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:330a1acf6a88278c38d1bd49770148c9c99d73091beef5fd3fa9528ee3352c48",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:d730622d2161651da9257c069616180fb5ff149a97082231a7737eebf0757e73",
             "locator": {
-              "end": 116,
+              "end": 103,
               "kind": "line_range",
-              "start": 79
+              "start": 62
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dd7163001634a6ba0ec87c6ea5e932bde08784c5",
-            "content": "sha256:c711c02c25c9e915711a70d5c5ab0f843e309a642958fef2c64d40ea024e9148",
-            "locator": {
-              "end": 293,
-              "kind": "line_range",
-              "start": 284
-            },
-            "path": "skills/w-02-light-task-workflow/workflow.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
-            "content": "sha256:4ca4373c4a9df2a4009d324135ed429b531290b92c49a99f72ee0a1232cb3ec3",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 82
-            },
-            "path": "skills/l-01-agent-lifecycles/core/loop.md"
           },
           "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "Leaf journals are authority and the master summary is explicitly rebuildable and non-gating.\n\nAnchor: \"The detailed per-leaf worker and reviewer records are authority.\"",
+      "note": "Leaf journals are authority and the master summary is explicitly rebuildable and non-gating.",
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:b19fa165fdb81f64d4c08822c5cc58916c018422c991bc6c630bf8d4603de123",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:168a3a4ae452a875bf0429d49082f922c2a859356ba3eebaade01e74a57d97a0",
             "locator": {
-              "end": 117,
+              "end": 111,
               "kind": "line_range",
-              "start": 117
+              "start": 107
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
           },

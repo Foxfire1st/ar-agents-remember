@@ -22,12 +22,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
-            "content": "sha256:9682654ab41bd5564bd9b29a18e8a5fedcea148d3c42c46fb82104d03611fbe7",
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:cf5f1579a8129b23f47a3d502b594dd0d1f80319c389869374573b49c72de134",
             "locator": {
-              "end": 177,
+              "end": 200,
               "kind": "line_range",
-              "start": 177
+              "start": 191
+            },
+            "path": "dashboard/src/data/stream.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:21079fe4792334fa37c8be234a11cb408f5ff21e6c021da2c7ae5256b310f042",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 216
             },
             "path": "dashboard/src/data/stream.ts"
           },

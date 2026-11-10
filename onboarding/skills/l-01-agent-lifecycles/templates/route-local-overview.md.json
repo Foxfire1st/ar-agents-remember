@@ -1,0 +1,58 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/route-local-overview.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The area overview links its parent overview and explains the area in its own right.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a190c21493b1d563f4fb45c766db77bb70b8225",
+            "content": "sha256:7959973d3db8a72c435b15d71b2ffd62a32b4c8b7d50cdc1f3303dd8d33bc74d",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Load-bearing files carry a coverage column, and child overviews are listed by route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a190c21493b1d563f4fb45c766db77bb70b8225",
+            "content": "sha256:74ebaa101f35fd38918b306fc45b1c3cc3e5e8b9c860f3d153ad0d187fad28b8",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Evidence is a Finding, Anchor and Source table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a190c21493b1d563f4fb45c766db77bb70b8225",
+            "content": "sha256:6e7a4bb93edfa925facd735a04c761cd8630114ae3e0beaae74981c708284d81",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

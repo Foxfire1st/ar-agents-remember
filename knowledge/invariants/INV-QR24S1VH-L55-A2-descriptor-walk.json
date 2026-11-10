@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Descriptor-relative nofollow directory opens prevent a directory swapped for an escaping symlink from exposing notes outside the admitted root after an earlier path check."
+  },
   "applicability": "Every directory the notes listing walk enters below the resolved notes root, including the target of an in-root directory symlink.",
   "conditions": [
     "The platform provides O_DIRECTORY, O_NOFOLLOW, dir_fd opens and os.scandir on a descriptor."

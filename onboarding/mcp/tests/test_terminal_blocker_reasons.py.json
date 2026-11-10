@@ -355,27 +355,17 @@
       ]
     },
     "22": {
-      "note": "The landing fixture and the public configuration the whole-tool cases build on.\n\nAnchor: `_authority_fixture` `_closed_external_leaf_worktrees` `_public_config`",
+      "note": "The landing fixture and the public configuration the whole-tool cases build on.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
-            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
+            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "content": "sha256:3c374ff71c4e416366cd5e820d288f99342604fb18524e60c2bff7f3a92d7e65",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_public_config"
             },
-            "path": "mcp/tests/integration_branch_authority_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8a2d91358f72fe0c19192d61f3e1df91449d7061",
-            "content": "sha256:5a80340676011dfb942858443d99c5acd6bd593b04e383422aa5bf5436df2390",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+            "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
           },
           "kind": "test"
         },
@@ -398,6 +388,17 @@
             "locator": {
               "kind": "symbol",
               "name": "_closed_external_leaf_worktrees"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/integration_branch_authority_test_support.py"
           },
@@ -410,12 +411,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:0e4a3c6eb5c62a89d5592e86f0532240e69c3a84489994daa649ab37b1751999",
+            "blob": "830d89bb301c2fd59337d82f6f8aa7abf676b4e6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 692,
+              "end": 733,
               "kind": "line_range",
-              "start": 692
+              "start": 733
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -424,27 +425,17 @@
       ]
     },
     "24": {
-      "note": "The landing fixture and the public configuration the whole-tool cases build on.\n\nAnchor: `_authority_fixture` `_closed_external_leaf_worktrees` `_public_config`",
+      "note": "The landing fixture and the public configuration the whole-tool cases build on.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
-            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
+            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "content": "sha256:3c374ff71c4e416366cd5e820d288f99342604fb18524e60c2bff7f3a92d7e65",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_public_config"
             },
-            "path": "mcp/tests/integration_branch_authority_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8a2d91358f72fe0c19192d61f3e1df91449d7061",
-            "content": "sha256:5a80340676011dfb942858443d99c5acd6bd593b04e383422aa5bf5436df2390",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+            "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
           },
           "kind": "test"
         },
@@ -471,6 +462,17 @@
             "path": "mcp/tests/integration_branch_authority_test_support.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -479,12 +481,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:0e4a3c6eb5c62a89d5592e86f0532240e69c3a84489994daa649ab37b1751999",
+            "blob": "830d89bb301c2fd59337d82f6f8aa7abf676b4e6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 692,
+              "end": 733,
               "kind": "line_range",
-              "start": 692
+              "start": 733
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

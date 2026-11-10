@@ -69,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a268dbcd0664e077105e782e568babce86bcf33",
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
             "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
             "locator": {
               "kind": "symbol",
@@ -82,22 +82,11 @@
       ]
     },
     "3": {
-      "note": "Loader validates authority and effective alternative distinctness.\n\nAnchor: `load_agentic_settings`",
+      "note": "Loader validates authority and effective alternative distinctness.",
       "targets": [
         {
           "anchor": {
-            "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
-            "content": "sha256:ba51f7604f2b82748550c405a260ebd6516773bf956bb736996ddea5c484d165",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+            "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
             "content": "sha256:d709c4479088842b26eb621a81d5b87d5cbaaed0f4cbeb1813505a3c83b1ce59",
             "locator": {
               "kind": "symbol",

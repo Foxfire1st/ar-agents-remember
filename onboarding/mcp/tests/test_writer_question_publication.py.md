@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Tests overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -29,6 +29,6 @@ No test execution, CODE/MEMORY grade, new producer capability or landing is clai
 
 ## Current account — the command route drives the question port
 
-The root-mismatch case now drives the command's own `CommandRoute` (its `command_settings` loader) instead of a `Namespace(config=...)` and a monkeypatched `load_config`; the publication, batch, retry and concurrency cases still build `TaskDocOpenQuestions` through `setup_port` and pass that port to the writer. The behaviour they pin is unchanged: a keyed batch validates every key before replacing any, an intervening question survives, and a loaded root that differs from the contract refuses before publication.
+The root-mismatch case drives the command's own `CommandRoute` (its `command_settings` loader), with the argument-less `discover_config` and `load_config` replaced to answer the port's settings file and configuration; the publication, batch, retry and concurrency cases still build `TaskDocOpenQuestions` through `setup_port` and pass that port to the writer. The behaviour they pin: a keyed batch validates every key before replacing any, an intervening question survives, and a loaded root that differs from the contract refuses before publication.
 
 - A loaded coordination root that differs from the contract refuses the raise before any question is published, through the command's own route value. [2]

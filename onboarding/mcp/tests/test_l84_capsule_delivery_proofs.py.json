@@ -1,0 +1,170 @@
+{
+  "path": "mcp/tests/test_l84_capsule_delivery_proofs.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3447e758560de6d8a7e42de86d85cf5eee94bfe4",
+        "content": "sha256:f13f83665d742bf121ddecf6bbad7fb761df9fc071cfc91822ebb09441dd813c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_digest_homes_declare_audiences_and_steps_without_injecting_the_map"
+        }
+      },
+      "facet": "Requires the digest to declare every role and a step, and the digest map to be declared non-injected, without a step and not a step detail.",
+      "id": "PRF-P23ZJ5",
+      "invariant": "INV-40JW44",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 shared digest",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One shipped role/operation pair is compiled without patches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3447e758560de6d8a7e42de86d85cf5eee94bfe4",
+            "content": "sha256:3c94a9520032ff3e3d01764f14cad6257d0068c17de5bc0724f9d890fd627f58",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compiled_outcome"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An emitted detail is checked against the native launch record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3447e758560de6d8a7e42de86d85cf5eee94bfe4",
+            "content": "sha256:0eeaae5d8d8698265da7b63b995c9cd3698f4d56a6ec8d9e3a8a4406f3ad4aab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_emitted_instruction_detail"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Native first messages carry the real digest once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3447e758560de6d8a7e42de86d85cf5eee94bfe4",
+            "content": "sha256:d5a5d1b65c0bfa05605eb3e7d5e7e5b230a66b395a9f4b65768cfdb94e3ff85b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_worker_architect_and_bootstrap_carry_the_real_digest_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The knowledge detail reaches its step in every consuming role/operation and nowhere else.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3447e758560de6d8a7e42de86d85cf5eee94bfe4",
+            "content": "sha256:066a29f7926d07c2aa301da7fb2965cb7cd15f8bc854e844debdadad7ba27749",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_detail_reaches_its_step_in_every_declared_role_operation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The knowledge detail's views and keywords match the registered tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3447e758560de6d8a7e42de86d85cf5eee94bfe4",
+            "content": "sha256:d658d22402dc10b8e7cc3dd0f3e04d84248949c361b3c28de87a21c1caebe058",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_detail_views_and_keywords_match_the_registered_tool"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The advice and reporting rules reach only their role audience.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3447e758560de6d8a7e42de86d85cf5eee94bfe4",
+            "content": "sha256:41126ee8b25fd8dce750d802f4a701f082ce7c2ff37c860c5e28711a1ba587d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d639_rules_reach_only_their_compiled_role_audience"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Measurement checkpoint steps reach every Worker operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3447e758560de6d8a7e42de86d85cf5eee94bfe4",
+            "content": "sha256:22e0a577aa29fcbff6d37158b313e6a3d9bf191a92f80179ec639757045e770c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worker_measurement_checkpoint_steps_reach_every_worker_operation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Digest homes declare audiences without injecting the map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3447e758560de6d8a7e42de86d85cf5eee94bfe4",
+            "content": "sha256:f13f83665d742bf121ddecf6bbad7fb761df9fc071cfc91822ebb09441dd813c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_digest_homes_declare_audiences_and_steps_without_injecting_the_map"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The Manager starts the Curator for prerequisite memory reconciliation without healing the conflict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3447e758560de6d8a7e42de86d85cf5eee94bfe4",
+            "content": "sha256:d0152698127f07dc1b3e2ce1e11b9174f11251dfdf18dde5c520cc43afd094d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_manager_starts_curator_for_actual_prerequisite_memory_reconciliation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

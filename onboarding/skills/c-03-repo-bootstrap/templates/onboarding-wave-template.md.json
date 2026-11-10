@@ -4,14 +4,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The manifest provides placeholder metadata, goals, included and deferred cards, and evidence requirements.\n\nAnchor: `# Onboarding Wave <number> — <short name>`",
+      "note": "The manifest provides placeholder metadata, goals, included and deferred cards, and evidence requirements.\n\nAnchor: `## Included Cards`",
       "targets": [
         {
           "anchor": {
-            "blob": "cd2e54ff280b1335f1f488a04916242fb6c5bcf9",
-            "content": "sha256:549d74b6708bb00f67bf6b24bf1df6badd5baf16e6551c5f43ca9cbe5ea3ca82",
+            "blob": "647bf6a2f971e2ace41631096b7ffd4fb0a40603",
+            "content": "sha256:6cace92bad2e31e6d96188d7c26cd47b93f528280f6e54302488d63ede09a5d8",
             "locator": {
-              "end": 32,
+              "end": 34,
               "kind": "line_range",
               "start": 1
             }
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd2e54ff280b1335f1f488a04916242fb6c5bcf9",
-            "content": "sha256:1e9d82605501de71c6d6e6ef663fc4990d43382065b7b71a91851a7a034920b9",
+            "blob": "647bf6a2f971e2ace41631096b7ffd4fb0a40603",
+            "content": "sha256:5f35c06a1142b9da9d367720d16312ab8a1eb7d4d31da7c8b1451f0a4256a690",
             "locator": {
-              "end": 51,
+              "end": 47,
               "kind": "line_range",
-              "start": 34
+              "start": 36
             }
           },
           "kind": "code"
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd2e54ff280b1335f1f488a04916242fb6c5bcf9",
+            "blob": "647bf6a2f971e2ace41631096b7ffd4fb0a40603",
             "content": "sha256:161578a913793d36feb0e0cef2c81ff1772d9f39752c12cb5ab876c61043c835",
             "locator": {
-              "end": 65,
+              "end": 67,
               "kind": "line_range",
-              "start": 53
+              "start": 55
             }
           },
           "kind": "code"
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:55641f00554811290eab12c19da52aeda0124f8b0a1441a42fc6b1c201bf0967",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:b7ff517dd4552a57d15bc63829e22db582e59947e4e13ad3dd552269e43f30ae",
             "locator": {
-              "end": 875,
+              "end": 825,
               "kind": "line_range",
-              "start": 859
+              "start": 806
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
@@ -73,16 +73,16 @@
       ]
     },
     "5": {
-      "note": "Phase 4H uses this manifest, delegates file-level work to c-05, defines bounded sizing and reading duties, and calls for index refresh.\n\nAnchor: `### 4H — File-Level Onboarding Waves`",
+      "note": "Phase 4H uses this manifest, gives each file worker one file card to follow with the Curator card procedure, defines bounded sizing and reading duties, and calls for index refresh.",
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:7e9f9e0ddfa8e5b66674ec53a487e583a524969e46b2ec090bfeb00025820e89",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:f9e38d625a2456daf41d8540be91ac0eea9fc2e1963b54e3d9f2115ae7cba1b9",
             "locator": {
-              "end": 1019,
+              "end": 972,
               "kind": "line_range",
-              "start": 985
+              "start": 940
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
@@ -91,16 +91,16 @@
       ]
     },
     "6": {
-      "note": "The canonical bootstrap skill names c-05 as owner of file-level semantics and delegates file output rules to it.\n\nAnchor: `c-05-create-or-update-onboarding-files`",
+      "note": "The canonical bootstrap skill names the Curator card procedure as owner of file-level semantics and delegates file output rules to it.",
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:28144806012a7bef55ebe6a3f50cfecbd361f90a1a23d3622abc664b5e07e13f",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:fd470b1fba593b0075804dcad7da68a9518274bbb4648c04388971efb764192c",
             "locator": {
-              "end": 1266,
+              "end": 1215,
               "kind": "line_range",
-              "start": 1261
+              "start": 1212
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
@@ -109,18 +109,18 @@
       ]
     },
     "7": {
-      "note": "c-05 remains the public onboarding entry point. A knowledge/layout.json marker selects its converted-card workflow and admitted citation/trace writers; old-format memory is refused pending conversion.",
+      "note": "The Curator card procedure is the entry point for file-level create/update onboarding; route-level create, refresh, move or delete work routes to the bootstrap skill.",
       "targets": [
         {
           "anchor": {
-            "blob": "f4accad939315db39d9f7f7dd3af0f5d3f0687ac",
-            "content": "sha256:610736a29fd35bd4d28d6ffe71d9ea2b1d07536c05a8df44f8bc0d3e172fd8c5",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:98d42369a8399c373755485eb582a718183ffac930da61516e62e0578f61daa4",
             "locator": {
-              "end": 67,
+              "end": 479,
               "kind": "line_range",
-              "start": 46
+              "start": 479
             },
-            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
           "kind": "code"
         }

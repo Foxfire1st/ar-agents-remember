@@ -7,10 +7,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7302007374de2cd256f3bf91664b50baf389a8d",
-            "content": "sha256:67355de2f6a702de6b79c15f301ad8f314d10e9d25e390f27885c99d58946eef",
+            "blob": "94ffb976e7631b670e27099d765db9207b14168b",
+            "content": "sha256:4314e08d83186317e0ded9f90bbeb55a881fd0b41b7566f49cdbc65ff035bc81",
             "locator": {
-              "end": 61,
+              "end": 63,
               "kind": "line_range",
               "start": 1
             }
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:e2d8003ff723a0031c0e65e9e8ab6e630c3b67580ffc64378e52f5179cdb7bc7",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:2a3d1cab6b353ffdcc121287d85a653f5c84601ca782b1470f54f976fb1fff04",
             "locator": {
-              "end": 858,
+              "end": 804,
               "kind": "line_range",
-              "start": 833
+              "start": 780
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:61e53015c84b7b0b2e3c3173fc59b46387070ed4a1a4292c0e1369cacf99b209",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:0f97d108cda3d862328394b8c9c3814e8ecd6f227ee78a171bed621b9f68bc17",
             "locator": {
-              "end": 886,
+              "end": 835,
               "kind": "line_range",
-              "start": 859
+              "start": 806
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
             "content": "sha256:d9a57214bb8908ecb06f9f109995afd8dc6b7b6a8a803c0a2cd147cbedfc202a",
             "locator": {
-              "end": 144,
+              "end": 114,
               "kind": "line_range",
-              "start": 126
+              "start": 96
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },

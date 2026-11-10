@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Repository overview](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
@@ -32,7 +32,7 @@ Preserved advisory boundary from the incoming card:
 
 All phase statuses, `done` area values and `complete` wave rows are exemplar vocabulary in a template, not observed task progress or review outcomes. The `Closeout Boundary` explicitly says closeout is separate from automated bootstrap and records only whether closeout was requested. No placeholder or filled state row itself grants closeout or publication authority.
 
-The source header still literally offers `topology | external / mixed` at line 13. This is inherited template vocabulary, not evidence that mixed topology is currently supported; the governing overview states that only external topology is supported. The inherited choice is disclosed rather than silently rewritten.
+The source header offers only `topology | external`, matching the external-only topology the governing overview states.
 
 ### Historical And Verification Limits
 
@@ -75,7 +75,11 @@ These are preserved scope assessments, not a fresh sibling-repository inspection
 The citation rows below preserve the incoming template-evidence meanings while retargeting them to the canonical authored source and narrowing ranges to the information described. They prove the shape of a template, not execution or acceptance of its values. Inherited cross-file skill claims remain qualified above.
 
 - The state template records bootstrap mode, memory root, onboarding root, branch, topology, source inventory status, and phase status across the full `c-03-repo-bootstrap` skill lifecycle. [1]
+
 - The state template tracks areas, governing routes, slice maintenance, waves, decisions, parking lot items, blockers, deferred files, closeout boundary status, and next action. [2]
+
 - Wave examples, curator result and human review fields are distinct from decisions, LOW-confidence questions and blockers. [3]
+
 - Deferred-file triggers, separate closeout request and one recommended next step complete the state format. [4]
+
 - Every bootstrap maintains bootstrap/STATE.md, reads it first and updates it last, using this template. [5]

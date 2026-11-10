@@ -225,7 +225,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/changeset.
 
 - The header toggle owns changeset-left visibility outside the changed-file rail. [51]
 
-Anchor: `CockpitShell` [11]
+- The shell that hosts the takeover + restores the rails. [11]
 
 Anchor: `ChangeSetButton` [12]
 

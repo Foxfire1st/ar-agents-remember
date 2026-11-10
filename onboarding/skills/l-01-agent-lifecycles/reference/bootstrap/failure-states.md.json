@@ -1,0 +1,93 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/bootstrap/failure-states.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The detail is read only when a step returns a state the seat cannot name, and the role's stop rules stay in force.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a7ce955b33a464350060ee68a79725e9c4c5a7a",
+            "content": "sha256:4df19560b448d61b106d8904418d730e11dc8f9d32734a7b79f5183d92cddc38",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Bootstrap operation points to the failure states at that moment.\n\nAnchor: `failure-states.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:2673f2b1ad22fdb002fd601f07eb03a13a149c1be955c6a7e022987016693e1b",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Setup states stay distinct: unsupported topology preserves the memory root, a dirty repository is read before adoption, and a coordination root is never built by hand.\n\nAnchor: `memory-mode-unsupported`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a7ce955b33a464350060ee68a79725e9c4c5a7a",
+            "content": "sha256:267ed1d15b3087f851e3c2831272640d8f2197724f23e3e9f4f712292b21db78",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Foundation states, a refused admission and an unusable object are reported with their own codes, and none is worked around.\n\nAnchor: `context-not-admitted`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a7ce955b33a464350060ee68a79725e9c4c5a7a",
+            "content": "sha256:3c9b1c9b113f02667159ea22b593e4bf32e219571a29d0f4a031a0800438a5d1",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Settings states are reported with their path; a refused write is the developer's decision.\n\nAnchor: `destination-is-symlink`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a7ce955b33a464350060ee68a79725e9c4c5a7a",
+            "content": "sha256:7d62c11dced5f89dc18562f16790a3048a8f2046d7390d176272520c6c3a2f68",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

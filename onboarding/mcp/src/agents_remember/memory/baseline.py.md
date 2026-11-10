@@ -2,11 +2,7 @@
 
 ## Governing Overview
 
-[Nearest governing overview](../../../overview.md)
-
-Working-candidate verification: source inspected at 2026-09-15T01:16 UTC against the uncommitted L9
-candidate. The commit fields identify the latest real commit touching this file; they do not
-identify or claim a future commit for these working changes.
+[overview](../../../overview.md)
 
 ## Purpose
 
@@ -55,25 +51,27 @@ refuses an existing unconverted directory before this history decision. Drift re
 measurement preserves the summary without filing report or snapshot.
 
 `has_adopted_baseline` remains the direct bootstrap guard inside `adopt_initial_baseline`. Actionable
-drift still blocks new adoption unless `accept_drift` is explicit.
+drift still blocks new adoption unless `accept_drift` is explicit; on converted memory the refusal
+message directs the operator to refresh onboarding with the `l-01-agent-lifecycles` Curator procedure
+or rerun with `--accept-drift`.
 
 `adopt_initial_baseline` requires real onboarding, docs, or system content and the checked-out
 repository-default memory branch. `_baseline_default_branch` proves that default from the branch
 `memory_init` recorded, **not from a fixed name**: the memory repository is founded on the code branch
-the developer chose, so the old `branch != "main"` refusal would have refused every repository whose
-memory is founded on anything else. It still supports the exact unborn branch memory initialization
+the developer chose, so a fixed-name comparison would refuse every repository whose memory is
+founded on anything else. It supports the exact unborn branch memory initialization
 created, and it refuses — with the recorded-value name in the message — when the repository records no
 `agents-remember.defaultBranch` value at all. It does not create, switch, or commit an integration ref.
 
 The code source-branch commit is resolved once. The fixed adoption subject is passed through
 `render_memory_content_message`, so the resulting memory commit carries that exact `Code-Commit`
-trailer. Content staging applies the shared `MEMORY_CONTENT_EXCLUDES` in `_stage_for_commit` on the private index and force-removes excluded entries from that staged tree. The exclusion rides the actual staging call: filtering an earlier unrelated `git add` is not enough. `commit_if_dirty` is no longer this file’s adoption path; `_adopt_validated_converted_tree` publishes exactly the privately staged, validated tree.
+trailer. Content staging applies the shared `MEMORY_CONTENT_EXCLUDES` in `_stage_for_commit` on the private index and force-removes excluded entries from that staged tree. The exclusion rides the actual staging call: filtering an earlier unrelated `git add` is not enough. `_adopt_validated_converted_tree` publishes exactly the privately staged, validated tree; `commit_if_dirty` is not this file's adoption path.
 The returned bootstrap contains `memoryContentCommit` and best-effort `ledgerCache`, with no
 ledger-only commit.
 
-Drift is measured with the one shared summary: `run_drift` calls `run_drift_summary` and no longer
-classifies by itself, so the drift block of the baseline tools carries the converted rule-2 fields
-on a converted tree. An existing unconverted root is now refused before that
+Drift is measured with the one shared summary: `run_drift` calls `run_drift_summary` and does not
+classify by itself, so the drift block of the baseline tools carries the converted rule-2 fields
+on a converted tree. An existing unconverted root is refused before that
 measurement with `state: "legacy-format"`; its drift block has `status: "error"`
 and the same refusal detail. Missing-root errors are not recast as legacy format. The memory layer imports nothing from the
 application layer; the optional converted comparison base stays with callers that own a contract.
@@ -156,7 +154,11 @@ the current working-candidate behavior; historical entries below retain their or
 
 - The existing baseline case checks unborn readiness, one attributed commit, and unavailable-history refusal. [5]
 - The shared memory-content policy the content commit excludes, and the reason the exclusion belongs on the staging call. [8]
-- The recorded-default authority this file now follows instead of a literal. [11]
+
+- The recorded memory default-branch authority this file follows rather than a fixed branch name. [11]
+
+- The actionable-drift refusal names the `l-01-agent-lifecycles` Curator procedure and `--accept-drift`. [22]
+
 
 ### Cross-Repo References
 

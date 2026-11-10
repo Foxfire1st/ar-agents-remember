@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-        "content": "sha256:d4419241535f8cc0f0b8e8685fc6b740dea5a79428fec70d372001fd95d6a711",
+        "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+        "content": "sha256:de311c01a980b8e41ce991849b2a94fce35faf2d5609de281d6812d4918fa76b",
         "locator": {
           "kind": "file"
         }
@@ -38,28 +38,16 @@
       ]
     },
     "10": {
-      "note": "Authority/failure boundaries preserve source and transaction ownership, tool scope and coherence; handoff goes directly to Reviewer and permission refusals are not bypassed.",
+      "note": "Authority gates and failure handling keep source and transaction ownership, tool scope and coherence with their owners; the memory candidate goes directly to the Reviewer and harness permission decisions are not bypassed.\n\nAnchor: `## Authority gates`",
       "targets": [
         {
           "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:fbd48e78ae3b3f890a9041eeb1cd07ec46f6083bf17bb82e33e4a0d93181e261",
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:1fd55b1552b5e1c803e56331e99eee1064d66e89bf5d0d8aee87a0a0dc415a2e",
             "locator": {
-              "end": 166,
+              "end": 137,
               "kind": "line_range",
-              "start": 122
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:67b03481ef8426c5e539f9e7226a2b9aaf27c61b846af0104dd8d03e649ff1d3",
-            "locator": {
-              "end": 205,
-              "kind": "line_range",
-              "start": 170
+              "start": 91
             }
           },
           "kind": "code"
@@ -67,29 +55,16 @@
       ]
     },
     "2": {
-      "note": "Before ingest, each hand-off target requires an authored rationale, directly or through an applicable entry-level default; the writer refuses unexplained targets on every run, before any file is written.",
+      "note": "Before ingest, each hand-off target requires an authored rationale, directly or through an applicable entry-level default; the writer refuses unexplained targets on every run, before any file is written.\n\nAnchor: `realization_rationale_absent`",
       "targets": [
         {
           "anchor": {
-            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
-            "content": "sha256:238b8063355de4192d07169863f62548470ccc19e96ebe99ad9d443d54dc273b",
+            "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+            "content": "sha256:399995eaf15cedc7fdf3e91e172bb35ff5add5cb41ea15e2bd7e6b74e742b3d9",
             "locator": {
-              "end": 52,
+              "end": 129,
               "kind": "line_range",
-              "start": 45
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:fabced34aaf165f9975802e2ae32495d811219355df71ece172ceb5004438235",
-            "locator": {
-              "end": 148,
-              "kind": "line_range",
-              "start": 142
+              "start": 100
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
           },
@@ -98,83 +73,34 @@
       ]
     },
     "3": {
-      "note": "Current review-budget and preserved ownership obligations are defined by these source instructions.",
+      "note": "Memory review keeps its own sealed reports, finding identifiers and pass count under the same ordinary limit as code review; a pass beyond the settings limit needs the Architect's or developer's instruction, which the Manager records.\n\nAnchor: `reviewKind=memory`",
       "targets": [
         {
           "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:f46dcb1a56028f631a030ff88a0c28e75e84188d1d91b2acb12af3f7d2fe9450",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:9e9944d63194f324901c323ea44e17de128c1ec91130b5f6db17f985d0bdda27",
             "locator": {
-              "end": 28,
+              "end": 114,
               "kind": "line_range",
-              "start": 25
+              "start": 112
             },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:37acace39292198a835dda5aaac31a302750023a2974d39086c18f9f26a3d5c0",
-            "locator": {
-              "end": 180,
-              "kind": "line_range",
-              "start": 180
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "Memory review has separate sealed reports, IDs and pass count, preserves code state and uses the code-review limit; extra passes need Architect/developer approval recorded by Manager. Curation requires the complete quality operation and independent fact-check, keeps direct Reviewer handover, and leaves acceptance and transactions to their owners.",
+      "note": "Curation requires the complete memory-quality operation, repair or blocked escalation of every Curator-actionable finding, and the independent fact-check before handover.\n\nAnchor: `### Run the complete curation checks`",
       "targets": [
         {
           "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:37acace39292198a835dda5aaac31a302750023a2974d39086c18f9f26a3d5c0",
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:db65dc985969ebc8e5b64d0ce9593b984258d567b99e8d79fe21a045b106b5d8",
             "locator": {
-              "end": 180,
+              "end": 86,
               "kind": "line_range",
-              "start": 180
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:a4504ad8f34ef9d2842ba7f1b96a8de63559c76ddf589161b58867382175b62c",
-            "locator": {
-              "end": 107,
-              "kind": "line_range",
-              "start": 90
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:f6df80b3eeb51661fdd31fdfe0ed494edaa2d2abc0c1ba23769caa60002f2dcf",
-            "locator": {
-              "end": 166,
-              "kind": "line_range",
-              "start": 159
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:d91a1f4cdc2055e0ebd197dce9ab8120820d6eca0cea6c2b9ae12d508bd8d0e2",
-            "locator": {
-              "end": 186,
-              "kind": "line_range",
-              "start": 173
+              "start": 66
             }
           },
           "kind": "code"
@@ -182,60 +108,34 @@
       ]
     },
     "5": {
-      "note": "An independent nonauthor fact-checks every changed curated statement and history-row judgment before converted-memory closeout; blocking repairs rerun full quality. The check is a lifecycle step that closeout does not mechanically perform.",
+      "note": "An independent nonauthor fact-checks every changed curated statement and history-row judgment before converted-memory closeout, and blocking findings are repaired before closeout.\n\nAnchor: `### OM-2 — Independent fact-check of curated knowledge`",
       "targets": [
         {
           "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:cd9fd56d57e1b04b0b88fc0a79ba5daaf1d59ccb825726ceedc673449e7956c0",
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
             "locator": {
-              "end": 107,
+              "end": 25,
               "kind": "line_range",
-              "start": 100
+              "start": 21
             },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Current curation contract separates normal judgment domains from rollout and lifecycle ownership.",
+      "note": "The curation contract keeps the Curator's memory reconciliation distinct from Worker, Reviewer and Manager ownership; the Manager owns the Git transaction.\n\nAnchor: `## Keep ownership distinct`",
       "targets": [
         {
           "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:29079d1c484d414bed82fcae1a5878428ec9a62d4df0fe74fb49a2d57dbfae9f",
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:3029b7de9d851727fdb01a288c2986818568e774026d1de8c2630c376165bf35",
             "locator": {
-              "end": 31,
+              "end": 18,
               "kind": "line_range",
-              "start": 25
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:1454e308de2165275aaf992694b4bb8ee63a2d0d0d1520e50a461010f134bd5e",
-            "locator": {
-              "end": 107,
-              "kind": "line_range",
-              "start": 81
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:c49a27f05bdf3b87d666fb6a88ad454a3992d44d087e2362e2d006bb03b7711a",
-            "locator": {
-              "end": 118,
-              "kind": "line_range",
-              "start": 118
+              "start": 14
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -244,83 +144,34 @@
       ]
     },
     "7": {
-      "note": "Bound curation intake reads the supplied canonical files and scopes its writer to the selected memory root. The intake detail gives knowledge_read workspace.memoryRoot and read_ar_files task_context; the foundation detail requires the real task opened by the user-started Architect and its actual enclosure contract, with no fabricated task or instructed-session substitute.",
+      "note": "Bound curation intake gives `knowledge_read` the workspace memory root and gives `context_packet` and `read_ar_files` the exact supplied leaf `task_context`.",
       "targets": [
         {
           "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:15f2e9b1cc9e77b5101679e45c27ca7a6cef7f7573c53f5a3cdfbdb42faf69b4",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:edc232d51e2788d3654820f24d3f8643cc7b81beddfac83a7ee85c662384c447",
             "locator": {
-              "end": 25,
+              "end": 18,
               "kind": "line_range",
-              "start": 16
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:1a95bda4f59185d1af3e205da3dea2c1d7c23a03255a2ea5cc0b48359606fa2b",
-            "locator": {
-              "end": 62,
-              "kind": "line_range",
-              "start": 54
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:aebf8fc2713cc432a1f3230e1c3ff688d4298097b364d2f629260c0dcf4c8824",
-            "locator": {
-              "end": 198,
-              "kind": "line_range",
-              "start": 189
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
-            "content": "sha256:ff6c18c98d9b7554ff7f8bdcf9902cd08a9b59c4836ba7f7123205d52139be82",
-            "locator": {
-              "end": 7,
-              "kind": "line_range",
-              "start": 3
+              "start": 18
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6f1b7f17a083434b9512a5614aaf5a9d344a7e09",
-            "content": "sha256:3518e92e94b8d2e963cd88e9f0333406e1693ab260408b6c6dd31d7f2ce70a8f",
-            "locator": {
-              "end": 7,
-              "kind": "line_range",
-              "start": 3
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-repository-foundation.md"
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
           },
           "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "Bound native intake, converted-card pre-read, selected-root writer ownership and the starting-server ruler.\n\nAnchor: lines 54-69",
+      "note": "Bound Paseo intake reads the rendered task and canonical JSON with the agent's own file tools, the knowledge writer keeps its ownership inside the selected memory root, and curation binds to the starting serving build.\n\nAnchor: `## Bound Paseo intake and capabilities`",
       "targets": [
         {
           "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:5efb669bc849c5dc3287773e64c61fa8003150199e83c22db1a753d5682fb976",
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:57609ea7e4e2cd15478ea2d6a06753c91909f3cf40087357408bc3bef38e2ca4",
             "locator": {
-              "end": 69,
+              "end": 48,
               "kind": "line_range",
-              "start": 54
+              "start": 37
             }
           },
           "kind": "code"
@@ -328,16 +179,16 @@
       ]
     },
     "9": {
-      "note": "Normal workflow reconciles meaning, states invariant scope and grouping guarantees, and runs full quality and independent fact-check before bounded repair.\n\nAnchor: lines 75-109",
+      "note": "Normal workflow reconciles meaning, states invariant scope and grouping guarantees, and runs full quality and independent fact-check before bounded repair.\n\nAnchor: `## Normal workflow`",
       "targets": [
         {
           "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:7952eecd2c315628656620276b0011517dd71628f12ba784cc01382b99c099f5",
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:9b8f0427496a9f6ddafd3ab290ea85087319adc63dceb9ea6be818a8f888d084",
             "locator": {
-              "end": 109,
+              "end": 86,
               "kind": "line_range",
-              "start": 75
+              "start": 51
             }
           },
           "kind": "code"

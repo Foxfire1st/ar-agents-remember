@@ -43,12 +43,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
-            "content": "sha256:ebcc1928783293853eaa012db30eaa788a28428fcf4f23103718790534c3b852",
+            "blob": "825208f3241118550bd4b710b5e746422eeec8bd",
+            "content": "sha256:03829c752c94d00eb53e1a7551f173ec68abd5427893bec8e5f16d1683c42422",
             "locator": {
-              "end": 250,
-              "kind": "line_range",
-              "start": 241
+              "kind": "symbol",
+              "name": "QualityGateSettings"
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
           },
@@ -57,39 +56,15 @@
       ]
     },
     "4": {
-      "note": "The fail-loud parser for `orchestration.qualityGate`, including absent/empty host-managed behavior.",
+      "note": "The fail-loud parser for `orchestration.qualityGate`: unknown keys are refused, and an absent or empty block leaves the memory cap unset (executor runtime-managed).",
       "targets": [
         {
           "anchor": {
-            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
             "content": "sha256:8fdbcaaf6a99933f672ff5d4406ec2337b503ff1d389c1d07165222ccaadf2e6",
             "locator": {
               "kind": "symbol",
               "name": "_parse_quality_gate"
-            },
-            "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3b92b15b04467dce898722fe980347aee339810",
-            "content": "sha256:944df6b12e112b437fe9cfdee9cc4258ce5c89c71d38cf3025687ff470458f0a",
-            "locator": {
-              "end": 400,
-              "kind": "line_range",
-              "start": 382
-            },
-            "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3b92b15b04467dce898722fe980347aee339810",
-            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
           },

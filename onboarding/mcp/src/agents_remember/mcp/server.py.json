@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
         "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
         "content": "sha256:312d3f75f123cb354fd03fd95f8dd3fc94d3693499546a4be82abdd2bf7cf3a9",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
         "content": "sha256:0e6725422a3eeea913b4bcd5b3deadefa0ea96e4ce447473d731c92ff3196b21",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
         "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
         "content": "sha256:fdfd078bb233e7616bdacc47766168eea5c696b7cf50c0a719787b863b635663",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
         "content": "sha256:3464bef016f8108190a72784cc6b2fdccfc803d36d70efe351eb894b0fa68496",
         "locator": {
           "kind": "symbol",
@@ -112,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
         "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
@@ -130,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
         "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
         "locator": {
           "kind": "symbol",
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
         "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
@@ -163,18 +163,56 @@
       },
       "rationale": "The MCP server binds the archive service into its worktree bundle, so the process's finalize and abandon calls reach it.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+        "content": "sha256:2cd385be89aaeba2f415443353fa07e03bfd4f1e80b22f29e7a5112387991826",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP.call_tool"
+        }
+      },
+      "id": "RLZ-VWKSMD",
+      "invariant": "INV-9SKGX1",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule2 as amended v2/v4",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Checks installed stale currentness and returns the named structured refusal before dispatching a classified publication handler.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+        "content": "sha256:e55057a9ca722d256995f6908c4f087e8376cb23ba670ddfe858c7846364ce6d",
+        "locator": {
+          "end": 332,
+          "kind": "line_range",
+          "start": 328
+        }
+      },
+      "id": "RLZ-WR0C2S",
+      "invariant": "INV-PVW2XJ",
+      "origin": {
+        "handoffEntry": "L84-K3C-PVW2XJ-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "A running server registers its boot identity, and the runtime answer lists each live registered server with its build and process.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "`create_server` builds the FastMCP instance and invokes the registered tool families.  Anchor: `create_server`",
+      "note": "`create_server` builds the FastMCP instance and invokes the registered tool families.",
       "targets": [
         {
           "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
-            "content": "sha256:51f72c9e21d93c397c1cad01152d976e289d22ca230c769b19a5303c8882a204",
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "create_server"
             }
           },
           "kind": "code"
@@ -186,12 +224,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
             "content": "sha256:fdfd078bb233e7616bdacc47766168eea5c696b7cf50c0a719787b863b635663",
             "locator": {
-              "end": 133,
+              "end": 155,
               "kind": "line_range",
-              "start": 119
+              "start": 141
             }
           },
           "kind": "code"
@@ -203,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
             "content": "sha256:b500dba00d72e964c33584080b15292c3ca591ab4f4a69285f610cdcfdf8b851",
             "locator": {
               "kind": "symbol",
@@ -219,11 +257,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
             "content": "sha256:3464bef016f8108190a72784cc6b2fdccfc803d36d70efe351eb894b0fa68496",
             "locator": {
               "kind": "symbol",
               "name": "_threaded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A stale installed build's publication writes are refused before dispatch; other calls dispatch under the carried currentness reading.\n\nAnchor: `stale_build_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:cc4728a41e6f4052321429b9b65a0577f08f5890549c914edd2b55e2d572a7a8",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "`run_server` registers the process as an `\"mcp\"` server and runs the cleanup when serving ends.\n\nAnchor: `register_server`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:dddcc4e6d80d9521a9a274fd9fdd0b9ac6d21651000e906e9f9702aa2482fc3c",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 327
             }
           },
           "kind": "code"
@@ -381,7 +453,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
             "content": "sha256:623450c4c9e101bc8c5b6858ee7c0c1b15b27a9579668bba5dcce472ee7d4017",
             "locator": {
               "kind": "symbol",
@@ -393,14 +465,15 @@
       ]
     },
     "7": {
-      "note": "Frozen implementation of create_server supporting the stated file behavior.  Anchor: `create_server`",
+      "note": "`create_server` installs compact content, initializes the application services, registers every tool family, adds a bound explainer surface and applies the read-only marks.",
       "targets": [
         {
           "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
-            "content": "sha256:51f72c9e21d93c397c1cad01152d976e289d22ca230c769b19a5303c8882a204",
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "create_server"
             }
           },
           "kind": "code"
@@ -412,24 +485,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
             "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
             "locator": {
-              "end": 87,
+              "end": 91,
               "kind": "line_range",
-              "start": 75
+              "start": 79
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
             "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
             "locator": {
-              "end": 332,
+              "end": 358,
               "kind": "line_range",
-              "start": 309
+              "start": 335
             }
           },
           "kind": "code"
@@ -467,24 +540,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
             "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
             "locator": {
-              "end": 87,
+              "end": 91,
               "kind": "line_range",
-              "start": 75
+              "start": 79
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
             "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
             "locator": {
-              "end": 332,
+              "end": 358,
               "kind": "line_range",
-              "start": 309
+              "start": 335
             }
           },
           "kind": "code"

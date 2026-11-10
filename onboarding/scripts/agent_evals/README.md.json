@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Development ownership and CLI trial, tooling-check and measurement boundaries. [1]",
+      "note": "Development ownership and CLI trial, tooling-check and measurement boundaries.\n\nAnchor: `A tooling smoke is not a measurement`",
       "targets": [
         {
           "anchor": {
-            "blob": "39df3362793ed90df98f28abcf46f61343190bcd",
-            "content": "sha256:420a293e10ca31045253d1663fde3986d6f487acda4ba7bba5097865212bfd8d",
+            "blob": "c91e4fbb51bc087f1ee933f4ef72d77a70638360",
+            "content": "sha256:f61b5b7e71dc629389e678b080967ad7038d3aac2885cefd7869be8518b0af65",
             "locator": {
-              "end": 43,
+              "end": 57,
               "kind": "line_range",
               "start": 1
             }
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39df3362793ed90df98f28abcf46f61343190bcd",
+            "blob": "c91e4fbb51bc087f1ee933f4ef72d77a70638360",
             "content": "sha256:621d201b79c60185d2406bdb84baf86095b93f4d446a171220c82255da197602",
             "locator": {
-              "end": 65,
+              "end": 79,
               "kind": "line_range",
-              "start": 53
+              "start": 67
             }
           },
           "kind": "code"
@@ -72,12 +72,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39df3362793ed90df98f28abcf46f61343190bcd",
+            "blob": "c91e4fbb51bc087f1ee933f4ef72d77a70638360",
             "content": "sha256:0953bedcb97c83ad176e64ca8a5f45dda474804b444ca905a2a16cee42195703",
             "locator": {
-              "end": 328,
+              "end": 352,
               "kind": "line_range",
-              "start": 308
+              "start": 332
             }
           },
           "kind": "code"
@@ -85,16 +85,16 @@
       ]
     },
     "5": {
-      "note": "Usage documentation distinguishes command hooks and focused tests from measurements, and census/regrade from actor reruns. [5]",
+      "note": "Usage documentation distinguishes command hooks and focused tests from measurements, and census/regrade from actor reruns.\n\nAnchor: `runner.run_trial`",
       "targets": [
         {
           "anchor": {
-            "blob": "39df3362793ed90df98f28abcf46f61343190bcd",
-            "content": "sha256:908f8125e6afe68ae400cf51468b67d37b97a9aabf2348c486629b865eff80d2",
+            "blob": "c91e4fbb51bc087f1ee933f4ef72d77a70638360",
+            "content": "sha256:c26273759f617b04ba7cd867fa656610f9b3ccbaf2170700ff398ad1eb744b56",
             "locator": {
-              "end": 202,
+              "end": 226,
               "kind": "line_range",
-              "start": 168
+              "start": 207
             }
           },
           "kind": "code"

@@ -95,8 +95,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
-            "content": "sha256:fa035cd072435d9389f5b3b0ea910cc8097887cebfb1f1c1cefb3c7a630c04f3",
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
             "locator": {
               "kind": "symbol",
               "name": "complete_tool_response"
@@ -112,8 +112,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1528f1fc6e82408f2ddd381ca2b6956cbf42f694",
-            "content": "sha256:db1f8864146fed21cfc113c37453f85a5f1327c0ac702321cd6eccc0ce005fc8",
+            "blob": "a82c6e7b9b4fa460c90f61260685b7e5d3ec4fa7",
+            "content": "sha256:8614b4bd9643c8f33dfb3dbf05d3a66fce56cb3539fc9d636fe3b2d6d4e19164",
             "locator": {
               "kind": "symbol",
               "name": "finalize_tool_response"
@@ -275,16 +275,42 @@
       ]
     },
     "22": {
-      "note": "The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases.\n\nAnchor: \"class StrictResponseModel\"",
+      "note": "The `ResponseEnvelope` union of the strict and flexible envelope bases, both of which declare the choke-point fields `nextStep`, `next`, `log`, `logError` and `buildCurrentness`; no banner field is declared.",
       "targets": [
         {
           "anchor": {
-            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
-            "content": "sha256:ac1d11f8dcec1fbbaf192dec3dc2a73f56f9cd3a9144cdea6cc963328541dbba",
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:b4083410ee2a1f482b3b86b92d5364d3cde9f5502abcde32fe56c6fe036e1019",
             "locator": {
-              "end": 13,
+              "end": 84,
               "kind": "line_range",
-              "start": 13
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:f3d8171cbab08074ba4a63383f6e94134be10125f7108492b5e7aa9a9abb32f3",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:929ee8d6a3f994bca8e9a10650643d735ed700fe5d25d20de3a8605bf05f966b",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 123
             },
             "path": "mcp/src/agents_remember/models/base.py"
           },
@@ -653,11 +679,23 @@
       ]
     },
     "47": {
-      "note": "**Retained historical source account — superseded by the current route account:** Whole-result validation precedes supplied/default answer selection, logging and final guards.\n\nAnchor: `_write_delivered_line`, `complete_tool_response`",
+      "note": "Whole-result validation precedes supplied/default answer selection, logging and final guards.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
             "content": "sha256:03442d043942ae3d80abf2a310f23d02fa678e01381424e5c12d8a2059e12bc3",
             "locator": {
               "kind": "symbol",
@@ -666,63 +704,36 @@
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
-            "content": "sha256:fa035cd072435d9389f5b3b0ea910cc8097887cebfb1f1c1cefb3c7a630c04f3",
-            "locator": {
-              "kind": "symbol",
-              "name": "complete_tool_response"
-            },
-            "path": "mcp/src/agents_remember/application/tool_response.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "48": {
-      "note": "**Retained historical source account — superseded by the current route account:** Guidance uses exact response address and enrichment precedes serialization\n\nAnchor: Address predicate and tail; model finalizer",
+      "note": "Guidance uses the exact response address, and enrichment precedes serialization.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
-            "content": "sha256:b308f92dba2bb2f2114de8ab043ae0b5bc720a1f7dc6ff9a07b31b042d6fe2bf",
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:129afbc7db95453225dc24dc3d91b07668c255b319898fb911556658fe5c0777",
             "locator": {
-              "end": 164,
-              "kind": "line_range",
-              "start": 89
+              "kind": "symbol",
+              "name": "bound_next_step"
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1528f1fc6e82408f2ddd381ca2b6956cbf42f694",
-            "content": "sha256:db1f8864146fed21cfc113c37453f85a5f1327c0ac702321cd6eccc0ce005fc8",
-            "locator": {
-              "end": 26,
-              "kind": "line_range",
-              "start": 15
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_response.py"
           },
           "kind": "code"
         }
       ]
     },
     "49": {
-      "note": "**Retained historical source account — superseded by the current route account:** Server info reports binding/build rather than roster; context reader is scoped\n\nAnchor: Core builders",
+      "note": "Server info reports the agent binding and serving build rather than a roster, and the context-packet reader is task-scoped.",
       "targets": [
         {
           "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:ffbb8014ef7730d5b745862729e478151c8ff4b3b55100f91e37e6fed406bbe9",
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
             "locator": {
-              "end": 73,
-              "kind": "line_range",
-              "start": 26
+              "kind": "symbol",
+              "name": "server_info_payload"
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },
@@ -1141,8 +1152,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:99cced187a183a7906f8169567798687950c73ca8a0ad29ba52b338214de7446",
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
             "locator": {
               "kind": "symbol",
               "name": "server_info_payload"

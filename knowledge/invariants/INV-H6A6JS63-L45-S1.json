@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "Authored realization explanation requires refusing an unexplained target before writes, because generated filler would otherwise be stored and displayed as an author's account of the obligation."
+  },
   "applicability": "Realization targets supplied to the converted curator file writer through knowledge-ingest or knowledge-bootstrap.",
   "conditions": [
     "At least one supplied realization target lacks a rationale at both levels."

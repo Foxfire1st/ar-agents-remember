@@ -3,14 +3,15 @@
   "realizes": [],
   "references": {
     "14": {
-      "note": "Fixture world with external contract and synthetic corpus\n\nAnchor: `World`",
+      "note": "Fixture world with external contract and synthetic corpus",
       "targets": [
         {
           "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
-            "content": "sha256:ad3d94e6364f84bb66c0c762b33c3ee884d2fb94066e18b3964f3c9321ecec05",
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "content": "sha256:d0d6e823c9bdae00313e437f30c756f068d68a654110b12e459a934f88bac915",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "World"
             }
           },
           "kind": "test"
@@ -22,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
             "content": "sha256:8abcac7ac806d6277beff77b9b51e3953c55561505ab4744fc0585e543fd6f1a",
             "locator": {
               "kind": "symbol",
@@ -38,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
             "content": "sha256:f32b6275f794d9ad3884ff37bce17d86f6829bac3125192d4135fe46d59727d1",
             "locator": {
               "kind": "symbol",
@@ -54,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
             "content": "sha256:b09d8d5e945152990ce57bcd51775a8cc29cde422b5e13f9276d8bc8e91064c5",
             "locator": {
               "kind": "symbol",
@@ -66,14 +67,15 @@
       ]
     },
     "18": {
-      "note": "Non-conforming skill directory is recorded, never served\n\nAnchor: `test_a_skill_directory_whose_root_file_is_not_conforming_is_recorded_not_served`",
+      "note": "Non-conforming skill directory is recorded, never served",
       "targets": [
         {
           "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
-            "content": "sha256:ad3d94e6364f84bb66c0c762b33c3ee884d2fb94066e18b3964f3c9321ecec05",
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "content": "sha256:74aa414f4694d97bb0e5e39a3348e5856072d27c38414c0d11d41e35e2daafc6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_skill_directory_whose_root_file_is_not_conforming_is_recorded_not_served"
             }
           },
           "kind": "test"
@@ -85,12 +87,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
             "content": "sha256:cf7c1e6ebbeec1f5d33e9e87ee6575b281ffe9949c1fbe4073eb3615a68c99fc",
             "locator": {
-              "end": 975,
+              "end": 969,
               "kind": "line_range",
-              "start": 971
+              "start": 965
             }
           },
           "kind": "test"
@@ -98,16 +100,14 @@
       ]
     },
     "20": {
-      "note": "The only source change gives every synthetic operation an explicit audience=all, matching the extended manifest schema without changing expected synthetic operation bodies. All existing no-read-tree-write, role acquisition, task-digest, skill-reference/tool-boundary and resource registry cases remain.\n\nAnchor: Current test/support source",
+      "note": "Every synthetic operation declares an explicit audience=all, matching the extended manifest schema without changing expected synthetic operation bodies, beside the no-read-tree-write, role acquisition, task-digest, skill-reference/tool-boundary and resource registry cases.",
       "targets": [
         {
           "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
-            "content": "sha256:ad3d94e6364f84bb66c0c762b33c3ee884d2fb94066e18b3964f3c9321ecec05",
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "content": "sha256:6ed04702555097e2e7e3bc17b6cda0626b6ddcf02f7fd7dbfbe1aa5b01d2c650",
             "locator": {
-              "end": 975,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "test"

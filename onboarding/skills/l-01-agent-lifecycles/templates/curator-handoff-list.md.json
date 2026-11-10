@@ -3,12 +3,50 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-        "content": "sha256:039f314e48d5370200830f02fc921662c9a48d54eee592fc46abc70a8d279eb4",
+        "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+        "content": "sha256:2255d058b3c450f41d6dbd54aac7950714f198cacb90e7a20bbecf0bc94d75a6",
         "locator": {
-          "end": 316,
+          "end": 33,
           "kind": "line_range",
-          "start": 304
+          "start": 29
+        }
+      },
+      "id": "RLZ-2NKZPW",
+      "invariant": "INV-0FBA8M52",
+      "origin": {
+        "handoffEntry": "K3-0FBA8M52-author-missing-rationale",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "States that a Curator receiving a target without a rationale authors it from the evidence before ingest, without re-deriving producer fields.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+        "content": "sha256:7853928fedb2db895b7947d346f8199b97ea275c844daa0f8c9691f121acba5e",
+        "locator": {
+          "end": 173,
+          "kind": "line_range",
+          "start": 173
+        }
+      },
+      "id": "RLZ-6YRRWD",
+      "invariant": "INV-0FBA8M52",
+      "origin": {
+        "handoffEntry": "K3-0FBA8M52-author-missing-rationale",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Before ingest, the missing rationale is authored for every target of the worked examples.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+        "content": "sha256:20fe55240e351f3615c1a0bbb48b34b997e63db65c3ea4f1714d1253b77f6975",
+        "locator": {
+          "end": 248,
+          "kind": "line_range",
+          "start": 243
         }
       },
       "id": "RLZ-7VHY091X",
@@ -21,12 +59,12 @@
     },
     {
       "anchor": {
-        "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-        "content": "sha256:3d30f06efca4b7cabdb93b80866311396a7311516abf3d95510e63c312a01b50",
+        "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+        "content": "sha256:843544f46726b1b61d108123ba82608c740f8c3ecf8b37e0f15995726f71dd05",
         "locator": {
-          "end": 154,
+          "end": 134,
           "kind": "line_range",
-          "start": 123
+          "start": 100
         }
       },
       "id": "RLZ-A2D6Y9T1",
@@ -39,50 +77,31 @@
     },
     {
       "anchor": {
-        "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-        "content": "sha256:08e8a1ad620e2e10614403e2ad8572800ca1704ccfa6c41676ef81346c1f016c",
+        "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+        "content": "sha256:c07dd8c8d04a7ed3418196b614c5f38dd8c3eb012d440b85a00a0b4141edfc9e",
         "locator": {
-          "end": 453,
+          "end": 93,
           "kind": "line_range",
-          "start": 426
+          "start": 27
         }
       },
-      "id": "RLZ-AA8X6M",
-      "invariant": "INV-CKJ6AZ",
+      "id": "RLZ-J1Y6PF",
+      "invariant": "INV-3F80Q2",
       "origin": {
-        "handoffEntry": "MIK-R55@v1 rule 10",
-        "leaf": "260928-MIK-L54"
+        "handoffEntry": "MIK-R84@v5 part1 / L62 producer handoff ownership",
+        "leaf": "260928-MIK-L84"
       },
-      "rationale": "These producer/curator instructions state the Writer prerequisites, grouped-copy judgments, link-target recovery and rejected-workaround handling at the handoff boundary.",
-      "role": "presentation"
+      "rationale": "This template declares the nine producer fields, four Curator fields and their ownership boundary.",
+      "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-        "content": "sha256:b50aab51befc86d3ff41567892a0c6eb6b7874094b18f00b0cb634ddc5831616",
+        "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+        "content": "sha256:a52c02e08d9af083cb691c49a5e75c55507aaae8830419f64deceb6b8f8b803b",
         "locator": {
-          "end": 593,
+          "end": 134,
           "kind": "line_range",
-          "start": 572
-        }
-      },
-      "id": "RLZ-BPN91E",
-      "invariant": "INV-VN0A3Q",
-      "origin": {
-        "handoffEntry": "MIK-R48@v2 rule 7",
-        "leaf": "260928-MIK-L48"
-      },
-      "rationale": "The handoff schema tells the curator what to author and what the existing writer supplies; the role and operation carry the same contract.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-        "content": "sha256:981a9b56a726ee6bbbc90015565ecaa38837698c6a74900250b103b590763cb7",
-        "locator": {
-          "end": 154,
-          "kind": "line_range",
-          "start": 118
+          "start": 95
         }
       },
       "id": "RLZ-RSTSK683",
@@ -92,178 +111,9 @@
       },
       "rationale": "The canonical template owns the hand-off list shape every curator instruction defers to.",
       "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-        "content": "sha256:ef3a78ca826ea21755fb8d7d9dc0ec0ddf908692f21f92896639cd20c4ea0abb",
-        "locator": {
-          "end": 355,
-          "kind": "line_range",
-          "start": 347
-        }
-      },
-      "id": "RLZ-Y9M8Q6",
-      "invariant": "INV-BCEZZM",
-      "origin": {
-        "handoffEntry": "MIK-R101@v1 rule 8",
-        "leaf": "260928-MIK-L101"
-      },
-      "rationale": "This paragraph is the external-document reference shape with the retirement note beside it.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-        "content": "sha256:b1f90c30b9cd69f046dafe91ffbd7aaea0141d1fef18564502cc44d00f7d9208",
-        "locator": {
-          "end": 437,
-          "kind": "line_range",
-          "start": 426
-        }
-      },
-      "id": "RLZ-ZBPWGR",
-      "invariant": "INV-37TMDD",
-      "origin": {
-        "handoffEntry": "MIK-R54@v1 rule 13",
-        "leaf": "260928-MIK-L54"
-      },
-      "rationale": "These producer/curator instructions state the Writer prerequisites, grouped-copy judgments, link-target recovery and rejected-workaround handling at the handoff boundary.",
-      "role": "presentation"
     }
   ],
   "references": {
-    "1": {
-      "note": "**The MIK-R04 curator-guidance subsection: family routes, their rules, the root route `.` and the read-only `knowledge-routes` suggestion.**\n\nAnchor: `### Family routes (MIK-R04)`; \"never writes a route.\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:5a2facadf1c69d4133cb376211c1fcea32e74596cf59632985f86de1f2826f43",
-            "locator": {
-              "end": 416,
-              "kind": "line_range",
-              "start": 392
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:4b0c4cebb53d006b474ea29f2ef8f0b80abc83f18013c7bada2674298c473dab",
-            "locator": {
-              "end": 414,
-              "kind": "line_range",
-              "start": 414
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The MIK-R10 no_invariant-row bullet: its subject, its one disposition, the answers that need no row, delete-only hunks and uncovered files.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:09d0acc7a8915e920774672ec3e37dbef2f4a052e421ce543922f98643519824",
-            "locator": {
-              "end": 556,
-              "kind": "line_range",
-              "start": 549
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The MIK-R14 reconsideration-row bullet: its subject, `still_rejected` with the refresh and the new-item answer, `raise` with the task-document question, route targets, superseded decisions, never reversing, and linked alternatives kept at their index.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:8bdae07a37c4d25fd7bb81b72de3662e65871aac71007c0fd9f3aaba6aff13e9",
-            "locator": {
-              "end": 603,
-              "kind": "line_range",
-              "start": 579
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The decision section's refusal list names the reorder of a linked alternative (MIK-R14).\n\nAnchor: \"with a linked alternative moved to another index against the memory base\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:a33ad250e5a93cd08005a63314140fbd0850b7d84bd6544215836d0382df3079",
-            "locator": {
-              "end": 823,
-              "kind": "line_range",
-              "start": 820
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The MIK-R27 admission section: the criteria and their meanings, what is new, refused and reported, local stays local, demotion, and two admitted, two refused and one local example.\n\nAnchor: `## The admission rule (MIK-R27)`; \"most knowledge is local and stays prose\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:6df301bb935036b353d082e45430bfdf528c4c3fc62f57e7786972401e4d6427",
-            "locator": {
-              "end": 784,
-              "kind": "line_range",
-              "start": 732
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The MIK-R13 decision-record section: the fields, the links and alternative indexes, requirement endpoints, the refusals, lifting at closeout and the D18 example.\n\nAnchor: `## Decision records (MIK-R13)`; \"keeps governing code\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:5fa48ffebc8ff56f025ae86c950a2599a6995ad46cfefd8a723199fb70c986d4",
-            "locator": {
-              "end": 846,
-              "kind": "line_range",
-              "start": 785
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The History section: items filled by the writer, the rationale cover, the governing row of a changed invariant, naming a row again, and a family's one governing row.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:7611977f3c46d3fdc3e8e716551e8d58f329311f08341e51aa38034383286d07",
-            "locator": {
-              "end": 609,
-              "kind": "line_range",
-              "start": 550
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "16": {
       "note": "Changed family rows need an authored effect; the revision is the writer's.",
       "targets": [
@@ -281,110 +131,17 @@
         }
       ]
     },
-    "17": {
-      "note": "Converted target guards refuse the whole run with no writes and recheck each supplied list, rather than replaying a committed per-entry allocation.\n\nAnchor: `105-135`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:823bf23d70ebd9920f848d6d47a43cfa86c9f1929bdc5e15ea5c07db5bfc390e",
-            "locator": {
-              "end": 148,
-              "kind": "line_range",
-              "start": 118
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "Onboarding, membership and ordinary-record judgment inputs have separate domains.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:b8d33350a2132248e847caeac2d126658047b18c6ff349b9d52534f75bef6046",
-            "locator": {
-              "end": 620,
-              "kind": "line_range",
-              "start": 594
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "Writer-supplied bindings and named report-only versus commit-route refusal stay separate.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:96137d335eaa252286bb312cf8e575db2b2868d5e17c9cb3a18582b613c60b01",
-            "locator": {
-              "end": 728,
-              "kind": "line_range",
-              "start": 695
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "**The MIK-R12 section: the file writer's document, the curator keys and record, history and handle forms, what the writer fills in and what it checks; and the `incidental` → `support` decision.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:f634a9e0170f21dab52298212ec4ebcf330244afc8176532c75154a5fe11072e",
-            "locator": {
-              "end": 688,
-              "kind": "line_range",
-              "start": 485
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:5e3dd9d25748e384ded43b7ccc23de82c87bfaac4a89361e2f686145be3c6cea",
-            "locator": {
-              "end": 383,
-              "kind": "line_range",
-              "start": 382
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "The current file-writer/worklist contract defines row admission and refusal atomicity, equal-copy grouping, link/reconsideration repairs, handles/evidence replacement, test proof locators and option-text link preservation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:b6b3dd11aca382eb2fd9db2f6eac47d5a35dfccee30b68b8408a21446904a898",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "21": {
       "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:b6b3dd11aca382eb2fd9db2f6eac47d5a35dfccee30b68b8408a21446904a898",
+            "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+            "content": "sha256:d9cbacffc2e4185b71743115f15e5976a2202d18759d84c1b6474eb333fcf5b2",
             "locator": {
-              "kind": "file"
+              "end": 318,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -392,296 +149,33 @@
       ]
     },
     "22": {
-      "note": "Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners.\n\nAnchor: Candidate instruction body, lines 3–37",
+      "note": "The Writing and meaning review section links the shared writing profile and keeps producer fields verbatim without changing the thirteen-field producer schema.",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:74c4fe63b6718aeaf7246658bc4deb10c616bffbb8f62a90dcb4674ac8e2f788",
+            "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+            "content": "sha256:f26c1783a159c5cc6b6a6a687aad480cb63e5a3d5e38f3fbbc5b6595522ad3f7",
             "locator": {
-              "end": 37,
+              "end": 21,
               "kind": "line_range",
-              "start": 3
+              "start": 15
             }
           },
           "kind": "code"
         }
       ]
     },
-    "23": {
-      "note": "Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners.\n\nAnchor: Candidate instruction body, lines 43–76",
+    "31": {
+      "note": "The producer contract keeps the entry, its shape and the producer rules; the Curator-authored keys, writer input, admission and decision records sit in the ingestion template.",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:28eed6f1db4218c4ab1a348d2b629d5993988f57915a5ea8b8749480d60cf50d",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:1cb3a2c5c896aa26e0acd24b96047cec6d88531a213b9b58970ad758204baa2d",
             "locator": {
-              "end": 76,
-              "kind": "line_range",
-              "start": 43
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners.\n\nAnchor: Candidate instruction body, lines 118–154",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:981a9b56a726ee6bbbc90015565ecaa38837698c6a74900250b103b590763cb7",
-            "locator": {
-              "end": 154,
-              "kind": "line_range",
-              "start": 118
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners.\n\nAnchor: Candidate instruction body, lines 158–181",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:ab88a918cfcde9f745f0a3e565231f236cf4aaff12ddac0949f9ad1fe0a57c1f",
-            "locator": {
-              "end": 181,
-              "kind": "line_range",
-              "start": 158
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners.\n\nAnchor: Candidate instruction body, lines 210–229",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:83531c4c2d1f38a5e76cdb0bf85c2d0ea0c8a2b2312f4deca19a37326b165f0b",
-            "locator": {
-              "end": 229,
-              "kind": "line_range",
-              "start": 210
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners.\n\nAnchor: Candidate instruction body, lines 322–355",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:9284abc99cafd014ac4634aaecd621628996e9f5ade31a79d05a24523ed73af1",
-            "locator": {
-              "end": 355,
-              "kind": "line_range",
-              "start": 322
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "A `raise` the command cannot publish refuses the whole batch with one fixed cause clause and names the mounted `knowledge_write` call that can publish it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:47eb33bc7a49876627f2077c86d6f19fa94bd377c7ae6e19589dcb73d750c0f7",
-            "locator": {
-              "end": 441,
-              "kind": "line_range",
-              "start": 433
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "29": {
-      "note": "A case that runs and that no name reaches is proved by its whole extent as a `line_range`, and a case that does not run proves nothing.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:1ddfc926eb366671ad954b080322e5365aa86e8adfdfb18280323a2320746830",
-            "locator": {
-              "end": 498,
-              "kind": "line_range",
-              "start": 488
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "**The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:5b8525d41934a6f73a65ece912f566602e859f57373cc538ef72a53a65dd8a42",
-            "locator": {
-              "end": 484,
-              "kind": "line_range",
-              "start": 425
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "30": {
-      "note": "A `still_rejected` row may re-point a fired link to where its code now lives, and a condition that may be met is raised instead.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:15149142a4af3f8d1a5c381238a71b802960602a8c8958f8d964cbd4c59d9108",
-            "locator": {
-              "end": 682,
-              "kind": "line_range",
-              "start": 661
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Curator-owned semantic scope remains required.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:39cf6ff27fbf58631d7041b7fdcb08170e0eeb40c5254a0a4d0409e5d028dad2",
-            "locator": {
-              "end": 194,
-              "kind": "line_range",
-              "start": 144
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Historical database-era `retain_memberships` input and exact published-roster readback, not the current file-family API.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:04a079a40aee2d8c3ce83d9516c0c70d5a6109f339b8fc3db4ea268b753da189",
-            "locator": {
-              "end": 424,
-              "kind": "line_range",
-              "start": 356
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Historical per-target rationale/role and value/vocabulary/length rules, including the database writer's committed-retry exemption; the separate target-element supersession remains current.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:26b89509dcce1809803064302c0f17ae12335dd9b70c1b377b1bc6434db27096",
-            "locator": {
-              "end": 140,
-              "kind": "line_range",
-              "start": 101
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:81ec31ab39294ef76c2a29d36ad1b64784b8e1d91f993de8326b7598644a80ca",
-            "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 8
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "**The MIK-R28 additions: both evidence forms, the facet authored beside the statement draft, and the views, the informational \"without proof\" list and the migration pass.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:a937f60f51e72cd80ff44cb7b39363727e6d0f4503ebef9cf3da1679f5b29639",
-            "locator": {
-              "end": 511,
-              "kind": "line_range",
-              "start": 506
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:3036d35c0169811212acfe132b77455cfc0f0fa7d4517379835586eb24be9b2e",
-            "locator": {
-              "end": 454,
-              "kind": "line_range",
-              "start": 450
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The onboarding row for a source file or route overview: `updated` when a counted change brought the card up to date and `no_impact` when the reviewed file needs none, bound to its source files and reopened when one of them changes again.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:719d672ca9287c8a619f3a93ecd979104dc3181746e8de0b4b4c5095f4a16373",
-            "locator": {
-              "end": 537,
-              "kind": "line_range",
-              "start": 532
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The MIK-R11 planned-row bullet: its subject, its three dispositions and the ref each takes, and what does and does not answer the item.\n\nAnchor: \"A planned row (MIK-R11, converted memory only)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:6c149f9e6175f0e6d63518b77bbfd86c24c1f92468ee2d7f257e20648424b556",
-            "locator": {
-              "end": 631,
-              "kind": "line_range",
-              "start": 621
-            }
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }

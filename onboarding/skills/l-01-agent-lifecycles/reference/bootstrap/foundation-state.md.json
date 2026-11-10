@@ -1,0 +1,77 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The foundation is authored records under `knowledge/`, distinct from cards and baseline, and Bootstrap reports one of four states.\n\nAnchor: `memory_init`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
+            "content": "sha256:922aa423e78e317326a19c42d8aad1231c280f3ec6ce398a4e4e867bb486f2ac",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The next step is to start the Architect; the Curator authors the foundation inside the Architect's task, and Bootstrap claims no foundation work.\n\nAnchor: `c-14-knowledge-bootstrap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
+            "content": "sha256:b523e6c1a9bc94d392e5455d3e11e891f30ad40a92255e96534c61844d8e5705",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The role file points to the state section before reading and reporting.\n\nAnchor: `foundation-state.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:1e022bc8f8a6c8de34d61b0ec9096dc57cbfd9a1d9016287a5a006b99bf02843",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Bootstrap operation points to the next-step section before naming it.\n\nAnchor: `foundation-state.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:c8feee4c1392c33120f68868301cc3bf21cb9d4a758cb09b883e7bd9dea60869",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

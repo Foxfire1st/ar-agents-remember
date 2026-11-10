@@ -1,5 +1,11 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "The summary classifies revision changes using the shared head rule, keeping attachment-only changes outside intent totals and unavailable knowledge distinct from a measured zero."
+  },
   "applicability": "The changed-intent summary of one leaf review comparison: invariant and family joint-guarantee head revisions of its before and after knowledge snapshots.",
   "conditions": [
     "Heads are chosen by the revision comparison's head rule (revision_heads).",

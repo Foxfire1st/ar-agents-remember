@@ -10,7 +10,7 @@ Documents exact worktree addressing, publication/recovery, protected-ref landing
 
 ## Current Source Qualification
 
-The page names `w-02-light-task-workflow` as the owner of worktree creation, exact enclosure addressability, integration, terminal archival and cleanup, and as the owner of validated immutable closeout input, approval and code-then-memory commit order; the inherited `c-09`/`c-12` names describe the retired owners of those duties.
+The page names the worktree tools as the owners of worktree creation, exact enclosure addressability, integration, terminal archival and cleanup, and the authorized closeout operation (`skills/l-01-agent-lifecycles/operations/closeout.md`) as the holder of validated immutable closeout input, approval and code-then-memory commit order; the inherited `c-09`/`c-12` names describe the retired owners of those duties.
 
 ## Code Commentary
 

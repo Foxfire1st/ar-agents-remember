@@ -219,8 +219,21 @@
       ]
     },
     "9": {
-      "note": "The test imports fixture, scenario and runner through e2e_harness-qualified identities from the scripts root and asserts the four governed paths exist. The four e2e lifecycle rows equal their base rows member for member, with five artifact/consumer edges restored by the package-qualified import repair; the derivation code is unchanged. The co-target windows also retain writer_worklist_test_support, read_scope_test_support, reconsideration_test_support and repository_profile_test_support registration context; those are separate catalog context, not extra harness modules. Reviewer R11, its authoritative identifier correction and its idempotence addendum supply the candidate-bound review evidence; this account claims no execution by its author.",
+      "note": "The test imports fixture, scenario and runner through e2e_harness-qualified identities from the scripts root and asserts the four governed paths exist; the four e2e lifecycle artifact rows register those harness modules. Reviewer R11, its authoritative identifier correction and its idempotence addendum supply the candidate-bound review evidence; this account claims no execution by its author.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
+            "locator": {
+              "end": 4815,
+              "kind": "line_range",
+              "start": 4740
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
@@ -249,84 +262,6 @@
         },
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:af829285fc89bdb9e576c5f4f6fe83c23501f3a6d48c3090ca4ef09817c9c0e7",
-            "locator": {
-              "end": 4730,
-              "kind": "line_range",
-              "start": 4621
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:5d76ba6457da434f96da45a4824f332c83cb590c50511cbee56ec34032020642",
-            "locator": {
-              "end": 4768,
-              "kind": "line_range",
-              "start": 4731
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:65efd8540d2f97759a4b7133a2fbc5a4da26045e3b573b37eced262d75f9eb38",
-            "locator": {
-              "end": 4713,
-              "kind": "line_range",
-              "start": 4676
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:adcc8f62ed97feb2d72382d2d0ce4d7a06a4724d44f7b66ff02af26b11840362",
-            "locator": {
-              "end": 4751,
-              "kind": "line_range",
-              "start": 4735
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:97e69d585e7b48c015553851b4777d4adabf1d4bd469a2fca52dd5fc3c7060ba",
-            "locator": {
-              "end": 4121,
-              "kind": "line_range",
-              "start": 4001
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:be2586c2059e10f02ad4a9e0cc393f8f9112d5eb3f0fdd6f06eb7df3c02fbc44",
-            "locator": {
-              "end": 4061,
-              "kind": "line_range",
-              "start": 4045
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
             "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
             "content": "sha256:10f6dc6b8b0356fe26c4e37fdabeff4b41709ffc309afd81b0be89850e8d81c1",
             "locator": {
@@ -337,24 +272,6 @@
             "path": "mcp/tests/test_fresh_user_harness.py"
           },
           "kind": "test"
-        },
-        {
-          "document": {
-            "document": "file:///home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/role-reports/reviewer/faf73ee8-218f-4250-b541-909a6da2670f/role-launch/260928-MIK-L62-code-R11-round-10-verdict.md#sha256=af5ecdc1f3ee3afa0502adf0ccd434334c8aa1886f4dbd62df49a41cd8018112"
-          },
-          "kind": "external"
-        },
-        {
-          "document": {
-            "document": "file:///home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/role-reports/reviewer/faf73ee8-218f-4250-b541-909a6da2670f/role-launch/260928-MIK-L62-code-R11-correction-1.md#sha256=da40812b6cd0d4cc0af9d284d1b743d0efe13da64b9d2e1c7575f8e36f8bd65e"
-          },
-          "kind": "external"
-        },
-        {
-          "document": {
-            "document": "file:///home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/role-reports/reviewer/faf73ee8-218f-4250-b541-909a6da2670f/role-launch/260928-MIK-L62-code-R11-addendum-idempotence.md#sha256=913e22228eb83d2476afdc007a475705654bff7103813db8b33689e8423a07d5"
-          },
-          "kind": "external"
         }
       ]
     }

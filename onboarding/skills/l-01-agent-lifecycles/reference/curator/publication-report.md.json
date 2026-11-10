@@ -1,0 +1,58 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/publication-report.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`--commit` authorizes file writes, never a Git commit or acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f94ef6eb5f2e84e59ce7ed59435e26b0afecc15a",
+            "content": "sha256:5bccf8b0ea6a5fc6106b34462c1df55de053c561f02e42b1f9f83e1f077c8d06",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The report state, paths, identifiers and refusals decide what was written; exit zero and `written` alone prove no publication.\n\nAnchor: `planned`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f94ef6eb5f2e84e59ce7ed59435e26b0afecc15a",
+            "content": "sha256:7b23dcdec58322916a354ebf3dbe8489d989176a976aa3516028f6738cda957c",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Correct-input refusals go to the same-tool procedure; a missing rationale is refused by name.\n\nAnchor: `realization_rationale_absent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f94ef6eb5f2e84e59ce7ed59435e26b0afecc15a",
+            "content": "sha256:412a2d048415626d812f8fe9ae25c86cb3bf81992bee5b1ac92a4b1a5ea3c3ac",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -40,29 +40,16 @@
       ]
     },
     "10": {
-      "note": "The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the Quickstart, the canonical runtime section and the local-wheel Install And Run block.",
+      "note": "The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the Quickstart, the canonical runtime section and the local-wheel Install And Run block.\n\nAnchor: `Install And Run`",
       "targets": [
         {
           "anchor": {
-            "blob": "c49e33bf9ae9ea13e65a630f1b49c4b16e80e075",
-            "content": "sha256:c1a7ebc1a6d6bb01d4a54597fa81f3fd598479837652c825e02000dd04671794",
+            "blob": "9244375fc642fd5b37d748501b0d75fbcc5b4954",
+            "content": "sha256:8946f618ed38947a07df8cbb7a29054975d1d6a155ae3dd97fbeebcc178508df",
             "locator": {
-              "end": 48,
+              "end": 113,
               "kind": "line_range",
               "start": 15
-            },
-            "path": "mcp/README.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c49e33bf9ae9ea13e65a630f1b49c4b16e80e075",
-            "content": "sha256:92b93225880c7df24f01bc842d50f5f93345dd05cf90533ed31ddb8589da2daa",
-            "locator": {
-              "end": 117,
-              "kind": "line_range",
-              "start": 67
             },
             "path": "mcp/README.md"
           },
@@ -75,12 +62,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
             "content": "sha256:517c8a6bf9dd9c30609d30101aa553af6e8a792f28a9d1c0a22c4f46ad748b69",
             "locator": {
-              "end": 924,
+              "end": 892,
               "kind": "line_range",
-              "start": 924
+              "start": 892
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },

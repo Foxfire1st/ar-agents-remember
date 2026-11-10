@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
-        "content": "sha256:1d7faa278eb8ce06931e45979010586cc4d79fe8d6838b0300234c01d28bbc2c",
+        "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
+        "content": "sha256:180f25fc57d9c4441418d763f11c0884086730978c497216bd1a7d20bd900a3b",
         "locator": {
           "kind": "file"
         }
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
+            "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
             "content": "sha256:ee9b486b27b677e0bfd84cfd64a13ed90f249ab24e4c9d5615e04f4712f7e96a",
             "locator": {
               "end": 1,
@@ -39,16 +39,16 @@
       ]
     },
     "10": {
-      "note": "The Providers link now describes retired providers and leftover-state cleanup.\n\nAnchor: `[Providers](guides/providers.md)`",
+      "note": "The Providers link now describes retired providers and leftover-state cleanup. Anchor: `[Providers](guides/providers.md)`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
-            "content": "sha256:4471d88d00d6c4bb54b28c5a0a84642d2c5fde141700d52716f19a36dfaee521",
+            "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
+            "content": "sha256:367c862bc149a6a2d7c05db03d5e0276cc4c857546b340fe2f3a653778853d00",
             "locator": {
-              "end": 481,
+              "end": 450,
               "kind": "line_range",
-              "start": 480
+              "start": 449
             }
           },
           "kind": "code"
@@ -56,28 +56,16 @@
       ]
     },
     "2": {
-      "note": "The summary still retires semantic/code-graph providers, but its Git-memory bullet now names paired code/memory publication and a disposable knowledge index rebuilt from the selected text tree; the separate cheap-isolation section still contains residual live provider-cloning prose.",
+      "note": "The summary retires the semantic and code-graph providers so by-path reads carry the product, and its Git-memory bullet names paired code/memory publication and a disposable knowledge index rebuilt from each selected text tree.\n\nAnchor: `paired publication`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
-            "content": "sha256:e18f9167e267c3832aad8c3bd21de192591e4506b961673830ef9bf6d2f8ec64",
+            "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
+            "content": "sha256:3327dfdac1d1aafe83e10aa65189a5b369303be3d903a9555ccf8f1674ab9927",
             "locator": {
-              "end": 39,
+              "end": 33,
               "kind": "line_range",
-              "start": 25
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
-            "content": "sha256:2ab26ae67e99c02b6183948272a21ddc06b712ecc029748be1bf01446ba513cd",
-            "locator": {
-              "end": 297,
-              "kind": "line_range",
-              "start": 262
+              "start": 27
             }
           },
           "kind": "code"
@@ -89,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
-            "content": "sha256:2824265b587c4a40ec4d5a5dc92350d91fa19fe15b5ab43e2eb073355c3c6f84",
+            "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
+            "content": "sha256:2226d5476c89bebb4033dd342dc2250b2e47925d2a2381b0725587a9f76cd58d",
             "locator": {
-              "end": 78,
+              "end": 77,
               "kind": "line_range",
-              "start": 74
+              "start": 73
             }
           },
           "kind": "code"
@@ -106,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
+            "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
             "content": "sha256:766f3196063e4e1a9cd8bfd24537188b18bb65907632c0051964f82cae91dbd2",
             "locator": {
-              "end": 223,
+              "end": 221,
               "kind": "line_range",
-              "start": 202
+              "start": 200
             }
           },
           "kind": "code"
@@ -119,16 +107,16 @@
       ]
     },
     "5": {
-      "note": "The read-only tool list no longer includes provider health, graph or semantic-index queries.\n\nAnchor: `- **Read-only tools** compute facts with no side effects`",
+      "note": "The read-only tool bullet names orienting on a repository, checking drift and previewing closeout, with no provider-health, graph or semantic-index query.\n\nAnchor: `Read-only tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
-            "content": "sha256:99eb37adddcf99eebcd5217f97af1a6d28fe8ad9c00816681388628a9c1030d7",
+            "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
+            "content": "sha256:16799c3bc8a51a27596afc034e98beba6e621fb2c8dba338ed08f41a68d04731",
             "locator": {
-              "end": 353,
+              "end": 325,
               "kind": "line_range",
-              "start": 351
+              "start": 321
             }
           },
           "kind": "code"
@@ -136,16 +124,28 @@
       ]
     },
     "6": {
-      "note": "First-run setup starts nothing provider-side, and by-path memory needs neither Docker nor providers.\n\nAnchor: `starts nothing provider-side`",
+      "note": "First-run setup includes no provider indexing or setup-authored knowledge, and by-path memory needs neither Docker nor providers. Anchor: `provider indexing or setup-authored knowledge is part of this path`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
-            "content": "sha256:71796918acdd434aa0feb6687cfbf1d16d3a3aa174e7c3c87ada33532278c3f1",
+            "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
+            "content": "sha256:d8f9018391e08d8a3fdacdd1d22c46216859d5000efbff9631a6297c956bfc42",
             "locator": {
-              "end": 410,
+              "end": 378,
               "kind": "line_range",
-              "start": 405
+              "start": 372
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
+            "content": "sha256:c378785662c32b3b8e79cb87ea53475f4f232b913c7e6f28520adfc0e1fdffa0",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 130
             }
           },
           "kind": "code"
@@ -153,16 +153,16 @@
       ]
     },
     "7": {
-      "note": "Authority settings cover repositories and report old provider keys once as unused.\n\nAnchor: `old provider keys are reported once as unused`",
+      "note": "Authority settings cover repositories and report old provider keys once as unused. Anchor: `old provider keys are reported once as unused`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
-            "content": "sha256:79e5ce7d24272aff523cc00607bc931381eb1ec3d9955cca662dbf47daca35db",
+            "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
+            "content": "sha256:8d2186594be3bd3e9eabd438b13d425f3cc1db81863908f760964314928e56b6",
             "locator": {
-              "end": 426,
+              "end": 394,
               "kind": "line_range",
-              "start": 423
+              "start": 391
             }
           },
           "kind": "code"
@@ -170,16 +170,16 @@
       ]
     },
     "8": {
-      "note": "The isolation section still describes provider indexes as live machinery and says providers can be created with a worktree.\n\nAnchor: `Cheap isolation: indexes are cloned, not rebuilt`",
+      "note": "The task-isolation section states the former providers are retired, so worktree setup provisions, clones and seeds none of their stacks, and describes the knowledge index as a disposable SQLite view.\n\nAnchor: `Task isolation and disposable indexes`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
-            "content": "sha256:2ab26ae67e99c02b6183948272a21ddc06b712ecc029748be1bf01446ba513cd",
+            "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
+            "content": "sha256:4f5619bdf114db2e1e70f132888e2e56356dd6badd4e64d003ee01fba5cd6ca1",
             "locator": {
-              "end": 297,
+              "end": 267,
               "kind": "line_range",
-              "start": 262
+              "start": 258
             }
           },
           "kind": "code"
@@ -187,16 +187,28 @@
       ]
     },
     "9": {
-      "note": "The composition summary still credits index cloning as what makes isolation cheap.\n\nAnchor: `**Index cloning** makes that isolation cheap enough to use by default.`",
+      "note": "The composition summary now credits the disposable knowledge index rebuilt from the selected text tree; only the table-of-contents entry still names cloned indexes. Anchor: `The **disposable knowledge index** is rebuilt from the selected text tree.`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
-            "content": "sha256:6fe28ae1575865ec66f03e483e1255c0bbcfe9a6bcf0356f551bffdbc1d04a7a",
+            "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
+            "content": "sha256:d6c86811efc4b893bbe9816fbe1a18ce8c2bebb88d64981402e1db713631a10a",
             "locator": {
-              "end": 456,
+              "end": 425,
               "kind": "line_range",
-              "start": 456
+              "start": 425
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
+            "content": "sha256:f521e6adadaf5054377c793bebe35018d36c316e0a97442b9cd2aa05d11f9c89",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
             }
           },
           "kind": "code"

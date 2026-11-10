@@ -39,8 +39,11 @@ The checked template and relevant repository-local bootstrap-skill sections defi
 ### Repo-Internal References
 
 - The overview card records route metadata, governed paths, explanation topics, inputs, links and questions. [1]
+
 - Phase 4C creates cards for selected governing routes and bounds discovery with parent, child and governed-file context. [2]
+
 - Overview waves use cards to construct mirrored durable route-local overviews, with reference-anchor verification rather than recorded commits. [3]
+
 - The promotion pipeline distinguishes overview cards from the durable route-local overview output. [4]
 
 ### Cross-Repo References

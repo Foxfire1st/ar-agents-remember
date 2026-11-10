@@ -147,7 +147,9 @@ Source: mcp/src/agents_remember/application/role_capsules/compilation.py:93-134;
 - The diagnostic shapes this module fills and the ordering rule that keeps them out of the digest. [2]
 - **The carried skill channel** — one content-addressed reference per declared skill, built with no policy call. [3]
 - The determinism cases: identical input to identical content and digest, order as identity, and a real binding change moving the digest. [4]
+
 - Ephemeral diagnostics do not move identity, while an applicable block change does; an unrelated role never reaches another role's capsule. [5]
+
 - Composition requires neither model nor network, and no network client is imported. [6]
 - A refusal still produces an explanation manifest carrying its remedy, and an unverifiable projection is refused. [7]
 - The typed refusal this module raises for every defect class. [8]

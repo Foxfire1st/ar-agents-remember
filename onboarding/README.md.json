@@ -3,10 +3,29 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
-        "content": "sha256:5bfbbc74bf4a199cbaa61d6cb6510c42b8cb3f04ddeb2f853c009f28b2ae931e",
+        "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+        "content": "sha256:6fe196a093f0db79a902b8a5b01fd41db223390679bb223e905753094647872c",
         "locator": {
-          "end": 101,
+          "end": 59,
+          "kind": "line_range",
+          "start": 59
+        }
+      },
+      "id": "RLZ-HRPJ1A",
+      "invariant": "INV-R1E181",
+      "origin": {
+        "handoffEntry": "K3-R1E181-readme-first-run",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The README's first-run feature line tells a new user to register the MCP server and says the server serves skills from its installed package, with no second skill tree installed: the startup guidance names the package-served path instead of the retired harness starter packages.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+        "content": "sha256:03976d0884745ebcb81bf413b489a981683f962b97829625dab51bded6fd411a",
+        "locator": {
+          "end": 99,
           "kind": "line_range",
           "start": 88
         }
@@ -23,28 +42,16 @@
   ],
   "references": {
     "1": {
-      "note": "Core Features now names external Markdown/JSON memory, path-derived evidence, retired search providers, paired worktrees, structured records and Curator judgments with exact-tree publication checks; memory.md is an ignored attribution cache. The retained starter-package bullet still contradicts Quickstart's no-copied-package statement.",
+      "note": "Core Features names external Markdown/JSON memory, path-derived evidence, retired search providers, paired worktrees, structured records and Curator judgments with exact-tree publication checks; memory.md is an ignored attribution cache, and the harness-ready bullet registers the MCP server, which serves skills from its installed package.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
-            "content": "sha256:98fe261076229b41de6c646ea50198f022643a42fb47dafed8cf76e57b8639b7",
+            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "content": "sha256:c021956a31dbdef4bc6a0d4266b9ced7d3f0aca55df4140b86b859dfbbc09b88",
             "locator": {
-              "end": 61,
+              "end": 62,
               "kind": "line_range",
               "start": 45
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
-            "content": "sha256:c2081a43de1ff476c839a6be8daf163f16107f22bf5b7fc1c5ad507610b80ac9",
-            "locator": {
-              "end": 147,
-              "kind": "line_range",
-              "start": 142
             }
           },
           "kind": "code"
@@ -52,16 +59,16 @@
       ]
     },
     "10": {
-      "note": "The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. The range was re-anchored by `CAPS-R12@v1`: the section still opens at `## Stability` and its body is now the single line that follows, and the promised layout no longer names `ar-memory/` because the internal mode was removed.\n\nAnchor: `## Stability`; `ar-coordination/`; `memory-repos/ar-<repo>/`",
+      "note": "The Stability section is the semver promise: skill IDs (its examples are `l-01-agent-lifecycles` and `c-10-adopt-memory-baseline`), MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals, provider internals and prompt wording may change in minor releases.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
-            "content": "sha256:9952d1d0ed63d0a9a008a962196f8a449654b60428251f8791c785029c5a0ffd",
+            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "content": "sha256:adc07978b19e471120959adc17b0a46d99b8019ec2f4985ed2e2b7b71a993b8c",
             "locator": {
-              "end": 356,
+              "end": 344,
               "kind": "line_range",
-              "start": 348
+              "start": 341
             }
           },
           "kind": "code"
@@ -73,12 +80,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
+            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
             "content": "sha256:f6e757f50314de45ed752df3d2fb828221716fb822264b73bd592d3f9fb919ad",
             "locator": {
-              "end": 356,
+              "end": 349,
               "kind": "line_range",
-              "start": 352
+              "start": 345
             }
           },
           "kind": "code"
@@ -86,16 +93,16 @@
       ]
     },
     "12": {
-      "note": "The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages.",
+      "note": "The docs index includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages.\n\nAnchor: `features.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
-            "content": "sha256:4fba5592a923fea636db4f8458fa4e95a700ca834b842f9dce30f0f0b189fe2f",
+            "blob": "cbe4d811fb65009206986c45ac951ee676a08a79",
+            "content": "sha256:32c4508d8c7fed802d30886700d26dcc6cfa29fe57ec2e511d2ae25f932a32b6",
             "locator": {
               "end": 65,
               "kind": "line_range",
-              "start": 1
+              "start": 23
             },
             "path": "docs/README.md"
           },
@@ -104,68 +111,16 @@
       ]
     },
     "13": {
-      "note": "The feature tour describes external Markdown/JSON memory, converted cards and sidecars, shared records and Curator judgment history; it retains the setup and operational-guardrail tour and the residual present-tense provider-index isolation section.",
+      "note": "The feature tour describes external Markdown/JSON memory, converted cards and sidecars, shared records and Curator judgment history; it keeps the setup and operational-guardrail tour, and its task-isolation section says worktree setup provisions no provider stack and describes the disposable SQLite knowledge index.\n\nAnchor: `knowledge/history/<owner>.json`",
       "targets": [
         {
           "anchor": {
-            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
-            "content": "sha256:d0bd7dc45bf57693fb2cee6fab9312ccd71ba6a755773c599c96f6ed529faa2e",
+            "blob": "1409098bd311ea360111a168a058e9668e6fe951",
+            "content": "sha256:ea83967056b8cd95eadd4d1612820b65b2d11dd4049711942122a66dbddbf29a",
             "locator": {
-              "end": 39,
+              "end": 101,
               "kind": "line_range",
-              "start": 11
-            },
-            "path": "docs/features.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
-            "content": "sha256:399223afb8f6a1867781949085c80b73d87f59bc4d8b98467486458b5c89e383",
-            "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 87
-            },
-            "path": "docs/features.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
-            "content": "sha256:2ab26ae67e99c02b6183948272a21ddc06b712ecc029748be1bf01446ba513cd",
-            "locator": {
-              "end": 295,
-              "kind": "line_range",
-              "start": 260
-            },
-            "path": "docs/features.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
-            "content": "sha256:8d6e60080d96b373a63e4eb454f33e531da293f31bc0b4f78bf211b8036f3c44",
-            "locator": {
-              "end": 440,
-              "kind": "line_range",
-              "start": 392
-            },
-            "path": "docs/features.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
-            "content": "sha256:80a09831457634cfae67481c06dc2afb57313d474dbe6110da4199a18c4e2316",
-            "locator": {
-              "end": 482,
-              "kind": "line_range",
-              "start": 469
+              "start": 88
             },
             "path": "docs/features.md"
           },
@@ -174,14 +129,16 @@
       ]
     },
     "14": {
-      "note": "The install procedure the readme mirrors.",
+      "note": "The install procedure the readme mirrors.\n\nAnchor: `c-13-install-and-onboard`",
       "targets": [
         {
           "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
-            "content": "sha256:27c52961a8380a0380b308d5fcf1b9a33df0704bfb19b8544a3f6260443d4db4",
+            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
+            "content": "sha256:27fd0bc677f240fbb0d90d8fb004ce40e9a84a1e2e89b7aa715b8490980ee6bf",
             "locator": {
-              "kind": "file"
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "skills/c-13-install-and-onboard/SKILL.md"
           },
@@ -190,18 +147,18 @@
       ]
     },
     "15": {
-      "note": "The dashboard start that ensures the host.",
+      "note": "The dashboard daemon start ensures the dashboard daemon and then the host.\n\nAnchor: `start_host(config)`",
       "targets": [
         {
           "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
-            "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
+            "blob": "6216846b9873e811e50cff4756b0f5ca57b58fa0",
+            "content": "sha256:9ad76f645c8b617c91b4e2f19e8fb3330e7219ec31f5ea7cb18245f69a1b0399",
             "locator": {
-              "end": 947,
+              "end": 86,
               "kind": "line_range",
-              "start": 911
+              "start": 74
             },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
+            "path": "mcp/src/agents_remember/cli/dashboard_daemon.py"
           },
           "kind": "code"
         }
@@ -212,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
+            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
             "content": "sha256:cfc2442abcd89f0f6ac580ddda0d814be98ed874c4f7f9f8f4284e46689b0949",
             "locator": {
               "end": 79,
@@ -229,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
+            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
             "content": "sha256:27793a31e5e56505cb00d8e7fa4ecad35c2f727a103c20e651e8fc3f3d5ffeaf",
             "locator": {
               "end": 87,
@@ -242,14 +199,14 @@
       ]
     },
     "4": {
-      "note": "The Requirements section names Python 3.14, the bounded package range, the historical published 3.13 artifact, and the canonical repository-development runtime documentation.",
+      "note": "The Requirements section names Python 3.14, the bounded package range, the historical published 3.13 artifact, and the canonical repository-development runtime documentation.\n\nAnchor: `3.0.0rc8`",
       "targets": [
         {
           "anchor": {
-            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
-            "content": "sha256:5bfbbc74bf4a199cbaa61d6cb6510c42b8cb3f04ddeb2f853c009f28b2ae931e",
+            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "content": "sha256:7f95c3891cf1e4950fc64248166cc640c8aeea667a34e480bce777ae0ec69599",
             "locator": {
-              "end": 101,
+              "end": 94,
               "kind": "line_range",
               "start": 88
             }
@@ -259,16 +216,16 @@
       ]
     },
     "5": {
-      "note": "The quickstart is a short, harness-agnostic three-step agent-driven flow: write the MCP authority settings file from `examples/mcp/settings.example.json`, register the locally built wheel with `uvx --config` and restart the harness once, then make one `role_start(role=\"bootstrap\", request_id=\"<UUID>\")` call whose dashboard chat continues setup; no starter package, rendered settings or skill folder is copied. Anchor: `## Quickstart`; `uvx`; `role_start`; `bootstrap`",
+      "note": "The quickstart is a short, harness-agnostic three-step agent-driven flow: copy `examples/mcp/settings.example.json` to the user-config settings path, register the locally built wheel with `uvx --config` by adapting the common registration example and restart the harness once, then make one `role_start(role=\"bootstrap\", request_id=\"<UUID>\")` call whose dashboard chat continues setup; no starter package, rendered settings or skill folder is copied.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
-            "content": "sha256:be1a0b839916c13aee0b040a04281bc5b050a801e5b5632b24081cb7fc0d0eae",
+            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "content": "sha256:515e4250e11db78df186d6ca3ec9c9b90b18f523e872f835593f936c3d844f90",
             "locator": {
-              "end": 145,
+              "end": 147,
               "kind": "line_range",
-              "start": 104
+              "start": 102
             }
           },
           "kind": "code"
@@ -276,16 +233,16 @@
       ]
     },
     "6": {
-      "note": "The documentation list starts with Features and now explicitly links the Knowledge system reference alongside getting started, concepts, architecture, workflows, benchmarks, guides, settings and served skills.",
+      "note": "The documentation list starts with Features and links the Knowledge system reference alongside getting started, concepts, architecture, workflows, benchmarks, guides, settings and served skills.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
-            "content": "sha256:3f32e3d17a6c09cac4460958ea5a8396492fb3762d85de2333f4524f4c79e0e7",
+            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "content": "sha256:2e7b87f694e25f5246c8da610a5c228a5b58305d437642929f71b59288ba1ebc",
             "locator": {
-              "end": 207,
+              "end": 205,
               "kind": "line_range",
-              "start": 194
+              "start": 192
             }
           },
           "kind": "code"
@@ -293,16 +250,16 @@
       ]
     },
     "7": {
-      "note": "The `## Run The Dashboard` section: local-wheel build/sync and install first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, and the historical published pin named as the 3.13 artifact.",
+      "note": "The `## Run The Dashboard` section: local-wheel build/sync and install first-class, `dashboard` with an optional `--config` that reads the user-config settings file independently of the working directory, daemon mode + autoStart, and the historical published pin named as the 3.13 artifact.\n\nAnchor: `autoStart`",
       "targets": [
         {
           "anchor": {
-            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
-            "content": "sha256:9ff24d32008702a166f7f672a63282996cba0367c7d1bab1bb47989ab2b92c69",
+            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "content": "sha256:494442df03359fd933e1c1ab37291fa8b66402a80d3363e4112ba2f255b1cc0a",
             "locator": {
-              "end": 178,
+              "end": 190,
               "kind": "line_range",
-              "start": 140
+              "start": 148
             }
           },
           "kind": "code"
@@ -310,16 +267,16 @@
       ]
     },
     "8": {
-      "note": "The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes the one served package copy, exposes root `agents-md-files/`, `benchmarks/`, `providers/` and `system/` as canonical runtime assets refreshed by `scripts/sync-runtime.py`, states that the self-hosted harness trees are maintained in place without a renderer and that the installed runtime carries no `skills/` folder, and notes the workspace-first `<workspace>/ar-coordination/` default. Anchor: `## Repository Layout`; `skills/`; `scripts/sync-skills.py`; `agents-md-files/`; `scripts/sync-runtime.py`; `<workspace>/ar-coordination/`",
+      "note": "The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes the one served package copy and `scripts/sync-runtime.py` as the runtime-asset helper, points harness registration at the common MCP registration example, states that the installed runtime carries no `skills/` folder, and notes the workspace-first `<workspace>/ar-coordination/` default.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
-            "content": "sha256:d43961968a132e6010be80e7ad8b6f4ef114686cb3cb64da58f8f594b73dc080",
+            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "content": "sha256:ffe17e6a8769eaf1d0b1f1144f126566edc8964fcc6ba495f9af7cca15ad2c42",
             "locator": {
-              "end": 340,
+              "end": 334,
               "kind": "line_range",
-              "start": 209
+              "start": 207
             }
           },
           "kind": "code"
@@ -327,16 +284,16 @@
       ]
     },
     "9": {
-      "note": "The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the source version, that the Python 3.14 candidate awaits an official release, the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract.\n\nAnchor: `## Status`; `agents-remember dashboard`",
+      "note": "The README's Status first paragraph distinguishes the Python 3.14 source candidate from the historical Python 3.13 artifact at the same `3.0.0rc8` version, states core-path and harness maturity, and sends stability guarantees to Stability and release notes to GitHub Releases, the canonical changelog rather than a local CHANGELOG.md. Its second paragraph describes the 3.0 arc with the rc settling caveat; it is not authority to restore product-owned session or gate surfaces.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
-            "content": "sha256:0970a65e338421915476b4ff49c4c2bfce0f2909b6adcef3dc894a77eb1b8832",
+            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "content": "sha256:d546aaa363b582fce1db67b5923a961ffd8c39773e299dbc9525cd671d97a244",
             "locator": {
-              "end": 351,
+              "end": 340,
               "kind": "line_range",
-              "start": 342
+              "start": 335
             }
           },
           "kind": "code"

@@ -42,7 +42,7 @@ rather than re-enabling a compatibility path.
 ### Invariants And Boundaries
 
 - The inventory never infers edges from file order, names, or status.
-- A branch recorded atomic is only reclassified by an accepted strategist/orchestrator ruling.
+- A branch recorded atomic is only reclassified by an accepted Architect or Orchestrator ruling.
 - Rollback restores the snapshot; it does not retain a dual-reader or feature-switch fallback.
 - A missing graph is a scheduling default, not an error, and it is a sprint shape rather than a
   serialization mechanism: nothing serializes a graph-less sprint, which declares no dependencies.

@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Moving the developer-gallery import outside its development-only branch could ship the developer harness in a production dashboard bundle."
+  },
   "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
   "conditions": [],
   "exclusions": [],

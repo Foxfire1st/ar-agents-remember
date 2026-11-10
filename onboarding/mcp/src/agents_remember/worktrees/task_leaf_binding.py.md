@@ -63,7 +63,7 @@ No configured domain-documentation source applies to this repository-internal ro
 > Retained earlier citation wording: - The start/attach publisher that is the named recovery, and therefore the operation that actually binds the field. [7]
 
 
-- The two shared fixtures that had to carry the derived fields once this refusal existed, because they were modelling the damage state. [8]
+- The shared _leaf fixture carries both derived fields, seriesContractPath and the enclosure row, as task_doc stamps them against a leaf contract, so it does not model the damage state that start repairs. [8]
 
 
 ### Cross-Repo References

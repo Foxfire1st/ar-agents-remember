@@ -1,5 +1,11 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "The anchor reader computes ranges from the recorded blob, and the resolution model forbids ranges beside other outcomes; together they supply the exact-region promise required by the member-realization family."
+  },
   "applicability": "Every anchor observation the knowledge read's anchor resolver produces against a requested code tree (knowledge read pages, diff observations, the family roster).",
   "conditions": [
     "The requested tree holds the exact recorded blob at the recorded path.",

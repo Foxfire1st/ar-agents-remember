@@ -278,24 +278,6 @@ Inherited numbered findings [116], [149] retain their exact wording and full tar
 
 - Retained reference account (no fresh execution or acceptance inferred): The capture copies the index with its time. [119]
 
-- Retained reference account (no fresh execution or acceptance inferred): The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. [120]
-
-- Retained reference account (no fresh execution or acceptance inferred): The registry rows this leaf added: two integration lane rows. [121]
-
-- Retained reference account (no fresh execution or acceptance inferred): The registered support artifact the two integration lane rows land in, by its own artifact id. [122]
-
-- Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id. [123]
-
-- Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id. [124]
-
-- Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id. [125]
-
-- Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id. [126]
-
-- Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id. [127]
-
-- Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id. [128]
-
 - Retained reference account (no fresh execution or acceptance inferred): The reconsideration step resolves the endpoint and asks for the approval. [129]
 
 - Retained reference account (no fresh execution or acceptance inferred): A kept gate verdict is served only when no recorded observation changed. [130]
@@ -328,7 +310,7 @@ Inherited numbered findings [116], [149] retain their exact wording and full tar
 
 - Retained reference account (no fresh execution or acceptance inferred): Every write is checked, then written atomically. [144]
 
-- Retained reference account (no fresh execution or acceptance inferred): Converted first adoption preserves attributed-history precedence, lists legacy cards and refuses them without a drift waiver. [145]
+- Converted first adoption preserves attributed-history precedence, lists legacy cards and refuses them without a drift waiver. [145]
 
 - Knowledge text is authority; the retained package owns derived schema/codecs/reads rather than canonical writers or approval. [146]
 

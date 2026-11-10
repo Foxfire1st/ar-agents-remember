@@ -10,12 +10,14 @@ candidate's actual advertised roster and current request schemas.
 
 ## Current Source Qualification
 
-The skills-versus-tools paragraph now names the kept owners: `c-00-initialize-memory-repo` drives `memory_init`, `c-05-create-or-update-onboarding-files` drives drift reporting (`context_packet` / `memory_quality_check`), and `w-02-light-task-workflow` drives both the `worktree_*` tools and the `*_closeout_*` tools. The inherited `c-02`/`c-09`/`c-12` names describe retired skills, not current mapping.
+The skills-versus-tools paragraph names the owners: the `c-00-initialize-memory-repo` skill drives `memory_init`, the l-01 curation operation (`operations/curation.md`) uses drift reporting (`context_packet` / `memory_quality_check`), and the authorized lifecycle operation (`operations/closeout.md`) coordinates the `worktree_*` and `*_closeout_*` tools. The inherited `c-02`/`c-09`/`c-12` names describe retired skills, not current mapping.
+
+The header names `PUBLIC_TOOLS` in `public_roster.py` as the roster, and the tables name every registered public tool. The former `worktree_legacy_operation` row (worktree lifecycle table) and `closeout_door` row (closeout scheduling table) are gone, and neither name is in `PUBLIC_TOOLS`; the closeout scheduling table lists only `closeout_queue`. The `citation_fix` prose covers matching content at stale same-path citation anchors: the tool authors supplied card citation tables and re-records blob/range anchors whose content still matches at the same target path. It does not relocate a symbol into another file; cross-file moves, renamed or deleted targets and stale or ambiguous references remain Curator reconciliation work.
 
 ## Code Commentary
 
 The current literal PUBLIC_TOOLS has44 distinct entries, including user_settings_init, after removal of dispatch_agent and resolve_context;40/41-entry populations are historical, not this candidate roster.
-The current frozen reference header still literally states40 public tools, so its count disagrees with the 44-entry literal roster; that header count is source-document debt, not a roster census. Pre-L113 header38 and predecessor40/41/42 rosters remain historical source epochs, not current counts or a CODE repair request. The source also contains older databasePath/repositoryId knowledge rows plus removed
+The reference header names `PUBLIC_TOOLS` in `mcp/src/agents_remember/models/tools/public_roster.py` as the roster and states no tool count. Pre-L113 header38 and predecessor40/41/42 rosters remain historical source epochs, not current counts or a CODE repair request. The source also contains older databasePath/repositoryId knowledge rows plus removed
 knowledge_change/knowledge_project and other historical transport rows; those are not
 current calls. The map is not the roster. Confirm the selected server's exact schema and
 use memoryRoot/repositoryRoot/codeTreeId for the retained converted-tree reads and opaque
@@ -124,8 +126,8 @@ declares an existing immediate parent "(or names none and its folder's `task.jso
 sub-task naming none whose folder `task.json` is not a master is refused" (MIK-R38; ruling 2026-09-30T12:33:07 Q3,
 review R1 note 5 at 13:11:32, and "sub-task" rather than "leaf" by ruling 14:12:52, so a `light` task that is its own
 `task.json` is not covered by the refusal). The rest of the row, including standalone support and that the parent
-task itself is not completed, is unchanged. The same clauses are in the registered tool description
-(`mcp/registration/tasks.py`) and the `w-02-light-task-workflow` skill, which now owns that procedure.
+task itself is not completed, is unchanged. The same clauses were in the registered tool description
+(`mcp/registration/tasks.py`) and in the `w-02-light-task-workflow` skill, which owned that procedure then; that skill was removed in 260928-MIK-L84, and the row now sits at `:221`.
 
 
 
@@ -135,7 +137,7 @@ task itself is not completed, is unchanged. The same clauses are in the register
 
 
 
-- The reference header states 40 public tools while the literal roster declares 44; the older header and roster counts are historical, not live advertisement. [1]
+- The reference header names `PUBLIC_TOOLS` in `public_roster.py` as the public roster and states no tool count; the literal roster declares 44 entries. [1]
 
 
 

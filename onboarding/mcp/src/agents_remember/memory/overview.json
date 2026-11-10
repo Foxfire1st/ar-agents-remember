@@ -458,220 +458,6 @@
         }
       ]
     },
-    "120": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:7145087d7d58902a9a14f97e950874141daebf8c98031e4682471ff212fa6e79",
-            "locator": {
-              "end": 4780,
-              "kind": "line_range",
-              "start": 4780
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "121": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The registry rows this leaf added: two integration lane rows.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:7d50a2d3d533c4650f82f51641f462176178525b3df1a6365e088fb24eedf827",
-            "locator": {
-              "end": 592,
-              "kind": "line_range",
-              "start": 592
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:73f70acf39d0cb062f622e8af4e53201358849fc007e3c3cc16dc50b3742b9c1",
-            "locator": {
-              "end": 508,
-              "kind": "line_range",
-              "start": 508
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "122": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The registered support artifact the two integration lane rows land in, by its own artifact id.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:e3dcb550aa48a2eadb5856507ceee47fed75ccdabdce0ab3733ba900c9f495df",
-            "locator": {
-              "end": 4790,
-              "kind": "line_range",
-              "start": 4790
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "123": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:d7274f23231d0d246c12eb77812a0105f6618fd29feef969e1daaac9d92472d1",
-            "locator": {
-              "end": 4835,
-              "kind": "line_range",
-              "start": 4835
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:a75cf4ac8eea3932975c84b5e974e637bc0f5a5a7b5f384c2d5bf1afeaad3844",
-            "locator": {
-              "end": 4825,
-              "kind": "line_range",
-              "start": 4825
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "124": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:7145087d7d58902a9a14f97e950874141daebf8c98031e4682471ff212fa6e79",
-            "locator": {
-              "end": 4780,
-              "kind": "line_range",
-              "start": 4780
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "125": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:d7274f23231d0d246c12eb77812a0105f6618fd29feef969e1daaac9d92472d1",
-            "locator": {
-              "end": 4835,
-              "kind": "line_range",
-              "start": 4835
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:a75cf4ac8eea3932975c84b5e974e637bc0f5a5a7b5f384c2d5bf1afeaad3844",
-            "locator": {
-              "end": 4825,
-              "kind": "line_range",
-              "start": 4825
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "126": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:7145087d7d58902a9a14f97e950874141daebf8c98031e4682471ff212fa6e79",
-            "locator": {
-              "end": 4780,
-              "kind": "line_range",
-              "start": 4780
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "127": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:d7274f23231d0d246c12eb77812a0105f6618fd29feef969e1daaac9d92472d1",
-            "locator": {
-              "end": 4835,
-              "kind": "line_range",
-              "start": 4835
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:a75cf4ac8eea3932975c84b5e974e637bc0f5a5a7b5f384c2d5bf1afeaad3844",
-            "locator": {
-              "end": 4825,
-              "kind": "line_range",
-              "start": 4825
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "128": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:7145087d7d58902a9a14f97e950874141daebf8c98031e4682471ff212fa6e79",
-            "locator": {
-              "end": 4780,
-              "kind": "line_range",
-              "start": 4780
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "129": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): The reconsideration step resolves the endpoint and asks for the approval.",
       "targets": [
@@ -970,28 +756,16 @@
       ]
     },
     "145": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Converted first adoption preserves attributed-history precedence, lists legacy cards and refuses them without a drift waiver.",
+      "note": "Converted first adoption preserves attributed-history precedence, lists legacy cards and refuses them without a drift waiver.\n\nAnchor: `find_legacy_cards`",
       "targets": [
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
-            "content": "sha256:68c8dbf4770fad096b2383f484019fb1c79b1da618b51752f8312a96003b1b29",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
+            "content": "sha256:c67aeddf0106f835475b4fc9167c33d7702a6ea41f7a1428b98efcea34079cac",
             "locator": {
-              "end": 746,
+              "end": 619,
               "kind": "line_range",
-              "start": 591
-            },
-            "path": "mcp/src/agents_remember/memory/baseline.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
-            "content": "sha256:048cf3be161a39d78b024e226d6b771802e3c125f55e63739e5ba93284db829c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_converted_adopt_gate"
+              "start": 602
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
@@ -1022,7 +796,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
             "content": "sha256:d3e116a96e6d7929b31fe3c88ea4d9b85e6c85ded5dd86bb71b855d1ca40c500",
             "locator": {
               "kind": "symbol",
@@ -1034,7 +808,7 @@
         },
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
             "content": "sha256:cc55d303f53ff1958d9fd1741839de322edfa51c40afd98fa1c19ac593928c20",
             "locator": {
               "kind": "symbol",
@@ -1046,7 +820,7 @@
         },
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
             "content": "sha256:643136d081c4b25b5c5eff38dda67b8680133fef86c57b646721ef43ab01afe5",
             "locator": {
               "kind": "symbol",
@@ -1063,12 +837,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
-            "content": "sha256:eb2963d90eda099691facce8ee9412d683057ae44ae0123d49dd5788efed4b0b",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
+            "content": "sha256:4a22ee9b6321b636b8277d22c6d5fd5735eb65cc24655fd564b6b99b9760dce1",
             "locator": {
-              "end": 648,
-              "kind": "line_range",
-              "start": 591
+              "kind": "symbol",
+              "name": "_converted_adopt_gate"
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
@@ -1076,36 +849,11 @@
         },
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
-            "content": "sha256:048cf3be161a39d78b024e226d6b771802e3c125f55e63739e5ba93284db829c",
-            "locator": {
-              "end": 746,
-              "kind": "line_range",
-              "start": 711
-            },
-            "path": "mcp/src/agents_remember/memory/baseline.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
             "content": "sha256:eb2963d90eda099691facce8ee9412d683057ae44ae0123d49dd5788efed4b0b",
             "locator": {
               "kind": "symbol",
               "name": "_converted_base_payload"
-            },
-            "path": "mcp/src/agents_remember/memory/baseline.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
-            "content": "sha256:048cf3be161a39d78b024e226d6b771802e3c125f55e63739e5ba93284db829c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_converted_adopt_gate"
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },

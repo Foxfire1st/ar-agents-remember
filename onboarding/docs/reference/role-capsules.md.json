@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Launch resources and held-message semantics distinguish delivery state from consumption.",
+      "note": "Launch resources and held-message semantics distinguish delivery state from consumption.\n\nAnchor: `Launch and message holds`",
       "targets": [
         {
           "anchor": {
-            "blob": "ca9541f36b78e7e542dc2720b5218cbe3a203286",
-            "content": "sha256:ede06200c54f9e85c2b3a42aea8698c7e8e9ad5e7947f850c73ca1580b8bc8c0",
+            "blob": "c51bdbe3c4886ed0e2b16474f067694f154062b2",
+            "content": "sha256:aae904f2406fb868fe5964ff87ef4d323f8a7424ffab6bd922cc63b0ea2af0ac",
             "locator": {
               "end": 19,
               "kind": "line_range",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca9541f36b78e7e542dc2720b5218cbe3a203286",
+            "blob": "c51bdbe3c4886ed0e2b16474f067694f154062b2",
             "content": "sha256:f717750669b04ab5fa6bc39d2c051ff1209c5f2eb98db7d94433db6a06a7ab31",
             "locator": {
               "end": 28,

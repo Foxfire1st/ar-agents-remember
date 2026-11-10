@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The committed-leaf resolver reopens recorded operands, while the tree-knowledge owner confines live resolution to live candidates, keeping historical reads from borrowing today's knowledge."
+  },
   "applicability": "Historical review resolution after canonical knowledge database retirement, when the reader selects a recorded comparison rather than the delivered default a landed leaf opens.",
   "conditions": [
     "The retained record identifies its comparison format and exact source endpoints.",

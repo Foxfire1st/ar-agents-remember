@@ -172,7 +172,7 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): The stored item's open state, as the live gate decides it. [10]
 
-- Retained reference account (no fresh execution or acceptance inferred): The two entry points and the shared missing-onboarding refusal. [11]
+- Retained reference account (no fresh execution or acceptance inferred): The shared missing or unsupported sidecar refusal, called by the curator trace entry. [11]
 
 - Retained reference account (no fresh execution or acceptance inferred): Retained historical pin identities and exact reader check. [12]
 
@@ -196,7 +196,7 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. [24]
 
-- Retained reference account (no fresh execution or acceptance inferred): Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. [25]
+- Retained reference account (no fresh execution or acceptance inferred): Closeout onboarding refresh uses the context's resolved storage for route-index apply and dry-run preview through build_route_indexes. [25]
 
 - Retained reference account (no fresh execution or acceptance inferred): The lifecycle state carries the optional worktree phase the panels render. [26]
 

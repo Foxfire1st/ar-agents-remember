@@ -93,14 +93,15 @@
       ]
     },
     "5": {
-      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "note": "`resolve_context_tool` is retained as an unregistered computation whose only caller is `scripts/pnt_sandbox/build_roots.py`; public orientation stays with `context_packet`.",
       "targets": [
         {
           "anchor": {
             "blob": "1b5b6819f2e8e4aa3cd02b9e26d6dc1b5e1d0614",
-            "content": "sha256:5f87dec67cff6e8215ddf9208627e0abee5bb6df918e15a54b315773da41d3ef",
+            "content": "sha256:472e59581e2d31b9d9eecafe0dff6390563fbb71514a931da9ade35fed9fffba",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "resolve_context_tool"
             }
           },
           "kind": "code"
@@ -113,17 +114,6 @@
               "kind": "file"
             },
             "path": "scripts/pnt_sandbox/build_roots.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
-            "content": "sha256:94beaf856da073ad11a5185a4c4b146fda61446305666a69bb15fa0140e9ad3e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/core.py"
           },
           "kind": "code"
         }

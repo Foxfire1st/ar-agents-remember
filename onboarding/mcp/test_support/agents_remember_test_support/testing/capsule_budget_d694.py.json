@@ -1,0 +1,83 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d694.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The record must match a fixed canonical fingerprint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12cd2a9860341f9b2ebc234eb1aaf136b5a25001",
+            "content": "sha256:87f74f870035841a89529b9e4fe8f1466760c94d8dfef75e8fbb3eb880f6a1e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_D694_RECORD_FINGERPRINT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12cd2a9860341f9b2ebc234eb1aaf136b5a25001",
+            "content": "sha256:17f4e7bd75f33d9436e990474f7e06dded081afcd30dc68b7d193d03ad5ddad6",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Area findings cover missing, stale, over-limit and over-ceiling entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12cd2a9860341f9b2ebc234eb1aaf136b5a25001",
+            "content": "sha256:adbe4ab3235141540ed997abd700995c5e51394194cef32446258a604d857e5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_current_area_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Approved sources are checked for identity, word count and compiler-input revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12cd2a9860341f9b2ebc234eb1aaf136b5a25001",
+            "content": "sha256:1ba45c8a8a11026003f0594e17082aa6f422adbe46f907f911d435d7400bd095",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The full check asserts populations and the frozen registry and snapshot hashes before collecting findings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12cd2a9860341f9b2ebc234eb1aaf136b5a25001",
+            "content": "sha256:2622ed172c86ba0d65bfe0ed3db7ed211d456ff2ea6c4b286f44e52d1e0845bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_budget_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

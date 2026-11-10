@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
             "content": "sha256:ee617b986dc5561eef4d7c9ed4c2369e41e6800118a3b787afa156371a2d7438",
             "locator": {
               "kind": "symbol",
@@ -20,14 +20,15 @@
       ]
     },
     "23": {
-      "note": "`test_the_carrier_uses_the_field_spellings_the_answer_returns` supplies the current fixture or assertion described above.\n\nAnchor: `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns`",
+      "note": "`test_the_carrier_uses_the_field_spellings_the_answer_returns` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
-            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "content": "sha256:f3ab3f5f550064a33b571010a4b2b533e8d00dce981cbfbf811be0d30c03ac82",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_carrier_uses_the_field_spellings_the_answer_returns"
             }
           },
           "kind": "test"
@@ -35,14 +36,15 @@
       ]
     },
     "24": {
-      "note": "`test_unconverted_memory_names_no_card` and `test_named_answer_validates_against_the_registered_model` supply the current fixture or assertion described above.\n\nAnchor: `test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory`",
+      "note": "`test_unconverted_memory_names_no_card` and `test_named_answer_validates_against_the_registered_model` supply the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
-            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "content": "sha256:64e84fa1fa5adf49afbb1ece284423dae11fc10b35f1c5539f1145df60f8e529",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_unconverted_memory_names_no_card"
             }
           },
           "kind": "test"
@@ -50,21 +52,11 @@
       ]
     },
     "28": {
-      "note": "Path confinement rejects escape\n\nAnchor: `test_path_confinement_rejects_escape`",
+      "note": "Path confinement rejects escape",
       "targets": [
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
-            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
             "content": "sha256:95725486bc003a4265e725112bf768067f1bd486d25492253cbbb907ee140c21",
             "locator": {
               "kind": "symbol",
@@ -76,21 +68,11 @@
       ]
     },
     "29": {
-      "note": "Symlink file escape rejected\n\nAnchor: `test_symlink_file_escape_rejected`",
+      "note": "Symlink file escape rejected",
       "targets": [
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
-            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
             "content": "sha256:6d003e54143ce11da6a1fb0f44e8f1b6ba4395f1ee718707ad232408f1dd23bd",
             "locator": {
               "kind": "symbol",
@@ -102,21 +84,11 @@
       ]
     },
     "30": {
-      "note": "Symlink dir escape rejected\n\nAnchor: `test_symlink_dir_escape_rejected`",
+      "note": "Symlink dir escape rejected",
       "targets": [
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
-            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
             "content": "sha256:a95a02589bdf3f1330ba761e7f1e063265efde10eefcb625d410b806002f66ad",
             "locator": {
               "kind": "symbol",
@@ -128,14 +100,15 @@
       ]
     },
     "37": {
-      "note": "**The carrier-parity case: the payload's real field spellings are derived from a real page, and the camelCase variants are rejected.**\n\nAnchor: `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns`",
+      "note": "The carrier-parity case reads the response contract, checks each documented spelling against the answer's model fields, and fails a renamed documented field or an appended retired name.",
       "targets": [
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
-            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "content": "sha256:f3ab3f5f550064a33b571010a4b2b533e8d00dce981cbfbf811be0d30c03ac82",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_carrier_uses_the_field_spellings_the_answer_returns"
             }
           },
           "kind": "test"
@@ -143,14 +116,15 @@
       ]
     },
     "38": {
-      "note": "**The mounted route: on an unconverted memory it answers `memoryState: unconverted` with no card and no card text, and the answer validates against the registered model.**\n\nAnchor: `test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory` `test_the_mounted_route_names_the_legacy_format_before_anything_is_published`",
+      "note": "The mounted route on an unconverted memory answers `memoryState: unconverted` with no card and no card text, and the answer validates against the registered model.",
       "targets": [
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
-            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "content": "sha256:4dbd963e6a88ad752e801d9b8fa9a5a808414a8fa620b5304bfcf2073be5de38",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_named_answer_validates_against_the_registered_model"
             }
           },
           "kind": "test"
@@ -158,25 +132,15 @@
       ]
     },
     "39": {
-      "note": "The published-intent fixtures, including the `_selection()` narrowing helper the type-checked call sites need.\n\nAnchor: `_selection` `PublishedIntentRouteTests` `PublishedIntentMountedRouteTests`",
+      "note": "The published-intent direct fixtures, including the `_selection()` narrowing helper the type-checked call sites need.",
       "targets": [
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
-            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
-            "content": "sha256:8fb7e921e792821ea87584f669e4948e4241e31e10f999ebbfe1fcf3a32baf1f",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "content": "sha256:290e73b505a55d1686dbd58624b48e55ea23da3d18a6a91c0bb09d86a6ec8d74",
             "locator": {
               "kind": "symbol",
-              "name": "_selection"
+              "name": "PublishedIntentDirectTests"
             }
           },
           "kind": "test"

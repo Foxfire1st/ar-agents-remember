@@ -4,8 +4,21 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Current HTTP state and SSE snapshot assembly add served_state_tail onto a copied projection body, with the wire checker allowing only that tail owner.\n\nAnchor: `_state_response`",
+      "note": "Current HTTP state and SSE snapshot assembly add served_state_tail onto a copied projection body, with the wire checker allowing only that tail owner. Anchor: `served_state_tail`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:f63c2b3cfeeb40ba504f031a5ef7a3c1ce5ef91d398ea58ac7ce7206fb84dfc3",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "774a0f8612b76b00dccec2b920f251f4f0c79132",
@@ -21,37 +34,14 @@
         },
         {
           "anchor": {
-            "blob": "4e29b07249c3d3096f247af46f87f64a495403a2",
-            "content": "sha256:0c33b3574513955b82f51166a5d8d552d25038948c7c79932f36ecacca63a7a0",
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:ad5d25867040247493249ea381a2e832027e36a20946e1ea211845c77f244510",
             "locator": {
-              "end": 133,
+              "end": 143,
               "kind": "line_range",
-              "start": 121
+              "start": 132
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
-            "content": "sha256:f439b773bf39e580bd8927aa89a82039a5ea056a0b58f680dbd48b82ae7d662b",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/serving/_app_routes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
-            "content": "sha256:c3bdcba4db1b4ad82b9b5000aeb373e95df540a6ffd10a4d9d48b30252e01e03",
-            "locator": {
-              "kind": "symbol",
-              "name": "_state_response"
-            },
-            "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
           "kind": "code"
         }
@@ -99,12 +89,12 @@
       ]
     },
     "2": {
-      "note": "The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`.\n\nAnchor: `ServedWorkspaceProjection` `served_state_tail`",
+      "note": "The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
-            "content": "sha256:639642fcb905682d12c2b03101b68b2ef748173f2b0e04fd302dff194b0b6f71",
+            "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
+            "content": "sha256:54e29f7445ed60cd40874c54db0938b16b8218f2e6559440c44b79c022e4503a",
             "locator": {
               "kind": "symbol",
               "name": "ServedWorkspaceProjection"
@@ -115,48 +105,12 @@
         },
         {
           "anchor": {
-            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
-            "content": "sha256:d5b14e0dd89daf242a1a210997442450ae72426379f0b1e3114e4493a3eb4826",
-            "locator": {
-              "kind": "symbol",
-              "name": "served_state_tail"
-            },
-            "path": "mcp/src/agents_remember/serving/served_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
+            "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
             "content": "sha256:ba2ac51148c3514136559662808aa4f64706af7a822c9513f1f6bb156d355f15",
             "locator": {
-              "end": 55,
+              "end": 57,
               "kind": "line_range",
-              "start": 47
-            },
-            "path": "mcp/src/agents_remember/serving/served_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
-            "content": "sha256:417c2431a934da24b20f221e9f0a06d716367d668c4bf1661c7df98f40533c1a",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/serving/served_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
-            "content": "sha256:6b5366ce2c0a1056d30ff6ed07c45e97d349efaa02098ae8f03c03c2c491d141",
-            "locator": {
-              "end": 78,
-              "kind": "line_range",
-              "start": 63
+              "start": 49
             },
             "path": "mcp/src/agents_remember/serving/served_state.py"
           },
@@ -182,42 +136,28 @@
       ]
     },
     "4": {
-      "note": "The cockpit compares and renders the serving/client identity.\n\nAnchor: \"function ServingBuildStamp()\"",
+      "note": "The cockpit compares and renders the serving/client identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:6cfba0fbdb644d791edd7c2fe098c8bbe437ae8378f46065a5b8f80c6089bc98",
+            "blob": "55465c1b52382000bb2af1af534a8e31d6407719",
+            "content": "sha256:f975107c86061b39549c59d93af8856e01db404ee4501a14e5a1e82fb9ecb1aa",
             "locator": {
-              "end": 1076,
-              "kind": "line_range",
-              "start": 910
+              "kind": "symbol",
+              "name": "ServingBuildStamp"
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/cockpit/serving-build-stamp/ServingBuildStamp.tsx"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:16b7e04c86239d1c5c424b197eeaba2da0b85f887bd40656a19ba632c58f015e",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:26561e37b82a0bfda157844f207916a08f8a2d9464e8294380ef66b1e6b58444",
             "locator": {
-              "end": 910,
+              "end": 945,
               "kind": "line_range",
-              "start": 910
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:2ea20b9fad0a2284125d64fec94ea523b14972c82d552e9ecea9f4de49f81d2d",
-            "locator": {
-              "end": 954,
-              "kind": "line_range",
-              "start": 954
+              "start": 945
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Bootstrap admission resolves settings, ordinary memory-root resolution and real checkout revisions before constructing the admitted write context, so caller assertions cannot grant repository write authority."
+  },
   "applicability": "Taskless knowledge-bootstrap admission from the declared MCP repository entry and its resolved code/memory checkouts.",
   "conditions": [
     "No enclosure is in scope.",

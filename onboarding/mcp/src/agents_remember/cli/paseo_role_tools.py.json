@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
         "content": "sha256:352aeecbb61b1546e1c531078d752b12ab659017adad5b11888bfa7f3a6ffadb",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
         "content": "sha256:e1c770b6e9749d413706899730b29e3b5d8d8c10ce8599d2298d5bfbb8a06a72",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
-        "content": "sha256:a9509beade6672a8c22e0bd875245e7f27e1af5708cc9c87c3069082f7737100",
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:ce4fed2530cafe8bcb3aef66ec961a93135199c9553f1b58be505054b76684c5",
         "locator": {
           "kind": "file"
         }
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
         "content": "sha256:2472cefe0f77a03045a4b389e5f8e1102c885b522d539b95d6a9ff74107686da",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
         "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
         "locator": {
           "kind": "symbol",
@@ -93,12 +93,12 @@
     },
     {
       "anchor": {
-        "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
         "content": "sha256:d9c486831df4838ded9e6993733bcfb0961a4c32142f7e6bdfd15c0491c35cfe",
         "locator": {
-          "end": 1117,
+          "end": 1119,
           "kind": "line_range",
-          "start": 1079
+          "start": 1081
         }
       },
       "id": "RLZ-BVTKAZ",
@@ -112,12 +112,12 @@
     },
     {
       "anchor": {
-        "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
         "content": "sha256:3e9100a819ac7dd689a6d9fb5c1687ad3312467abc59095ac554caf866a14819",
         "locator": {
-          "end": 362,
+          "end": 364,
           "kind": "line_range",
-          "start": 348
+          "start": 350
         }
       },
       "id": "RLZ-J6YQNS",
@@ -131,7 +131,7 @@
     },
     {
       "anchor": {
-        "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
         "content": "sha256:4da243e498ffe93f8bf0e4cd2466b5da0d94d6a5d1f9f6bd243f977e812ac7ed",
         "locator": {
           "kind": "symbol",
@@ -149,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
         "content": "sha256:242903221b0fe9124d4a771bbe1d8a4f3e310777cefec81070989063bebf1fd0",
         "locator": {
           "kind": "symbol",
@@ -167,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
         "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
         "locator": {
           "kind": "symbol",
@@ -185,7 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
         "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
         "locator": {
           "kind": "symbol",
@@ -203,7 +203,7 @@
     },
     {
       "anchor": {
-        "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
         "content": "sha256:e1c770b6e9749d413706899730b29e3b5d8d8c10ce8599d2298d5bfbb8a06a72",
         "locator": {
           "kind": "symbol",
@@ -221,7 +221,7 @@
     },
     {
       "anchor": {
-        "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
         "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
         "locator": {
           "kind": "symbol",
@@ -257,72 +257,16 @@
       ]
     },
     "10": {
-      "note": "The current source implements this file’s stated Investigator boundary.",
+      "note": "A message that would start a turn on a selected-task Investigator passes the shared selection capacity owner (`investigator_message_capacity`) before native send/resume, and a full selection refuses with `investigator-capacity`.\n\nAnchor: `investigator_message_capacity`",
       "targets": [
         {
           "anchor": {
-            "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
-            "content": "sha256:a9509beade6672a8c22e0bd875245e7f27e1af5708cc9c87c3069082f7737100",
+            "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+            "content": "sha256:694e9bf81ae3b2dcdcb9e69f5f6790f6ba06cbed892d1baa993d5b54efcf83f5",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The public message call uses the imported recipient-resolution owner, report collection, prologue filing and held/native dispatch. Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
-            "content": "sha256:35c7c05ca0accdd7a21f509d31d11718d4c673adb141a42d8a63411f5e7e9140",
-            "locator": {
-              "end": 1093,
+              "end": 996,
               "kind": "line_range",
-              "start": 1076
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "After ordinary recipient resolution succeeds, the prologue constructs the filed identity from shared attachment/link/store primitives before that resolved-recipient delivery; unfinished-start holding returns through _hold_for_unresolved before _file_message and has no filed identity.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
-            "content": "sha256:892df358d7c76e5531b5ff1a1b1108b74ae5fa9393eb9927da42bfd8bb6442c2",
-            "locator": {
-              "end": 566,
-              "kind": "line_range",
-              "start": 547
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
-            "content": "sha256:269fe9e3f68cb4955f4e63a282eed3d653a224c89b6adeb8c18d4964f9418512",
-            "locator": {
-              "end": 569,
-              "kind": "line_range",
-              "start": 550
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
-            "content": "sha256:f49276f194deefd411f91b27f8480f6a0043f827bc417ba4abec6d45692674f4",
-            "locator": {
-              "end": 563,
-              "kind": "line_range",
-              "start": 544
+              "start": 979
             }
           },
           "kind": "code"
@@ -334,7 +278,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+            "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
             "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
             "locator": {
               "kind": "symbol",
@@ -350,7 +294,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+            "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
             "content": "sha256:242903221b0fe9124d4a771bbe1d8a4f3e310777cefec81070989063bebf1fd0",
             "locator": {
               "kind": "symbol",
@@ -546,8 +490,20 @@
       ]
     },
     "20": {
-      "note": "The start carries the client harness; configured-host choices are checked before dispatch, while a cold root defers binding and validation until after preparation.\n\nAnchor: `bound_to_caller_harness`",
+      "note": "The start carries the client harness; configured-host choices are checked before dispatch, while a cold root defers binding and validation until after preparation.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:301fdbafa8ddeff8b8b6779ade103f7f461c9f53baae8fbd7de8b3274495b5aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_role"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "932a9eb64943b87d06372b21f57b90a7dbfad8a7",
@@ -594,16 +550,6 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/role_agent_override.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
-            "content": "sha256:a9509beade6672a8c22e0bd875245e7f27e1af5708cc9c87c3069082f7737100",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "code"
         }

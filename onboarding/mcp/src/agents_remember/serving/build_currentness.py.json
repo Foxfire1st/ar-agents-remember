@@ -1,0 +1,190 @@
+{
+  "path": "mcp/src/agents_remember/serving/build_currentness.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1163730323bb54006aede86eb251a53e97a8ecc5",
+        "content": "sha256:ad29bddfed7c93af39c1532a2ee5739fa5ba872b055db1c55fcc1bcc39f218e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_currentness"
+        }
+      },
+      "id": "RLZ-F35R6G",
+      "invariant": "INV-HCG93S",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule1 as amended v4",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Ordinary checkout calls omit installed-build comparison unless a caller explicitly asks to inspect the checkout.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "1163730323bb54006aede86eb251a53e97a8ecc5",
+        "content": "sha256:323abf566f9a68ea2510c1b8cc769b3351a96ef9047d91d33088bbe31f84226d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_BuildComparisons.inspect"
+        }
+      },
+      "id": "RLZ-SSYCQK",
+      "invariant": "INV-HCG93S",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule1 as amended v4",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Compares a fixed loaded build identity with the current installed digest and reports current, stale or unknown without replacing that boot identity.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Current, stale and unknown readings, the first-seen time and the role-specific remedy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1163730323bb54006aede86eb251a53e97a8ecc5",
+            "content": "sha256:323abf566f9a68ea2510c1b8cc769b3351a96ef9047d91d33088bbe31f84226d",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The installed digest is cached for 30 s per package root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1163730323bb54006aede86eb251a53e97a8ecc5",
+            "content": "sha256:18906e2b1ee5c79100eb2936663099eaebb9b71325d6f218c9abb0a8654d7615",
+            "locator": {
+              "kind": "symbol",
+              "name": "DIGEST_CACHE_SECONDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1163730323bb54006aede86eb251a53e97a8ecc5",
+            "content": "sha256:1f36cf4a1dfa2aa56a945bd87801a53f9e21a37d3159a5d5de2d3781ffc52ec7",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A registry scan reclaims first-seen times and digest entries of gone boots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1163730323bb54006aede86eb251a53e97a8ecc5",
+            "content": "sha256:5f55224d40a5e44bb0079fd8438da70e6271001975c6a81c414ec4894a7b65b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checkout mode is decided from the resolved checkout's package path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1163730323bb54006aede86eb251a53e97a8ecc5",
+            "content": "sha256:a016fd0635bfb5ac9ee1e8d0e439579203f0115ff3fcbad7df2d365f8c582e01",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_mode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An ordinary checkout call gets no reading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1163730323bb54006aede86eb251a53e97a8ecc5",
+            "content": "sha256:ad29bddfed7c93af39c1532a2ee5739fa5ba872b055db1c55fcc1bcc39f218e1",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The digest covers `*.py` files only.\n\nAnchor: `rglob(\"*.py\")`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a98d07922b6fc1d752ba17136ea7a1634652373",
+            "content": "sha256:29d066a4fa51853d90b9d76b61e391ad6bb832eb997b57147da52424a9808943",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/serving/build_info.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The tool dispatcher refuses a declared write of an installed stale build.\n\nAnchor: `is_stale_build_write`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:02f9011f789293ec76c3415f192aec99a2276ed55ec7dd9d0a08f47c7dd6ab94",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The reading's fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "215396ca72f75e174a7d10419eff50f6d07b1964",
+            "content": "sha256:d2ffae2c893621229f26e8c292d03e79f57bee1fb0f5e2c7a96cbde57a4b54d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "BuildCurrentnessPayload"
+            },
+            "path": "mcp/src/agents_remember/models/build_currentness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

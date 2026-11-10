@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Undeclared checkout code must not read authority settings or mutate live coordination state; confinement prevents unpublished code from altering the operator's real workflow."
+  },
   "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
   "conditions": [
     "Disposition source: this run's measurement of the boundary's own pinned limit"

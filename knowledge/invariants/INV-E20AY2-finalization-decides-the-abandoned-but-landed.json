@@ -1,9 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations"
+      "guarded_by_test"
     ],
-    "justification": "The obligation is realized in more than one file, including mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py and skills/c-12-closeout/SKILL.md, so the rule holds only when both places do."
+    "justification": "The series-finalize proof fails when finalization accepts an abandoned row that landed, for either master nature."
   },
   "applicability": "Finalization of a master of either nature whose row is abandoned while its enclosure records a completed integration.",
   "conditions": [

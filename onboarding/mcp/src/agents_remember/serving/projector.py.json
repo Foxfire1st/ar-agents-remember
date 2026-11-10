@@ -161,31 +161,17 @@
       ]
     },
     "3": {
-      "note": "The stream consumes one projector subscription under explicit aclosing, and decorates snapshot events with the build stamp and optional watcher-health tail. Missing build/health facts are omitted; deltas carry no whole-workspace tail.",
+      "note": "The stream consumes one projector subscription under explicit aclosing, and decorates snapshot events with the served-state tail (build stamp with the serving process id, build currentness, checkout binding and optional watcher health). Missing facts are omitted; deltas carry no whole-workspace tail.",
       "targets": [
         {
           "anchor": {
-            "blob": "4e29b07249c3d3096f247af46f87f64a495403a2",
-            "content": "sha256:1658dcbf6c3a92520555de75f333cdcf78ee0dbe2e14bc02b9563b8fa8844ba2",
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:ec265d3b656ba74ff2a80249d4da45d57ecd8039b73106f1ea793a916e311525",
             "locator": {
-              "end": 124,
-              "kind": "line_range",
-              "start": 89
+              "kind": "symbol",
+              "name": "stream_events"
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
-            "content": "sha256:dd94021a8bb0bae7575edcaa93c472f605b4ebdea979a84bd7f43c0de3d4db6b",
-            "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 55
-            },
-            "path": "mcp/src/agents_remember/serving/served_state.py"
           },
           "kind": "code"
         }

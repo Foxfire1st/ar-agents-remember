@@ -1,7 +1,7 @@
 # MCP Application Layer Overview
 
 ## Governing Overview
-[mcp/overview.md](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
@@ -18,7 +18,7 @@ Requested certification is explicitly selected repository-profile work through D
 
 MIK-R109: `read_files.py` names governing cards and overviews without carrying their bodies; `read_file_cards.py` computes record counts and the actionable card headings. `knowledge_names.py` projects rows/proofs/family endpoints to text ID, kind, state and declaring file/line or card heading, with selection-bound commit/dirtiness and explicit title fallback. Paging sizes the emitted names and keeps continuation/whole-row semantics. `knowledge_reports.py` admits and publishes the whole comparison report; an unwritable report refuses. The mounted orientation answer is slim version 3; the full context builder and kernel resolver still hold the full internal facts. `coordination_tools.py` retains topology narrowing, not a public resolver tool.
 
-Native runtime observation has no process-owned session lifecycle. `tool_response.py` retains explicit recovery guidance, derives missing landing guidance from the response contract, and preserves closeout/integration approval stops from the exact call argument. Completed calls go to the workspace River; task stage/activity belongs to the server TaskEntry producer, not tool events or start/attach attribution.
+Native runtime observation has no process-owned session lifecycle. `tool_response.py` retains explicit recovery guidance, derives missing landing guidance from the response contract, and preserves closeout/integration approval stops from the exact call argument. `tool_build_currentness.py` carries the transport's per-call installed-build reading through response shaping: this shaping attaches `buildCurrentness` only to the answer of a call served by a stale installed build (`server_info` reports currentness itself), and a `server-build-stale` refusal keeps its stripped whole result. Completed calls go to the workspace River; task stage/activity belongs to the server TaskEntry producer, not tool events or start/attach attribution.
 
 Task application authoring is distinct from observation: removed get/read_steps return operation-removed and canonical-file guidance, while surviving linkage_report writes its facts report and delivers counts/location. Ordinary writes and review mutations have phrase/reviewState delivery separate from their whole identity, preview and synchronization records. The by-file input branch reads one absolute regular UTF-8 input once before checking its measured byte budget. Role launch preparation supplies the own leaf and declared requirements with explicit missingCopies; later publication refreshes that set transactionally. None of these adapters moves canonical task, approval, projection, observer or coherence authority.
 
@@ -65,7 +65,7 @@ MCP registrations and payload builders own protocol signatures and response vali
 
 Parameter objects remain domain concepts beside their entry points. `CloseoutApproval` stays separate from commit messages so preview cannot masquerade as approved apply. Carryover approval intent stays separate from the selected content. Memory quality's strict sync/start/poll request is deliberately a public discriminated contract; mixed-mode fields are not silently accepted. Route-index composition forwards resolver-owned repository/storage/path-rule authority to the deterministic builder rather than inferring permission from a directory.
 
-`worktree_services` binds memory quality, citation guarding, certification rail definitions, knowledge validation with `GitBaseConverter`, crossing, worklist recomputation, the knowledge gate, review artifact cleanup and the optional leaf-agent archive port. Binding composes these owners; it does not give this module their authority. Internal provider lifecycle composition remains present, while runtime installation now attempts to stop leftover watchers and reports enabled legacy provider keys as unused. A failed stop is reported while installation continues without watcher recovery.
+`worktree_services` binds memory quality, citation guarding, certification rail definitions, knowledge validation with `GitBaseConverter`, crossing, worklist recomputation, the knowledge gate, review artifact cleanup and the optional leaf-agent archive port. Binding composes these owners; it does not give this module their authority. Internal provider lifecycle composition remains present, while runtime installation now attempts to stop leftover watchers and reports enabled legacy provider keys as unused. A failed stop is reported while installation continues without watcher recovery. Runtime installation also refreshes a running dashboard to the installed build (a dry run only plans that refresh) and reports the running servers with their build currentness.
 
 `tool_answer_log.py` obtains actor/role/task from the native agent binding and resolves a canonical single leaf-enclosure binding for report/log placement only while the contract and group survive. Terminating tools retain coordination-root logging; caller records carry no lifecycleId. `knowledge_reports.py` uses this resolved destination rather than an ambient lifecycle. Logs and the workspace River remain diagnostic records, not task stage or host activity authority.
 
@@ -159,7 +159,7 @@ The knowledge-gate adapters carry explicit leaf identity and persistence policy.
 
 Authority remains canonical configuration/task/contract authority, not caller-selected filesystem roots, native folder labels, display titles, queue projections or convenient fallback branches. Expected failures belong to their named refusal/exception translators; a local absence of a guard does not prove its absence from the whole call path. Role/task provenance, approval, semantic meaning, diagnostic status, delivery identity and execution identity are distinct channels.
 
-The inherited L74 read boundary covers read tools, dashboard GETs, status, previews and dry runs. It prohibits changes to local branches, HEAD, working-tree files, the real index, task documents and requirement packets. Named permissions are runtime cache files; recorded comparison reports/captured objects/review pins; closeout-preview enclosure worklists/quality reports/judged objects; the call-diagnostic records each completed call writes, namely the daily tool-answer line and detail files and the workspace River event; and explicitly requested configured-upstream freshness fetch effects inside Git state, including fetched objects, remote-tracking refs/reflogs, FETCH_HEAD, followed tags and Git housekeeping. No freshness argument means no fetch. Other refs/tags and unrelated directories are outside these permissions. Unrecorded captures use disposable storage; inability to preserve a reader owner's boundary refuses rather than choosing another write location. This is an inherited cross-owner contract, not a newly executed audit of all reads.
+The inherited L74 read boundary covers read tools, dashboard GETs, status, previews and dry runs. It prohibits changes to local branches, HEAD, working-tree files, the real index, task documents and requirement packets. Named permissions are runtime cache files; recorded comparison reports/captured objects/review pins; closeout-preview enclosure worklists/quality reports/judged objects; the call-diagnostic records each completed call writes, namely the daily tool-answer line and detail files and the workspace River event; and explicitly requested configured-upstream freshness fetch effects inside Git state, including fetched objects, remote-tracking refs/reflogs, FETCH_HEAD, followed tags and Git housekeeping. No freshness argument means no fetch. Reading the running-server inventory (`server_info` and a `runtime_install` dry run) also removes the record files of dead server processes under the coordination root's `runtime/servers/`, because the server-record contract makes the next reader remove a dead process's record. Other refs/tags and unrelated directories are outside these permissions. Unrecorded captures use disposable storage; inability to preserve a reader owner's boundary refuses rather than choosing another write location. This is an inherited cross-owner contract, not a newly executed audit of all reads.
 
 Memory-quality checklist readiness is not code certification or a universal acceptance verdict. Diagnostic drift and without-proof rows do not become curator actionability. Governing-overview findings become repair findings only when their kind refuses — an advisory kind, the weakness kind included, is reported by the gate and blocks nothing (`knowledge_gate/gate.py:584-620`, `memory_quality/controller.py:840-861`) — while observations remain separate; the summary stays outside the closed certification-check catalog. Official and leaf comparison provenance cannot be interchanged. Converted commit validation/worklist gating is narrower and more specific than the withdrawn historical universal that ordinary transaction paths automatically run every suite, coherence check or independent review.
 
@@ -663,6 +663,7 @@ The `memory_quality` application package shares its bounded run registry between
 
 - The capsule compilation outcome shape: `CapsuleCompilationOutcome` carries exactly one of a compiled capsule or the typed refusal explaining it, with the manifest present in both shapes (`role_capsules/compilation.py:46-90`). The operation itself is `_compile_task_capsule` → `_compile_routed` (`skill_resources/capsule.py:223,257`). [99]
 - The capsule compilation outcome shape: `CapsuleCompilationOutcome` carries exactly one of a compiled capsule or the typed refusal explaining it, with the manifest present in both shapes (`role_capsules/compilation.py:46-90`). The operation itself is `_compile_task_capsule` → `_compile_routed` (`skill_resources/capsule.py:223,257`). [423]
+
 - Task application authoring is distinct from observation: removed get/read_steps return operation-removed and canonical-file guidance, while surviving linkage_report writes its facts report and delivers counts/location. Ordinary writes and review mutations have phrase/reviewState delivery separate from their whole identity, preview and synchronization records. The by-file input branch reads one absolute regular UTF-8 input once before checking its measured byte budget. Role launch preparation supplies the own leaf and declared requirements with explicit missingCopies; later publication refreshes that set transactionally. None of these adapters moves canonical task, approval, projection, observer or coherence authority. [487]
 
 - Preview admission reuses the registry and scope controller. [519]
@@ -731,8 +732,11 @@ The `memory_quality` application package shares its bounded run registry between
 - The registered MCP boundary the repair had to make usable, and the case that fails if the declared schema loses the field the resolution depends on. [110]
 - The retained serving launch module owns the launch request identity value; the compiler and selection live above it, and the removed terminal launch points and resolver are not current callers. [111]
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: The cited compile-tool boundary is retired; current capsule preparation uses the native launch/compiler route. Historical account: The registered MCP boundary the repair had to make usable, and the case that fails if the declared schema loses the field the resolution depends on. [110]
-- The two MCP payload builders are declared at these entry points. [112]
+
+- The `task_reopen_payload` MCP payload builder is declared at this entry point; no `skills_install_payload` builder exists. Anchor: "def task_reopen_payload(" [112]
+
 - `ResponseModel` is the public response-model base. [113]
+
 - `TOOL_RESPONSE_MODELS` is the registry of public response models. [114] [427]
 - Canonical memory scope freezes official/leaf authority, both trees, and optional unstamped comparison provenance. [115]
 - `route_index_refresh_tool` resolves context and supplies repository/storage authority. [117]
@@ -787,7 +791,9 @@ The `memory_quality` application package shares its bounded run registry between
 - Historical canonical-publication authority/absence account; references and targets retained for custody. Current boundary: published_intent_block still resolves converted-memory tree/index selection and returns named unavailable states. The old _absence_state and _authority_mismatch helpers are absent; an unconverted root is refused as legacy-format rather than selecting a canonical publication database. Historical account: **The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact.** [431]
 - **The shipped read the new route delegates to, reused unchanged by this leaf.** [241]
 - The current `read_ar_files` attach points (MIK-R109 rule 1): `application/read_files.py` opens by denying body and continuation delivery, and `models/read_files.py` declares `ReadArFilesResponse` with no `published_intent` field. The removed field is retained as history, not as a current anchor. [242]
-- Historical pre-L109 test anchors for the older published-intent/legacy-format route. Current test_unconverted_memory_names_no_card and repeated-call controls instead demonstrate no card for unconverted memory and no per-session delivery state; the old anchors are not current mounted-route promises or fresh execution evidence. [243]
+
+- `test_unconverted_memory_names_no_card` shows that an unconverted memory root names no card for an existing file. [243]
+
 - **The route's new owner of the source half: the inventory's own statement of why it is measured from the pair, why the Git interface is delimiter-safe, and why a failed measurement is a state rather than an empty list.** [244]
 - The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks. [245] [432]
 - **The inventory value and the two honesty rules: the count is the list's own length, and a name that is not valid text is carried by its byte form in a measured, partial inventory.** [246]
@@ -936,7 +942,9 @@ The `memory_quality` application package shares its bounded run registry between
 - **Retained historical source account — superseded by the current route account:** Runtime installation attempts leftover watcher stop and reports unused enabled keys. [475]
 - **Retained historical source account — superseded by the current route account:** Child computation limits are two active, eight outstanding, 60-second request and 65-second child. [476]
 - **Retained historical source account — superseded by the current route account:** Knowledge threshold remains 8,000 tokens; count belongs to the log under MIK-R108. [477]
-- **Retained historical source account — superseded by the current route account:** Complete response validation and logging remain separate from caller-sized status projection. [478]
+
+- Complete response validation and logging remain separate from caller-sized status projection. [478]
+
 - **Retained historical source account — superseded by the current route account:** Native sibling preparation, held delivery and starter-owned retirement stay distinct from task acceptance. [480]
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py:258-326 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 9547923129aa0b49d6b4f93a758f4fce70233745. Retired means the anchor no longer stands, not that the cited subject was deleted [481]
 - The reviewer projection reads the reviewed owner’s history from the resolved after index, ordered by attempt-file numbers, and supplies identical record-specific labels to outline and subject responses. [454]
@@ -1010,7 +1018,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Historical source-bound reference account, not an operative override:** The adapter's re-export of the sibling surface, which is what keeps the dashboard CLI's import resolving. [450] [451]
 - Historical canonical-publication authority/absence account; references and targets retained for custody. Current boundary: published_intent_block still resolves converted-memory tree/index selection and returns named unavailable states. The old _absence_state and _authority_mismatch helpers are absent; an unconverted root is refused as legacy-format rather than selecting a canonical publication database. Historical account: **The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact.** [240]
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current mounted read_ar_files reports memoryState=unconverted and card=None; the legacy block belongs to the retired body-serving route. Historical account: Legacy onboarding returns a named legacy knowledge block; converted references use sidecars. [459]
+
 - Explicit recovery and exact-call approval stops remain ahead of derived contract guidance. [489]
+
 - Intent-summary composition reports the resolved comparison before counting, enabling consumed-input observation outside the request-local memo. [491]
 - Retained chain shortening uses only a supplied predicate and changes rendering, not selection or session authority. [492]
 - The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [493]
@@ -1029,7 +1039,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - A closed leaf's default read asks the delivered pair first, while the recorded read addresses the published comparison. [510]
 - The comparison owner publishes a record through a create-only link, so a lost race answers the winner or refuses. [511]
 - The caller-harness answer the launch binds a free-agent choice to. [513]
+
 - The one role-harness write, made only when the destination is absent. [514]
+
 - Existing trace authority precedes uncovered grouped source selection; the collector supplies member paths. [515]
 - The initializer reports knowledge state and the two admitted response branches name state-first Architect/regular-task/Curator continuation; partial-index, legacy-format and context-admission actions remain distinct. [516]
 - The current module constructs only the review read’s refusal and read-only submission states. `refused(repository_id, refusal_value)` returns a refused result carrying the supplied named refusal and no supplied payload. `submission(stale)` uses the caller’s boolean: `disabled_stale` asks for a new comparison; otherwise `unavailable` says the review is read-only and directs authoring through the existing writer with author/task/authority provenance. Both branches carry the existing proposed-disposition vocabulary. No record collections are composed here. Historical predecessor claim (superseded): **The record renderer, and the one reason it is a module: two compositions render the same records, so one copy is what keeps an unassessed collection reading identically in both.** [517]

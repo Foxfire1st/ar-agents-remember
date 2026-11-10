@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A directory-mtime cache misses notes that grow in place, causing the live listing to report stale sizes and concealing newly written evidence."
+  },
   "applicability": "The notes listing behind GET /api/notes/list (list_notes and its walk helpers in mcp/src/agents_remember/serving/notes.py) over one series master's tasks/<repo>/<master>/notes/ root.",
   "conditions": [
     "A note can grow in place, which changes its size without changing any directory mtime."

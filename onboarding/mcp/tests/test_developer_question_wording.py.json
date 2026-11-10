@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-        "content": "sha256:4c95b6bccacc8aacdae473649b4c1a1dcd2455ba4e2c6c7b8faae6b5f2f82805",
+        "blob": "2db0be0c89f8deeceda2f19ecb4e580ebc65b010",
+        "content": "sha256:c80c2d0c3294603f003933d97de010a3d7c9aaa21b3178976eeb50e0ecae099e",
         "locator": {
           "kind": "symbol",
           "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-        "content": "sha256:c1dfa36d6684235c6f9fc3c10d9998f575fd7a725f4538c0de6dd308dfad514e",
+        "blob": "2db0be0c89f8deeceda2f19ecb4e580ebc65b010",
+        "content": "sha256:c013013da9880adf484b5a00a7f49ca4beeb9ed8ac9681465a223ff42cba3312",
         "locator": {
           "kind": "symbol",
           "name": "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+        "blob": "2db0be0c89f8deeceda2f19ecb4e580ebc65b010",
         "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+        "blob": "2db0be0c89f8deeceda2f19ecb4e580ebc65b010",
         "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
         "locator": {
           "kind": "symbol",
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-        "content": "sha256:3a4d33639cf59cc6892b4a0cc13341489ec2be84289743ab9acff8c08bde39ca",
+        "blob": "2db0be0c89f8deeceda2f19ecb4e580ebc65b010",
+        "content": "sha256:e1416fb1a4046625e1ee8cd3d880dec66f77322db70275346ff19ac389273bdc",
         "locator": {
           "kind": "symbol",
           "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
@@ -90,28 +90,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The parentable-role test checks question recovery and answer provenance in the shared orientation home, requires each selected role to refer to that home without copying it, and checks transport clauses through the declared delivered message step.",
+      "note": "The parentable-role test checks question recovery and answer provenance in the shared orientation home, requires each selected role to carry its own pointer to that home without copying it, and checks transport clauses through each role's delivered message step and shared held paragraph.",
       "targets": [
         {
           "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-            "content": "sha256:80090112afa63191ab3976edf3437df5d026dedcc01df36d56ba274c7f3f68bb",
+            "blob": "2db0be0c89f8deeceda2f19ecb4e580ebc65b010",
+            "content": "sha256:e1416fb1a4046625e1ee8cd3d880dec66f77322db70275346ff19ac389273bdc",
             "locator": {
-              "end": 59,
-              "kind": "line_range",
-              "start": 21
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-            "content": "sha256:3a4d33639cf59cc6892b4a0cc13341489ec2be84289743ab9acff8c08bde39ca",
-            "locator": {
-              "end": 94,
-              "kind": "line_range",
-              "start": 62
+              "kind": "symbol",
+              "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
             }
           },
           "kind": "test"
@@ -119,28 +106,15 @@
       ]
     },
     "2": {
-      "note": "Starter-role checks require the shared upward permission notice, declared transport recovery and child-question step; the answer clauses retain an own-authority answer, otherwise an unchanged upward question and unchanged quoted developer-answer provenance on the return path.",
+      "note": "Starter-role checks require the shared upward permission notice and each role's referral to it, declared transport recovery and the child-question step; the answer clauses retain an own-authority answer, otherwise an unchanged upward question and unchanged quoted developer-answer provenance on the return path.",
       "targets": [
         {
           "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-            "content": "sha256:80090112afa63191ab3976edf3437df5d026dedcc01df36d56ba274c7f3f68bb",
+            "blob": "2db0be0c89f8deeceda2f19ecb4e580ebc65b010",
+            "content": "sha256:c013013da9880adf484b5a00a7f49ca4beeb9ed8ac9681465a223ff42cba3312",
             "locator": {
-              "end": 59,
-              "kind": "line_range",
-              "start": 21
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-            "content": "sha256:c1dfa36d6684235c6f9fc3c10d9998f575fd7a725f4538c0de6dd308dfad514e",
-            "locator": {
-              "end": 124,
-              "kind": "line_range",
-              "start": 97
+              "kind": "symbol",
+              "name": "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties"
             }
           },
           "kind": "test"
@@ -148,12 +122,12 @@
       ]
     },
     "3": {
-      "note": "Orientation retains conditional routing and pending recovery; Reviewer/review and Curator/curation are checked as composed role-plus-operation pairs.",
+      "note": "Orientation keeps conditional routing and pending recovery; review and curation are checked as composed role-plus-operation pairs.",
       "targets": [
         {
           "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-            "content": "sha256:4c95b6bccacc8aacdae473649b4c1a1dcd2455ba4e2c6c7b8faae6b5f2f82805",
+            "blob": "2db0be0c89f8deeceda2f19ecb4e580ebc65b010",
+            "content": "sha256:c80c2d0c3294603f003933d97de010a3d7c9aaa21b3178976eeb50e0ecae099e",
             "locator": {
               "kind": "symbol",
               "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
@@ -168,12 +142,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "blob": "2db0be0c89f8deeceda2f19ecb4e580ebc65b010",
             "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
             "locator": {
-              "end": 201,
+              "end": 325,
               "kind": "line_range",
-              "start": 165
+              "start": 289
             }
           },
           "kind": "test"
@@ -185,12 +159,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "blob": "2db0be0c89f8deeceda2f19ecb4e580ebc65b010",
             "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
             "locator": {
-              "end": 220,
+              "end": 344,
               "kind": "line_range",
-              "start": 204
+              "start": 328
             }
           },
           "kind": "test"
@@ -202,12 +176,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "blob": "2db0be0c89f8deeceda2f19ecb4e580ebc65b010",
             "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
             "locator": {
-              "end": 201,
+              "end": 325,
               "kind": "line_range",
-              "start": 165
+              "start": 289
             }
           },
           "kind": "test"
@@ -215,76 +189,15 @@
       ]
     },
     "7": {
-      "note": "`question_step` uses the declared source, role audience, pointer and exact delivery step. Its clause-deletion controls read actual message-handover and child-question details for busy/held recovery and unchanged developer-answer provenance; the other cases continue to read canonical source or compiled ownerRelation as appropriate. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "note": "`question_step` uses the declared source, the role's audience and that role's own pre-action pointer. For message transport it joins the emitted busy-refusal detail with the role's held-delivery paragraph, which must stand exactly once, audience-labelled, in the compiled orientation shared block (deleted clauses, a relabelled or extended paragraph and a duplicate fail); for child questions it follows the delivered return action's single link to the orientation section that owns answer attribution. Its clause-deletion controls read those actual details for busy/held recovery and unchanged developer-answer provenance; the other cases continue to read canonical source or compiled ownerRelation as appropriate. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-            "content": "sha256:dca39478b2c18c2345472182feaa10b6b38370b700ce711b872bae82c50524c6",
+            "blob": "2db0be0c89f8deeceda2f19ecb4e580ebc65b010",
+            "content": "sha256:f6a27c353ac3aab16d2b6c4e75fbbe787b2be61f840ddc9680870471a134ecf4",
             "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-            "content": "sha256:5cc8b7ff90a2c19076d7d829252b524ee7fb3d6a3fbaada93f8c407391e1921d",
-            "locator": {
-              "end": 55,
-              "kind": "line_range",
-              "start": 45
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-            "content": "sha256:12a5e52e9e7a331e95c1f0d6ab13139344c9e097ed0aaadf000d1c3037f6f36e",
-            "locator": {
-              "end": 59,
-              "kind": "line_range",
-              "start": 58
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-            "content": "sha256:3a4d33639cf59cc6892b4a0cc13341489ec2be84289743ab9acff8c08bde39ca",
-            "locator": {
-              "end": 94,
-              "kind": "line_range",
-              "start": 62
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-            "content": "sha256:c1dfa36d6684235c6f9fc3c10d9998f575fd7a725f4538c0de6dd308dfad514e",
-            "locator": {
-              "end": 124,
-              "kind": "line_range",
-              "start": 97
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
-            "content": "sha256:37c43ad7fd1c60c1286808ed18ac4fb20d16a99c6d6de7df1b73087e90efa5fb",
-            "locator": {
-              "end": 137,
-              "kind": "line_range",
-              "start": 127
+              "kind": "symbol",
+              "name": "question_step"
             }
           },
           "kind": "test"

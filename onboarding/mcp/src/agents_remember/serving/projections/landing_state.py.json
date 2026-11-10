@@ -167,7 +167,7 @@
   ],
   "references": {
     "1": {
-      "note": "Projector owns startup and cancellation.",
+      "note": "Projector owns the landing refresher's startup and cancellation.",
       "targets": [
         {
           "anchor": {
@@ -178,17 +178,6 @@
               "name": "run"
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
-            "content": "sha256:4ccf5fc3ee970c93ca13ada46e80519603b8bdd6c3dc19918577cd1e7e1a5c6b",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
           "kind": "code"
         }

@@ -90,8 +90,9 @@ No meaningful cross-repo references found.
 ### 260731-EFA-L17 — Quality Altitude Ladder
 
 The orchestrator consumes targeted worker checks and scoped curator checks. Full quality, full tests,
-full memory quality, certification, and review remain explicit operations; closeout and integration
-do not infer a quality gate or launch those tools automatically.
+certification, and review remain explicit operations; closeout and integration
+do not infer a quality gate or launch those tools automatically. Full memory quality is not optional:
+normal curation always runs the complete `memory_quality_check`, and a scoped check cannot replace it.
 
 ## L23 Final Candidate Disposition
 
@@ -106,5 +107,6 @@ This packaged copy derives from the canonical roles/orchestrator.md. The Orchest
 
 - This source owns the stated current Investigator scope or canonical vocabulary.
 
-- Orchestrator coordinates its selected sprint through Managers, reuses named existing Managers, and assigns a non-leaf investigation within its own sprint scope without inventing a parent or task. [1]
-- Orchestrator keeps sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent developer questions distinct; child-permission notices follow the common coordination rule and held receipts are not resubmitted. [3]
+- The Orchestrator reuses each existing Manager named in the Architect's handover and starts one Manager for each other master with role_start under its own sprint; those Managers coordinate their Workers, Reviewers and Curators. [1]
+
+- The Orchestrator sends the Architect only developer-requiring questions and child permission notices with role_message to the parent agent ID, keeps ordinary requirement readings and operational rulings itself, and follows the held-delivery rule when a send answers held. [3]

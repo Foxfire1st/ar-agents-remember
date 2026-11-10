@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Pi core has no built-in MCP client; the starter package uses `pi-mcp-adapter`.\n\nAnchor: `docs/install/pi.md:3-5`",
+      "note": "Pi core has no built-in MCP client, so the project settings load `pi-mcp-adapter`.\n\nAnchor: `pi-mcp-adapter`",
       "targets": [
         {
           "anchor": {
-            "blob": "b39b053155c6f584a58f9076a398dcf07c52499e",
-            "content": "sha256:dcf259f7e2925e1e7b519ae5e38ec6742fc4d46af9840c20ef324bf0d9447190",
+            "blob": "e6408dd8e941f49dac2b974b6b23038707212f3e",
+            "content": "sha256:d08f69e6c687c7804bc0de0659aabedb46214e99b0df2a4c2755de306f2da86a",
             "locator": {
-              "kind": "file"
+              "end": 4,
+              "kind": "line_range",
+              "start": 3
             }
           },
           "kind": "code"
@@ -18,29 +20,16 @@
       ]
     },
     "2": {
-      "note": "Copy `.pi/`, render with `--repo`, start or reload Pi once; manual replacement is the stated alternative.\n\nAnchor: `docs/install/pi.md:16-27`",
+      "note": "Registration adapts the common example to the adapter's `mcpServers.agents-remember` entry, configures `npm:pi-mcp-adapter` through Pi's package settings, then restarts or reloads the harness.\n\nAnchor: `npm:pi-mcp-adapter`",
       "targets": [
         {
           "anchor": {
-            "blob": "b39b053155c6f584a58f9076a398dcf07c52499e",
-            "content": "sha256:dcf259f7e2925e1e7b519ae5e38ec6742fc4d46af9840c20ef324bf0d9447190",
+            "blob": "e6408dd8e941f49dac2b974b6b23038707212f3e",
+            "content": "sha256:746e5ebc2da903d7c61908d17a146dea8f14a0edb5d86f0697f7c446682c435c",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Package contents: settings, startup extension, authority settings, project MCP override, skills.\n\nAnchor: `docs/install/pi.md:29-40`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b39b053155c6f584a58f9076a398dcf07c52499e",
-            "content": "sha256:dcf259f7e2925e1e7b519ae5e38ec6742fc4d46af9840c20ef324bf0d9447190",
-            "locator": {
-              "kind": "file"
+              "end": 22,
+              "kind": "line_range",
+              "start": 16
             }
           },
           "kind": "code"
@@ -48,14 +37,16 @@
       ]
     },
     "4": {
-      "note": "`c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts.\n\nAnchor: `docs/install/pi.md:42-48`",
+      "note": "One `role_start(role=\"bootstrap\")` call prepares the runtime scaffold, starts the Paseo host and one Bootstrap seat; Bootstrap ends at memory setup and starts no role.\n\nAnchor: `role_start`",
       "targets": [
         {
           "anchor": {
-            "blob": "b39b053155c6f584a58f9076a398dcf07c52499e",
-            "content": "sha256:dcf259f7e2925e1e7b519ae5e38ec6742fc4d46af9840c20ef324bf0d9447190",
+            "blob": "e6408dd8e941f49dac2b974b6b23038707212f3e",
+            "content": "sha256:0b6eff7d0f1ff292efa552bffeb3a97deef8cc0d5fb79f0c343af0faf5ae2264",
             "locator": {
-              "kind": "file"
+              "end": 38,
+              "kind": "line_range",
+              "start": 24
             }
           },
           "kind": "code"
@@ -63,29 +54,16 @@
       ]
     },
     "5": {
-      "note": "Skill roots, recursive discovery with the parent-folder naming rule, and the no-install first-run rule.\n\nAnchor: `docs/install/pi.md:63-80`",
+      "note": "Skills arrive as MCP resources (the SEP-2640 skills extension) that Pi reads through the adapter; there is no skill tree to copy, render or keep in sync.\n\nAnchor: `SEP-2640`",
       "targets": [
         {
           "anchor": {
-            "blob": "b39b053155c6f584a58f9076a398dcf07c52499e",
-            "content": "sha256:dcf259f7e2925e1e7b519ae5e38ec6742fc4d46af9840c20ef324bf0d9447190",
+            "blob": "e6408dd8e941f49dac2b974b6b23038707212f3e",
+            "content": "sha256:602512310bc9190fb6580f2db40bb5c072dbc62034113b07de592da2de48f42e",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The `.pi/mcp.json` entry, `/mcp` and `/mcp setup`.\n\nAnchor: `docs/install/pi.md:82-110`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b39b053155c6f584a58f9076a398dcf07c52499e",
-            "content": "sha256:dcf259f7e2925e1e7b519ae5e38ec6742fc4d46af9840c20ef324bf0d9447190",
-            "locator": {
-              "kind": "file"
+              "end": 45,
+              "kind": "line_range",
+              "start": 40
             }
           },
           "kind": "code"

@@ -8,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
             "content": "sha256:49aa7d2dc9d201934f970289c80bb1b3b56ef13c697e13f67cf36e4707b29ab3",
             "locator": {
-              "end": 485,
+              "end": 506,
               "kind": "line_range",
-              "start": 446
+              "start": 467
             },
             "path": "docs/reference/settings-json.md"
           },

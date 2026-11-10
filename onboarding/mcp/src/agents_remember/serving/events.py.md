@@ -123,7 +123,7 @@ No meaningful cross-repository implementation source governs this repository-loc
 The reviewed behavior is wholly repository-local.
 
 
-- The app that mounts this as `GET /api/events`.  Anchor: "async def stream_events(" [4]
+- The app that mounts this as `GET /api/events`. Anchor: `"/api/events"` [4]
 
 - initial_event_offsets computes fresh-connect offsets for workspace/events.jsonl from the recent replay window plus the persisted virtual base offset. The retained-offset scan keeps events it cannot prove older than the cutoff. Physical reclamation belongs to the workspace River compactor and append-time size-bound admission under the shared lock, not lifecycle-log pruning in a projection pass. [5]
 

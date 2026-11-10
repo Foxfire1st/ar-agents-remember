@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "86769d981e7ffbcf93930b2861e0835345be5805",
-    "commit": "d0be84f714df97c4c4f63406dc5ba190fa53c325",
+    "codeTree": "40475ce5dbd82a4b45ebd637b4ffcfa2dc2e7e02",
+    "commit": "81180617aed517835314526b8309d37d5be8b3b7",
     "role": "curator",
-    "statement": "The detailed reference preserves source-reading and authority boundaries and describes scoped preview runs, unchanged synchronous apply, and worker-lifetime ordering.",
-    "task": "260928-MIK-L202",
+    "statement": "The reference's new knowledge-census, knowledge-copies and memory-backfill sections match the registered commands, but its runtime_install section still says the install replaces AGENTS.md targets and that a run without an experiment copies them back, which the code no longer does.",
+    "task": "260928-MIK-L84",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,12 +17,12 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
       "anchor": {
-        "blob": "7db3399548165beb205fd2430614eca1118e9ce6",
+        "blob": "9125b43d7f08f23eb26bcfe0b5cf989ea3592615",
         "content": "sha256:4dfecd273e8b7851ec4b7d4cfa3656919408df3d0c9325d4769becf683f22684",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
         "content": "sha256:fdfd078bb233e7616bdacc47766168eea5c696b7cf50c0a719787b863b635663",
         "locator": {
           "kind": "symbol",

@@ -4,14 +4,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The `create_server` consumer iterates `TOOL_REGISTRARS`.  Anchor: `create_server`",
+      "note": "The `create_server` consumer iterates `TOOL_REGISTRARS`.",
       "targets": [
         {
           "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
-            "content": "sha256:51f72c9e21d93c397c1cad01152d976e289d22ca230c769b19a5303c8882a204",
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "create_server"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

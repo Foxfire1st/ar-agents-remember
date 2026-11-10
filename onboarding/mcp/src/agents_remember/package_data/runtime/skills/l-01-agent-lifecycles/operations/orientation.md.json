@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-        "content": "sha256:127ead9498fbd9811abe4acfab1edbb53a446122a58924e1d1f045443759a651",
+        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "content": "sha256:3120f8aea8dbc2fafb10fd9722e54e4e58c03f87dbe630a343e44bdb87f5cd30",
         "locator": {
           "kind": "file"
         }
@@ -21,28 +21,16 @@
   ],
   "references": {
     "1": {
-      "note": "Orientation takes an Investigator concern from its actual parent or, when parentless, the developer; it keeps canonical task identity, exact launch bindings and developer-question provenance.",
+      "note": "Orientation takes an Investigator's concern from its parent's first message or, without a parent, from the developer's request, and invents no task or trust packet; existing work restores its saved assignment first.\n\nAnchor: `## Confirm the assignment`",
       "targets": [
         {
           "anchor": {
-            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-            "content": "sha256:7673b0f29ce9873b30f5c532fbc74c1418b55df2a5edb353eeaf5987f9207451",
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:04763548b781de7a107d41d383bc3afc4b27cee15ac3db2c87751c793d8a31b9",
             "locator": {
-              "end": 19,
+              "end": 14,
               "kind": "line_range",
-              "start": 4
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-            "content": "sha256:bc5d28d6ff0b697040b4a1a332c971fe8eb3e66bd13ca728920713de61e17eef",
-            "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 30
+              "start": 6
             }
           },
           "kind": "code"
@@ -50,29 +38,16 @@
       ]
     },
     "2": {
-      "note": "Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions.",
+      "note": "Developer decisions go to the instructed reporting recipient or the parent; only an agent with neither, or whose recipient cannot be reached, asks in its own chat.\n\nAnchor: `## Ask for a developer decision`",
       "targets": [
         {
           "anchor": {
-            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-            "content": "sha256:90c1134af65243f7ac535323798edcb2b590b7ff96945970bce4dfdc463ef128",
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:6b1ed0f547f82488c1f0e3f775d0efb6e629e46e6c1cf897119b68168da38906",
             "locator": {
-              "end": 4,
+              "end": 67,
               "kind": "line_range",
-              "start": 4
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-            "content": "sha256:bc5d28d6ff0b697040b4a1a332c971fe8eb3e66bd13ca728920713de61e17eef",
-            "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 30
+              "start": 53
             },
             "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
           },
@@ -85,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:5c9b9a2d722535694c4bee2d90985e22c5ef9251bec964fbd36e2af201299f3b",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:ccd9be17f1ef3c3d6c0b655b6f336cee8d16cef6c9f8ccf10ac253850d9a296b",
             "locator": {
-              "end": 54,
+              "end": 51,
               "kind": "line_range",
-              "start": 39
+              "start": 37
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -103,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
             "content": "sha256:2b7260aa7dec000b8500726aef3283b2e3aec4799f1e8d873b58ab31fd07c14c",
             "locator": {
               "end": 2,
@@ -117,16 +92,16 @@
       ]
     },
     "5": {
-      "note": "The launcher supports these eight role IDs, including the taskless `bootstrap` setup role, and `system-specialist` is the earlier ID of the same Investigator role.",
+      "note": "The launcher supports these eight role IDs, including the taskless `bootstrap` setup role.",
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-            "content": "sha256:670083a34824cf8b5a616979c0ae2b0c7b63375c7a4645eb8a94c3e0d48e937d",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:c19b914b14c301420b2405564d0667f15f985580fc08a14822ed236af95d6848",
             "locator": {
-              "end": 13,
+              "end": 12,
               "kind": "line_range",
-              "start": 11
+              "start": 12
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
           },
@@ -135,30 +110,17 @@
       ]
     },
     "6": {
-      "note": "Taskless scope, exact task-bound reads, role-admitted task_doc-first edits, paired surfaces, bound server and covered recovery.\n\nAnchor: lines 4-25",
+      "note": "Taskless scope, exact task-bound reads, role-admitted task_doc-first edits, paired surfaces, the bound tool server and saved-assignment recovery.\n\nAnchor: `## Confirm the assignment`",
       "targets": [
         {
           "anchor": {
-            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-            "content": "sha256:e79cd5f98120469106ed93210309809355d8a465a6476fb5903a8f739497a847",
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:420d2922b101de194336479ab3e05126399d8d06851d0485d77f25f323facad2",
             "locator": {
-              "end": 25,
+              "end": 39,
               "kind": "line_range",
-              "start": 4
+              "start": 6
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "77193c73e40d8dcf1ac8b7158debe508e2d02065",
-            "content": "sha256:3ff6e63392f70b84be8b931dffb38749b9ac474888052a0e153205ddbc32a888",
-            "locator": {
-              "end": 38,
-              "kind": "line_range",
-              "start": 24
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/refused-write.md"
           },
           "kind": "code"
         }

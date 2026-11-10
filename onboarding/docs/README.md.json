@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
-        "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+        "blob": "cbe4d811fb65009206986c45ac951ee676a08a79",
+        "content": "sha256:6611d28a5093fadd5313e6284730577185b8bc8be26ede51dacaf069e900dac8",
         "locator": {
           "kind": "file"
         }
@@ -22,14 +22,16 @@
   ],
   "references": {
     "1": {
-      "note": "The core-features bullet retires the semantic and code-graph providers and keeps verified Markdown and source code as the truth.\n\nAnchor: `docs/README.md:16`",
+      "note": "The core-features bullet retires the semantic and code-graph providers and keeps verified Markdown and source code as the truth.\n\nAnchor: `Search that finds, not decides`",
       "targets": [
         {
           "anchor": {
-            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
-            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+            "blob": "cbe4d811fb65009206986c45ac951ee676a08a79",
+            "content": "sha256:dc28b55c42e4ab3d30d2e6fe9cc1e1ac0acb0cf0cdc88f9f9e333f729ea8fc27",
             "locator": {
-              "kind": "file"
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
             }
           },
           "kind": "code"
@@ -37,29 +39,16 @@
       ]
     },
     "2": {
-      "note": "The Getting Started entry stops at memory and onboarding, with no provider setup step.\n\nAnchor: `docs/README.md:25`",
+      "note": "The Getting Started entry describes registering MCP, calling Bootstrap once and handing optional onboarding and knowledge work to a user-started Architect, with no provider setup step.\n\nAnchor: `getting-started.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
-            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+            "blob": "cbe4d811fb65009206986c45ac951ee676a08a79",
+            "content": "sha256:8f3af0dfe3ad9c573d5f09260b6da7ea25a53f2421eddc3a4d742902406752ce",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The Features tour entry names the retired providers.\n\nAnchor: `docs/README.md:26`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
-            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
-            "locator": {
-              "kind": "file"
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
             }
           },
           "kind": "code"
@@ -67,14 +56,16 @@
       ]
     },
     "4": {
-      "note": "The guides entry describes the Providers page as retirement plus old-install cleanup.\n\nAnchor: `docs/README.md:52-53`",
+      "note": "The guides entry describes the Providers page as retirement plus old-install cleanup.\n\nAnchor: `guides/providers.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
-            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+            "blob": "cbe4d811fb65009206986c45ac951ee676a08a79",
+            "content": "sha256:09c745b0ba8a19def331388673ee0b0c3b6e44c1c7b68cddb94ecf479a1897c0",
             "locator": {
-              "kind": "file"
+              "end": 53,
+              "kind": "line_range",
+              "start": 52
             }
           },
           "kind": "code"
@@ -82,14 +73,16 @@
       ]
     },
     "5": {
-      "note": "The external-memory paragraph links `features.md` inside the docs tree.\n\nAnchor: `docs/README.md:21`",
+      "note": "The external-memory paragraph links `features.md` inside the docs tree.\n\nAnchor: `features.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
-            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+            "blob": "cbe4d811fb65009206986c45ac951ee676a08a79",
+            "content": "sha256:e4ea5d736f2c80d65dfce25678512384a2ed0f5e152e389f385594ba6746debc",
             "locator": {
-              "kind": "file"
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
             }
           },
           "kind": "code"
@@ -97,14 +90,16 @@
       ]
     },
     "6": {
-      "note": "The opening summary line still lists semantics and code-graph retrieval.\n\nAnchor: `docs/README.md:3`",
+      "note": "The opening summary line still lists semantics and code-graph retrieval.\n\nAnchor: `semantics`",
       "targets": [
         {
           "anchor": {
-            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
-            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+            "blob": "cbe4d811fb65009206986c45ac951ee676a08a79",
+            "content": "sha256:8b7db35991a27bf0312cd7a050ac0ca511c2d03fbb9a7b33a9ea38d69cbf002b",
             "locator": {
-              "kind": "file"
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
             }
           },
           "kind": "code"
@@ -112,14 +107,16 @@
       ]
     },
     "7": {
-      "note": "The page names no provider command, setting key or provider id.\n\nAnchor: `docs/README.md:1-66`",
+      "note": "The page names no provider command, setting key or provider id.",
       "targets": [
         {
           "anchor": {
-            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
-            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+            "blob": "cbe4d811fb65009206986c45ac951ee676a08a79",
+            "content": "sha256:6611d28a5093fadd5313e6284730577185b8bc8be26ede51dacaf069e900dac8",
             "locator": {
-              "kind": "file"
+              "end": 66,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The coherent-review family needs member navigation to request the member's canonical invariant while retaining family context, rather than reusing the family's own judgment as the member's."
+  },
   "applicability": "Opening recorded family and invariant subjects from family/member navigation in the normal reviewer.",
   "conditions": [
     "The roster provides the member canonical invariant identity.",

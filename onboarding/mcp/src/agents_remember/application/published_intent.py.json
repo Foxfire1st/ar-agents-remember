@@ -783,25 +783,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
-            "content": "sha256:d274b0d125ffd9f7989dc92822a835b8a285a699d14549677ee5323a4ab81eab",
-            "locator": {
-              "end": 439,
-              "kind": "line_range",
-              "start": 425
-            },
-            "path": "mcp/tests/test_read_ar_files.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
             "content": "sha256:412b751f82b7654971ab39e29e641dec6b81de71885df0eed246e04b1de9138f",
             "locator": {
-              "end": 862,
+              "end": 863,
               "kind": "line_range",
-              "start": 859
+              "start": 860
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -809,12 +796,12 @@
         },
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
             "content": "sha256:bdcc9c81080c9a591e9cdee903f20e4d5c10fba09030b9d2efcb8ef5d71292f4",
             "locator": {
-              "end": 870,
+              "end": 871,
               "kind": "line_range",
-              "start": 864
+              "start": 865
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -822,12 +809,12 @@
         },
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
             "content": "sha256:c75b4077e3185ac9b1f7b9b2f06240718bd4204e25e5b5a3611c9f5b4ec97032",
             "locator": {
-              "end": 875,
+              "end": 876,
               "kind": "line_range",
-              "start": 872
+              "start": 873
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -835,12 +822,12 @@
         },
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
             "content": "sha256:ee617b986dc5561eef4d7c9ed4c2369e41e6800118a3b787afa156371a2d7438",
             "locator": {
-              "end": 885,
+              "end": 886,
               "kind": "line_range",
-              "start": 877
+              "start": 878
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -849,14 +836,15 @@
       ]
     },
     "42": {
-      "note": "The carrier-parity case that holds the retrieval instructions to the payload's real field spellings.\n\nAnchor: `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns`",
+      "note": "The carrier-parity case that holds the retrieval instructions to the answer's real field spellings.",
       "targets": [
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
-            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "content": "sha256:f3ab3f5f550064a33b571010a4b2b533e8d00dce981cbfbf811be0d30c03ac82",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_carrier_uses_the_field_spellings_the_answer_returns"
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },

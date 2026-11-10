@@ -8,9 +8,9 @@ The inherited source account below is retained verbatim at its earlier source bl
   provider", and says the by-meaning route's "provider is retired; the route has no engine now"
   while the by-relationship route's "provider is retired as well" (`docs/architecture.md:85-89`).
 - The same section states that GrepAI served semantic memory search and CodeGraphContext served the
-  code graph, that they are retired, that "no product path installs, enables, starts, indexes, or
-  queries them", and that the `providers/` tree in the layout above "holds only what an older
-  installation left behind" (`docs/architecture.md:91`).
+  code graph, that they are retired, that "no product path enables, starts, indexes, or queries
+  them", and that runtime installation "still copies inert shipped scaffolding into the `providers/`
+  tree shown above", which can also contain user data and older-install leftovers (`docs/architecture.md:111`).
 - It frames the providers as accelerators for *finding* knowledge, says they "were never the
   source of truth", keeps durable memory as Markdown + Git, drift-checked and approval-gated, and
   assigns the surviving work: "`runtime_install` stops a leftover provider watcher and reports old provider
@@ -26,8 +26,8 @@ The inherited source account below is retained verbatim at its earlier source bl
   provider-leftover cleanup, worktree, memory, and benchmark operations", with no parallel
   `scripts/` route (`docs/architecture.md:47`).
 - The layout block still draws a `providers/` subtree with `requirements/`, `patches/`, `runners/`,
-  `data/`, and `logs/` (`docs/architecture.md:28-44`); the retrieval section is the place that
-  characterizes that tree as leftover-only (`docs/architecture.md:91`).
+  `data/`, and `logs/` (`docs/architecture.md:28-43`); the retrieval section characterizes that tree
+  as inert shipped scaffolding that can also hold user data and older-install leftovers (`docs/architecture.md:111`).
 - The page states no provider install, prepare, seed, start, query, watch, provider-status or
   provider-lane obligation. It names no command flag, gives no folder sizes, does not name the
   unused-key field, and is silent on Docker or Ollama requirements, on a periodic safety check over
@@ -104,9 +104,13 @@ Historical source account (detached from live reference 7; docs/architecture.md 
 - This architecture page does not specify Docker/Ollama requirements, provider command flags, the unused-key field name, a safety detector or provider UI; the new converted-knowledge layout/gate sections do not advertise a provider engine.
 
 - By-path Intent needs no provider; meaning and relationship providers remain retired and have no active search engine. [1]
-- GrepAI and CodeGraphContext remain retired; the architecture page names no product route installing, enabling, starting, indexing or querying them, and labels the providers subtree as older-install leftovers. [2]
+
+- GrepAI and CodeGraphContext remain retired; the architecture page names no product path enabling, starting, indexing or querying them, and says runtime installation copies inert shipped scaffolding into the `providers/` tree, which can also hold user data and older-install leftovers. [2]
+
 - The architecture page keeps durable Markdown/JSON plus Git as truth, assigns leftover-watcher stop and unused-key reporting to runtime_install, and leaves folder deletion to explicit providers-remove. [3]
 - Provider leftovers remain owned by runtime_install and providers-remove rather than memory/workflow skills; provider lifecycle remains retired. [4]
 - The installed runtime has no parallel scripts execution route; package-local modules/MCP own install, provider-leftover cleanup, worktree, memory and benchmark operations. [5]
-- The installed-runtime layout still draws the providers subtree; the retrieval section qualifies it as old-install leftovers. [6]
-- This architecture page does not specify Docker/Ollama requirements, provider command flags, the unused-key field name, a safety detector or provider UI; the new converted-knowledge layout/gate sections do not advertise a provider engine. [7]
+
+- The installed-runtime layout draws the providers subtree; the retrieval section qualifies it as inert shipped scaffolding that can also hold user data and older-install leftovers. [6]
+
+- This architecture page does not specify Docker/Ollama requirements, provider command flags, the unused-key field name, a safety detector or provider UI; the converted-knowledge layout/gate sections do not advertise a provider engine. [7]

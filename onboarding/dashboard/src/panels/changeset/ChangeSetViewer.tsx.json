@@ -278,14 +278,16 @@
       ]
     },
     "16": {
-      "note": "The cockpit forwards leaf reopening into the existing takeover instead of requiring another document-navigation path.\n\nAnchor: `ChangeSetTakeover`",
+      "note": "The cockpit forwards leaf reopening into the existing takeover instead of requiring another document-navigation path.\n\nAnchor: `onOpenLeaf`",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:c6d8679bc2ab3dfcca99e099a16580215951cfd6bf0ab93b32263f14e9d81f76",
             "locator": {
-              "kind": "file"
+              "end": 433,
+              "kind": "line_range",
+              "start": 413
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -562,14 +564,28 @@
       ]
     },
     "7": {
-      "note": "The actual cockpit takeover dispatches review targets separately and supplies the ordinary viewer Back and leaf-retarget callbacks.\n\nAnchor: `ChangeSetTakeover`",
+      "note": "The actual cockpit takeover dispatches review targets separately and supplies the ordinary viewer Back and leaf-retarget callbacks.",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:c6d8679bc2ab3dfcca99e099a16580215951cfd6bf0ab93b32263f14e9d81f76",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ChangeSetTakeover"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:fb95306a3be56b74a5a04d459fe7fa4ff6345e0b08807374cb7eef7ca62215ed",
+            "locator": {
+              "end": 863,
+              "kind": "line_range",
+              "start": 857
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

@@ -1,0 +1,78 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Keeping a short entry point and the tasks file was weighed against removing all three; the choice binds the installer and where instruction content may live."
+  },
+  "alternatives": [
+    {
+      "option": "Remove all three templates, their packaged copies and their installer targets; an install removes the copies an earlier install wrote; their content moves to its homes in the role instructions, the l-01 references and the memory's writing guideline.",
+      "reason": "The developer ruled that no AGENTS.md is maintained separately: harness-loaded files drift from the role instructions, which already reach every agent.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep a short coordinator AGENTS.md as an entry point and the proofread tasks/AGENTS.md, removing only the system template.",
+      "reason": "Two files would still be maintained beside the role instructions and loaded by harnesses on their own, where they drift.",
+      "reconsider_when": "A supported harness can no longer receive its instructions through the role first message or the served skill and needs a workspace instruction file.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The collaboration method lives in reference/tasks/collaboration-method.md and its pointers lead there.",
+    "The install's startup-file cutover removes AGENTS.md, tasks/AGENTS.md and system/AGENTS.md copies at the coordination root."
+  ],
+  "context": "The product installed three AGENTS.md templates at the coordination root (coordinator, tasks and system). Harnesses load such files on their own beside the role instructions, and the Investigator's map found the coordinator file contradicting current rules and the system file mostly obsolete. A first amendment kept a short coordinator entry point and a proofread tasks file.",
+  "decider": "The developer (D678, after D677); MIK-R84 v8 behaviour 10.",
+  "id": "DEC-18HP48",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+        "content": "sha256:a1158b05bc0d2bae48bf1d67aee004da27d54031e586096258000ff3cb8d046c",
+        "locator": {
+          "kind": "symbol",
+          "name": "RETIRED_STARTUP_TARGETS"
+        },
+        "path": "mcp/src/agents_remember/install/experiment.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "3e0a00ea1f15ee66d9f9d02553a8656c1624b744",
+        "content": "sha256:41f1fab68f8a056cab2266a524b4e823781b38f158c414b5eca3353e8bf4bf19",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "skills/l-01-agent-lifecycles/reference/tasks/collaboration-method.md"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R84",
+        "packet": "requirements/MIK-R84-v8-installed-copies-and-running-servers-are-current-after-an-install.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v8"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "dec-no-agents-md",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

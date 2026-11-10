@@ -141,6 +141,7 @@ Superseded card wording retained for custody (not the current source locator or 
 - The current complete closeout function preserves the memory-before-cache sequence; exact-tree validation independently refuses ungated memory. [35]
 - The root pytest declaration sets 10000 unit and 2000 integration selected cases; the repository collection guard enforces this pair. [27]
 - The testing design and root configuration agree on 10000 unit and 2000 integration selected cases; historical values describe their earlier policy epochs. [30]
-- The canvas-host amendment retires the old authoring POSTs and standalone presenter-tool launch while retaining the explicit runner/confinement and browser-readiness limits. [37]
+
 - The canvas-host amendment retires old authoring POSTs and the dedicated native presenter launch; retained authoring port and explicit browser readiness remain bounded. [37]
+
 - The dated raise states the headroom, measured scenario costs and preserved refusal directions. [38]

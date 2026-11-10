@@ -2,60 +2,17 @@
   "path": "docs/install/hermes.md",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Copy `.hermes/`, render with `--repo`, merge `config.yaml` into the user config, start or reload once.\n\nAnchor: `docs/install/hermes.md:12-32`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b94c0236c4362826696a9c5e08e4b7135a842bd1",
-            "content": "sha256:b854d1f669002d46418561176b6e668eaee9d5847ed24518249352508e0c6d22",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Package contents: `HERMES.md`, `config.yaml` merge template, authority settings, skills exposed through `skills.external_dirs`.\n\nAnchor: `docs/install/hermes.md:34-40`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b94c0236c4362826696a9c5e08e4b7135a842bd1",
-            "content": "sha256:b854d1f669002d46418561176b6e668eaee9d5847ed24518249352508e0c6d22",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
-      "note": "`c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts.\n\nAnchor: `docs/install/hermes.md:42-49`",
+      "note": "One `role_start(role=\"bootstrap\", …)` call prepares the runtime scaffold and starts Bootstrap, which ends at memory setup and hands the knowledge foundation to the Architect; nothing provider-side starts.\n\nAnchor: `role_start`",
       "targets": [
         {
           "anchor": {
-            "blob": "b94c0236c4362826696a9c5e08e4b7135a842bd1",
-            "content": "sha256:b854d1f669002d46418561176b6e668eaee9d5847ed24518249352508e0c6d22",
+            "blob": "1c800e811093af64a2048e3154e59d4323cf47ff",
+            "content": "sha256:946d063cfcbc38684e4881f8418ac151ef1738fe141ddb13481bf765e73f4026",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "`HERMES.md` is loaded before `AGENTS.md`; root `AGENTS.md` is not overwritten.\n\nAnchor: `docs/install/hermes.md:51-61`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b94c0236c4362826696a9c5e08e4b7135a842bd1",
-            "content": "sha256:b854d1f669002d46418561176b6e668eaee9d5847ed24518249352508e0c6d22",
-            "locator": {
-              "kind": "file"
+              "end": 34,
+              "kind": "line_range",
+              "start": 20
             }
           },
           "kind": "code"
@@ -63,14 +20,16 @@
       ]
     },
     "5": {
-      "note": "MCP lives under `mcp_servers` in the user config with the printed `uvx` entry and `/reload-mcp`.\n\nAnchor: `docs/install/hermes.md:63-80`",
+      "note": "MCP registration goes under the `mcp_servers.agents-remember` entry in `~/.hermes/config.yaml`, adapted from the common registration example with the absolute user-config settings path.\n\nAnchor: `mcp_servers.agents-remember`",
       "targets": [
         {
           "anchor": {
-            "blob": "b94c0236c4362826696a9c5e08e4b7135a842bd1",
-            "content": "sha256:b854d1f669002d46418561176b6e668eaee9d5847ed24518249352508e0c6d22",
+            "blob": "1c800e811093af64a2048e3154e59d4323cf47ff",
+            "content": "sha256:256c53f529b7f8a0e50d884205e37bd90d14c4f6122bcd60e36f6d1da8f13601",
             "locator": {
-              "kind": "file"
+              "end": 18,
+              "kind": "line_range",
+              "start": 13
             }
           },
           "kind": "code"
@@ -78,14 +37,16 @@
       ]
     },
     "6": {
-      "note": "Skill layout, `harnessSkillRoot` / `skills.external_dirs`, and the no-install first-run rule are stated.\n\nAnchor: `docs/install/hermes.md:82-107`",
+      "note": "Skills arrive from the tool server as MCP resources, so `~/.hermes/config.yaml` names no external skill folder and first-run setup installs none.\n\nAnchor: `SEP-2640`",
       "targets": [
         {
           "anchor": {
-            "blob": "b94c0236c4362826696a9c5e08e4b7135a842bd1",
-            "content": "sha256:b854d1f669002d46418561176b6e668eaee9d5847ed24518249352508e0c6d22",
+            "blob": "1c800e811093af64a2048e3154e59d4323cf47ff",
+            "content": "sha256:9247e47eb1bed033715c961a677d07ce919e60de69ac61995caa098b085048d0",
             "locator": {
-              "kind": "file"
+              "end": 41,
+              "kind": "line_range",
+              "start": 36
             }
           },
           "kind": "code"

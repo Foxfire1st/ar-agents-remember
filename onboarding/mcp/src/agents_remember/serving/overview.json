@@ -26,24 +26,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
-            "content": "sha256:bada0558f18963fa912b88536362bd1eb9ae669a6bd20671bbae9f4c74cfb0ad",
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:055476941e360a611e75be9449fe29c11740aa259b2215c2509c5dc5860937d6",
             "locator": {
               "kind": "symbol",
               "name": "ensure_host"
-            },
-            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
-            "content": "sha256:9a82c970e02d4681fafab5148e91042018bf7aab40ba1ebedb88f819e47260c6",
-            "locator": {
-              "end": 180,
-              "kind": "line_range",
-              "start": 148
             },
             "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
           },
@@ -56,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ba99edfcc42e4a14d029370b586330f8c0a82c9",
+            "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
             "content": "sha256:ebab7a90111a508b1555ff8649d4494215fcd6c5cb72754a2ae8e05003b771f8",
             "locator": {
               "kind": "symbol",
@@ -68,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "6ba99edfcc42e4a14d029370b586330f8c0a82c9",
+            "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
             "content": "sha256:e6c6716d95d5a31ead17cd8300db17e5a2c357739b5c4e09e3189c184d37669d",
             "locator": {
-              "end": 88,
+              "end": 89,
               "kind": "line_range",
-              "start": 44
+              "start": 45
             },
             "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
           },
@@ -130,14 +117,15 @@
       ]
     },
     "111": {
-      "note": "Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit.  Anchor: `_serving_lifespan`, `_held_delivery_loop`, `_to_thread_owned` (delegating to accounted cancellation-drained offload)",
+      "note": "Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit.",
       "targets": [
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
-            "content": "sha256:093fbfff778e59550993cab5b2f6dd5cc9eb221a29e435e6ee369812bcea44ee",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:006376b7981daea32fb2fbb209dacb019156dd139997c85794d2a7bdbe4f5da8",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_running_lifespan"
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -157,14 +145,15 @@
       ]
     },
     "112": {
-      "note": "Leaf-archive recovery alone uses the retained completion-relative background loop; no terminal-observation prime/poll remains.",
+      "note": "Leaf-archive recovery is the one loop under the terminal-observation owner: it sleeps after each attempt returns, and no terminal-observation prime or poll remains.",
       "targets": [
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
-            "content": "sha256:093fbfff778e59550993cab5b2f6dd5cc9eb221a29e435e6ee369812bcea44ee",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_leaf_archive_recovery_loop"
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -296,16 +285,15 @@
       ]
     },
     "128": {
-      "note": "Host ensure is start-only, with observation, lock, and outcome receipt.\n\nAnchor: ensure_host",
+      "note": "Host ensure is start-only, with observation, lock, and outcome receipt.",
       "targets": [
         {
           "anchor": {
-            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
-            "content": "sha256:bada0558f18963fa912b88536362bd1eb9ae669a6bd20671bbae9f4c74cfb0ad",
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:055476941e360a611e75be9449fe29c11740aa259b2215c2509c5dc5860937d6",
             "locator": {
-              "end": 221,
-              "kind": "line_range",
-              "start": 189
+              "kind": "symbol",
+              "name": "ensure_host"
             },
             "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
           },
@@ -364,7 +352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
             "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
             "locator": {
               "kind": "symbol",
@@ -439,29 +427,16 @@
       ]
     },
     "136": {
-      "note": "Task-body 304 requires a still-current captured generation and matching content revision.\n\nAnchor: \"doc.generation.current()\"",
+      "note": "Task-body 304 requires a still-current captured generation and matching content revision.\n\nAnchor: `if_none_match_matches`",
       "targets": [
         {
           "anchor": {
-            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
-            "content": "sha256:34bab2ba1cf893e73feeb3efb7b120f5e0064ea03d054872dbaa41e707354cbc",
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:fecbca6ab24c31ddf3ca2253d265b5eec337a372ef46ba19da4214ac61abb88b",
             "locator": {
-              "end": 130,
+              "end": 168,
               "kind": "line_range",
-              "start": 115
-            },
-            "path": "mcp/src/agents_remember/serving/_app_routes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
-            "content": "sha256:5d734897d93eb98682a9c01023c3532fadd7078defe2a6514dba734b3c87d90b",
-            "locator": {
-              "end": 143,
-              "kind": "line_range",
-              "start": 128
+              "start": 166
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
@@ -531,7 +506,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e29b07249c3d3096f247af46f87f64a495403a2",
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
             "content": "sha256:5cad09326ea48bcab9f5af8d1664d30a8f8771efee378a43321831f5b224c5d8",
             "locator": {
               "kind": "symbol",
@@ -543,7 +518,7 @@
         },
         {
           "anchor": {
-            "blob": "4e29b07249c3d3096f247af46f87f64a495403a2",
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
             "content": "sha256:10f53a60573c3d51d6a90b8ff6aaebed89149cc7db6d6175cb7e9f4da26c4c02",
             "locator": {
               "kind": "symbol",
@@ -572,11 +547,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
-            "content": "sha256:4aab52211c73a20184310f31c88a177760717945199c4ab452fd1d8ae0a38a1b",
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:13aaf574b6e483c1bdeef8d9fb3c6bf67b347e7cae4a9a58c663863b63eec274",
             "locator": {
               "kind": "symbol",
-              "name": "api_stream"
+              "name": "_review_stream"
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
@@ -591,6 +566,19 @@
               "name": "multiplex_review_memory"
             },
             "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:0269fd5c9029d40d6f41bd0e71c148de6e4623a4d1a54fdeae79eede8f9c720e",
+            "locator": {
+              "end": 436,
+              "kind": "line_range",
+              "start": 413
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
           "kind": "code"
         }
@@ -677,7 +665,7 @@
       ]
     },
     "146": {
-      "note": "Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. Ordinary roster has 44 names while explainer surface selection is separate.",
+      "note": "Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. Ordinary roster has 44 names while explainer surface selection is separate.\n\nAnchor: `move_notice_watch`",
       "targets": [
         {
           "anchor": {
@@ -705,7 +693,7 @@
         },
         {
           "anchor": {
-            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
             "content": "sha256:baffae246adc8ca34e1a4978e4f637a5d07bf112180da7c81905697ed5c5cf10",
             "locator": {
               "kind": "symbol",
@@ -717,7 +705,7 @@
         },
         {
           "anchor": {
-            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
             "content": "sha256:13aaf574b6e483c1bdeef8d9fb3c6bf67b347e7cae4a9a58c663863b63eec274",
             "locator": {
               "kind": "symbol",
@@ -729,11 +717,12 @@
         },
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
-            "content": "sha256:9235e76e44e52d528b48fd5fb7bb9e96c6f07ca1e26ef4e60b62f00aedce0192",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:b3911d0d280404b8ce7782248ae9d25cb9de11163eee3363e84c501733a1a45e",
             "locator": {
-              "kind": "symbol",
-              "name": "_serving_lifespan"
+              "end": 555,
+              "kind": "line_range",
+              "start": 549
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -1795,12 +1784,12 @@
         },
         {
           "anchor": {
-            "blob": "4e29b07249c3d3096f247af46f87f64a495403a2",
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
             "content": "sha256:42c4997d02fe59a1cce1a48e50cc0b8dc6c9686b2220228b40c21103ce0b74c8",
             "locator": {
-              "end": 203,
+              "end": 206,
               "kind": "line_range",
-              "start": 195
+              "start": 198
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -1808,12 +1797,12 @@
         },
         {
           "anchor": {
-            "blob": "4e29b07249c3d3096f247af46f87f64a495403a2",
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
             "content": "sha256:e1364725bde4381d9885a60a2a4698bc94777af3299e1350fafb99aee1dce29b",
             "locator": {
-              "end": 204,
+              "end": 207,
               "kind": "line_range",
-              "start": 196
+              "start": 199
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -1904,7 +1893,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
             "content": "sha256:07a9ae9b329c050c8b413bd1b7a773428e7e1405bad0dae4dd1dcafcc2b53c1c",
             "locator": {
               "end": 322,
@@ -1917,7 +1906,7 @@
         },
         {
           "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
             "content": "sha256:14b5262c837d857baf356888a7eb27a796635f0c27d9c90ddb014fae99fb24e8",
             "locator": {
               "end": 326,
@@ -2105,78 +2094,15 @@
       ]
     },
     "84": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "The dashboard composition root registers the native role-launch routes, then the developer chat/tray routes, as the app's extra API routes beside the retained review/read ports.",
       "targets": [
         {
           "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
-            "content": "sha256:4ccf5fc3ee970c93ca13ada46e80519603b8bdd6c3dc19918577cd1e7e1a5c6b",
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:307e3408785c8695c9f67245e4f509609475552c72121ffa430684a886b3241d",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "85": {
-      "note": "Current imported source owns this scoped route boundary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
-            "content": "sha256:4ccf5fc3ee970c93ca13ada46e80519603b8bdd6c3dc19918577cd1e7e1a5c6b",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "86": {
-      "note": "Current imported source owns this scoped route boundary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
-            "content": "sha256:4ccf5fc3ee970c93ca13ada46e80519603b8bdd6c3dc19918577cd1e7e1a5c6b",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "87": {
-      "note": "Current imported source owns this scoped route boundary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
-            "content": "sha256:4ccf5fc3ee970c93ca13ada46e80519603b8bdd6c3dc19918577cd1e7e1a5c6b",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "88": {
-      "note": "Current imported source owns this scoped route boundary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
-            "content": "sha256:4ccf5fc3ee970c93ca13ada46e80519603b8bdd6c3dc19918577cd1e7e1a5c6b",
-            "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "api_routes"
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2189,12 +2115,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e29b07249c3d3096f247af46f87f64a495403a2",
-            "content": "sha256:f69b3c982914c5c16e631b535daa1e5b2111890cc4f1b35a69787a058655b388",
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:8d6e77bb4fda4c5987361be9ddd701b2dedf303a912722dd2047b97d174e2491",
             "locator": {
-              "end": 222,
+              "end": 238,
               "kind": "line_range",
-              "start": 221
+              "start": 237
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -2254,25 +2180,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
-            "content": "sha256:0d964b0fea6aad52c05d2eadc5a18e888290974e7638fe14894a769234f8cb17",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:090ec4bc0649183f78cc1138cb4f8dc0866abc370e720fc3cde406e82498c19b",
             "locator": {
-              "end": 187,
+              "end": 600,
               "kind": "line_range",
-              "start": 184
-            },
-            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
-            "content": "sha256:90cd5e1c6872e40273d7c0ac98de2226fbed1459f7baa8853b3bea4176133ede",
-            "locator": {
-              "end": 201,
-              "kind": "line_range",
-              "start": 198
+              "start": 590
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -2285,7 +2198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
             "content": "sha256:eaca7c5320c469289fa232e9891afbca3e36745b1e0237e67b2beab03203e18a",
             "locator": {
               "end": 386,
@@ -2298,7 +2211,7 @@
         },
         {
           "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
             "content": "sha256:877aa536d3b04674fff41070bb0164e99e2f79107ce8e8f2ac02dc1f7fd6de99",
             "locator": {
               "end": 395,

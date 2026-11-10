@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-        "content": "sha256:c9b63c1e3adebd96a786775a959d55a38d3743b94be125d317c288ac4fafbf8a",
+        "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+        "content": "sha256:924b060a4b8c36e11b40bc831e7489595dc7dcd49886f87d91f1b28506fc505a",
         "locator": {
-          "end": 32,
+          "end": 130,
           "kind": "line_range",
-          "start": 32
+          "start": 118
         }
       },
       "id": "RLZ-3PNEK4",
@@ -18,17 +18,55 @@
         "handoffEntry": "L117-R07",
         "leaf": "260928-MIK-L117"
       },
-      "rationale": "The coordination operation retains the complete message-files/body/attach/settings-limit transport paragraph for its addressed seats.",
+      "rationale": "The coordination operation's 'Message files and receipts' section keeps the body/attach transport and its size rules for the addressed seats: body has no length limit and goes into the message file, over-limit text is refused at the settings' limit, attach names existing files, and the recipient reads the filed message. It points to the message-handover detail for the messages-as-files sentence.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-        "content": "sha256:f79f7eb21dee02438af3e36859cd242ed570021e1d69e0eb440631b83e1f4283",
+        "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+        "content": "sha256:00a860b2ed9aa9ec366671d0f41949e06447e8f25af84694dfe0fb10623d5df5",
         "locator": {
-          "end": 8,
+          "end": 54,
           "kind": "line_range",
-          "start": 8
+          "start": 49
+        }
+      },
+      "id": "RLZ-4Q6AFR",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "K3-ZNJ14G-coordination-repair-loop",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Worker, Reviewer and Curator run the repair loop directly with role_message (freeze, verdicts and findings, hand-off lists, memory change and verdict), while the Manager reads reports, decides the gate, keeps closeout, integration, status, acceptance and landing order and relays no contents.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+        "content": "sha256:019afe8004125db2bfa940719d3c7184bced393682fe069b88120b8f68944f8e",
+        "locator": {
+          "end": 43,
+          "kind": "line_range",
+          "start": 36
+        }
+      },
+      "id": "RLZ-7JXN0P",
+      "invariant": "INV-MTRR08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-MTRR08",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Ordinary Curator start follows code PASS, while an approved prerequisite memory-sync reconciliation has its explicitly named early-start exception.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+        "content": "sha256:f332ba74e215960dd5e42b38683a59bca0ffaa8cc7d649ca538bebfda2d56e78",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 16
         }
       },
       "id": "RLZ-AH5XYY",
@@ -42,12 +80,50 @@
     },
     {
       "anchor": {
-        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-        "content": "sha256:fc658340153fb2aff88c4b2cbe722290b335ba07f1e8435975057e99865cea22",
+        "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+        "content": "sha256:8a0b82175688104b94db716dc406de42d5753414bc5b216eab794b1516097d1e",
         "locator": {
-          "end": 40,
+          "end": 68,
           "kind": "line_range",
-          "start": 36
+          "start": 68
+        }
+      },
+      "id": "RLZ-AR1TJG",
+      "invariant": "INV-S9H78W",
+      "origin": {
+        "handoffEntry": "L84-P5-19 / L84-P5-18 pair 6",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This sentence is the home of the rule: the Manager records the Architect's or developer's approval for an extra round.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+        "content": "sha256:69cdd04a7a7269e9c7336747a8deea48b63f1791e9363b6e377443dcc88af6f3",
+        "locator": {
+          "end": 45,
+          "kind": "line_range",
+          "start": 34
+        }
+      },
+      "id": "RLZ-E0YDQM",
+      "invariant": "INV-MTRR08",
+      "origin": {
+        "handoffEntry": "K3-MTRR08-leaf-stage-starts",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The Manager starts each leaf stage once (Worker at build, Reviewer at the freeze, Curator when curation begins after code PASS), freeze and PASS notices go to the Manager first, then the Worker sends the freeze directly once the Reviewer exists.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+        "content": "sha256:790f9bbaf224d7945aa19ac524f2d05bdab9bc5e8a53200cc1f51c68983ad7e6",
+        "locator": {
+          "end": 161,
+          "kind": "line_range",
+          "start": 155
         }
       },
       "id": "RLZ-GNQNEF",
@@ -61,12 +137,12 @@
     },
     {
       "anchor": {
-        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-        "content": "sha256:484f3851d68df9b063e36cf84b4ffa2612568f10d7daa7069651832fb889c358",
+        "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+        "content": "sha256:52f4994c54230316b42db3afca8b85db3d1863de79213b966b77c3698d1b2fa4",
         "locator": {
-          "end": 30,
+          "end": 112,
           "kind": "line_range",
-          "start": 30
+          "start": 112
         }
       },
       "id": "RLZ-H0W6SX",
@@ -80,12 +156,12 @@
     },
     {
       "anchor": {
-        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-        "content": "sha256:ec8ab946f6b86e4cf35b3169c50af48c47982769eeb441faa08a0858d3170013",
+        "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+        "content": "sha256:48567910a9664b66a25218cdf698df2df1f574f28e50490a8285b655789caca6",
         "locator": {
-          "end": 30,
+          "end": 88,
           "kind": "line_range",
-          "start": 23
+          "start": 75
         }
       },
       "id": "RLZ-JF7EP8",
@@ -99,12 +175,31 @@
     },
     {
       "anchor": {
-        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-        "content": "sha256:fd97efca3521a234676e5b0bcdc806fbdd0827156b2fbdf22900b9a55b5410f8",
+        "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+        "content": "sha256:954b446cd02ec45a522b21009929298bae809cad14ebe79c27c17915009ca750",
         "locator": {
-          "end": 34,
+          "end": 12,
           "kind": "line_range",
-          "start": 34
+          "start": 8
+        }
+      },
+      "id": "RLZ-MEGZSD",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "K3-A6GAKX-coordination-owner",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "States the delegation rule inline in the coordination operation: one Manager per master, one Orchestrator on the sprint for two or more masters (starting one Manager each), direct coordination only on the developer's choice, and a refused start reported rather than replaced by direct coordination.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+        "content": "sha256:bd3a20f5f71f639cf00f5112e8f6050ae7cce858a549bbc628592f30268e9681",
+        "locator": {
+          "end": 151,
+          "kind": "line_range",
+          "start": 151
         }
       },
       "id": "RLZ-P0ZH30",
@@ -118,12 +213,12 @@
     },
     {
       "anchor": {
-        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-        "content": "sha256:59e877c574495767f31cf0b20fa0a22d6f52860614cfc0e1def7045aa6fab7d2",
+        "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+        "content": "sha256:954b446cd02ec45a522b21009929298bae809cad14ebe79c27c17915009ca750",
         "locator": {
-          "end": 6,
+          "end": 12,
           "kind": "line_range",
-          "start": 6
+          "start": 8
         }
       },
       "id": "RLZ-VHD2RF",
@@ -137,12 +232,12 @@
     },
     {
       "anchor": {
-        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-        "content": "sha256:e4a085429371e477646de8aa7d54f12fb9fbd4fb1aeaa5d7a12ffcac9a43dba3",
+        "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+        "content": "sha256:c4508542944d8e23cad874b60fb2033d533f6738e171a4cd8689d80b9f0b7d15",
         "locator": {
-          "end": 30,
+          "end": 88,
           "kind": "line_range",
-          "start": 13
+          "start": 36
         }
       },
       "id": "RLZ-XF8A3Q",
@@ -157,41 +252,52 @@
   ],
   "references": {
     "1": {
-      "note": "Normal leaf stages start individually: Worker at build, Reviewer at freeze and Curator after code PASS; required notices reach Manager before direct peer handovers. Messaging resolves one live seat or refuses ambiguity. Further messages are held behind already waiting work; unfinished starts, pending permission and turns whose providers do not take steering postpone delivery without answering the permission. The product’s active sweep or ended-turn drain delivers admissible held work without sender resubmission. CODE and MEMORY keep separate recorded counts under the settings limit and recorded extra-round authority. Manager retains gate and transaction ownership and relays no peer contents.",
+      "note": "Normal leaf stages start individually: Worker at build, Reviewer at freeze and Curator after code PASS; required notices reach Manager before direct peer handovers. Messaging resolves one live seat or refuses ambiguity. A message to a recipient already in a turn may be held until that turn ends, and a recipient at a permission prompt is never sent a message, because that would answer the permission. The product's active sweep or ended-turn drain delivers admissible held work without sender resubmission. CODE and MEMORY keep separate recorded counts under the settings limit and recorded extra-round authority. Manager retains gate and transaction ownership and relays no peer contents.",
       "targets": [
         {
           "anchor": {
-            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-            "content": "sha256:ac3943b09cd53dcad8bcfa358cd803343d54252b07981070934ea2516bce36d0",
+            "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+            "content": "sha256:48c4de22514bb49a33b012565a03063b88499f2fba9124bb87b604afd8e8cabe",
             "locator": {
-              "end": 43,
+              "end": 54,
               "kind": "line_range",
-              "start": 4
+              "start": 36
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1e006f679fb322bbd74e0377548c29c2a387f77d",
-            "content": "sha256:937685898b7082134b865eae2288592a1c937c1a853537c90178e0d836d49f66",
+            "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+            "content": "sha256:7b806c031d620fb6cce691ed938c955b015034e2f2f627df4ca9e00d27bb29cc",
             "locator": {
-              "end": 21,
+              "end": 68,
               "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/message-handover.md"
+              "start": 66
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+            "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+            "content": "sha256:e9d9fcb96dce21a081b759573933397dd94a5277200c23c4bc62da53b4ca71bb",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
             "content": "sha256:18047a903ab86ebc63bfb05b15a195b3e10a448a0bb6230c148faf6126b19d63",
             "locator": {
-              "end": 514,
+              "end": 516,
               "kind": "line_range",
-              "start": 480
+              "start": 482
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
           },
@@ -282,10 +388,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-            "content": "sha256:e3cb95ab87a89b81e4c2015f8ca9d616d5819187405fb9964e165710434e9afb",
+            "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+            "content": "sha256:b6ce2f36eff1ebf1c013d6b26ab0675d74c6ab88c90a547612ac875242064418",
             "locator": {
-              "end": 44,
+              "end": 172,
               "kind": "line_range",
               "start": 1
             }
@@ -299,10 +405,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-            "content": "sha256:ac3943b09cd53dcad8bcfa358cd803343d54252b07981070934ea2516bce36d0",
+            "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+            "content": "sha256:404276a135433729192f001be90a19e566e6ecebb612e2634e9915c7de396bb4",
             "locator": {
-              "end": 43,
+              "end": 130,
               "kind": "line_range",
               "start": 4
             }
@@ -316,29 +422,42 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-            "content": "sha256:ac3943b09cd53dcad8bcfa358cd803343d54252b07981070934ea2516bce36d0",
+            "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+            "content": "sha256:6d820ec8f877cbac1dafe5046482601a50e7e4f2a52d395e1f8f33c70161374d",
             "locator": {
-              "end": 43,
+              "end": 81,
               "kind": "line_range",
-              "start": 4
+              "start": 33
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+            "content": "sha256:008a9d834646564a39bfc0b0f957c855878328eca3c3e4fb664c80e66df6e370",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "A Manager receiving intent-review-open waits for the Architect's go and never retries the start.",
+      "note": "A Manager receiving intent-review-open waits for the Architect's go and never retries the start.\n\nAnchor: `intent-review-open`",
       "targets": [
         {
           "anchor": {
-            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-            "content": "sha256:4b74a662c41c5270ee06890d885b3b2ffde05e203a356be4549be13e10951395",
+            "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+            "content": "sha256:8051c8648bc277b1c1a20950d8ddf0e001ee6d4259e31c7f37df692e1092f27a",
             "locator": {
-              "end": 25,
+              "end": 77,
               "kind": "line_range",
-              "start": 23
+              "start": 77
             }
           },
           "kind": "code"

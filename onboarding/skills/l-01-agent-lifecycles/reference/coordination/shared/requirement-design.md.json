@@ -1,0 +1,110 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/requirement-design.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Requirement changes are tested against callers and phases, prior directions and the existing structure before being fixed.\n\nAnchor: `Problem`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b1a087bab919243504c8a098f1f5d2e716f342c",
+            "content": "sha256:e3831800df9cd64be4c84929fb867c37243226b99bcc6724498dfb0192ab7b06",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Harness behaviour is checked before adding rules, and providers are settings unless the developer constrains them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b1a087bab919243504c8a098f1f5d2e716f342c",
+            "content": "sha256:038fdebb9cae92ef19f3c23f9916ab140b134e057fbc9eafa36caa868f45ea64",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One request is one task, a split is proposed, new tasks get one major step per role, and existing tasks keep their structure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b1a087bab919243504c8a098f1f5d2e716f342c",
+            "content": "sha256:589d14d1ea03295bb6d5d5467c53fde664894c09f9e722ee509167caa4c6d18d",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Release to a Worker follows the shared restriction-disclosure sections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b1a087bab919243504c8a098f1f5d2e716f342c",
+            "content": "sha256:8221d2715f852cf43c874a05e3f0530b6045a72e1b8539765eae9b716d6a8fe7",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Controls get one named location, and the dashboard stays usable with no agent active.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b1a087bab919243504c8a098f1f5d2e716f342c",
+            "content": "sha256:60cf97c34993999667d09dab9169e6fe5a8686557de6455ee4a3f2e6e784af38",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The Architect role points here before authoring or amending a requirement.\n\nAnchor: `requirement-design.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:be44e574521e744d59cc1ff9bcb663c50db9af851067e6a7e3df76c0a88c2567",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

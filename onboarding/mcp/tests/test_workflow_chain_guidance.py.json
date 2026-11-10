@@ -431,12 +431,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:2daaa90934a9534917f3925925db234cf24602c4be2e4422b8961748d832768e",
+            "blob": "830d89bb301c2fd59337d82f6f8aa7abf676b4e6",
+            "content": "sha256:59e0e1653d5a589fe09a0646e0ece6d41f34bb59394ec582e7af93d79916c9f6",
             "locator": {
-              "end": 569,
+              "end": 612,
               "kind": "line_range",
-              "start": 569
+              "start": 612
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -480,12 +480,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
             "content": "sha256:66bc5c8f67ae02c70ed7e6faf1e639b8b56895993669751bc7b2854fd52537c6",
             "locator": {
-              "end": 58,
+              "end": 60,
               "kind": "line_range",
-              "start": 58
+              "start": 60
             },
             "path": "mcp/src/agents_remember/models/base.py"
           },
@@ -494,22 +494,11 @@
       ]
     },
     "38": {
-      "note": "The guard that withholds a hint which cannot name the response's own place.\n\nAnchor: `bound_next_step`",
+      "note": "The guard that withholds a hint which cannot name the response's own place.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
-            "content": "sha256:611cce8419f2f98ceb4edd0b31ea0dc5fe740280eed2d76a3dce05c98fa22b14",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/tool_response.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
             "content": "sha256:129afbc7db95453225dc24dc3d91b07668c255b319898fb911556658fe5c0777",
             "locator": {
               "kind": "symbol",

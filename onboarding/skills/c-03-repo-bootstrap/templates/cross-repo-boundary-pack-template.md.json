@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbf691b2c006d7676d44e5b256b4032ef29be816",
+            "blob": "058f3a7d7a6c39da6a6388328d7401230beaa84b",
             "content": "sha256:0495aa975fc06626cdc0441de2719c70c41786c0263f3ac51202914447d859f7",
             "locator": {
-              "end": 32,
+              "end": 34,
               "kind": "line_range",
-              "start": 11
+              "start": 13
             }
           },
           "kind": "code"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbf691b2c006d7676d44e5b256b4032ef29be816",
+            "blob": "058f3a7d7a6c39da6a6388328d7401230beaa84b",
             "content": "sha256:b0cff865e5e9ed64dfbf5d7ff5e9702bc38ef066e5b7b3fea429208d94764392",
             "locator": {
-              "end": 51,
+              "end": 53,
               "kind": "line_range",
-              "start": 33
+              "start": 35
             }
           },
           "kind": "code"
@@ -37,16 +37,16 @@
       ]
     },
     "3": {
-      "note": "The bootstrap skill directs Phase 4F packs for priority routes with inbound or outbound signals and bounds adjacent reads and LOW-confidence ties.\n\nAnchor: \"### 4F — Cross-Repo Boundary Pass\"",
+      "note": "The bootstrap skill directs Phase 4F packs for priority routes with inbound or outbound signals and bounds adjacent reads and LOW-confidence ties.\n\nAnchor: `### 4F — Cross-Repo Boundary Pass`",
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:61fe757accf210846aba30b17eadfa4d980175f3d9a0efa8c32b53d6b1cbd399",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:5c71c3ba973b66a7307a5bcda9cd3beca1657d23946111b203f8c76149ae82e4",
             "locator": {
-              "end": 958,
+              "end": 907,
               "kind": "line_range",
-              "start": 936
+              "start": 885
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
@@ -55,16 +55,16 @@
       ]
     },
     "4": {
-      "note": "The bootstrap preservation contract keeps adjacent-repository evidence read-only and limits memory updates to the target repository.\n\nAnchor: \"6. **Cross-repo read-only semantics**\"",
+      "note": "The bootstrap preservation contract keeps adjacent-repository evidence read-only and limits memory updates to the target repository.\n\nAnchor: `Cross-repo read-only semantics`",
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:aa2ded241be74e1dff5276862e7a2426463b297765d71b655d33a9ff74753bb9",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:3c8fb02c01241f3f6f91f0b12aed156484bf384bf383e805356df2a096e3a3b9",
             "locator": {
-              "end": 159,
+              "end": 127,
               "kind": "line_range",
-              "start": 156
+              "start": 127
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
@@ -73,42 +73,34 @@
       ]
     },
     "5": {
-      "note": "Converted cards use writer-owned companions without legacy verification metadata or in-card history. The fixer and writer are the normal first route; only a covered correct-input refusal admits the declared same-tool/input-class recovery, with its owner-notice, provenance, check and defect-issue duties. Missing admission and guard, validation, sync, gate and permission stops are not waived.",
+      "note": "Converted cards keep metadata stamps, card-local change history and completed citation tables out of their bodies; the fixer writes the numbered evidence lines and the sidecar.",
       "targets": [
         {
           "anchor": {
-            "blob": "f7ea3c8b7f6e2ce1a210dbc43dcc9694cd25721b",
-            "content": "sha256:b526393cd8ec6bff04ee0b35cbb041cd30eadd98a7a5f7f1a1504453d77ffaa7",
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:4e75fbc5380b5de9de6fbf8fc60b2b909084bb91d10a987d17768f787b4d15e9",
             "locator": {
-              "end": 35,
+              "end": 47,
               "kind": "line_range",
-              "start": 7
+              "start": 47
             },
-            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "6": {
+      "note": "Only a covered correct-input write refusal admits the same-tool recovery ladder.",
+      "targets": [
         {
           "anchor": {
-            "blob": "f4accad939315db39d9f7f7dd3af0f5d3f0687ac",
-            "content": "sha256:8031e11efa86fb44f60b8d3cc33f99f92fb3bcff145decd47bb4d04c96df2e1e",
-            "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 56
-            },
-            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "77193c73e40d8dcf1ac8b7158debe508e2d02065",
-            "content": "sha256:52ce87cbd8720457b6cdffb7d69b8f1e24e421042c4946c15de23a9e9daeeb87",
+            "blob": "c5c547f2f6818f886972bce92087be9d041c1fc9",
+            "content": "sha256:7d2907a8ef2eb4061c096a75421a2ea0ac23f9e0ab19c403d8df8e100dbf0b4f",
             "locator": {
               "end": 38,
               "kind": "line_range",
-              "start": 3
+              "start": 1
             },
             "path": "skills/l-01-agent-lifecycles/reference/refused-write.md"
           },

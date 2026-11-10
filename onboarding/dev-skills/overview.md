@@ -8,7 +8,7 @@
 
 ## Governing Overview
 
-[Repository overview](../overview.md)
+[overview](../overview.md)
 
 ## Purpose
 
@@ -56,13 +56,13 @@ There are no child overviews in this route. The dashboard skill is covered here 
 
 ## Invariants And Boundaries
 
-`scripts/sync-skills.py` copies the canonical `skills/` tree into fixed MCP package-data and harness starter targets. It does not copy `dev-skills/`. Its `--check` operation compares those targets with `skills/`; it does not inspect the `dev-skills/` source tree. A manually installed folder inside a checked target can nevertheless be reported as extra target content.
+`scripts/sync-skills.py` copies the canonical `skills/` tree into the fixed MCP package-data target. It does not copy `dev-skills/`. Its `--check` operation compares that target with `skills/`; it does not inspect the `dev-skills/` source tree. A folder placed inside the checked target can nevertheless be reported as extra target content.
 
 Do not add a dev-skill to the sync targets or move it into `skills/` without deciding that it should ship to users. Changes under this route remain outside that distribution flow and are used through manual installation.
 
 | Nearby Thing | Belongs Instead In |
 |---|---|
-| User-facing / shipped skills (synced to harnesses) | `skills/` |
+| User-facing / shipped skills (served to harnesses from the package) | `skills/` |
 | Product design docs (scenario catalog, doctrine) | `docs/design/` (excluded by the inspected memory settings) |
 
 Distribution and onboarding scope are separate boundaries. Existing onboarding Markdown and JSON sidecars cover this route, but the inspected memory `system/settings.json` does not list `dev-skills/**` among its include paths. The source README likewise says this tree is outside the include scope, then incorrectly infers that no onboarding sidecars exist. Existing cards establish coverage already present; they do not establish current inclusion or provider indexing. Retain the existing coverage unless the owner separately changes inclusion policy; this overview does not change that policy or claim provider indexing.

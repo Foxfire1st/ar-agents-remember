@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The handoff template tells authors to omit an ungoverned route, and the realization parser rejects placeholder or non-text routes before they can create false governing paths."
+  },
   "applicability": "Curator hand-off entries admitted through the ordinary curator writer that would write new realization claims and that write a governing_route at a target or at authority.",
   "conditions": [
     "A converted file-writer handoff supplies realization targets; _targets runs the shared value/route refusal before planning those targets."

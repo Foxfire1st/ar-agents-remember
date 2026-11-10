@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Shared response envelopes define the token metadata fields on the `ResponseModel` base.\n\nAnchor: `ResponseModel`",
+      "note": "Shared response envelopes define the token metadata fields on the `ResponseModel` base.\n\nAnchor: `tokenCountExact`",
       "targets": [
         {
           "anchor": {
-            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
-            "content": "sha256:9a0d5793850004aa14c40ba9565c3926c5407d032778d4b68f3eb416b7c40e0b",
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:6e01e70de86b1302101486e48660e85758279e8ab8f96863202efc2c4c442a84",
             "locator": {
-              "kind": "file"
+              "end": 69,
+              "kind": "line_range",
+              "start": 66
             },
             "path": "mcp/src/agents_remember/models/base.py"
           },

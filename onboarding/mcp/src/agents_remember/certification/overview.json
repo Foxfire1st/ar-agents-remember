@@ -468,8 +468,47 @@
       ]
     },
     "21": {
-      "note": "Curator preparation uses source-bound converted onboarding traces; missing converted sides are incomplete, with no legacy body/history fallback.",
+      "note": "Curator preparation uses source-bound converted onboarding traces; a memory side that cannot be established is incomplete and is reported as a finding, never a pass, and the onboarding refresh refuses an incomplete side instead of falling back.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "cc3ddad2210e25566378995fa748618b9afcee64",
+            "content": "sha256:de3fc038b33181c2e6fe5f7edeac472f1f53f70e6374ec7dd198410fc5cec6cd",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:1c70f68f02f9b5ddf76a35c67f3b48b2ec65f02ff5347ae5e65b4ff6848d89b9",
+            "locator": {
+              "end": 628,
+              "kind": "line_range",
+              "start": 605
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:71d35c0442bd7a7eaf11c57a918c1953129445bcdaa4c6cab9cbe700e9624a4e",
+            "locator": {
+              "end": 754,
+              "kind": "line_range",
+              "start": 735
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
@@ -480,19 +519,6 @@
               "start": 834
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:310fd305075fa63647eed336a751579c11a6b80e5e89640ebf26a28897522997",
-            "locator": {
-              "end": 315,
-              "kind": "line_range",
-              "start": 287
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },
           "kind": "code"
         }

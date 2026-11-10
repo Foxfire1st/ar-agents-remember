@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
         "content": "sha256:13aaf574b6e483c1bdeef8d9fb3c6bf67b347e7cae4a9a58c663863b63eec274",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,26 @@
     },
     {
       "anchor": {
-        "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:6d0fdca01212f78b30288fe53a94abcc20e9ab3a9798b7c9b1f7d68fa08463b5",
+        "locator": {
+          "end": 137,
+          "kind": "line_range",
+          "start": 137
+        }
+      },
+      "id": "RLZ-7E4V9B",
+      "invariant": "INV-B6D2SA",
+      "origin": {
+        "handoffEntry": "L84-K3C-B6D2SA-04",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The dashboard state and status stream carry the serving build's currentness as an observation separate from its identity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
         "content": "sha256:3906a46d742fa21e581aa436122da39db34575f53e0aa52f7479d72c7b8cdb07",
         "locator": {
           "kind": "symbol",
@@ -40,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
-        "content": "sha256:58c95707316a19ea750b745f6d5fed6a75d59a2bddedd66d95c6a2d924de2485",
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:cb9dc4dc04403646f7c02a1e6b72b270a29e51547c805260483fc86e7a50e6f3",
         "locator": {
           "kind": "symbol",
           "name": "_register_projection_routes"
@@ -58,8 +77,46 @@
     },
     {
       "anchor": {
-        "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
-        "content": "sha256:4aab52211c73a20184310f31c88a177760717945199c4ab452fd1d8ae0a38a1b",
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:597585975412f75c5d3607bc7cb8397f32edb75ceee78bf9297204e297892425",
+        "locator": {
+          "end": 152,
+          "kind": "line_range",
+          "start": 143
+        }
+      },
+      "id": "RLZ-B648F0",
+      "invariant": "INV-B6D2SA",
+      "origin": {
+        "handoffEntry": "L84-K3C-B6D2SA-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The dashboard state and status stream carry the serving build's currentness as an observation separate from its identity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:546be3a4fa330bcef0772d042413451e13fc9df6a985a429a86c4daf58ee1d1d",
+        "locator": {
+          "end": 121,
+          "kind": "line_range",
+          "start": 116
+        }
+      },
+      "id": "RLZ-GS7PT2",
+      "invariant": "INV-B6D2SA",
+      "origin": {
+        "handoffEntry": "L84-K3C-B6D2SA-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The dashboard state and status stream carry the serving build's currentness as an observation separate from its identity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:f2e04708bedd8d14619cfc871e53648ebe7dd53daaa9fe753516abb2c3e4faf6",
         "locator": {
           "kind": "symbol",
           "name": "api_stream"
@@ -76,7 +133,7 @@
     },
     {
       "anchor": {
-        "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
         "content": "sha256:e4178b7ceb63f539ffb08005bbae6c31f5006b9fd78da33f285d940265e08517",
         "locator": {
           "kind": "symbol",
@@ -94,7 +151,26 @@
     },
     {
       "anchor": {
-        "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:63b1e8c20c4c10bab6334deac876f1037db5c3de92039e78ac2d776c09a54953",
+        "locator": {
+          "end": 249,
+          "kind": "line_range",
+          "start": 234
+        }
+      },
+      "id": "RLZ-XYGMMF",
+      "invariant": "INV-B6D2SA",
+      "origin": {
+        "handoffEntry": "L84-K3C-B6D2SA-03",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The dashboard state and status stream carry the serving build's currentness as an observation separate from its identity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
         "content": "sha256:baffae246adc8ca34e1a4978e4f637a5d07bf112180da7c81905697ed5c5cf10",
         "locator": {
           "kind": "symbol",
@@ -113,14 +189,15 @@
   ],
   "references": {
     "1": {
-      "note": "The state response uses projector revision weak ETags, refuses an absent snapshot, returns bodyless 304 on a match, otherwise copies the memoized projection and adds the served-state tail.\n\nAnchor: `_state_response`",
+      "note": "The state response uses weak ETags from the projector revision (with the build-currentness stamp appended when a reading exists), refuses an absent snapshot, returns bodyless 304 on a match, otherwise copies the memoized projection and adds the served-state tail.",
       "targets": [
         {
           "anchor": {
-            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
-            "content": "sha256:f439b773bf39e580bd8927aa89a82039a5ea056a0b58f680dbd48b82ae7d662b",
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:d044a3c36d7c0fd08ba3ec1b759fa3ab9b25a250a0f010ad3d1b04fdb725dba6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_state_response"
             }
           },
           "kind": "code"
@@ -128,14 +205,65 @@
       ]
     },
     "4": {
-      "note": "The review stream multiplexes projection/memory invalidation with moved notices. _merged_stream lets notice exhaustion leave the page stream alive and ordinary stream exhaustion close it; finally cancels/gathers pending next-event tasks and aclosing releases subscriptions.\n\nAnchor: `_review_stream`",
+      "note": "The review stream multiplexes projection/memory invalidation with moved notices. _merged_stream lets notice exhaustion leave the page stream alive and ordinary stream exhaustion close it; finally cancels/gathers pending next-event tasks and aclosing releases subscriptions.",
       "targets": [
         {
           "anchor": {
-            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
-            "content": "sha256:f439b773bf39e580bd8927aa89a82039a5ea056a0b58f680dbd48b82ae7d662b",
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:13aaf574b6e483c1bdeef8d9fb3c6bf67b347e7cae4a9a58c663863b63eec274",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_review_stream"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The build-currentness reading stamps the state ETag and rides the served tail.\n\nAnchor: `hashlib.sha256`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:d044a3c36d7c0fd08ba3ec1b759fa3ab9b25a250a0f010ad3d1b04fdb725dba6",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`status=true` inspects a checkout build too and answers without the conditional-read short cut.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:add543a7143cb72fbd6d6350d1f74cd5aecc9ff738e6177831e6150ab835f8d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The liveness beat publishes build-currentness transitions to open pages.\n\nAnchor: `event=\"buildCurrentness\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:4d4abea7386b608e7aab85683003428d6d4fdf8a57115c34508fed5ce1a8085a",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 234
             }
           },
           "kind": "code"

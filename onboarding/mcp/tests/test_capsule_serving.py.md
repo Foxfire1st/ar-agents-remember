@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[tests overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -30,4 +30,4 @@ The synthetic manifest now declares `audience: all` for each operation. Its unse
 - Shipped-surface, exchange and guard cases moved to the surface module [19]
 
 
-- The only source change gives every synthetic operation an explicit audience=all, matching the extended manifest schema without changing expected synthetic operation bodies. All existing no-read-tree-write, role acquisition, task-digest, skill-reference/tool-boundary and resource registry cases remain. [20]
+- Every synthetic operation declares an explicit audience=all, matching the extended manifest schema without changing expected synthetic operation bodies, beside the no-read-tree-write, role acquisition, task-digest, skill-reference/tool-boundary and resource registry cases. [20]

@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Descriptor-confined traversal, bounded per-entry inspection, explicit error handling and request-local reads together provide a current notes-folder listing without escaping its root or retaining stale state; no member provides that complete listing contract."
+  },
   "guarantee": "The notes listing costs one nofollow stat per entry plus a second followed stat for symlink entries, with path resolution paid only for the notes root and for symlinks, and it still means: nothing listed from outside the notes root even when a directory is swapped for a symlink mid-open, no whole-answer failure from a looping or file-traversing symlink, and no state kept between requests. Dated L55 truth preserved: the whole-tree list wire (same response bytes, depth-4 truncation, readdir-order ties, propagate-other-errors) belonged to the removed endpoint and is retired with it; the per-folder properties above are the current joint guarantee under the accepted packet.",
   "id": "FAM-4V4GSQCS",
   "members": [

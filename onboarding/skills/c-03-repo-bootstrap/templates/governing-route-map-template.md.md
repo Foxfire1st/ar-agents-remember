@@ -39,9 +39,13 @@ The checked template and relevant repository-local bootstrap-skill sections defi
 ### Repo-Internal References
 
 - The route map places local overviews without replacing file-level onboarding. [1]
+
 - The map records proposed and deferred routes, moved/deleted-route decisions, cross-cutting anchors, parent/child relationships and developer questions. [2]
+
 - Phase 4B writes the governing route map and records stale, moved or deleted routes in slice maintenance. [3]
+
 - Overview cards and overview waves follow the route-map phase. [4]
+
 - Existing-memory slice maintenance starts from existing memory and considers preservation before removal of moved or deleted route knowledge. [5]
 
 ### Cross-Repo References

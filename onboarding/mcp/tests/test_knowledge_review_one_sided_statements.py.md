@@ -194,9 +194,7 @@ Fixture repositories and protocol doubles do not establish a live external integ
 
 
 
-- **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.**
-
-Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3309-3309 - the bytes it recorded now occur 32 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1672-1672 - the bytes it recorded now occur 8 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted [16]
+- The lane row that selects this module, and the consumer rows of the two shared-support artifacts it imports (knowledge rows and read scope). [16]
 
 
 - The `consumer_scope = "exact"` artifact whose list this module joined.

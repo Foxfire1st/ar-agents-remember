@@ -1,25 +1,32 @@
 {
   "path": "dashboard/src/data/store.test.ts",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5acd237b74191d658b8951881e101e46601e11cd",
+        "content": "sha256:1c485a41df2321a2d75c670b00cabbf7b234a1db2d64596928c87ecdb4a63f41",
+        "locator": {
+          "kind": "symbol",
+          "name": "dashboard store change gate (260703-L15) > drops a build currentness frame the producer cannot send and keeps the last observation"
+        }
+      },
+      "facet": "Applies null, a list, frames missing or with unknown mode or state, a non-text optional field and an extra key, and requires each to leave the store object and the last observation unchanged.",
+      "id": "PRF-193BVX",
+      "invariant": "INV-AN0K8G",
+      "origin": {
+        "handoffEntry": "L84-LC-02",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "System under test: the Zustand store these reducers belong to, including its one full reset transaction.\n\nAnchor: `dashboardStore` `reset`",
+      "note": "System under test: the Zustand store these reducers belong to, including its one full reset transaction.",
       "targets": [
         {
           "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
-            "content": "sha256:e6bf93bba9343c7e5745a763afa66ba650cdd0e61f20ce4f6595c1eddd38f132",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/data/store.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
             "content": "sha256:7d848921fbedbcb47a35a4619f64fd504a105dcf4386c364e35bccd9755eefb5",
             "locator": {
               "kind": "symbol",
@@ -31,7 +38,7 @@
         },
         {
           "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
             "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
             "locator": {
               "kind": "symbol",
@@ -43,12 +50,46 @@
         }
       ]
     },
+    "10": {
+      "note": "Build currentness applies independently, equal observations write nothing, and reset clears it with the process id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5acd237b74191d658b8951881e101e46601e11cd",
+            "content": "sha256:3d925956634165d7ea0c7851d1323d8d5b6aa8ab62c7f5211c8e94712816b674",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A build-currentness frame the producer cannot send is dropped and the last observation stays.\n\nAnchor: `drops a build currentness frame the producer cannot send and keeps the last observation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5acd237b74191d658b8951881e101e46601e11cd",
+            "content": "sha256:1c485a41df2321a2d75c670b00cabbf7b234a1db2d64596928c87ecdb4a63f41",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 148
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off.",
       "targets": [
         {
           "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
             "content": "sha256:2f18f6e7b4d67baf5a8247a5f1b7ef458b6058c1f0ed8858151d5ad447397bbb",
             "locator": {
               "kind": "symbol",
@@ -65,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ba1bc3b3c854df3202c4331b0326069119557ec",
+            "blob": "5acd237b74191d658b8951881e101e46601e11cd",
             "content": "sha256:8585842d4ef1b3a534314f6064cbb930f26b7f7d35c0e238aa439e63b7154e21",
             "locator": {
               "end": 102,
@@ -78,11 +119,11 @@
       ]
     },
     "4": {
-      "note": "The typed nonempty queue fixture and direct canonical-reset regression force exact queue clearance plus one generation increment.",
+      "note": "The typed nonempty queue fixture and direct canonical-reset regression force exact queue clearance plus one generation increment.\n\nAnchor: `clears a seeded closeout queue and increments generation exactly once on reset`",
       "targets": [
         {
           "anchor": {
-            "blob": "2ba1bc3b3c854df3202c4331b0326069119557ec",
+            "blob": "5acd237b74191d658b8951881e101e46601e11cd",
             "content": "sha256:f54d4c21495daf07f4f9a1e67127b1ec6c93177752ca158a003031ae2c2f5c57",
             "locator": {
               "kind": "symbol",
@@ -93,22 +134,12 @@
         },
         {
           "anchor": {
-            "blob": "2ba1bc3b3c854df3202c4331b0326069119557ec",
-            "content": "sha256:b7926dc9634c2c242fbc14aee408525a68994a92a9fa05a2597a0d3826af0fb2",
+            "blob": "5acd237b74191d658b8951881e101e46601e11cd",
+            "content": "sha256:f87b3a0cdc29384432d48640389fac8d407a5f02515e5abd2116e054250a3eae",
             "locator": {
-              "end": 114,
+              "end": 104,
               "kind": "line_range",
-              "start": 104
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2ba1bc3b3c854df3202c4331b0326069119557ec",
-            "content": "sha256:02f42c0508842019120e2f9b79377807c075084fc29fcfe67b916dcaaa704a32",
-            "locator": {
-              "kind": "file"
+              "start": 94
             }
           },
           "kind": "test"
@@ -163,16 +194,27 @@
       ]
     },
     "8": {
-      "note": "Typed reparsed supplies cloning; the heartbeat builder is no longer used here.\n\nAnchor: reparsed snapshot and task-delta controls",
+      "note": "A typed reparsed clone, with its volatile ages bumped, builds the idle snapshots of the change-gate tests.",
       "targets": [
         {
           "anchor": {
-            "blob": "2ba1bc3b3c854df3202c4331b0326069119557ec",
-            "content": "sha256:e4f1d4f78af06bd7753fae38a7ea23333baaf60ad8dfda73566e829e5f603e56",
+            "blob": "5acd237b74191d658b8951881e101e46601e11cd",
+            "content": "sha256:72bb14563ce1160f0a5ccdbe54da095eb9d732df16f9c7d138ab6cad8f3e5b20",
             "locator": {
-              "end": 168,
+              "kind": "symbol",
+              "name": "volatileBump"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5acd237b74191d658b8951881e101e46601e11cd",
+            "content": "sha256:d1f5d43e585c2e7fcc428ca2a47512d2983050639a72bb87512db50d6c9ed262",
+            "locator": {
+              "end": 117,
               "kind": "line_range",
-              "start": 108
+              "start": 112
             }
           },
           "kind": "test"
@@ -180,14 +222,15 @@
       ]
     },
     "9": {
-      "note": "The projection mirror the store folds into its id-keyed maps on each snapshot.\n\nAnchor: `WorkspaceProjection`",
+      "note": "The projection mirror the store folds into its id-keyed maps on each snapshot.",
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:daaaf9f80d95ac50acc42b4097c5fcc9293b51a91e135d7b45f3ae87ee7e947f",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "content": "sha256:833819a2086f399c2e96c1303b091dbf74f9707241e5cb699d17a5a44a464c32",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
             },
             "path": "dashboard/src/types/projection.ts"
           },

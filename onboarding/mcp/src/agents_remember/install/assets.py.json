@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Runtime install uses packaged assets unless a caller supplies an explicit source root.",
+      "note": "Runtime install uses packaged assets unless a caller supplies an explicit source root.\n\nAnchor: `packaged_source_root`",
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:bd7593e689110b2273947871c5c227f3393338406a86501018105d4132d1e4d6",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:677cb0c06e5fbd1b309876b27fb2ded12dcdba005b300d1915c2f9ec372e603a",
             "locator": {
-              "kind": "symbol",
-              "name": "install_runtime_from_config"
+              "end": 863,
+              "kind": "line_range",
+              "start": 859
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },

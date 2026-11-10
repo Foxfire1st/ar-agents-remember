@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Test suite overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -14,7 +14,7 @@ Provides public lifecycle-control helpers for tests that own a current generatio
 
 Builders preserve canonical generation, contract, worker and control identity. Existing door scheduling provenance supplies the judgment ID when present; the explicit standalone case detaches only the asserted singleton fixture sprint through the task store before returning master-scoped caller authority. This support module has no collected tests and does not itself establish coverage.
 
-Since 260831-CCR (commit `99dc249b`) the completed-disposition authority helper
+The completed-disposition authority helper
 `publish_completed_disposition_task_authority` (line 40) builds the leaf through the real
 JSON-primary store and stamps a current route review via
 `build_route_review(contract, ResolvedTaskDocument(...), payload, now=...)` (lines 92-107): the leaf
@@ -53,7 +53,9 @@ The configured Domain Documentation registry is empty. No external documentation
 The helper source establishes fixture construction; retained consumer assertions determine actual protection.
 
 - The fixed fixture judgment is used only when no selected door supplies scheduling provenance. [2]
+
 - Completed-disposition task authority is built through the store and a fixed-now route review. [3]
+
 - Completed task authority derives the typed candidate reference inside the store-backed publication. [4]
 
 ### Cross-Repo References

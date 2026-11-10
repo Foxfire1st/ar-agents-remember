@@ -163,7 +163,7 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 
 - Projection generation validates schema vocabulary and exact supplemental definitions. [18]
 
-- The retained named vocabularies are attention severity, lane and item class, plus process fact state and process health; the removed session state and phase vocabularies are not among them. [30]
+- The named vocabularies are attention severity, lane and item class, plus process fact state and process health. [30]
 
 - Ordinary schema interfaces are rendered without a lifecycle-count extension or injected metrics factory/legacy subtask union. [31]
 
@@ -171,4 +171,4 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 
 - Interactive catalog names missing authority without eligibility. [11]
 
-Retired at the fifth freeze d59c3493: mcp/tests/test-evidence-lanes.toml:1-635 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a06d2ffcfae2c277f2ae19330c17d09c616b77e8. Retired means the anchor no longer stands, not that the cited subject was deleted [25]
+- Helper test imports, source figures, historical Git pin and conditional record availability. [25]

@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The handoff template specifies authored target values and whole-operation refusal, while the shared parser diagnoses malformed text, roles and lengths before record identities or writes."
+  },
   "applicability": "Curator hand-off entries admitted through the ordinary curator writer that would write new realization claims.",
   "conditions": [
     "A converted file-writer handoff is parsed for realization targets before authoring its record and sidecar edits.",

@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
+        "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+        "content": "sha256:313c9d08261e2f44952ba8518cbf0151c2122192d38ca9d1edccd3af1c9b5b3f",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+        "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
         "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
+        "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+        "content": "sha256:313c9d08261e2f44952ba8518cbf0151c2122192d38ca9d1edccd3af1c9b5b3f",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
+        "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+        "content": "sha256:313c9d08261e2f44952ba8518cbf0151c2122192d38ca9d1edccd3af1c9b5b3f",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
+        "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+        "content": "sha256:313c9d08261e2f44952ba8518cbf0151c2122192d38ca9d1edccd3af1c9b5b3f",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
+        "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+        "content": "sha256:313c9d08261e2f44952ba8518cbf0151c2122192d38ca9d1edccd3af1c9b5b3f",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
+        "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+        "content": "sha256:313c9d08261e2f44952ba8518cbf0151c2122192d38ca9d1edccd3af1c9b5b3f",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -122,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
+        "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+        "content": "sha256:313c9d08261e2f44952ba8518cbf0151c2122192d38ca9d1edccd3af1c9b5b3f",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -139,8 +139,8 @@
     },
     {
       "anchor": {
-        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
+        "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+        "content": "sha256:313c9d08261e2f44952ba8518cbf0151c2122192d38ca9d1edccd3af1c9b5b3f",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -156,8 +156,8 @@
     },
     {
       "anchor": {
-        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
+        "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+        "content": "sha256:313c9d08261e2f44952ba8518cbf0151c2122192d38ca9d1edccd3af1c9b5b3f",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -173,8 +173,8 @@
     },
     {
       "anchor": {
-        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-        "content": "sha256:3afa34c6503c9407efcc8e95885952f9f2fd0660551ee6bc6123cc9b276e3c61",
+        "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+        "content": "sha256:9404f28c9b94cc34cfbbd423df8400ef457ee2266028cfb6269885c6a3aa7b17",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_the_curator_writer_is_admitted_for_the_selected_runtime"
@@ -192,40 +192,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The Curator wording guard names mounted knowledge_write or the admitted serving-build CLI, explicit file-write commit, and the scoped correct-write recovery exception; it does not assert unconditional route exclusivity. Anchor: `CuratorInstructionWordingTests.test_current_coordination_and_curator_rules`",
+      "note": "The Curator wording guard names mounted knowledge_write or the admitted serving-build CLI, explicit file-write commit, and the scoped correct-write recovery exception; it does not assert unconditional route exclusivity.",
       "targets": [
         {
           "anchor": {
-            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-            "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
+            "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+            "content": "sha256:313c9d08261e2f44952ba8518cbf0151c2122192d38ca9d1edccd3af1c9b5b3f",
             "locator": {
-              "end": 291,
-              "kind": "line_range",
-              "start": 180
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-            "content": "sha256:94248276e2bd28bd503a4416abd88335886b655c9724149b16c4cd116a2c8ed5",
-            "locator": {
-              "end": 151,
-              "kind": "line_range",
-              "start": 144
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-            "content": "sha256:ac93444d0accab5226995f112da3b70f07b09fe0d3c07cd4eada3f70d16c72ab",
-            "locator": {
-              "end": 178,
-              "kind": "line_range",
-              "start": 153
+              "kind": "symbol",
+              "name": "test_current_coordination_and_curator_rules"
             }
           },
           "kind": "test"
@@ -233,16 +208,15 @@
       ]
     },
     "2": {
-      "note": "The writer admission is pinned in the role, detail and operation texts, and the parser refuses the removed options with exit 2\n\nAnchor: `CuratorInstructionWordingTests.test_the_curator_writer_is_admitted_for_the_selected_runtime`",
+      "note": "The writer admission is pinned in the role, serving-build detail, publication report and operation texts, and the parser refuses the removed options with exit 2",
       "targets": [
         {
           "anchor": {
-            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-            "content": "sha256:3afa34c6503c9407efcc8e95885952f9f2fd0660551ee6bc6123cc9b276e3c61",
+            "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+            "content": "sha256:9404f28c9b94cc34cfbbd423df8400ef457ee2266028cfb6269885c6a3aa7b17",
             "locator": {
-              "end": 380,
-              "kind": "line_range",
-              "start": 312
+              "kind": "symbol",
+              "name": "test_the_curator_writer_is_admitted_for_the_selected_runtime"
             }
           },
           "kind": "test"
@@ -254,108 +228,44 @@
       "targets": [
         {
           "anchor": {
-            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-            "content": "sha256:f53c5cea0a3ba89324830cf7858fe467840ef915b61a6bf4133156981c0e1018",
+            "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+            "content": "sha256:cceba0f912b6ae3b1d9e0a2807d0bd64d67132cfb257aa9ddacf1b5180750436",
             "locator": {
-              "end": 16,
-              "kind": "line_range",
-              "start": 12
+              "kind": "symbol",
+              "name": "test_foundation_intake_and_correction_keep_their_task_and_truth_boundaries"
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "4": {
+      "note": "The coordination detail must be offered at each of the eight failed-scenario steps of the compiled capsules.",
+      "targets": [
         {
           "anchor": {
-            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-            "content": "sha256:2a45a09f5dd8bbcbc5c62d7d91afb10e715fe284f630c02a8a16d7179d0d6271",
+            "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+            "content": "sha256:6372bb12bab919bbcb9a627dcadaf8a4d2e294d5d40843b7948bd3bd41c687c0",
             "locator": {
-              "end": 27,
-              "kind": "line_range",
-              "start": 22
+              "kind": "symbol",
+              "name": "test_coordination_detail_is_offered_at_all_eight_failed_scenario_steps"
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "5": {
+      "note": "The compiled-capsule helper comes from the capsule-delivery proof module.\n\nAnchor: `_compiled_outcome`",
+      "targets": [
         {
           "anchor": {
-            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-            "content": "sha256:ce2d847d944cd5572d3a04bb62aca153fb3813a38c3abe6c7de51628a95167ef",
+            "blob": "7ffb4001f4706a1a031496580dc8db79f5b6ff60",
+            "content": "sha256:4e298a5480a7e34d6a4b766218a8b16a81f9cd613f17dfd641bafce984120ad5",
             "locator": {
-              "end": 91,
+              "end": 39,
               "kind": "line_range",
-              "start": 45
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-            "content": "sha256:e139723b0c189c4b2d80c7d907bd0f7b26719558364bc3d0e39c1bbb6545b414",
-            "locator": {
-              "end": 114,
-              "kind": "line_range",
-              "start": 93
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-            "content": "sha256:1c50a03b4baba571733ede16cf4baa1b29f558663068f1a966142c23deb9debf",
-            "locator": {
-              "end": 142,
-              "kind": "line_range",
-              "start": 116
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-            "content": "sha256:94248276e2bd28bd503a4416abd88335886b655c9724149b16c4cd116a2c8ed5",
-            "locator": {
-              "end": 151,
-              "kind": "line_range",
-              "start": 144
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-            "content": "sha256:ac93444d0accab5226995f112da3b70f07b09fe0d3c07cd4eada3f70d16c72ab",
-            "locator": {
-              "end": 178,
-              "kind": "line_range",
-              "start": 153
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-            "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
-            "locator": {
-              "end": 291,
-              "kind": "line_range",
-              "start": 180
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
-            "content": "sha256:3afa34c6503c9407efcc8e95885952f9f2fd0660551ee6bc6123cc9b276e3c61",
-            "locator": {
-              "end": 380,
-              "kind": "line_range",
-              "start": 312
+              "start": 39
             }
           },
           "kind": "test"

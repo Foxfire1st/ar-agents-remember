@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:d9c4a9681dbcb6bfd24515000e4c6c1c01e7bf4be914e6bc90a6caf80eab6cc4",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:b3b3c880f3d968f51fa56d6131b9233363d37388ca4337c3934ecffe0899ed17",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:b3b3c880f3d968f51fa56d6131b9233363d37388ca4337c3934ecffe0899ed17",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:c53a9e2cf6384dad141cbf6a4974db4c62886d8da66cc19c40552898e5dbc5ed",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:7fa570a40c3afad33e1e1a0e54e227a195bff8974254bab5b306549613e19b38",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:4e0648267e71597f38761786e70687032262da593b9dc22a33e16d39017789dd",
         "locator": {
           "kind": "symbol",
@@ -112,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:0ba8a940af2b66a26839e4a480e36683435f58ddfe6710f1fe4e75dc45830551",
         "locator": {
           "kind": "symbol",
@@ -130,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:9a79d8acb71cfb58f7361f72b09514f265cccb99c2fe5ed8dd6f6f3b53ae9787",
         "locator": {
           "kind": "symbol",
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:a07a4a5d51ddf06b80eb0517d52d7b1806ab802b9d0de471afa421c3e3423698",
         "locator": {
           "kind": "symbol",
@@ -166,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:0ba8a940af2b66a26839e4a480e36683435f58ddfe6710f1fe4e75dc45830551",
         "locator": {
           "kind": "symbol",
@@ -184,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:0e92557323eccebed630f23694092d50dc2bd8af0a43a61cb0ee9fa725d9b33a",
         "locator": {
           "kind": "symbol",
@@ -202,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:f433c3c68677873c10e71d1164bd9fe87b5f8e54f93857c1c3288179bcecd59f",
         "locator": {
           "kind": "symbol",
@@ -220,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:af05b6513904b5830e5f7c484b40de7d92e59be28f58eac00bcce69265aa3350",
         "locator": {
           "kind": "symbol",
@@ -238,7 +238,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:fdff39263572e47044d6cfc0046d1335f12b686a5883c7617d8fc2a3e19be3d2",
         "locator": {
           "kind": "symbol",
@@ -256,7 +256,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:d9c4a9681dbcb6bfd24515000e4c6c1c01e7bf4be914e6bc90a6caf80eab6cc4",
         "locator": {
           "kind": "symbol",
@@ -274,8 +274,8 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-        "content": "sha256:dca4953c08d7fa4efef2fb1bd63ff37ff5f50a34fd2743583c3ff5545a924898",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+        "content": "sha256:04a5fba3d3316d4c049985735011d3d6d6cd9a35278698a508b4ae537566a157",
         "locator": {
           "kind": "symbol",
           "name": "refresh_entity_fingerprints_for_context"
@@ -292,7 +292,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:38021917f0205604fba91c548fb2fa323cbd032623accb44a43b5ac473a8d50e",
         "locator": {
           "kind": "symbol",
@@ -310,7 +310,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:afe5f6bf5518fbed0f3abfda588a387aa836a70f1b6885162e560ae5481cdbf9",
         "locator": {
           "kind": "symbol",
@@ -328,7 +328,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+        "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
         "content": "sha256:db36c5015d8017a4d457b5064a65e14d963a0f21dd9a67a02e49cd969c497faa",
         "locator": {
           "kind": "symbol",
@@ -347,29 +347,15 @@
   ],
   "references": {
     "1": {
-      "note": "Converted-tree classification remains layout-marker based at the retained knowledge-gate owner; the local converted_onboarding wrapper was removed.",
+      "note": "Converted-tree classification is layout-marker based at the knowledge-gate owner, not in this module.",
       "targets": [
         {
           "anchor": {
             "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
             "content": "sha256:24721572f575894b915f5f8db78f5871a6688aae3dcadad1969af45942dc481b",
             "locator": {
-              "end": 123,
-              "kind": "line_range",
-              "start": 117
-            },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
-            "content": "sha256:951d2181c4099c667ab96430207c3c06381717c64557b7497b36e6c4e6c96c84",
-            "locator": {
-              "end": 188,
-              "kind": "line_range",
-              "start": 174
+              "kind": "symbol",
+              "name": "converted_memory"
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -395,11 +381,22 @@
       ]
     },
     "13": {
-      "note": "The surviving curator trace entry takes the candidate blobs and the run's identical-copy groups through one inputs value and requires current eligible answers; missing converted sides are incomplete.  Anchor: `onboarding_trace_gate_for_context` `_onboarding_trace_open` `OnboardingTraceInputs` `_worklist_identical_changes`",
+      "note": "The curator trace entry takes the candidate blobs and the run's identical-copy groups through one OnboardingTraceInputs value.",
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:f433c3c68677873c10e71d1164bd9fe87b5f8e54f93857c1c3288179bcecd59f",
+            "locator": {
+              "kind": "symbol",
+              "name": "OnboardingTraceInputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
             "content": "sha256:b3b3c880f3d968f51fa56d6131b9233363d37388ca4337c3934ecffe0899ed17",
             "locator": {
               "kind": "symbol",
@@ -422,17 +419,6 @@
         },
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:f433c3c68677873c10e71d1164bd9fe87b5f8e54f93857c1c3288179bcecd59f",
-            "locator": {
-              "kind": "symbol",
-              "name": "OnboardingTraceInputs"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:a9ce0154bceaa1f9de90686202afce80831ad1f1264b3a7a1e092b63474d9793",
             "locator": {
@@ -440,16 +426,6 @@
               "name": "_worklist_identical_changes"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "code"
         },
@@ -482,7 +458,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
             "content": "sha256:d9c4a9681dbcb6bfd24515000e4c6c1c01e7bf4be914e6bc90a6caf80eab6cc4",
             "locator": {
               "kind": "symbol",
@@ -498,7 +474,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
             "content": "sha256:0ba8a940af2b66a26839e4a480e36683435f58ddfe6710f1fe4e75dc45830551",
             "locator": {
               "kind": "symbol",
@@ -514,7 +490,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
             "content": "sha256:af05b6513904b5830e5f7c484b40de7d92e59be28f58eac00bcce69265aa3350",
             "locator": {
               "kind": "symbol",
@@ -530,7 +506,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
             "content": "sha256:db36c5015d8017a4d457b5064a65e14d963a0f21dd9a67a02e49cd969c497faa",
             "locator": {
               "kind": "symbol",
@@ -546,7 +522,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
             "content": "sha256:c53a9e2cf6384dad141cbf6a4974db4c62886d8da66cc19c40552898e5dbc5ed",
             "locator": {
               "kind": "symbol",
@@ -562,7 +538,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
             "content": "sha256:9a79d8acb71cfb58f7361f72b09514f265cccb99c2fe5ed8dd6f6f3b53ae9787",
             "locator": {
               "kind": "symbol",
@@ -578,7 +554,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
             "content": "sha256:a07a4a5d51ddf06b80eb0517d52d7b1806ab802b9d0de471afa421c3e3423698",
             "locator": {
               "kind": "symbol",
@@ -594,7 +570,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
             "content": "sha256:38021917f0205604fba91c548fb2fa323cbd032623accb44a43b5ac473a8d50e",
             "locator": {
               "kind": "symbol",
@@ -605,23 +581,45 @@
         }
       ]
     },
-    "3": {
-      "note": "The helper raises for missing/unsupported cards; the trace wrapper catches that RuntimeError and prepends the finding while retaining trace findings.\n\nAnchor: `_require_onboarded_sources` `onboarding_trace_gate_for_context`",
+    "22": {
+      "note": "The missing-fingerprint remedy directs the operator to the `l-01-agent-lifecycles` Curator procedure.",
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:72de93c7e7eb57c6ee09b073c9af99d21cccb8164f12e8a55d08288480e911e3",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_FINGERPRINT_CLEARING"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "23": {
+      "note": "The missing-card refusal directs the operator to the Curator procedure before rerunning closeout.",
+      "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:ecbd425ae860e645c5b916baf385258745c9cc1fe5c7262f4c9e30c17f16c3b2",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:ffb28bf9a4c6e34b73522b62adb283d47dff0aa21f431d42bf02adcaa1e94ce2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_onboarded_sources"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The trace wrapper keeps the trace's repair findings, calls _require_onboarded_sources, catches its RuntimeError for missing or unsupported sidecars and prepends that finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:ffb28bf9a4c6e34b73522b62adb283d47dff0aa21f431d42bf02adcaa1e94ce2",
             "locator": {
               "kind": "symbol",
               "name": "_require_onboarded_sources"
@@ -631,7 +629,7 @@
         },
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
             "content": "sha256:b3b3c880f3d968f51fa56d6131b9233363d37388ca4337c3934ecffe0899ed17",
             "locator": {
               "kind": "symbol",
@@ -643,14 +641,15 @@
       ]
     },
     "4": {
-      "note": "The converted memory-quality entry point requires one inputs value and forwards the candidate blobs and the run's identical-copy groups; it returns trace repair findings.\n\nAnchor: `onboarding_trace_gate_for_context`",
+      "note": "The converted memory-quality entry point takes one inputs value, forwards the candidate blobs and the run's identical-copy groups, and returns the trace's repair findings.",
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:b3b3c880f3d968f51fa56d6131b9233363d37388ca4337c3934ecffe0899ed17",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "onboarding_trace_gate_for_context"
             }
           },
           "kind": "code"

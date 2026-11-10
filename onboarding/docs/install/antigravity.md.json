@@ -2,60 +2,17 @@
   "path": "docs/install/antigravity.md",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Copy `.agents/`, render with `--repo`, start or reload Antigravity once; manual replacement is the stated alternative.\n\nAnchor: `docs/install/antigravity.md:16-27`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e4128f1ec48f7ee39199a9741aa7def85cf4661e",
-            "content": "sha256:5b50769bbce349428f7c43083af450bd807a9a8b1b171d62a773b7ab4da81a51",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The renderer writes `GEMINI.md`, validates each named repository, and an existing `GEMINI.md` is merged first.\n\nAnchor: `docs/install/antigravity.md:18-31`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e4128f1ec48f7ee39199a9741aa7def85cf4661e",
-            "content": "sha256:5b50769bbce349428f7c43083af450bd807a9a8b1b171d62a773b7ab4da81a51",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The package is listed as `GEMINI.md`, `mcp_config.json`, `mcp/agents-remember-settings.json`, `skills/`.\n\nAnchor: `docs/install/antigravity.md:33-44`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e4128f1ec48f7ee39199a9741aa7def85cf4661e",
-            "content": "sha256:5b50769bbce349428f7c43083af450bd807a9a8b1b171d62a773b7ab4da81a51",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
-      "note": "`c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts.\n\nAnchor: `docs/install/antigravity.md:44-53`",
+      "note": "One `role_start(role=\"bootstrap\", …)` call prepares the runtime scaffold and starts Bootstrap, which ends at memory setup and hands the knowledge foundation to the Architect; nothing provider-side starts.\n\nAnchor: `role_start`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4128f1ec48f7ee39199a9741aa7def85cf4661e",
-            "content": "sha256:5b50769bbce349428f7c43083af450bd807a9a8b1b171d62a773b7ab4da81a51",
+            "blob": "98e3ca685907ad215158a5b650f83759a9079127",
+            "content": "sha256:3d6f5e6cd06f6c94134dd495a2906214d1675dfc4ba65ce23031802ccd0ed06a",
             "locator": {
-              "kind": "file"
+              "end": 35,
+              "kind": "line_range",
+              "start": 21
             }
           },
           "kind": "code"
@@ -63,14 +20,16 @@
       ]
     },
     "5": {
-      "note": "Workspace and global instruction files, skill roots, MCP config location and the `uvx` registration are stated.\n\nAnchor: `docs/install/antigravity.md:55-131`",
+      "note": "The page names the `mcpServers.agents-remember` entry in Antigravity's MCP settings UI, adapted from the common registration example with the absolute user-config settings path.\n\nAnchor: `mcpServers.agents-remember`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4128f1ec48f7ee39199a9741aa7def85cf4661e",
-            "content": "sha256:5b50769bbce349428f7c43083af450bd807a9a8b1b171d62a773b7ab4da81a51",
+            "blob": "98e3ca685907ad215158a5b650f83759a9079127",
+            "content": "sha256:7a60aab005a99eb88e4413314f086cd5a7c1e833afa46955d9417cadcb1e6a8a",
             "locator": {
-              "kind": "file"
+              "end": 19,
+              "kind": "line_range",
+              "start": 14
             }
           },
           "kind": "code"

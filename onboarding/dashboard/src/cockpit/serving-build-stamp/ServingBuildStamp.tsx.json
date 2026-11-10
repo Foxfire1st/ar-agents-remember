@@ -1,0 +1,93 @@
+{
+  "path": "dashboard/src/cockpit/serving-build-stamp/ServingBuildStamp.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "55465c1b52382000bb2af1af534a8e31d6407719",
+        "content": "sha256:131bd050affb408d279ce6b21021218b5c636117575c53912853984b19d592fd",
+        "locator": {
+          "end": 68,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-M9F0ZP",
+      "invariant": "INV-B6D2SA",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rules1/4 dashboard currentness",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Renders immutable serving identity together with separate current/stale/unknown and checkout state, digests, remedy and process details without replacing the boot stamp.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The tooltip lists mode, state, digests, first-seen time, reason and remedy, leaving absent fields out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55465c1b52382000bb2af1af534a8e31d6407719",
+            "content": "sha256:ad99ae1c84ac47173c59363dbf11cb1ff44c3b4fa31841100a5cca1fabb76c89",
+            "locator": {
+              "kind": "symbol",
+              "name": "currentnessDetails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tooltip adds the process id and a reload hint only for a proven client-bundle mismatch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55465c1b52382000bb2af1af534a8e31d6407719",
+            "content": "sha256:6f8320e6eb69f8360ad143285efe1ea0ae14232d71859d5e1d0706d0a5218a0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "servingTitle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The stamp reads the boot build, currentness and process id from the store and renders nothing without a build.\n\nAnchor: `servingProcessId`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55465c1b52382000bb2af1af534a8e31d6407719",
+            "content": "sha256:c1f5e1b22d07af0228c4137a51a97740b30ec124043b553e593c917edb1b0030",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A stale state takes the warning style; checkout mode is named in the visible text.\n\nAnchor: `caution`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55465c1b52382000bb2af1af534a8e31d6407719",
+            "content": "sha256:60695e5317ee7c5c0a3124a385168f6ccc38697c7db730be28c044792b8a9542",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

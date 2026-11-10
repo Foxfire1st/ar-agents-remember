@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-        "content": "sha256:31d750f9fc72a40da8a15be0b670549d0fb5d1d318c60f41330160eecbeaf488",
+        "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+        "content": "sha256:e494f19e216c1713613cb333a569e63e49018362ba2853f4458398ed9ded6f13",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-        "content": "sha256:31d750f9fc72a40da8a15be0b670549d0fb5d1d318c60f41330160eecbeaf488",
+        "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+        "content": "sha256:e494f19e216c1713613cb333a569e63e49018362ba2853f4458398ed9ded6f13",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-        "content": "sha256:31d750f9fc72a40da8a15be0b670549d0fb5d1d318c60f41330160eecbeaf488",
+        "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+        "content": "sha256:e494f19e216c1713613cb333a569e63e49018362ba2853f4458398ed9ded6f13",
         "locator": {
           "kind": "file"
         }
@@ -55,28 +55,52 @@
   ],
   "references": {
     "1": {
-      "note": "Bootstrap sends no role messages: it writes a developer question in its own reply and ends the turn. Its sole durable report names its own exact path and its foundation state is reported as read, never as authored.",
+      "note": "Bootstrap sends no role messages: it writes a developer question in its own reply and ends the turn. Its one report states its exact path on the first line, and it reads and reports the foundation state without authoring knowledge.",
       "targets": [
         {
           "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:cddfb2bb54097feb97c595165d9e47aecbf493ff2ef914e6b6c1a96de92a776f",
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:7b8d340a98eb0b9052c3424ad3724e50c6a2ffb13b4c652870ab7352a5a30fd2",
             "locator": {
-              "end": 36,
+              "end": 54,
               "kind": "line_range",
-              "start": 34
+              "start": 54
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:3fe351b65b4e817d2181a314a1bcf614ad3086755859e67a5a9cb257427c58af",
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:6ecfc010da88268e8f8db34b32a17fd822a5ce6a658660a9e60655d9c4d275b5",
             "locator": {
-              "end": 118,
+              "end": 30,
               "kind": "line_range",
-              "start": 110
+              "start": 30
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:1e022bc8f8a6c8de34d61b0ec9096dc57cbfd9a1d9016287a5a006b99bf02843",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:269e6e485ca98e685afebb7785a4d1c8e6d3e39361f5bac9e8ba1c9d2976f358",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
             }
           },
           "kind": "code"
@@ -84,16 +108,16 @@
       ]
     },
     "2": {
-      "note": "Bootstrap reads through the retained naming surface, identifies resolve_context as removed and forbids retire_child beyond its setup powers. \\[2]",
+      "note": "Bootstrap reads through `context_packet`, `server_info` and `read_ar_files`, and is forbidden `retire_child` and the other lifecycle tools beyond its setup surfaces.",
       "targets": [
         {
           "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:2bfbb93222d3d945ff90d4d37b0562dea61cd20c1edf7eec5981426a5af88e87",
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:7afb050cc1d65a066e1c13aa5a6b20f5d38734cfe969cb4d214362625413107b",
             "locator": {
-              "end": 119,
+              "end": 52,
               "kind": "line_range",
-              "start": 79
+              "start": 36
             }
           },
           "kind": "code"

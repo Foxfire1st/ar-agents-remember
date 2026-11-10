@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "109c9504f0b9b972a309cb40bd8ecdc7bd8e2bb8",
-        "content": "sha256:30562336da3c8b08bf3199beec8f18eeda59a75c6a421be5fa41a52b4d15931a",
+        "blob": "02faaf2585a80248961d195021115d4bc7778475",
+        "content": "sha256:3df9e54b48043ecce5906f9a2bbb543d316808ea8e4bd0a4b9383f456f2a397b",
         "locator": {
           "kind": "file"
         }
@@ -19,6 +19,23 @@
       "role": "support"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Build currentness is generated explicitly, and an undeclared served model is still refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02faaf2585a80248961d195021115d4bc7778475",
+            "content": "sha256:4c4147fe9383a47ab5f22d06c5ce9872c802b917eedeb85636cd6f0e0b48d17d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_currentness_is_explicitly_generated_and_unknown_served_models_still_refuse"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

@@ -54,6 +54,7 @@ These construction and resolution rules describe the current returned layout. Th
 - Settings construction preserves requirement and patch template spelling in an intermediate bundle, then resolves those paths during final layout construction; it validates repository and image inputs and rejects venvRoot. [3]
 
 - Materialization writes matching enriched instance and HOME-scoped global ignore files, retains an existing requirements file, and filters persisted environment keys. The retained settings reader accepts explicit provider/root ignore-pattern lists; generated lifecycle settings supply no CGC root block. [4]
-- The retained tag helper uses the pinned CGC version and layer revision, currently 0.4.10 and ar2. The lifecycle-settings generator imports no CGC helper and emits no runner setting. The retained image builder skips an existing tag unless no_cache is requested; runtime installation no longer installs provider dependencies, reports enabled provider keys as unused, and attempts old-watcher stop before runtime asset refresh. [5]
+
+- The retained tag helper uses the pinned CGC version and layer revision, currently 0.4.10 and ar2. The lifecycle-settings generator imports no CGC helper and emits no runner setting. The retained image builder skips an existing tag unless no_cache is requested. Runtime installation attempts the old-watcher stop before the runtime asset refresh, records a failed stop and continues, and reports enabled provider keys as unused; they drive no installation. Anchor: `stop_provider_watchers_before_refresh` [5]
 
 - Runtime environments, source-artifact detection, cleanup containment, and expected-snippet patch checks constrain these helpers; timer-pop identity checks preserve replacement timers. [6]

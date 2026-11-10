@@ -1,0 +1,283 @@
+{
+  "path": "mcp/tests/test_l84_unique_detail_pointers.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+        "content": "sha256:803aadd7ad15099fc6286aa3d00ac84fb718744dc510b130ac1cc1bab54edb71",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_native_first_message_has_one_pointer_per_action"
+        }
+      },
+      "facet": "Compiles every native role and operation first message and fails on a second pointer for the same action.",
+      "id": "PRF-4Q83T7",
+      "invariant": "INV-Q2HENX",
+      "origin": {
+        "handoffEntry": "MIK-R84@v12 part 5 + v14 rules 1-3 / one pointer per action",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+        "content": "sha256:c1270d718f594693a9154c702726767ae2357adec2ec9e170f23b8256607b776",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_required_detail_has_one_pointer_in_all_36_real_compiles"
+        }
+      },
+      "facet": "Compiles every shipped role and operation pair and requires each to carry exactly its declared required details, each with content and a read step, with one pointer sentence per required action.",
+      "id": "PRF-9N9SH9",
+      "invariant": "INV-MQ3K06",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 step-detail delivery",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The complete per-role detail population is listed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:6ecead5e2a2b0640bf3837449f0bd2667a483df35f3da9e6b022f5cd38e47008",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROLE_DETAILS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Architect action cues read their delivered detail and reject pointer removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:06bc9d278465eca6a0b9288274f889c7e21744fe7ad329451d3e9e575ed8548f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_architect_named_action_reads_and_pointer_removal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Only the Manager receives the refused-write detail; the other roles reach it through the served link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:733c36702cad7c2dacf9ab1fc867588b06663a22994d00792804492853afa506",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retirement_shared_source_and_delivered_detail_preserve_stops"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The permission owner section keeps every facet of its stop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:b2f6489ca712d539a5a7979973ef9e600457f73cd9b04dcbde9d826e7b8b256a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_permission_owner_section"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Inline rules reach their owning sections and reject deletion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:4ac2a57b6e260b19bf5a65023d0d41d157cd455372f18acc3edaac24e646b088",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_v13_inline_rules_reach_their_actual_owning_sections_and_reject_deletion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Short rules use the shared delivery and the removed step reads stay absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:181d42357201acff05a9991fd28bdea0fbfd9285841b8133ca272a16211d41f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_short_rules_use_shared_delivery_and_reject_removed_step_reads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Grouped actions read the whole delivered owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:080fe26983028da095583f7481ee313c7c90f9b42cdf65355fb50f5a19152966",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_grouped_action_reads_the_whole_delivered_owner"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The direct start pointers reach the complete start-and-first-intake procedure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:7d7eacdcb2106be82b9e77c30f573922af3783dc440546e4fac6de2126dca648",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_coordination_start_owner"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Re-added duplicate pointers are enumerated by role, operation and source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:d1099772e83655ef962e1ea4e0f3192278c810d05724ba1e3b4b925d568dcfb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "RESTORED_DUPLICATES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every first message has one pointer per action and the restored duplicates fail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:803aadd7ad15099fc6286aa3d00ac84fb718744dc510b130ac1cc1bab54edb71",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_native_first_message_has_one_pointer_per_action"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Every compile delivers exactly its required details, each pointed to once per action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:c1270d718f594693a9154c702726767ae2357adec2ec9e170f23b8256607b776",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_required_detail_has_one_pointer_in_all_36_real_compiles"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Moved action pointers reach each required compile and reject removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:ed2da38a10e1dac1e645a91dfd62ac83461b724986c95cd61a28106f9f93581d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_moved_piece_pointers_reach_each_required_compile_and_reject_removal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The collaboration and authoring references equal their pointer-derived step and audiences.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:1f9e4db94eab0220504d0f595abc3285ac67f376985af4900c998a6c59e38492",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_collaboration_reference_matches_pointers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "An extra audience or an outbound pointer in the method fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:a0bd09d5c8754ecd40136bc9343f4ebfe14736604169ded768ff3a82734f36cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_collaboration_reference_rejects_unpointed_audience_and_outbound_step"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Leaf authoring reaches the retained-evidence lifecycle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e162755793393f2a46ecb6e38785c54ce0d826e3",
+            "content": "sha256:8d8dcfefcecac0cbf45432764d9bf716f2fdc8a9286bc22eb75aca6ae805d793",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_creation_reaches_retained_evidence_lifecycle_and_rejects_removal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

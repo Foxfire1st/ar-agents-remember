@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "Disposable generated artifacts require one canonical skill tree and regeneration of its packaged projection, otherwise an edited copy can become a conflicting instruction authority."
+  },
   "applicability": "The canonical skills tree and its declared generated packaged runtime projection.",
   "conditions": [],
   "exclusions": [],

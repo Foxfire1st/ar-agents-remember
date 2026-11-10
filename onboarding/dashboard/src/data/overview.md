@@ -244,7 +244,7 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 
 - The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. [85]
 
-- The served TaskEntry mirror carries optional document reference, identity, state, parent/children and counts; the old separate series-child consumer union is not the native entry model. [26]
+- The served TaskEntry mirror carries optional document reference, identity, state, parent/children and counts; no separate series-child consumer union is part of the native entry model. [26]
 
 - Membership links each child to one deterministic parent and rejects a cycle; the removed series creation-sort builder is not the current producer. [27]
 
@@ -300,6 +300,6 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 
 - The catalogue call carries task context and an optional recorded comparison number; it requests navigation identities without a subject selector. [30]
 
-- The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads. [117]
+- The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads. Anchor: `publishReviewExplainerMoved` [117]
 
 - Changed-file navigation uses ChangeList in the existing comparison viewer; review openers bind its recorded comparison and retain a named unavailable-range answer. [42]

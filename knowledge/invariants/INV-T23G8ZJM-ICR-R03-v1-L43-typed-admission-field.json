@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The unchanged-context family requires every expansion to state why it was admitted and to keep unchanged context bound to the requested measured generation."
+  },
   "applicability": "Every served review source-content expansion.",
   "conditions": [
     "admission is changed or attributed_unchanged, with admission_detail.",

@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:f0e5f1ddda35f33ad0d76ff1c2fe6870a84e9a567b5aca9d8c3003a70d1f4843",
         "locator": {
-          "end": 238,
+          "end": 240,
           "kind": "line_range",
-          "start": 238
+          "start": 240
         }
       },
       "id": "RLZ-031YY4",
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-        "content": "sha256:d08cca587a6331dbcdb555c3853d7dd6d663b410ca87a844a988b68cc9994478",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "content": "sha256:ffb8ea787bca682e5dbc93e01eca948f5bf9da667ed9d9e73d7d0df6e73f03de",
         "locator": {
-          "end": 741,
+          "end": 1070,
           "kind": "line_range",
-          "start": 737
+          "start": 1060
         }
       },
       "id": "RLZ-0XJWN1",
@@ -37,17 +37,17 @@
         "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "The writer-detail reference is reached before a CLI deciding run or write, while record formats remain at before-ingest Curation2.",
+      "rationale": "The manifest gives the Curator the serving-build binding detail before a command-line run that decides or writes. The record formats now sit in the ingestion template the knowledge-ingest detail names.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:2fa7b5ec23e247702fc2471a649873e5be15b3bf2f7940224fab1131e612af55",
         "locator": {
-          "end": 346,
+          "end": 292,
           "kind": "line_range",
-          "start": 346
+          "start": 292
         }
       },
       "id": "RLZ-5G6AGC",
@@ -61,12 +61,12 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-        "content": "sha256:c6ea9cbe97eb5ab70462d863ea0467dd31d6097d709efe67b30eecd56d902d11",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "content": "sha256:2eb6b97a6caa97b0476613fc8c5359c925a0d4f9c6fe12130ea4523bd99e02ab",
         "locator": {
-          "end": 703,
+          "end": 585,
           "kind": "line_range",
-          "start": 700
+          "start": 576
         }
       },
       "id": "RLZ-60QKQ2",
@@ -75,17 +75,17 @@
         "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-history-selection",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "The card-format/history detail is directly read at Curation2 Before ingest, before choosing authored dispositions.",
+      "rationale": "The manifest declares the card-format and history detail for the Curator with the step 'before writing card history', so the disposition rules are read before rows are authored.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 481,
+          "end": 426,
           "kind": "line_range",
-          "start": 480
+          "start": 425
         }
       },
       "id": "RLZ-66Y6Y1",
@@ -99,12 +99,12 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 353,
+          "end": 299,
           "kind": "line_range",
-          "start": 352
+          "start": 298
         }
       },
       "id": "RLZ-6BJQC6",
@@ -118,12 +118,12 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 399,
+          "end": 344,
           "kind": "line_range",
-          "start": 398
+          "start": 343
         }
       },
       "id": "RLZ-6HJ4DW",
@@ -137,12 +137,12 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:f63b06707e1c361d62ec6467bfe4b95d9f69925c0094e10b6ede103867b43d45",
         "locator": {
-          "end": 518,
+          "end": 463,
           "kind": "line_range",
-          "start": 502
+          "start": 447
         }
       },
       "id": "RLZ-6W76SN",
@@ -156,12 +156,29 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-76VDXB",
+      "invariant": "INV-HJ5A68",
+      "origin": {
+        "handoffEntry": "L84-P5-05",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The step_detail entries carry the step values that must equal the pointer-derived actions.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:d4a12d5c146197e4304e0b7d638b884b09f48878c611eddf27b3afd7a3702606",
         "locator": {
-          "end": 27,
+          "end": 25,
           "kind": "line_range",
-          "start": 18
+          "start": 16
         }
       },
       "id": "RLZ-8ACRJS",
@@ -175,50 +192,29 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-        "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
         "locator": {
-          "end": 282,
-          "kind": "line_range",
-          "start": 281
+          "kind": "file"
         }
       },
-      "id": "RLZ-ACQEP9",
-      "invariant": "INV-VTGJJK",
+      "id": "RLZ-APV7WA",
+      "invariant": "INV-MQ3K06",
       "origin": {
-        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
-        "leaf": "260928-MIK-L62"
+        "handoffEntry": "MIK-R84@v5 part1 / L62 step-detail delivery",
+        "leaf": "260928-MIK-L84"
       },
-      "rationale": "Each role core-source admission list gains the separately declared every-role digest; compiler selection still marks that digest noncomposed.",
-      "role": "propagation-persistence"
+      "rationale": "This manifest declares the admitted role/operation populations, required detail sources and their read steps.",
+      "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 309,
+          "end": 247,
           "kind": "line_range",
-          "start": 308
-        }
-      },
-      "id": "RLZ-AZBC81",
-      "invariant": "INV-VTGJJK",
-      "origin": {
-        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
-        "leaf": "260928-MIK-L62"
-      },
-      "rationale": "Each role core-source admission list gains the separately declared every-role digest; compiler selection still marks that digest noncomposed.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-        "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
-        "locator": {
-          "end": 245,
-          "kind": "line_range",
-          "start": 244
+          "start": 246
         }
       },
       "id": "RLZ-BKB9YC",
@@ -232,12 +228,12 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:e91a9e18b058506863abb8bfafb7e45d6c8b6f8f7023b93dcdce5c0f8413ddfc",
         "locator": {
-          "end": 36,
+          "end": 34,
           "kind": "line_range",
-          "start": 29
+          "start": 27
         }
       },
       "id": "RLZ-BMTHTE",
@@ -251,12 +247,12 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 443,
+          "end": 387,
           "kind": "line_range",
-          "start": 442
+          "start": 386
         }
       },
       "id": "RLZ-BNA84H",
@@ -270,12 +266,12 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 522,
+          "end": 467,
           "kind": "line_range",
-          "start": 521
+          "start": 466
         }
       },
       "id": "RLZ-CTTS3C",
@@ -289,12 +285,12 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:049e07153602a51202aa82c5e8a72bf741f8b30e6dac36373c2c308edc359ff2",
         "locator": {
-          "end": 191,
+          "end": 196,
           "kind": "line_range",
-          "start": 191
+          "start": 196
         }
       },
       "id": "RLZ-HGSMDT",
@@ -308,12 +304,12 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 550,
+          "end": 495,
           "kind": "line_range",
-          "start": 549
+          "start": 494
         }
       },
       "id": "RLZ-J3KCTG",
@@ -327,12 +323,12 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 198,
+          "end": 203,
           "kind": "line_range",
-          "start": 197
+          "start": 202
         }
       },
       "id": "RLZ-K2CFP2",
@@ -346,12 +342,12 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-        "content": "sha256:2ccdc434062e1472c7905da70132e1d4f1558b8f88a1a8670201be31d6e9c38a",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "content": "sha256:ad78c06283ec1fba7b4d2a3e3a87186146d18aa6a91690eafff34f8e58a21da0",
         "locator": {
-          "end": 952,
+          "end": 1089,
           "kind": "line_range",
-          "start": 945
+          "start": 1082
         }
       },
       "id": "RLZ-NNHVHW",
@@ -365,12 +361,29 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-        "content": "sha256:3d58fd093bb30d97ed8675d5a8af781ee54d388e458626e9efb141d2c1b30db7",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
         "locator": {
-          "end": 166,
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QF8NBD",
+      "invariant": "INV-W6HBYY",
+      "origin": {
+        "handoffEntry": "MIK-R84@v13 behaviour 2 / l-01 reference layout",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The manifest declares each reference detail file under its new subject-folder path with the roles and step that read it, so the layout is what launches deliver.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "content": "sha256:d6444e20cae443139bda5e4729917a083fc9c643d5e0db2eb3a0375c0d1bbb85",
+        "locator": {
+          "end": 160,
           "kind": "line_range",
-          "start": 164
+          "start": 158
         }
       },
       "id": "RLZ-T2X2V2",
@@ -384,12 +397,29 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-        "content": "sha256:6979c46f5d61ab7656877e8371b2ef88b13c8f8f2d3ff346cf19e7d362a3af80",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
         "locator": {
-          "end": 730,
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-T8GFX9",
+      "invariant": "INV-40JW44",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 shared digest",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This manifest separates the first-message digest from the audit-only map and declares their audiences.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "content": "sha256:94bb07f87db8098b4a5530fae5c134513d1b2cabb5e0ad1a927ac13d1d42c914",
+        "locator": {
+          "end": 611,
           "kind": "line_range",
-          "start": 715
+          "start": 596
         }
       },
       "id": "RLZ-TTD2BQ",
@@ -403,12 +433,12 @@
     },
     {
       "anchor": {
-        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
         "content": "sha256:28505dbb3f7e2ed85116de1c35f58e92c921b4259d27ba9e27b961993fc25988",
         "locator": {
-          "end": 58,
+          "end": 54,
           "kind": "line_range",
-          "start": 58
+          "start": 54
         }
       },
       "id": "RLZ-WTKS9R",
@@ -427,7 +457,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
             "content": "sha256:82d27b986ff7e90eeecd010dc4e925c28c0cdf759215e447ac6aacfa82d63508",
             "locator": {
               "end": 5,
@@ -521,7 +551,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
             "content": "sha256:684230c5d826a8f344a73f6bf3f7ad650a399c83726c67edce126a43f987e75c",
             "locator": {
               "kind": "symbol",
@@ -533,7 +563,7 @@
         },
         {
           "anchor": {
-            "blob": "e2aa34ce785d08c8720a6440e2f97c04f950e1ce",
+            "blob": "71ccc2132582d64927138c5ee287ee17091b1824",
             "content": "sha256:11d5e725544b800c18eb49ec2165f047ec61603bda9a2b143868f6fa4386622d",
             "locator": {
               "kind": "symbol",
@@ -550,12 +580,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:919f88da12c140903bcd7009bb58d59b332c0d62c0917394cb428ac1d251ed7d",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:022d52fcb9b6bbdceda27785801bac53be7104d60b019642ec582d396225532a",
             "locator": {
-              "end": 568,
+              "end": 490,
               "kind": "line_range",
-              "start": 490
+              "start": 447
             }
           },
           "kind": "code"
@@ -580,7 +610,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
             "content": "sha256:f26dbe6f0c682f33740a4cc4008ccaec3f68f15f6d78caf8daaff58ead18b52b",
             "locator": {
               "end": 5,
@@ -593,16 +623,16 @@
       ]
     },
     "16": {
-      "note": "The nine operation blocks, each with its source, purpose and the roles that may run it.",
+      "note": "The nine operation blocks, each with its source, purpose and the roles that may run it.\n\nAnchor: `\"operations\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:fc8662c1aa3d27c2638c948df760a542894843b33317c640ea7521d5f0afd2db",
             "locator": {
-              "end": 137,
+              "end": 132,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             }
           },
           "kind": "code"
@@ -610,16 +640,16 @@
       ]
     },
     "18": {
-      "note": "The role registry itself and the two role entries that show the per-seat shape.",
+      "note": "The role registry itself and the two role entries that show the per-seat shape.\n\nAnchor: `\"roles\": {`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:8f35b13b6c7431c837b18fa5370e92ecbae4597b8f6cbc76e7ce3ee569adecbe",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:975b5ce8d4b0eaf1b02dd39bca38b8bb0e3f18d3ac423d4e8a69f0e7cd574066",
             "locator": {
-              "end": 568,
+              "end": 507,
               "kind": "line_range",
-              "start": 169
+              "start": 174
             }
           },
           "kind": "code"
@@ -631,24 +661,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:a402658824b6eaf8198cc18ff8f8c0f9bf795b65dc978297b51c608f9370f39b",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:97055d769b1d5bc1dd8cac6aaec7c6b8ead567771f150cfc1f5e9fdcd12cfff8",
             "locator": {
-              "end": 237,
+              "end": 196,
               "kind": "line_range",
-              "start": 169
+              "start": 175
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:919f88da12c140903bcd7009bb58d59b332c0d62c0917394cb428ac1d251ed7d",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:4f79b4948df1b8ab25da281e25d65fc198d8cc025cd49d46788e23a730c6a22b",
             "locator": {
-              "end": 568,
+              "end": 462,
               "kind": "line_range",
-              "start": 490
+              "start": 447
             }
           },
           "kind": "code"
@@ -660,12 +690,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
             "content": "sha256:cdfa580d1029033c5053c051080c28ee152916dcc36a9bf92ac8812a31142890",
             "locator": {
-              "end": 493,
+              "end": 438,
               "kind": "line_range",
-              "start": 488
+              "start": 433
             }
           },
           "kind": "code"
@@ -673,16 +703,16 @@
       ]
     },
     "21": {
-      "note": "The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles.\n\nAnchor: `launcher`",
+      "note": "The launcher entry: a routing condition with its own core block and its operations; it compiles no template.\n\nAnchor: `is_role`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:795d480a4648c3d4f318d5cc448e237de7f0469f3066deac78f542096901fb89",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:7ff90fe1949d4460c9e3194ffff4cba7453c9c642f5756423b1a5c9984660dfd",
             "locator": {
-              "end": 583,
+              "end": 528,
               "kind": "line_range",
-              "start": 568
+              "start": 515
             }
           },
           "kind": "code"
@@ -694,12 +724,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:2e43c537bf6dfd4a9503598fa42eac0369f8e27dae5e17f79536b7279d1913b7",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:2db2cc5a149110b6a8e475c3ae681257b43214afc58111ab8b63448114494b50",
             "locator": {
-              "end": 954,
+              "end": 1092,
               "kind": "line_range",
-              "start": 584
+              "start": 529
             }
           },
           "kind": "code"
@@ -763,7 +793,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
             "content": "sha256:684230c5d826a8f344a73f6bf3f7ad650a399c83726c67edce126a43f987e75c",
             "locator": {
               "kind": "symbol",
@@ -780,10 +810,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:ddd3fee28376e08816029e90b0e40c7d480d3e566235c051a5d470d0a379bd48",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
             "locator": {
-              "end": 956,
+              "end": 1093,
               "kind": "line_range",
               "start": 1
             }
@@ -792,46 +822,41 @@
         }
       ]
     },
-    "28": {
-      "note": "Adds audience selection for all nine operations and fifteen reference entries, fourteen marked step_detail. Routing vocabulary, applicability, role order and role/operation composition order are unchanged.\n\nAnchor: Current source; preserved L88 property 28",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
-            "locator": {
-              "end": 137,
-              "kind": "line_range",
-              "start": 38
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "29": {
-      "note": "All nine operation entries declare audience selection. The current references registry contains 34 entries, 28 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result.",
+      "note": "All nine operation entries declare audience selection. The references registry contains 50 entries, 38 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. Anchor: `references`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:fc8662c1aa3d27c2638c948df760a542894843b33317c640ea7521d5f0afd2db",
             "locator": {
-              "end": 137,
+              "end": 132,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:2e43c537bf6dfd4a9503598fa42eac0369f8e27dae5e17f79536b7279d1913b7",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:9c9d5cb4d21cf2f345b83ff0c12ce1c48f29d5a2469abafb7f39e808ab7f4d4d",
             "locator": {
-              "end": 954,
+              "end": 1081,
               "kind": "line_range",
-              "start": 584
+              "start": 529
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:f618e05f91ea1d7cb0cdcd8a8eb245c92df41e6c2000f284e03e1031e232e098",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 158
             }
           },
           "kind": "code"
@@ -839,16 +864,16 @@
       ]
     },
     "3": {
-      "note": "The nine operation blocks, each with its source, purpose and the roles that may run it.",
+      "note": "The nine operation blocks, each with its source, purpose and the roles that may run it.\n\nAnchor: `\"operations\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:fc8662c1aa3d27c2638c948df760a542894843b33317c640ea7521d5f0afd2db",
             "locator": {
-              "end": 137,
+              "end": 132,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             }
           },
           "kind": "code"
@@ -856,28 +881,52 @@
       ]
     },
     "30": {
-      "note": "The current manifest retains audience selection for all nine operations and records 34 reference entries, 28 marked step_detail. Earlier fifteen-entry/fourteen-detail counts describe their own source epoch. The current role/operation order and the separately delivered shared digest are explicit routing declarations.",
+      "note": "The manifest declares audience selection for all nine operations and records 50 reference entries, 38 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. Anchor: `composition_order`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:fc8662c1aa3d27c2638c948df760a542894843b33317c640ea7521d5f0afd2db",
             "locator": {
-              "end": 137,
+              "end": 132,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:2e43c537bf6dfd4a9503598fa42eac0369f8e27dae5e17f79536b7279d1913b7",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:9c9d5cb4d21cf2f345b83ff0c12ce1c48f29d5a2469abafb7f39e808ab7f4d4d",
             "locator": {
-              "end": 954,
+              "end": 1081,
               "kind": "line_range",
-              "start": 584
+              "start": 529
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:55abbf67bbcc1336fda8760504da813ee3c7f16b582499cb76817eb5f920c92f",
+            "locator": {
+              "end": 1093,
+              "kind": "line_range",
+              "start": 1082
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:f618e05f91ea1d7cb0cdcd8a8eb245c92df41e6c2000f284e03e1031e232e098",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 158
             }
           },
           "kind": "code"
@@ -889,12 +938,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
             "content": "sha256:fbd81613cb8dbf4cb8a976f96f6bc16cdb22f230436dca7179d4ac1855a9a7f8",
             "locator": {
-              "end": 435,
+              "end": 379,
               "kind": "line_range",
-              "start": 415
+              "start": 359
             }
           },
           "kind": "code"
@@ -906,12 +955,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:1e362faf730d7ac27bb50ff9739e525d0f20c4fc3b433e535915c4d5dae75ef8",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:e4e3a50ea35309cdf447d465ce995985a7e09328998dc5c87bda3d0c3aa77ee2",
             "locator": {
-              "end": 37,
+              "end": 35,
               "kind": "line_range",
-              "start": 18
+              "start": 6
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:7ff90fe1949d4460c9e3194ffff4cba7453c9c642f5756423b1a5c9984660dfd",
+            "locator": {
+              "end": 528,
+              "kind": "line_range",
+              "start": 515
             }
           },
           "kind": "code"
@@ -919,16 +980,16 @@
       ]
     },
     "33": {
-      "note": "The current registry contains 28 non-injected step-detail entries, including Curator correct-write recovery; visual-explainer guidance remains outside step_detail. Named readers and steps are declarations, not proof that a particular role read a file.",
+      "note": "The registry contains 38 non-injected step-detail entries, including `refused-write` and `writing/visual-explainers`. Named readers and steps are declarations, not proof that a particular role read a file.",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:09a20d2cb606b2349d1e5e14d39674b5c63aeb1a1390d9c05374f2f561730455",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:9c9d5cb4d21cf2f345b83ff0c12ce1c48f29d5a2469abafb7f39e808ab7f4d4d",
             "locator": {
-              "end": 944,
+              "end": 1081,
               "kind": "line_range",
-              "start": 584
+              "start": 529
             }
           },
           "kind": "code"
@@ -936,28 +997,28 @@
       ]
     },
     "4": {
-      "note": "Retained core-source map names task worktree records and the landing contract, not session adoption.",
+      "note": "The core-source map's lifecycle-frame entry names task worktree records and the landing chain's lifecycle, not session adoption; the lifecycle-frame source points to the public worktree_start, worktree_attach and terminal-lifecycle references.",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:063a10cd87d69f5f2742917d69866553ec6b093465f68ca47d6651b7aebc8e1f",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:c3cce3ebf5cef2c016e106b0abe447d0b7927a90f504210a589fb3c9c263b886",
             "locator": {
-              "end": 167,
+              "end": 145,
               "kind": "line_range",
-              "start": 139
+              "start": 142
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "401a6023b8ba2ea2c9c89487baed0bd40dc87e90",
-            "content": "sha256:f3e6bb44745cf4ce2d26390bfc5313007cb8af8d64d5bb47736d9c5c8a0c4d18",
+            "blob": "08004e49e2337e24b235a748f21b56bea44d8192",
+            "content": "sha256:9095e186169806426198b303d23ec76ed2b78206c49f9c4f58d25ca04a31090d",
             "locator": {
-              "end": 16,
+              "end": 13,
               "kind": "line_range",
-              "start": 3
+              "start": 7
             },
             "path": "skills/l-01-agent-lifecycles/core/lifecycle-frame.md"
           },
@@ -966,16 +1027,16 @@
       ]
     },
     "5": {
-      "note": "The role registry itself and the two role entries that show the per-seat shape.",
+      "note": "The role registry itself and the two role entries that show the per-seat shape.\n\nAnchor: `\"roles\": {`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:8f35b13b6c7431c837b18fa5370e92ecbae4597b8f6cbc76e7ce3ee569adecbe",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:975b5ce8d4b0eaf1b02dd39bca38b8bb0e3f18d3ac423d4e8a69f0e7cd574066",
             "locator": {
-              "end": 568,
+              "end": 507,
               "kind": "line_range",
-              "start": 169
+              "start": 174
             }
           },
           "kind": "code"
@@ -987,24 +1048,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:a402658824b6eaf8198cc18ff8f8c0f9bf795b65dc978297b51c608f9370f39b",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:97055d769b1d5bc1dd8cac6aaec7c6b8ead567771f150cfc1f5e9fdcd12cfff8",
             "locator": {
-              "end": 237,
+              "end": 196,
               "kind": "line_range",
-              "start": 169
+              "start": 175
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:919f88da12c140903bcd7009bb58d59b332c0d62c0917394cb428ac1d251ed7d",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:4f79b4948df1b8ab25da281e25d65fc198d8cc025cd49d46788e23a730c6a22b",
             "locator": {
-              "end": 568,
+              "end": 462,
               "kind": "line_range",
-              "start": 490
+              "start": 447
             }
           },
           "kind": "code"
@@ -1012,52 +1073,52 @@
       ]
     },
     "7": {
-      "note": "The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four).\n\nAnchor: \"master-handover-packet.md\"; \"turn-report.md\"; \"curator-brief.md\"; \"impact-analysis.md\"",
+      "note": "The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four).",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:58e059b7c8b5f73b806483acc5531824790614e851b70da7ba9a4d918c564e8b",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:1ee6c9887ffbd287ea4736de38eb6836ffbc5a4aa0ce7ddfee4c1143fdeb741b",
             "locator": {
-              "end": 262,
+              "end": 263,
               "kind": "line_range",
-              "start": 255
+              "start": 257
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:4e4f3530c7b7ca1f69da355c08aa89c131d23dd288ff0be6cd146746260a1992",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:edd8462433ebc247cce4d26b71c37ce2778648817213f3fad060a58547b662fa",
             "locator": {
-              "end": 410,
+              "end": 354,
               "kind": "line_range",
-              "start": 406
+              "start": 351
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:73ddba3c61588b6ae8054b74a1bf52c5bac932b1cd552ad7f74fd5626a1630e5",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:10da5cc5a7f68dccbd41717ed595866f5764ff5ba3ea2b1d8306fca43ffb19d7",
             "locator": {
-              "end": 453,
+              "end": 398,
               "kind": "line_range",
-              "start": 450
+              "start": 394
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:cdfa580d1029033c5053c051080c28ee152916dcc36a9bf92ac8812a31142890",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:df53c382c96ec41e75f6e1d4beff40bdfa92e6d026a68a35d418f6a4868ad681",
             "locator": {
-              "end": 493,
+              "end": 438,
               "kind": "line_range",
-              "start": 488
+              "start": 432
             }
           },
           "kind": "code"
@@ -1065,16 +1126,16 @@
       ]
     },
     "8": {
-      "note": "The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles.",
+      "note": "The launcher entry: a routing condition with its own core block and its operations; it compiles no template.\n\nAnchor: `is_role`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:e72fa1b6e7eccd141667414db5d17352bd8d2dad7a7f1bf5351e2a0bb63c697e",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:7ff90fe1949d4460c9e3194ffff4cba7453c9c642f5756423b1a5c9984660dfd",
             "locator": {
-              "end": 582,
+              "end": 528,
               "kind": "line_range",
-              "start": 568
+              "start": 515
             }
           },
           "kind": "code"
@@ -1086,12 +1147,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:2e43c537bf6dfd4a9503598fa42eac0369f8e27dae5e17f79536b7279d1913b7",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:2db2cc5a149110b6a8e475c3ae681257b43214afc58111ab8b63448114494b50",
             "locator": {
-              "end": 954,
+              "end": 1092,
               "kind": "line_range",
-              "start": 584
+              "start": 529
             }
           },
           "kind": "code"

@@ -1,0 +1,278 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+        "content": "sha256:a060d914754c4467703f8dee47c098fc6758a311f92f68a410b9676e4bd31dd1",
+        "locator": {
+          "end": 73,
+          "kind": "line_range",
+          "start": 73
+        }
+      },
+      "id": "RLZ-21A4G2",
+      "invariant": "INV-9DAS08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-curator-healing",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The card-format detail checks every changed claim, count and prose line reference against code, keeps a prose line reference inside its citation anchor, and says structural checks and authentic anchors do not prove prose true. It defers the independent fact-check to the curation procedure, keeps citation_fix to deterministic, card-by-card repairs, and leaves semantic or ambiguous items as Curator decisions without claiming an unbuilt feature.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+        "content": "sha256:d2d292cf3d434dceae618e92e3928f83c2f728fc69c5870453f9396bceac4558",
+        "locator": {
+          "end": 17,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-4ZJR75",
+      "invariant": "INV-1YSMF5",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-history-selection",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These exact lines require earlier-row reading and define the five invariant dispositions while keeping family/onboarding schemas separate.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+        "content": "sha256:8d6851de48e1a690795b049d9c5f5337914441984fcd6af3db9914a5bbb876e5",
+        "locator": {
+          "end": 45,
+          "kind": "line_range",
+          "start": 43
+        }
+      },
+      "id": "RLZ-EVQ3Z5",
+      "invariant": "INV-6A3N48",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-current-truth",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The 'Keep current card content' section sends the Curator to the card-sentence decisions before a card is routed or refreshed. It passes on that current-truth and all-carrier rule and does not replace it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+        "content": "sha256:e717f0150e0f5bc41f3dda2a34f2c630382f978d9c9b3d6e0e9a58c3fdf0df5b",
+        "locator": {
+          "end": 49,
+          "kind": "line_range",
+          "start": 49
+        }
+      },
+      "id": "RLZ-G5AJVX",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The card-format detail gives ordinary writer ownership as the normal route: the fixer authors references and the knowledge writer authors realizes and proves, through the admitted surfaces. Recovery for a refused correct input is limited to that tool and input class (curator.md:138).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+        "content": "sha256:6d51d552c8cbd05ed26f8991a500a811c84327c663843f02cd8547945421f833",
+        "locator": {
+          "end": 81,
+          "kind": "line_range",
+          "start": 73
+        }
+      },
+      "id": "RLZ-KDG9G9",
+      "invariant": "INV-JHB89M",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-claim-check",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The card-format detail requires every changed claim, count and prose line reference to be checked against code with the line reference inside its citation anchor, says passing structural checks and authentic anchors do not prove prose true, sends the reader to the curation fact-check, and keeps semantic or ambiguous citation items as Curator decisions.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+        "content": "sha256:a060d914754c4467703f8dee47c098fc6758a311f92f68a410b9676e4bd31dd1",
+        "locator": {
+          "end": 73,
+          "kind": "line_range",
+          "start": 73
+        }
+      },
+      "id": "RLZ-M87310",
+      "invariant": "INV-JHB89M",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-claim-check",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This exact extent requires checks of claims/counts/prose lines and a non-author statement check rather than treating valid anchors as proof of prose.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+        "content": "sha256:d0283467df357b8111906f6827eaa674e8d250731f7005c01f5393b2295cece6",
+        "locator": {
+          "end": 19,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-MDYS0X",
+      "invariant": "INV-1YSMF5",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-history-selection",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The 'Choose the history disposition' section requires reading the subject's earlier rows, defines all five invariant dispositions with admission, origin and slug-only edits as no_impact, and keeps family and onboarding row schemas separate.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "History dispositions for invariants, and family rows' own schema and `examined` binding.\n\nAnchor: `rerouted`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:d0283467df357b8111906f6827eaa674e8d250731f7005c01f5393b2295cece6",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Card and overview scope, templates and overview section order with citation lines last.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:2b36fb89410cdca68b85df76d89dceecedba32443a27c15de1e4726ee751d0f8",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Cards keep current prose and numbered evidence only; the fixer and the writer own sidecar fields; trace rows are `updated` or `no_impact`.\n\nAnchor: `onboarding:<route>/overview`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:996d775b64c409d21bf6d09cdc06d5660507e6aee48231ed27c9fc917a444746",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Citation input format, external URLs and the rule that structural checks do not prove prose true.\n\nAnchor: `path:start-end`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:ca327d5111be7a08781d303f25a95b1658c728d29aa74025c99a06244b8d88dd",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One named `citation_fix` batch per wave, with partial results and refusals kept visible.\n\nAnchor: `documents`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:0b23341304c35237d24c9e281e787ffedbf2de818fd2ea43de4f3a0f8b72d49e",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Refreshing, revising, withdrawing and renaming references.\n\nAnchor: `removedReferences`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:809c7c7b147475213147b07e876cbf6e7c7b1ab3d0222460ca9d4ef57f29df82",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Entity catalog scope, headings and fingerprint algorithm.\n\nAnchor: `git-blob-set-v1`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:cdddc85883c2a8a7c481ab4d0b6b155a20b8767d985f264744c8bfa851f10880",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Curator role links the history and citation sections at their actions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:27f27b490eef55d4da2ebd63bf4a4e1afb2ad65189af94ff0d627c7e82a4546e",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

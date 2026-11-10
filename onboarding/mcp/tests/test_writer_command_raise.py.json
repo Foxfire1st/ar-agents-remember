@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a8d170d06edbab3222572e1bdcace16a938c185e",
+        "blob": "35019a7ba7e5eb4405d25584678b7c1462a70ead",
         "content": "sha256:2556c17716c801dd8c2a71d2a2458b46ce7dc400c0635919d57d8c70f691ac0c",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "a8d170d06edbab3222572e1bdcace16a938c185e",
+        "blob": "35019a7ba7e5eb4405d25584678b7c1462a70ead",
         "content": "sha256:717df25876de05897222ef9b78784fb71c797ef06fdd67d2b9883ca750a90e13",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "a8d170d06edbab3222572e1bdcace16a938c185e",
-        "content": "sha256:22b13baa7ccc6e53cc829f83cb5ddac63cb84924a554a6412267a5a54a1fe1de",
+        "blob": "35019a7ba7e5eb4405d25584678b7c1462a70ead",
+        "content": "sha256:72b52398b4e24f7a270690014aa43855a67c0b5147c33fac4736e1654e02890d",
         "locator": {
           "kind": "symbol",
           "name": "test_settings_for_another_coordination_root_keep_both_roots_and_the_file"
@@ -56,14 +56,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The checkout-guard cause yields its one fixed clause and a refusal naming the mounted route with absolute paths, `commit: true` and no `--config`\n\nAnchor: `test_the_checkout_guard_refuses_settings_to_an_undeclared_primary_checkout`",
+      "note": "The checkout-guard cause yields its one fixed clause and a refusal naming the mounted route with absolute paths, `commit: true` and no `--config`",
       "targets": [
         {
           "anchor": {
-            "blob": "a8d170d06edbab3222572e1bdcace16a938c185e",
-            "content": "sha256:e377be1bcd1a73e9d0f67f65dfe60f75fa014c3ba768d58bb7c1fcca0d141ef8",
+            "blob": "35019a7ba7e5eb4405d25584678b7c1462a70ead",
+            "content": "sha256:e48d6099cc298526966ea0801e651f53abb98c852f9c2897607f6f950e9f395b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_checkout_guard_refuses_settings_to_an_undeclared_primary_checkout"
             }
           },
           "kind": "test"
@@ -75,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a8d170d06edbab3222572e1bdcace16a938c185e",
+            "blob": "35019a7ba7e5eb4405d25584678b7c1462a70ead",
             "content": "sha256:717df25876de05897222ef9b78784fb71c797ef06fdd67d2b9883ca750a90e13",
             "locator": {
               "kind": "symbol",

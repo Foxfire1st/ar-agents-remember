@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-        "content": "sha256:2b8fef203da6b97ce582ab3bcb05360feccd0f6affb0cd4c798409ec775037cc",
+        "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+        "content": "sha256:678b921190218e6dbe5c25f29c58929a378ec8915055c0dfb38cf9adff456ad3",
         "locator": {
-          "end": 20,
+          "end": 25,
           "kind": "line_range",
-          "start": 20
+          "start": 22
         }
       },
       "id": "RLZ-97QJ7M",
@@ -18,17 +18,17 @@
         "handoffEntry": "L62-CUR-6db-attach-INV-7FMDAS",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "Rulings that affect task/branch/orchestration state belong in the owning decision log, with analysis in notes. The second sentence carries the parent/parentless question route and can support that precise facet of the existing relay record.",
+      "rationale": "A ruling that changes task, branch or orchestration state is recorded in the owning task's decision log, with the supporting analysis kept in `notes/`. The last sentence carries the parent/parentless question route and can support that precise facet of the existing relay record.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-        "content": "sha256:4b92c432fd4387fef5efc2775f6f66653d601164bd4fbd8806743de5ad733139",
+        "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+        "content": "sha256:89943b36b19c5c6cfda15347d9c91782b0f0c1a613b62435f7ac5cc3315947e3",
         "locator": {
-          "end": 33,
+          "end": 40,
           "kind": "line_range",
-          "start": 33
+          "start": 38
         }
       },
       "id": "RLZ-TZP8SF",
@@ -43,28 +43,16 @@
   ],
   "references": {
     "1": {
-      "note": "Shared durable continuity and artifact-of-record obligation.",
+      "note": "Shared durable continuity and artifact-of-record obligation, with the shared evidence rules.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-            "content": "sha256:5b2d90b210de3c1f48c5bc8a125762ac50fdf3ca6aa7dc0a24f606ced38281ce",
+            "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+            "content": "sha256:431fa22ee64f17f15d1e53174a5d1048f4b66064ff0fee4d9e4ee9a48fc8d254",
             "locator": {
-              "end": 11,
+              "end": 17,
               "kind": "line_range",
               "start": 5
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-            "content": "sha256:48a6a4b65c028ac772589f158d3ff29cf384d7d07b67a9d8fa8d71911f3eb5a3",
-            "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 1
             }
           },
           "kind": "code"
@@ -72,16 +60,16 @@
       ]
     },
     "10": {
-      "note": "Task intent creates its branch and build worktree; design and chat are not build routes. \\[1]\n\nAnchor: source extent 36–50",
+      "note": "Task intent creates its branch and build worktree; planning, design and chat are not build routes.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-            "content": "sha256:41254bd7a80fd4ab95f339ec8329794cd3f136e73f6abe8c0edcba0e6cf69d17",
+            "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+            "content": "sha256:021af9c9b04ebc8298897d16d69fea1fb3702340db407fd4b5fe3e551068beb4",
             "locator": {
-              "end": 49,
+              "end": 59,
               "kind": "line_range",
-              "start": 35
+              "start": 42
             }
           },
           "kind": "code"
@@ -89,16 +77,16 @@
       ]
     },
     "11": {
-      "note": "Launch settings own current knob rows; removed launchArgs/sessionCommands/promptKeywords load but are unused.",
+      "note": "Launch settings own the role-setting rows: harness, model, effort, serviceTier, mode, featureValues, notes, extraArgs and stepUp.\n\nAnchor: `featureValues`",
       "targets": [
         {
           "anchor": {
-            "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-            "content": "sha256:7394a837bee0ccd7b18a5fdd69f7f1aed26737e860242a99c64a657da1e38271",
+            "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+            "content": "sha256:1652872239a186b86d9d44eceb795977aa97468a1dc9a63bdd759dadb4f089b3",
             "locator": {
-              "end": 77,
+              "end": 75,
               "kind": "line_range",
-              "start": 62
+              "start": 73
             }
           },
           "kind": "code"
@@ -110,12 +98,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-            "content": "sha256:44e5cc701d8e203152483d256964e33ce49827bcbe01fcd11357b08477a79512",
+            "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+            "content": "sha256:ba476e538cb00657a76b31e28c245fabb220337d433226bee985c3c6b57ad137",
             "locator": {
-              "end": 90,
+              "end": 91,
               "kind": "line_range",
-              "start": 79
+              "start": 83
             }
           },
           "kind": "code"
@@ -127,12 +115,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-            "content": "sha256:44e5cc701d8e203152483d256964e33ce49827bcbe01fcd11357b08477a79512",
+            "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+            "content": "sha256:69a4ce3481e4de1c59b7c32b3746d0259c6f3f634194de1b6372a6a828be2d25",
             "locator": {
-              "end": 90,
+              "end": 91,
               "kind": "line_range",
-              "start": 79
+              "start": 91
             }
           },
           "kind": "code"
@@ -140,16 +128,16 @@
       ]
     },
     "2": {
-      "note": "Questions, analysis, rulings and retained Architect relay.",
+      "note": "Questions, analysis, rulings and parent relay.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-            "content": "sha256:620ea3cf2edba5651e5b478f46e6f11c6b5667c2156b8b5269e044779af377fa",
+            "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+            "content": "sha256:58a641c20e450cd1565de9a58916db27c7772ab49dd11dd1edf352f29a0cdc47",
             "locator": {
-              "end": 19,
+              "end": 25,
               "kind": "line_range",
-              "start": 13
+              "start": 19
             }
           },
           "kind": "code"
@@ -157,33 +145,16 @@
       ]
     },
     "3": {
-      "note": "Dependency-based sequencing and retained observability doctrine.",
+      "note": "Dependency-based sequencing, the guard rule and observability.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-            "content": "sha256:f5e273b25e489c5171e09c8d319b695ac1069e1a369c9adc8d0313c706fb0b13",
+            "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+            "content": "sha256:df520caf7ce7ccaa578827975571b440c5d0141b59a52892e7fc828c5fb31337",
             "locator": {
-              "end": 34,
+              "end": 40,
               "kind": "line_range",
-              "start": 21
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Task/branch/worktree intent and chat/build boundary.\n\nAnchor: \"## The spine: task doc → branch → worktree\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-            "content": "sha256:41254bd7a80fd4ab95f339ec8329794cd3f136e73f6abe8c0edcba0e6cf69d17",
-            "locator": {
-              "end": 49,
-              "kind": "line_range",
-              "start": 35
+              "start": 27
             }
           },
           "kind": "code"
@@ -191,16 +162,16 @@
       ]
     },
     "5": {
-      "note": "Small blanks, one-rung escalation and Orchestrator-only spirit test.",
+      "note": "Small gaps, escalation to the parent and Orchestrator-only spirit test.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-            "content": "sha256:7c678d57dd08abe6b7aad508152b0fd228ae655f4d1c6496b8d04f4a7fa81915",
+            "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+            "content": "sha256:b135e3314f7b1428db68f5c4c951403afc1b76f968c74b64dd8d4a13eeb95c02",
             "locator": {
-              "end": 60,
+              "end": 67,
               "kind": "line_range",
-              "start": 50
+              "start": 61
             }
           },
           "kind": "code"
@@ -208,16 +179,16 @@
       ]
     },
     "6": {
-      "note": "Portable roles, settings precedence, permitted launch keys and harness-independent dispatch.",
+      "note": "Portable roles, settings precedence, permitted role-setting keys and harness-independent role start.\n\nAnchor: `serviceTier`",
       "targets": [
         {
           "anchor": {
-            "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-            "content": "sha256:7394a837bee0ccd7b18a5fdd69f7f1aed26737e860242a99c64a657da1e38271",
+            "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+            "content": "sha256:e031e39cacc3c9b4ece8f2ac9f93934838809f10195c16f3dce879291cfa7e3f",
             "locator": {
-              "end": 77,
+              "end": 79,
               "kind": "line_range",
-              "start": 62
+              "start": 69
             }
           },
           "kind": "code"
@@ -229,12 +200,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-            "content": "sha256:44e5cc701d8e203152483d256964e33ce49827bcbe01fcd11357b08477a79512",
+            "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+            "content": "sha256:90864e67d08baea9c15be52bbdd856db016d066a8b3cf01a2b66131edeb4085a",
             "locator": {
-              "end": 90,
+              "end": 97,
               "kind": "line_range",
-              "start": 79
+              "start": 81
             }
           },
           "kind": "code"
@@ -246,12 +217,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-            "content": "sha256:7673b0f29ce9873b30f5c532fbc74c1418b55df2a5edb353eeaf5987f9207451",
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:5d3f1bf6cdd2365ded442eb31d1adc21bc4cfa8105425e826f44cfbba2e8acfb",
             "locator": {
-              "end": 19,
+              "end": 22,
               "kind": "line_range",
-              "start": 4
+              "start": 22
             },
             "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
           },
@@ -260,29 +231,16 @@
       ]
     },
     "9": {
-      "note": "Present parent routing and explicit parentless exception qualify the retained universal Architect-only statement.",
+      "note": "The Architect owns the developer conversation for delegated work; a parentless seat uses its own chat and backend seats keep their parent relay.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-            "content": "sha256:4e467b8066d35925bb0b2a6783e94f44b6fdd8cb3597dd3ada62f6f88be337a5",
+            "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+            "content": "sha256:b05b42c66ddfa51dac4d1c5aa4caff5baebcbd094a8b12000c64dd81fd41586d",
             "locator": {
               "end": 40,
               "kind": "line_range",
-              "start": 22
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e0a55fc58b27fa20dc3d41dffedc2f6b9bcaf7e0",
-            "content": "sha256:a6b4b62f1f7da649ad8c1f189bdbb45fa716b75cf9dd940ac843ccf819d787c0",
-            "locator": {
-              "end": 34,
-              "kind": "line_range",
-              "start": 15
+              "start": 36
             }
           },
           "kind": "code"

@@ -25,7 +25,7 @@ Local implementation and executable evidence do not replace requirement authorit
 
 
 
-- The accounting-cost case measures calling-thread CPU with `time.thread_time()` for exactly 10,000 recorded units under the unchanged 0.5-second bound. It excludes scheduler waiting and does not establish installed processor share or a wall-time ceiling. [2]
+- The accounting-cost case measures calling-thread CPU with `time.thread_time()` for exactly 10,000 recorded units under a 0.5-second bound. It excludes scheduler waiting and does not establish installed processor share or a wall-time ceiling. [2]
 
 
 ## 260928-MIK-L177 A9 — Saturation Is Proved By Ordering, Not By A Deadline

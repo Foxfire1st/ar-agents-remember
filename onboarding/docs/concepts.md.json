@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3149cd659f89609cc7ba11f5728190720014379c",
+            "blob": "da7d6000fb2fd3f41e49c1654ff06b362cd0105d",
             "content": "sha256:8f19e8a16e7c478ec402f472cc3a43c0f75e2b7bbc1e63bfa9440fb228bc0db1",
             "locator": {
               "end": 22,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3149cd659f89609cc7ba11f5728190720014379c",
+            "blob": "da7d6000fb2fd3f41e49c1654ff06b362cd0105d",
             "content": "sha256:3a36e5ea03ef56befe90cd63a150a7740b41ef9e29b48ff2ae6720ebdae7a6ad",
             "locator": {
               "end": 55,
@@ -37,12 +37,12 @@
       ]
     },
     "3": {
-      "note": "The router names Intent, Semantics and Relationship; Semantics/Relationship retain their retired-provider boundaries and Intent uses onboarding plus bounded source confirmation.",
+      "note": "The retrieval-strategy section points to knowledge-use guidance and names Intent, Semantics and Relationship; Semantics/Relationship keep their retired-provider boundaries and Intent uses onboarding plus bounded source confirmation.\n\nAnchor: `Semantics`",
       "targets": [
         {
           "anchor": {
-            "blob": "3149cd659f89609cc7ba11f5728190720014379c",
-            "content": "sha256:b7ec6f5fe423d0fbdb92dcbc2cad9a94457636c19e7b23c09740de92a1aa8e4e",
+            "blob": "da7d6000fb2fd3f41e49c1654ff06b362cd0105d",
+            "content": "sha256:590a9cc11cab176942844364f16adebfbb8fcb28635773a86c28bd42cae0fe67",
             "locator": {
               "end": 77,
               "kind": "line_range",
@@ -54,16 +54,16 @@
       ]
     },
     "4": {
-      "note": "Provider output remains candidate routing evidence rather than proof; source, verified onboarding, drift, branch validity and approved promotion retain truth authority.",
+      "note": "Provider output remains candidate routing evidence rather than proof; source, verified onboarding, drift, branch validity and approved promotion retain truth authority.\n\nAnchor: `candidate routing evidence`",
       "targets": [
         {
           "anchor": {
-            "blob": "3149cd659f89609cc7ba11f5728190720014379c",
-            "content": "sha256:5cd4ca092722232539f4eb801ea303e53fca3fcf58e9633979652ac582fb337f",
+            "blob": "da7d6000fb2fd3f41e49c1654ff06b362cd0105d",
+            "content": "sha256:5111d7134724103884b0cd70ceabc7cf8ad862280bdc84141c80df6312ca7b6a",
             "locator": {
               "end": 85,
               "kind": "line_range",
-              "start": 79
+              "start": 83
             }
           },
           "kind": "code"
@@ -71,14 +71,14 @@
       ]
     },
     "5": {
-      "note": "Converted sidecars carry current code anchors and the named drift outcomes. Approval gating and route-local overviews remain; knowledge history rows answer a recomputed worklist under the exact-tree gate, while memory.md is an ignored attribution cache outside transaction authority.",
+      "note": "Converted sidecars carry code anchors; the drift summary counts reference anchors as current or stale and knowledge reads report invariant currentness. Approval gating and route-local overviews remain; knowledge history rows answer a recomputed worklist under the exact-tree gate, while memory.md is an ignored attribution cache outside transaction authority.\n\nAnchor: `memory.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "3149cd659f89609cc7ba11f5728190720014379c",
-            "content": "sha256:5e8608294469f72840045f0f6eca581a1364747edc13f89d27ca68e8a586a06b",
+            "blob": "da7d6000fb2fd3f41e49c1654ff06b362cd0105d",
+            "content": "sha256:9ae452b426cfc704181d3bb55fea5e6c403adb63a24debc46dd95e4878e5070c",
             "locator": {
-              "end": 139,
+              "end": 137,
               "kind": "line_range",
               "start": 87
             }

@@ -41,7 +41,7 @@ No relevant external documentation is configured.
 
 - Visibility, release, and overlapping-acquire handling. [1]
 
-- Cockpit startup owns the returned lifecycle. [2]
+- Cockpit startup owns the returned lifecycle. Anchor: `startScreenWakeLock` [2]
 
 
 ### Cross-Repo References

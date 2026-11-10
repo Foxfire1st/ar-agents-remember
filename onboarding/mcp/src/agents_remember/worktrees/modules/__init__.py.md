@@ -2,13 +2,12 @@
 
 ## Governing Overview
 
-[overview.md](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
 Marks `worktrees.modules` as the implementation package for the worktree
-lifecycle facade. The module docstring names the `w-02-light-task-workflow` skill as
-the lifecycle owner.
+lifecycle facade. The module docstring names no skill as the lifecycle owner.
 
 ## Code Commentary
 

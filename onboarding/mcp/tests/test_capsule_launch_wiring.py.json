@@ -91,38 +91,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:f21f23f72ed8756e298583545e8736bcc2a34fb1a63c1e602ea5f07a8dcb7268",
-            "locator": {
-              "end": 77,
-              "kind": "line_range",
-              "start": 77
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
+            "blob": "830d89bb301c2fd59337d82f6f8aa7abf676b4e6",
             "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
             "locator": {
-              "end": 81,
+              "end": 82,
               "kind": "line_range",
-              "start": 81
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:532ab1742961487768e7255fc910e10d16c9ecc0c71b550ef5fc09024a77b1ff",
-            "locator": {
-              "end": 71,
-              "kind": "line_range",
-              "start": 71
+              "start": 82
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -181,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c695dc8c414eed926c859c0ceb468b362caaa607",
+            "blob": "ef47b6c1e066fffcca824ae61e155cb383c7bd17",
             "content": "sha256:bbfe2287c05d276f87d18aa7c0d63a8123de602b86eb621b7a1ab9d922516cc1",
             "locator": {
               "end": 52,
@@ -195,14 +169,14 @@
       ]
     },
     "21": {
-      "note": "The three governed-artifact rows registering this module as a consumer.",
+      "note": "The three governed-artifact rows registering this module as a consumer, beginning with the _user_settings_guard.py row. The `curator_coherence_test_support.py` row registers `test_capsule_launch_wiring.py` as a consumer. The `fixtures/repository_profiles/node/package-lock.json` row registers `test_capsule_launch_wiring.py` as a consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:0a6ea03efe9703712535f05efeacc13a561b6fd40cb34b4ed9fe1a7122ed7558",
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:c5408b3c9af404a4ca8c201711d501f000a73806a9170d1a684fc637d3509214",
             "locator": {
-              "end": 821,
+              "end": 164,
               "kind": "line_range",
               "start": 65
             },
@@ -212,12 +186,12 @@
         },
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:27ada4a3d5995ef2a9e4ed6de487ad9bb21a156504da9369d7c0736bdec39c61",
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:0e7e698f864429471bf9fb8a7872c1db9aa391a81606be6ae62492fad8db737e",
             "locator": {
-              "end": 1257,
+              "end": 1132,
               "kind": "line_range",
-              "start": 1109
+              "start": 1107
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -225,12 +199,12 @@
         },
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:e8d358fc83b0cd78d30c45fd0bf4727490538eac4f97a69b212a2078f94c56cf",
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:c594300eb9d0c5dba778467f38eaa28c806816a331189aeff79e0ba15e1e7d49",
             "locator": {
-              "end": 3096,
+              "end": 2452,
               "kind": "line_range",
-              "start": 2340
+              "start": 2353
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

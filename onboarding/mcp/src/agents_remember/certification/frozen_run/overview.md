@@ -55,4 +55,4 @@ The following retained coverage metadata describes the onboarding map, not lifec
 
 
 
-- Historical pre-R65 refresh composition checked sidecars and route overviews; that legacy composition is removed. The surviving converted controller uses its trace gate.  Anchor: `validate_memory_refresh_attestations` `_onboarding_refresh_gate` [5]
+- On a converted tree the curator's memory-quality run uses the onboarding trace gate: one repair finding per missing trace, one per unreadable input, and one for changed sources without onboarding. [5]

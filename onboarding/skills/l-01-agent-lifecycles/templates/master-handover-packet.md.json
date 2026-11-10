@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The packet names the ready completion boundary with resolvable, revalidatable refs.",
+      "note": "The Manager hands the master to the named coordination recipient, or the developer without a parent, and the recipient validates the exact candidate.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1c9bd864ffbf898739b388c71032b59177a01e3",
-            "content": "sha256:382a7b8332f96bd62eedf4f1e0d341a946397dbc381a2318ca72cc8602c2ff2d",
+            "blob": "b088bd60ba1b8184e645a2f12d3644ee2797ea8a",
+            "content": "sha256:fd43002ebca07c3d74b1405383b3834009c08d931ed2d48ba6f9b89fbcb852d6",
             "locator": {
-              "kind": "file"
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
             }
           },
           "kind": "code"
@@ -22,10 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1c9bd864ffbf898739b388c71032b59177a01e3",
-            "content": "sha256:382a7b8332f96bd62eedf4f1e0d341a946397dbc381a2318ca72cc8602c2ff2d",
+            "blob": "b088bd60ba1b8184e645a2f12d3644ee2797ea8a",
+            "content": "sha256:1f3cff232389c6c2bedd743092de2ca7c82310057a58ca5bbf45577329a85f31",
             "locator": {
-              "kind": "file"
+              "end": 25,
+              "kind": "line_range",
+              "start": 23
             }
           },
           "kind": "code"
@@ -37,10 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1c9bd864ffbf898739b388c71032b59177a01e3",
-            "content": "sha256:382a7b8332f96bd62eedf4f1e0d341a946397dbc381a2318ca72cc8602c2ff2d",
+            "blob": "b088bd60ba1b8184e645a2f12d3644ee2797ea8a",
+            "content": "sha256:8df191468a14d93607ed0ed2b9ea014579798e847156292891055bb5e468c825",
             "locator": {
-              "kind": "file"
+              "end": 81,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

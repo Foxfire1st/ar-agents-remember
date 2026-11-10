@@ -7,10 +7,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7016203837db907490d39c45cdae36cf39d35288",
-            "content": "sha256:80280bcf4f61456a179bd741c6f552215d259233ce33db1c262d535047fe70b8",
+            "blob": "cb5267fc9dfc7f51203dd06e839f793c8dcf5ade",
+            "content": "sha256:69bbdd9beec0c06960b280bbcc65ae7645005644ef43ba91c5eb02958a30870c",
             "locator": {
-              "end": 697,
+              "end": 8,
               "kind": "line_range",
               "start": 1
             }
@@ -24,12 +24,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7016203837db907490d39c45cdae36cf39d35288",
-            "content": "sha256:80280bcf4f61456a179bd741c6f552215d259233ce33db1c262d535047fe70b8",
+            "blob": "cb5267fc9dfc7f51203dd06e839f793c8dcf5ade",
+            "content": "sha256:b6a532862efd99ed003317984e59003e83ce566fafec11559c285878425aebac",
             "locator": {
-              "end": 697,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "test_the_shipped_corpus_parses_and_every_served_skill_has_a_root_revision"
             }
           },
           "kind": "test"
@@ -41,12 +40,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7016203837db907490d39c45cdae36cf39d35288",
-            "content": "sha256:80280bcf4f61456a179bd741c6f552215d259233ce33db1c262d535047fe70b8",
+            "blob": "cb5267fc9dfc7f51203dd06e839f793c8dcf5ade",
+            "content": "sha256:e403b7f68bf454d2f670b9fd2da37197f87e16d0ab598ac19170e4cd0717bb5f",
             "locator": {
-              "end": 697,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "test_a_real_client_and_server_exchange_over_the_installed_sdk"
             }
           },
           "kind": "test"
@@ -58,12 +56,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7016203837db907490d39c45cdae36cf39d35288",
-            "content": "sha256:80280bcf4f61456a179bd741c6f552215d259233ce33db1c262d535047fe70b8",
+            "blob": "cb5267fc9dfc7f51203dd06e839f793c8dcf5ade",
+            "content": "sha256:29abe39404e8e3d0e624d5a5a0dcc63bee02fac8f9c793602eb5f1582bf7d4a2",
             "locator": {
-              "end": 697,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "test_the_server_process_never_serves_a_file_outside_a_skill_directory"
             }
           },
           "kind": "test"
@@ -75,12 +72,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7016203837db907490d39c45cdae36cf39d35288",
-            "content": "sha256:80280bcf4f61456a179bd741c6f552215d259233ce33db1c262d535047fe70b8",
+            "blob": "cb5267fc9dfc7f51203dd06e839f793c8dcf5ade",
+            "content": "sha256:547998cfaff795e86c9f2e2e3875d470ddc56280bd71591ff5304d6bfddf048d",
             "locator": {
-              "end": 697,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "test_a_catalog_record_that_escapes_its_skill_directory_is_refused"
             }
           },
           "kind": "test"
@@ -92,12 +88,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7016203837db907490d39c45cdae36cf39d35288",
-            "content": "sha256:80280bcf4f61456a179bd741c6f552215d259233ce33db1c262d535047fe70b8",
+            "blob": "cb5267fc9dfc7f51203dd06e839f793c8dcf5ade",
+            "content": "sha256:14366176d431e014ff41b9a7687212e9517b31d33cc13818b54e1378bdc37a7b",
             "locator": {
-              "end": 697,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "test_altitude_admission_admits_every_role_the_document_can_carry_and_refuses_the_rest"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The served catalog and both the canonical and packaged skill trees hold exactly the six retained skills.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb5267fc9dfc7f51203dd06e839f793c8dcf5ade",
+            "content": "sha256:b6a532862efd99ed003317984e59003e83ce566fafec11559c285878425aebac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_shipped_corpus_parses_and_every_served_skill_has_a_root_revision"
             }
           },
           "kind": "test"

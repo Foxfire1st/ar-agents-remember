@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+        "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
         "content": "sha256:981ec6c92d9899db9e7eed5a5dff4ec5a672661eb01cbeeb2a5b72e310bcaecf",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+        "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
         "content": "sha256:2b93be477e2c4ed21a42845ad2db6ef92e4c37079b88cabc156b233d44f33949",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-        "content": "sha256:99cced187a183a7906f8169567798687950c73ca8a0ad29ba52b338214de7446",
+        "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+        "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
         "locator": {
           "kind": "symbol",
           "name": "server_info_payload"
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-        "content": "sha256:99cced187a183a7906f8169567798687950c73ca8a0ad29ba52b338214de7446",
+        "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+        "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
         "locator": {
           "kind": "symbol",
           "name": "server_info_payload"
@@ -76,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-        "content": "sha256:99cced187a183a7906f8169567798687950c73ca8a0ad29ba52b338214de7446",
+        "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+        "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
         "locator": {
           "kind": "symbol",
           "name": "server_info_payload"
@@ -95,15 +95,32 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of server_info_payload supporting the stated file behavior.",
+      "note": "`server_info_payload` reports the server identity, roots, unused keys, serving build, build currentness, running servers and any agent binding.",
       "targets": [
         {
           "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:99cced187a183a7906f8169567798687950c73ca8a0ad29ba52b338214de7446",
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
             "locator": {
               "kind": "symbol",
               "name": "server_info_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`server_info` lists the running-server registry's live records.\n\nAnchor: `server_inventory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:e8a1a9f3236653492fe915febb0a4598dfd5f4a2051f8d25b875faf6b12b4a7a",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 91
             }
           },
           "kind": "code"
@@ -115,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
             "content": "sha256:4ca9c7f33dd5b33e6e28cea6c6fda08205ba9cd7fc864963f5929beae3e6ee3b",
             "locator": {
               "kind": "symbol",
@@ -127,15 +144,32 @@
       ]
     },
     "8": {
-      "note": "The server-info answer, which no longer carries a harness skill root.",
+      "note": "The server-info answer carries no harness skill root.",
       "targets": [
         {
           "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:99cced187a183a7906f8169567798687950c73ca8a0ad29ba52b338214de7446",
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
             "locator": {
               "kind": "symbol",
               "name": "server_info_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`server_info` reports the process's build currentness, inspecting a checkout build too.\n\nAnchor: `build_currentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:21dda8ff9f4e82e8b5ddd1e042abe0ec790a44f9211d15660bd83a5ef01e33fa",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 64
             }
           },
           "kind": "code"

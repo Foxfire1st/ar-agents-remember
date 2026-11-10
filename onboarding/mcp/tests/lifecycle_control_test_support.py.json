@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d87ae23054bd1df68989903f74abf3ec54fa8285",
+            "blob": "d1f41f5c0e79e96ddc022876247552209378268c",
             "content": "sha256:c8ec802c2b7ce69ae063ed72f19868152be2bcd161a820ffcf103ab71fb3f0ba",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d87ae23054bd1df68989903f74abf3ec54fa8285",
+            "blob": "d1f41f5c0e79e96ddc022876247552209378268c",
             "content": "sha256:c8ec802c2b7ce69ae063ed72f19868152be2bcd161a820ffcf103ab71fb3f0ba",
             "locator": {
               "kind": "symbol",
@@ -35,16 +35,16 @@
       ]
     },
     "3": {
-      "note": "Completed-disposition task authority is built through the store and a fixed-now route review.\n\nAnchor: \"def publish_completed_disposition_task_authority(\"",
+      "note": "Completed-disposition task authority is built through the store and a fixed-now route review.\n\nAnchor: `build_route_review`",
       "targets": [
         {
           "anchor": {
-            "blob": "d87ae23054bd1df68989903f74abf3ec54fa8285",
-            "content": "sha256:e552ba2e68eb54279a9afa827b365b1bd939c37b6ae57412da19d73d849ef10d",
+            "blob": "d1f41f5c0e79e96ddc022876247552209378268c",
+            "content": "sha256:a569b375757c44934ed287046a82b1271b635948ac0cdf00929c55b74f54c18b",
             "locator": {
-              "end": 199,
+              "end": 111,
               "kind": "line_range",
-              "start": 40
+              "start": 90
             }
           },
           "kind": "test"
@@ -52,16 +52,16 @@
       ]
     },
     "4": {
-      "note": "Completed task authority derives the typed candidate reference inside the store-backed publication.\n\nAnchor: \"def publish_completed_disposition_task_authority(\"",
+      "note": "Completed task authority derives the typed candidate reference inside the store-backed publication.\n\nAnchor: `ResolvedTaskDocument`",
       "targets": [
         {
           "anchor": {
-            "blob": "d87ae23054bd1df68989903f74abf3ec54fa8285",
-            "content": "sha256:e552ba2e68eb54279a9afa827b365b1bd939c37b6ae57412da19d73d849ef10d",
+            "blob": "d1f41f5c0e79e96ddc022876247552209378268c",
+            "content": "sha256:19320ec1e76e71be390c06cc4de967233b15db5fff2aa4c802acbcd0ae76606f",
             "locator": {
-              "end": 199,
+              "end": 94,
               "kind": "line_range",
-              "start": 40
+              "start": 90
             }
           },
           "kind": "test"
@@ -73,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d87ae23054bd1df68989903f74abf3ec54fa8285",
+            "blob": "d1f41f5c0e79e96ddc022876247552209378268c",
             "content": "sha256:c8ec802c2b7ce69ae063ed72f19868152be2bcd161a820ffcf103ab71fb3f0ba",
             "locator": {
               "kind": "symbol",

@@ -5,7 +5,7 @@
     ],
     "justification": "The shipped-brief, instruction-census and retired-wording cases reject a named candidate interpreter returning to product instructions."
   },
-  "applicability": "Product lifecycle role, operation and template instructions for running a task candidate, including every shipped worker-brief copy.",
+  "applicability": "Product lifecycle role, operation and template instructions for running a task candidate, including the Worker role's candidate-environment instruction and its packaged copy.",
   "conditions": [
     "Repository tool notes own the build command and interpreter choice.",
     "Where the notes name no command the agent discloses that gap; run records name the interpreter actually used."
@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L136",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "No product role text names an interpreter for a candidate; the worker brief points at the tool notes and requires run records to name the interpreter used.",
+  "statement": "No product role text names an interpreter for a candidate; the Worker role's candidate-environment instruction points at the tool notes and requires run records to name the interpreter used.",
   "status": "proposed",
   "supersedes": []
 }

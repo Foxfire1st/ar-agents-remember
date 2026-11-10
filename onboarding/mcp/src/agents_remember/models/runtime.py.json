@@ -8,48 +8,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
-            "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
+            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+            "content": "sha256:108053a14cda04d0e17993e2857e179f64c5761a9c7dc2f5b2bacd8a5881831f",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"
-            },
-            "path": "mcp/src/agents_remember/application/runtime/install.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
-            "content": "sha256:da67dd92ee65f809406cae695b257e285f724cecab0f2df85fe2cea9d840b002",
-            "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 18
-            },
-            "path": "mcp/src/agents_remember/application/runtime/install.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
-            "content": "sha256:605d91fbf6762a608b9b89a2528b094ea700a34cf8d0ba2937553c2103c3cef7",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/runtime/install.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
-            "content": "sha256:0b827771026610af608d65d896e1ff9caffcf85e036bf08c2a679d1c086966b7",
-            "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 14
             },
             "path": "mcp/src/agents_remember/application/runtime/install.py"
           },
@@ -103,8 +66,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f8d5b093f58eb7b6874c014a91a48d876459c65",
-            "content": "sha256:d5a90b391cc27dd10e6d6d5eb7e563735fbc01999b23c874693d09fec1be3407",
+            "blob": "8020c454e7738e8c4fd09e5c90fe068e397b1931",
+            "content": "sha256:8f93e5820eb7e2025cb1c2766775afceef103d359a7e142b1734e6ca3e6d020c",
             "locator": {
               "kind": "symbol",
               "name": "RuntimeInstallResponse"
@@ -119,11 +82,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f8d5b093f58eb7b6874c014a91a48d876459c65",
-            "content": "sha256:d5a90b391cc27dd10e6d6d5eb7e563735fbc01999b23c874693d09fec1be3407",
+            "blob": "8020c454e7738e8c4fd09e5c90fe068e397b1931",
+            "content": "sha256:8f93e5820eb7e2025cb1c2766775afceef103d359a7e142b1734e6ca3e6d020c",
             "locator": {
               "kind": "symbol",
               "name": "RuntimeInstallResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The install response carries the running-server inventory and the dashboard part.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8020c454e7738e8c4fd09e5c90fe068e397b1931",
+            "content": "sha256:31e849517de49785a1ce5990a0438928a52a6743dc861cf44ce51d5aa119dbcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "runningServers"
             }
           },
           "kind": "code"

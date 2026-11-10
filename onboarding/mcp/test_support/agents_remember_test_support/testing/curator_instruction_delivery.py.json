@@ -1,0 +1,71 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/curator_instruction_delivery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each coordination scenario's answer is found in the compiled shared block or the delivered step detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "038d35ca4078bc5c409612a2cfb42055e7efd151",
+            "content": "sha256:b1ece6f9892a334ef4bfef8eb362ed786f6d4d014e70bcce01dccd2ea237d91a",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_coordination_steps"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Reviewer intake is judged on instructions delivered with the baseline-review detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "038d35ca4078bc5c409612a2cfb42055e7efd151",
+            "content": "sha256:1162e9683b927acedbc11b6ea31914fc306cd690546be309b6e3908c7e61df07",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_reviewer_initial_intake_delivery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The refused-write ladder and permission rule reach the shared block, the served detail and the Manager.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "038d35ca4078bc5c409612a2cfb42055e7efd151",
+            "content": "sha256:beab98f01d891a0f571eeb0e958023fa9ca58ee08316df235ecb4f78d6f1110a",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_correct_write_ladder"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Curator role and foundation reference carry the foundation admission and output clauses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "038d35ca4078bc5c409612a2cfb42055e7efd151",
+            "content": "sha256:fac88b43e56b2c381343e66e803a34fb290fb26b09c826f36c75f1a7a5f6bdce",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_foundation_boundaries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

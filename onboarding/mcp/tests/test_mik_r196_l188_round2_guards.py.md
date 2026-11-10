@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -32,8 +32,8 @@ the fourth is checked as behaviour in `test_mik_r196_l188_preparation_order.py`.
   `test_benchmark_preparation_discovers_package_skills_without_installing_copies` builds a local origin repository with
   one commit, copies the benchmark templates, and prepares the same case twice. Both prepared trees
   (`source-only/repos/fixture`, `with-memory/repos/fixture`, `with-memory/ar-coordination/memory-repos/ar-fixture`)
-  carry the pinned fixture at the case's commit; the coordination root holds `AGENTS.md`, no `.codex` is left in
-  the source-only tree, and no `skills` tree is installed anywhere. The written `.codex/config.toml` registers
+  carry the pinned fixture at the case's commit; no `AGENTS.md` file exists anywhere under the coordination root, no
+  `.codex` is left in the source-only tree, and no `skills` tree is installed anywhere. The written `.codex/config.toml` registers
   `agents_remember_benchmark` with `-m agents_remember.mcp --config <settings>`, the settings resolve the fixture
   repository and the memory coordination root with no providers, and the registered server serves
   `skill://index.json` and the packaged `c-13-install-and-onboard/SKILL.md` and
@@ -59,5 +59,5 @@ path is `mcp/certification-profile-v1.json`. The benchmark case is a real local 
 - The sandbox builder reads the key its producer returns, and the old name is absent from the pair.
 - Every enforcing rail names a script that exists in the checkout.
 - The canonical and packaged setup skills both refuse onboarding authorship and keep the fixer out.
-- Real benchmark preparation twice over leaves both trees at the pinned commit, installs no skill tree, and serves
-  the packaged skill bytes through the registered server.
+- Real benchmark preparation twice over leaves both trees at the pinned commit, installs no skill tree, writes no
+  `AGENTS.md` under the coordination root, and serves the packaged skill bytes through the registered server.

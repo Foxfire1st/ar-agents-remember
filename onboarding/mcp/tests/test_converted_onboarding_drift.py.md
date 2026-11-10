@@ -89,7 +89,7 @@ failure the case looks for.
 
 
 
-- Surviving descriptions state measurement/currentness/advisory wording. Canonical and sole packaged c-05 copies include their moved memory-quality-control workflow when checking current-row/no-counted-card-edit-alone doctrine; both c-10 copies must state that drift acceptance lifts only the stale-anchor gate and still refuses invalid paired anchors as R198.1-reference-anchor and blocked-invalid. [11]
+- Surviving descriptions (the `include_drift` description in core registration and docs/tool-details.md) state measurement/currentness/advisory wording. Both l-01-agent-lifecycles copies carry the drift commands, curation, stale-orientation and current-row doctrine (an `onboarding_trace` row answers; a counted change of the card alone never answers); both c-10 copies must state that drift acceptance lifts only the stale-anchor gate and still refuses validator violations as R198.1-reference-anchor and blocked-invalid. [11]
 
 - The context-packet leaf route binds the leaf base. [12]
 
@@ -104,11 +104,11 @@ failure the case looks for.
 
 
 
-- Static description assertions inspect surviving descriptions and canonical/package copies, retain c-05 current-row doctrine, and reject restoration of the removed drift tool. [14]
+- Static description assertions inspect surviving descriptions and both l-01-agent-lifecycles and c-10 copies, retain current-row doctrine, and reject restoration of the removed drift tool registration. [14]
 
 
 
 
 
 
-- Carried deleted-path refusal and context/summary parity remain asserted at their current owners; current-row doctrine is a separate static text check, not executed acceptance. Source caption: `test_context_packet_agrees_with_the_summary_on_carried_anchors` `test_descriptions_say_what_the_check_is` [15]
+- Carried deleted-path refusal and context/summary parity remain asserted at their current owners; current-row doctrine is a separate static text check, not executed acceptance. [15]

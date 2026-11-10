@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "content": "sha256:4783839ffb9f4263ff8babc726eeee096a034b7e538f7e4d6ac6d0ab385adf70",
+        "locator": {
+          "end": 893,
+          "kind": "line_range",
+          "start": 893
+        }
+      },
+      "id": "RLZ-13ZE2T",
+      "invariant": "INV-AFA5WS",
+      "origin": {
+        "handoffEntry": "L84-K3C-AFA5WS-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The install copies the old convention settings file into the user config folder only when the destination is absent.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
         "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
         "locator": {
           "kind": "symbol",
@@ -21,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
         "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
         "locator": {
           "kind": "symbol",
@@ -39,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
         "content": "sha256:3ddacb8bd5f0122befc3730a4c21219d9b5cee1a1ab9ae73fc27f26bb0dd1a2d",
         "locator": {
           "kind": "symbol",
@@ -57,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
         "content": "sha256:0d4616c9c928bd4215f0cb657bfa5b9ec8bd5764b1eb62c24befb667145c76db",
         "locator": {
           "kind": "symbol",
@@ -75,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
         "content": "sha256:4a4fbcdc676ad9917989247e03cc4a140247855c8d37a56e5289407799f4d305",
         "locator": {
           "kind": "symbol",
@@ -93,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
         "content": "sha256:0a1920a2dc1e0b2cc2579092042bd0ceee94bb1fc401b9038a32668a90e8d710",
         "locator": {
           "kind": "symbol",
@@ -116,8 +135,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
-            "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
+            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+            "content": "sha256:108053a14cda04d0e17993e2857e179f64c5761a9c7dc2f5b2bacd8a5881831f",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"
@@ -146,15 +165,16 @@
       ]
     },
     "11": {
-      "note": "The application entry that composes the host step onto the lower service result.",
+      "note": "The application entry that composes the host step onto the lower service result.\n\nAnchor: `install_host`",
       "targets": [
         {
           "anchor": {
-            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
-            "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
+            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+            "content": "sha256:b2a7e2beeba2fa2b9a24be0dcd2f4db50d65523ddd43812a1c2eceb6b64bc0ff",
             "locator": {
-              "kind": "symbol",
-              "name": "run_runtime_install"
+              "end": 29,
+              "kind": "line_range",
+              "start": 26
             },
             "path": "mcp/src/agents_remember/application/runtime/install.py"
           },
@@ -167,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
             "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
             "locator": {
               "kind": "symbol",
@@ -183,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
             "content": "sha256:3ddacb8bd5f0122befc3730a4c21219d9b5cee1a1ab9ae73fc27f26bb0dd1a2d",
             "locator": {
               "kind": "symbol",
@@ -194,7 +214,7 @@
         },
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
             "content": "sha256:4a4fbcdc676ad9917989247e03cc4a140247855c8d37a56e5289407799f4d305",
             "locator": {
               "kind": "symbol",
@@ -210,11 +230,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:6b5baac9483d6d67328e863b9dbdeadfd14dd40861f87856c13c5ad6486fd01d",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:2ef38c918d540dc4358ecdd3376fb5320f8fe435146e03808c8d10e624feb0a0",
             "locator": {
-              "kind": "symbol",
-              "name": "_install_runtime"
+              "end": 739,
+              "kind": "line_range",
+              "start": 739
             }
           },
           "kind": "code"
@@ -243,7 +264,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
             "content": "sha256:5d9c5e9b23bf1ebd2591444a99b45bd6a3dcb5c14ea375393c4d5521cc611c84",
             "locator": {
               "kind": "symbol",
@@ -259,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
             "content": "sha256:12806b18d77784455a5a12d4bb5375195bd0db2501210f860cc12a9491151241",
             "locator": {
               "kind": "symbol",
@@ -275,11 +296,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:6b5baac9483d6d67328e863b9dbdeadfd14dd40861f87856c13c5ad6486fd01d",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:48d2a7fd0ef42986a9ec3e7c52a3fd10726d7ef7e0c1557a34c6fca70f100256",
             "locator": {
               "kind": "symbol",
               "name": "_install_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Every accepted install removes the three retired coordinator startup files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:e50df3e24f617cc0af0d8d9271e33df35749e8c9dab80a6fb473fe38b61cd1de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capsule_cutover"
             }
           },
           "kind": "code"
@@ -287,73 +324,64 @@
       ]
     },
     "2": {
-      "note": "`RuntimeInstallScope` carries the required resolved selection, and both public entry points funnel through one private installer.",
+      "note": "`RuntimeInstallScope` carries an optional experiment selection, and both public entry points funnel through one private installer.",
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:e4fec328bd3a60d5ee744f217835980dfa2d8f113efc1b3c60097970fa52f12c",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:95e0be886d78f206aeb81e2b4cf47e735b6d9a1f2328f6d72dbcf1717d4ced2f",
             "locator": {
-              "kind": "symbol",
-              "name": "RuntimeInstallScope"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
-            "locator": {
-              "kind": "symbol",
-              "name": "install_runtime"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:f2592acb3de309e5d5c9d230a540dc6b8dbb08fbf49afdb79e8cbd5d9846823c",
-            "locator": {
-              "kind": "symbol",
-              "name": "install_experimental_runtime"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:6b5baac9483d6d67328e863b9dbdeadfd14dd40861f87856c13c5ad6486fd01d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_install_runtime"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:43bb48d072e335d4e9577d6e2326cd54050a6e90550c08f7253268f0fd94f0a4",
-            "locator": {
-              "end": 837,
+              "end": 688,
               "kind": "line_range",
-              "start": 821
+              "start": 636
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "The cutover withholds the legacy startup chain and removes a copy an earlier install left.",
+    "20": {
+      "note": "The install result carries the MCP settings copy outcome.\n\nAnchor: `copy_mcp_settings`",
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:c77d0c7514cd2039c05f08787db185a10661b0156510ef77685f3d37d455c462",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:04fbf5329c29670620a4617c8ccbf988d1dadcae8d3119a76b5a89909cd1e3c0",
+            "locator": {
+              "end": 895,
+              "kind": "line_range",
+              "start": 886
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The application entry adds the dashboard ensure and the running-server inventory to the install result.\n\nAnchor: `server_inventory(config)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+            "content": "sha256:f749b3c6297d4f7e9a1dfc1204dad2aa0d3c50f8cb818255e85d73011d1780ef",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every accepted install removes the retired coordinator startup files and writes none of them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:e50df3e24f617cc0af0d8d9271e33df35749e8c9dab80a6fb473fe38b61cd1de",
             "locator": {
               "kind": "symbol",
               "name": "_capsule_cutover"
@@ -368,27 +396,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:6b5baac9483d6d67328e863b9dbdeadfd14dd40861f87856c13c5ad6486fd01d",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:a5b1cb83478f813c2f73aa99a54b77277b7d78efd1d1f651906e74bc2a6a8935",
             "locator": {
-              "kind": "symbol",
-              "name": "_install_runtime"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The removed Eve application has no install path in this module.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:6b5baac9483d6d67328e863b9dbdeadfd14dd40861f87856c13c5ad6486fd01d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_install_runtime"
+              "end": 798,
+              "kind": "line_range",
+              "start": 795
             }
           },
           "kind": "code"
@@ -396,11 +409,11 @@
       ]
     },
     "6": {
-      "note": "An already-resolved selection is what the installer consumes; only the configuration entry point reads the ambient environment.",
+      "note": "The selection is resolved and probed before any write; with no selection passed, the run's environment is read.",
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
             "content": "sha256:abfc956b9e0b363f04aa3a43dbb6fe7a376111e20d784182ec579cca5383d00e",
             "locator": {
               "kind": "symbol",
@@ -441,15 +454,16 @@
       ]
     },
     "9": {
-      "note": "`install_runtime` stores a provider watcher rebind report, stops watchers before provider refresh, starts/checks them afterward, and includes rebind/recovery details in the MCP payload.",
+      "note": "The install stores a provider watcher rebind report, attempts the old-watcher stop before the provider refresh and continues on a failed stop.\n\nAnchor: `stop_provider_watchers_before_refresh`",
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:5da672fca24830b7c8cd2336508eb1a01245adcb6511a4bd59cfd921c62c0da7",
             "locator": {
-              "kind": "symbol",
-              "name": "install_runtime"
+              "end": 829,
+              "kind": "line_range",
+              "start": 812
             }
           },
           "kind": "code"

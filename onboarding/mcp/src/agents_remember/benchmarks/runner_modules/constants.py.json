@@ -19,17 +19,34 @@
         }
       ]
     },
-    "3": {
-      "note": "The instruction targets a benchmark workspace receives.",
+    "4": {
+      "note": "Workspace instruction templates remain declared constants",
       "targets": [
         {
           "anchor": {
-            "blob": "733ce3471b462a9ca6d5416b3f81083cfbfba468",
-            "content": "sha256:6a2af536c9d87a9902c93aa4af0952d2f6d7c1211679d8045f1a87bb551c5177",
+            "blob": "ac76ec64057a6893daa0f473b52ee8c8482e6475",
+            "content": "sha256:f880ff165f14f8cfc5793c97f247080fdd3697235b851c0c1b81c08ec746e41e",
             "locator": {
               "kind": "symbol",
-              "name": "AGENTS_MD_TARGETS"
+              "name": "WORKSPACE_AGENTS_TEMPLATE"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The retired coordinator startup files are declared by the install experiment module",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "content": "sha256:a1158b05bc0d2bae48bf1d67aee004da27d54031e586096258000ff3cb8d046c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_STARTUP_TARGETS"
+            },
+            "path": "mcp/src/agents_remember/install/experiment.py"
           },
           "kind": "code"
         }

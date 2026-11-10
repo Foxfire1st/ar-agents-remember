@@ -120,14 +120,15 @@
       ]
     },
     "5": {
-      "note": "Historical pre-R65 refresh composition checked sidecars and route overviews; that legacy composition is removed. The surviving converted controller uses its trace gate.  Anchor: `validate_memory_refresh_attestations` `_onboarding_refresh_gate`",
+      "note": "On a converted tree the curator's memory-quality run uses the onboarding trace gate: one repair finding per missing trace, one per unreadable input, and one for changed sources without onboarding.",
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:b3b3c880f3d968f51fa56d6131b9233363d37388ca4337c3934ecffe0899ed17",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "onboarding_trace_gate_for_context"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },

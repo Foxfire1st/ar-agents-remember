@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The coherent-review family requires the newest question to own the display and selected-subject cache; otherwise a delayed answer can show or reuse evidence for a subject the reader has left."
+  },
   "applicability": "Review reads started by successive selections, refreshes or page requests on one mounted surface.",
   "conditions": [
     "Every read takes the next sequence number; only the newest may write displayed read/frame/retained state.",

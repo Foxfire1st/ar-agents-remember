@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
-        "content": "sha256:7dd7e3c186a345bb3cfe9e803e73f68f820d67066f70fea9792860c8d1ec90f5",
+        "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+        "content": "sha256:1f3cb72d010a174c059358504b072d04527fb38ae8dc7675f9ab2c59e2e020ad",
         "locator": {
           "kind": "file"
         }
@@ -25,10 +25,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
-            "content": "sha256:f3c73ed7f108fcbed803c29045ff9e672685d341200480e7bac7a083eea149ff",
+            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "content": "sha256:6a1171e595132de6eb6acd0e83d0d10d7e01fd4b617774966ac61eb0db238ec6",
             "locator": {
-              "end": 9,
+              "end": 10,
               "kind": "line_range",
               "start": 3
             }
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
-            "content": "sha256:46ad31953cc90146485a06391681be2fd39e62cd5adc491273eb6f2fc52ef062",
+            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "content": "sha256:4e5a050aa6929853f98e86c57369eea680911a8051cd2e296baeddd8a4e47a5d",
             "locator": {
-              "end": 51,
+              "end": 58,
               "kind": "line_range",
-              "start": 11
+              "start": 12
             }
           },
           "kind": "code"
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
-            "content": "sha256:2a4f18e6e688aaf57c326fb1f373596d2df94788d2c3cc13945684268946e0ef",
+            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "content": "sha256:122088f8fa46ecb6165bdb247233fc8320e1ea4b82d4a62bce757d65ef7a5cc2",
             "locator": {
-              "end": 83,
+              "end": 105,
               "kind": "line_range",
-              "start": 69
+              "start": 82
             }
           },
           "kind": "code"
@@ -72,16 +72,16 @@
       ]
     },
     "4": {
-      "note": "Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.",
+      "note": "Settings-governed rounds, recorded extra-round approval and preserved stage/ownership boundaries.\n\nAnchor: `orchestration.loops.defaults.maxRounds`",
       "targets": [
         {
           "anchor": {
-            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
-            "content": "sha256:0498fd7cd8069fc48b2da826598fdfe6d1c7c5303c80de3c9dcc0063a65ed6dc",
+            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "content": "sha256:f13377b10b757bd0845d1153c225072128c210699145d5b26d2d3f03d47e46a5",
             "locator": {
-              "end": 51,
+              "end": 36,
               "kind": "line_range",
-              "start": 29
+              "start": 28
             }
           },
           "kind": "code"
@@ -89,16 +89,16 @@
       ]
     },
     "5": {
-      "note": "The current review-scope sentence omits the former standalone clause and the review-label list omits hosted without resetting sealed findings.",
+      "note": "Organizational leaf review and atomic integration review keep distinct scopes; a changed label or coordinating level creates no new baseline, and no listed change resets the sealed findings.",
       "targets": [
         {
           "anchor": {
-            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
-            "content": "sha256:23f3f340002fb25d05e9e0169a421794dafa56744fa643ceb5a0627518bbb3ff",
+            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "content": "sha256:3fca0b448116f9a70613b35dc72c4a15cbd53dd40b8249071898bfcd39d69fd0",
             "locator": {
-              "end": 51,
+              "end": 50,
               "kind": "line_range",
-              "start": 25
+              "start": 18
             }
           },
           "kind": "code"
@@ -110,10 +110,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
-            "content": "sha256:7dd7e3c186a345bb3cfe9e803e73f68f820d67066f70fea9792860c8d1ec90f5",
+            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "content": "sha256:1f3cb72d010a174c059358504b072d04527fb38ae8dc7675f9ab2c59e2e020ad",
             "locator": {
-              "end": 84,
+              "end": 105,
               "kind": "line_range",
               "start": 1
             }

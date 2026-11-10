@@ -4,6 +4,24 @@
     {
       "anchor": {
         "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+        "content": "sha256:a5551ed7cb0c18004ad11a0fb849757baa72221b0f5e1f3590cd957f009e028e",
+        "locator": {
+          "kind": "symbol",
+          "name": "source_lineage_for_task"
+        }
+      },
+      "id": "RLZ-62M6RY",
+      "invariant": "INV-1P5Z3B",
+      "origin": {
+        "handoffEntry": "K2-1P5Z3B-source-lineage",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "A master's source lineage follows its recorded execution nature: an organizational master takes the organizational projection with no series contract of its own, while an atomic master resolves its own series contract.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
         "content": "sha256:ce8b21908e635c8653e525d3856b4a9d7cddb666adb285c5e78b9c14ce220a86",
         "locator": {
           "kind": "symbol",

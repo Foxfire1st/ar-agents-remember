@@ -27,7 +27,7 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The kept closeout instructions and their single packaged copy say that finalization decides the abandoned-but-landed rule again and refuses such a row by name, for atomic and organizational masters.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": [
     "INV-3YSSTZ"
   ]

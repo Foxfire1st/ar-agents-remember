@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Leaf ingest and taskless bootstrap both refuse unconverted roots and delegate converted writes to the shared file writer, so authoring semantics must remain consistent across the two entry points."
+  },
   "applicability": "Every authored write of knowledge through the two admitted command lines or the mounted knowledge_write tool.",
   "conditions": [
     "The memory tree holds the conversion marker; a tree without it is refused with the central conversion message.",

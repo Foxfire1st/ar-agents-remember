@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Weakening notes selector and path confinement could expose files outside the admitted series, while changing named refusal states could make callers misread access failures as note content."
+  },
   "applicability": "The {repo, master} selector validation and the status mapping of both notes routes (_notes_json), and the size-capped binary-tolerant note read (read_note).",
   "conditions": [
     "The repository comes from the MCP settings allow-list and master is a single path segment."

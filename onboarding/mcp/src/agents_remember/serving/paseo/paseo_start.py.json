@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8563bb28265ef187a6e390687d8c59f174137386",
-        "content": "sha256:bada0558f18963fa912b88536362bd1eb9ae669a6bd20671bbae9f4c74cfb0ad",
+        "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+        "content": "sha256:055476941e360a611e75be9449fe29c11740aa259b2215c2509c5dc5860937d6",
         "locator": {
           "kind": "symbol",
           "name": "ensure_host"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "8563bb28265ef187a6e390687d8c59f174137386",
-        "content": "sha256:cd55f8a97f01af38eb6036e2307d7ff613d7adcb454639ac28c8831a1fc8a6f1",
+        "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+        "content": "sha256:d2b412f783a3eb2aae2d4b3c4b25beba3e6c97d44167bacad421eb9a4f826730",
         "locator": {
           "kind": "symbol",
           "name": "_observe"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "8563bb28265ef187a6e390687d8c59f174137386",
+        "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
         "content": "sha256:768cc2660ac745053d44771d1d99dabf17e347f92695d1084c458b362a9ef534",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "8563bb28265ef187a6e390687d8c59f174137386",
-        "content": "sha256:a818b6da2ab0f76df7990b165b8f51b22c8a7bb7ed9a4d50bc7143ff5e3da540",
+        "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+        "content": "sha256:0336c6625a9e4aa695cf0a76334c482aa418972a7ecf5ef31bb67e45fb800895",
         "locator": {
           "kind": "symbol",
           "name": "observe_host"
@@ -72,6 +72,25 @@
       },
       "rationale": "This observation entry point bounds all host reads and formats a host outcome without modifying the host or removing stale records; the CLI composes it with dashboard status.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+        "content": "sha256:bad28799800c15fa650b9422dd21c26ced9f9ae1ea0f16df00041c0a6cfd8cfa",
+        "locator": {
+          "end": 174,
+          "kind": "line_range",
+          "start": 172
+        }
+      },
+      "id": "RLZ-YTA0RW",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-18",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Supporting status only: the host status line names the running host's inherited harness homes and their remedy when the status facts carry a harness-home remedy. It neither records homes nor refuses a restart; the refusal is require_preserved_harness_homes (paseo_harness_homes.py:64-90), which provisioning calls before stopping the daemon (paseo_provision.py:265-271).",
+      "role": "support"
     }
   ],
   "references": {
@@ -80,8 +99,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
-            "content": "sha256:a818b6da2ab0f76df7990b165b8f51b22c8a7bb7ed9a4d50bc7143ff5e3da540",
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:0336c6625a9e4aa695cf0a76334c482aa418972a7ecf5ef31bb67e45fb800895",
             "locator": {
               "kind": "symbol",
               "name": "observe_host"
@@ -91,12 +110,12 @@
         },
         {
           "anchor": {
-            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
             "content": "sha256:83c97eaf0fadd7fc69bda7f061ed63f74f79307947f8e0123aabbd9cf410f217",
             "locator": {
-              "end": 78,
+              "end": 79,
               "kind": "line_range",
-              "start": 65
+              "start": 66
             }
           },
           "kind": "code"
@@ -108,8 +127,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
-            "content": "sha256:bada0558f18963fa912b88536362bd1eb9ae669a6bd20671bbae9f4c74cfb0ad",
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:055476941e360a611e75be9449fe29c11740aa259b2215c2509c5dc5860937d6",
             "locator": {
               "kind": "symbol",
               "name": "ensure_host"
@@ -124,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
             "content": "sha256:6d8163cec7a8ef94cb559e1f8ef6e031741eb976fb558acb2f3d51b8651a1f2a",
             "locator": {
               "kind": "symbol",
@@ -140,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
             "content": "sha256:768cc2660ac745053d44771d1d99dabf17e347f92695d1084c458b362a9ef534",
             "locator": {
               "kind": "symbol",
@@ -156,11 +175,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
             "content": "sha256:7b320d6a1acff10e85883e981504da50cf56972908202b2ecd50324fd2f46cb1",
             "locator": {
               "kind": "symbol",
               "name": "_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The observation reports the owned host's inherited harness homes.\n\nAnchor: `harness_home_status`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:d2b412f783a3eb2aae2d4b3c4b25beba3e6c97d44167bacad421eb9a4f826730",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 110
             }
           },
           "kind": "code"

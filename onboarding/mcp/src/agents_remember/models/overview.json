@@ -2376,7 +2376,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
             "content": "sha256:ca5199c1cb508e337fc2b88eb8e795ae0ed267b3f32f4e4224ae759f0e28db6f",
             "locator": {
               "kind": "symbol",
@@ -3391,8 +3391,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f8d5b093f58eb7b6874c014a91a48d876459c65",
-            "content": "sha256:d5a90b391cc27dd10e6d6d5eb7e563735fbc01999b23c874693d09fec1be3407",
+            "blob": "8020c454e7738e8c4fd09e5c90fe068e397b1931",
+            "content": "sha256:8f93e5820eb7e2025cb1c2766775afceef103d359a7e142b1734e6ca3e6d020c",
             "locator": {
               "kind": "symbol",
               "name": "RuntimeInstallResponse"
@@ -3583,12 +3583,12 @@
       ]
     },
     "296": {
-      "note": "**Retained historical source account — superseded by the current route account:** Whole-result validation/enrichment precedes serialization and token finalization.",
+      "note": "Whole-result validation/enrichment precedes serialization and token finalization.",
       "targets": [
         {
           "anchor": {
-            "blob": "1528f1fc6e82408f2ddd381ca2b6956cbf42f694",
-            "content": "sha256:db1f8864146fed21cfc113c37453f85a5f1327c0ac702321cd6eccc0ce005fc8",
+            "blob": "a82c6e7b9b4fa460c90f61260685b7e5d3ec4fa7",
+            "content": "sha256:8614b4bd9643c8f33dfb3dbf05d3a66fce56cb3539fc9d636fe3b2d6d4e19164",
             "locator": {
               "kind": "symbol",
               "name": "finalize_tool_response"
@@ -3600,15 +3600,28 @@
       ]
     },
     "297": {
-      "note": "**Retained historical source account — superseded by the current route account:** Completion validates the whole result, selects a supplied/default answer and translates the selected answer's lifecycle guidance.",
+      "note": "Completion validates the whole result, selects a supplied/default answer and translates the selected answer's lifecycle guidance.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
-            "content": "sha256:fa035cd072435d9389f5b3b0ea910cc8097887cebfb1f1c1cefb3c7a630c04f3",
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:bf895a7868d9b4e1a21a419b242360e1159533d5437b36380fbea589b819b6d5",
             "locator": {
               "kind": "symbol",
-              "name": "complete_tool_response"
+              "name": "_select_shaped_answer"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:db8eeda256ea7e37a0ec1a70413383326cbeaa65f436c94a131007663da9c209",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 425
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -3617,58 +3630,11 @@
       ]
     },
     "298": {
-      "note": "**Retained historical source account — superseded by the current route account:** L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions.\n\nAnchor: `TOOL_ANSWER_EXCEPTIONS` `SHAPED_TOOL_BOUNDS` `INTERIM_TOOL_LEAF` `L112_FINAL_BOUNDS` `bound_for`",
+      "note": "L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions.",
       "targets": [
         {
           "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-            "content": "sha256:3928dc7286631ed6f0f447d9c406201da902895761c897cff651fee3db69dc5f",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-            "content": "sha256:c76332afe13123b0b73e10d09a7627a72a187c2596a2fb4f2cdd8822a47cf595",
-            "locator": {
-              "kind": "symbol",
-              "name": "TOOL_ANSWER_EXCEPTIONS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-            "content": "sha256:073375c21901f5c3efc5913b9f4c23941b7904ce8c52cad35aba88ac01eda632",
-            "locator": {
-              "kind": "symbol",
-              "name": "SHAPED_TOOL_BOUNDS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-            "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
-            "locator": {
-              "kind": "symbol",
-              "name": "INTERIM_TOOL_LEAF"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
             "content": "sha256:468fd1fbdb3ea15ffcb8cbdf5a6e0fc636dde3828211d1c92416d70a2096a8db",
             "locator": {
               "kind": "symbol",
@@ -3680,7 +3646,43 @@
         },
         {
           "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:c76332afe13123b0b73e10d09a7627a72a187c2596a2fb4f2cdd8822a47cf595",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_ANSWER_EXCEPTIONS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:073375c21901f5c3efc5913b9f4c23941b7904ce8c52cad35aba88ac01eda632",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHAPED_TOOL_BOUNDS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERIM_TOOL_LEAF"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
             "content": "sha256:2e99ebc88b34119361b6f1e751e9d985b9048cc76430a5c331272b689bb45d44",
             "locator": {
               "kind": "symbol",
@@ -4094,8 +4096,20 @@
       ]
     },
     "315": {
-      "note": "**Retained historical source account — superseded by the current route account:** Historical L111 predecessor account, not the current roster: the composed PUBLIC_TOOLS now declares 44 names and SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery rows including direct_execution_grant at 150 tokens; the earlier 41- and 42-name captions here are historical, not current source counts.",
+      "note": "The composed `PUBLIC_TOOLS` declares 44 names, and `SHAPED_TOOL_BOUNDS` carries the final task/landing/role delivery rows, including `direct_execution_grant` at 150 tokens.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:073375c21901f5c3efc5913b9f4c23941b7904ce8c52cad35aba88ac01eda632",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHAPED_TOOL_BOUNDS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
@@ -4106,19 +4120,6 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-            "content": "sha256:3928dc7286631ed6f0f447d9c406201da902895761c897cff651fee3db69dc5f",
-            "locator": {
-              "end": 663,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
           },
           "kind": "code"
         },
@@ -4155,8 +4156,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
-            "content": "sha256:71804e304a6ad2937390236ebe79f54948d63dacb84e089c2362c47b2846a2b4",
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:60e27a120bfb8dc9f33714fb08d00eefa653f16db19cf2acb29230f633cf6a6c",
             "locator": {
               "kind": "symbol",
               "name": "_attach_contract_guidance"
@@ -4172,11 +4173,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
-            "content": "sha256:f2255e93851cd6bd0da5c5ad433f8ba26b7e65963b82470e14643e1406607308",
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:ad3bf78d4645f124ffffb64871cd3a6578a8abd6d974757dec64dfda336272e0",
             "locator": {
-              "kind": "symbol",
-              "name": "ResponseModel"
+              "end": 87,
+              "kind": "line_range",
+              "start": 63
             },
             "path": "mcp/src/agents_remember/models/base.py"
           },
@@ -4189,8 +4191,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
-            "content": "sha256:1c9b74dac013890af9899b87fd7eaa33ce492153b679c57509c72e4b2e564903",
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:e80a9fb2edd6a8227f338379dfabb4ea9996f9ab0179d2604bfe499149a7f967",
             "locator": {
               "kind": "symbol",
               "name": "FlexibleResponseEnvelope"
@@ -5919,7 +5921,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
             "content": "sha256:890c9736acb344ad4e335a24a0bbf4670fa0b997c835052dcf94133cacd330d0",
             "locator": {
               "kind": "symbol",
@@ -5931,7 +5933,7 @@
         },
         {
           "anchor": {
-            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
             "content": "sha256:3bfc47f63b97806c0500e09de59cfdc6cd1fdaeaa3b550a5f27fafda1623f905",
             "locator": {
               "kind": "symbol",
@@ -5943,7 +5945,7 @@
         },
         {
           "anchor": {
-            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
             "content": "sha256:921f80e1754e70b892cb40d9cf7bc05294ba1f1e49315bcf0e25b4ceb324833a",
             "locator": {
               "kind": "symbol",
@@ -5955,7 +5957,7 @@
         },
         {
           "anchor": {
-            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
             "content": "sha256:d88ff6cfa7d8e4c8df6b7a72e9b6c9ba1856f3e0e86a26998308eb295bc08447",
             "locator": {
               "kind": "symbol",

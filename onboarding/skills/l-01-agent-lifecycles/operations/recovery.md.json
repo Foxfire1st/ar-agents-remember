@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f4435dbaf23aea143f4b4a93092e147f081f0b37",
+        "blob": "3a7ed08a864ff11a55c0f5e749d392e9dee20bfa",
         "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
         "locator": {
-          "end": 9,
+          "end": 29,
           "kind": "line_range",
-          "start": 9
+          "start": 29
         }
       },
       "id": "RLZ-1247SR",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "f4435dbaf23aea143f4b4a93092e147f081f0b37",
+        "blob": "3a7ed08a864ff11a55c0f5e749d392e9dee20bfa",
         "content": "sha256:862666d0cc0fdc6c1e6d70ae16a0bad215ad3d59a5daf7a91c71a5f517fecf5d",
         "locator": {
-          "end": 6,
+          "end": 26,
           "kind": "line_range",
-          "start": 6
+          "start": 26
         }
       },
       "id": "RLZ-3EW4SE",
@@ -41,12 +41,31 @@
     },
     {
       "anchor": {
-        "blob": "f4435dbaf23aea143f4b4a93092e147f081f0b37",
-        "content": "sha256:ee19551d745274456603d8f01aea20f1c35602b85ec5e1b21439276fa6b1d8df",
+        "blob": "3a7ed08a864ff11a55c0f5e749d392e9dee20bfa",
+        "content": "sha256:32b05c917124bf29aad9ed807a1bae89dd1c9bc65df3394a6363f42b7674b33b",
         "locator": {
-          "end": 15,
+          "end": 38,
           "kind": "line_range",
-          "start": 15
+          "start": 36
+        }
+      },
+      "id": "RLZ-H90KRE",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "K3-BCEZZM-recovery-reviewed-result-stands",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The recovery operation delivers the reviewed-result-stands ruling after a clean synchronization and points to its governing home in implementation.md.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3a7ed08a864ff11a55c0f5e749d392e9dee20bfa",
+        "content": "sha256:7a01366a9472c5ae23e58d2c229c067bdd376d1c8a827ae63a32709ca103013d",
+        "locator": {
+          "end": 43,
+          "kind": "line_range",
+          "start": 41
         }
       },
       "id": "RLZ-Q06Z1M",
@@ -55,17 +74,17 @@
         "handoffEntry": "L62-CUR-6db-attach-INV-BCEZZM",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "Recovery decisions and writes stay bound to the starting server or serving-build CLI, clean-main ruler, scratch-only leaf proof and no install/guard disable.",
+      "rationale": "Before a memory decision or write resumes, recovery points to orientation's 'Bind curation to the serving build', which binds it to the starting server or its serving-build CLI, the clean-main reference, fixture-only leaf proof and no install or guard disable.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "f4435dbaf23aea143f4b4a93092e147f081f0b37",
-        "content": "sha256:7654e32665a2cd703bf52c13f91bb959ea3e6471a500b1e2f990c7e0bc8561e3",
+        "blob": "3a7ed08a864ff11a55c0f5e749d392e9dee20bfa",
+        "content": "sha256:0668cc8a29823df5171ea0ca4e10a7b3b94afe117f78cf52d042a383c3ccd2da",
         "locator": {
-          "end": 10,
+          "end": 34,
           "kind": "line_range",
-          "start": 10
+          "start": 30
         }
       },
       "id": "RLZ-YTZ3Y1",
@@ -84,10 +103,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4435dbaf23aea143f4b4a93092e147f081f0b37",
-            "content": "sha256:77bf9d941b300f292480f66fd7528066ce9d744c69da740a16648849b559f8f8",
+            "blob": "3a7ed08a864ff11a55c0f5e749d392e9dee20bfa",
+            "content": "sha256:920faa49cc2de8111c07d8844827f9592a57e63d977d9c7830c17f80dfe29f24",
             "locator": {
-              "end": 19,
+              "end": 49,
               "kind": "line_range",
               "start": 1
             }
@@ -97,14 +116,14 @@
       ]
     },
     "2": {
-      "note": "The current recovery instruction keeps same-identity recovery and the clean-sync reviewed-result rule, then binds Curator deciding and writing to the serving build.",
+      "note": "The recovery instruction keeps same-identity recovery and the clean-sync reviewed-result rule, and sends the Curator to the serving-build binding before resuming a memory decision or write.",
       "targets": [
         {
           "anchor": {
-            "blob": "f4435dbaf23aea143f4b4a93092e147f081f0b37",
-            "content": "sha256:16890ab92016bacad60895d7cd4d20a8953e207e02686f078278811ad9e20d11",
+            "blob": "3a7ed08a864ff11a55c0f5e749d392e9dee20bfa",
+            "content": "sha256:f0e5c8f09471241fb4e3eddb331bb929e562d88ad498d06e21a5d83e79bc19c4",
             "locator": {
-              "end": 19,
+              "end": 42,
               "kind": "line_range",
               "start": 4
             }

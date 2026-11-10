@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-        "content": "sha256:4cc9fe7eeee2508297caea004b93471c74e9636f01d03e1a271c45e90704eca6",
+        "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+        "content": "sha256:fb025a200afe6ac8d334342fcb121c2933cc522c599a350fcf66a0842e600f0d",
+        "locator": {
+          "end": 39,
+          "kind": "line_range",
+          "start": 39
+        }
+      },
+      "id": "RLZ-2XXZ75",
+      "invariant": "INV-0V8R02",
+      "origin": {
+        "handoffEntry": "L84-P5-12",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Unit AC2.1 states the durable approval-record definition inline instead of linking every-role.md#requirements-and-limits, its own place-22.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+        "content": "sha256:4cf207f8c52bc403ede25b12b64691df3bd45eb807fa335f04d564166ca42e52",
         "locator": {
           "kind": "file"
         }
@@ -17,6 +36,25 @@
       },
       "rationale": "The acceptance home states that a written artifact is sent with role_message to the agent that waits, and that a file on record wakes no one.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+        "content": "sha256:029282b960ad449b8bfde36bc5b46d81abb39232409b6d49031da6df26d36326",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-MX6XHJ",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-QZW2X2",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The sender must message the waiting seat with the finished object and evidence path; a filed report/ended turn is not that act.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -25,12 +63,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:63e03e7c03e45519e6d7b00ffbf3a725991a559337ca9f0aeb22e590923f9dbc",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:9cd80acee3a4afd36c9ea8fff7aea7a32943cb978c0fe7dc38663f57980d0de2",
             "locator": {
-              "end": 25,
+              "end": 20,
               "kind": "line_range",
-              "start": 3
+              "start": 5
             }
           },
           "kind": "code"
@@ -38,16 +76,16 @@
       ]
     },
     "10": {
-      "note": "Acceptance is per owned stable ID and version with complete rationale/citations/evidence. [10]\n\nAnchor: source extent 44–77",
+      "note": "Acceptance is per owned stable ID and version with complete rationale/citations/evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:90e216c8cb79625314d2f7efee1239ec0d54a8df0ad1aaad3dfd9b32f1efc00a",
             "locator": {
-              "end": 78,
+              "end": 60,
               "kind": "line_range",
-              "start": 45
+              "start": 37
             }
           },
           "kind": "code"
@@ -59,12 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:330a1acf6a88278c38d1bd49770148c9c99d73091beef5fd3fa9528ee3352c48",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:8618afe3b198e71d75ab81f676df6dcc629c16edc3bf9b3b41a772ac282cf6fa",
             "locator": {
-              "end": 116,
+              "end": 68,
               "kind": "line_range",
-              "start": 79
+              "start": 62
             }
           },
           "kind": "code"
@@ -72,16 +110,16 @@
       ]
     },
     "12": {
-      "note": "Stable-contract or expiry evidence promotion is independent of requirement acceptance. [12]\n\nAnchor: source extent 126–142",
+      "note": "Stable-contract or expiry evidence promotion is independent of requirement acceptance.\n\nAnchor: `node:...::test_replacement`",
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:5364aa15699f91bebe4d5cff19d19691b72f4efb0d62c5d847bf7e49f66f4748",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:5b09e9550514fd926d498855ff4fc242ede87dc697df6a863bffe8f8ae7acb9d",
             "locator": {
-              "end": 139,
+              "end": 124,
               "kind": "line_range",
-              "start": 123
+              "start": 113
             }
           },
           "kind": "code"
@@ -93,29 +131,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:884a4cbed3bf3cd50484fa362e16e15ec53f4eb77f2ae646dcf06d8bc5c5a5b0",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:d2df7bfce82472f0486da721c1d51a2270011d9fc3013035ccc71bde788a8234",
             "locator": {
-              "end": 42,
+              "end": 35,
               "kind": "line_range",
-              "start": 27
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "One primary revision, six-part envelope and independent adjudication.\n\nAnchor: \"## Acceptance is per stable ID and version, never aggregate\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
-            "locator": {
-              "end": 78,
-              "kind": "line_range",
-              "start": 45
+              "start": 22
             }
           },
           "kind": "code"
@@ -123,16 +144,16 @@
       ]
     },
     "4": {
-      "note": "Immutable attempts, malformed-row correction, candidate-specific review and successor rules.",
+      "note": "Immutable attempts, malformed-row correction, candidate-specific review and successor rules.\n\nAnchor: `non-attempt-correction`",
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:330a1acf6a88278c38d1bd49770148c9c99d73091beef5fd3fa9528ee3352c48",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:77f438d3a80ac6b4df44e7dc3996130cd61442657e7ee88ed02e859c45f3be39",
             "locator": {
-              "end": 116,
+              "end": 105,
               "kind": "line_range",
-              "start": 79
+              "start": 62
             }
           },
           "kind": "code"
@@ -140,33 +161,16 @@
       ]
     },
     "5": {
-      "note": "Leaf journals are authority; summaries cannot gate work.\n\nAnchor: \"## The master-level summary is disposable\"",
+      "note": "Leaf journals are authority; summaries cannot gate work.",
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:4ec210df4448129f58df7e7d8f70eac24de904054c6469ff5d08d80ca772021a",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:168a3a4ae452a875bf0429d49082f922c2a859356ba3eebaade01e74a57d97a0",
             "locator": {
-              "end": 121,
+              "end": 111,
               "kind": "line_range",
-              "start": 115
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Stable contract or expiry disposition remains independent of requirement acceptance.\n\nAnchor: \"## The durable-evidence promotion hold point (a separate concern)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:5364aa15699f91bebe4d5cff19d19691b72f4efb0d62c5d847bf7e49f66f4748",
-            "locator": {
-              "end": 139,
-              "kind": "line_range",
-              "start": 123
+              "start": 107
             }
           },
           "kind": "code"
@@ -178,12 +182,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:94f2544cd0a27977250ff04085b0241b02c1559ef43ddcf55798347affd9bb96",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:3f9d21d79332d94085b359441a863dc2f0717d42d5d7d3278ff825dd35f8f64c",
             "locator": {
-              "end": 39,
+              "end": 86,
               "kind": "line_range",
-              "start": 30
+              "start": 79
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -192,16 +196,16 @@
       ]
     },
     "8": {
-      "note": "The host relays mechanical turn completion without inspecting acceptance artifacts. [8]",
+      "note": "The host relays mechanical turn completion without inspecting acceptance artifacts.",
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:3a072ccf201c1f7d8f62bae3fefbd240016ed62734efbe01bb42011761368191",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:338e801d4df395f116683bc4df6bcc751d73d997dcc14699292fbeed9c3dd871",
             "locator": {
-              "end": 14,
+              "end": 20,
               "kind": "line_range",
-              "start": 10
+              "start": 12
             }
           },
           "kind": "code"
@@ -213,12 +217,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:884a4cbed3bf3cd50484fa362e16e15ec53f4eb77f2ae646dcf06d8bc5c5a5b0",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:a141be6b67f3695edf4421cf4815de8c400b7f7597f53bd51fe0504b89b618e4",
             "locator": {
-              "end": 42,
+              "end": 33,
               "kind": "line_range",
-              "start": 27
+              "start": 26
             }
           },
           "kind": "code"

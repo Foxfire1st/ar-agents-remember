@@ -1,0 +1,76 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Retirement and continued support were weighed; the choice keeps the catalog checks and template maintained until numbers say otherwise."
+  },
+  "alternatives": [
+    {
+      "option": "Keep supporting the entity catalog: its instructions and template move into l-01 as today's practice, written to match the catalog checks, with no deprecation markers.",
+      "reason": "The machinery still works and Curators maintain it; its usefulness is to be judged later from numbers.",
+      "status": "chosen"
+    },
+    {
+      "option": "Retire the entity catalog with c-05.",
+      "reason": "Retiring working machinery without evidence of its use was premature.",
+      "reconsider_when": "Measured use shows Curators no longer maintain or read the catalog.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "l-01 holds the catalog template and a Curator detail section that match the catalog alignment check."
+  ],
+  "context": "With c-05 removed, the entity catalog's workflow and template had to move into l-01 or be retired. An earlier ruling had leaned towards retiring it.",
+  "decider": "The developer (D693 Q1, superseding the entity-catalog part of D691); MIK-R84 v10 behaviour 7.",
+  "id": "DEC-E607M7",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "427b1bcd922e17189c1e8e4025525ebcf5b07119",
+        "content": "sha256:f113ba78fd730d2e77bd05ddb1587915d2b9eed73a8aaa1b0598a300ac21c6b7",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "skills/l-01-agent-lifecycles/templates/repo-entity-catalog.md"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "ef7991e5e72ae5584f9fe752e92bda7355b840f3",
+        "content": "sha256:6af8c53bd9def2027994b972da1ad9319c32ab45a0d9d3085c0183f282170758",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R84",
+        "packet": "requirements/MIK-R84-v10-installed-copies-and-running-servers-are-current-after-an-install.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v10"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "dec-entity-catalog-supported",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

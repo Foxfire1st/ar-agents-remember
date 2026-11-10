@@ -191,7 +191,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:4b66f4952e681126ce86951860c82aa18551606c79e43c75ea2a9ed0fb387cc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_action_has_one_input_shape"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
             "content": "sha256:f6b89ae37afc29aee06dbe090755c389f224c0f1bd6503d7f035bfc67e4fc865",
             "locator": {
               "end": 304,
@@ -204,25 +216,12 @@
         },
         {
           "anchor": {
-            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
             "content": "sha256:097ade6e8d464732e7968df7af2e5261ab0216a62fb62b688461a0a38b22bbe9",
             "locator": {
               "end": 529,
               "kind": "line_range",
               "start": 334
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
-            "content": "sha256:35dacfffc99536e3e5996f55a166b35f36000117dd3d0c3c390709745796d59c",
-            "locator": {
-              "end": 616,
-              "kind": "line_range",
-              "start": 538
             },
             "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
           },

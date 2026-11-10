@@ -14,7 +14,7 @@ The role launcher supports these eight role IDs: `architect`, `investigator`, `o
 
 Task-bound reads use the rendered task-document files named in the handover and the harness’s own file tools before acting. For canonical task-document edits admitted to the role, use `task_doc` first; only a covered correct-input write refusal follows the declared same-tool/input-class recovery. Rendered copies are never parsed back and are refreshed by the owner’s next task_doc publication. Read only the selected packet/task scope and verify role, requirement revision, altitude, paired roots, contract and report agree. Missing admission/capability and read, validation, sync, guard, gate and permission stops remain unchanged.
 
-Use the launching build’s `agents-remember-task` server through its actual harness tool surface and schemas. The tool-server binding supplies identity; the handover supplies a parent when one exists. With a parent named in host.parent, every question requiring the developer's decision goes to that actual parent through bound role_message. Continue independent work; if none remains, record the state and await the parent's message. An actual busy refusal stays pending and is retried before ending; a product-held answer instead waits for product delivery and must not be sent again. Neither result permits own-chat escalation. Only a parentless agent, or an agent whose parent cannot be reached at all with the exact refusal recorded, asks the developer in its own chat. Peer communication retains its bound role-message route.
+Use the launching build’s `agents-remember-task` server through its actual harness tool surface and schemas. The tool-server binding supplies identity; the handover supplies a parent when one exists. Every question requiring the developer's decision goes to the reporting recipient the role instructs; if the role names none, to the parent named in host.parent, through bound role_message; when neither exists, the agent asks the developer in its own chat. Independent work continues; when none remains, the agent records its state and sends what it awaits to that recipient. A full-store refusal follows the message-handover detail: the handover stays pending, is retried once, and a second refusal is reported. Only a recipient that cannot be reached at all (archived, not found, not resumable, no runtime configured, or host unreachable) sends the question to the agent's own chat, with the refusal named. Peer communication retains its bound role-message route.
 
 ## Conventions
 
@@ -42,7 +42,7 @@ Superseded card wording retained for custody (not certified as true of any sourc
 
 ### Repo-Internal References
 
-- Taskless scope, exact task-bound reads, role-admitted task_doc-first edits, paired surfaces, bound server and covered recovery. [6]
+- Taskless scope, exact task-bound reads, role-admitted task_doc-first edits, paired surfaces, the bound tool server and saved-assignment recovery. [6]
 
 ### Docs References
 
@@ -62,7 +62,7 @@ No relevant documentation found after checking live sources.
 
 ### Role launcher and alias
 
-- The launcher supports these eight role IDs, including the taskless `bootstrap` setup role, and `system-specialist` is the earlier ID of the same Investigator role. [5]
+- The launcher supports these eight role IDs, including the taskless `bootstrap` setup role. [5]
 
 ### Cross-Repo References
 
@@ -82,7 +82,8 @@ Parentless Projects Investigator intake asks only for the missing concern/report
 ## Current intake and developer-question evidence
 
 
-- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions.
+- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions go to the instructed reporting recipient, else the parent, with the stated no-recipient and unreachable exceptions.
 
-- Orientation takes an Investigator concern from its actual parent or, when parentless, the developer; it keeps canonical task identity, exact launch bindings and developer-question provenance. [1]
-- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. [2]
+- Orientation takes an Investigator's concern from its parent's first message or, without a parent, from the developer's request, and invents no task or trust packet; existing work restores its saved assignment first. [1]
+
+- Developer decisions go to the instructed reporting recipient or the parent; only an agent with neither, or whose recipient cannot be reached, asks in its own chat. [2]

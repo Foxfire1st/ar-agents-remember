@@ -506,8 +506,8 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 
 - The mounted current capture renders four distinct family-expression rows for five recorded membership occurrences. The collapse counts sum to five, the largest is two, the verdict names both counts and distinguishes them from the comparison's measured change set, and five membership openers remain. This current case does not assert every row's data-sides or per-side readings. The former every-row side-check claim is superseded historical evidence, not current execution. Historical former note (superseded): **The mounted case: the rendered count is the body's distinct excerpt set, every row's collapse count is the body's own group size, and EVERY rendered row's `data-sides` is checked against the sides the body resolves that excerpt on — the page's own both-sides sentence verified row by row against the body, not read from the page.**  Anchor: "renders the family's changed expression excerpts, deduplicated, over the captured family"; `dataset.sides` [226]
 
-Anchor: `CockpitShell` [42]
+- The Chats cockpit keeps RoleChatsPane mounted while hidden; no SessionsView is mounted. [42]
 
-- The current persistent Chats layer mounts one RoleChatsPane; the former SessionsView selected-context wiring is historical, not a current mount. [43]
+- The persistent Chats layer mounts one RoleChatsPane; no SessionsView selected-context wiring is mounted. Anchor: `RoleChatsPane` [43]
 
-Anchor: `CockpitShell` [47]
+- `CockpitShell` defaults `initialView="chats"`; `VIEWS` is the four-entry product bar. [47]

@@ -248,7 +248,9 @@ each docker call.
 
 - The ownership labels every provider container carries (`provider_ownership_labels`). [1]
 - `run_command` / `docker_command` seams the sampler runs through. [2]
+
 - The serving daemon's lifespan runs the 30s sampling loop into this store. [3]
+
 > - `provider_status_packet` no longer attaches `read_current()`; the status packet reports the configured summary and reads no provider state.
 
 | The seed catch-up stage records index-state rows through `_record_index_state`. | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |

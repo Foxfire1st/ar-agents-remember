@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Nearest governing route overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -12,11 +12,11 @@ Exercise the parked worktree candidate inside the existing sync transaction and 
 
 ### Logic
 
-The transaction witnesses reuse SyncFixture's real repositories and contracts. Clean code carry restores modified/untracked WIP and advances the recorded base. The external-memory case now includes staged cache data beside a real onboarding draft: only the draft appears in parked WIP, and the draft returns with no remaining stash.
+The transaction witnesses reuse SyncFixture's real repositories and contracts. Clean code carry restores modified/untracked WIP and advances the recorded base. The external-memory case includes staged cache data beside a real onboarding draft: only the draft appears in parked WIP, and the draft returns with no remaining stash.
 
 Other cases preserve a genuine reapply conflict and its wipRestore marker, return the candidate on cancel, resume a crash before restoration, continue a staged source conflict without losing parked content, and refuse a pre-existing genuine unmerged index without creating a stash. The module validates the public resolution projection as well as the dictionary so producer/model drift is visible.
 
-The module now protects complete reapply proof, already-held edits, truly missing parked bytes, untracked/deleted entries and memory-side cache separation. Cancellation saves later/index-only/marker/symlink/unproved state before completing. New cases cover renames, observed SIGKILL cuts, save failures and live-lock handling. Full-inventory failure cannot accept the capped journal sample. Paired restoration and cancellation-retry assertions protect already-restored code work across a memory stop. The named retained/terminal phase cuts now hold the native child at the legacy-journal unlink audit event after the durable replacement. Partial-restore cuts use serial native Git checkout and a required, identity-preserving filter on the second bulk path, held before it returns bytes; the first path is restored, and the parent kills the actual process group. These specific holds remain open under parent scheduling delay without replacing product functions or Git operations. Other kill cuts still poll and fail or retry on a missed window; this is source structure, not new execution evidence.
+The module protects complete reapply proof, already-held edits, truly missing parked bytes, untracked/deleted entries and memory-side cache separation. Cancellation saves later/index-only/marker/symlink/unproved state before completing. Cases cover renames, observed SIGKILL cuts, save failures and live-lock handling. Full-inventory failure cannot accept the capped journal sample. Paired restoration and cancellation-retry assertions protect already-restored code work across a memory stop. The named retained/terminal phase cuts hold the native child at the legacy-journal unlink audit event after the durable replacement. Partial-restore cuts use serial native Git checkout and a required, identity-preserving filter on the second bulk path, held before it returns bytes; the first path is restored, and the parent kills the actual process group. These specific holds remain open under parent scheduling delay without replacing product functions or Git operations. The memory-park orphan cut uses the `MemoryOrphanCheckpoint` test-support helper: an audit hook holds the child at the first journal publish after memory parking, checks the parked stash, clean tree and still-absent journal, then the parent kills the child's process group and requires recovery to either restore all 500 parked files byte-identically or retain the stash whose untracked tree holds every expected blob; the helper keeps its evidence files in a temporary directory. Other kill cuts still poll and fail or retry on a missed window; this is source structure, not new execution evidence.
 
 `ResumedConvertedMemoryMergeTests` reproduces an interrupted converted-memory merge with real structural crossing. The untouched witness checks cancellation and its asserted memory state; the owner-write control saves patches/path list containing OWNER AFTER INTERRUPT, cancels with unchanged memory HEAD, retires the stash, and journals cancelled. The separately sealed Reviewer paired companion supplies executed both-tree/head/index evidence: the file card does not upgrade the positive test's name into a stronger assertion than its body makes.
 

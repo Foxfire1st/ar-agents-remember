@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Tests overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -12,13 +12,11 @@ Checks JSON-primary task rendering and persistence: presentation progress counts
 
 ### Logic
 
-The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
-history describe prior populations and must not be used to recreate removed tests or claim they
-still run. The retained behavior and its fixture limits, described above, govern this card.
+The current evidence boundary is the source-listed behavior below. The retained behavior and its fixture limits, described above, govern this card.
 
-The shared `ApplicationTests` fixture gained a master prerequisite in 260913-LCA-L5:
-`_create` (`:581-601`) now calls `_ensure_parent_master` (`:603-606`) before authoring its leaf, and
-`_ensure_parent_master` writes the parent master through `_create_parent_master` (`:608-625`) only when
+The shared `ApplicationTests` fixture carries a master prerequisite:
+`_create` (`:659-679`) calls `_ensure_parent_master` (`:681-684`) before authoring its leaf, and
+`_ensure_parent_master` writes the parent master through `_create_parent_master` (`:686-703`) only when
 it is absent. This is not incidental scaffolding: the task-doc authoring plane refuses a leaf document
 authored under a task root with no master document at all, because nothing would ever bind the leaf's
 derived `seriesContractPath` and `enclosures[]` (see the `application/task_docs/task_doc_tools.py`
@@ -43,7 +41,7 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
-Master-row derivation now follows the child document stage: Completed remains Completed despite an active unresolved step, and planning remains planning even with a done step. Progress and completion readiness still have their separate checklist meanings; step state does not infer task startedness or undo documentary stage.
+Master-row derivation follows the child document stage: Completed remains Completed despite an active unresolved step, and planning remains planning even with a done step. Progress and completion readiness still have their separate checklist meanings; step state does not infer task startedness or undo documentary stage.
 
 ## Evidence
 
@@ -59,8 +57,7 @@ No external domain claim is required.
 
 ### Repo-Internal References
 
-Each current definition below can be inspected in the exact source file. Historical references
-to removed methods are superseded by this current inventory.
+Each current definition below can be inspected in the exact source file.
 
 - The leaf-operation fixture's master prerequisite: every `_create` ensures a parent master exists before authoring its leaf, which is the authoring flow the plane allows. [1]
 - Major-step presentation reports (1,2), while completion blockers still include active S1 and pending nested S1.b. [2]

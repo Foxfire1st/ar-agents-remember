@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The disposable-projection family requires task Markdown to remain derived from authored JSON, preventing generated-file edits from becoming a second task authority."
+  },
   "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
   "conditions": [],
   "exclusions": [],

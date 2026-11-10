@@ -113,8 +113,21 @@
       ]
     },
     "2": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Tool metadata and server registration expose `memory_quality_check` to agents.  Anchor: `memory_quality_check_payload` `create_server`",
+      "note": "The memory registrar exposes `memory_quality_check` to agents and routes it to the start, poll or whole-run payload.\n\nAnchor: `memory_quality_check_payload`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+            "content": "sha256:275845a2f77f125f3714f8a467012e311f24a739fbdfb8a6b4eba32dfae00ffd",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
@@ -123,17 +136,6 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/tools/memory.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
-            "content": "sha256:51f72c9e21d93c397c1cad01152d976e289d22ca230c769b19a5303c8882a204",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
         }

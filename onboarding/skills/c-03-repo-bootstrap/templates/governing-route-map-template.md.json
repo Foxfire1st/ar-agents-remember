@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25d493e6efb78074c1d5f983765ad4acaf2c317a",
+            "blob": "3cd842447dc42c481aba9b3fb3c490e4572526e8",
             "content": "sha256:8386cdc8061253e1063b8eafdb1eef7cd2de50910cc8758319729c96eb165823",
             "locator": {
               "end": 13,
@@ -24,8 +24,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25d493e6efb78074c1d5f983765ad4acaf2c317a",
-            "content": "sha256:c111600673682ea21cbd4f244d4b785337eb4e17506f1c780f669ef61d24f639",
+            "blob": "3cd842447dc42c481aba9b3fb3c490e4572526e8",
+            "content": "sha256:89e121bb907721a6c4486ebff6fb0b235d2dd8cbb8cc09e458e4fba5ed77c20d",
             "locator": {
               "end": 52,
               "kind": "line_range",
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:18c5fd17ea1b850be7bd8cfa14c486291efd450d37a62ec2f964116fbbb1e1c9",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:a10cd5fc1a9ccc90867185ec0cd5546bf8511da33b9939ba383f51a241fcb976",
             "locator": {
-              "end": 832,
+              "end": 778,
               "kind": "line_range",
-              "start": 805
+              "start": 752
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:5b1c31c746b2148b56f9e13b40aef6e517d88e8b6b6aefcd0ea4bbef5e376e2d",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:e8bc6d646fb0740533e5d7a7c8843e64096ea4b7bafafec7b46772e4d871ec1f",
             "locator": {
-              "end": 867,
+              "end": 816,
               "kind": "line_range",
-              "start": 833
+              "start": 780
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
@@ -77,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:5e6397efae7e6d9bfdbe5af8a869ad8ea4f19a2b053ccb497cf2016e8bcf8b23",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:3ee635682f5e3708a3f1c374949c2cf39b44dd5ab328e67a5bdce9752be7ed2d",
             "locator": {
-              "end": 533,
+              "end": 455,
               "kind": "line_range",
-              "start": 492
+              "start": 439
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },

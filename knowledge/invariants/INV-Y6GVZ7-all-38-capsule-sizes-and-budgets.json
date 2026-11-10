@@ -3,19 +3,17 @@
     "criteria": [
       "guarded_by_test"
     ],
-    "justification": "The budget test bounds every fresh compiled capsule within its recorded budget; without it an overgrown capsule would silently break instruction composition. Registry totals are evidenced by the registry cells and the A8 decisions, not by the test."
+    "justification": "The budget test checks every fresh compiled capsule, declared detail and the digest against the current record and the frozen registries; without it an overgrown capsule or a silently edited registry would break instruction composition unnoticed."
   },
-  "applicability": "All 38 role/operation/launcher capsule cells, every manifest-declared step detail and the admitted shared every-role digest in capsule-budgets.json.",
+  "applicability": "Every compiled role, operation and launcher capsule cell, every manifest-declared step detail and the shared every-role digest, as recorded in skills/l-01-agent-lifecycles/capsule-budgets-current.json.",
   "conditions": [
-    "At every stage Architect 4631 words, Manager 4513, Curator/Reviewer/Bootstrap 4000 and every other role 3700 are the current literal capsule ceilings.",
-    "Each recorded budget is min(ceil(size_words*11/10),its applicable literal ceiling); fresh size stays within recorded budget and both within the ceiling.",
-    "Every manifest-declared step detail is budgeted, with 2500 words as its literal ceiling; current detail count is inventory data, not a permanent count in the statement.",
-    "The shared digest is separately recorded and delivered, with 1100 words as its current literal ceiling.",
-    "Registry updates retain developer-authorized raises and their measured operands; historical totals remain dated evidence."
+    "Capsule ceilings are the record's per-role values; a declared detail's ceiling is 2,500 words; the digest's ceiling equals the digest map's maximumWords.",
+    "Each recorded size equals the compiled size, and each limit is at least that size and at most its ceiling.",
+    "The guard binds capsule-budgets.json, capsule-budgets-d694.json, their checkers and the digest map by SHA-256 and refuses any change to them."
   ],
   "exclusions": [
     "The separate handover projection 3300-token obligation, whose record remains JKD5DE.",
-    "Old 3700-all-role or dated capsule/detail totals as current guarantees.",
+    "The frozen historical registries' cells and budget formula as current guarantees.",
     "A budget pass as proof that meaning, audience, claims or acceptance are correct."
   ],
   "id": "INV-Y6GVZ7",
@@ -30,9 +28,9 @@
     "leaf": "260928-MIK-L101",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-invariant/v1",
-  "statement": "The 38-cell capsule registry and declared details record current sizes under the developer-authorized role ceilings and min(ceil(size_words*11/10),applicable ceiling); the separately delivered shared digest has its own literal word ceiling and budget, and dated totals remain measurements.",
+  "statement": "The current capsule budget record, capsule-budgets-current.json, holds every compiled capsule cell, every manifest-declared step detail and the shared every-role digest with its measured size, a limit no lower than that size, and a ceiling (per role for capsules, 2,500 words per declared detail, the digest map's maximum for the digest); the guard refuses a stale size, a size over its limit, a size or limit over its ceiling, a missing or orphan key, or any change to the frozen historical registries capsule-budgets.json and capsule-budgets-d694.json.",
   "status": "proposed",
   "supersedes": []
 }

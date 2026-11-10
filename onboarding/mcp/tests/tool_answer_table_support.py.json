@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "30cc33614b7ad9177eb2b105ce504bb1808b5c2e",
+        "blob": "6b3ac4ac6a1f098676dc141a71eb25ee5e0752ab",
         "content": "sha256:161ebaafe68df07701b05d2f139e9ca752f8ef68511b3830763d3d4c1bc9bbf2",
         "locator": {
           "kind": "symbol",
@@ -27,10 +27,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30cc33614b7ad9177eb2b105ce504bb1808b5c2e",
-            "content": "sha256:e9b41d5b0a10196c01095cdc3a74bc0604be2950e927c44964569be1d656649e",
+            "blob": "6b3ac4ac6a1f098676dc141a71eb25ee5e0752ab",
+            "content": "sha256:be26165859dfe0965812002585f16cc0f47d2314b4f5ad0a17c66813d33473f9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "build_tool_answer_table"
             }
           },
           "kind": "test"
@@ -42,10 +43,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30cc33614b7ad9177eb2b105ce504bb1808b5c2e",
-            "content": "sha256:e9b41d5b0a10196c01095cdc3a74bc0604be2950e927c44964569be1d656649e",
+            "blob": "6b3ac4ac6a1f098676dc141a71eb25ee5e0752ab",
+            "content": "sha256:b7d84c09ce959c347a6bdb99764a49e307563faf689d373889aa7ccf6848be1d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "check_tool_answer_roster"
             }
           },
           "kind": "test"
@@ -57,10 +59,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30cc33614b7ad9177eb2b105ce504bb1808b5c2e",
-            "content": "sha256:e9b41d5b0a10196c01095cdc3a74bc0604be2950e927c44964569be1d656649e",
+            "blob": "6b3ac4ac6a1f098676dc141a71eb25ee5e0752ab",
+            "content": "sha256:42177258d3478085014935889d03303ecb36215c82f8d7cf1fff986ea1718da4",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_validate_shaped_row"
             }
           },
           "kind": "test"

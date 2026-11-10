@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "Bounded task-document reading needs a separate canonical enumerator that excludes historical copies and nested notes, preventing duplicate live masters without recursively scanning unrelated task material."
+  },
   "applicability": "The canonical task-document enumeration (_iter_task_json) that the always-on summary, series and closeout-queue projections consume, and that bounds which paths the body read's named-path probe may return.",
   "conditions": [
     "A task root is exactly tasks/<repository>/<task>/; only its direct entries named *.json are candidates, of any entry type, and the reader accepts or refuses each.",

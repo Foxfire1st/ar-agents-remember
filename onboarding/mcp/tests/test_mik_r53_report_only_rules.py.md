@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Tests route overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -46,9 +46,8 @@ without timing the wall clock.
   extend the refusal to landing, sync and the next publication.
 - **Messages and texts.** `test_no_violation_message_says_reported_not_refused` and
   `test_a_reported_finding_names_its_reason_and_the_route_that_refuses` keep a report from reading as a refusal,
-  and `test_the_command_help_lists_the_ten_rules_with_their_decision` and
-  `test_the_c02_skill_lists_the_ten_rules_with_their_decision` (now reading the quality-control workflow text)
-  keep the decisions written down.
+  and `test_the_command_help_lists_the_ten_rules_with_their_decision` keeps the decisions written down in the
+  command help.
 - **Cost.** `test_all_new_unassessed_classifies_each_record_in_constant_time` and
   `test_mixed_complete_migration_classifies_each_record_in_constant_time` bound the per-record comparisons.
 
@@ -70,11 +69,15 @@ than only through the validator function.
 - Registration rejects unnamed reporting or competing report reasons and verifies the rule sets. [1]
 
 - Leaf and publication versus merge cases exercise the existing-record, absent-route, unrealized-family and gone-path boundaries. [2]
+
 - A standalone conversion rejects bases, paired code and publication, while candidate overviews join the migration population. [3]
+
 - Admission operation counts constrain per-record classification rather than elapsed runtime. [4]
+
 - A merge-moved row reports at merge but is refused by covered-entry validation at publication. [5]
 
-- Messages, command help and the workflow text carry the named reporting and refusal decisions. [6]
+- Messages and command help carry the named reporting and refusal decisions. [6]
 
 - Complete-census cases cover carried debt at both landing and sync with incomplete controls. [7]
+
 - The merge-report set assertion includes the separate link-target rule beside the original ten decisions. [8]

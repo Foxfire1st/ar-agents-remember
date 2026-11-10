@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:3c6f7fcbe15c1f8e79ed9327cab6733925e9f0e87cd07180c7a2ef97d938da89",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:aac504b8bc96f0bab63b659c9abfa90cf622422e13931b2bcc9f8ee1a65e9397",
         "locator": {
-          "end": 150,
+          "end": 166,
           "kind": "line_range",
-          "start": 65
+          "start": 160
         }
       },
       "id": "RLZ-66VR00",
@@ -18,17 +18,17 @@
         "handoffEntry": "L62-CUR-6414-curator-healing",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "Memory encountered on the way is repaired; code discoveries retain routing. Wrong/missing memory whoever left it and beyond MQC is repaired; no unrelated sweep; route code, requirement or other-leaf work. Independent non-author reader checks all changed knowledge/history and important omissions before closeout.",
+      "rationale": "The Curator's 'Repair and finish the stage' section repairs wrong or missing memory met while curating, whoever left it and beyond the quality findings, through the writer, names each repair, makes no broad or unrelated sweep, and routes repairs needing code, a requirement decision or another leaf's work. Code discoveries keep their own routing (line 97).",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:bd1d755a46d1af72e7027ad39b71d342bd5c445a49ef05d7d1241d08ac652f1c",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:1f4caf7b80b37a73aa313c37f836e0f55b65c8f0e8609a14856517b9029e49cd",
         "locator": {
-          "end": 96,
+          "end": 128,
           "kind": "line_range",
-          "start": 94
+          "start": 126
         }
       },
       "id": "RLZ-7B663Y",
@@ -42,12 +42,12 @@
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:8d43ca9f3b1b451857b1605445b88460f643f5886f41589c65af8455572280c8",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:ad5518fc64bdd79a580f8a972bfeca9bafa24c0296e8ddca56765f54ef3de5a7",
         "locator": {
-          "end": 71,
+          "end": 93,
           "kind": "line_range",
-          "start": 53
+          "start": 93
         }
       },
       "id": "RLZ-9PY7H9",
@@ -56,13 +56,13 @@
         "handoffEntry": "L62-CUR-6414-claim-check",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "Independent non-author reader checks all changed knowledge/history and important omissions before closeout. The card detail is now directly reached at Curation2 before ingest.",
+      "rationale": "Before closeout the Curator follows the complete independent fact-check of the curation operation: a seat that wrote none of the leaf's cards or records, blocking findings repaired with reruns, evidence kept out of the memory worktree, and the result treated as review evidence rather than a closeout gate.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:d8a9e0a838a2074862aff79c874ea350dd48652aec3a8f002cd553845d3cd8e4",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:f59ace120b496f54794e2d7ad7e836fe6c8d4079bc3af0c1afa9927736d98cb6",
         "locator": {
           "kind": "file"
         }
@@ -73,13 +73,13 @@
         "handoffEntry": "L198-INV-A",
         "leaf": "260928-MIK-L198"
       },
-      "rationale": "One of the three rewritten texts the roles overview describes.",
+      "rationale": "The Curator's working-files paragraph (line 194) puts the sandbox root and one short `TMPDIR` in the handover's `workspace.outsideScratchRoot` and keeps agent temporaries in `workspace.scratchRoot`, outside code, memory and task folders, so the Curator's outside work uses the outside scratch root the handover supplies.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:d8a9e0a838a2074862aff79c874ea350dd48652aec3a8f002cd553845d3cd8e4",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:f59ace120b496f54794e2d7ad7e836fe6c8d4079bc3af0c1afa9927736d98cb6",
         "locator": {
           "kind": "file"
         }
@@ -95,12 +95,12 @@
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:1189af447b5b83d690094188787a592aa8653b37a0aad6ec1fd1b4f2cf9434a6",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:ccd1717b26f18e834af3dad4cbdfb8fc1bc80643fdbb98eb8f4f75ae122456f6",
         "locator": {
-          "end": 98,
+          "end": 124,
           "kind": "line_range",
-          "start": 92
+          "start": 124
         }
       },
       "id": "RLZ-D0XTAP",
@@ -109,17 +109,17 @@
         "handoffEntry": "R99-D95-curator-code-concerns",
         "leaf": "260928-MIK-L99"
       },
-      "rationale": "Requires the post-pass concern, truthful knowledge and recorded Reviewer answer.",
+      "rationale": "The Curator role sends code questions and evidenced concerns, including after code review passes, to the owners its findings section names, so a post-pass concern still reaches the Worker and Reviewer.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:f946103eb7017335824ba6cbb1e3e655ba1fccdbb9478e41b05aaf32cc783a02",
         "locator": {
-          "end": 110,
+          "end": 146,
           "kind": "line_range",
-          "start": 110
+          "start": 142
         }
       },
       "id": "RLZ-DT71R6",
@@ -133,12 +133,12 @@
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:16982b1069215292a905dc7d1ebaccddab307de10f359aff1b57c1af343a81ca",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:ad5518fc64bdd79a580f8a972bfeca9bafa24c0296e8ddca56765f54ef3de5a7",
         "locator": {
-          "end": 71,
+          "end": 93,
           "kind": "line_range",
-          "start": 71
+          "start": 93
         }
       },
       "id": "RLZ-HVJ3RJ",
@@ -147,17 +147,17 @@
         "handoffEntry": "MIK-R101@v1 rule 4",
         "leaf": "260928-MIK-L101"
       },
-      "rationale": "This preserved sentence keeps the closeout-evidence boundary master dropped with retired procedure.",
+      "rationale": "The Curator role's closeout paragraph keeps the kept boundary in rewritten words: the independent fact-check result is review evidence, not a new closeout gate or an intent verdict.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:f42534d6759b458fcf40b7e80eb67bcccee6bc1b93b89f12ab124deb9ebcc63f",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
         "locator": {
-          "end": 108,
+          "end": 138,
           "kind": "line_range",
-          "start": 107
+          "start": 136
         }
       },
       "id": "RLZ-J4K6S5",
@@ -166,17 +166,17 @@
         "handoffEntry": "MIK-R194@v1 rule 10",
         "leaf": "260928-MIK-L186"
       },
-      "rationale": "The Curator role names normal mounted/admitted serving-build authoring and directly links the bounded same-tool/input-class correct-write recovery. It explicitly distinguishes missing capability from a refused correct write.",
+      "rationale": "The Curator role names normal authoring through mounted `knowledge_write` or the admitted serving-build command-line writer with the task contract (line 136), and states inline that only the tool and input class of a covered correct write admit open manual recovery, while every other write keeps its tool (line 138). It explicitly distinguishes a missing writer from a refused correct write.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:f946103eb7017335824ba6cbb1e3e655ba1fccdbb9478e41b05aaf32cc783a02",
         "locator": {
-          "end": 110,
+          "end": 146,
           "kind": "line_range",
-          "start": 110
+          "start": 142
         }
       },
       "id": "RLZ-JFZ5WP",
@@ -190,12 +190,12 @@
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:17d30d022454d0f0f094c3c23b95a38d28cb5458181b9fdbee086dc781a5a73b",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:7d29c8551fceea6befa2bb3368b9e56702729dafe74d57b7b0f84a8c5bd9f7f6",
         "locator": {
-          "end": 45,
+          "end": 49,
           "kind": "line_range",
-          "start": 41
+          "start": 47
         }
       },
       "id": "RLZ-N4VK1C",
@@ -209,12 +209,12 @@
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:e41fafc8b37c5fbba5c971104e2036dcedb4e59cfeec8b6dc49db480c0a4190e",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:d7db2188bd4ab7a285d7010f73677575865f62e8a5e4d2790a26d92e83d45361",
         "locator": {
-          "end": 175,
+          "end": 192,
           "kind": "line_range",
-          "start": 173
+          "start": 192
         }
       },
       "id": "RLZ-Q70RTA",
@@ -228,12 +228,31 @@
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:a1d46afa1dd2217b52da016c7c809346cdb92455fe4838488fda36d14001cfdb",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:e155ca4c962cdb3d63490bc06527b721d4682ce74e2e69720db5b5c36a3354d9",
         "locator": {
-          "end": 150,
+          "end": 178,
           "kind": "line_range",
-          "start": 131
+          "start": 176
+        }
+      },
+      "id": "RLZ-R3H3TX",
+      "invariant": "INV-QPY4KH",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 memory-tool continuation",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The report-findings section requires independent admitted-tool continuation and directs refusal/tool-boundary handling to the curation operation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:6c8a65861fe04169900aebfd105bb2a2e3ae81cf1133f149ab5f317fe7f6a5ef",
+        "locator": {
+          "end": 174,
+          "kind": "line_range",
+          "start": 160
         }
       },
       "id": "RLZ-SHXSR1",
@@ -242,17 +261,17 @@
         "handoffEntry": "L116-W3-wording-oracle",
         "leaf": "260928-MIK-L116"
       },
-      "rationale": "This section is the curator stage-end contract: knowledge-written end state, repair-own-slips, four stops, and last-line rule.",
+      "rationale": "The Curator's stage contract is the 'Repair and finish the stage' section: the knowledge-written end state, own-slip repair, encountered-memory repair, the three-repair stop, the stops, and the report of what it awaits and from whom to its parent while unfinished.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:104f54561075fbc4d1aea00b5a8be417fc4848aa406ea1c19bf09e9493396c37",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:ea56dba9ed8435c80ed45a3e4434ccd3ea8174e546f9ddea74e200b46ea6e45e",
         "locator": {
-          "end": 82,
+          "end": 112,
           "kind": "line_range",
-          "start": 60
+          "start": 99
         }
       },
       "id": "RLZ-TND9GX",
@@ -261,17 +280,17 @@
         "handoffEntry": "L62-CUR-6414-current-truth",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "Authoring is linked at reconciliation; card detail now before ingest. Current truth, contradicting-body withdrawal and no quality-driven removal remain inline.",
+      "rationale": "The Curator's 'Produce the handover' section keeps current truth, the withdrawal of every affected-body claim a correction makes false, and no removal made only to clear a quality finding. The card-sentence decisions are linked before card edits at line 61.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:b670e5e8fbcfee44ee84f5d3fd6d789fce64eb772f02cf18f8266d7abe44cb1e",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:8bd4ccb2e5e601a6e697aff9fcc89f072b14bc672af5bdaad8f5b009f0762fcf",
         "locator": {
-          "end": 123,
+          "end": 158,
           "kind": "line_range",
-          "start": 114
+          "start": 152
         }
       },
       "id": "RLZ-V1AKR1",
@@ -280,17 +299,17 @@
         "handoffEntry": "Preservation (flags and acceptance)",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Curator reserves semantic memory judgment and publication despite runtime completion.",
+      "rationale": "The Curator's 'Preserve authority boundaries' section leaves the Git transaction to the Manager, edits no code, gate, lifecycle, worktree-contract or closeout state, invents no commit or fingerprint and never passes incomplete onboarding. It supports the invariant's exclusion that memory publication and Git landing remain owner judgments.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:ca59c4902dd22235285d433fbb29b28fb0dc195b29c368331fea6c95a83d86a0",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:40d99da9cdc73e956c00a4b589f8c2d3b4961ba4fe46fcf208712fed40008956",
         "locator": {
-          "end": 60,
+          "end": 83,
           "kind": "line_range",
-          "start": 53
+          "start": 83
         }
       },
       "id": "RLZ-W0QFC2",
@@ -299,17 +318,17 @@
         "handoffEntry": "L62-CUR-6414-history-selection",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "The card detail is now directly reached at Curation2 before ingest.",
+      "rationale": "The Curator role points to the history-disposition section directly before writing card history.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:33cb458ac74be11216cac9fd11d272176f4a715e53b85bfb309dd9df99a89b68",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:ecda596ce7df7048019379764a7225a366dd925d95c62600a9f17ab1dc951e49",
         "locator": {
-          "end": 150,
+          "end": 172,
           "kind": "line_range",
-          "start": 84
+          "start": 114
         }
       },
       "id": "RLZ-W7BYTX",
@@ -324,16 +343,16 @@
   ],
   "references": {
     "1": {
-      "note": "Required task, source, handoff and publication inputs.",
+      "note": "The Curator reads the required task, change-set, producer handoff and affected memory inputs.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:28922ae2f50362b9ad6379c8ace256f584dad41b4de41dd2edb47d701c8aede8",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:c65dd2987dcabfd1a8a1dde3dfea9ed97e4532e38ef91385a54a73043edd6fde",
             "locator": {
-              "end": 177,
+              "end": 37,
               "kind": "line_range",
-              "start": 8
+              "start": 29
             }
           },
           "kind": "code"
@@ -345,38 +364,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7278abbdd039628f4afa41f7e871051e41866547",
-            "content": "sha256:39919afea8a46c3ddf5b7c4547b8ff503640e6962c526ded51331e72a9886ad2",
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:92172fc1b54d6354a218b204d498ade6b8411383066675a2aa0d97dc5756caf8",
             "locator": {
-              "end": 51,
+              "end": 77,
               "kind": "line_range",
-              "start": 6
+              "start": 77
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "896e170e9ff4b3ee595eeeb3285983629e0db7eb",
-            "content": "sha256:b74e35f131b9eb9727079fb36a5a70bc71f0bf3654583a3b6da98f6e02bde646",
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:9f5dfb5b42d7d70417223c2d1d4d20ae1503d0ec75331718f2ce0e98f20a6d13",
             "locator": {
-              "end": 18,
+              "end": 77,
               "kind": "line_range",
-              "start": 5
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-handoff-d301.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:954ec5a796908160d11393d00eafa85e5aa2d4377c25372dc5ad6973a1733669",
-            "locator": {
-              "end": 205,
-              "kind": "line_range",
-              "start": 5
+              "start": 77
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -384,26 +390,90 @@
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:d8a9e0a838a2074862aff79c874ea350dd48652aec3a8f002cd553845d3cd8e4",
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:d13b8227c21332b68b1c21036aac14d5b719cab910ecc9821c223e54abf3c089",
             "locator": {
-              "end": 177,
+              "end": 105,
               "kind": "line_range",
-              "start": 1
+              "start": 105
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:f10958515c7974aeb47b8f72de1ecf43088c7bce0ee5d6835c749adcb8f0d1c3",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:60c9618c295617739053203981cada08803199106def2bd6d8ceb53ac05de6b4",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 164
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "77193c73e40d8dcf1ac8b7158debe508e2d02065",
-            "content": "sha256:c1c9eaecfc614b2b83262b80580096eb99d1d34056cc4439649c71ddad0e5b72",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:a6d900ac668d39c56cd8fdf7f6d154cd8fd2b2799d52c1fc6e7496740f5943b6",
             "locator": {
-              "end": 38,
+              "end": 170,
               "kind": "line_range",
-              "start": 1
+              "start": 170
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+            "content": "sha256:0423c63d873969296820c17d7e9628363f5f7928d402a36fb0e86317d7995afa",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5c547f2f6818f886972bce92087be9d041c1fc9",
+            "content": "sha256:d7b8d25da4055cf676b48feb6d911e2611d152a7cf8f99a7d34b01885f266840",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 23
             },
             "path": "skills/l-01-agent-lifecycles/reference/refused-write.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:4e6bf8994a2889ebd2ead57252c36edc23ec9aaf19e314edbdf5f8746ae40f19",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
           "kind": "code"
         }
@@ -414,26 +484,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:28922ae2f50362b9ad6379c8ace256f584dad41b4de41dd2edb47d701c8aede8",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:ad5518fc64bdd79a580f8a972bfeca9bafa24c0296e8ddca56765f54ef3de5a7",
             "locator": {
-              "end": 177,
+              "end": 93,
               "kind": "line_range",
-              "start": 8
+              "start": 93
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7278abbdd039628f4afa41f7e871051e41866547",
-            "content": "sha256:d06e0b525746fbafe6e3ad6d41b81b07a86d36cbfbe00e09c201256c82c5644b",
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:d1cb107832fa807b37b374922855df001cd309c13a97866d10628925183eadbb",
             "locator": {
-              "end": 27,
+              "end": 41,
               "kind": "line_range",
-              "start": 22
+              "start": 41
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
           },
           "kind": "code"
         }
@@ -444,12 +514,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:6f26753e231ca1be34c42c905bc494ba81542e5c79715b710f99f13ba5b4071e",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:6038be5814e8f452acee52a8e9f79ebec01003bfacf61434586409c39243e5d7",
             "locator": {
-              "end": 84,
+              "end": 112,
               "kind": "line_range",
-              "start": 78
+              "start": 112
             }
           },
           "kind": "code"
@@ -457,41 +527,29 @@
       ]
     },
     "13": {
-      "note": "Repository foundation is authored by the Curator inside the real task opened by the user-started Architect, with its actual enclosure. The c-14 procedure permits one leaf or a leaf under a master or sprint; the extracted foundation detail describes the master case and does not narrow those admissions. No taskless session or invented enclosure substitutes for task admission.",
+      "note": "Repository foundation is authored by the Curator inside the real task the user-started Architect opens, a registered leaf under a master, with its actual enclosure. No taskless session or invented task, worktree or enclosure substitutes for task admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:28922ae2f50362b9ad6379c8ace256f584dad41b4de41dd2edb47d701c8aede8",
+            "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
+            "content": "sha256:84b9d8ce6b5ed5909445940124c36d6fad71a9ce1c6ade5e9119ab425928ee06",
             "locator": {
-              "end": 177,
+              "end": 13,
               "kind": "line_range",
-              "start": 8
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6f1b7f17a083434b9512a5614aaf5a9d344a7e09",
-            "content": "sha256:3518e92e94b8d2e963cd88e9f0333406e1693ab260408b6c6dd31d7f2ce70a8f",
-            "locator": {
-              "end": 7,
-              "kind": "line_range",
-              "start": 3
+              "start": 7
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-repository-foundation.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/repository-foundation.md"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
-            "content": "sha256:ebc4c54f8e8b0b0e0fda2163e029a7401437c6d39ba8d9032359b2ac11fd9c1d",
+            "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+            "content": "sha256:43b2ab69f6edf4ea7cdd98f1f0b5a42c74c1ceb83dd9c73f0dfaee5803fb57fc",
             "locator": {
-              "end": 57,
+              "end": 61,
               "kind": "line_range",
-              "start": 52
+              "start": 53
             },
             "path": "skills/c-14-knowledge-bootstrap/SKILL.md"
           },
@@ -504,12 +562,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:f18ab9c78f5fa3cd358f09f655f6018c0bca674510f18605e9e8506b51d4127d",
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:b92d132931f3122ed21b4eb5373d122d01113aca2cdedf88039af80ffbce780e",
             "locator": {
-              "end": 163,
+              "end": 81,
               "kind": "line_range",
-              "start": 155
+              "start": 81
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:ad5518fc64bdd79a580f8a972bfeca9bafa24c0296e8ddca56765f54ef3de5a7",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 93
             }
           },
           "kind": "code"
@@ -517,41 +588,29 @@
       ]
     },
     "15": {
-      "note": "Repository foundation is authored by the Curator inside the real task opened by the user-started Architect, with its actual enclosure. The c-14 procedure permits one leaf or a leaf under a master or sprint; the extracted foundation detail describes the master case and does not narrow those admissions. No taskless session or invented enclosure substitutes for task admission.",
+      "note": "Repository foundation is authored by the Curator inside the real task the user-started Architect opens, a registered leaf under a master, with its actual enclosure. No taskless session or invented task, worktree or enclosure substitutes for task admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:28922ae2f50362b9ad6379c8ace256f584dad41b4de41dd2edb47d701c8aede8",
+            "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
+            "content": "sha256:84b9d8ce6b5ed5909445940124c36d6fad71a9ce1c6ade5e9119ab425928ee06",
             "locator": {
-              "end": 177,
+              "end": 13,
               "kind": "line_range",
-              "start": 8
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6f1b7f17a083434b9512a5614aaf5a9d344a7e09",
-            "content": "sha256:3518e92e94b8d2e963cd88e9f0333406e1693ab260408b6c6dd31d7f2ce70a8f",
-            "locator": {
-              "end": 7,
-              "kind": "line_range",
-              "start": 3
+              "start": 7
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-repository-foundation.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/repository-foundation.md"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
-            "content": "sha256:ebc4c54f8e8b0b0e0fda2163e029a7401437c6d39ba8d9032359b2ac11fd9c1d",
+            "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+            "content": "sha256:43b2ab69f6edf4ea7cdd98f1f0b5a42c74c1ceb83dd9c73f0dfaee5803fb57fc",
             "locator": {
-              "end": 57,
+              "end": 61,
               "kind": "line_range",
-              "start": 52
+              "start": 53
             },
             "path": "skills/c-14-knowledge-bootstrap/SKILL.md"
           },
@@ -560,179 +619,336 @@
       ]
     },
     "16": {
-      "note": "The named worklist detail states Writer/worklist/link-repair duties; authoring detail127–130 retains real rejected alternatives as weighed decisions rather than invented future work.",
+      "note": "The worklist detail points to the writer's row, reconsideration and link-repair rules; the governing-sources detail records a rejected simplification or workaround with the chosen design, rejected option and reason, apart from unfinished work.",
       "targets": [
         {
           "anchor": {
-            "blob": "c9e2e9254b831be7dc025cd44796b11fc8cf89a5",
-            "content": "sha256:7f1846c0abf6d396570532e2b9f39f267851fffee06f877717cc8fab96732b13",
+            "blob": "d6559fa750bc433a6c1d4bd48510f14d15d42b01",
+            "content": "sha256:9ab7f1884bb71a83619d391ec46d70f7723a53346dbe589022dacd2edd69ab5b",
             "locator": {
-              "end": 32,
+              "end": 13,
               "kind": "line_range",
-              "start": 1
+              "start": 7
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/worklist.md"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
-            "content": "sha256:05dd52f53ca57d931572b5b83107164696feb67479ee732bfcb0c9c1f4728623",
+            "blob": "ebe521599c9146c1460204ca08e7ac812db2e1ac",
+            "content": "sha256:85d9a59b93ffade5f587b23a64b940bb9415ccc11baba91845b08d8c7295d9d5",
             "locator": {
-              "end": 130,
+              "end": 13,
               "kind": "line_range",
-              "start": 127
+              "start": 13
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/governing-sources.md"
           },
           "kind": "code"
         }
       ]
     },
     "17": {
-      "note": "Current Curator intake requires canonical candidate-bound producer data and passing handoff-check results for the same freeze, reads authoring at reconcile and card formats before ingest, and keeps full checks, non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. The authoring detail attributes Prepared-context unattributed code locations to their family or reports why not, and retires deleted/renamed source cards while repairing every reference to them.",
+      "note": "Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. The family-obligations detail attributes prepared-context unattributed code locations to their family or reports why not, and the change-routing detail retires deleted or renamed source cards while repairing every reference to them.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e52cc03ee37a93238377e75cab47ff7e542edb798f33ae8ffc9f7d26b78bb8e",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:7bd813bffa1278fd0ca3497a0a6355a5c65c0f551e765ace8907fdc0f954911f",
             "locator": {
-              "end": 47,
+              "end": 24,
               "kind": "line_range",
-              "start": 12
+              "start": 24
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e704aa24c2df2cdc9fc31d0bcd5ebe861f2f8510ac4c33465c45679433e7cf2",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8611d8a9e95f1d177a64dc700cb79f509823b06b1860d2e9b726ba37e83e1ab",
             "locator": {
-              "end": 86,
+              "end": 43,
               "kind": "line_range",
-              "start": 51
+              "start": 43
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:7fe1cc00aacbf20949cf18a3b3f46ae0dd5892dad91ae6f99244f2b83981b356",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8169fedb206634f43058b21870ed8398015728220b77bf638a9e153daaccc8a",
             "locator": {
-              "end": 150,
+              "end": 65,
               "kind": "line_range",
-              "start": 104
+              "start": 57
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
-            "content": "sha256:b8195cba44e8670bd4d92b506f87c71fe609c103fe6a169ac2b9cfbcf5b9ca1e",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:59f2fac1ba96b6779f3dc74ccfee576c4e54130c89c3d96d402030913c6538f2",
             "locator": {
-              "end": 90,
+              "end": 93,
               "kind": "line_range",
-              "start": 70
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:467a5291ccc05a26db52ee0938adfbfe9c1bd9f6efbfb2fe3da62f409628f1d4",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:53e8b995dc9e645f2eb041d2caba75102e7d47efe08d0be779f88713602ab376",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 164
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f94d71264796f1e10917ef5762dba709b2bbcd06",
+            "content": "sha256:1f623801f0dedfecc17fffa8716a9f4a9f55fcae39c9c2387ba9d20cf27878ae",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/family-obligations.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2774385e740c199b89101abd2864c721614071c1",
+            "content": "sha256:1b18c7f29fdbd9c5f392409e5e56c135bc20c0f9dc5645908b8eefac3a80a817",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/change-routing.md"
           },
           "kind": "code"
         }
       ]
     },
     "18": {
-      "note": "Current Curator intake requires canonical candidate-bound producer data and passing handoff-check results for the same freeze, reads authoring at reconcile and card formats before ingest, and keeps full checks, non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. Before ingest, earlier subject rows are read and invariant disposition meanings stay distinct from family/onboarding schemas.",
+      "note": "Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. Before ingest, earlier subject rows are read and invariant disposition meanings stay distinct from family/onboarding schemas.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e52cc03ee37a93238377e75cab47ff7e542edb798f33ae8ffc9f7d26b78bb8e",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:7bd813bffa1278fd0ca3497a0a6355a5c65c0f551e765ace8907fdc0f954911f",
             "locator": {
-              "end": 47,
+              "end": 24,
               "kind": "line_range",
-              "start": 12
+              "start": 24
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e704aa24c2df2cdc9fc31d0bcd5ebe861f2f8510ac4c33465c45679433e7cf2",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8611d8a9e95f1d177a64dc700cb79f509823b06b1860d2e9b726ba37e83e1ab",
             "locator": {
-              "end": 86,
+              "end": 43,
               "kind": "line_range",
-              "start": 51
+              "start": 43
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:7fe1cc00aacbf20949cf18a3b3f46ae0dd5892dad91ae6f99244f2b83981b356",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8169fedb206634f43058b21870ed8398015728220b77bf638a9e153daaccc8a",
             "locator": {
-              "end": 150,
+              "end": 65,
               "kind": "line_range",
-              "start": 104
+              "start": 57
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7278abbdd039628f4afa41f7e871051e41866547",
-            "content": "sha256:8c829f17a7a9de1ecf51cf14ef2ed5e2a4f26d8fbdff8794f67c495f50c8578c",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:59f2fac1ba96b6779f3dc74ccfee576c4e54130c89c3d96d402030913c6538f2",
             "locator": {
-              "end": 20,
+              "end": 93,
               "kind": "line_range",
-              "start": 6
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:467a5291ccc05a26db52ee0938adfbfe9c1bd9f6efbfb2fe3da62f409628f1d4",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:53e8b995dc9e645f2eb041d2caba75102e7d47efe08d0be779f88713602ab376",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 164
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:d2d292cf3d434dceae618e92e3928f83c2f728fc69c5870453f9396bceac4558",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 7
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
           },
           "kind": "code"
         }
       ]
     },
     "19": {
-      "note": "Current Curator intake requires canonical candidate-bound producer data and passing handoff-check results for the same freeze, reads authoring at reconcile and card formats before ingest, and keeps full checks, non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
+      "note": "Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e52cc03ee37a93238377e75cab47ff7e542edb798f33ae8ffc9f7d26b78bb8e",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:7bd813bffa1278fd0ca3497a0a6355a5c65c0f551e765ace8907fdc0f954911f",
             "locator": {
-              "end": 47,
+              "end": 24,
               "kind": "line_range",
-              "start": 12
+              "start": 24
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e704aa24c2df2cdc9fc31d0bcd5ebe861f2f8510ac4c33465c45679433e7cf2",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8611d8a9e95f1d177a64dc700cb79f509823b06b1860d2e9b726ba37e83e1ab",
             "locator": {
-              "end": 86,
+              "end": 43,
               "kind": "line_range",
-              "start": 51
+              "start": 43
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:7fe1cc00aacbf20949cf18a3b3f46ae0dd5892dad91ae6f99244f2b83981b356",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8169fedb206634f43058b21870ed8398015728220b77bf638a9e153daaccc8a",
             "locator": {
-              "end": 150,
+              "end": 65,
               "kind": "line_range",
-              "start": 104
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:59f2fac1ba96b6779f3dc74ccfee576c4e54130c89c3d96d402030913c6538f2",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:467a5291ccc05a26db52ee0938adfbfe9c1bd9f6efbfb2fe3da62f409628f1d4",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:53e8b995dc9e645f2eb041d2caba75102e7d47efe08d0be779f88713602ab376",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 164
             }
           },
           "kind": "code"
@@ -740,42 +956,41 @@
       ]
     },
     "2": {
-      "note": "Three-way reconciliation, explicit retention, writer/readback and full quality duties.",
+      "note": "Three-way reconciliation, baseline preservation, admitted-record readback and full quality-check duties.",
       "targets": [
         {
           "anchor": {
-            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
-            "content": "sha256:084e18e0bc2a132d0a58c72a824ecaa9c0f548abd65f3e3532a71c388f63532c",
+            "blob": "7117f2f448a2507a4289d3849b7765d64be4d702",
+            "content": "sha256:29ee5d4d2c163edfeabf2b9d3ce01b2ef069e5d0800a01882b492d0340ec8cb4",
             "locator": {
-              "end": 68,
+              "end": 11,
               "kind": "line_range",
-              "start": 19
+              "start": 5
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/intent-reconciliation.md"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7278abbdd039628f4afa41f7e871051e41866547",
-            "content": "sha256:39919afea8a46c3ddf5b7c4547b8ff503640e6962c526ded51331e72a9886ad2",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f52c888b12f4f11639210f4afc53491ba2c0f2c97205bb8f5bc876e42a1b16ef",
             "locator": {
-              "end": 51,
+              "end": 63,
               "kind": "line_range",
-              "start": 6
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md"
+              "start": 63
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:9a641d75d2e4e76b706716c041eb8580139fbdf42d3f13f6a35646945b6a7d58",
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:8dfd92e43e8ef9b4745b3765c91c48ef3a73b299a1b4ff3f2cf3bdedb0bb9a2f",
             "locator": {
-              "end": 109,
+              "end": 77,
               "kind": "line_range",
-              "start": 81
+              "start": 70
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -784,40 +999,88 @@
       ]
     },
     "20": {
-      "note": "Current Curator intake requires canonical candidate-bound producer data and passing handoff-check results for the same freeze, reads authoring at reconcile and card formats before ingest, and keeps full checks, non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
+      "note": "Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e52cc03ee37a93238377e75cab47ff7e542edb798f33ae8ffc9f7d26b78bb8e",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:7bd813bffa1278fd0ca3497a0a6355a5c65c0f551e765ace8907fdc0f954911f",
             "locator": {
-              "end": 47,
+              "end": 24,
               "kind": "line_range",
-              "start": 12
+              "start": 24
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e704aa24c2df2cdc9fc31d0bcd5ebe861f2f8510ac4c33465c45679433e7cf2",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8611d8a9e95f1d177a64dc700cb79f509823b06b1860d2e9b726ba37e83e1ab",
             "locator": {
-              "end": 86,
+              "end": 43,
               "kind": "line_range",
-              "start": 51
+              "start": 43
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:7fe1cc00aacbf20949cf18a3b3f46ae0dd5892dad91ae6f99244f2b83981b356",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8169fedb206634f43058b21870ed8398015728220b77bf638a9e153daaccc8a",
             "locator": {
-              "end": 150,
+              "end": 65,
               "kind": "line_range",
-              "start": 104
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:59f2fac1ba96b6779f3dc74ccfee576c4e54130c89c3d96d402030913c6538f2",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:467a5291ccc05a26db52ee0938adfbfe9c1bd9f6efbfb2fe3da62f409628f1d4",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:53e8b995dc9e645f2eb041d2caba75102e7d47efe08d0be779f88713602ab376",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 164
             }
           },
           "kind": "code"
@@ -825,40 +1088,88 @@
       ]
     },
     "21": {
-      "note": "Current Curator intake requires canonical candidate-bound producer data and passing handoff-check results for the same freeze, reads authoring at reconcile and card formats before ingest, and keeps full checks, non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
+      "note": "Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e52cc03ee37a93238377e75cab47ff7e542edb798f33ae8ffc9f7d26b78bb8e",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:7bd813bffa1278fd0ca3497a0a6355a5c65c0f551e765ace8907fdc0f954911f",
             "locator": {
-              "end": 47,
+              "end": 24,
               "kind": "line_range",
-              "start": 12
+              "start": 24
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e704aa24c2df2cdc9fc31d0bcd5ebe861f2f8510ac4c33465c45679433e7cf2",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8611d8a9e95f1d177a64dc700cb79f509823b06b1860d2e9b726ba37e83e1ab",
             "locator": {
-              "end": 86,
+              "end": 43,
               "kind": "line_range",
-              "start": 51
+              "start": 43
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:7fe1cc00aacbf20949cf18a3b3f46ae0dd5892dad91ae6f99244f2b83981b356",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8169fedb206634f43058b21870ed8398015728220b77bf638a9e153daaccc8a",
             "locator": {
-              "end": 150,
+              "end": 65,
               "kind": "line_range",
-              "start": 104
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:59f2fac1ba96b6779f3dc74ccfee576c4e54130c89c3d96d402030913c6538f2",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:467a5291ccc05a26db52ee0938adfbfe9c1bd9f6efbfb2fe3da62f409628f1d4",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:53e8b995dc9e645f2eb041d2caba75102e7d47efe08d0be779f88713602ab376",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 164
             }
           },
           "kind": "code"
@@ -866,40 +1177,88 @@
       ]
     },
     "22": {
-      "note": "Current Curator intake requires canonical candidate-bound producer data and passing handoff-check results for the same freeze, reads authoring at reconcile and card formats before ingest, and keeps full checks, non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
+      "note": "Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e52cc03ee37a93238377e75cab47ff7e542edb798f33ae8ffc9f7d26b78bb8e",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:7bd813bffa1278fd0ca3497a0a6355a5c65c0f551e765ace8907fdc0f954911f",
             "locator": {
-              "end": 47,
+              "end": 24,
               "kind": "line_range",
-              "start": 12
+              "start": 24
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e704aa24c2df2cdc9fc31d0bcd5ebe861f2f8510ac4c33465c45679433e7cf2",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8611d8a9e95f1d177a64dc700cb79f509823b06b1860d2e9b726ba37e83e1ab",
             "locator": {
-              "end": 86,
+              "end": 43,
               "kind": "line_range",
-              "start": 51
+              "start": 43
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:7fe1cc00aacbf20949cf18a3b3f46ae0dd5892dad91ae6f99244f2b83981b356",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8169fedb206634f43058b21870ed8398015728220b77bf638a9e153daaccc8a",
             "locator": {
-              "end": 150,
+              "end": 65,
               "kind": "line_range",
-              "start": 104
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:59f2fac1ba96b6779f3dc74ccfee576c4e54130c89c3d96d402030913c6538f2",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:467a5291ccc05a26db52ee0938adfbfe9c1bd9f6efbfb2fe3da62f409628f1d4",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:53e8b995dc9e645f2eb041d2caba75102e7d47efe08d0be779f88713602ab376",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 164
             }
           },
           "kind": "code"
@@ -907,40 +1266,88 @@
       ]
     },
     "23": {
-      "note": "Current Curator intake requires canonical candidate-bound producer data and passing handoff-check results for the same freeze, reads authoring at reconcile and card formats before ingest, and keeps full checks, non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
+      "note": "Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e52cc03ee37a93238377e75cab47ff7e542edb798f33ae8ffc9f7d26b78bb8e",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:7bd813bffa1278fd0ca3497a0a6355a5c65c0f551e765ace8907fdc0f954911f",
             "locator": {
-              "end": 47,
+              "end": 24,
               "kind": "line_range",
-              "start": 12
+              "start": 24
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e704aa24c2df2cdc9fc31d0bcd5ebe861f2f8510ac4c33465c45679433e7cf2",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8611d8a9e95f1d177a64dc700cb79f509823b06b1860d2e9b726ba37e83e1ab",
             "locator": {
-              "end": 86,
+              "end": 43,
               "kind": "line_range",
-              "start": 51
+              "start": 43
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:7fe1cc00aacbf20949cf18a3b3f46ae0dd5892dad91ae6f99244f2b83981b356",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8169fedb206634f43058b21870ed8398015728220b77bf638a9e153daaccc8a",
             "locator": {
-              "end": 150,
+              "end": 65,
               "kind": "line_range",
-              "start": 104
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:59f2fac1ba96b6779f3dc74ccfee576c4e54130c89c3d96d402030913c6538f2",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:467a5291ccc05a26db52ee0938adfbfe9c1bd9f6efbfb2fe3da62f409628f1d4",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:53e8b995dc9e645f2eb041d2caba75102e7d47efe08d0be779f88713602ab376",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 164
             }
           },
           "kind": "code"
@@ -948,40 +1355,88 @@
       ]
     },
     "24": {
-      "note": "Current Curator intake requires canonical candidate-bound producer data and passing handoff-check results for the same freeze, reads authoring at reconcile and card formats before ingest, and keeps full checks, non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
+      "note": "Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e52cc03ee37a93238377e75cab47ff7e542edb798f33ae8ffc9f7d26b78bb8e",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:7bd813bffa1278fd0ca3497a0a6355a5c65c0f551e765ace8907fdc0f954911f",
             "locator": {
-              "end": 47,
+              "end": 24,
               "kind": "line_range",
-              "start": 12
+              "start": 24
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e704aa24c2df2cdc9fc31d0bcd5ebe861f2f8510ac4c33465c45679433e7cf2",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8611d8a9e95f1d177a64dc700cb79f509823b06b1860d2e9b726ba37e83e1ab",
             "locator": {
-              "end": 86,
+              "end": 43,
               "kind": "line_range",
-              "start": 51
+              "start": 43
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:7fe1cc00aacbf20949cf18a3b3f46ae0dd5892dad91ae6f99244f2b83981b356",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8169fedb206634f43058b21870ed8398015728220b77bf638a9e153daaccc8a",
             "locator": {
-              "end": 150,
+              "end": 65,
               "kind": "line_range",
-              "start": 104
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:59f2fac1ba96b6779f3dc74ccfee576c4e54130c89c3d96d402030913c6538f2",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:467a5291ccc05a26db52ee0938adfbfe9c1bd9f6efbfb2fe3da62f409628f1d4",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:53e8b995dc9e645f2eb041d2caba75102e7d47efe08d0be779f88713602ab376",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 164
             }
           },
           "kind": "code"
@@ -989,40 +1444,88 @@
       ]
     },
     "25": {
-      "note": "Current Curator intake requires canonical candidate-bound producer data and passing handoff-check results for the same freeze, reads authoring at reconcile and card formats before ingest, and keeps full checks, non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
+      "note": "Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e52cc03ee37a93238377e75cab47ff7e542edb798f33ae8ffc9f7d26b78bb8e",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:7bd813bffa1278fd0ca3497a0a6355a5c65c0f551e765ace8907fdc0f954911f",
             "locator": {
-              "end": 47,
+              "end": 24,
               "kind": "line_range",
-              "start": 12
+              "start": 24
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:1e704aa24c2df2cdc9fc31d0bcd5ebe861f2f8510ac4c33465c45679433e7cf2",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8611d8a9e95f1d177a64dc700cb79f509823b06b1860d2e9b726ba37e83e1ab",
             "locator": {
-              "end": 86,
+              "end": 43,
               "kind": "line_range",
-              "start": 51
+              "start": 43
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:7fe1cc00aacbf20949cf18a3b3f46ae0dd5892dad91ae6f99244f2b83981b356",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:b8169fedb206634f43058b21870ed8398015728220b77bf638a9e153daaccc8a",
             "locator": {
-              "end": 150,
+              "end": 65,
               "kind": "line_range",
-              "start": 104
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:59f2fac1ba96b6779f3dc74ccfee576c4e54130c89c3d96d402030913c6538f2",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:467a5291ccc05a26db52ee0938adfbfe9c1bd9f6efbfb2fe3da62f409628f1d4",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:53e8b995dc9e645f2eb041d2caba75102e7d47efe08d0be779f88713602ab376",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 164
             }
           },
           "kind": "code"
@@ -1034,37 +1537,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:f42534d6759b458fcf40b7e80eb67bcccee6bc1b93b89f12ab124deb9ebcc63f",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
             "locator": {
-              "end": 108,
+              "end": 138,
               "kind": "line_range",
-              "start": 107
+              "start": 136
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "197d357ccee5b36298f6b1e3afc714c112ca7fac",
-            "content": "sha256:09746e283a8863f849e868cc3fcb8d87ccb01b558ef42004948a8bab12124ef3",
+            "blob": "c5c547f2f6818f886972bce92087be9d041c1fc9",
+            "content": "sha256:d7b8d25da4055cf676b48feb6d911e2611d152a7cf8f99a7d34b01885f266840",
             "locator": {
-              "end": 49,
+              "end": 35,
               "kind": "line_range",
-              "start": 33
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-writer-details.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "77193c73e40d8dcf1ac8b7158debe508e2d02065",
-            "content": "sha256:c1c9eaecfc614b2b83262b80580096eb99d1d34056cc4439649c71ddad0e5b72",
-            "locator": {
-              "end": 38,
-              "kind": "line_range",
-              "start": 1
+              "start": 23
             },
             "path": "skills/l-01-agent-lifecycles/reference/refused-write.md"
           },
@@ -1077,12 +1567,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:26d15a8474644613070af3dc356746c599dd45e5956032e51909a27df3ae174e",
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:70710b4a1d6956f454d3331cce749163b2cc9f0d78544cee5ef71196b617691f",
             "locator": {
-              "end": 82,
+              "end": 53,
               "kind": "line_range",
-              "start": 75
+              "start": 53
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -1090,12 +1580,12 @@
         },
         {
           "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:67c667cbed17d2ee093394b4cef63126c03e63e03d30612fd1e787b7ec6485b6",
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:0ec721e2cda7edb353995ddc6520df50cd3fcbb25669cf4b4efd25fc8dc13674",
             "locator": {
-              "end": 109,
+              "end": 59,
               "kind": "line_range",
-              "start": 100
+              "start": 59
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -1103,25 +1593,38 @@
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:72fadf303fbbddb96fe8d68c9d150aea7569fb17eaeb5d4a8dd79655d2c68184",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f898ec3148ecaeb74251252927c4c5e8ce0edfffdb5573f0e13004aec0353bc2",
             "locator": {
-              "end": 84,
+              "end": 166,
               "kind": "line_range",
-              "start": 73
+              "start": 166
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:d8577622179dcbace8ad4c5d9e92f6121381f21cad17f964c58942b0e0018cc6",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:6876558a17c3bc01d04c1964ce78d2ac92f2ddef5ea7be0610c8117c1b7570ec",
             "locator": {
-              "end": 150,
+              "end": 101,
               "kind": "line_range",
-              "start": 137
+              "start": 101
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:0e09b6ab1a83ae89e79e4f82fb2ec9c70dc51cb35f517976b5bd816be5efb4f8",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
           "kind": "code"
         }
@@ -1132,12 +1635,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:d8a9e0a838a2074862aff79c874ea350dd48652aec3a8f002cd553845d3cd8e4",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:637b17373ac98070d32d4516a78c49d38c8233bce7ee4b07ac8d3cb86e6853e7",
             "locator": {
-              "end": 177,
+              "end": 156,
               "kind": "line_range",
-              "start": 1
+              "start": 152
             }
           },
           "kind": "code"
@@ -1145,133 +1648,132 @@
       ]
     },
     "4": {
-      "note": "The directly delivered authoring detail requires each hand-off target’s authored rationale before ingest; the writer never invents that rationale.",
+      "note": "The knowledge-ingest preparation detail requires each hand-off target’s own authored rationale before ingest; the writer never generates that rationale and refuses an unexplained target.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:28922ae2f50362b9ad6379c8ace256f584dad41b4de41dd2edb47d701c8aede8",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:4d71ac2b746e941aeac2431516cb78b59de6e22b67735e775e7900dc5a50d0db",
             "locator": {
-              "end": 177,
+              "end": 65,
               "kind": "line_range",
-              "start": 8
+              "start": 65
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
-            "content": "sha256:a03afa111c7352251aef9e8c84c04f39dc35b702e984888c6a28d347c868f9c8",
+            "blob": "1d1dbea7805343e927f75a6c80baf51aa9daa1ff",
+            "content": "sha256:ac22b53e275d878c2d4b733aa5c52129092dfb41d440fc7198b52082bce46312",
             "locator": {
-              "end": 53,
+              "end": 11,
               "kind": "line_range",
-              "start": 43
+              "start": 11
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/knowledge-ingest.md"
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The named authoring detail retains continuing-decision lifting; task-only choices stay task-local.",
+      "note": "The governing-decisions detail lifts each ruling or packet choice that still constrains code into a decision record; task-only choices stay in the task.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:83977738db41426244730104c6bc2a9e58a79f04121154ee89c3c48ba6b5c66d",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:589f2cf80782d37464131fb8068c59515ac08c384d15c0618850501e0161bff4",
             "locator": {
-              "end": 61,
+              "end": 73,
               "kind": "line_range",
-              "start": 61
+              "start": 73
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
-            "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
+            "blob": "ebe521599c9146c1460204ca08e7ac812db2e1ac",
+            "content": "sha256:267802415e45a236cfd8b92e5481b1eca3786110be83435016a3d853041fe916",
             "locator": {
-              "end": 17,
+              "end": 11,
               "kind": "line_range",
-              "start": 14
+              "start": 11
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/governing-sources.md"
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "On converted memory the curator follows the converted-card workflow.",
+      "note": "The curator follows the card-format and citation detail: cards hold current prose and numbered evidence lines, and the citation fixer turns citation tables into those lines and sidecar references.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:28922ae2f50362b9ad6379c8ace256f584dad41b4de41dd2edb47d701c8aede8",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:a8e21584fbd57771dc008fc71377cbfaf17d1fa9edf19bf1717909a019ecc08a",
             "locator": {
-              "end": 177,
+              "end": 79,
               "kind": "line_range",
-              "start": 8
+              "start": 79
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7278abbdd039628f4afa41f7e871051e41866547",
-            "content": "sha256:b1907bc51756f571f2ced0dfd20da0ce9d41dbc152540d7f0ee329ab96de5a2c",
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:4e75fbc5380b5de9de6fbf8fc60b2b909084bb91d10a987d17768f787b4d15e9",
             "locator": {
-              "end": 40,
+              "end": 47,
               "kind": "line_range",
-              "start": 35
+              "start": 47
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
           },
           "kind": "code"
         }
       ]
     },
     "7": {
-      "note": "The admitted knowledge-ingest route writes records, entries and history as files in the leaf memory worktree; --commit authorizes those file writes, never a Git commit or dataset publication.",
+      "note": "The admitted knowledge writer writes memory files in the leaf memory worktree; --commit (commit: true) authorizes those file writes, never a Git commit or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:28922ae2f50362b9ad6379c8ace256f584dad41b4de41dd2edb47d701c8aede8",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:481cefe7166784fc4ea13215979ca7f316c2e27b22667a552023193ae7ecafca",
             "locator": {
-              "end": 177,
+              "end": 20,
               "kind": "line_range",
-              "start": 8
+              "start": 20
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "197d357ccee5b36298f6b1e3afc714c112ca7fac",
-            "content": "sha256:e6a5d1c3c17dd9a7173e12fe7fdfa372037b0ec1a35cd20f14b5f8de38def4b6",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
             "locator": {
-              "end": 56,
+              "end": 138,
               "kind": "line_range",
-              "start": 33
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-writer-details.md"
+              "start": 136
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6f1b7f17a083434b9512a5614aaf5a9d344a7e09",
-            "content": "sha256:3518e92e94b8d2e963cd88e9f0333406e1693ab260408b6c6dd31d7f2ce70a8f",
+            "blob": "f94ef6eb5f2e84e59ce7ed59435e26b0afecc15a",
+            "content": "sha256:5bccf8b0ea6a5fc6106b34462c1df55de053c561f02e42b1f9f83e1f077c8d06",
             "locator": {
-              "end": 7,
+              "end": 5,
               "kind": "line_range",
-              "start": 3
+              "start": 5
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-repository-foundation.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/publication-report.md"
           },
           "kind": "code"
         }
@@ -1295,44 +1797,69 @@
         },
         {
           "anchor": {
-            "blob": "197d357ccee5b36298f6b1e3afc714c112ca7fac",
-            "content": "sha256:aef9769872505f712226bfc8d924dead6a24d3c07a185ead6836acf9e51f95c5",
+            "blob": "f94d71264796f1e10917ef5762dba709b2bbcd06",
+            "content": "sha256:98fea9e20a213098ee6aa7c79945e20556b546c759e6c34cc2504a1621b310c3",
             "locator": {
-              "end": 66,
+              "end": 9,
               "kind": "line_range",
-              "start": 64
+              "start": 9
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-writer-details.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/family-obligations.md"
           },
           "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.",
+      "note": "The memory-review pass limit is the settings limit and a pass beyond it needs Architect or developer instruction recorded by the Manager; the role keeps its stage and authority boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:d8a9e0a838a2074862aff79c874ea350dd48652aec3a8f002cd553845d3cd8e4",
+            "blob": "dc3db2ea07da3101fabdcc6c9ca966d1bc163825",
+            "content": "sha256:e758ac71781f85159826ad3c305c9576040e2a373fbcedc7e6489189599c138f",
             "locator": {
-              "end": 177,
+              "end": 13,
               "kind": "line_range",
-              "start": 1
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/memory-handover.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:4e6bf8994a2889ebd2ead57252c36edc23ec9aaf19e314edbdf5f8746ae40f19",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:6a27f09c7639918d3796b05ada48d0da9a3454b4ed54b7929b80114de59ff3f6",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 152
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "896e170e9ff4b3ee595eeeb3285983629e0db7eb",
-            "content": "sha256:0f284486f90b96b01330a4b4583420666b043e9f165fd520509ec4cdab276b07",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:c4caf519adca861519b0629a38c0ab5cf46ef6754fd76e15b90aa8136cc1175f",
             "locator": {
-              "end": 18,
+              "end": 162,
               "kind": "line_range",
-              "start": 10
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-handoff-d301.md"
+              "start": 162
+            }
           },
           "kind": "code"
         }

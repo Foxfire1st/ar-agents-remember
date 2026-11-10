@@ -2,24 +2,24 @@
 
 ## Governing Overview
 
-[Test suite overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-Disposable task, door and projection fixture shared by lifecycle tests.
+Disposable task, door and projection fixture shared by lifecycle tests, plus the cases that pin which Judgment Register author may grade a closeout candidate.
 
 ## Code Commentary
 
 ### Logic
 
 `QueueFixture.close_contract` is removed: fixture users cannot create code, memory, and ledger
-commits through that obsolete convenience method. The constructor still seeds a tracked cache
-into isolated history. That starting state supports migration and old-history operation checks;
+commits through that obsolete convenience method. The constructor builds the code and memory repositories, ledger,
+task documents and contracts;
 real current closeout behavior belongs to the operation exercised by each consumer.
 
-QueueFixture creates real code and optional external-memory repositories, task topology, contracts and shared priority/judgment data. Its helpers declare doors and construct the source/projection conditions required by consumers. The file contains no retained standalone queue tests.
+QueueFixture creates real code and optional external-memory repositories, task topology, contracts and shared priority/judgment data. Its helpers declare doors and construct the source/projection conditions required by consumers. Besides the fixture, the file holds two canonical-grade cases built on `_grade_authority`: a judgment row authored by the Architect or the Orchestrator yields a grade decided by that author, with a digest over the priority and judgment rows and the hashed evidence file; any other author (`worker`, `designer`, `strategist`) is refused with `closeout-grade-author-refused`, naming architect/orchestrator and leaving the evidence file unchanged.
 
-Since 260831-LOCR-L36 the fixture also authors and starts canonical leaves the way the workflow does.
+The fixture also authors and starts canonical leaves the way the workflow does.
 `author_unstarted_leaf` cit:([`author_unstarted_leaf`], mcp/tests/test_closeout_queue.py:319-369)
 commands one more canonical leaf **without starting any of its work**: the master's subtask row and
 the leaf's own task document are written — an atomic master's review scope has to resolve every
@@ -35,7 +35,7 @@ and naming the master whose command it executes.
 
 ### Conventions
 
-This card describes the current uncommitted LCA-L9 fixture candidate. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
@@ -71,10 +71,10 @@ No configured domain evidence applies to the file-local claims above.
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 
-- Retired the unused three-commit close_contract helper while retaining historical cache seeds and task/door fixture behavior. [1]
+- `QueueFixture` is the task/door fixture retained for non-queue lifecycle suites and carries no three-commit `close_contract` helper; its constructor builds the code and memory repositories, ledger, task documents and contracts, and seeds no cache [1]
 
 
-- The retired three-commit `close_contract` convenience method is gone; what remains is the fixture class the non-queue lifecycle suites build their task, door and projection state from. [2]
+- `QueueFixture` is the fixture class the non-queue lifecycle suites build their task, door and projection state from; it has no three-commit `close_contract` convenience method [2]
 
 - Master. [3]
 - The master builder writes a canonical atomic master document with the given execution nature and one commanded subtask row. [4]
@@ -88,19 +88,23 @@ The retained source anchors below support the fixture roles and assertion bounda
 - Grade. [12]
 - The grade builder returns the priority and judgment id pair the register rows reference. [13]
 
-- Queuefixture. [14]
+- `QueueFixture` is the shared task, door and projection fixture class [14]
 
 
-- The retained task/door/projection fixture class that non-queue lifecycle suites construct. [15]
+- The retained task/door/projection fixture class that non-queue lifecycle suites construct [15]
 
 
-- Start a canonical leaf with no work started: the master's subtask, judgment and priority rows, the leaf document with its route review, and -- on converted memory -- the fixture change row its own code change needs. [16]
+- Command a canonical leaf with no work started: the master's subtask row, the leaf's task document and its judgment and priority register rows are written, while no enclosure contract, branch or worktree exists [16]
 
 
-- Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches. [17]
+- Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches [17]
 
 
-- Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade. [18]
+- Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade [18]
+
+- An Architect or Orchestrator judgment row grades a closeout candidate with that author, a row digest and hashed evidence. [19]
+- Any other register author is refused with closeout-grade-author-refused and the evidence is left unchanged. [20]
+
 
 
 ### Cross-Repo References

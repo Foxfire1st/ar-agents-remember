@@ -1,17 +1,17 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
       "guarded_by_test"
     ],
-    "justification": "Canonical skills and the MCP reference together state the archive and no-remains doctrine; seven parity tests pin every row across all copies."
+    "justification": "test_mcp_reference_rows_name_exception fails when either row drops \"Bounded pre-locator exception\" or \"records the why in the surviving contract\"."
   },
-  "applicability": "Scoped doctrine for the archive and no-remains routes.",
+  "applicability": "The worktree_cleanup and worktree_abandon rows of docs/reference/mcp-tools.md.",
   "conditions": [
-    "Canonical skills, generated copies and the MCP reference."
+    "docs/reference/mcp-tools.md is the one MCP tool reference; it has no packaged copy."
   ],
   "exclusions": [
-    "Product behavior itself, owned by the code entries."
+    "Product behavior itself, owned by the code entries.",
+    "Whole-sprint archive authority, which no current reference or skill text states since this leaf removed the w-02 closeout workflow that held it."
   ],
   "id": "INV-4ST2K1",
   "origin": {
@@ -25,9 +25,9 @@
     "leaf": "260928-MIK-L82",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Scoped doctrine states whole-sprint archive authority and the no-remains exception across canonical skills, generated copies and the reference.",
+  "statement": "The MCP tool reference's worktree_cleanup and worktree_abandon rows state the bounded pre-locator (no-remains) exception and that it records the why in the surviving contract.",
   "status": "proposed",
   "supersedes": [
     "INV-NY15B8"

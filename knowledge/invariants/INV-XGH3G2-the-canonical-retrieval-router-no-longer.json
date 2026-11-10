@@ -28,6 +28,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The canonical retrieval router no longer prefers or routes to the retired providers: it keeps the discovery questions and the native-search, Intent and named-file procedure, and neither routed method catalog survives as a prescription in the canonical source.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

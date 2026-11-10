@@ -1,0 +1,77 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Per-harness packages and one common example were weighed; the choice forbids product writes into workspace dot folders from now on."
+  },
+  "alternatives": [
+    {
+      "option": "Remove the nine packages; document the tool-server registration once as a common example that each harness adapts; the product writes no skills, hooks or AR files into dot folders at the workspace root and leaves existing folders alone.",
+      "reason": "Their main job, installing skills and hooks, is gone; the one remaining part, the tool-server registration, is a common example modern agents adapt.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep a starter package per harness that installs skills, hooks and the tool-server registration into its harness root.",
+      "reason": "The packages duplicated what the served skills and the common example provide and drifted per harness.",
+      "reconsider_when": "A supported harness cannot be configured from the common example and needs a product-written file in its own folder.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    ".github and .githooks are not harness packages and stay.",
+    "Install pages lose their hook and skill copy steps and point to the common example."
+  ],
+  "context": "The repository carried nine harness starter packages (.agents, .claude, .codex, .cursor, .github-vscode, .hermes, .openclaw, .pi, .vscode) whose job was to install skills, hooks and the tool-server registration into each harness root. The served packaged skills had replaced the skill copies.",
+  "decider": "The developer (D690, D693 Q3); MIK-R84 v10 behaviour 6.",
+  "id": "DEC-WR0VYR",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "968456af9650f88e8bc578c4bd5189ab15c667c2",
+        "content": "sha256:6e27275f01aeb5a0f88fd11d838fb3adcd39675b7842fda439502317d91a44e4",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "examples/mcp/server.example.json"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+        "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "generated-copies.json"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R84",
+        "packet": "requirements/MIK-R84-v10-installed-copies-and-running-servers-are-current-after-an-install.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v10"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "dec-no-harness-packages",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

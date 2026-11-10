@@ -621,6 +621,40 @@
         }
       ]
     },
+    "24": {
+      "note": "The MCP settings file sits beside the user's role settings file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7625b34c2c0d36ce1713bb7436c5e24a114b1ef8",
+            "content": "sha256:3fba13967434e16d35b880bf5eca5e052cd063ebdf1e1f7911c2ea1abfbad85a",
+            "locator": {
+              "kind": "symbol",
+              "name": "mcp_settings_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Command-line discovery selects the MCP settings file from the user config directory",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c55dde69055fa5b21e25ce2e244744766ee073a",
+            "content": "sha256:6cce3706bc600ca881c10abcf52c0b91f22bcf766ae2010d32e6561302e90511",
+            "locator": {
+              "kind": "symbol",
+              "name": "discover_config"
+            },
+            "path": "mcp/src/agents_remember/cli/discovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Structural gate models import the producer-owned gate vocabulary from kernel.\n\nAnchor: `mcp/src/agents_remember/models/structural/gates.py`",
       "targets": [
@@ -672,14 +706,15 @@
       ]
     },
     "6": {
-      "note": "Agentic settings keep model, effort and service tier separate and resolve role settings precedence; this file also contains the disclosed upward model import.\n\nAnchor: `mcp/src/agents_remember/kernel/_agentic_settings_core.py`",
+      "note": "Agentic settings keep model, effort and service tier as separate role knobs and resolve the role-settings precedence (level override over role default).",
       "targets": [
         {
           "anchor": {
-            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
-            "content": "sha256:916f4f6f4ec526d877dcfa348f36d22280cccfc684f813741121351feebfc7bb",
+            "blob": "825208f3241118550bd4b710b5e746422eeec8bd",
+            "content": "sha256:6b6b2bf502c8b69429486d810824094b1ebc4429f1d02b6a7bad30200c667f33",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "resolved_role_knobs"
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
           },
@@ -688,14 +723,15 @@
       ]
     },
     "7": {
-      "note": "Role settings parsers shape-check independent fields; quality-gate caps remain optional.\n\nAnchor: `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`",
+      "note": "Role settings parsers shape-check each independent field of a role row.",
       "targets": [
         {
           "anchor": {
-            "blob": "d3b92b15b04467dce898722fe980347aee339810",
-            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+            "content": "sha256:a5df2717f2db4ac7c03a1e4ba24cf0bb184d85e34e14f5b2686c9fdc773b354b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_role_choices"
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
           },

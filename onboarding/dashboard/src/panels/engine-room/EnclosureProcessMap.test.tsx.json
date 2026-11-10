@@ -140,16 +140,16 @@
       ]
     },
     "6": {
-      "note": "The `ProviderNode` shape `WORKSPACE_ENGINES` builds.\n\nAnchor: \"export interface WorkspaceProjection\"",
+      "note": "The `EngineProcessNode` shape `nodeFrom` returns from the scenario fixtures.",
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:a638b2d5ffd49759707403c35afb2c49fff0c98265a9482b5cc5acf02927ccce",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "content": "sha256:8ad3ab8e99817b1e4b23b7b6259fc08e02b0810861d5f984fa3479bfc83258a5",
             "locator": {
-              "end": 682,
+              "end": 228,
               "kind": "line_range",
-              "start": 682
+              "start": 195
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -157,16 +157,15 @@
         },
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:a638b2d5ffd49759707403c35afb2c49fff0c98265a9482b5cc5acf02927ccce",
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:0500997e002c3994a5fad6d4b0a9336d993300f57a5ecaddab3325d0a3b5daeb",
             "locator": {
-              "end": 682,
+              "end": 16,
               "kind": "line_range",
-              "start": 682
-            },
-            "path": "dashboard/src/types/projection.ts"
+              "start": 11
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },

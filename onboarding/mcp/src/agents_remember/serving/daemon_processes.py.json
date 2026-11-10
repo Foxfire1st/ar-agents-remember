@@ -1,0 +1,103 @@
+{
+  "path": "mcp/src/agents_remember/serving/daemon_processes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Linux and macOS listener lookup; other platforms are unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f1fa60286bf35623d318fc3cdb40e44803b4588",
+            "content": "sha256:a58e615e8ae82202f56be9500b065d37c03b94f170755ecb44bba67f8318ee7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "listening_dashboard_pid"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact argv on Linux and macOS.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f1fa60286bf35623d318fc3cdb40e44803b4588",
+            "content": "sha256:85e0d2f4b67c1899b66a73f2dd110dfec116f2419b2e8db57d259ca926709407",
+            "locator": {
+              "kind": "symbol",
+              "name": "process_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The macOS listener query through lsof with a time limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f1fa60286bf35623d318fc3cdb40e44803b4588",
+            "content": "sha256:f7e9cd28ad6631775cfc2490bcb73488b8e0fb9f4b9898cbf430a5b75a355dd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_darwin_listener_pids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A Linux socket owner must be a dashboard process holding one of the listening inodes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f1fa60286bf35623d318fc3cdb40e44803b4588",
+            "content": "sha256:f4a0ec86ac777612454eea3a12562f5e0ab8a4ea53e02fab6f60f40ee300dced",
+            "locator": {
+              "kind": "symbol",
+              "name": "_linux_listener_pid"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The dashboard command-line markers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f1fa60286bf35623d318fc3cdb40e44803b4588",
+            "content": "sha256:3cb2f1f9a68f2f52aa22b9dcc7eb92a1d2aeba3a37c50179fdf75a45d9331697",
+            "locator": {
+              "kind": "symbol",
+              "name": "pid_is_dashboard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Listening inodes for an exact or wildcard address.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f1fa60286bf35623d318fc3cdb40e44803b4588",
+            "content": "sha256:83567913d47b987d6f5cd0493514d06f7495ca4cbb8f2fe2fa679de8999ca8a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_listening_inodes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

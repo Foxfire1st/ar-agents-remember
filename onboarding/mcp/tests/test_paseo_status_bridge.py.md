@@ -47,7 +47,7 @@ Every case starts the real script through the fixture's `call()` helper against 
 - State reads without a timeline, pagination bounds, archived filtering and resume are covered here. [1]
 
 
-- The scripted daemon client enforces 200-entry pages, `hasMore` without a cursor, archived filtering and the ten-page bound. [2]
+- The scripted daemon client enforces 200-entry pages, `hasMore` without a cursor and archived entries; the listing case asserts the paging, archived filtering and the ten-page bound. [2]
 
 - Complete and incomplete listings are applied to the document tree and the developer seat list alike. [3]
 - The native listing's page and termination bounds. [4]

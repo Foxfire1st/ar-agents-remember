@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a3fdda5e3a9ee3d079399ded09f9fdd0dcdccfed",
-        "content": "sha256:df50f254778164ec73e8e2c1de1974c1b283fc7c55d7ae55a687e83a97cab8d0",
+        "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+        "content": "sha256:d8f0986fc0beaecc3ae5d3eb51d7ee10bca38b6101125e8ad347a808c7c9940b",
         "locator": {
-          "end": 12,
+          "end": 63,
           "kind": "line_range",
-          "start": 11
+          "start": 61
         }
       },
       "id": "RLZ-2N35WC",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "a3fdda5e3a9ee3d079399ded09f9fdd0dcdccfed",
-        "content": "sha256:86d2193247e424af6794ed28698cb850403491e81c0f21c8b1192dfbe2759cca",
+        "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+        "content": "sha256:4009f7279b367a22bd8d8245ef48394f6ce67fee99ce667aeff624cbc941498e",
         "locator": {
-          "end": 12,
+          "end": 63,
           "kind": "line_range",
-          "start": 10
+          "start": 57
         }
       },
       "id": "RLZ-8YK88K",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "a3fdda5e3a9ee3d079399ded09f9fdd0dcdccfed",
-        "content": "sha256:f0b16c5f421ca806c85b44f3d425db81637c3d9bd3b314616dfbebcf3ce13dcc",
+        "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+        "content": "sha256:c3f3e2b4092731aaf56133904887433a289f0b29c993cc0e5425dfeee1eec41c",
         "locator": {
-          "end": 38,
+          "end": 131,
           "kind": "line_range",
-          "start": 38
+          "start": 131
         }
       },
       "id": "RLZ-DAQF88",
@@ -57,18 +57,73 @@
       },
       "rationale": "The completion line explicitly separates ended turns from artifact handoff and acceptance.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+        "content": "sha256:0423c63d873969296820c17d7e9628363f5f7928d402a36fb0e86317d7995afa",
+        "locator": {
+          "end": 77,
+          "kind": "line_range",
+          "start": 77
+        }
+      },
+      "id": "RLZ-H7VFZZ",
+      "invariant": "INV-8VNSKJ",
+      "origin": {
+        "handoffEntry": "L84-R1-05",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The all-role digest carries the same sentence so that every role receives it in its first message.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+        "content": "sha256:1b54ee0fa983cbdc19b9a6b6987cf2fec66321f4fc4dc5de580784ca8611fe87",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HR7SPS",
+      "invariant": "INV-40JW44",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 shared digest",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This file is the shared digest body delivered in first messages.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+        "content": "sha256:94911875e5e2a8f43621fff80235373d45d9755de8ae61b4c1bace6fa903828b",
+        "locator": {
+          "end": 127,
+          "kind": "line_range",
+          "start": 127
+        }
+      },
+      "id": "RLZ-MVDAQ8",
+      "invariant": "INV-5KBX7C",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-5KBX7C",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Closeout tree identity comes from the latest named passing verdict files, preserving Manager gate/evidence ownership.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The digest states shared and role-qualified duties with retained source-unit IDs.",
+      "note": "The digest states shared and role-qualified duties; its source-unit mapping lives in the digest map.",
       "targets": [
         {
           "anchor": {
-            "blob": "a3fdda5e3a9ee3d079399ded09f9fdd0dcdccfed",
-            "content": "sha256:fad9d9a793efd91e379357a9a89023c9875730a0c3050443b0dff4c69f84c4ba",
+            "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+            "content": "sha256:1b54ee0fa983cbdc19b9a6b6987cf2fec66321f4fc4dc5de580784ca8611fe87",
             "locator": {
-              "end": 45,
+              "end": 149,
               "kind": "line_range",
               "start": 1
             }
@@ -82,14 +137,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:7d9a9de4a29ba19274fa564f3b4a6525e0465f131ce2cb1afadf0aecacefd96e",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:d6444e20cae443139bda5e4729917a083fc9c643d5e0db2eb3a0375c0d1bbb85",
             "locator": {
-              "end": 168,
+              "end": 160,
               "kind": "line_range",
-              "start": 164
+              "start": 158
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shared rules for scratch paths and live-host operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+            "content": "sha256:6ce7f2282bb2c70bbbb00af7bdf717ed6b5543e28e987a826f373de710e9c19f",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Shared rules for counting from the producing call, comparing builds before reporting a mismatch, and naming sandbox versions and graphics setup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+            "content": "sha256:51d510abac5e2045394115cfbafa29fd2cfdca30ed869635078434d082cf7698",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 105
+            }
           },
           "kind": "code"
         }

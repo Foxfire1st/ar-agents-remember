@@ -51,4 +51,4 @@ compacted text remains a faithful mirror of the structured payload.
 
 - Behavior is verified through an in-process tool call. [2]
 
-- `create_server()` installs the shim as its first action.  Anchor: `create_server` [1]
+- `create_server()` installs the shim as its first action. [1]

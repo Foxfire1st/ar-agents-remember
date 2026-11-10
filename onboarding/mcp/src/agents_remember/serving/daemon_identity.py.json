@@ -1,0 +1,91 @@
+{
+  "path": "mcp/src/agents_remember/serving/daemon_identity.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "689568d7b4ef58dea3bafd55f21100a7454e3b43",
+        "content": "sha256:999986dd33026468b6fbde11ca9a9de0be9b1393c8050b339cb7c7bee300ab9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "observe_dashboard"
+        }
+      },
+      "id": "RLZ-3V9BK4",
+      "invariant": "INV-GJTCT9",
+      "origin": {
+        "handoffEntry": "L84-R1-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The observer proves socket/argv/config ownership independently of unavailable HTTP build data.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The socket owner is read twice around the HTTP answer and must match its `servingProcessId`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "689568d7b4ef58dea3bafd55f21100a7454e3b43",
+            "content": "sha256:999986dd33026468b6fbde11ca9a9de0be9b1393c8050b339cb7c7bee300ab9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_dashboard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A timeout or 503 keeps the owner without a build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "689568d7b4ef58dea3bafd55f21100a7454e3b43",
+            "content": "sha256:a849cb09f9f426d5ba142a8ff2885c3195533bc545d3459014d5602337dcb59e",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The owner's settings must declare an absolute coordination root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "689568d7b4ef58dea3bafd55f21100a7454e3b43",
+            "content": "sha256:abbe3ea1e67ff6f9cffd5ee16e3058028a45ba828e540fa2d566a320e670a631",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboard_coordination_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A dashboard of another root is refused with no signal authorized.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "689568d7b4ef58dea3bafd55f21100a7454e3b43",
+            "content": "sha256:730fa69da518a9887d23c6fbc16607109a7683d966734e91f1b69d4bab1cf9ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_dashboard_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

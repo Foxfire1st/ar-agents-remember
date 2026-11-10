@@ -34,12 +34,12 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "9c3645680ef1a2c5c09b50320b7189006fa67d90",
-        "content": "sha256:a1f42ad754762794cac7a9fca8e368d307bf539411a605e310a8c660f07826a5",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:eda4d6d552621ffa50f464db8b3fdfa732f386380ad36052f2cd2749ff50a422",
         "locator": {
-          "end": 112,
+          "end": 148,
           "kind": "line_range",
-          "start": 111
+          "start": 142
         },
         "path": "skills/l-01-agent-lifecycles/roles/curator.md"
       }
@@ -68,7 +68,7 @@
     "leaf": "260928-MIK-L99",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

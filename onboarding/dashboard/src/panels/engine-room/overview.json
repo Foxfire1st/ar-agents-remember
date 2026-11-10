@@ -610,12 +610,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:ef994385c0e5979faa5c487f5bbd45afb4839c57ba0a50e02af80f8d4c7c2883",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:dcdf7b26bdc676b80b0311450589915c44d94af9f9d33e708a387ca83267569b",
             "locator": {
-              "end": 822,
+              "end": 691,
               "kind": "line_range",
-              "start": 815
+              "start": 687
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:921e455be43c5f1c647d35565a6cba24b9ae6ee6e59f1fd30d46f9bec932c12d",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 87
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -822,12 +835,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
             "content": "sha256:0f469e6b992308afc228aac4b72debc3ac8e5fd34deedd109fe0a75719e44bcf",
             "locator": {
-              "end": 505,
+              "end": 504,
               "kind": "line_range",
-              "start": 499
+              "start": 498
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -899,7 +912,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
             "locator": {
               "kind": "symbol",
@@ -911,7 +924,7 @@
         },
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
             "locator": {
               "kind": "symbol",

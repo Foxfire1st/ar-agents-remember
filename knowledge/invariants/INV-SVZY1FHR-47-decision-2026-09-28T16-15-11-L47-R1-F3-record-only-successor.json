@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The honest-entry family must count status-only successor revisions as revision changes, rather than hiding them as relationship-only changes merely because their wording is equal."
+  },
   "applicability": "A successor head revision of an invariant or family in the after snapshot of a leaf review comparison.",
   "conditions": [
     "The successor's statement fields (statement, applicability, conditions, exclusions) or joint guarantee are equal to the superseded head's, while its record status or version differs."

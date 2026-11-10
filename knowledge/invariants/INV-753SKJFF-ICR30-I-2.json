@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The knowledge-write-and-publication family needs reads to select the same resolved canonical text root as writes, so an index failure cannot silently substitute another memory layer or a canonical database."
+  },
   "applicability": "Ordinary published-intent selection for the resolved repository or canonical leaf.",
   "conditions": [
     "The resolved memory root holds knowledge/layout.json.",

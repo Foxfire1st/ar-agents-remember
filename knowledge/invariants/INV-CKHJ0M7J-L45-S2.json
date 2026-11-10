@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "Authored realization explanation depends on target-specific rationale and role taking precedence independently, so an entry default cannot overwrite what the author stated about a particular construct."
+  },
   "applicability": "Realization claims the curator writer plans for the targets of one admitted hand-off entry.",
   "conditions": [
     "A target's own rationale or role is a nonblank string, or the entry states realization_rationale / realization_role as an explicit default."

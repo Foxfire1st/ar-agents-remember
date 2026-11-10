@@ -6,7 +6,7 @@
 
 ## Governing Overview
 
-[application overview](../overview.md)
+[overview](../overview.md)
 
 ## What This Area Is
 
@@ -26,14 +26,14 @@ Startup declares MCP process ownership before authority settings are loaded. App
 
 ### Installation
 
-Runtime installation delegates to the lower runtime service, then provisions or previews the configured host. The entry retains the earlier result, adds the host report as `host`, and conjoins the earlier and host `ok` values: a failed host step makes the combined result false without discarding the earlier steps.
+Runtime installation delegates to the lower runtime service, then provisions or previews the configured host. The entry retains the earlier result, adds the host report as `host`, and conjoins the earlier and host `ok` values: a failed host step makes the combined result false without discarding the earlier steps. It then refreshes a running dashboard to the installed build, or on a dry run only plans that refresh, leaving an absent dashboard stopped; an observed dashboard's action is reported as `dashboard`, and a failed or lock-held refresh makes the result false. Last, it reports the running MCP and dashboard servers with their build currentness as `runningServers`.
 
 Skill installation has no entry point in this package: `skills.py` was removed with the skill-install surface, and no harness skill root is resolved or written anywhere in the install path.
 
 ### File-Level Onboarding Map
 
 - [`__init__.py.md`](__init__.py.md) — side-effect-free package marker.
-- [`install.py.md`](install.py.md) — runtime installation and host-result composition.
+- [`install.py.md`](install.py.md) — runtime installation, host-result composition, running-dashboard refresh and running-server report.
 - [`startup.py.md`](startup.py.md) — MCP trust declaration, launch-bound workspace event collaborator, measurement identity and optional supervision.
 
 There are no child overviews. Begin with the operation's file card and follow its lower-service references; MCP payload and registration mechanics remain in their own routes.

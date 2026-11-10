@@ -103,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
             "content": "sha256:eb872cf7266eee92478bade771cd2a52d631a8387228cb01e1509650288f081b",
             "locator": {
               "end": 6,
@@ -121,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
             "content": "sha256:0db60930468c4109b635df66e40698069bc764b25af8f2df4a9783ac27257e10",
             "locator": {
               "end": 2,
@@ -156,35 +156,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
             "content": "sha256:d2a83faf4056b7018bd031659fd434d19731737dd24a6605d864747c63dbd081",
             "locator": {
               "kind": "symbol",
               "name": "test_same_named_skills_from_two_servers_remain_distinct"
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
-            "content": "sha256:06d910b89a8081450ae654ab5eba3a4a881dfc95bf80632d62b69de86e5e4504",
-            "locator": {
-              "end": 858,
-              "kind": "line_range",
-              "start": 841
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
-            "content": "sha256:ad3d94e6364f84bb66c0c762b33c3ee884d2fb94066e18b3964f3c9321ecec05",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },

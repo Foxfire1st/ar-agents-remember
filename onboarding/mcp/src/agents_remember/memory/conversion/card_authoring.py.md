@@ -73,8 +73,8 @@ on a converted tree) calls `author_card_references` to turn it into references.
 ### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The design authority is the L37 decisions of 2026-10-01T10:06:02, 11:12:11 and 14:05:36 in `37_cutover-to-text-storage.json`, with `MIK-R21@v1` rule 1; the curator's procedure is the c-05 skill's `converted-card-workflow.md`; it lives outside the code and memory
-repositories, so it is named here and not cited as a row.
+`Domain Documentation` entries). The design authority is the L37 decisions of 2026-10-01T10:06:02, 11:12:11 and 14:05:36 in `37_cutover-to-text-storage.json`, with `MIK-R21@v1` rule 1; that task file lives outside the code and memory
+repositories, so it is named here and not cited as a row. The curator's procedure for citation tables and the fixer is `skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md` ("Prepare citation input", "Refresh or remove a reference").
 
 No configured live documentation source was available for this pass.
 

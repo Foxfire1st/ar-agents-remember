@@ -1,0 +1,75 @@
+{
+  "path": "examples/mcp/server.example.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "83d266c17ed12c87af617e7bf2e0253b3d658475",
+        "content": "sha256:4113f8979ab19d317df14fd31e30783834ec0622e52b3b0e01af1171c1ddd3d8",
+        "locator": {
+          "end": 9,
+          "kind": "line_range",
+          "start": 3
+        }
+      },
+      "id": "RLZ-TPCEGA",
+      "invariant": "INV-VWK5HY",
+      "origin": {
+        "handoffEntry": "L84-LC-03",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The one command/arguments declaration the install guides and mcp/README.md point to.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The example declares `uvx` with `--refresh-package agents-remember-mcp`, the package command `agents-remember-mcp@latest` and a user-config `--config` path passed to that command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83d266c17ed12c87af617e7bf2e0253b3d658475",
+            "content": "sha256:9658e928f6bca748ad6a7fcf2bcca1c0a89d8e59156031b22489aec568b27951",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tool-server settings file lives beside the user's role settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7625b34c2c0d36ce1713bb7436c5e24a114b1ef8",
+            "content": "sha256:3fba13967434e16d35b880bf5eca5e052cd063ebdf1e1f7911c2ea1abfbad85a",
+            "locator": {
+              "kind": "symbol",
+              "name": "mcp_settings_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The package README points harness setup at the common example and says JSON argument arrays do not expand `~`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9244375fc642fd5b37d748501b0d75fbcc5b4954",
+            "content": "sha256:9fdb18eddcfb37663c5abe3ce9951e86e5a423c272a1d1dc82041ad2c70a6d3e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

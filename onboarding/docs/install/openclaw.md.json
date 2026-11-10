@@ -2,60 +2,17 @@
   "path": "docs/install/openclaw.md",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Copy `.openclaw/` to the shared workspace root, render with `--repo`, merge the registry template, restart the gateway or start OpenClaw.\n\nAnchor: `docs/install/openclaw.md:16-30`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
-            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Package contents and the copy-into-existing-workspace alternative.\n\nAnchor: `docs/install/openclaw.md:32-46`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
-            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
-      "note": "`c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts.\n\nAnchor: `docs/install/openclaw.md:47-52`",
+      "note": "One `role_start(role=\"bootstrap\", …)` call prepares the runtime scaffold and starts Bootstrap, which ends at memory setup and hands the knowledge foundation to the Architect; nothing provider-side starts.\n\nAnchor: `role_start`",
       "targets": [
         {
           "anchor": {
-            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
-            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
+            "blob": "d35d831cdbf29ae2820fbe3fa8eb5481c1f87fee",
+            "content": "sha256:2bf66b71e2a1f4b3462f0b51254978a9360154ba7357d0f0c0b88f9f458321e6",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Workspace `AGENTS.md` is the first-action authority; the file-based hook surface is scoped to gateway automation.\n\nAnchor: `docs/install/openclaw.md:54-80`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
-            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
-            "locator": {
-              "kind": "file"
+              "end": 35,
+              "kind": "line_range",
+              "start": 21
             }
           },
           "kind": "code"
@@ -63,14 +20,16 @@
       ]
     },
     "5": {
-      "note": "`mcp.servers` registration plus status/doctor/probe commands.\n\nAnchor: `docs/install/openclaw.md:82-114`",
+      "note": "Registration goes under the `mcp.servers.agents-remember` entry in `~/.openclaw/openclaw.json`, adapted from the common registration example with the absolute user-config settings path.\n\nAnchor: `mcp.servers.agents-remember`",
       "targets": [
         {
           "anchor": {
-            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
-            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
+            "blob": "d35d831cdbf29ae2820fbe3fa8eb5481c1f87fee",
+            "content": "sha256:b0b2e5243bf4e59dd9e0d33704e5549a0e1f18444a8588a09a63347285e2580b",
             "locator": {
-              "kind": "file"
+              "end": 19,
+              "kind": "line_range",
+              "start": 14
             }
           },
           "kind": "code"
@@ -78,14 +37,16 @@
       ]
     },
     "6": {
-      "note": "Workspace skill precedence, flat package layout, and skill list/check commands.\n\nAnchor: `docs/install/openclaw.md:116-137`",
+      "note": "OpenClaw loads skills from the places it scans; Agents Remember writes none there, and the tool server publishes each skill as an MCP resource, so there is no workspace skill copy or skill-sync step.\n\nAnchor: `SEP-2640`",
       "targets": [
         {
           "anchor": {
-            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
-            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
+            "blob": "d35d831cdbf29ae2820fbe3fa8eb5481c1f87fee",
+            "content": "sha256:041efacdc4e28d794b6566004c6ccf48cb30de818391cf15764d2346391b72bd",
             "locator": {
-              "kind": "file"
+              "end": 42,
+              "kind": "line_range",
+              "start": 37
             }
           },
           "kind": "code"
@@ -93,14 +54,16 @@
       ]
     },
     "7": {
-      "note": "The long-running-turns section configures model-provider timeouts and a gateway restart.\n\nAnchor: `docs/install/openclaw.md:139-163`",
+      "note": "The long-running-turns section configures model-provider timeouts and a gateway restart.\n\nAnchor: `openclaw gateway restart`",
       "targets": [
         {
           "anchor": {
-            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
-            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
+            "blob": "d35d831cdbf29ae2820fbe3fa8eb5481c1f87fee",
+            "content": "sha256:fa5f4d84e873f3bbbdb5afaec4f508b2435650317da4193b0e9615e7c072fc83",
             "locator": {
-              "kind": "file"
+              "end": 67,
+              "kind": "line_range",
+              "start": 44
             }
           },
           "kind": "code"

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7b746aad8dcf2ee3bb1c27c87bbac4521871148e",
+        "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
         "content": "sha256:23a9af3a896fdf1b909b96722a7984b9d94d71d165c74c9608a49a623f17190b",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "7b746aad8dcf2ee3bb1c27c87bbac4521871148e",
-        "content": "sha256:d5f30d2bcf924b1e729c53c7b5c5a4ef9a3e810f3f909da6cd5ca88a443a160c",
+        "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
+        "content": "sha256:c161d8fc1a2b35d8e4fd200afa55f22684d34ff8f2901d64a2fad5e6cc075068",
         "locator": {
           "kind": "symbol",
           "name": "test_status_exit_codes_print_both_and_do_not_start"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "7b746aad8dcf2ee3bb1c27c87bbac4521871148e",
+        "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
         "content": "sha256:c754b364b3024ac8b1e9c142faed44c3c209f887fadeaf625da8d6ef558bc793",
         "locator": {
           "kind": "symbol",
@@ -56,16 +56,15 @@
   "realizes": [],
   "references": {
     "5": {
-      "note": "Status, adoption/stop and foreground/reload/sim cases preserve host ownership and dispatch.\n\nAnchor: \"def test_status_exit_codes_print_both_and_do_not_start(monkeypatch, tmp_path, capsys):\"",
+      "note": "Status, adoption and stop, and foreground, reload and simulation keep host ownership and dispatch.",
       "targets": [
         {
           "anchor": {
-            "blob": "7b746aad8dcf2ee3bb1c27c87bbac4521871148e",
-            "content": "sha256:8b4ee2fb5da520d29a6afd463b7e5c39f709f22729dfd5887d7267155dc0dc63",
+            "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
+            "content": "sha256:c161d8fc1a2b35d8e4fd200afa55f22684d34ff8f2901d64a2fad5e6cc075068",
             "locator": {
-              "end": 124,
-              "kind": "line_range",
-              "start": 51
+              "kind": "symbol",
+              "name": "test_status_exit_codes_print_both_and_do_not_start"
             }
           },
           "kind": "test"
@@ -77,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b746aad8dcf2ee3bb1c27c87bbac4521871148e",
+            "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
             "content": "sha256:7c3834d757bb86f2430d54e844f24741e1369ca276ccae78151f58d514d62914",
             "locator": {
-              "end": 181,
+              "end": 191,
               "kind": "line_range",
-              "start": 127
+              "start": 137
             }
           },
           "kind": "test"
@@ -94,12 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b746aad8dcf2ee3bb1c27c87bbac4521871148e",
+            "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
             "content": "sha256:7ee563ba1401fff8a3733740392022cd7ccaf3857875dded217b1e5226200dda",
             "locator": {
-              "end": 221,
+              "end": 231,
               "kind": "line_range",
-              "start": 184
+              "start": 194
             }
           },
           "kind": "test"
@@ -111,12 +110,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b746aad8dcf2ee3bb1c27c87bbac4521871148e",
-            "content": "sha256:fb773d45ff68459ce39b24320b34ed82e87c3e8a9f5999fc8f49ddb9744ae46e",
+            "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
+            "content": "sha256:1ae2242351f774ef20f0253b3f155f2a4293adbe4cc3e91b1aac363c395a0817",
             "locator": {
-              "end": 272,
-              "kind": "line_range",
-              "start": 224
+              "kind": "symbol",
+              "name": "test_supervised_child_does_not_start_host_again"
             }
           },
           "kind": "test"

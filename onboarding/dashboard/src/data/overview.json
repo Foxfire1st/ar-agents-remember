@@ -205,12 +205,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
             "content": "sha256:6ae77bdf6abb146eeb71ad12c45aa458951015f18c3e53cf3fa6a85396de8a63",
             "locator": {
-              "end": 317,
+              "end": 354,
               "kind": "line_range",
-              "start": 298
+              "start": 335
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -218,12 +218,12 @@
         },
         {
           "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
             "content": "sha256:ae5ff59699df0618b75b26c987e3744acc4f393fec19459e2afe9c42067e0d2b",
             "locator": {
-              "end": 355,
+              "end": 392,
               "kind": "line_range",
-              "start": 351
+              "start": 388
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -267,8 +267,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
-            "content": "sha256:f2b14004aa4613d15666d94db12a551e971e847e2b91dbb805f57febe58a229f",
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "content": "sha256:6a56c901afea38184326b1c2e63ff5b69b5bd62a647bf2754599525db187176d",
             "locator": {
               "kind": "symbol",
               "name": "emptyWorkspace"
@@ -446,16 +446,31 @@
       ]
     },
     "117": {
-      "note": "The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads.\n\nAnchor: `attachReviewListeners`",
+      "note": "The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads. Anchor: `publishReviewExplainerMoved`",
       "targets": [
         {
           "anchor": {
-            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
-            "content": "sha256:e99de257558d12a8eb66451aa7963473fcb8d224617e586c45b5560c3eee00a3",
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:168a8e29b08af6b526c429e795bc6f3438753e9969dbe93386c0c9ccb816dce6",
             "locator": {
-              "kind": "file"
+              "end": 126,
+              "kind": "line_range",
+              "start": 122
             },
             "path": "dashboard/src/data/stream.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+            "content": "sha256:b55f251c8ecba4fcd2908d0bc618eb94632539a5ea22a2c435d0e2915250972f",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/data/reviewMemoryWatch.ts"
           },
           "kind": "code"
         }
@@ -584,14 +599,28 @@
       ]
     },
     "25": {
-      "note": "The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player.\n\nAnchor: `dashboardStore` `reset` `ScenarioPlayer`",
+      "note": "The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player.",
       "targets": [
         {
           "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
-            "content": "sha256:e6bf93bba9343c7e5745a763afa66ba650cdd0e61f20ce4f6595c1eddd38f132",
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "content": "sha256:6a56c901afea38184326b1c2e63ff5b69b5bd62a647bf2754599525db187176d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "emptyWorkspace"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "content": "sha256:aff2d7fe87df5231806b8623410ce3eda8d0bb1912968bcc421581512eadf443",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 386
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -611,14 +640,15 @@
       ]
     },
     "26": {
-      "note": "The served TaskEntry mirror carries optional document reference, identity, state, parent/children and counts; the old separate series-child consumer union is not the native entry model.\n\nAnchor: `TaskEntry`",
+      "note": "The served TaskEntry mirror carries optional document reference, identity, state, parent/children and counts; no separate series-child consumer union is part of the native entry model.",
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:daaaf9f80d95ac50acc42b4097c5fcc9293b51a91e135d7b45f3ae87ee7e947f",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "content": "sha256:96d5fb10ba0ff77cddcd147392db223f01b24821e9b8fafb4249101e5e238b69",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TaskEntry"
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -647,7 +677,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "blob": "b2fb15ff4b0e4fc28c8be6a41b1c58655d1c7601",
             "content": "sha256:1b22f1cce75f1642901ce4793b6c0b4c0ae87371505e3f2ad2e3e20c7362a7e5",
             "locator": {
               "end": 43,
@@ -673,7 +703,7 @@
         },
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:278e8f8d38ff16a96bd0f517049952be7cf84b529f633413369ad76d2d713420",
             "locator": {
               "end": 8,
@@ -712,7 +742,7 @@
         },
         {
           "anchor": {
-            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "blob": "b2fb15ff4b0e4fc28c8be6a41b1c58655d1c7601",
             "content": "sha256:1b22f1cce75f1642901ce4793b6c0b4c0ae87371505e3f2ad2e3e20c7362a7e5",
             "locator": {
               "end": 43,
@@ -738,7 +768,7 @@
         },
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:278e8f8d38ff16a96bd0f517049952be7cf84b529f633413369ad76d2d713420",
             "locator": {
               "end": 8,

@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "32fe9198f3fdff09fbd7cdc31a4cc816397df286",
-        "content": "sha256:51649aa30a6810a9378e2bbf530473cec380a9be66887256d473d6703782570c",
+        "blob": "2098b52468d56c371d66b4aa1c486e41e052cbc6",
+        "content": "sha256:53d2638b897f7aeb49028d4492a9a5718fc70aaceadfc655491a152944d68949",
+        "locator": {
+          "end": 47,
+          "kind": "line_range",
+          "start": 45
+        }
+      },
+      "id": "RLZ-GF0Z10",
+      "invariant": "INV-B3FPFJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This --config help now says that an omitted --config reads the user settings file under XDG_CONFIG_HOME or ~/.config, whatever the current directory, as discover_config() does; at A010 it claimed working- or current-directory discovery.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2098b52468d56c371d66b4aa1c486e41e052cbc6",
+        "content": "sha256:6dbfa07f15dad4d37f87b4f3e2ad1b0d8108f9cc4ac4af647112686636b16d8d",
         "locator": {
           "kind": "file"
         }
@@ -21,14 +40,16 @@
   ],
   "references": {
     "1": {
-      "note": "The complete file owns the behavior and limits described above; documentation/tests are not fresh execution evidence.\n\nAnchor: 1-253",
+      "note": "The complete file owns the behavior and limits described above; documentation/tests are not fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "32fe9198f3fdff09fbd7cdc31a4cc816397df286",
-            "content": "sha256:51649aa30a6810a9378e2bbf530473cec380a9be66887256d473d6703782570c",
+            "blob": "2098b52468d56c371d66b4aa1c486e41e052cbc6",
+            "content": "sha256:6dbfa07f15dad4d37f87b4f3e2ad1b0d8108f9cc4ac4af647112686636b16d8d",
             "locator": {
-              "kind": "file"
+              "end": 254,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

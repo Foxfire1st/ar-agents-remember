@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+        "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
         "content": "sha256:808e29d99056316d7c5633dfc088129917a628701ba753e2d5fc42b0b97d334a",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+        "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
         "content": "sha256:214bd4b1b218d19e24c980620b4a3068d3859ef3f7678d1dc2dcedf0ab530eab",
         "locator": {
           "kind": "symbol",
@@ -40,10 +40,10 @@
     },
     {
       "anchor": {
-        "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
-        "content": "sha256:b6f6beed0a519476bf5ee3e319bea8d3b23560e4c434279e1801eb8f12e15a9d",
+        "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+        "content": "sha256:c37180eca777de69c1a2d1746cbd62a1dbec1c7dc94c44390e27b7f7a51fe18e",
         "locator": {
-          "end": 23,
+          "end": 24,
           "kind": "line_range",
           "start": 16
         }
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+        "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
         "content": "sha256:f7c7abe02f78737992a6030e2a80576fd6b56217649fd607bb3ad9d3e0cd1dd6",
         "locator": {
           "kind": "symbol",
@@ -78,14 +78,15 @@
   ],
   "references": {
     "1": {
-      "note": "The state channel's `connectState`: one `EventSource` over `/api/stream` merging the snapshot and each named delta into the store, with a bounded open deadline and the liveness watchdog.\n\nAnchor: `connectState`",
+      "note": "The state channel's `connectState`: one `EventSource` over `/api/stream` merging the snapshot and each named delta into the store, with a bounded open deadline and the liveness watchdog.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
-            "content": "sha256:e99de257558d12a8eb66451aa7963473fcb8d224617e586c45b5560c3eee00a3",
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:f7c7abe02f78737992a6030e2a80576fd6b56217649fd607bb3ad9d3e0cd1dd6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "connectState"
             }
           },
           "kind": "code"
@@ -137,14 +138,31 @@
       ]
     },
     "11": {
-      "note": "attachReviewListeners now owns the guarded review.memory, review.memory.error and review.explainer.moved listeners. A current moved event marks watchdog liveness and publishes to the exact-scope moved-notice subscribers; it does not change snapshot/delta ownership. One isCurrent predicate excludes a stopped or replaced source for all state handlers. The memory initial-baseline flag is a shared mutable holder reset on open, preserving the prior reconciliation behavior.\n\nAnchor: `attachReviewListeners`, `connectState`",
+      "note": "attachReviewListeners owns the guarded review.memory, review.memory.error and review.explainer.moved listeners. A current moved event marks watchdog liveness and publishes to the exact-scope moved-notice subscribers; it does not change snapshot/delta ownership. One isCurrent predicate excludes a stopped or replaced source for all state handlers. The memory initial-baseline flag is a shared mutable holder reset on open.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
-            "content": "sha256:e99de257558d12a8eb66451aa7963473fcb8d224617e586c45b5560c3eee00a3",
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:214bd4b1b218d19e24c980620b4a3068d3859ef3f7678d1dc2dcedf0ab530eab",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "attachReviewListeners"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The state connection subscribes to the named `buildCurrentness` delta beside the task, enclosure and whole-value events.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:a7ac870841f9e6a4c17f7d1e55ef0fdb41eb127eac043ac4865ef18cf42d4083",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATE_EVENTS"
             }
           },
           "kind": "code"
@@ -152,14 +170,15 @@
       ]
     },
     "2": {
-      "note": "State stream snapshot and named deltas merge into the Zustand store.\n\nAnchor: `connectState`",
+      "note": "State stream snapshot and named deltas merge into the Zustand store.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
-            "content": "sha256:e99de257558d12a8eb66451aa7963473fcb8d224617e586c45b5560c3eee00a3",
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:39cb46fc97333d33f2e0f1df345bbb3136c02f17c9d4d0e398b1cfda83d3f4fa",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "attachStateListeners"
             }
           },
           "kind": "code"
@@ -167,26 +186,15 @@
       ]
     },
     "3": {
-      "note": "Raw event stream forwards `event` rows and the backend `ready` marker.\n\nAnchor: `connectEvents`",
+      "note": "Raw event stream forwards `event` rows and the backend `ready` marker.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
-            "content": "sha256:e99de257558d12a8eb66451aa7963473fcb8d224617e586c45b5560c3eee00a3",
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:808e29d99056316d7c5633dfc088129917a628701ba753e2d5fc42b0b97d334a",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
-            "content": "sha256:8f3e6fe8acbd3e4f23812dd25f7f9092b732b232d85ea00c36152f4bd9983635",
-            "locator": {
-              "end": 272,
-              "kind": "line_range",
-              "start": 225
+              "kind": "symbol",
+              "name": "connectEvents"
             }
           },
           "kind": "code"
@@ -212,12 +220,12 @@
       ]
     },
     "7": {
-      "note": "The browser listener table has task/count and operational events, but no closeoutQueues named listener.",
+      "note": "The browser listener table has build-currentness, task/count and operational events, but no closeoutQueues named listener.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
-            "content": "sha256:d23f779d5201673d9248f1afd850c1fddf0d3b9c477087e2829b72e561aa7f17",
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:a7ac870841f9e6a4c17f7d1e55ef0fdb41eb127eac043ac4865ef18cf42d4083",
             "locator": {
               "kind": "symbol",
               "name": "STATE_EVENTS"
@@ -232,8 +240,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
-            "content": "sha256:6a6c7fea22d330118ed40bfae7b0587be284a7d850dc2b790691cfb5ee0ae0f8",
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "content": "sha256:b1691825a62f112a5023425cab5a19d398654fc7b1ee124da5d7b5082b24aff0",
             "locator": {
               "kind": "symbol",
               "name": "applySnapshotState"
@@ -249,12 +257,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
             "content": "sha256:e417c6c00b4c21d359d1e61352875e4650a5e636d12c7ac01f5e7a2b884be865",
             "locator": {
-              "end": 154,
+              "end": 155,
               "kind": "line_range",
-              "start": 152
+              "start": 153
             }
           },
           "kind": "code"

@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The attribution-and-landing family needs this obligation to distinguish exact repository bytes from external document identity before the paired landing can truthfully attribute its inputs."
+  },
   "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
   "conditions": [],
   "exclusions": [

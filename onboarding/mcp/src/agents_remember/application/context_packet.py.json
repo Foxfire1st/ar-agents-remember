@@ -164,14 +164,15 @@
       ]
     },
     "5": {
-      "note": "Public payload builder validates this application entry point output through the model registry.\n\nAnchor: `context_packet_payload`",
+      "note": "Public payload builder validates this application entry point output through the model registry.",
       "targets": [
         {
           "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:33a7112467f0720462329fcd72b5b7cf94fc062499c3a8a146aca89e054bb04d",
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:4ca9c7f33dd5b33e6e28cea6c6fda08205ba9cd7fc864963f5929beae3e6ee3b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "context_packet_payload"
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },

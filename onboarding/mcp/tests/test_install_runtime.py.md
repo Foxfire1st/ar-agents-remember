@@ -7,14 +7,16 @@ The current source facts below replace the former operative inventory. The separ
 - Current cases assert a single old-watcher stop and zero dependency installs.
 - Failed stop continues and reports process/recovery evidence.
 
+- Both cases also assert that the completed install leaves no coordination-root `AGENTS.md` and does leave `providers/requirements/grepai.txt`; the runtime source fixture no longer writes `AGENTS.md` targets.
+
 ### Superseded inventory
 
 - Pre-repair card claim: Card claims provider dependency failure restarts/checks watchers. This is superseded archival wording, not a current prescription.
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/tests/test_install_runtime.py:131-164`.
-- Source comparison: `mcp/tests/test_install_runtime.py:166-242`.
+- Source comparison: `mcp/tests/test_install_runtime.py:171-205`.
+- Source comparison: `mcp/tests/test_install_runtime.py:207-252`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -25,7 +27,7 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Governing Overview
 
-[Test suite overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -39,7 +41,7 @@ Installing managed assets preserves provider state, database data and central lo
 
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 

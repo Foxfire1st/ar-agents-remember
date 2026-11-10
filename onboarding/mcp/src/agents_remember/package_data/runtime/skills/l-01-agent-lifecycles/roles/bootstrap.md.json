@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-        "content": "sha256:31d750f9fc72a40da8a15be0b670549d0fb5d1d318c60f41330160eecbeaf488",
+        "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+        "content": "sha256:e494f19e216c1713613cb333a569e63e49018362ba2853f4458398ed9ded6f13",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
             "content": "sha256:10142a79d25fd343a320bd8f36a2d54aef2f38490150509c33882ef53e4c3ecc",
             "locator": {
               "end": 6,
@@ -39,14 +39,15 @@
       ]
     },
     "11": {
-      "note": "The frozen vocabulary extension that publishes the role and its operation.\n\nAnchor: `CAPSULE_ROLES` `CAPSULE_OPERATIONS`",
+      "note": "The capsule vocabulary appends bootstrap to both CAPSULE_ROLES and CAPSULE_OPERATIONS, publishing the role and its operation.",
       "targets": [
         {
           "anchor": {
-            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
-            "content": "sha256:b6de98e8985e330ee99310530410ec3d4d9da72620da822d7be82e3a611f4cd7",
+            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
+            "content": "sha256:ca87be70f1004fe8f0b93c44eca5442b2a733b7770811673bac424afbd4a167c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "CAPSULE_ROLES"
             },
             "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
           },
@@ -86,12 +87,12 @@
       ]
     },
     "13": {
-      "note": "The current corpus check explicitly supersedes fixed section order and minimum length with concise, well-formed, self-contained source checks.",
+      "note": "The corpus check test_every_role_source_is_concise_and_well_formed supersedes fixed section order and minimum length with concise, well-formed, self-contained role-source checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "e2aa34ce785d08c8720a6440e2f97c04f950e1ce",
-            "content": "sha256:9a353fca0a318b38ea5c755fec2f90ba068ffcb9698f91fac30ff0815a5ab974",
+            "blob": "71ccc2132582d64927138c5ee287ee17091b1824",
+            "content": "sha256:24e59722e69c478f7ddadbbb558ee803fa7c1f022982d613c5320c6bd536448a",
             "locator": {
               "kind": "symbol",
               "name": "test_every_role_source_is_concise_and_well_formed"
@@ -156,16 +157,16 @@
       ]
     },
     "15": {
-      "note": "Bootstrap starts no role and messages none; developer questions go in its own chat, and it reports the setup state without task-transaction messaging.",
+      "note": "Bootstrap starts no role and messages no one; it asks the developer in its own chat and routes no setup finding through a task transaction.\n\nAnchor: `role_message`",
       "targets": [
         {
           "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:1959177535d9fca1b335fb59f6c307c47fddf17aeb90de8c5bc8ad30dec1556a",
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:7b8d340a98eb0b9052c3424ad3724e50c6a2ffb13b4c652870ab7352a5a30fd2",
             "locator": {
-              "end": 118,
+              "end": 54,
               "kind": "line_range",
-              "start": 111
+              "start": 54
             }
           },
           "kind": "code"
@@ -173,16 +174,16 @@
       ]
     },
     "16": {
-      "note": "Bootstrap is a parentless setup/report role: it uses the named setup surfaces, writes one developer-visible report, authors neither onboarding nor knowledge and sends no role messages.",
+      "note": "Bootstrap is a setup/report role: it mutates only through the permitted setup surfaces, starts and messages no role, and authors neither onboarding nor knowledge.",
       "targets": [
         {
           "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:31d750f9fc72a40da8a15be0b670549d0fb5d1d318c60f41330160eecbeaf488",
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:55cedd4e1047d6fccf5eb7144465570629955bb8e2e94d4c930cd1cc8d03284d",
             "locator": {
-              "end": 159,
+              "end": 56,
               "kind": "line_range",
-              "start": 1
+              "start": 48
             }
           },
           "kind": "code"
@@ -190,16 +191,16 @@
       ]
     },
     "17": {
-      "note": "The packaged Bootstrap copy retains the canonical naming-reader retirement and forbids retire_child outside setup powers. \\[17]",
+      "note": "The packaged Bootstrap copy forbids retire_child alongside the other task, role-start and closeout calls outside its setup surfaces.\n\nAnchor: `retire_child`",
       "targets": [
         {
           "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:2bfbb93222d3d945ff90d4d37b0562dea61cd20c1edf7eec5981426a5af88e87",
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:3f30fb22a3ae0c687f7ed7bee416dd8703a39f834bad19ac758598b462c6d51d",
             "locator": {
-              "end": 119,
+              "end": 52,
               "kind": "line_range",
-              "start": 79
+              "start": 52
             }
           },
           "kind": "code"
@@ -207,246 +208,85 @@
       ]
     },
     "2": {
-      "note": "The role declares no inherited core blocks — it is a free agent, not a task seat, and is started by a call.",
+      "note": "Bootstrap is a free agent: a setup role started from the dashboard with no task document, brief or parent; the user starts it with one call from their own chat.",
       "targets": [
         {
           "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:13203e856bd84157d73c7adcaf98ba8353a95ef88b4e24740bd97c9549e5df41",
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:88d0e5d8af61ab95a4f7d53858384b803b38aeedc380afc1d97b79662f34a115",
             "locator": {
               "end": 10,
               "kind": "line_range",
-              "start": 9
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
-            "locator": {
-              "end": 34,
-              "kind": "line_range",
-              "start": 34
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+              "start": 8
+            }
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Bootstrap describes its start as the dashboard call of a parentless free agent; its own report contract requires a durable developer-visible path stated on the report’s first line.",
+      "note": "Bootstrap writes one report at the launch handover's taskReportPath and states that exact path on the report's first line.\n\nAnchor: `taskReportPath`",
       "targets": [
         {
           "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:78dbeec07947168b161ac06c1c9e64ce3cea8b714c2a0481abd3fa14fdf1eb3d",
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:6ecfc010da88268e8f8db34b32a17fd822a5ce6a658660a9e60655d9c4d275b5",
             "locator": {
-              "end": 12,
+              "end": 30,
               "kind": "line_range",
-              "start": 9
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:e24bb5f2548cd1573e8319095ed75343b1a50f81425db4325d2ecf9e9128e110",
-            "locator": {
-              "end": 37,
-              "kind": "line_range",
-              "start": 34
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:2b249c2bde32adce092d9bcd1c95063e8ab6c3bd9c2eb57b1e8c7d9613c5d490",
-            "locator": {
-              "end": 37,
-              "kind": "line_range",
-              "start": 32
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+              "start": 30
+            }
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "The seat sits outside the task-dispatch transaction as its shape: a task document, gate, packet, or compiled brief is not an input, and its absence is not an error.",
+      "note": "Bootstrap starts with no task document, brief or parent, never waits for a task document and does not treat its absence as a defect to repair.",
       "targets": [
         {
           "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:5e028fc71712045400bc43b216dde0762dd019d23ceaf20db71eb6d9632eee4d",
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:a6b15da7b714cd52cd84c2b2069e22b94dfa322c98a39212a5ed889b13462c44",
             "locator": {
-              "end": 29,
+              "end": 8,
               "kind": "line_range",
-              "start": 27
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+              "start": 8
+            }
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The role's instructions are the capsule itself — this page plus the bootstrap operation — and its brief is not a brief.",
+      "note": "The role's instructions are this file plus the Bootstrap operation; nothing dispatches it.",
       "targets": [
         {
           "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:13203e856bd84157d73c7adcaf98ba8353a95ef88b4e24740bd97c9549e5df41",
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:438ad4eb5d6591c52774e4a61d059086e5acc76493169fa81a5272631c335c25",
             "locator": {
               "end": 10,
               "kind": "line_range",
-              "start": 9
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
-            "locator": {
-              "end": 34,
-              "kind": "line_range",
-              "start": 34
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+              "start": 10
+            }
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "The permitted-write surface, the stop-and-report cases, and the report's own inline shape, which no template file owns.",
+      "note": "The permitted surfaces are the five setup tools plus read-only context_packet, server_info and read_ar_files and native state reads; the report's sections and state fields come from the Bootstrap report template.",
       "targets": [
         {
           "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:12d6ec457c8a4f2eca3b2841046450d14d16bf7e5cf98906284f94b8b2eb29bd",
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:440da3aea0324cb6428a83607ad5fc13e6f4a865415a8409991cef0b91ff8013",
             "locator": {
-              "end": 123,
+              "end": 44,
               "kind": "line_range",
-              "start": 84
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:203c9417bda0f280476ad30333419d3d941db521affbcc8504704703976d77ac",
-            "locator": {
-              "end": 147,
-              "kind": "line_range",
-              "start": 125
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:68f30c1ad630f59b9398b9f9a7a35c8d23da898cb723b93f077b01bbe5afb783",
-            "locator": {
-              "end": 82,
-              "kind": "line_range",
-              "start": 34
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:e24bb5f2548cd1573e8319095ed75343b1a50f81425db4325d2ecf9e9128e110",
-            "locator": {
-              "end": 37,
-              "kind": "line_range",
-              "start": 34
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:b736af17dac28897007d5d8d330acc330d44f2b1b5643b049d8f666da15a9c27",
-            "locator": {
-              "end": 147,
-              "kind": "line_range",
-              "start": 130
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:1959177535d9fca1b335fb59f6c307c47fddf17aeb90de8c5bc8ad30dec1556a",
-            "locator": {
-              "end": 118,
-              "kind": "line_range",
-              "start": 111
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:a90d6ff2065df78a5b54b321f1faa0c7faf432f8ccce58c55682dd1f76c1d2c4",
-            "locator": {
-              "end": 78,
-              "kind": "line_range",
-              "start": 34
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:747987d8dcfbc3f7a78ded2594e09336977a87503d3f41611298a7ff7c9f9a1f",
-            "locator": {
-              "end": 123,
-              "kind": "line_range",
-              "start": 119
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
-            "content": "sha256:724c02f70a7c297edfd0b5d79caac046e136fe72b059aa25c48e4526c75a84f3",
-            "locator": {
-              "end": 82,
-              "kind": "line_range",
-              "start": 82
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+              "start": 32
+            }
           },
           "kind": "code"
         }
@@ -457,7 +297,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
             "content": "sha256:0a167d25b360e154c02dd9fdac113e52bbb0b78f701733c88a7ceee773d3179f",
             "locator": {
               "end": 2,
@@ -475,12 +315,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
             "content": "sha256:4bfb1faa8a0a63c2e4f582f0a9df847b07f5a05768f278f6bf0b4543ad7c88da",
             "locator": {
-              "end": 533,
+              "end": 478,
               "kind": "line_range",
-              "start": 533
+              "start": 478
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },

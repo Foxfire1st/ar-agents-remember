@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Tests route overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -50,7 +50,7 @@ is what is asserted.
 - A write refreshes exactly the copies of the document written; a foreign contract is skipped and named.
 - A failed publication leaves the canonical source and every copy as they were.
 
-The launch handover case requires the canonical task-document task_doc-first and scoped correct-refusal recovery clauses. Removing each actual clause fails the same oracle, while rendered-copy readback and publication boundaries remain unchanged. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
+The launch handover case requires the canonical task-document task_doc-first and scoped correct-refusal recovery clauses: covered writes (task_doc edits including an admitted retirement or folder movement, knowledge_write, citation_fix, citation_note_revision and curator_coherence publication) follow the same-tool ladder in `reference/refused-write.md` before a stop, while read/check/validation/sync refusals, starts, other product guards and commit gates keep their stops. Removing each actual clause fails the same oracle, while rendered-copy readback and publication boundaries remain unchanged. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
 ## Evidence
 - The module keeps preparation, publication and cleanup cases and adds scoped enumeration, physical membership and conditional unreadable-file controls.
@@ -59,6 +59,7 @@ The launch handover case requires the canonical task-document task_doc-first and
 - Own-leaf copy controls include real non-symlink requirement bytes and digest rows, missing rows with a handover warning, exclusion of reference, master and sprint baggage, publication adding a requirement, source drift then refresh, and requirement-copy cleanup.
 
 - The module keeps preparation, publication and cleanup cases and adds scoped enumeration, physical membership and conditional unreadable-file controls. [1]
+
 - Own-leaf copy controls include real non-symlink requirement bytes and digest rows, missing rows with a handover warning, exclusion of reference, master and sprint baggage, publication adding a requirement, source drift then refresh, and requirement-copy cleanup. [2]
 
 - The launch handover case requires the canonical task-document task_doc-first and scoped correct-refusal recovery clauses. Removing each actual clause fails the same oracle, while rendered-copy readback and publication boundaries remain unchanged. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [3]

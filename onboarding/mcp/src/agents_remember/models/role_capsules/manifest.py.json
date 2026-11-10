@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The frozen vocabulary this parser is validated against.\n\nAnchor: `CAPSULE_ROLES` `CAPSULE_OPERATIONS`",
+      "note": "The frozen vocabulary this parser is validated against.",
       "targets": [
         {
           "anchor": {
-            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
-            "content": "sha256:6811946246157d4d86d1215e8aa358f70653c11feeffd6b1d134adeb2cda0c71",
+            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
+            "content": "sha256:ca87be70f1004fe8f0b93c44eca5442b2a733b7770811673bac424afbd4a167c",
             "locator": {
               "kind": "symbol",
               "name": "CAPSULE_ROLES"
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
+            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
             "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
             "locator": {
               "kind": "symbol",
@@ -31,36 +31,12 @@
         },
         {
           "anchor": {
-            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
+            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
             "content": "sha256:84294edc5e8c2d9d65ce6afe5b9987e4cbc2bc5e894ec577fe2e9b96ce3fb6e1",
             "locator": {
-              "end": 73,
+              "end": 68,
               "kind": "line_range",
-              "start": 62
-            },
-            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
-            "content": "sha256:6428d2e6b1a666556429b65eaf20fad062fa987a65d9d8776b6cc75c80f8a294",
-            "locator": {
-              "end": 87,
-              "kind": "line_range",
-              "start": 75
-            },
-            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
-            "content": "sha256:b6de98e8985e330ee99310530410ec3d4d9da72620da822d7be82e3a611f4cd7",
-            "locator": {
-              "kind": "file"
+              "start": 57
             },
             "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
           },
@@ -69,16 +45,15 @@
       ]
     },
     "10": {
-      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.\n\nAnchor: L16–L35",
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
-            "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
             "locator": {
-              "end": 35,
-              "kind": "line_range",
-              "start": 16
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
             },
             "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
           },
@@ -91,12 +66,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
-            "content": "sha256:1370d89348c253989e44556933ef532f9e18cb312db58b4d7c604dea6da98bb4",
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
             "locator": {
-              "end": 101,
-              "kind": "line_range",
-              "start": 38
+              "kind": "symbol",
+              "name": "validate_instruction_detail_artifacts"
             },
             "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
           },
@@ -191,16 +165,15 @@
       ]
     },
     "17": {
-      "note": "The frozen compiler vocabulary declares ten roles and nine operations including Bootstrap; compiler vocabulary and native task-seat dispatch availability are distinct.\n\nAnchor: Compiler vocabulary and canonical tuples",
+      "note": "The frozen compiler vocabulary declares eight roles and nine operations including Bootstrap; compiler vocabulary and native task-seat dispatch availability are distinct.",
       "targets": [
         {
           "anchor": {
-            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
-            "content": "sha256:c4224d8b94a35ac2361810b7dbf8e8df332d02d5673d244d091a742730df7023",
+            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
+            "content": "sha256:ca87be70f1004fe8f0b93c44eca5442b2a733b7770811673bac424afbd4a167c",
             "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 31
+              "kind": "symbol",
+              "name": "CAPSULE_ROLES"
             },
             "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
           },
@@ -213,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
             "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
             "locator": {
               "end": 2,
@@ -231,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
             "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
             "locator": {
               "end": 2,
@@ -339,7 +312,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:e9be5bbf3ba8918c590832047be89b533e7a00102ff7719fdcf87f05f21bf81e",
             "locator": {
               "kind": "symbol",
@@ -351,7 +324,7 @@
         },
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:0942d375776c856968acb5b0e7f0dff3d1f63262289017f755c53ea041e35edf",
             "locator": {
               "kind": "symbol",
@@ -363,7 +336,7 @@
         },
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:fc8ef3afe9d62913555ae353a8fa5eb4a89f14e0cff60d56daa2dced8d5b0cd9",
             "locator": {
               "kind": "symbol",
@@ -375,7 +348,7 @@
         },
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:528ec79929a0f0aa301c9473f74852ceedb1ee7b1c203ebc00a5e8fb8b2238c1",
             "locator": {
               "kind": "symbol",
@@ -387,12 +360,12 @@
         },
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:1cbdd4296243f6f983293ec781564ecc3d7d169ab6996eb6bf447085c72d40e5",
             "locator": {
-              "end": 186,
+              "end": 184,
               "kind": "line_range",
-              "start": 175
+              "start": 173
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -400,12 +373,12 @@
         },
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:4bebb192870ac06c757a7902dfc23d61dbb1ff2c0dd09c76affefbd408653c39",
             "locator": {
-              "end": 208,
+              "end": 206,
               "kind": "line_range",
-              "start": 187
+              "start": 185
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -413,12 +386,12 @@
         },
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:674fbff12a2a16e430a80290d12e709d311f34532d6609d163d0f9429252a406",
             "locator": {
-              "end": 244,
+              "end": 242,
               "kind": "line_range",
-              "start": 231
+              "start": 229
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -431,7 +404,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:f34f06d8b39dee094e6d46952b91a62907f1e7d458fb471227d48cb6a9469142",
             "locator": {
               "kind": "symbol",
@@ -443,12 +416,12 @@
         },
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:a27707ee863517b80993af6b19c719d8766b0385bd1e3df03dcc6ade61d2c8e0",
             "locator": {
-              "end": 218,
+              "end": 216,
               "kind": "line_range",
-              "start": 209
+              "start": 207
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },

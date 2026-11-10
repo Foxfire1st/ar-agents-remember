@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:f0c965110373c06c1ab75ce04c6788a02eb667d521394916c104f7bcf4989001",
             "locator": {
               "kind": "symbol",
@@ -202,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:f0c965110373c06c1ab75ce04c6788a02eb667d521394916c104f7bcf4989001",
             "locator": {
               "kind": "symbol",
@@ -215,14 +215,15 @@
       ]
     },
     "17": {
-      "note": "The typed-linkage cross-check and altitude role sets this module relies on.",
+      "note": "The typed-linkage cross-check: `masterRef` rows and seats belong only to an orchestration sprint.",
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
-            "content": "sha256:fa8b044677dd79fab9c5621308c459f97c7d85686fbbbab4f54a2854f040241d",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:51db4fb96a750b7ef0a6b4b5f44417371715dc65e06acd36e453a30c40981765",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_check_sprint_rows_and_seats"
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -246,14 +247,15 @@
       ]
     },
     "2": {
-      "note": "The typed-linkage cross-check and altitude role sets this module relies on.",
+      "note": "The altitude role sets this module relies on.",
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
-            "content": "sha256:fa8b044677dd79fab9c5621308c459f97c7d85686fbbbab4f54a2854f040241d",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:660d9b2fdc52c99c60da36695056ca5b89069b0cc3154b926ec36483f860c2a7",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "SPRINT_ROLES"
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -297,8 +299,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
-            "content": "sha256:6458be6f7ea0fa60376d257779399bdaa16e6a351f96fc168f08de9c50fd386d",
+            "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
+            "content": "sha256:e7d7d7f5222fba7c3e9868cdf89c95ccccc5994dd595fb93ad432fe783b0eb11",
             "locator": {
               "kind": "symbol",
               "name": "verify_sprint_judgment_ids"
@@ -309,24 +311,11 @@
         },
         {
           "anchor": {
-            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
+            "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
             "content": "sha256:2b210e22397bcbb2de02727b1307d66e3d68968cae6faa1de711857b129e60ca",
             "locator": {
               "kind": "symbol",
               "name": "require_commanded_masters_completed"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
-            "content": "sha256:5ca03bab23f46a6cc0ca640edff89fb184a8e7f70ecebfc29b5d0c8f612ad463",
-            "locator": {
-              "end": 377,
-              "kind": "line_range",
-              "start": 336
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
           },

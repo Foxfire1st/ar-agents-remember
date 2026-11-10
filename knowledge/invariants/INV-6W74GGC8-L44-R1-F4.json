@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The Python source-reference model and its dashboard mirror both require the stored role and rationale so the wire contract cannot silently drop the explanation of a realization claim."
+  },
   "applicability": "Every family member source reference in the Python model and its dashboard mirror.",
   "conditions": [
     "The store holds a role and a rationale for every realization claim."

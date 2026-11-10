@@ -4,66 +4,17 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "PR-4 defines both explicit-graph and graph-less activation review.",
+      "note": "PR-4 defines both explicit-graph and graph-less topology review.",
       "targets": [
         {
           "anchor": {
-            "blob": "062d955f1d03cafdc384de0f46f29cb39f67c028",
-            "content": "sha256:8edbac6ef43c98573cbb37b8bb4e5a31468b8f51843e4388e9c884602cd00b2c",
+            "blob": "c22c62bbdfe2fc23b5f422bcee103184e44fb6d7",
+            "content": "sha256:fee6866a71234582d9b0e7bc94392983e4472883398224f1a40dc2dba24e43e4",
             "locator": {
-              "end": 70,
+              "end": 47,
               "kind": "line_range",
-              "start": 48
+              "start": 33
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Strategist doctrine authors the topology choice under review.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "360518ce1a3540d1d0e41008a19c347b42d586d2",
-            "content": "sha256:66e61aa88724f9f62f7235690163c3dc03d5797f6c0f94be6cd6b0c2375c21ff",
-            "locator": {
-              "end": 6,
-              "kind": "line_range",
-              "start": 6
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/strategist.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "360518ce1a3540d1d0e41008a19c347b42d586d2",
-            "content": "sha256:274ec646625f1cf38e8c8f950621f347d6db2abf21bdf4a98e3db612460eae4b",
-            "locator": {
-              "end": 50,
-              "kind": "line_range",
-              "start": 46
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/strategist.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The template renders the graph-less activation walk explicitly.\n\nAnchor: \"## Derived Waves And Blocker Walk\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2dd1fb9539d230c1d2dab90f178b8805278ec81d",
-            "content": "sha256:3403a9462de0b85308dd505c41026677b5be5ebe3968c804bf6c5b8c919fcf8c",
-            "locator": {
-              "end": 167,
-              "kind": "line_range",
-              "start": 167
-            },
-            "path": "skills/l-01-agent-lifecycles/templates/orchestration-task.md"
           },
           "kind": "code"
         }
@@ -74,10 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "062d955f1d03cafdc384de0f46f29cb39f67c028",
-            "content": "sha256:90c187e3bf420767014628c0eaf41e49c6489cbd2dd585395cb00a434d756fd5",
+            "blob": "c22c62bbdfe2fc23b5f422bcee103184e44fb6d7",
+            "content": "sha256:ef11ea20138cd2e6693b3158b879528a8ecbb31f399a0e0021ee098e868ed281",
             "locator": {
-              "kind": "file"
+              "end": 89,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

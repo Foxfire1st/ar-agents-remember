@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_instruction_links.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9ded4bca5ac476f63f808701e9c87d209d3868a7",
+        "content": "sha256:d19fed84aeb9534daac1453c7513d20ea358d5a78f58b703ae30bba9e5f921a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "bind_markdown_links"
+        }
+      },
+      "id": "RLZ-NJPF42",
+      "invariant": "INV-ZA67WW",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 instruction provenance",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This function resolves destinations from their original source path rather than from the emitted launch report.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Relative destinations are found outside code; absolute, placeholder and scheme destinations are skipped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ded4bca5ac476f63f808701e9c87d209d3868a7",
+            "content": "sha256:078b13a9411e289e705d47ef80c9bf3cd7d51dd1abcb2088d9e2f5735e087954",
+            "locator": {
+              "kind": "symbol",
+              "name": "relative_destinations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each destination is resolved from its source, mapped to a frozen target when one exists, and keeps its query and fragment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ded4bca5ac476f63f808701e9c87d209d3868a7",
+            "content": "sha256:d19fed84aeb9534daac1453c7513d20ea358d5a78f58b703ae30bba9e5f921a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "bind_markdown_links"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Text without source origins may not keep a relative link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ded4bca5ac476f63f808701e9c87d209d3868a7",
+            "content": "sha256:358928073502e0d167abcb4423eaff1247ac76463843060537b6a1bf42bebb62",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_no_unbound_links"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Code spans and fences are masked without moving offsets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ded4bca5ac476f63f808701e9c87d209d3868a7",
+            "content": "sha256:d0e8069a7391ef8a40b8cd51e931bfe842f65597ed05c8ade4d8bd99cd764262",
+            "locator": {
+              "kind": "symbol",
+              "name": "_code_mask"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

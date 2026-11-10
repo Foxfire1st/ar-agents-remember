@@ -1,0 +1,81 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The harness-specific rule was on the table and rejected for a neutral one; the choice binds every future instruction text."
+  },
+  "alternatives": [
+    {
+      "option": "Write instruction texts without naming a harness, provider or model: 'If your harness offers helpers (sub-agents), they run on your own seat's model unless the developer names another'; a role's harness and model come from its role settings and a harness's quirks go on that harness's documentation page.",
+      "reason": "A rule hard-coded to one harness does not apply to the others, and Claude is not always the Architect's harness.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the harness-specific rule 'On Claude Code, your own sub-agents run on Opus unless the developer names another model.'",
+      "reason": "It assumes one harness and one model for every seat.",
+      "reconsider_when": "A per-role helper setting exists and a harness needs a rule that its settings cannot express.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The Pi specifics live in docs/install/pi.md.",
+    "A per-role helper setting is a later row; the code is unchanged."
+  ],
+  "context": "A rule picked from the dashboard said 'On Claude Code, your own sub-agents run on Opus unless the developer names another model', and four more l-01 places named one harness or provider. Whether and how a role uses sub-agents is a role setting.",
+  "decider": "The developer (D709); MIK-R84 v14 behaviour 1, seventh rule.",
+  "id": "DEC-4P1V0Z",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+        "content": "sha256:498464cec6033fe95eb8fe021c2239e0e98742c7a94fb943bdd9a0ad3754262b",
+        "locator": {
+          "end": 61,
+          "kind": "line_range",
+          "start": 61
+        },
+        "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+        "content": "sha256:770dca9b9df063334899eea2f18f89454690f1083ee6d307afa918d10e6b8513",
+        "locator": {
+          "end": 106,
+          "kind": "line_range",
+          "start": 106
+        },
+        "path": "skills/l-01-agent-lifecycles/core/authority.md"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R84",
+        "packet": "requirements/MIK-R84-v14-installed-copies-and-running-servers-are-current-after-an-install.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v14"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "dec-harness-neutral-instructions",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

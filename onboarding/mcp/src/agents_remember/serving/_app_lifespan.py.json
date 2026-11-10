@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
         "content": "sha256:d103f78490028d5071df7d816b91d3cfe4c93b2e23629d060f9e60b345a6be34",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
         "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
-        "content": "sha256:093fbfff778e59550993cab5b2f6dd5cc9eb221a29e435e6ee369812bcea44ee",
+        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+        "content": "sha256:1a4bc34ceb1e312705da19ede3a5a6bbb8dfa5ca44f318fc6ad7612cb127d7f6",
         "locator": {
           "kind": "file"
         }
@@ -57,12 +57,12 @@
     },
     {
       "anchor": {
-        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
-        "content": "sha256:4d55d66a5848c43c374e321d1618ad666f51a4211296ae7311369feb7ee51c93",
+        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+        "content": "sha256:5fd69cb92db813c555b7a72d66ab63a32b59440624cd02bf26cef7eac6bc59b9",
         "locator": {
-          "end": 420,
+          "end": 600,
           "kind": "line_range",
-          "start": 360
+          "start": 582
         }
       },
       "id": "RLZ-9KM829",
@@ -71,17 +71,17 @@
         "handoffEntry": "MIK-R42@v2-child-lifetime",
         "leaf": "260928-MIK-L42"
       },
-      "rationale": "Calls the runtime's review_trees_shutdown on a worker thread as the first step of serving shutdown, before the background tasks are cancelled.",
+      "rationale": "In the serving lifespan's teardown, after readiness is closed and the master preparation is cancelled and closed, this calls the runtime's review_trees_shutdown on a startup-owned worker thread and waits for it before the background tasks are cancelled and drained.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
         "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
         "locator": {
-          "end": 143,
+          "end": 144,
           "kind": "line_range",
-          "start": 112
+          "start": 113
         }
       },
       "id": "RLZ-BHYSBK",
@@ -95,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
         "content": "sha256:5dcd3af06b4b19698cc77d3ad124c7a4165a49f254bb380b22fd8a78fe2a6813",
         "locator": {
           "kind": "symbol",
@@ -113,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
         "content": "sha256:5dcd3af06b4b19698cc77d3ad124c7a4165a49f254bb380b22fd8a78fe2a6813",
         "locator": {
           "kind": "symbol",
@@ -131,7 +131,7 @@
     },
     {
       "anchor": {
-        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
         "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
         "locator": {
           "kind": "symbol",
@@ -149,8 +149,8 @@
     },
     {
       "anchor": {
-        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
-        "content": "sha256:093fbfff778e59550993cab5b2f6dd5cc9eb221a29e435e6ee369812bcea44ee",
+        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+        "content": "sha256:1a4bc34ceb1e312705da19ede3a5a6bbb8dfa5ca44f318fc6ad7612cb127d7f6",
         "locator": {
           "kind": "file"
         }
@@ -171,12 +171,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
             "content": "sha256:864e390c10f98eead1f7dc0962c0f5717b9f0258e66b99b4004b2e87425894bd",
             "locator": {
-              "end": 85,
+              "end": 86,
               "kind": "line_range",
-              "start": 70
+              "start": 71
             }
           },
           "kind": "code"
@@ -201,12 +201,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
             "content": "sha256:864e390c10f98eead1f7dc0962c0f5717b9f0258e66b99b4004b2e87425894bd",
             "locator": {
-              "end": 85,
+              "end": 86,
               "kind": "line_range",
-              "start": 70
+              "start": 71
             }
           },
           "kind": "code"
@@ -231,12 +231,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
             "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
             "locator": {
-              "end": 109,
+              "end": 110,
               "kind": "line_range",
-              "start": 88
+              "start": 89
             }
           },
           "kind": "code"
@@ -248,24 +248,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
             "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
             "locator": {
-              "end": 143,
+              "end": 144,
               "kind": "line_range",
-              "start": 112
+              "start": 113
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
             "content": "sha256:864e390c10f98eead1f7dc0962c0f5717b9f0258e66b99b4004b2e87425894bd",
             "locator": {
-              "end": 85,
+              "end": 86,
               "kind": "line_range",
-              "start": 70
+              "start": 71
             }
           },
           "kind": "code"
@@ -290,7 +290,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
             "content": "sha256:5cafd1dbd1e8b89d1c41bf624f33a333c1277f69d76f47c848926863fc3941dd",
             "locator": {
               "end": 29,
@@ -302,12 +302,12 @@
         },
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
             "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
             "locator": {
-              "end": 109,
+              "end": 110,
               "kind": "line_range",
-              "start": 88
+              "start": 89
             }
           },
           "kind": "code"
@@ -319,7 +319,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
             "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
             "locator": {
               "kind": "symbol",
@@ -330,7 +330,7 @@
         },
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
             "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
             "locator": {
               "kind": "symbol",
@@ -359,14 +359,32 @@
       ]
     },
     "29": {
-      "note": "Held-delivery collaborators keep usage-read-before-delivery ordering, then trigger moved comparison after ended-seat delivery. The dedicated watcher task joins the owned shutdown task list.\n\nAnchor: `_held_delivery_tick`",
+      "note": "Held-delivery collaborators keep usage-read-before-delivery ordering, then trigger moved comparison after ended-seat delivery. The dedicated watcher task joins the owned shutdown task list.",
       "targets": [
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
-            "content": "sha256:093fbfff778e59550993cab5b2f6dd5cc9eb221a29e435e6ee369812bcea44ee",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:5dcd3af06b4b19698cc77d3ad124c7a4165a49f254bb380b22fd8a78fe2a6813",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_held_delivery_tick"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The serving lifespan registers the dashboard's running-server record at start and removes it first on exit.\n\nAnchor: `register_server`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:6cc4d66f598e4b31771bb7990fdcba539784e7849268aa6bdd052f6c1bc6ab7e",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 445
             }
           },
           "kind": "code"

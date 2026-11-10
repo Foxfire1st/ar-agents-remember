@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The server result model forbids counts beside unavailable knowledge, the application distinguishes changed ambiguous heads, and the client read union carries unavailable and partial outcomes separately."
+  },
   "applicability": "Every changed-intent summary answer for a leaf comparison, from the server model through the served route to the entry's rendering.",
   "conditions": [
     "The comparison knowledge could not be read, or the compared head sets differ for an identity without a single head on a side."

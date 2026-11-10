@@ -1,99 +1,38 @@
 # mcp/src/agents_remember/mcp/registration/core.py
 
-## Current operative account — MIK-R112
+## Current operative account
 
 Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused.
 
-The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
-
-- ping and skills_install registrations were removed.
-- context_packet no longer accepts include_providers. It delivers slim roots, task ID/master, action lines and optional build/pair commits. The process serving-build commit is forwarded into this projection. Its drift description measures onboarding reference anchors and tree validity, reports a stale reference for repair while publication and the full quality run refuse it, distinguishes invariant currentness via knowledge_read/integrity, requires a changed-source card or no-impact record, and repairs nothing; omitting include_drift measures nothing.
+- The registered tools are `server_info`, `context_packet`, `read_ar_files` and `runtime_install`.
+- context_packet takes `repo_id`, `include_drift`, `include_freshness` and `task_context`; it has no `include_providers` parameter. It delivers slim roots, task ID/master, action lines and optional build/pair commits. The process serving-build commit is forwarded into this projection. Its drift description measures onboarding reference anchors and tree validity, reports a stale reference for repair while publication and the full quality run refuse it, distinguishes invariant currentness via knowledge_read/integrity, requires a changed-source card or no-impact record, and repairs nothing; omitting include_drift measures nothing.
 - `read_ar_files` takes up to 20 path strings, names cards/states/overview locations and carries no file text, session served state or continuation. Per path it also names one count of the open weaknesses on the file and one count of the documents that stand on it (`openWeaknesses`, `dependentDocuments`), each absent at zero and never a record's text; a count that cannot be taken is said once in `statesProblem` and refuses nothing. `refresh` remains receivable only for a typed removal refusal and is scrubbed from the advertised schema; object entries are refused.
 - `resolve_context` is not registered or forwarded; orientation is `context_packet`. Read-only marks are applied centrally after all registrars; `context_packet` is marked false because its opt-in freshness capability fetches remotes.
-- runtime_install now describes stop-only leftovers and unused provider keys, not provider builds/restarts.
-
-### Source and authority bounds
-
-- Source comparison: `mcp/src/agents_remember/mcp/registration/core.py:35-79`.
-- Source comparison: `mcp/src/agents_remember/mcp/registration/core.py:142-167`.
-- Source comparison: `git diff HEAD -- mcp/src/agents_remember/mcp/registration/core.py`.
-
-Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+- runtime_install describes stop-only leftovers and unused provider keys, not provider builds or restarts.
 
 ## Current source contract evidence
 
 - The orientation registrar supplies the current naming/slim-packet and drift-description account; identity annotations and installer registration remain separately attributed. No execution acceptance is inferred. [6] [7] [9]
 
-## Historical original card — preserved, not the current operative account
-
-<details>
-<summary>Retained original source accounts and producer history</summary>
-
 ## Governing Overview
 
-[registration route overview](overview.md)
-
-## 260731-EFA-L8 Change
-
-The tool-registration functions gained bare-`*` keyword-only signatures (the 19
-PLR0917 fixes across `mcp/registration/*.py`); the rule stays enabled and call sites
-already pass keywords. Registered tools are unchanged.
-
-## Purpose
-
-`register_core_tools(server, config)` declares server identity, the orientation reads, and the two
-installers: `ping`, `server_info`, `context_packet`, `read_ar_files`, `resolve_context`,
-`runtime_install`, `skills_install`. Its identity family binds the one process-scoped
-`ServingBuildPayload` used by `server_info`.
-
-Registers server identity and orientation/install tool signatures.
+[overview](overview.md)
 
 ## Code Commentary
 
-- The identity tool retains its explicit read-only/non-destructive/idempotent/closed-world annotations without restoring ping. [9]
-
-
 The registered identity reader `server_info` retains explicit ToolAnnotations: `readOnlyHint=True`,
 `destructiveHint=False`, `idempotentHint=True`, `openWorldHint=False`. These describe the identity
-operation, not a promise that its admitted tool-call logging creates no bytes. Restoring them keeps
-the remaining identity reader discoverable as read-only without reinstating retired `ping`.
+operation, not a promise that its admitted tool-call logging creates no bytes.
 
-### Logic
-
-Seven `@server.tool()` declarations, each forwarding to its `mcp/tools/core.py` payload builder.
 `register_core_tools` obtains one strict payload through the application-owned
 `mcp_serving_build_payload()` gateway and passes that immutable value into the identity registrar;
 every `server_info` call therefore reports the same boot and candidate identity without
 request-time reprobes or an MCP-to-serving domain import.
-The docstrings are the model-visible contract and carry the semantics that are not in the types:
-
-- `ping` — liveness only; no configuration, no side effects.
-- `server_info` — the settings loaded **at startup**; a settings edit needs a harness restart.
-- `context_packet` — one orientation call. `include_providers` defaults true; `include_drift` and
-  `include_freshness` default false because they cost a drift scan and a remote fetch respectively.
-- `read_ar_files` — the research-phase read: ≤5 repo-relative paths, each paired with its file-level
-  onboarding plus the auto-attached repo and governing route overviews (deduplicated by lifecycle and code/onboarding root,
-  `refresh=true` re-serves after a compaction). Native read is the edit precondition once building
-  begins.
-- `resolve_context` — the one declaration here that packs: the five flat locators (`repo_id`,
-  `task_name`, `parent_task`, `leaf_id`, `contract_path`) become a `TaskRef`, while `worktree_name`
-  and `topology` stay separate arguments because they are not part of "which task".
-- `runtime_install` — the operator text distinguishes preserved user data (`memory-repos/`,
-  `providers/data/`) from replaced managed scaffold, explains that `install_provider_deps=true` may
-  refresh `providers/runners/` after stopping watchers, and that `no_cache=true` forces a
-  from-scratch image rebuild past the skip-if-tag-exists shortcut.
-- `skills_install` — flat packaged skills copied by frontmatter name; most harnesses only discover
-  them after a restart.
 
 ### Invariants And Boundaries
 
-- The signature is the published MCP schema. `resolve_context` keeps its five locators flat and
-  builds the `TaskRef` inside the body; typing the parameter as `TaskRef` would republish the tool
-  as a nested object.
-- `runtime_install` and `skills_install` register `dry_run=False` — act-by-default. The docstrings
-  say to preview first; the default does not.
-- No behaviour here. `read_ar_files`'s onboarding-lookup status vocabulary, the route-index rule,
-  and overview dedup by lifecycle and code/onboarding root all live in `application/read_files.py`.
+- `runtime_install` registers `dry_run=False` — act-by-default; `dry_run=true` previews.
+- No behaviour here. `read_ar_files`'s onboarding-lookup vocabulary lives in `application/read_files.py`.
 - `server_info` must receive the shared process build; constructing or re-resolving a new build in
   the handler would break correlation with the dashboard and harness acceptance evidence.
 - Serving-domain ownership stays behind `application.runtime.startup`; this MCP adapter consumes
@@ -105,50 +44,23 @@ server_info describes optional toolServer and agentBinding of a launched server.
 
 ## Evidence
 
-### Repo-Internal References
-
-- Six of the seven payload builders (all but `read_ar_files_payload`). [1]
+- The identity tool retains its explicit read-only/non-destructive/idempotent/closed-world annotations without restoring ping. [9]
 - `read_ar_files_payload`, imported through the `mcp.tools` facade. [2]
-- `TaskRef` — the locator bundle `resolve_context` packs. [3]
-- The registration gained the keyword-only `experiment` parameter and builds the run's request itself. [4]
 
-### Runtime Source References
+- The registration takes the keyword-only `experiment` parameter and builds the run's request itself. [4]
 
 - Frozen implementation of _register_identity_tools supporting the stated file behavior. [5]
 
-## 260915-CAPS-L9 Experiment Parameter On `runtime_install`
-
-The registered `runtime_install` tool gained one additive, keyword-only parameter —
-`experiment: str | None = None` — and now constructs the run's `RuntimeInstallRequest` itself
-instead of forwarding four booleans to the payload builder. Its docstring is the model-visible
-contract for the parameter and says exactly what the ruling requires: it installs the
-experimental instruction cutover **for THIS run** (the legacy AR startup chain is withheld and
-the pinned eve application is installed beside the canonical assets); it is a per-call input,
-**never a setting**; omitting it — with no `AR_EXPERIMENT` in the server environment — installs
-the unmodified runtime; and the returned record's `selectionSource` names which input supplied
-the mode. The registered tool count is unchanged: a parameter was added to an existing
-declaration, not a tool.
-
-## 260928-MIK-L96 The runtime_install description and host part
-
-The `runtime_install` tool description now states that the step brings the host when the shared settings name one, that a missing block is reported rather than installed, and that the result carries the host part; the tool takes no parameter for the step.
-
 - The installation tools and the runtime_install registration. [7]
-
-The `context_packet` description states that `include_drift` measures the reference anchors of
-onboarding cards and the validity of the tree, with the same stale/current/non-repair doctrine as the
-drift tool, and that omitting it measures nothing.
 
 - The packet description states what include_drift measures and that omitting it measures nothing. [8]
 
-- Frozen implementation of _register_orientation_tools supporting the stated file behavior. [6]
-
-</details>
+- `_register_orientation_tools` declares the read-only orientation tools `context_packet` and `read_ar_files` and scrubs the removed `refresh` argument from the advertised schema. [6]
 
 ## The install description and the skill corpus
 
-The `runtime_install` description now says the call refreshes the coordinator scaffold and provider assets, preserves `memory-repos/` and `providers/data/`, prunes legacy binaries, installs no skill folder because skills are package-served resources, stops leftover provider watchers, reports retired keys and starts none, and provisions the pinned host from the active MCP authority's `paseoRuntime` without writing settings or forcing a restart.
+The `runtime_install` description says the call refreshes the coordinator scaffold (instructions, docs, provider assets), keeps `memory-repos/` and `providers/data/`, prunes legacy binaries, installs no skill folder because skills are package-served, stops leftover provider watchers, reports unused provider keys and starts none, and provisions the pinned host/plugin from the active MCP authority's `paseoRuntime`. It also says daemon settings may be reconciled while user-settings protections and host-restart deferrals remain, that the result reports running-server currentness and every host action, and that a running dashboard is refreshed; `dry_run=true` previews the install actions.
 
-- The install tool registration whose description states the scaffold-only install. [10]
+- The install tool registration whose description states the scaffold install, running-server currentness report and running-dashboard refresh. [10]
 
 - Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused. [11]

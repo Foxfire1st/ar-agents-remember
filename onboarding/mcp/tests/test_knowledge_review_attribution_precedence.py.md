@@ -50,4 +50,4 @@ No meaningful cross-repo references found.
 
 
 
-- The unit-regression lane row, beside its sibling's.  Anchor: `test_knowledge_review_attribution_precedence` [14]
+- The module's own unit-regression lane row. [14]

@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The notes-listing family needs this boundary to preserve current confinement and missing-folder behavior without falsely promising the removed endpoint's ordering, envelope or whole-tree response bytes."
+  },
   "applicability": "Historical: the response bytes of GET /api/notes/list (removed). Current: the per-folder properties above for GET /api/notes/folder.",
   "conditions": [
     "The notes tree is not mutated between the two listings being compared.",

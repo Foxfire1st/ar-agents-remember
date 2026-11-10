@@ -36,39 +36,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:f4e20cb13556856b52017d0bdef3cd1e43b774b9f1cf841cc8b9dda05bd37b75",
+            "blob": "67a2ea5e0dc585ffaf0b58510d28387af2701164",
+            "content": "sha256:39ae0f388b10d3d1c59c520850dfc5faffea5e6d83d43714e305b6f8034c0708",
             "locator": {
-              "end": 15,
+              "kind": "symbol",
+              "name": "markdown_table_cells"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:0c5deb490c9c9d5f464cbb89bf465ef96f96bbeaceb03a350061899f5d9d2321",
+            "locator": {
+              "end": 17,
               "kind": "line_range",
               "start": 15
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:af4e21358bd0cccfc0b5fdfc12dcd70849e8e97e2fd61ca32f6c481cb60198a8",
-            "locator": {
-              "end": 80,
-              "kind": "line_range",
-              "start": 39
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "67a2ea5e0dc585ffaf0b58510d28387af2701164",
-            "content": "sha256:39ae0f388b10d3d1c59c520850dfc5faffea5e6d83d43714e305b6f8034c0708",
-            "locator": {
-              "end": 25,
-              "kind": "line_range",
-              "start": 24
-            }
           },
           "kind": "code"
         }

@@ -96,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+            "blob": "19dcfe69c391f0df0341bdd52a11db4c0fcb86ff",
             "content": "sha256:40f1b466c4acc52f29a8ed19955bc907f19bdf9f258e0d11c8b922e65cb4e241",
             "locator": {
               "end": 24,
@@ -426,86 +426,19 @@
         }
       ]
     },
-    "133": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The task workflow creates the requirement corpus before the task document.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dd7163001634a6ba0ec87c6ea5e932bde08784c5",
-            "content": "sha256:ab9ad12ff068e6e93fdb1c8b3269b696831ec7dd2eee600ee9e97952d9a08137",
-            "locator": {
-              "end": 20,
-              "kind": "line_range",
-              "start": 16
-            },
-            "path": "skills/w-02-light-task-workflow/workflow.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dd7163001634a6ba0ec87c6ea5e932bde08784c5",
-            "content": "sha256:43c1231a935933a9791f73c1f499d075f68bfbac78ceeb711b7543155f821560",
-            "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 60
-            },
-            "path": "skills/w-02-light-task-workflow/workflow.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "134": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Requirement revisions and delivery attempts are separate.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Requirement revisions and delivery attempts are separate.\n\nAnchor: `Keep requirement revisions and attempts distinct`",
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:7038a04cb7fa89277eebc526c48cbc6d61b4704bc2b131d80acf38a5cab34dc7",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:a66e9b5d8ddc4563dd8b825b990dfac971f4b2bf3f06491854fa3928bf526db3",
             "locator": {
-              "end": 90,
+              "end": 67,
               "kind": "line_range",
-              "start": 80
+              "start": 62
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "135": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The start-of-task onboarding trust gate.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6a94f3833b0aa5e4b47d551f9057e85ab9b243dc",
-            "content": "sha256:68148c306ff2fe65808a9ba47b7576c2b40e492a47eacb6c11935ed45cc8c086",
-            "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "agents-md-files/system/AGENTS.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "136": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The templates that the runtime install places in the coordination root.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:e93b8e1600d53c89391d34e2a1c1849bb27cb0d25d9a68d0c6c0434aaddb8a01",
-            "locator": {
-              "end": 59,
-              "kind": "line_range",
-              "start": 56
-            },
-            "path": "mcp/src/agents_remember/install/runtime.py"
           },
           "kind": "code"
         }
@@ -586,24 +519,6 @@
               "start": 198
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The retrieval skill's route for continuing a bounded page through `knowledge_read`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:406f87f15ce148145e4262e6b00a47abb1430a2d305a0ee94b24bbb10bf6b654",
-            "locator": {
-              "end": 179,
-              "kind": "line_range",
-              "start": 179
-            },
-            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
           },
           "kind": "code"
         }
@@ -722,7 +637,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ba99edfcc42e4a14d029370b586330f8c0a82c9",
+            "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
             "content": "sha256:ebab7a90111a508b1555ff8649d4494215fcd6c5cb72754a2ae8e05003b771f8",
             "locator": {
               "kind": "symbol",
@@ -731,42 +646,20 @@
             "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6ba99edfcc42e4a14d029370b586330f8c0a82c9",
-            "content": "sha256:e6c6716d95d5a31ead17cd8300db17e5a2c357739b5c4e09e3189c184d37669d",
-            "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 44
-            },
-            "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6ba99edfcc42e4a14d029370b586330f8c0a82c9",
-            "content": "sha256:a7e9090918995033c4d0a5b586c203ff41adc3ca7f1f2b0cbb08e3d1810bfc2f",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "145": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The start-only supervision.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The start-only supervision.\n\nAnchor: `start-only supervision`",
       "targets": [
         {
           "anchor": {
-            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
-            "content": "sha256:1a53698bc6c02172355f9ea8d0862d2c9ff8715a66b6d749935fe4791b3fd5e3",
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:ec4fa578e3998dcb58bb8340a16da758166aca5cd3d16624acc51f0c86a257d6",
             "locator": {
-              "kind": "file"
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
           },
@@ -775,14 +668,14 @@
       ]
     },
     "146": {
-      "note": "The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority.",
+      "note": "The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority.\n\nAnchor: `A separate order never grants this role Worker or Curator authority`",
       "targets": [
         {
           "anchor": {
-            "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
-            "content": "sha256:1f39a1758a3254f1aad668f1565ee83c6f09ab51337219230026e4a85e72f7bb",
+            "blob": "f6b9ea88e1d9cce0a3389bf96bd60791329b9aca",
+            "content": "sha256:0a7ac3002ac0644f286713f0e1f08c5a09a535cefd39392bd9b39ae66d1781e5",
             "locator": {
-              "end": 36,
+              "end": 82,
               "kind": "line_range",
               "start": 8
             },
@@ -856,18 +749,18 @@
       ]
     },
     "21": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off template's file-writer section.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section.\n\nAnchor: `## The writer's input sections`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:f634a9e0170f21dab52298212ec4ebcf330244afc8176532c75154a5fe11072e",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:c194d042400f8dbabf8816037881f2197d22e4a2484e1b746da3816526f3f916",
             "locator": {
-              "end": 688,
+              "end": 529,
               "kind": "line_range",
-              "start": 485
+              "start": 131
             },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
@@ -891,18 +784,18 @@
       ]
     },
     "23": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off template's family-routes subsection.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's family-routes subsection.\n\nAnchor: `### Family routes`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:5a2facadf1c69d4133cb376211c1fcea32e74596cf59632985f86de1f2826f43",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:232c783c7ade9b3d42addb6e01b45f65db2eebbfff4e51e48877c51f02bab19c",
             "locator": {
-              "end": 416,
+              "end": 130,
               "kind": "line_range",
-              "start": 392
+              "start": 100
             },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
@@ -924,35 +817,17 @@
         }
       ]
     },
-    "255": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The skill's route-chain paragraph, mirrored into the package and starter copies.\n\nAnchor: `Route-chain families come last`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 157,
-              "kind": "line_range",
-              "start": 157
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "258": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The curator role's step-3 pointer to lifting decisions.\n\nAnchor: `Lift the decisions that keep governing code`",
+      "note": "The curator role's pointer to preserving governing decisions.\n\nAnchor: `governing-sources.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:6f43a4c7657cf7fd48209b5f06dc7bec826614cf08693b4a8b530f5a62012f3b",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:589f2cf80782d37464131fb8068c59515ac08c384d15c0618850501e0161bff4",
             "locator": {
-              "end": 133,
+              "end": 73,
               "kind": "line_range",
-              "start": 133
+              "start": 73
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -960,66 +835,35 @@
         }
       ]
     },
-    "259": {
-      "note": "The skill's paragraph naming the family-complete leaf read is mirrored into the byte-identical packaged runtime copy.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:740aadb71924a98fd9b960c40046a3bc5c4e6409c12777cd98583820235198c6",
-            "locator": {
-              "end": 166,
-              "kind": "line_range",
-              "start": 158
-            },
-            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:740aadb71924a98fd9b960c40046a3bc5c4e6409c12777cd98583820235198c6",
-            "locator": {
-              "end": 166,
-              "kind": "line_range",
-              "start": 158
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "260": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The template's admission section, mirrored into the package and starter copies.\n\nAnchor: `## The admission rule (MIK-R27)`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The ingestion template's admission section, mirrored into the package copy.\n\nAnchor: `Admission of new records`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:7d191c213614ade44c0a25bb27e024d7873c59fd79d369c97a483a8cd07788c9",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:42ccd373d58b66c5eaaed5d3fc930f224b98bd91de3a8cfe7dca2b21e9ba42f4",
             "locator": {
-              "end": 732,
+              "end": 594,
               "kind": "line_range",
-              "start": 732
+              "start": 530
             },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
       ]
     },
     "261": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): OM-4, mirrored likewise.\n\nAnchor: `Admission justifications are plausible`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): OM-4, mirrored into the package copy.\n\nAnchor: `OM-4 — Admission justifications are plausible`",
       "targets": [
         {
           "anchor": {
-            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-            "content": "sha256:b3e34349a0c5cc7ef7f312ae57e06b6245a150e03b2b4f0535558ee7f10d8183",
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:177ccdf446e7ee1e94eb8c168d1c1b0a72873b277b9344336de05a9833392fdc",
             "locator": {
-              "end": 42,
+              "end": 46,
               "kind": "line_range",
-              "start": 42
+              "start": 33
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
@@ -1028,16 +872,16 @@
       ]
     },
     "262": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): c-14 step 3's admission paragraph, mirrored likewise.\n\nAnchor: `A foundation is a small set of meaningful records`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): c-14's admission paragraph, mirrored into the package copy.\n\nAnchor: `**Admission.**`",
       "targets": [
         {
           "anchor": {
-            "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
-            "content": "sha256:3aa5642f02b79ba6e10f1587feee72fe7572f76c107f8014e3ee72f99b517da9",
+            "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+            "content": "sha256:31450200578d4e2f43cb4b3033489b28d3c60378610444bcc6506dc4bd7ffacc",
             "locator": {
-              "end": 158,
+              "end": 160,
               "kind": "line_range",
-              "start": 158
+              "start": 152
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md"
           },
@@ -1046,34 +890,34 @@
       ]
     },
     "263": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The template's planned-row bullet, mirrored into the package and starter copies.\n\nAnchor: `A planned row (MIK-R11, converted memory only)`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The ingestion template's planned-row paragraph, mirrored into the package copy.\n\nAnchor: `#### Planned effects`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:511402a93a43ae1914d1f6c1879f6c66c6737a2bed658f42e35573b4081f0775",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:96952fe2b6e3e3803e98684dad12ee79cab8b00b0a24cf35db01ff7daf0ea906",
             "locator": {
-              "end": 621,
+              "end": 398,
               "kind": "line_range",
-              "start": 621
+              "start": 384
             },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
       ]
     },
     "264": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The reviewer's declaration check, mirrored likewise.\n\nAnchor: `check that declaration against the`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The reviewer's declaration check, mirrored into the package copy.\n\nAnchor: `expectedKnowledgeEffects`",
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:f2f930aefadd18620edc7f70a5662d45d9c0f22f67e66aa9503942e8349a3ff0",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:57b461db3dcb97557fa3361023f8de23e327901659cd1425b5889f368fd94649",
             "locator": {
-              "end": 112,
+              "end": 73,
               "kind": "line_range",
-              "start": 112
+              "start": 73
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -1082,31 +926,18 @@
       ]
     },
     "266": {
-      "note": "The template's onboarding-row bullet is mirrored into the byte-identical packaged runtime template.",
+      "note": "The ingestion template's onboarding-row paragraph is mirrored into the byte-identical packaged runtime template.\n\nAnchor: `#### Onboarding judgments`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:f438e187afbe69dcc397ef8347a5aeffc5e45af30eacd7a3c19312711e53f66c",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:bd27d39bc2630d02815698d413a388bd45d1b29ced1eb46bc3a697acd1eae241",
             "locator": {
-              "end": 605,
+              "end": 362,
               "kind": "line_range",
-              "start": 594
+              "start": 350
             },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:f438e187afbe69dcc397ef8347a5aeffc5e45af30eacd7a3c19312711e53f66c",
-            "locator": {
-              "end": 605,
-              "kind": "line_range",
-              "start": 594
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
@@ -1129,18 +960,18 @@
       ]
     },
     "268": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The template's new proof guidance.\n\nAnchor: `as a path plus symbol`",
+      "note": "The ingestion template's proof guidance.\n\nAnchor: `proof_written`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:4462ad09db8f1ca86038234a9225f2152562b3bff6261bae7ac26ade1dafb48f",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:4b174f522ee608fc284dbb773f1105135b7cd2e97b115c5c6f55b68e53fcc47b",
             "locator": {
-              "end": 507,
+              "end": 240,
               "kind": "line_range",
-              "start": 507
+              "start": 233
             },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
@@ -1199,18 +1030,18 @@
       ]
     },
     "272": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The template's family-routes subsection.\n\nAnchor: `### Family routes (MIK-R04)`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The ingestion template's family-routes subsection.\n\nAnchor: `### Family routes`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:1a4616de9b047e30ec76f51e28fab65d9d85cde5c5fa20cb2014faff223f1a61",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:232c783c7ade9b3d42addb6e01b45f65db2eebbfff4e51e48877c51f02bab19c",
             "locator": {
-              "end": 392,
+              "end": 130,
               "kind": "line_range",
-              "start": 392
+              "start": 100
             },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
@@ -1253,16 +1084,16 @@
       ]
     },
     "275": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval.\n\nAnchor: `ar-coordination/AGENTS.md`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval.\n\nAnchor: `It is not the live`",
       "targets": [
         {
           "anchor": {
-            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
-            "content": "sha256:94e5ff1652cf414853a4226b05dd6df8cfa9ffb8f240bc8a3baa9c30cc60dab1",
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "content": "sha256:1b1590e56accd85c30135880973b7612b252ec792739bf0e5b8b80c6a8af632c",
             "locator": {
-              "end": 10,
+              "end": 11,
               "kind": "line_range",
-              "start": 10
+              "start": 3
             },
             "path": "AGENTS.md"
           },
@@ -1271,18 +1102,18 @@
       ]
     },
     "276": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational, and reference map.\n\nAnchor: `Start Here`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational, and reference map. Anchor: `Start Here`",
       "targets": [
         {
           "anchor": {
-            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
-            "content": "sha256:8607745186f3570ef4e75ca14fcc5785bca5484e8981daeff8a1ea8552556c0b",
+            "blob": "cbe4d811fb65009206986c45ac951ee676a08a79",
+            "content": "sha256:32c4508d8c7fed802d30886700d26dcc6cfa29fe57ec2e511d2ae25f932a32b6",
             "locator": {
-              "end": 16,
+              "end": 65,
               "kind": "line_range",
-              "start": 16
+              "start": 23
             },
-            "path": "AGENTS.md"
+            "path": "docs/README.md"
           },
           "kind": "code"
         }
@@ -1380,12 +1211,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7e4806f33bf2bfbce3dce4cd3a4645b5aa70cb3",
+            "blob": "bf83397085f979e6f9a524a18c8d4d11e5b07440",
             "content": "sha256:031640738b5b8551e2bdb7184e5cacf043c5b0f718025737b069e1abc0f55608",
             "locator": {
-              "end": 108,
+              "end": 107,
               "kind": "line_range",
-              "start": 105
+              "start": 104
             },
             "path": "docs/reference/runtime-layout.md"
           },
@@ -1394,36 +1225,36 @@
       ]
     },
     "283": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The MCP settings example declares repository and coordination authority.\n\nAnchor: `coordinationRoot`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The MCP settings example declares repository and coordination authority. Anchor: `coordinationRoot`",
       "targets": [
         {
           "anchor": {
-            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
-            "content": "sha256:5212c9894d9bcb63611f9483b53561523d0545faa9e817ce2a6fecbbb360441e",
+            "blob": "02488160059666d9bd7383472baa03db8c36105b",
+            "content": "sha256:2ee514f05c21421ac22d0854bbef8499216bdbc69fd375ea42e493051ac1eb06",
             "locator": {
-              "end": 163,
+              "end": 11,
               "kind": "line_range",
-              "start": 163
+              "start": 3
             },
-            "path": "README.md"
+            "path": "examples/mcp/settings.example.json"
           },
           "kind": "code"
         }
       ]
     },
     "284": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The memory-repo tools example provides the `Code Quality` section.\n\nAnchor: `Code Quality`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The memory-repo tools example provides the `Code Quality` section. Anchor: `Code Quality`",
       "targets": [
         {
           "anchor": {
-            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
-            "content": "sha256:3c9d63b793979da555922409c418c416f776f79561e808b9d18e55a8d29ae5a1",
+            "blob": "483497baee86549a21ba1671e8846c9df81e9edf",
+            "content": "sha256:a33ad759b2c5267f4ee99730fc00f30339e6c882cab9f9f3f3c2150f560175ed",
             "locator": {
-              "end": 155,
+              "end": 20,
               "kind": "line_range",
-              "start": 155
+              "start": 11
             },
-            "path": "AGENTS.md"
+            "path": "system/defaults/examples/memory-repo/tools.md"
           },
           "kind": "code"
         }
@@ -1589,51 +1420,16 @@
         }
       ]
     },
-    "294": {
-      "note": "The packaged retrieval guidance retains the Recorded Intent Before Planning heading; that guidance does not establish a published_intent field on the current registered read response.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:76be56d0112c6846b2a47aa4cd8b6fad69119cd5aa7e370220556c9583847225",
-            "locator": {
-              "end": 96,
-              "kind": "line_range",
-              "start": 96
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "295": {
-      "note": "The packaged generated retrieval carrier retains the Recorded Intent Before Planning heading; generated guidance is not the current public read-response schema.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:76be56d0112c6846b2a47aa4cd8b6fad69119cd5aa7e370220556c9583847225",
-            "locator": {
-              "end": 96,
-              "kind": "line_range",
-              "start": 96
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "296": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): **The case that holds the carrier to the payload's real field spellings, and the constant that reaches the authored skill from the test file.**\n\nAnchor: `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): **The case that holds the carrier, now the response-contract module `models/read_files.py`, to the payload's real field spellings.**",
       "targets": [
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
-            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "content": "sha256:f3ab3f5f550064a33b571010a4b2b533e8d00dce981cbfbf811be0d30c03ac82",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_carrier_uses_the_field_spellings_the_answer_returns"
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -1641,66 +1437,19 @@
         }
       ]
     },
-    "297": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The converted-card workflow's opening, in the authored skill copy.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f7ea3c8b7f6e2ce1a210dbc43dcc9694cd25721b",
-            "content": "sha256:81ecbee4d4e5cff2abf2b36a9dc2ed8ff4d5fda2482759c083a40d74c449b578",
-            "locator": {
-              "end": 5,
-              "kind": "line_range",
-              "start": 3
-            },
-            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "298": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The canonical template's per-target rationale section.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The canonical template's per-target rationale section.\n\nAnchor: `Realization rationale and role`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:b6b3dd11aca382eb2fd9db2f6eac47d5a35dfccee30b68b8408a21446904a898",
+            "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+            "content": "sha256:aaf2340ae213ee3261b3e4d689eb8f4f963600ec7ac942ad96d6b78ef6c57435",
             "locator": {
-              "kind": "file"
+              "end": 135,
+              "kind": "line_range",
+              "start": 95
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "299": {
-      "note": "The skill's paragraph naming the family-complete leaf read is mirrored into the byte-identical packaged runtime copy.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:740aadb71924a98fd9b960c40046a3bc5c4e6409c12777cd98583820235198c6",
-            "locator": {
-              "end": 166,
-              "kind": "line_range",
-              "start": 158
-            },
-            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:740aadb71924a98fd9b960c40046a3bc5c4e6409c12777cd98583820235198c6",
-            "locator": {
-              "end": 166,
-              "kind": "line_range",
-              "start": 158
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
           },
           "kind": "code"
         }
@@ -1722,141 +1471,53 @@
         }
       ]
     },
-    "300": {
-      "note": "The skill teaches bounded knowledge_read continuation through one shared threshold; the packaged runtime skill has identical text.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:284008a55f939dcc6253730f55b956e418987084aa32037c39b7492b6cbb1865",
-            "locator": {
-              "end": 193,
-              "kind": "line_range",
-              "start": 168
-            },
-            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:284008a55f939dcc6253730f55b956e418987084aa32037c39b7492b6cbb1865",
-            "locator": {
-              "end": 193,
-              "kind": "line_range",
-              "start": 168
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "301": {
-      "note": "The skill's family-complete source_context paragraph names own invariants first, containing families next, and compact chain_family rows last; the packaged runtime skill has identical text.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:740aadb71924a98fd9b960c40046a3bc5c4e6409c12777cd98583820235198c6",
-            "locator": {
-              "end": 166,
-              "kind": "line_range",
-              "start": 158
-            },
-            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:740aadb71924a98fd9b960c40046a3bc5c4e6409c12777cd98583820235198c6",
-            "locator": {
-              "end": 166,
-              "kind": "line_range",
-              "start": 158
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "302": {
-      "note": "The template's no_invariant-row bullet is mirrored into the byte-identical packaged runtime template.",
+      "note": "The ingestion template's no_invariant-row paragraph is mirrored into the byte-identical packaged runtime template.\n\nAnchor: `#### Changes with no invariant`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:cab17b36f248715ff7dbc06efb8090f378e04c3a7f45f5a9dafe171c21c1fcc4",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:0772ab426655bb9cabbb8843bde61bb96fa44a5e3d4dc93d14e0c145a152c00c",
             "locator": {
-              "end": 640,
+              "end": 410,
               "kind": "line_range",
-              "start": 632
+              "start": 399
             },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:cab17b36f248715ff7dbc06efb8090f378e04c3a7f45f5a9dafe171c21c1fcc4",
-            "locator": {
-              "end": 640,
-              "kind": "line_range",
-              "start": 632
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
       ]
     },
     "303": {
-      "note": "The template's decision-record section is mirrored into the byte-identical packaged runtime template.",
+      "note": "The ingestion template's decision-record section is mirrored into the byte-identical packaged runtime template.\n\nAnchor: `Decision records`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:bc9f91dbf5e1feb57f2899986d8e57e4391a185b5b0f3044d9878aaf69aa45e0",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:9b642ac7b31e57dbf18e34e1fe06b93824ae50350a9c471a9ca163aa01b06498",
             "locator": {
-              "end": 823,
+              "end": 662,
               "kind": "line_range",
-              "start": 785
+              "start": 595
             },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:bc9f91dbf5e1feb57f2899986d8e57e4391a185b5b0f3044d9878aaf69aa45e0",
-            "locator": {
-              "end": 823,
-              "kind": "line_range",
-              "start": 785
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
       ]
     },
     "304": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The curator role's step-3 pointer to lifting decisions.\n\nAnchor: \"Lift the decisions that keep governing code.\"",
+      "note": "The curator role's pointer to preserving governing decisions.\n\nAnchor: `governing-sources.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:6f43a4c7657cf7fd48209b5f06dc7bec826614cf08693b4a8b530f5a62012f3b",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:589f2cf80782d37464131fb8068c59515ac08c384d15c0618850501e0161bff4",
             "locator": {
-              "end": 133,
+              "end": 73,
               "kind": "line_range",
-              "start": 133
+              "start": 73
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -1865,98 +1526,72 @@
       ]
     },
     "305": {
-      "note": "The template's reconsideration-row bullet is mirrored into the byte-identical packaged runtime template.",
+      "note": "The ingestion template's reconsideration-row paragraph is mirrored into the byte-identical packaged runtime template.\n\nAnchor: `#### Reconsidering a rejected alternative`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:6cbe22567b2cd93cf8da128ee6af6e28d351735f6ab12c64ffc7a17e2e181754",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:ccd9e3d67103b6c60abda2ff13052d5622116c07eace6a130db924956e51fb24",
             "locator": {
-              "end": 655,
+              "end": 476,
               "kind": "line_range",
-              "start": 641
+              "start": 411
             },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:6cbe22567b2cd93cf8da128ee6af6e28d351735f6ab12c64ffc7a17e2e181754",
-            "locator": {
-              "end": 655,
-              "kind": "line_range",
-              "start": 641
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
       ]
     },
     "306": {
-      "note": "The decision section's reorder refusal.\n\nAnchor: `with a linked alternative moved to another index against the memory base`",
+      "note": "The decision section's reorder refusal.\n\nAnchor: `moved to another index`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:a4536cbc8a0574bfa0215af7579c45038101e9c1c33d89b5da25ba31649e74f0",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:a33ad250e5a93cd08005a63314140fbd0850b7d84bd6544215836d0382df3079",
             "locator": {
-              "end": 823,
+              "end": 638,
               "kind": "line_range",
-              "start": 823
+              "start": 635
             },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
       ]
     },
     "307": {
-      "note": "The template's new proof guidance.\n\nAnchor: `as a path plus symbol`",
+      "note": "The ingestion template's proof guidance.\n\nAnchor: `proof_written`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:4462ad09db8f1ca86038234a9225f2152562b3bff6261bae7ac26ade1dafb48f",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:4b174f522ee608fc284dbb773f1105135b7cd2e97b115c5c6f55b68e53fcc47b",
             "locator": {
-              "end": 507,
+              "end": 240,
               "kind": "line_range",
-              "start": 507
+              "start": 233
             },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
       ]
     },
     "308": {
-      "note": "The template's onboarding-row bullet is mirrored into the byte-identical packaged runtime template.",
+      "note": "The ingestion template's onboarding-row paragraph is mirrored into the byte-identical packaged runtime template.\n\nAnchor: `#### Onboarding judgments`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:f438e187afbe69dcc397ef8347a5aeffc5e45af30eacd7a3c19312711e53f66c",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:bd27d39bc2630d02815698d413a388bd45d1b29ced1eb46bc3a697acd1eae241",
             "locator": {
-              "end": 605,
+              "end": 362,
               "kind": "line_range",
-              "start": 594
+              "start": 350
             },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:f438e187afbe69dcc397ef8347a5aeffc5e45af30eacd7a3c19312711e53f66c",
-            "locator": {
-              "end": 605,
-              "kind": "line_range",
-              "start": 594
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
@@ -2010,67 +1645,36 @@
       ]
     },
     "310": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Generic worker inputs point to tool notes and require the actual interpreter in run records.",
+      "note": "Workers build each worktree's environment as the tool notes say, report missing commands and record the interpreter each run used.\n\nAnchor: `system/tools.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "b6107ca4494da6e3d0379b2865375608bc53e2cd",
-            "content": "sha256:1e546a9c150fa884bdb29ec9e0659cc43d21acb34fa93743b9253dd0713cd856",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:527858aaaf2a6ebe16c028201fbd79c8c09ed72cf4237f0f087a999d6d5295c3",
             "locator": {
-              "end": 50,
+              "end": 25,
               "kind": "line_range",
-              "start": 47
+              "start": 25
             },
-            "path": "skills/l-01-agent-lifecycles/templates/worker-brief.md"
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
           "kind": "code"
         }
       ]
     },
     "311": {
-      "note": "Retrieval guidance keeps the names-only read route: `read_ar_files` names the cards, states, overviews and actionable records for up to twenty paths and returns no text, while bounded continuations belong to `knowledge_read`.",
+      "note": "Retrieval guidance keeps the names-only read route: `read_ar_files` names the knowledge governing up to twenty paths and returns no file text.",
       "targets": [
         {
           "anchor": {
-            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
-            "content": "sha256:c590b4b20e7fb170d57e30c4a59f8136299de65b88c516909c907eb5ecd73edf",
+            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+            "content": "sha256:13e24d33d5bca5c8696ae421be1ae1eb3afc7eedc645d9aae338fa362b732552",
             "locator": {
-              "kind": "file"
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
             },
-            "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:82a1494dd64dfb44897c6139d8c81207aaaf4543e441b6f95020ca80551cec9c",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/read_files.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c20ef4c48c67b7018ba203aa7fe8dc041cc80711",
-            "content": "sha256:6f08d23edc4ee778a2713c26e1347afacc0d1d87ed47ab1e736db4501bc80dd0",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_names.py"
+            "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
           },
           "kind": "code"
         }
@@ -2161,29 +1765,16 @@
       ]
     },
     "314": {
-      "note": "Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated.  Retired provider IDs are disabled by the shared predicate; installation reports unused keys and continues after a failed old-watcher stop.  Anchor: provider_enabled and install watcher phase",
+      "note": "Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated. Retired provider IDs are disabled by the shared predicate; installation reports unused keys and continues after a failed old-watcher stop. Anchor: provider_enabled and install watcher phase\n\nAnchor: `workspace.outsideScratchRoot`",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:96425703bcaf10d200ba61b3690cc034c47ac6a9f5410fc495d8b1376022dc8f",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:adb8bc6672eb5d8e744cb5cfce52ef86901751d39a8ae5772a2b985655ca8acc",
             "locator": {
-              "end": 70,
+              "end": 196,
               "kind": "line_range",
-              "start": 65
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:aea67481f60b2037728bdcd361f8ca895782fc77ae426aced63f7db782289fb5",
-            "locator": {
-              "end": 177,
-              "kind": "line_range",
-              "start": 177
+              "start": 194
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -2204,12 +1795,12 @@
         },
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
             "content": "sha256:ba0b7f0e3d725b8ba0c42f4edad6df046c6b298cff8664b0118dd49bc96e4c6d",
             "locator": {
-              "end": 862,
+              "end": 830,
               "kind": "line_range",
-              "start": 844
+              "start": 812
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -2218,8 +1809,21 @@
       ]
     },
     "315": {
-      "note": "For every reported cut, the Curator handover names this task change making the text untrue; text is not removed to clear a quality finding.  Task-scoped readers derive roots only from a canonical admitted leaf; repository and enclosure bindings must agree.  Anchor: Reader scope admission",
+      "note": "For every card the quality check cuts, the Curator names the source evidence that makes the removed text untrue; text is not removed merely to clear a quality finding. Task-scoped readers derive roots only from a canonical admitted leaf; repository and enclosure bindings must agree. Anchor: Reader scope admission\n\nAnchor: `cut by the quality check`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:6038be5814e8f452acee52a8e9f79ebec01003bfacf61434586409c39243e5d7",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
@@ -2245,87 +1849,22 @@
             "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:8afd32a91dbe3f21c503c60671caf19d815046f13a0f5d4f92d02b1e0effee18",
-            "locator": {
-              "end": 82,
-              "kind": "line_range",
-              "start": 82
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
         }
       ]
     },
     "316": {
-      "note": "Independent memory review follows Reviewer process step 8 into reference/reviewer-memory-d301.md: removed text without a named change and an added file outside knowledge without a place in the task requirement are findings. Converted onboarding raises changed-card and nearest-route subjects; Markdown changes or matching source-bound history can satisfy them. Sidecar references count only beyond mechanical anchor fields, realizes/proves-only changes do not count, and unreadable sidecars do not satisfy the trace.",
+      "note": "Independent memory review inspects the quality result's removed-text and added-file reports: text removed without a named change, and a file added outside the knowledge without a place in the task's requirement, are findings.\n\nAnchor: `cutCards`",
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:2b0fafd6ce66488e00ae5068ac0da83481bcc40d8de553f1974cf4ba8c20d107",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:355d2913057c37a8245b34894cb37b50443726aecdd92675b1000a05b5eed630",
             "locator": {
-              "end": 88,
+              "end": 75,
               "kind": "line_range",
-              "start": 87
+              "start": 75
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "49a8301d2f85c2182938d3a9123bcaf84dee7a37",
-            "content": "sha256:dbfdd274c550b6896abe3fa44d87269e647fea08ca058d53af6c14811632ba96",
-            "locator": {
-              "end": 5,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/reviewer-memory-d301.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
-            "content": "sha256:67906733c2062db34875bd3a16a7b56ea1a46556476434558a15a783578754e7",
-            "locator": {
-              "end": 30,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
-            "content": "sha256:912401a9376215b30ea9f157b1b36b141a7794830017524f82f3243a341192e3",
-            "locator": {
-              "end": 179,
-              "kind": "line_range",
-              "start": 137
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
-            "content": "sha256:28822568d2ec8dce6eaf53b2900386b6442555106e5dd2057c6c0d297d233d8d",
-            "locator": {
-              "end": 210,
-              "kind": "line_range",
-              "start": 182
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
           },
           "kind": "code"
         }
@@ -2622,47 +2161,33 @@
       ]
     },
     "328": {
-      "note": "The runtime synchronizer declares four targets without docs — agents-md-files, benchmarks, providers and system; packaged docs and tool details are not a generator target.",
+      "note": "The runtime synchronizer declares three targets without docs — benchmarks, providers and system; packaged docs and tool details are not a generator target.",
       "targets": [
         {
           "anchor": {
-            "blob": "3b1bd6f7b950d2b87c86a701ba2c3ed2619de251",
-            "content": "sha256:04ddc6cc8299200d61a26dccfee7637f3d665d13efcad88e7fe24920d3ebe004",
+            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+            "content": "sha256:5878d501febc1c0680371d9eb5e808cefcae684dc59f28d5d5049be367ad0738",
             "locator": {
-              "end": 62,
-              "kind": "line_range",
-              "start": 53
+              "kind": "symbol",
+              "name": "TARGETS"
             },
             "path": "scripts/sync-runtime.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
-            "content": "sha256:31cacb87830e073b464b4e469eb42cea522da5139af0f2d7ce654c9ccaa25442",
-            "locator": {
-              "end": 8,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
           },
           "kind": "code"
         }
       ]
     },
     "329": {
-      "note": "Canonical independent non-author statement/diff/omission duty.",
+      "note": "Canonical independent non-author statement/diff/omission duty.\n\nAnchor: `OM-2 — Independent fact-check of curated knowledge`",
       "targets": [
         {
           "anchor": {
-            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-            "content": "sha256:573343f4fdfdb33d3f6efc3ea4a612d700a9e7e15d444ec3554978146057d2ec",
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
             "locator": {
-              "end": 40,
+              "end": 25,
               "kind": "line_range",
-              "start": 30
+              "start": 21
             },
             "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
@@ -2671,16 +2196,16 @@
       ]
     },
     "33": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The source checkout separates installed-runtime work from work on this repository and keeps implementation approval separate from commit approval.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The source checkout separates installed-runtime work from work on this repository and keeps implementation approval separate from commit approval.\n\nAnchor: `It is not the live`",
       "targets": [
         {
           "anchor": {
-            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
-            "content": "sha256:94e5ff1652cf414853a4226b05dd6df8cfa9ffb8f240bc8a3baa9c30cc60dab1",
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "content": "sha256:1b1590e56accd85c30135880973b7612b252ec792739bf0e5b8b80c6a8af632c",
             "locator": {
-              "end": 10,
+              "end": 11,
               "kind": "line_range",
-              "start": 10
+              "start": 3
             },
             "path": "AGENTS.md"
           },
@@ -2688,12 +2213,12 @@
         },
         {
           "anchor": {
-            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
             "content": "sha256:ddb39a87110c6db54287f64a332217958985154ead93d9d494429d0ef3afa2d8",
             "locator": {
-              "end": 150,
+              "end": 131,
               "kind": "line_range",
-              "start": 150
+              "start": 131
             },
             "path": "AGENTS.md"
           },
@@ -2720,18 +2245,18 @@
       ]
     },
     "331": {
-      "note": "Canonical source-bound onboarding and separate row domains.",
+      "note": "Canonical source-bound onboarding and separate row domains.\n\nAnchor: `#### Onboarding judgments`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:b8d33350a2132248e847caeac2d126658047b18c6ff349b9d52534f75bef6046",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:bd27d39bc2630d02815698d413a388bd45d1b29ced1eb46bc3a697acd1eae241",
             "locator": {
-              "end": 620,
+              "end": 362,
               "kind": "line_range",
-              "start": 594
+              "start": 350
             },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
@@ -2897,16 +2422,16 @@
       ]
     },
     "337": {
-      "note": "Manager instructions assign task-stage publication and master-row mirroring to start, finalize and abandon; a separate status write does not follow those acts. task_doc set_status remains the route for an explicit correction and organizational-master completion.",
+      "note": "Manager instructions assign task-stage publication and master-row mirroring to start, finalize and abandon; a separate status write does not follow those acts. task_doc set_status remains the route for an explicit correction and organizational-master completion.\n\nAnchor: `task_doc set_status`",
       "targets": [
         {
           "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:e2cfdf7ac3d421add7a5b46e1c0469c92492b9458578cb403c85a188a6d5c7b6",
+            "blob": "4071c218f26dd0b00193f0d591f38519b84b260a",
+            "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
             "locator": {
-              "end": 32,
+              "end": 58,
               "kind": "line_range",
-              "start": 32
+              "start": 58
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -2956,16 +2481,16 @@
       ]
     },
     "339": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 335",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
-              "end": 137,
+              "end": 131,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -2978,12 +2503,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
             "content": "sha256:e3c8a94181a7d1874dc250f9be9690b52e73b10385f4e704aa157cf28cde7559",
             "locator": {
-              "end": 211,
+              "end": 192,
               "kind": "line_range",
-              "start": 155
+              "start": 136
             },
             "path": "AGENTS.md"
           },
@@ -2992,16 +2517,16 @@
       ]
     },
     "340": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 335",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
-              "end": 137,
+              "end": 131,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -3010,14 +2535,14 @@
       ]
     },
     "341": {
-      "note": "The registry declares 38 role-operation capsules and 28 step-detail rows, separate handover budgets, a shared digest budget and developer-owned per-role ceilings. Current literal ceilings are Architect 4,631, Manager 4,513, Curator/Reviewer/Bootstrap 4,000 and other roles 3,700; step files remain 2,500, shared digest 1,100 and handovers 3,300 tokens. Earlier decision blocks retain their own measured source epochs; declarations do not prove a fresh run or acceptance.",
+      "note": "The frozen historical registry `capsule-budgets.json` declares 38 role-operation capsules and 27 step-detail rows, separate handover budgets (at most 3,300 tokens), a shared digest budget and per-role ceilings of its epoch: Architect 4,631, Manager 4,513, Curator 4,100, Reviewer/Bootstrap 4,000 and other roles 3,700; step files 2,700 and shared digest 1,474. Only its handover budgets are still read by the live guard; current ceilings are in `capsule-budgets-current.json`. Declarations do not prove a fresh run or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
-            "content": "sha256:05586b0a6eac99ca49c4635ae43b4835a333d9c7788882bf01e8b7ffc4c4ce41",
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:e9c480832d01d436ce625cf9a43f02412d89a493e26a1543b048691ec813cf28",
             "locator": {
-              "end": 307,
+              "end": 8,
               "kind": "line_range",
               "start": 1
             },
@@ -3027,30 +2552,43 @@
         },
         {
           "anchor": {
-            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
-            "content": "sha256:8416a713fca287f3900e180df4ca2bd0a384dd29d9aa9a2874b24e9a1e404c04",
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:4046669f91e3e119b4476bfa0502b32057ae19e496e68d0fcfd40d6d138ba981",
             "locator": {
-              "end": 3611,
+              "end": 3521,
               "kind": "line_range",
-              "start": 3492
+              "start": 3509
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:2853efdc91be3b79e781e0e42d7c2967b425e1cceb513f1573df3511220693cf",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 476
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "342": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 335",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
-              "end": 137,
+              "end": 131,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -3059,16 +2597,16 @@
       ]
     },
     "343": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 335",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
-              "end": 137,
+              "end": 131,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -3077,16 +2615,16 @@
       ]
     },
     "344": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 335",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
-              "end": 137,
+              "end": 131,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -3095,16 +2633,16 @@
       ]
     },
     "345": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 335",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
-              "end": 137,
+              "end": 131,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -3113,16 +2651,16 @@
       ]
     },
     "346": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 335",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
-              "end": 137,
+              "end": 131,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -3131,81 +2669,16 @@
       ]
     },
     "347": {
-      "note": "The Manager coordinates one master and starts leaf stages individually: Worker first, Reviewer at freeze and Curator after code PASS. Review and memory passes keep settings-owned limits and recorded extra-round approval; whole-stage boundaries and correct-input refusal stops remain explicit. These source declarations prove no execution, review result, curation result or acceptance.",
+      "note": "The Manager coordinates one master and starts leaf stages individually: Worker first, Reviewer at freeze and Curator after code PASS. Review and memory passes keep settings-owned limits and recorded extra-round approval; whole-stage boundaries and correct-input refusal stops remain explicit. These source declarations prove no execution, review result, curation result or acceptance.\n\nAnchor: `Worker first, Reviewer at the freeze`",
       "targets": [
         {
           "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:1d39c69da5517ac9a294590ffb340f16cc35db2e15900869dac77f72def81418",
+            "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+            "content": "sha256:092be61bbc689fe860e5718e42f2f01d020f0e6c9e8814b7d122ef33cd97e0ad",
             "locator": {
-              "end": 14,
+              "end": 68,
               "kind": "line_range",
-              "start": 8
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:3a4c543dfeb2c31c79b3163901308af73e89e7c7ebaf058905928957b1e97262",
-            "locator": {
-              "end": 32,
-              "kind": "line_range",
-              "start": 24
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:9683bec4d77cd0b5fe896204fdf8b51140f31d62b9b31d20964a562584ae396a",
-            "locator": {
-              "end": 56,
-              "kind": "line_range",
-              "start": 54
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:5f2b3534187ac1f08da41b8656a816d06a160df7707b25fc271efd47e1b1b6fd",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 76
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
-            "content": "sha256:4ba1f23fde436c1be9ac873edf12cfdde2aad8c33e278db287be4db874cf7db3",
-            "locator": {
-              "end": 36,
-              "kind": "line_range",
-              "start": 29
-            },
-            "path": "skills/l-01-agent-lifecycles/core/loop.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-            "content": "sha256:1c189faf0b1d3e0279f6255733f4f10450ff3349263ceb77714a34f641f79177",
-            "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 18
+              "start": 34
             },
             "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
           },
@@ -3214,16 +2687,16 @@
       ]
     },
     "348": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 335",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
-              "end": 137,
+              "end": 131,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -3232,16 +2705,16 @@
       ]
     },
     "349": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 335",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
-              "end": 137,
+              "end": 131,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -3250,12 +2723,12 @@
       ]
     },
     "35": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational and reference map.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational and reference map.\n\nAnchor: `Start Here`",
       "targets": [
         {
           "anchor": {
-            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
-            "content": "sha256:6f6a8478c869fa9c0f5642a8d0ce9189e5739486c4442ba64d878af36499749b",
+            "blob": "cbe4d811fb65009206986c45ac951ee676a08a79",
+            "content": "sha256:32c4508d8c7fed802d30886700d26dcc6cfa29fe57ec2e511d2ae25f932a32b6",
             "locator": {
               "end": 65,
               "kind": "line_range",
@@ -3268,16 +2741,16 @@
       ]
     },
     "350": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 335",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
-              "end": 137,
+              "end": 131,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -3286,16 +2759,16 @@
       ]
     },
     "351": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: Current source; preserved L88 property 335",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
-              "end": 137,
+              "end": 131,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -3304,16 +2777,16 @@
       ]
     },
     "352": {
-      "note": "After a supported leaf sync with no path changed on both sides, focused tests run again and the Manager closeout preview decides without a new freeze or review round. A shared changed path or failing focused test is repaired and sent once to the same Reviewer. Memory conflict content goes to the Curator; the Manager stages the resolution and the Worker continues the supported sync.",
+      "note": "After a supported leaf sync with no path changed on both sides, focused tests run again and the Manager closeout preview decides without a new freeze or review round. A shared changed path or failing focused test is repaired and sent once to the same Reviewer. Memory conflict content goes to the Curator; the Manager stages the resolution and the Worker continues the supported sync.\n\nAnchor: `Synchronize the leaf`",
       "targets": [
         {
           "anchor": {
-            "blob": "218393b48ed815f8108902ef82778bad06accf66",
-            "content": "sha256:b2a6d689000be065bff6caf0c012a28eb5bba120176be1524050cac318db316b",
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:ccc8390918d834c06073f607a6aaf9bffcd58acbbe4d032ccd858b44c0690592",
             "locator": {
-              "end": 34,
+              "end": 86,
               "kind": "line_range",
-              "start": 24
+              "start": 76
             },
             "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
           },
@@ -3377,7 +2850,7 @@
       ]
     },
     "355": {
-      "note": "Canonical skills have one generated packaged serving destination; harness starter packages carry no skill folder.\n\nAnchor: \"skills\"",
+      "note": "Canonical skills have one generated packaged serving destination.",
       "targets": [
         {
           "anchor": {
@@ -3458,16 +2931,16 @@
       ]
     },
     "359": {
-      "note": "Setup reports memory/baseline state and hands the user to Architect; actual foundation authorship requires its regular task, task document and enclosure under the Curator.",
+      "note": "Setup reports memory/baseline state and hands the user to Architect; actual foundation authorship requires its regular task, task document and enclosure under the Curator.\n\nAnchor: `Who Runs It`",
       "targets": [
         {
           "anchor": {
-            "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
-            "content": "sha256:ee5c5466394b40ad16cec540b7508c61eda13a424b43bf773db4c3a2d59bab13",
+            "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+            "content": "sha256:da822af23e729d38dd8558c7b3acd04ed3f1d788f85c7a1d55008a886bff5097",
             "locator": {
-              "end": 65,
+              "end": 63,
               "kind": "line_range",
-              "start": 40
+              "start": 42
             },
             "path": "skills/c-14-knowledge-bootstrap/SKILL.md"
           },
@@ -3480,7 +2953,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3b1bd6f7b950d2b87c86a701ba2c3ed2619de251",
+            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
             "content": "sha256:57627fe8c46dbb7f9833a18972cf210c70421890f6af07344303322694766733",
             "locator": {
               "kind": "symbol",
@@ -3509,25 +2982,8 @@
         }
       ]
     },
-    "361": {
-      "note": "Complete ordered discovery equality plus raw captures, executing-source qualification and explicit runtime-refusal exclusion.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fa7f55bf1078b31957be873c39cc8ac9f30f7d94",
-            "content": "sha256:da408f8dbcf5f40d1e20011f9480623b89313bc788a131dd78e1465ef2510bd2",
-            "locator": {
-              "kind": "symbol",
-              "name": "main"
-            },
-            "path": "scripts/compare-discovery-contract.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "362": {
-      "note": "Current 44-name ordinary literal includes user_settings_init, explainer_control and `citation_note_revision`, distinct from 42-tool capture artifacts.",
+      "note": "Current 44-name ordinary literal includes user_settings_init, explainer_control and `citation_note_revision`.",
       "targets": [
         {
           "anchor": {
@@ -3580,23 +3036,25 @@
       "targets": [
         {
           "anchor": {
+            "blob": "9829c85469f6567f78c02cbdd5ded57935235641",
+            "content": "sha256:d8ccf9d7821606081b1f14f5a64770e9d8914585996d13ad93bbda9a7a38a823",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "scripts/agent_evals/trials.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "d950d14d90314b8229a636873c196e6114992be8",
             "content": "sha256:5ed177cc2fcc5cec1aee61e4dd19aff01648bec9d1167bd612441c9df2149b07",
             "locator": {
               "kind": "file"
             },
             "path": "scripts/agent_evals/run_curator.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "76baa8a7d10eebd94b44b8df971220de4edbf08b",
-            "content": "sha256:eacc2dfaae337d1ae2ad0de8bfd896b1eae9b465df0517ab0dcca8f31647ef52",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "scripts/agent_evals/trials.py"
           },
           "kind": "code"
         },
@@ -3614,60 +3072,86 @@
       ]
     },
     "365": {
-      "note": "Current registry policy applies a role-specific capsule ceiling at every stage: Architect 4,631 words; Manager 4,513; Curator, Reviewer and Bootstrap 4,000; other roles 3,700. Budgets remain min(ceil(size_words * 11 / 10), the applicable ceiling). The registry has 38 capsule rows and 28 step-detail rows; step details retain the 2,500-word ceiling. The separately delivered shared digest records size_words 1,000 and budget_words 1,100. These are stored declarations, not a new compilation or test run.",
+      "note": "Current capsule limits live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`, which the live budget guard enforces: role ceilings Architect 5,441 words; Manager 4,522; Curator 4,537; Reviewer 4,049; Bootstrap 4,000; other roles 3,722. Its current round-8 sub-record counts 34 capsules and 38 declared step details; declared step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,266 words against an equal 2,266-word ceiling. Exact-path limits carry the larger of the predecessor limit and the actual size, and new paths take their actual size. `capsule-budgets.json` is the frozen historical registry (D681/D682 figures); the guard checks its bytes by hash and still reads only its handover token budgets from it. These are stored declarations, not a new compilation or test run.",
       "targets": [
         {
           "anchor": {
-            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
-            "content": "sha256:a3cd3157ca03a580cb438299414a454b10d06be0c54ca914966c187fd1855eff",
+            "blob": "aa1bb103c23a0ae5f7e8b3c09651920f794fcd96",
+            "content": "sha256:f99dee2daa7c12f714742a3d1e3cd1c2f61d619b732187ae057690e80770f581",
             "locator": {
-              "end": 4,
+              "end": 5318,
               "kind": "line_range",
-              "start": 2
+              "start": 5309
             },
-            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
-            "content": "sha256:f511b5a282eda043522e7930cc35a4202201a4a835e4a77ea7f99e86bb5cc71a",
+            "blob": "aa1bb103c23a0ae5f7e8b3c09651920f794fcd96",
+            "content": "sha256:4b1885fa8d857b3d16689566ac3a51f71126997664a24b3733c493165b62e51f",
             "locator": {
-              "end": 307,
+              "end": 4751,
               "kind": "line_range",
-              "start": 40
+              "start": 4743
             },
-            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
-            "content": "sha256:10a1c97c85b2b5a81e7ef99df73f8cdba9e1641b63f765c59f6c3bdce5158365",
+            "blob": "aa1bb103c23a0ae5f7e8b3c09651920f794fcd96",
+            "content": "sha256:ea28febb5d3a24513ca9e517d91504d8a3846465f62439d0bfb43e4eaa445f50",
             "locator": {
-              "end": 3525,
+              "end": 5025,
               "kind": "line_range",
-              "start": 3513
+              "start": 5025
             },
-            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:2853efdc91be3b79e781e0e42d7c2967b425e1cceb513f1573df3511220693cf",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 476
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2978e0cc1e1cae259462842bfa712621afc46151",
+            "content": "sha256:2fb05d08cfa4eb8da599b6c3fd9bcc24e545a5f6d9ac5646fbf6a2ba594ceb0c",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
           "kind": "code"
         }
       ]
     },
     "366": {
-      "note": "AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares Worker, Reviewer and Curator as sibling leaf seats: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. Past-epoch composition account: A capsule contains the selected role and one operation; `core/` is compiler metadata, not shared injected instructions. Current delivery: The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest is delivered separately in the first message; its revision contributes to capsule semantic identity, without injecting the larger core doctrine into rendered instructions. Missing or unsupported selection fields refuse rather than being inferred from nearby documents.",
+      "note": "AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares Worker, Reviewer and Curator as sibling leaf seats: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. Past-epoch composition account: A capsule contains the selected role and one operation; `core/` is compiler metadata, not shared injected instructions. Current delivery: The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest is delivered separately in the first message; its revision contributes to capsule semantic identity, without injecting the larger core doctrine into rendered instructions. Missing or unsupported selection fields refuse rather than being inferred from nearby documents.\n\nAnchor: `core/every-role.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
-            "content": "sha256:7d9a9de4a29ba19274fa564f3b4a6525e0465f131ce2cb1afadf0aecacefd96e",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:2e51a5def39631ecf88eff89382e0d6de91a92b70f2054b7ad0aca04f5beebac",
             "locator": {
-              "end": 168,
+              "end": 171,
               "kind": "line_range",
-              "start": 164
+              "start": 158
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -3696,6 +3180,23 @@
               "start": 155
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "367": {
+      "note": "A converted sidecar change counts only when its references move beyond mechanical anchor fields; `realizes`/`proves`-only changes and unreadable sidecars do not count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:266b7ac1771e0c0136b192e656857ab601375c666c12ffe79ff3e967ee63f8e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "counted_sidecar_change"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
           },
           "kind": "code"
         }
@@ -3744,24 +3245,6 @@
               "name": "gate_staged_code"
             },
             "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The retrieval skill's paragraph on the families of the route chain.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:6bd8cf10afcd7724f23b1ee02cd6cd94ec7ebe130e97c3097bfc901772215ca1",
-            "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 157
-            },
-            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
           },
           "kind": "code"
         }
@@ -3950,18 +3433,18 @@
       ]
     },
     "6": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off template's decision-record section.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's decision-record section.\n\nAnchor: `Decision records`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:5fa48ffebc8ff56f025ae86c950a2599a6995ad46cfefd8a723199fb70c986d4",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:9b642ac7b31e57dbf18e34e1fe06b93824ae50350a9c471a9ca163aa01b06498",
             "locator": {
-              "end": 846,
+              "end": 662,
               "kind": "line_range",
-              "start": 785
+              "start": 595
             },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
@@ -3983,35 +3466,17 @@
         }
       ]
     },
-    "67": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The converted-card workflow of the `c-05` skill.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f7ea3c8b7f6e2ce1a210dbc43dcc9694cd25721b",
-            "content": "sha256:6e18a2ceb104df56df4b5f463662bf5fb6a85a5911185802174cfb4cef8d71eb",
-            "locator": {
-              "end": 6,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "68": {
-      "note": "The Curator marks only its completed curation step done through task_doc; incomplete work is not marked done, and this act changes neither task status nor acceptance or landing. The stage ends when task knowledge is written and checked and quality is clean.",
+      "note": "The Curator marks only its completed curation step done through task_doc; incomplete work is not marked done, and this act changes neither task status nor acceptance or landing. The stage ends when task knowledge is written and checked and quality is clean.\n\nAnchor: `set_step`",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:960e4de7810be88ab383d1bdf31c8e24857890cd56cf09949613e0e3c41430b7",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:0444cb8a8a73eb0a6819da8feda60678cb07f14a34b7b96efcb287a7e07f9276",
             "locator": {
-              "end": 138,
+              "end": 174,
               "kind": "line_range",
-              "start": 129
+              "start": 162
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -4076,23 +3541,24 @@
       "targets": [
         {
           "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:3504100873b1cf1bdee93cacf9e2a2bd3627f8fa7fdfb656115c919f8f06decd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_ANSWER_LIST_MAX"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "7cfaacdbd561aed6643e8b2cbc4d2f4092d037cb",
             "content": "sha256:c1390829d706c5e8374c4b9ba16d703c8e7eb47e86a136c37580f8380b8eb3a2",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_paging/threshold.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-            "content": "sha256:3928dc7286631ed6f0f447d9c406201da902895761c897cff651fee3db69dc5f",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
           },
           "kind": "code"
         },
@@ -4181,7 +3647,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e0bbbd4fd1ac5e6936119af876566e9ae761e10",
+            "blob": "2cfd1fbb4b8d66acb95b9561c8157a660db5e3c5",
             "content": "sha256:fe87e6fea9857a89ef36bc6f68cc4872de6fe1dd130b9ebbe34085cd32c32d1e",
             "locator": {
               "kind": "symbol",
@@ -4210,33 +3676,16 @@
         }
       ]
     },
-    "8": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The retrieval skill's paragraph on the family-complete read of a path.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:900acf6c8bce8fde0eec17091287ab139a5ab6ff8e9884841c1b1ac4bf93d7ad",
-            "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 161
-            },
-            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "80": {
-      "note": "The runtime asset targets: agents-md-files, benchmarks, providers and system, each copied into its own package-data folder.\n\nAnchor: `TARGETS`",
+      "note": "The runtime asset targets: benchmarks, providers and system, each copied into its own package-data folder.",
       "targets": [
         {
           "anchor": {
-            "blob": "3b1bd6f7b950d2b87c86a701ba2c3ed2619de251",
-            "content": "sha256:5efbfb3083d10851ac6be03d408d2938bb2df9a29cb46ac6ac4f6727f26b365e",
+            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+            "content": "sha256:5878d501febc1c0680371d9eb5e808cefcae684dc59f28d5d5049be367ad0738",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TARGETS"
             },
             "path": "scripts/sync-runtime.py"
           },
@@ -4262,33 +3711,17 @@
         }
       ]
     },
-    "84": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The three retrieval substrates.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
-            "content": "sha256:50788d81dcb1cd1b054889f99684f56ee0f74a17edf9f658fd9c7e91d2556079",
-            "locator": {
-              "end": 27,
-              "kind": "line_range",
-              "start": 12
-            },
-            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "85": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The role-capsule router's selection rule and its unsupported-field refusal.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The role-capsule router's selection rule and its unsupported-field refusal.\n\nAnchor: `Select the supplied role and operation`",
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-            "content": "sha256:6c8851c74d00d29d5ed65c302ae546e6e1b1f75e4d50adcd5d1a661a48d67f69",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:9b13b2c29613e964860f439882787353afd9fc65f9b5a29b12d83e7e9140bd5e",
             "locator": {
-              "kind": "file"
+              "end": 12,
+              "kind": "line_range",
+              "start": 10
             },
             "path": "skills/l-01-agent-lifecycles/SKILL.md"
           },
@@ -4297,16 +3730,16 @@
       ]
     },
     "86": {
-      "note": "The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder.",
+      "note": "The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder.\n\nAnchor: `Handle a developer-declared takeover`",
       "targets": [
         {
           "anchor": {
-            "blob": "fff08e3cef4891f6ea1d05fe4327f6794782a099",
-            "content": "sha256:98d9277fc1f3e8c64e25de8d68ad12279aec17278b2e24a927e58475f7be5198",
+            "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+            "content": "sha256:81d7ff8fc8c18376dcadb68e747b9ee15ff4e928242e7fc0a8c710a84c89cb19",
             "locator": {
-              "end": 64,
+              "end": 55,
               "kind": "line_range",
-              "start": 42
+              "start": 39
             },
             "path": "skills/l-01-agent-lifecycles/core/authority.md"
           },
@@ -4398,18 +3831,18 @@
       ]
     },
     "9": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off template's admission rule for new records.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's admission rule for new records.\n\nAnchor: `Admission of new records`",
       "targets": [
         {
           "anchor": {
-            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
-            "content": "sha256:6df301bb935036b353d082e45430bfdf528c4c3fc62f57e7786972401e4d6427",
+            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "content": "sha256:42ccd373d58b66c5eaaed5d3fc930f224b98bd91de3a8cfe7dca2b21e9ba42f4",
             "locator": {
-              "end": 784,
+              "end": 594,
               "kind": "line_range",
-              "start": 732
+              "start": 530
             },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
@@ -4551,7 +3984,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:90ad4593ded7d016e0b9ec3b24847c8e1240cf40a81cdd5b187f04f2938e79d9",
             "locator": {
               "end": 88,

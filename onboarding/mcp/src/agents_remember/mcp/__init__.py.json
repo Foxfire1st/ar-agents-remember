@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`server_info_payload()` reports `SERVER_VERSION`.\n\nAnchor: `ping_payload` `server_info_payload`",
+      "note": "`server_info_payload()` reports `SERVER_VERSION`.",
       "targets": [
         {
           "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:99cced187a183a7906f8169567798687950c73ca8a0ad29ba52b338214de7446",
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
             "locator": {
               "kind": "symbol",
               "name": "server_info_payload"
@@ -19,36 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
             "content": "sha256:3dac1809e31b19e52cf548b1fdddd896cc1c6351d1d6b748470cb4f51bd981ee",
             "locator": {
               "end": 31,
               "kind": "line_range",
               "start": 22
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/core.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:1ec90aba43b5f76d9be2c25b951262b491fc5413ce956389925fe3d24c5684a3",
-            "locator": {
-              "end": 51,
-              "kind": "line_range",
-              "start": 31
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/core.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:33a7112467f0720462329fcd72b5b7cf94fc062499c3a8a146aca89e054bb04d",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },

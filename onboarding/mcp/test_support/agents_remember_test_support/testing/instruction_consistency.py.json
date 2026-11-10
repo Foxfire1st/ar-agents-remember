@@ -1,0 +1,71 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Commands, tools and operations come from the real parser, live registration and the dispatcher, without starting a server.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d02d97afb8ea4ea5d4e301b3bd8b5f4075f6115f",
+            "content": "sha256:34f6e1354229d128f9898b5c3707710e9462523c4c6204eb13ef34fa9622cdc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_registry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The corpus is every text file in skills and docs plus the root README.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d02d97afb8ea4ea5d4e301b3bd8b5f4075f6115f",
+            "content": "sha256:6e1830355fc54f0df130590f5a1304e608a6512837b2965d379422a0a7cd01fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_corpus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-line findings cover retired terms, unregistered names, unknown operations and missing paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d02d97afb8ea4ea5d4e301b3bd8b5f4075f6115f",
+            "content": "sha256:627fd9f07276ef95c0bcfcbccf2c1f5bf975512f67f1236d2c12ab60453aa87e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_surface_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The full check adds command-documentation and knowledge-name coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d02d97afb8ea4ea5d4e301b3bd8b5f4075f6115f",
+            "content": "sha256:b5888c8c75e1b3c50411df99991a449dd881f025a81c7b6a629785238cf1b473",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_consistency"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,5 +1,11 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "The center, roster and workspace distinguish loaded members from cumulative read items and complete context, so the coherent-review family cannot present a bounded roster as the complete evidence population."
+  },
   "applicability": "Family realization-detail and recorded member-context presentation over bounded or unavailable family roster context.",
   "conditions": [
     "Loaded member contexts and loaded source claims are distinguished from the read owner cumulative item counts.",

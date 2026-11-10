@@ -12,7 +12,8 @@
     "INV-AF2DN3",
     "INV-AW14ZP",
     "INV-7HBKZR",
-    "INV-CV3MW4"
+    "INV-CV3MW4",
+    "INV-S9H78W"
   ],
   "origin": {
     "handoff": {
@@ -22,14 +23,15 @@
     "leaf": "260928-MIK-L116",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/kernel",
     "mcp/src/agents_remember/worktrees",
     "mcp/src/agents_remember/application/task_docs",
     "mcp/src/agents_remember/tasks",
     "skills/l-01-agent-lifecycles/roles",
-    "mcp/tests"
+    "mcp/tests",
+    "skills/l-01-agent-lifecycles/operations"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

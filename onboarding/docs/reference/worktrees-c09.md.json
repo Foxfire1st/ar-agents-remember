@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Requested certification is explicitly selected repository-profile work through Dagger and commits nothing; ordinary closeout runs no gate but the invariant gate, keeps the exact candidate/approval/source-lineage checks and code-then-memory publication, runs no certification, code-quality checks, tests or independent review, and is not blocked by a missing profile or result. The stable contract locator selects the live manifest/journal/history route or the terminal external archive/receipt plus surviving contract truth; projection or queue absence is not loss of accepted operation authority, archive-ready is not cleanup-completed, and a tree-comparison block is a statement that refuses nothing.",
+      "note": "Requested certification is explicitly selected repository-profile work through Dagger and commits nothing; ordinary closeout runs no gate but the invariant gate, keeps the exact candidate/approval/source-lineage checks and code-then-memory publication, runs no certification, code-quality checks, tests or independent review, and is not blocked by a missing profile or result. The stable contract locator selects the live manifest/journal/history route or the terminal external archive/receipt plus surviving contract truth; projection or queue absence is not loss of accepted operation authority, archive-ready is not cleanup-completed, and a tree-comparison block is a statement that refuses nothing.\n\nAnchor: `Dagger`",
       "targets": [
         {
           "anchor": {
-            "blob": "19698025360b6b65d8046dac5ec8bed5d54924a1",
-            "content": "sha256:f97f03a17796dc54b4d9b5693eb8e4febc241afd248b62740d19c3cd3eae8a2b",
+            "blob": "f260fecfaf3eaa190474ddaabdf3b33e466a252b",
+            "content": "sha256:9025b539274a50fe27a0935645f4ad6a7bb7d3681156e62fe9bfe9f817969b32",
             "locator": {
-              "end": 220,
+              "end": 160,
               "kind": "line_range",
-              "start": 1
+              "start": 44
             }
           },
           "kind": "code"

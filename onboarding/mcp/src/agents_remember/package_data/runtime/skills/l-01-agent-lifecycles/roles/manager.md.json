@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-        "content": "sha256:bc3f93b0c10cac513a68ef982c1cd9a7451c2bb07aa1cea1c475450b09648f50",
+        "blob": "4071c218f26dd0b00193f0d591f38519b84b260a",
+        "content": "sha256:08586692fae9dafeb79056af4db7ae3cbfc02206fbd4e9672e213572d1b040fa",
         "locator": {
           "kind": "file"
         }
@@ -17,20 +17,39 @@
       },
       "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/manager.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4071c218f26dd0b00193f0d591f38519b84b260a",
+        "content": "sha256:467bcf23afce8f34cd2d973855a638951417860401fe5f6548616b2c5e30d6ed",
+        "locator": {
+          "end": 60,
+          "kind": "line_range",
+          "start": 60
+        }
+      },
+      "id": "RLZ-KYFQZV",
+      "invariant": "INV-25E23P",
+      "origin": {
+        "handoffEntry": "L84-CUR-07",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The packaged Manager role is byte-equal.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
     "1": {
-      "note": "Manager assigns non-leaf checks to an Investigator within its own master, sends the scoped concern as a first message and reports a forbidden start without inventing an Architect.",
+      "note": "The Manager assigns a check or investigation that belongs to no leaf to an Investigator on its own sprint and master, never a leaf, and sends the scoped concern as its first role_message to the returned agent identifier.\n\nAnchor: `role_message`",
       "targets": [
         {
           "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:157255bad8868156c0f70ee2a9e74f94b4cdfdc6fea7037e133d91957d047f7f",
+            "blob": "4071c218f26dd0b00193f0d591f38519b84b260a",
+            "content": "sha256:be78eb8e209956630db522fbb6e96c8f2983d147f068cb93861610641510c5e2",
             "locator": {
-              "end": 64,
+              "end": 70,
               "kind": "line_range",
-              "start": 38
+              "start": 70
             }
           },
           "kind": "code"
@@ -38,16 +57,16 @@
       ]
     },
     "2": {
-      "note": "The packaged manager is one master-scoped owner of the leaf closeout chain. Source caption: `# Manager`",
+      "note": "The packaged Manager coordinates one selected master and does not own the portfolio; when another agent starts it, it reports to that agent's role with its task references.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:561beff632db3141d5a8720e2ca4c676027ced1060e6105db74bd04427b406b2",
+            "blob": "4071c218f26dd0b00193f0d591f38519b84b260a",
+            "content": "sha256:e813a8cb5ba071e8323562245c7d58e50823b0bf8c24a68b225f1b0cbd1afac7",
             "locator": {
-              "end": 32,
+              "end": 10,
               "kind": "line_range",
-              "start": 6
+              "start": 8
             }
           },
           "kind": "code"
@@ -55,16 +74,16 @@
       ]
     },
     "3": {
-      "note": "Manager starts roles with the exact canonical scope from its handover and follows the common Coordination start procedure; no task identity is inferred from a workspace name.",
+      "note": "The Manager uses the exact sprint and master references, requirement packets, execution choice, candidate and report paths in its handover and reads only the selected master and the leaf documents needed for the current decision.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:ce7e0ecc5bb0bb27838334ab7ba495c33a213f3800c507a6befdf8dd2e95b019",
+            "blob": "4071c218f26dd0b00193f0d591f38519b84b260a",
+            "content": "sha256:391e48a8c43dd004a0f0943e9e7f4e102cdd0836ecd0e3dc02cfa455af3bf222",
             "locator": {
-              "end": 30,
+              "end": 16,
               "kind": "line_range",
-              "start": 12
+              "start": 16
             }
           },
           "kind": "code"
@@ -72,28 +91,16 @@
       ]
     },
     "4": {
-      "note": "Manager follows the common Coordination operation and starts individual stages: Worker at build, Reviewer at the Worker freeze and Curator after code PASS.",
+      "note": "The Manager calls role_start once per stage: Worker first at build, Reviewer at the freeze, and Curator when curation begins after code review passes.\n\nAnchor: `role_start`",
       "targets": [
         {
           "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:9daf9d8f9d6564658149a2bf1d3c7239e6c2ff8bad05c00ab02cfea65ab9cf6a",
+            "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+            "content": "sha256:457a0873b95525c26702398458f3d36d47d9670c5619775b7c319669cfd07cff",
             "locator": {
-              "end": 30,
+              "end": 38,
               "kind": "line_range",
-              "start": 26
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-            "content": "sha256:09ed758955ce26d5c29304e9d8d031404203c9b276b13c5e39587e9a21451437",
-            "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 8
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
           },
@@ -106,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
+            "blob": "4071c218f26dd0b00193f0d591f38519b84b260a",
             "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
             "locator": {
               "end": 4,
@@ -123,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
+            "blob": "4071c218f26dd0b00193f0d591f38519b84b260a",
             "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
             "locator": {
               "end": 4,
@@ -136,28 +143,16 @@
       ]
     },
     "7": {
-      "note": "Manager owns gate decisions, paired transactions and whole-stage delivery; it records beyond-limit approvals while preserving the roles’ ordinary direct repair and handover duties.",
+      "note": "The Manager decides paired closeout and integration within its delegated authority and, for a round beyond the settings limit, requests approval through its reporting route and records the approval.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:d0e5003b541b5e102850ff15be59d0456609cf736eac12beba96a6bb8a5bef1c",
+            "blob": "4071c218f26dd0b00193f0d591f38519b84b260a",
+            "content": "sha256:a92f1e9abf517fa1ad892a5a16765d6c6d4e09e96bb0fb0fde07974e8c903f5b",
             "locator": {
-              "end": 56,
+              "end": 74,
               "kind": "line_range",
-              "start": 26
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:5f2b3534187ac1f08da41b8656a816d06a160df7707b25fc271efd47e1b1b6fd",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 76
+              "start": 66
             }
           },
           "kind": "code"
@@ -165,95 +160,33 @@
       ]
     },
     "8": {
-      "note": "Manager starts Worker at build, Reviewer at the freeze and Curator after code PASS. It owns sync/closeout/integration/task boundaries, repairs its own record/address/input faults, and obtains and records beyond-settings authority from the task Architect; ordinary peer artifacts stay direct.",
+      "note": "The Manager hands over a whole stage with its exactness at agent starts, sync to the master's line, closeout, integration and task completion, and repairs its own mistaken records, wrong agent addresses, misread reports and faulty-input refusals through the same tool.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:2581591911b934ed1cb38fceea276fdf62897f2fdadea2098c7f472144ea1751",
+            "blob": "4071c218f26dd0b00193f0d591f38519b84b260a",
+            "content": "sha256:455f8bcbbd3f9120fc0f9a9d7035d3d25db1cb294c73f84eed41346a9d1f0a72",
             "locator": {
-              "end": 32,
+              "end": 125,
               "kind": "line_range",
-              "start": 26
+              "start": 123
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:710e6592dca103627385d36549efc09e0717cfab691c129f566619956122a237",
-            "locator": {
-              "end": 66,
-              "kind": "line_range",
-              "start": 54
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:dc8933824931ba57de62ce21cbfc6614540098fabce4941220e850aef980b3df",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 74
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-            "content": "sha256:e4a085429371e477646de8aa7d54f12fb9fbd4fb1aeaa5d7a12ffcac9a43dba3",
-            "locator": {
-              "end": 30,
-              "kind": "line_range",
-              "start": 13
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1e006f679fb322bbd74e0377548c29c2a387f77d",
-            "content": "sha256:cface40d75bb6e5983aaafef9a299ed0f02e80bb1e889e068f862eb017bcef09",
-            "locator": {
-              "end": 15,
-              "kind": "line_range",
-              "start": 9
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/message-handover.md"
           },
           "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "The generated role carries its canonical repair-loop instructions without independent authority.",
+      "note": "The generated Manager role directs handovers, repair loops, review rounds, memory passes and relays through the shared leaf coordination procedures.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:2581591911b934ed1cb38fceea276fdf62897f2fdadea2098c7f472144ea1751",
+            "blob": "4071c218f26dd0b00193f0d591f38519b84b260a",
+            "content": "sha256:d0b821bea307e3d4f014b58185412fad3dc935d0e8d89b85ed9b6b37af4515c1",
             "locator": {
-              "end": 32,
+              "end": 52,
               "kind": "line_range",
-              "start": 26
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:5f2b3534187ac1f08da41b8656a816d06a160df7707b25fc271efd47e1b1b6fd",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 76
+              "start": 52
             }
           },
           "kind": "code"

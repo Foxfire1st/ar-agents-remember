@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
-        "content": "sha256:e8855ddf4fcd3d62cd1f123933edff9571dedb7f981084ce0877cb7e37d7fdd6",
+        "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+        "content": "sha256:a20fcaf7636e6afb989c47e68737063f9b672ab3dfbe339e46cdb1f024862be2",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
             "content": "sha256:f389111330d3fa39846d47f51320c1e391f55e5500dd96820287a9e1068ca267",
             "locator": {
               "end": 34,
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
             "content": "sha256:2e266c65d9aeca93ca4feb785a367111684ee867e75a347b5a7390ee591b48ff",
             "locator": {
               "end": 57,
@@ -55,16 +55,16 @@
       ]
     },
     "3": {
-      "note": "The declaration carries its own canonical profile digest.",
+      "note": "The declaration carries its own canonical profile digest.\n\nAnchor: `profileDigest`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
-            "content": "sha256:7b671acf9b8f04293289eadc89ba86940ab01859bf15aace1e024291747060b2",
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "content": "sha256:560f2ff8d6d25f60b1f1ba8e6c047ab3932126df87adeb7fd02422a4676502ee",
             "locator": {
-              "end": 151,
+              "end": 114,
               "kind": "line_range",
-              "start": 151
+              "start": 114
             }
           },
           "kind": "code"
@@ -76,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
             "content": "sha256:db184c36e3c8755a38fbe31e8e2112568c357833bfb47bc8041492df3f52b4f8",
             "locator": {
-              "end": 567,
+              "end": 530,
               "kind": "line_range",
-              "start": 153
+              "start": 116
             }
           },
           "kind": "code"
@@ -93,12 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
             "content": "sha256:4218a7eb4a43e1687045cc2f07b4e748286c12fa8be5c5c76e4311fbd2cb8379",
             "locator": {
-              "end": 3275,
+              "end": 3238,
               "kind": "line_range",
-              "start": 2673
+              "start": 2636
             }
           },
           "kind": "code"
@@ -110,12 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
             "content": "sha256:5b61e07e69a2162de6bd707be5042305c9d54dba74d88ccc813669ef8997d25b",
             "locator": {
-              "end": 3276,
+              "end": 3239,
               "kind": "line_range",
-              "start": 3276
+              "start": 3239
             }
           },
           "kind": "code"
@@ -123,14 +123,14 @@
       ]
     },
     "7": {
-      "note": "Generated skills keep only the package target; generated-harness inputs drop renderer sources and the canonical digest is refreshed.",
+      "note": "Generated inputs declare generated-projection-types, generated-runtime (packaged benchmarks, providers and system) and generated-skills (the packaged skills tree); no generated-harness input is declared.\n\nAnchor: `generatedInputs`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
-            "content": "sha256:a976503a9139489e01ecc45e887199c1555247af889a14cf9e2b91701d6a0b27",
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "content": "sha256:3c23342dec13a6c93473e3fa058d931db7b9ced31b1f973517d0edc81254d6c6",
             "locator": {
-              "end": 150,
+              "end": 113,
               "kind": "line_range",
               "start": 58
             }
@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
             "content": "sha256:8ad62a1372fedc962f0c7131c3852cb8b8e8047c7c273c03730df3c4480a9c52",
             "locator": {
-              "end": 1512,
+              "end": 1475,
               "kind": "line_range",
-              "start": 1497
+              "start": 1460
             }
           },
           "kind": "code"

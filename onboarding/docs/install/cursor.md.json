@@ -2,60 +2,17 @@
   "path": "docs/install/cursor.md",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Copy `.cursor/`, render with `--repo`, open or restart the workspace in Cursor once.\n\nAnchor: `docs/install/cursor.md:13-24`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4c4f06e78351e41b2d2e5a1418930f20196c5a42",
-            "content": "sha256:4f401135b52f086e6555eb8df784a0bcf487c5c8f091d1babfe868633cc9c235",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Package contents: always-applied rule, `sessionStart` hook, project MCP registration, authority settings, skills.\n\nAnchor: `docs/install/cursor.md:26-34`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4c4f06e78351e41b2d2e5a1418930f20196c5a42",
-            "content": "sha256:4f401135b52f086e6555eb8df784a0bcf487c5c8f091d1babfe868633cc9c235",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
-      "note": "`c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts.\n\nAnchor: `docs/install/cursor.md:36-43`",
+      "note": "One `role_start(role=\"bootstrap\", …)` call prepares the runtime scaffold and starts Bootstrap, which ends at memory setup and hands the knowledge foundation to the Architect; nothing provider-side starts.\n\nAnchor: `role_start`",
       "targets": [
         {
           "anchor": {
-            "blob": "4c4f06e78351e41b2d2e5a1418930f20196c5a42",
-            "content": "sha256:4f401135b52f086e6555eb8df784a0bcf487c5c8f091d1babfe868633cc9c235",
+            "blob": "bc9e5606e4778ab89c9492b1737cec63a6f106a4",
+            "content": "sha256:c08599c33d298447c89fd55948819c59a1737c0f35bcf9f06c5af761278d261e",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The rule is the dependable surface; `sessionStart` is documented as fire-and-forget.\n\nAnchor: `docs/install/cursor.md:45-69`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4c4f06e78351e41b2d2e5a1418930f20196c5a42",
-            "content": "sha256:4f401135b52f086e6555eb8df784a0bcf487c5c8f091d1babfe868633cc9c235",
-            "locator": {
-              "kind": "file"
+              "end": 34,
+              "kind": "line_range",
+              "start": 20
             }
           },
           "kind": "code"
@@ -63,14 +20,16 @@
       ]
     },
     "5": {
-      "note": "Project MCP config path and the `uvx` registration are printed.\n\nAnchor: `docs/install/cursor.md:71-91`",
+      "note": "The page names the `mcpServers.agents-remember` entry in Cursor's MCP configuration, adapted from the common registration example with the absolute user-config settings path.\n\nAnchor: `mcpServers.agents-remember`",
       "targets": [
         {
           "anchor": {
-            "blob": "4c4f06e78351e41b2d2e5a1418930f20196c5a42",
-            "content": "sha256:4f401135b52f086e6555eb8df784a0bcf487c5c8f091d1babfe868633cc9c235",
+            "blob": "bc9e5606e4778ab89c9492b1737cec63a6f106a4",
+            "content": "sha256:c42e023ba82f64e445a40a9358ae705af85e9c9eeda2157d813fad7d229367a6",
             "locator": {
-              "kind": "file"
+              "end": 18,
+              "kind": "line_range",
+              "start": 13
             }
           },
           "kind": "code"
@@ -78,14 +37,16 @@
       ]
     },
     "6": {
-      "note": "Skill roots, flat package layout, and the no-install first-run rule are stated.\n\nAnchor: `docs/install/cursor.md:93-106`",
+      "note": "The skills section says Cursor discovers skills from folders it scans, Agents Remember writes none, and the tool server publishes each skill as an MCP resource, so first-run setup copies no skill tree.\n\nAnchor: `SEP-2640`",
       "targets": [
         {
           "anchor": {
-            "blob": "4c4f06e78351e41b2d2e5a1418930f20196c5a42",
-            "content": "sha256:4f401135b52f086e6555eb8df784a0bcf487c5c8f091d1babfe868633cc9c235",
+            "blob": "bc9e5606e4778ab89c9492b1737cec63a6f106a4",
+            "content": "sha256:f5168568ec4b7741c47f728ef4fc1da9383ec3222ab3b6336408cc7382ee3057",
             "locator": {
-              "kind": "file"
+              "end": 40,
+              "kind": "line_range",
+              "start": 36
             }
           },
           "kind": "code"

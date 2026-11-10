@@ -140,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
             "content": "sha256:f68be40622b6abfe0d2362438100ef630301619d57ed967748239daeade96d73",
             "locator": {
               "kind": "symbol",
@@ -152,12 +152,12 @@
         },
         {
           "anchor": {
-            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
             "content": "sha256:079569ddf8eff689aabcd9b7a2a97cdaed597ce68ea79db471edf0186f471fcf",
             "locator": {
-              "end": 963,
+              "end": 966,
               "kind": "line_range",
-              "start": 949
+              "start": 952
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
@@ -198,7 +198,7 @@
         },
         {
           "anchor": {
-            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "blob": "21f12072ead0b60e84065450aa5be8378eec7d57",
             "content": "sha256:f83b150b9e3dbe85154f7363be2277afd891e470edf7eea8b1f7c4d6adbf7567",
             "locator": {
               "kind": "symbol",
@@ -223,7 +223,7 @@
         },
         {
           "anchor": {
-            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "blob": "21f12072ead0b60e84065450aa5be8378eec7d57",
             "content": "sha256:99bf3583e114ca9877f78992cd9f263b6e1e29bb25ab6b3f2e64398486ab15cf",
             "locator": {
               "end": 130,

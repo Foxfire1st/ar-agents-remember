@@ -20,11 +20,10 @@
     "leaf": "260928-MIK-L41",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "mcp/src/agents_remember/worktrees",
-    "mcp/src/agents_remember/application/task_docs",
-    "skills/w-02-light-task-workflow"
+    "mcp/src/agents_remember/application/task_docs"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

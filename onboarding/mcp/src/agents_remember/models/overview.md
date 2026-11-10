@@ -1,7 +1,7 @@
 # Response Contracts, Shared Wire Values, And Text Knowledge Models
 
 ## Governing Overview
-[mcp/overview.md](../../../../overview.md)
+[overview](../../../../overview.md)
 
 ## Purpose
 
@@ -20,7 +20,7 @@ role_capsules/contracts.py retains source-addressed needs/gives endpoints, valid
 ## Hot Path Summary
 MIK-R109 wire contracts name knowledge, not its text. `NamedFile` carries existence, card location/state/counts and per-row limitations/refusals; `NamedRecord` identifies actionable records and exact heading or explicit title fallback. `ReadArFilesResponse` carries call-local overview locations and code/memory observation state, not source/card/overview bodies or `published_intent`. `SlimContextPacket` is the version-3 agent roots/task/actions/build/pair shape beside the retained full `ContextPacketV2` builder contract. Knowledge-read rows carry text ID/kind/state/location with selection provenance; diff answers carry compared trees, counts, bounded decision records and whole-report location. The review models carry the resolved four-tree comparison, the leaf's highest recorded comparison number and the delivered notice value, which names the pair a landed leaf delivered and whether the comparison on screen is that pair; carrying them reviews nothing. `resolve_context` is removed from the public roster/response route, and all four L109 reads have final answer bounds, not interim rows.
 
-A tool result is first validated through `tools/tool_registry.py::TOOL_RESPONSE_MODELS`. `tools/tool_response.py::finalize_tool_response` optionally enriches the validated envelope, serializes it with absent optional fields omitted, and finalizes token accounting. The application boundary then constructs the answer delivered to an agent: `application/tool_response.py::complete_tool_response` selects a supplied compact answer or, by default, strips `tokens`, `tokenizer`, `tokenCountExact`, and `operation` and truncates long lists from the finalized whole result. It translates the selected answer's `nextStep` into `next`, records the whole result where possible, and applies the delivered-answer bound. A supplied projection does not automatically inherit whole-result enrichment. Dashboard and command-line consumers retain the whole-result path. Consequently, token fields belong to the modeled whole result and log accounting; they are not promised on the delivered agent answer.
+A tool result is first validated through `tools/tool_registry.py::TOOL_RESPONSE_MODELS`, except a `server-build-stale` dispatch refusal, which validates through `base.py::StaleBuildRefusalResponse`. `tools/tool_response.py::finalize_tool_response` optionally enriches the validated envelope, serializes it with absent optional fields omitted, and finalizes token accounting. The application boundary then constructs the answer delivered to an agent: `application/tool_response.py::complete_tool_response` selects a supplied compact answer or, by default, strips `tokens`, `tokenizer`, `tokenCountExact`, and `operation` and truncates long lists from the finalized whole result. It translates the selected answer's `nextStep` into `next`, records the whole result where possible, and applies the delivered-answer bound. A supplied projection does not automatically inherit whole-result enrichment. Dashboard and command-line consumers retain the whole-result path. Consequently, token fields belong to the modeled whole result and log accounting; they are not promised on the delivered agent answer.
 
 tools/public_roster.py owns the advertised 44-name ordinary tuple and tools/tool_registry.py maps current names to their response models. Both are model-layer wire vocabulary, not live execution or advertisement. Native role start/set/message, receipt-tracked retirement and knowledge read/diff/integrity remain; removed terminal, inbox, gate, readiness, manager-nudge and internal spawn response registrations do not survive here.
 
@@ -53,7 +53,7 @@ The recorded-meaning review models separate eligible steps, readable none and un
 > **Retained historical source account — superseded by the current route account:**
 > Memory-quality response codes reach the shared shaping guard without a model length ceiling; malformed/over-long codes are converted there with whole-result custody, not raised first. The current tool-answer interim map explicitly assigns `direct_execution_grant` to L111. No response-model, tool-roster or semantic-acceptance owner moves.
 
-**Envelope and vocabulary ownership.** `base.py` distinguishes `extra="forbid"` package-owned contracts from `extra="allow"` intentional detail surfaces. Both envelope families declare `ok`, token metadata, optional producer/contract `nextStep`, answer-carried `next`, and optional log location/error, without the removed notifier banners. Flexible envelopes also recursively reject the reserved snake-case decision keys, preserving the camelCase decision vocabulary without rejecting unrelated detail. `ResponseEnvelope` names their union. Nullable fields omitted by `exclude_none=True` need optional defaults. Inherited policy requires explicit nested owned models, or a narrow `model_validate` adapter, rather than silently treating arbitrary dictionaries as owned contracts.
+**Envelope and vocabulary ownership.** `base.py` distinguishes `extra="forbid"` package-owned contracts from `extra="allow"` intentional detail surfaces. Both envelope families declare `ok`, token metadata, optional producer/contract `nextStep`, answer-carried `next`, optional log location/error and the optional `buildCurrentness` reading, without notifier banners. `StaleBuildRefusalResponse` is the strict `code`/`error` envelope that validates the shared `server-build-stale` dispatch refusal in place of a writer's own response model. Flexible envelopes also recursively reject the reserved snake-case decision keys, preserving the camelCase decision vocabulary without rejecting unrelated detail. `ResponseEnvelope` names their union. Nullable fields omitted by `exclude_none=True` need optional defaults. Inherited policy requires explicit nested owned models, or a narrow `model_validate` adapter, rather than silently treating arbitrary dictionaries as owned contracts.
 
 The enduring vocabulary rule is one declaration consumed by producers and readers. Ownership can be at a producer or at this lower wire layer when importing the producer would create a cycle. Worktree lifecycle and guidance aliases now live in `models/worktree.py`; Git state/freshness and readable memory mode are imported from their kernel owners. The leaf-reference refusal vocabulary (`LeafRefStatus`) and its type-derived `VALID_LEAF_REF_STATUSES` membership set are owned by `worktrees/leaf_refs.py`; no model in this package consumes them. The historical drift-repair examples explain why a copied status set can reject a producer's real payload after its operation already occurred; they do not establish present exhaustive coverage.
 
@@ -76,7 +76,7 @@ Atomic-series activation is contract-scoped, not protected-source-pair-scoped. I
 
 Curator coherence keeps requirement revision, delivery attempt, source candidates, authored judgments, immutable generation, stable authority and optional attempt snapshot separate. `status|prepare|publish|validate` is closed. The nine identity/publication members are declared once and drive validation, refusal wording and prepare guidance. Optional `judgments_file` transports judgments and assessments without joining that required identity set; the request shape refuses this content on non-publication actions, and the publication owner refuses explicit inline/file duplication, including explicitly supplied empty lists. Response models add candidate counts by kind, candidate-set digest/file locations, publication counts and the judgments-file SHA-256. Transport changes supply neither semantic judgments nor acceptance authority. Judgment coverage is unique and exact over source candidates; assessments are a separate optional collection outside that coverage obligation. Publication-only input is refused for non-publication actions, and only publication may freeze an attempt snapshot. `MemoryCandidatePairIdentity` is shared rather than copied by quality, coherence and closeout contracts. Certification primitives, corrective dispositions and exact stored-object references live in `certification/`; registry/plan compilers and certificate storage retain semantic and storage authority. `test_evidence.py` makes candidate-bound certifying evidence opaque to ordinary construction and requires the verified Dagger publication capability for accepting consumers. Diagnostic output is not acceptance evidence.
 
-`ServingBuildPayload` is the shared strict boot identity for dashboard and server information: version and boot time are required, while exact content/build/interpreter/package/commit/dirty observations may be absent. A version alone is not an exact candidate identity. Master retirement and sprint execution-edge models separately describe archived proof, removed linkage, affirmed graph edges, reasons and source digests; declaring that proof does not perform retirement.
+`ServingBuildPayload` is the shared strict boot identity for dashboard and server information: version and boot time are required, while exact content/build/interpreter/package/commit/dirty observations may be absent. A version alone is not an exact candidate identity. `build_currentness.py` declares `BuildCurrentnessPayload`, the strict comparison of a loaded Python build with the files now at its package root (installed or checkout mode; current, stale or unknown state; loaded and installed digests, first-seen time, reason and remedy), shared by serving status and the response envelope. `core.py::RunningServerPayload` pairs one live server's recorded boot identity with that reading; server information and runtime install carry the running-server list. Declaring a reading performs no restart or refusal. Master retirement and sprint execution-edge models separately describe archived proof, removed linkage, affirmed graph edges, reasons and source digests; declaring that proof does not perform retirement.
 
 **Capsule and skill construction.** `role_capsules/` separates manifest parsing, exact scope selection, bidirectional source-set admission, instruction resolution, tool narrowing and compilation. Declared role/operation vocabulary constrains manifest edits; no nearest-match selection or fallback operation is intended. Resolution collapses byte-identical duplicates and refuses equal-authority contradiction. Admitted input, semantic content and diagnostic output stay structurally separate: timestamps, unselected sources, conflict rows and refusal text do not enter the semantic digest.
 
@@ -463,7 +463,8 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - **Retained historical source account — superseded by the current route account:** Historical L111 predecessor account, not the current roster: the composed PUBLIC_TOOLS now declares 44 names and SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery rows including direct_execution_grant at 150 tokens; the earlier 41- and 42-name captions here are historical, not current source counts.
 
 - **Retained historical source account — superseded by the current route account:** Capsule skill references and semantic digest exclude diagnostic output. [309]
-- **Retained historical source account — superseded by the current route account:** Historical L111 predecessor account, not the current roster: the composed PUBLIC_TOOLS now declares 44 names and SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery rows including direct_execution_grant at 150 tokens; the earlier 41- and 42-name captions here are historical, not current source counts. [315]
+
+- The composed `PUBLIC_TOOLS` declares 44 names, and `SHAPED_TOOL_BOUNDS` carries the final task/landing/role delivery rows, including `direct_execution_grant` at 150 tokens. [315]
 
 - Citation responses carry optional background identity. [338]
 - **The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** [2]
@@ -529,9 +530,13 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - The checkpoint registry row sits between the integrate and record-landing rows; the record-landing row follows it. [74]
 - Lifecycle finalizer response model covers the terminal task finalization payload. [79]
 - Next-step computation consumes the resolved worktree contract and retains its landing approval stops, not ambient session state. [81]
+
 - The answer boundary preserves producer guidance, permits the same-call summary stop, and bounds actionable guidance to the response's own contract address. [316]
+
 - Strict envelope fields retain contract guidance and answer/log accounting without notifier banners. [317]
+
 - Flexible envelope fields use the same current guidance/answer/log header without restoring removed declared banner fields. [318]
+
 - The wire-test module documents the 165-of-213 `context_packet` baseline. [82]
 - The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. [83]
 - The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). [84]
@@ -648,7 +653,9 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - The typed refusal with its code, detail and next action. [283]
 - The surface version. [284]
 - The overload failure carries the code reviewer_busy. [285]
+
 - The response shape. [286]
+
 - `TaskReopenResponse` lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape. [287]
 - `worktree_checkpoint_landing` joins the `NextTool` vocabulary; its preview and refusal both emit it. [288]
 - `PUBLIC_TOOLS` is one tuple with a single definition, re-exported unchanged. [289]
@@ -660,9 +667,13 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
 - Current single literal PUBLIC_TOOLS contains 44 ordinary public names (including knowledge_write, user_settings_init, citation_note_revision and explainer_control) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. [294]
 - One current tool-response registry: `TOOL_RESPONSE_MODELS` holds the same 44 public names as `PUBLIC_TOOLS`, including `knowledge_write`, `user_settings_init`, `citation_note_revision` and `explainer_control`, and excludes `dispatch_agent`; the former internal-compat/public split (`INTERNAL_COMPAT_TOOL_NAMES`, `PUBLIC_TOOL_RESPONSE_MODELS`) is retired and is retained as history only. This is a source-shape census, not a live advertisement or acceptance. [295]
+
 - Whole-result validation/enrichment precedes serialization and token finalization. [296]
+
 - Completion validates the whole result, selects a supplied/default answer and translates the selected answer's lifecycle guidance. [297]
+
 - L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions. [298]
+
 - Provider diagnostics remains a schema default despite public removal. [299]
 - Offline exact default verifies bytes before scoped cache mutation; approximate counter is separate. [300]
 - Refusal declarations live in a focused module and are re-exported. [301]
@@ -677,9 +688,6 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - **Retained historical source account — superseded by the current route account:** The one spelling of a link target, and the gate's predicate. [65]
 - **Retained historical source account — superseded by the current route account:** Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
 - **Retained historical source account — superseded by the current route account:** Present public roster is a single literal with 41 names and no provider diagnostics or knowledge mutations. [294]
-- **Retained historical source account — superseded by the current route account:** Whole-result validation/enrichment precedes serialization and token finalization. [296]
-- **Retained historical source account — superseded by the current route account:** Completion validates the whole result, selects a supplied/default answer and translates the selected answer's lifecycle guidance. [297]
-- **Retained historical source account — superseded by the current route account:** L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions. [298]
 - **Retained historical source account — superseded by the current route account:** Provider diagnostics remains a schema default despite public removal. [299]
 - **Retained historical source account — superseded by the current route account:** Offline exact default verifies bytes before scoped cache mutation; approximate counter is separate. [300]
 - **Retained historical source account — superseded by the current route account:** Refusal declarations live in a focused module and are re-exported. [301]

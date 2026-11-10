@@ -160,13 +160,15 @@ No relevant external or domain documentation was found for this repository-local
 
 
 
-- Current HTTP state and SSE snapshot assembly add served_state_tail onto a copied projection body, with the wire checker allowing only that tail owner. [1]
+- Current HTTP state and SSE snapshot assembly add served_state_tail onto a copied projection body, with the wire checker allowing only that tail owner. Anchor: `served_state_tail` [1]
 
 
 - The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`. [2]
 
 - `SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback (kernel-owned since L9). [3]
+
 - The cockpit compares and renders the serving/client identity. [4]
+
 - The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value. [5]
 - The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. [6]
 - The serving payload carries optional dashboard build identity; omission does not fabricate a built or clean state. [7]

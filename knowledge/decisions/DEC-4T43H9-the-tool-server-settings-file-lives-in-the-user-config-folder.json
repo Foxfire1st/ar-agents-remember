@@ -1,0 +1,90 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The workspace convention path and the user config folder were weighed; the choice binds discovery, installation and every settings reader."
+  },
+  "alternatives": [
+    {
+      "option": "One home in the user's config folder (~/.config/agents-remember/agents-remember-settings.json, beside settings.json); discovery reads only it unless --config names a file; an install copies the old convention file there once and leaves the old copy.",
+      "reason": "It survives the retirement of the harness folders, gives every run one file, and keeps the file out of the agents' direct reach.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep discovering the settings file at the workspace harness convention path <workspace>/.claude/mcp/agents-remember-settings.json.",
+      "reason": "It ties the product to a retired harness folder and leaves several per-harness files that can name the same root with different content.",
+      "reconsider_when": "The user's config folder stops being a place that every supported harness and the dashboard can read.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "An explicit --config path is still honoured.",
+    "On a machine whose config folder is read-only, writing the file waits for the developer's word."
+  ],
+  "context": "The tool-server settings file agents-remember-settings.json was discovered at the workspace harness convention path <workspace>/.claude/mcp/, and each harness root could hold its own copy naming the same coordination root with different content. The harness folders were being retired.",
+  "decider": "The developer (D693 Q2, on the architect's suggestion); MIK-R84 v10 behaviour 6.",
+  "id": "DEC-4T43H9",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "7625b34c2c0d36ce1713bb7436c5e24a114b1ef8",
+        "content": "sha256:3fba13967434e16d35b880bf5eca5e052cd063ebdf1e1f7911c2ea1abfbad85a",
+        "locator": {
+          "kind": "symbol",
+          "name": "mcp_settings_path"
+        },
+        "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "3c55dde69055fa5b21e25ce2e244744766ee073a",
+        "content": "sha256:6cce3706bc600ca881c10abcf52c0b91f22bcf766ae2010d32e6561302e90511",
+        "locator": {
+          "kind": "symbol",
+          "name": "discover_config"
+        },
+        "path": "mcp/src/agents_remember/cli/discovery.py"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": "INV-AFA5WS"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-S18ZC5"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R84",
+        "packet": "requirements/MIK-R84-v10-installed-copies-and-running-servers-are-current-after-an-install.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v10"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A012 freeze report /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/worker/88048054-fcd8-4402-831d-ec1434384185/role-launch/260928-MIK-L84-worker-88048054-fcd8-4402-831d-ec1434384185.md (sha256 24bae8b521caee9e403ff2b3360e0fb33762507a48a93f7df877a908bcb13215); records /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/worker/88048054-fcd8-4402-831d-ec1434384185/role-launch/L84-A012-records/ (manifest sha256 e2fe9e9d5ccad5ff658be0d30a04f9962d89e5ef843b6af7f46ac104ca8be9ae): checks-bounded.log (test_suite_load_independence.py + test_dashboard_build_currentness.py: 36 passed, 5 subtests, 0 failed), dashboard lint/typecheck/full vitest (289 files, 2,205 tests passed), fast gate PASS, on the clean copy of 40475ce5; mutation pass 4/4 caught; last full suite on A007 8d974809 (L84-A007-records/gate325-8d974809.log); the Architect's landing check of A011 (STOP 20261110T010206Z, c5e4f401...) reran both full lanes there and reruns them on A012; Reviewer P5 round-8 code PASS on A011 (/home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round8-fix-verification-verdict.md, sha256 11813eaf6d634dcc2e234789f3a6e672494afed4480d706974fec505c2f4a67d), reopened for L84-LC-01/02 only; round-9 fix-verification pending"
+      ],
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "MIK-R84@v10 part4 / user settings and copy-once installation",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

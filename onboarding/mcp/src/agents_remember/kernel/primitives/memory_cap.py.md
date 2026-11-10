@@ -76,7 +76,7 @@ No relevant external documentation is configured for the memory-cap module.
 
 
 
-- The fail-loud parser for `orchestration.qualityGate`, including absent/empty host-managed behavior. [4]
+- The fail-loud parser for `orchestration.qualityGate`: unknown keys are refused, and an absent or empty block leaves the memory cap unset (executor runtime-managed). [4]
 
 
 ### Cross-Repo References

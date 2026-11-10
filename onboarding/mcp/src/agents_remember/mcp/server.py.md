@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[MCP package overview](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Current source contract evidence
 
@@ -17,8 +17,8 @@
 `AgentsRememberMCP`, `create_server`, `run_server`, and `main`; tool ownership remains in the
 registration families.
 
-The tool surface it used to carry — every `@server.tool()` declaration and its model-visible
-docstring — now lives in `agents_remember.mcp.registration`, one module per family. If you are
+Every `@server.tool()` declaration and its model-visible docstring lives in
+`agents_remember.mcp.registration`, one module per family. If you are
 looking for what a tool advertises, what it refuses, or which payload builder it forwards to, that
 is the [registration route overview](registration/overview.md), not this file.
 
@@ -42,11 +42,18 @@ Starts the configured MCP application with either the ordinary registration fami
    tool. An unlisted name raises `UnknownReadOnlyMark`; server creation fails rather than advertising
    an unmarked tool. This step changes annotations, not registration order or handler ownership.
 
-`run_server(config)` is `create_server(config).run()`.
+`run_server(config)` records this process in the running-server registry as an `"mcp"` server (`register_server`), runs `create_server(config).run()`, and calls the returned cleanup when serving ends; the cleanup removes the record and is also registered to run at normal process exit.
 
 ### Closed dispatch input at the public transport boundary
 
 AgentsRememberMCP.list_tools first awaits the FastMCP answer, then schedules start_after_discovery(config) with the running loop’s call_soon and returns that already-produced answer. The shared latch starts outside-scratch reconciliation once, including on a bare no-config server, and dashboard autostart only with config/settings. call_tool reaches that same latch as the fallback for a client that never lists, before checking the bound surface and entering tool_call_context. Bound explainer calls also validate their launched seat before the registered handler. The retained delegation and raised-call logging use the shared boundary. Tool argument admission belongs to each retained registered schema. The synchronous dispatch wrapper described below keeps that validation path while moving the handler body off the event loop.
+
+### Stale installed builds refuse publication writes at dispatch
+
+Inside the tool-call context, a server with config reads its build currentness off the event loop (`build_currentness`) and carries that reading through the call with `tool_build_currentness`, so the answer boundary can annotate answers from a stale installed build. A checkout build yields no reading unless inspection is asked for, and a bare no-config server reads nothing. When the reading is an installed build in state `stale`, the call's arguments are validated against the registered tool's argument model, and a call that `is_stale_build_write` names a publication write is answered by `stale_build_refusal` (code `server-build-stale`, naming the loaded and installed digests and the restart remedy) without running the handler. Reads, previews, unnamed tools and current or unknown readings go on to `_dispatch_tool`.
+
+- A stale installed build's publication writes are refused before dispatch; other calls dispatch under the carried currentness reading. [13]
+- `run_server` registers the process as an `"mcp"` server and runs the cleanup when serving ends. [14]
 
 ### Tool-call logging at the transport boundary (MIK-R108 rule 3)
 
@@ -91,8 +98,7 @@ that skips this line loses no records — it just stops being distinguishable fr
   a new family means a new module plus one entry in `TOOL_REGISTRARS`.
 - The transport subclass may enforce a closed public boundary only when the framework-generated
   boundary is demonstrably weaker. It must not duplicate handlers, invent fallbacks, or become a
-  second tool registry. The earlier dispatch-only undeclared-input refusal is historical, not a
-  current special case.
+  second tool registry.
 - Initialize compact-content serialization and application services before registering tools;
   no ambient lifecycle installer remains.
 - **`declare_mcp_process()` stays before `load_config`, `prepare_mcp_process()` stays before
@@ -140,11 +146,11 @@ No meaningful cross-repo references found.
 
 
 
-## L23 Runtime Package Review
+## Startup composition boundary
 
-The transport server now imports its composition boundary as
+The transport server imports its composition boundary as
 `application.runtime.startup as server_startup`. Startup trust, configuration, registration, and
-durable-store ownership remain application concerns; only their package location changed.
+durable-store ownership remain application concerns.
 
 
 
@@ -187,9 +193,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:281-
 - Initialization names the worktree supplier and selects the ordinary or bound surface. list_tools produces its answer before scheduling start_after_discovery; call_tool invokes the same latch before bound-name/exact-seat checks. The latch starts the sweep even without config and starts dashboard supervision only with config/settings; bound checks and raised-call logging retain their owners. [9]
 
 
-- `create_server` builds the FastMCP instance and invokes the registered tool families.  Anchor: `create_server` [1]
+- `create_server` builds the FastMCP instance and invokes the registered tool families. [1]
 
-- Frozen implementation of create_server supporting the stated file behavior.  Anchor: `create_server` [7]
+- `create_server` installs compact content, initializes the application services, registers every tool family, adds a bound explainer surface and applies the read-only marks. [7]
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py::create_server - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 

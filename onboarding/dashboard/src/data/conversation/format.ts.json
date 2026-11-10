@@ -20,16 +20,18 @@
       ]
     },
     "3": {
-      "note": "ServingBuildStamp uses humanizeDuration for uptime; no notifier consumer remains.",
+      "note": "ServingBuildStamp uses humanizeDuration for uptime; it is the only production consumer and no notifier consumes it.\n\nAnchor: `humanizeDuration`",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "55465c1b52382000bb2af1af534a8e31d6407719",
+            "content": "sha256:7104cc0d4932cfb4f726cd0dd44bba49d7217557f4fa0bf673620a9a4fba606e",
             "locator": {
-              "kind": "file"
+              "end": 46,
+              "kind": "line_range",
+              "start": 43
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/cockpit/serving-build-stamp/ServingBuildStamp.tsx"
           },
           "kind": "code"
         }

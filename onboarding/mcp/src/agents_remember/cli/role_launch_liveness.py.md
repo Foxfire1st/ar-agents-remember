@@ -95,4 +95,5 @@ Custody: the preceding sentence is detached from live reference 12; original tar
 - Test source checks turn/prompt/unreachable recovery and no archive/create. [17]
 
 - The Worker handover test requires a first freeze notice to the Manager to start the Reviewer, followed by direct complete freeze handover to that Reviewer; the Manager does not relay it or receive routine report notices. It also checks parentless Worker and turn-end-versus-acceptance wording, with mutation cases for every required route clause. [11]
+
 - The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property. [12]

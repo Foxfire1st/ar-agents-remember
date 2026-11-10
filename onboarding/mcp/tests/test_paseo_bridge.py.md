@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Tests route overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -19,7 +19,9 @@ and that the script's header declares each command and non-public entry point it
   before any process is spawned, that the script is invoked as `/usr/bin/node <paseo_bridge.mjs>
   <command>` against the configured runtime URL and no other, that every failure of a call is a named
   `PaseoBridgeFailure`, that output which is not UTF-8 is an unreadable reply rather than a decoding
-  error, and that a call which does not end is stopped and reported as a timeout.
+  error, and that a call which does not end is stopped and reported as a timeout. A missing product Node is refused
+  as `node_not_installed` with no process spawned; the cases replace `product_node` on `paseo_running_node`, the
+  module the bridge resolves its Node through, and the real-script cases replace `communication_node`.
 - **The real script.** `BridgeScriptTests` (skipped when `node` is not on `PATH`) runs the script
   against `FAKE_DAEMON_CLIENT`/`FAKE_CLIENT_ROOT`: the catalog lists ready, enabled providers with their
   models and thinking options, script failures are named, and a second daemon is refused.
@@ -47,15 +49,10 @@ The catalog cases distinguish successful empty listings from unanswered parts. M
 
 ## Evidence
 
-- The wrapper's process boundary: unconfigured refusal, the configured runtime as the only target, named
-  failures, undecodable output and an unterminated call. [1]
+- The wrapper's process boundary: unconfigured refusal, the configured runtime as the only target, named failures, undecodable output and an unterminated call. The scoped current source carries the module/document behavior described above. [1]
 
 - Process-level refuse-before-spawn and single-target behaviour of `bridge_call`. [2]
 
 
 
 - Catalog shape, script failures and provider-option naming against the real script and fake client. [3]
-
-
-
-- The scoped current source carries the module/document behavior described above. [1]

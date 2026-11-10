@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The honest-entry family needs typed unavailable and partial summary answers, conditional retention, and an explicit unwired-port refusal so HTTP handling cannot turn unread knowledge into zero changed intent."
+  },
   "applicability": "HTTP answers of GET /api/review/intent/summary served by the dashboard process.",
   "conditions": [
     "The configured native summary port produces typed result bodies; the app-owned conditional cache may validate retained bytes without another response body.",

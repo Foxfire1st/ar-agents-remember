@@ -22,14 +22,16 @@
   ],
   "references": {
     "1": {
-      "note": "The `dashboard` subcommand adapter this dispatches to.\n\nAnchor: `run`",
+      "note": "The `dashboard` subcommand adapter this dispatches to.",
       "targets": [
         {
           "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
-            "content": "sha256:4ccf5fc3ee970c93ca13ada46e80519603b8bdd6c3dc19918577cd1e7e1a5c6b",
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:00de5bcebb10bb4d21c1347d005b80ba95cf5e36812c63f8316210c43d759ea4",
             "locator": {
-              "kind": "file"
+              "end": 815,
+              "kind": "line_range",
+              "start": 771
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -240,16 +242,17 @@
       ]
     },
     "3": {
-      "note": "The memory-citations adapter, registered the same declarative way.\n\nAnchor: `add_arguments` `run`",
+      "note": "The memory-citations adapter, registered the same declarative way.\n\nAnchor: `memory_citations.run`",
       "targets": [
         {
           "anchor": {
-            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
-            "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
+            "blob": "009c76004ec4b54cf39affd07edbc7882459d597",
+            "content": "sha256:77f728728b667efadd72f817ab4c64b75824315e67ed7476ca153e3193d1ff50",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/cli/memory_citations.py"
+              "end": 63,
+              "kind": "line_range",
+              "start": 58
+            }
           },
           "kind": "code"
         }

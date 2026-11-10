@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The handoff template defines the required target rationale and optional role, while the curator authoring instructions require that explanation before ingest, so producer shape and curator procedure must agree."
+  },
   "applicability": "Curator hand-off lists written by producers and curators for the ordinary knowledge writer, and the canonical skill instructions that state their shape.",
   "conditions": [
     "governing_route is optional and is spelled missing by omitting the key.",

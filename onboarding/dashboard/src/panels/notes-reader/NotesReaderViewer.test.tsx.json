@@ -41,23 +41,36 @@
         {
           "anchor": {
             "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
-            "content": "sha256:baddb2d7d6bfc5b9dc00e2c4698de4e4837130ec01f982da2bf5a09a12a279be",
+            "content": "sha256:10beaed89778ae765e6cbca0d77a221f451ff52944380dcdd3c372378f3d6ca1",
             "locator": {
-              "end": 569,
+              "end": 765,
               "kind": "line_range",
-              "start": 540
+              "start": 749
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:0d93ba5ddc1ef77ba2f15038e74de413ef08a8c0cf016c9f160a13790a24e7a9",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "content": "sha256:cfbe1794895484c9d72eefd0c764fb4b00d002288313dbe97d58bdfec455152f",
             "locator": {
-              "end": 586,
+              "end": 208,
               "kind": "line_range",
-              "start": 537
+              "start": 206
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "content": "sha256:96d5fb10ba0ff77cddcd147392db223f01b24821e9b8fafb4249101e5e238b69",
+            "locator": {
+              "end": 511,
+              "kind": "line_range",
+              "start": 493
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -66,14 +79,15 @@
       ]
     },
     "22": {
-      "note": "Shared builders provide generated WorkspaceProjection.\n\nAnchor: `WorkspaceProjection`",
+      "note": "Shared builders provide generated WorkspaceProjection.",
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:daaaf9f80d95ac50acc42b4097c5fcc9293b51a91e135d7b45f3ae87ee7e947f",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "content": "sha256:833819a2086f399c2e96c1303b091dbf74f9707241e5cb699d17a5a44a464c32",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
             },
             "path": "dashboard/src/types/projection.ts"
           },

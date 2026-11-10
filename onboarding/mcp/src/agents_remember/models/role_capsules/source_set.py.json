@@ -187,12 +187,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
             "content": "sha256:64e809fffb0527ac7e4c8304e937d0940334e4c021ef632167579b87fad81e5f",
             "locator": {
-              "end": 667,
+              "end": 670,
               "kind": "line_range",
-              "start": 630
+              "start": 633
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
@@ -200,12 +200,12 @@
         },
         {
           "anchor": {
-            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
             "content": "sha256:ad6b03053ce452ebd58b3cd633bb69971cbcec1bbde9bf66dd036d42e85647d6",
             "locator": {
-              "end": 674,
+              "end": 677,
               "kind": "line_range",
-              "start": 670
+              "start": 673
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
@@ -213,12 +213,12 @@
         },
         {
           "anchor": {
-            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
             "content": "sha256:b166927f64c89e1e382ddc3c321ce6a5d57c6adfb278d5db5c022de2abba0940",
             "locator": {
-              "end": 684,
+              "end": 687,
               "kind": "line_range",
-              "start": 677
+              "start": 680
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
@@ -226,12 +226,12 @@
         },
         {
           "anchor": {
-            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
             "content": "sha256:bf86bb84f3b36ab21196af36571956d25d87f5f2d5cf787c6a28987f79849578",
             "locator": {
-              "end": 692,
+              "end": 695,
               "kind": "line_range",
-              "start": 687
+              "start": 690
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
@@ -255,7 +255,7 @@
         },
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:4dc1ee0cc5c50876754bd141161d54fbd568ed3980f2068c571474c66ace4ded",
             "locator": {
               "kind": "symbol",
@@ -267,7 +267,7 @@
         },
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:f1fd300c429f32339032ca6f709d70611c47aeb765cfd715ba209c21edb03567",
             "locator": {
               "kind": "symbol",
@@ -280,16 +280,15 @@
       ]
     },
     "7": {
-      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.\n\nAnchor: L16–L35",
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
-            "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
             "locator": {
-              "end": 35,
-              "kind": "line_range",
-              "start": 16
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
             },
             "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
           },
@@ -302,12 +301,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
-            "content": "sha256:1370d89348c253989e44556933ef532f9e18cb312db58b4d7c604dea6da98bb4",
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
             "locator": {
-              "end": 101,
-              "kind": "line_range",
-              "start": 38
+              "kind": "symbol",
+              "name": "validate_instruction_detail_artifacts"
             },
             "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
           },

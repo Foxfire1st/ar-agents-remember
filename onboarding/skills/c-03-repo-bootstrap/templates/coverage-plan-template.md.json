@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The coverage plan template captures strategy, area goals, route classification, file classification, and evidence pack queues.",
+      "note": "The coverage plan template captures strategy, area goals, route classification, file classification, and evidence pack queues.\n\nAnchor: `## Evidence Pack Queue`",
       "targets": [
         {
           "anchor": {
-            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
-            "content": "sha256:08f6263f7e9feb76c4cad7ec4e39ef0ddaab22e07cf034580e74b8e10df3e9d7",
+            "blob": "5e6b8e057fca040ed5c0c46991f76737228c1a2c",
+            "content": "sha256:04691712b9ca32bd0381aefb7ddf1509e5e05064492ecd79ebf535e8cce614d6",
             "locator": {
-              "end": 36,
+              "end": 38,
               "kind": "line_range",
               "start": 1
             }
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
-            "content": "sha256:5d1dd6c2b2c3088ab4ff80b5fe22e9d7541c3273abc770ae87f1e409cb57dce2",
+            "blob": "5e6b8e057fca040ed5c0c46991f76737228c1a2c",
+            "content": "sha256:ad3b4c13053217f12204d7445fa3041dfa59a01e36ed9ae78d2e65d5fcb2fc07",
             "locator": {
-              "end": 65,
+              "end": 67,
               "kind": "line_range",
-              "start": 38
+              "start": 40
             }
           },
           "kind": "code"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "blob": "5e6b8e057fca040ed5c0c46991f76737228c1a2c",
             "content": "sha256:81be07ec27638a0af0c6852b6c66a8ca71e1b632a499db304cd522d0524135d8",
             "locator": {
-              "end": 50,
+              "end": 52,
               "kind": "line_range",
-              "start": 44
+              "start": 46
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "blob": "5e6b8e057fca040ed5c0c46991f76737228c1a2c",
             "content": "sha256:e7c1230b6bdd9f78ef64f4642fa2829d267c38118584dfe42272bda0dd26753a",
             "locator": {
-              "end": 65,
+              "end": 67,
               "kind": "line_range",
-              "start": 52
+              "start": 54
             }
           },
           "kind": "code"
@@ -71,16 +71,16 @@
       ]
     },
     "5": {
-      "note": "The skill places coverage planning before governing-route mapping and the later overview/file waves.",
+      "note": "The skill places coverage planning before governing-route mapping and the later overview/file waves.\n\nAnchor: `### 4A — Coverage Planning`",
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:19ea56fe4d329d3274874d8c72963e91da5e787f45088c8b671da401856753b0",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:4f1fbe3518b19b24ad4fab72a4586702ab1260fc223f5fba2770dd10a02a322f",
             "locator": {
-              "end": 805,
+              "end": 752,
               "kind": "line_range",
-              "start": 758
+              "start": 705
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },

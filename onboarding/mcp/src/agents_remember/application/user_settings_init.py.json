@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
+        "blob": "5fa43f169fb341dff7f3842ee51d822ef98b1e32",
         "content": "sha256:e1b1e130d573fedda765cba8048c19486a542e5705f89393870eb889b930fae4",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
+        "blob": "5fa43f169fb341dff7f3842ee51d822ef98b1e32",
         "content": "sha256:b50deafc17c8655e5e84ffe69227f17c6133d5b719e92c896f37bd63cdae4385",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
+        "blob": "5fa43f169fb341dff7f3842ee51d822ef98b1e32",
         "content": "sha256:0ccd1fb97c9dc9039d37309c05bbc2e2787b80080ba157f76e7dd9441e5da3f7",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
+        "blob": "5fa43f169fb341dff7f3842ee51d822ef98b1e32",
         "content": "sha256:fe2c9c9853b4fe5448816a275677328298baaedf989141461565f4781ad80948",
         "locator": {
           "kind": "symbol",
@@ -77,14 +77,15 @@
   ],
   "references": {
     "1": {
-      "note": "The one create-or-report decision, with the existing file reported before any choice is validated.\n\nAnchor: `initialize_role_settings`",
+      "note": "The one create-or-report decision, with the existing file reported before any choice is validated.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
-            "content": "sha256:0da753f8e179a72a8aa7ea135ba4b6da2b459cfe863ab2a6e1a4fd17e36e6541",
+            "blob": "5fa43f169fb341dff7f3842ee51d822ef98b1e32",
+            "content": "sha256:fe2c9c9853b4fe5448816a275677328298baaedf989141461565f4781ad80948",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "initialize_role_settings"
             }
           },
           "kind": "code"
@@ -96,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
+            "blob": "5fa43f169fb341dff7f3842ee51d822ef98b1e32",
             "content": "sha256:b50deafc17c8655e5e84ffe69227f17c6133d5b719e92c896f37bd63cdae4385",
             "locator": {
               "kind": "symbol",
@@ -112,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
+            "blob": "5fa43f169fb341dff7f3842ee51d822ef98b1e32",
             "content": "sha256:9ad5ffeec4382e30271c272a319ca6f6c4a84401740d0b8e4f8d7d693f4030d1",
             "locator": {
               "kind": "symbol",
@@ -194,14 +195,16 @@
       ]
     },
     "6": {
-      "note": "Current source account and its stated boundaries.",
+      "note": "The module states its one write — the harness of each role, created exclusively at mode 0600 — and that it never writes an existing destination or the separate tool-server authority file.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
-            "content": "sha256:0da753f8e179a72a8aa7ea135ba4b6da2b459cfe863ab2a6e1a4fd17e36e6541",
+            "blob": "5fa43f169fb341dff7f3842ee51d822ef98b1e32",
+            "content": "sha256:97bc55513623c6fce6db769a47c0c864b1438193991abff7174643fbb01e4def",
             "locator": {
-              "kind": "file"
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

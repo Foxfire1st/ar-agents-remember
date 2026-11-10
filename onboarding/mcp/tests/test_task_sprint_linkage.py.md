@@ -2,30 +2,27 @@
 
 ## Governing Overview
 
-[Tests overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-> **Retained historical source account — superseded by the current contract:**
-> Provides a shared temporary task-linkage fixture and canonical attach/detach/report helpers; no test methods remain. It writes typed master/sprint documents and snapshots their bytes for consuming structural-publication tests. The historical attach/render/registration acceptance inventory in its docstring is not the current executed population.
+Holds the shared temporary sprint↔master linkage fixture and canonical judgment-register helpers, plus one test of the linkage report. It writes typed master/sprint documents and snapshots their bytes for consuming structural-publication tests. The attach/render/registration inventory in its docstring is not the current executed population.
 
 ## Code Commentary
 
 ### Current Contract
 
-SprintLinkageTests now defines test_linkage_report_answers_with_counts_and_location. It asserts counts/updated/reportPath and equality of the report's facts to logged whole linkageFacts; its dry answer has no reportPath. Its deterministic 100-token content assertion excludes log with the coordination root fixed to40. Shared helpers remain; this adapter fixture is not a whole server/session proof or a no-tests module.
+SprintLinkageTests defines test_linkage_report_answers_with_counts_and_location. It asserts counts/updated/reportPath and equality of the report's facts to logged whole linkageFacts; its dry answer has no reportPath. Its deterministic 100-token content assertion excludes log with the coordination root fixed to 40 characters. Shared helpers remain; this adapter fixture is not a whole server/session proof.
+
+`_judgment_row` authors a judgment-register row whose author defaults to `architect`, and `_register_section` builds the register section from such rows.
 
 ### Logic
 
-The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
-history describe prior populations and must not be used to recreate removed tests or claim they
-still run. The retained behavior and its fixture limits, described above, govern this card.
+The current evidence boundary is the source-listed behavior below. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-> **Retained historical source account — superseded by the current contract:**
-> The test-shaped filename is retained for imports by other suites. Helper availability is not
-> a passing test, and the module has no collected test definitions of its own.
+The test-shaped filename is kept because other suites import its fixture and helpers. Helper availability is not a passing test.
 
 ### Invariants And Boundaries
 
@@ -49,13 +46,15 @@ No external domain claim is required.
 
 ### Repo-Internal References
 
-> **Retained historical source account — superseded by the current contract:**
-> Each current definition below can be inspected in the exact source file. Historical references
-> to removed methods are superseded by this current inventory.
+Each current definition below can be inspected in the exact source file.
 
-- **Retained historical source account — superseded by the current contract:** Shared helper _judgment_register [1]
-- **Retained historical source account — superseded by the current contract:** Shared helper _judgment_row [2]
-- **Retained historical source account — superseded by the current contract:** Shared helper _register_section [3]
+- Shared helper _judgment_register [1]
+
+- Shared helper _judgment_row [2]
+
+- Shared helper _register_section [3]
+
+- A judgment-register row's author defaults to `architect`. [5]
 
 ### Cross-Repo References
 
@@ -63,4 +62,4 @@ This card establishes test behavior, not a separate cross-repository protocol or
 
 No external evidence is needed for these assertions.
 
-- SprintLinkageTests now defines test_linkage_report_answers_with_counts_and_location. It asserts counts/updated/reportPath and equality of the report's facts to logged whole linkageFacts; its dry answer has no reportPath. Its deterministic 100-token content assertion excludes log with the coordination root fixed to40. Shared helpers remain; this adapter fixture is not a whole server/session proof or a no-tests module. [4]
+- SprintLinkageTests defines test_linkage_report_answers_with_counts_and_location. It asserts counts/updated/reportPath and equality of the report's facts to logged whole linkageFacts; its dry answer has no reportPath. Its deterministic 100-token content assertion excludes log with the coordination root fixed to 40 characters. Shared helpers remain; this adapter fixture is not a whole server/session proof or a no-tests module. [4]

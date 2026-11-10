@@ -77,12 +77,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
-            "content": "sha256:fa035cd072435d9389f5b3b0ea910cc8097887cebfb1f1c1cefb3c7a630c04f3",
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
             "locator": {
-              "end": 509,
-              "kind": "line_range",
-              "start": 388
+              "kind": "symbol",
+              "name": "complete_tool_response"
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -90,12 +89,12 @@
         },
         {
           "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
             "content": "sha256:8f58a59dd927e2dbbb576bf82611e6bced2dab7e3b4b9dfda59266f466da7f96",
             "locator": {
-              "end": 131,
+              "end": 135,
               "kind": "line_range",
-              "start": 131
+              "start": 135
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },

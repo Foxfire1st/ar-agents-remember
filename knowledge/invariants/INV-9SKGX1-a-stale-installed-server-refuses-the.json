@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "family_guarantee"
+    ],
+    "justification": "Realized by the publication classifier, the server's dispatch check and the refusal builder; tests show every declared publication refused before its handler while reads, dry runs and messages still answer. It keeps an old build from landing work under gates the installed build changed."
+  },
+  "applicability": "Tool calls to an MCP server whose installed build reads stale.",
+  "conditions": [
+    "The call is one of the declared publication operations and is not a dry run."
+  ],
+  "exclusions": [
+    "Reads, dry runs, messages and planning calls, which answer with the stale annotation.",
+    "Processes running from a source checkout and builds whose currentness is unknown, which are never refused.",
+    "Tool names that are not declared publications."
+  ],
+  "id": "INV-9SKGX1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A012 freeze report /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/worker/88048054-fcd8-4402-831d-ec1434384185/role-launch/260928-MIK-L84-worker-88048054-fcd8-4402-831d-ec1434384185.md (sha256 24bae8b521caee9e403ff2b3360e0fb33762507a48a93f7df877a908bcb13215); records /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/worker/88048054-fcd8-4402-831d-ec1434384185/role-launch/L84-A012-records/ (manifest sha256 e2fe9e9d5ccad5ff658be0d30a04f9962d89e5ef843b6af7f46ac104ca8be9ae): checks-bounded.log (test_suite_load_independence.py + test_dashboard_build_currentness.py: 36 passed, 5 subtests, 0 failed), dashboard lint/typecheck/full vitest (289 files, 2,205 tests passed), fast gate PASS, on the clean copy of 40475ce5; mutation pass 4/4 caught; last full suite on A007 8d974809 (L84-A007-records/gate325-8d974809.log); the Architect's landing check of A011 (STOP 20261110T010206Z, c5e4f401...) reran both full lanes there and reruns them on A012; Reviewer P5 round-8 code PASS on A011 (/home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round8-fix-verification-verdict.md, sha256 11813eaf6d634dcc2e234789f3a6e672494afed4480d706974fec505c2f4a67d), reopened for L84-LC-01/02 only; round-9 fix-verification pending",
+        "K3 judged this hunk (sha256:3a2b2eab4a0e05106cf201a0a5490e6af2af29046d88bb949e10ad69cbd6a9a0) to realize CAND-STALE-SERVER, deduplicated to INV-9SKGX1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:f852236a29a8c197fdf23a810b1370a89d18c0865224a7fd47430d0fc40428a5) to realize CAND-STALE-SERVER, deduplicated to INV-9SKGX1; lines read at C 40475ce5."
+      ],
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "MIK-R84@v5 retained v1 rule2 as amended v2/v4",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A stale installed server refuses the declared non-dry-run publications before dispatch while reads, dry runs and messages remain available with currentness annotation.",
+  "status": "proposed",
+  "supersedes": []
+}

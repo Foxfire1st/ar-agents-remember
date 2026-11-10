@@ -2,13 +2,13 @@
 
 ## Governing Overview
 
-[models overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-`models/task_document.py` (260731-EFA-L9) is the task-document wire vocabulary shared with the
-response models: `StepStatus`/`DocStatus` and the terminal-readiness blocker moved here from the
-`tasks` package so response models can import them without reaching up (layering cleanup).
+`models/task_document.py` is the task-document wire vocabulary shared with the
+response models: `StepStatus`/`DocStatus` and the terminal-readiness blocker live here, below the
+`tasks` package, so response models can import them without reaching up.
 
 ## Code Commentary
 
@@ -38,8 +38,6 @@ No configured domain documentation was available.
 
 ### Repo-Internal References
 
-
-> Retained earlier citation wording: - Response and task modules import the vocabulary from this module. [1]
 
 
 ### Cross-Repo References

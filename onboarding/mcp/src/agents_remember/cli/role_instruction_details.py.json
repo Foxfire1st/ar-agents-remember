@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
-        "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+        "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
         "locator": {
           "kind": "symbol",
           "name": "compose_launch_instructions"
@@ -22,8 +22,62 @@
     },
     {
       "anchor": {
-        "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
-        "content": "sha256:9dae52b611a8ccc2196c26b91f61aa7eeb51cb0d665e50b3d4dc8fbdc5f5dca3",
+        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+        "content": "sha256:afa85dd99b0baaa9a1eea7771536e23bb5dbf22967538f0831c5708086aeed70",
+        "locator": {
+          "kind": "symbol",
+          "name": "_bound_details"
+        }
+      },
+      "id": "RLZ-6FPCG9",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "K3-7KDG7C-bound-details",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Before the launch freezes step details, this binds each relative Markdown link inside each detail from that detail's own corpus source: a link whose target is another step detail is bound to that detail's per-request frozen path beside the report, and any other link to its absolute corpus source path. It then recomputes the detail's revision from the bound bytes, so the recorded revision is the digest of the exact content the agent is given.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+        "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
+        "locator": {
+          "kind": "symbol",
+          "name": "compose_launch_instructions"
+        }
+      },
+      "id": "RLZ-8SGCGM",
+      "invariant": "INV-ZA67WW",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 instruction provenance",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This function writes and binds emitted detail artifacts; replay validates their recorded emitted identity rather than assuming original source-byte identity.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+        "content": "sha256:bcaf61b6df284746b209e3fc41f0178674b74047e1bb309fb11abc84ae696623",
+        "locator": {
+          "kind": "symbol",
+          "name": "_bound_baseline"
+        }
+      },
+      "id": "RLZ-F3VP22",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "K3-7KDG7C-bound-details",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Binds the links in the role and operation baseline to the frozen detail paths (or their original non-detail sources) segment by segment and refuses when the recorded instruction origins do not cover the whole trusted stream, so the first message never points at live, changeable detail sources.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+        "content": "sha256:0b1e541356504b07899550c887ded86c43f93b01b01a0812db842171ebd7d0e9",
         "locator": {
           "kind": "symbol",
           "name": "_require_detail_target"
@@ -40,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
+        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
         "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
         "locator": {
           "kind": "symbol",
@@ -59,15 +113,16 @@
   ],
   "references": {
     "1": {
-      "note": "Freeze and substitute pointers before existing user-note composition.",
+      "note": "Freeze and substitute pointers before existing user-note composition.\n\nAnchor: `write_detail_artifacts`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
-            "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:139b0e0c2bf07ff0a4e05c7c4f3a62dc34b68b68f00fa332dc3540979dcb6830",
             "locator": {
-              "kind": "symbol",
-              "name": "compose_launch_instructions"
+              "end": 33,
+              "kind": "line_range",
+              "start": 28
             }
           },
           "kind": "code"
@@ -79,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
             "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
             "locator": {
               "kind": "symbol",
@@ -91,14 +146,15 @@
       ]
     },
     "3": {
-      "note": "The detail keeps its deterministic report sibling name and resolves beside the saved handover's canonical path, not the report's collection destination.\n\nAnchor: `_require_detail_target`",
+      "note": "The detail keeps its deterministic report sibling name and resolves beside the saved handover's canonical path, not the report's collection destination.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
-            "content": "sha256:a830d7d1269cb01d8a5bf6565b8662b145c8d3b276abc9ccc232ec8e26751b4d",
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:0b1e541356504b07899550c887ded86c43f93b01b01a0812db842171ebd7d0e9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_require_detail_target"
             }
           },
           "kind": "code"
@@ -126,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b91bb19898ce63d1edea720a40237bcf5413f58b",
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
             "content": "sha256:974ddafaa5bca02dcb531fc26ef2a93ed3850ce2b5493de1d6e58b601e58a470",
             "locator": {
               "kind": "symbol",
@@ -135,6 +191,38 @@
             "path": "mcp/tests/test_capsule_replay_integrity.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Detail content is link-bound against the shipped corpus and re-digested before it is frozen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:afa85dd99b0baaa9a1eea7771536e23bb5dbf22967538f0831c5708086aeed70",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_details"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The baseline is bound along its instruction origins, and incomplete origins or unbound relative links refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:bcaf61b6df284746b209e3fc41f0178674b74047e1bb309fb11abc84ae696623",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_baseline"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

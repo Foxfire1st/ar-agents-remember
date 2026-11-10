@@ -3,14 +3,15 @@
   "realizes": [],
   "references": {
     "12": {
-      "note": "`SyncFixture` owns the current boundary described above.\n\nAnchor: `SyncFixture`",
+      "note": "`SyncFixture` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
-            "content": "sha256:6eb5dc4bae9b6bc138e722301bf64db472318778e891ea2f0859967050327104",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "content": "sha256:cbc66ab67c19dc6755d15243f44a188d9eb5bcb57064847edc4f59073546575d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "SyncFixture"
             }
           },
           "kind": "test"
@@ -18,14 +19,15 @@
       ]
     },
     "13": {
-      "note": "`WorktreeSyncTests` owns the current boundary described above.\n\nAnchor: `WorktreeSyncTests`",
+      "note": "`WorktreeSyncTests` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
-            "content": "sha256:6eb5dc4bae9b6bc138e722301bf64db472318778e891ea2f0859967050327104",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "content": "sha256:c388396b74ed887acaa44ee6fabbca60a648c2b329996c09748d167dd80baacd",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "WorktreeSyncTests"
             }
           },
           "kind": "test"
@@ -37,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
             "content": "sha256:5ef9871f0188d411455e5789a66e7f7be55e7206e43a441ab0039b6babe1c4d6",
             "locator": {
               "kind": "symbol",
@@ -53,8 +55,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
-            "content": "sha256:719b829a279cbc7281668c55fcb5c69a192a2de2ec6fce993e5cc98c2ef6d067",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "content": "sha256:e083860378473a13a6e525857aeb7d7911db1f8520a7db13bf33ad73e24a8da1",
             "locator": {
               "kind": "symbol",
               "name": "map_official_memory"
@@ -69,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
             "content": "sha256:b11cca83b4e3bc23bfae5ce8fad3d08929203cdf21f308683d2930176f6a73e7",
             "locator": {
               "kind": "symbol",
@@ -85,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
             "content": "sha256:09a93975b5fcdccf4989ce4a7ee6d24e7049ccafa78d2ec5abea56f07a19950b",
             "locator": {
               "kind": "symbol",
@@ -101,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
             "content": "sha256:1b12c9c8fefc802490c855b78ae1f71e596f3ec7adfd966ee19d2a3792ce286b",
             "locator": {
               "kind": "symbol",
@@ -117,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
             "content": "sha256:7641ca0bc19096ed37cd771b996d024e734975642b0c58e621c4ae98c302c37e",
             "locator": {
               "kind": "symbol",

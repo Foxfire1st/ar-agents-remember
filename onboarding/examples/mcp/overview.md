@@ -6,15 +6,15 @@
 
 ## Governing Overview
 
-[Repository overview](../../overview.md)
+[overview](../../overview.md)
 
 ## Purpose
 
-`examples/mcp/` holds the public MCP authority-settings template, `settings.example.json`, and a coding-guidelines example that teams can adapt for a memory repository. The authority template is separate from a memory layer's `system/settings.json`; the guidelines are documentation-shaped example content, not an automatically selected runtime input.
+`examples/mcp/` holds the public MCP authority-settings template, `settings.example.json`, the one common tool-server registration example, `server.example.json`, and a coding-guidelines example that teams can adapt for a memory repository. The authority template is separate from a memory layer's `system/settings.json`; the guidelines are documentation-shaped example content, not an automatically selected runtime input.
 
 ## Hot Path Summary
 
-Start with the JSON configuration example for the repository/profile and runtime settings shape; read the guideline example for source/application ownership. The configured runtime owns parsing and admission, so these illustrative files do not themselves confer execution or lifecycle authority.
+Start with `settings.example.json` for the repository/profile and runtime settings shape and `server.example.json` for the server command each harness registers; read the guideline example for source/application ownership. The configured runtime owns parsing and admission, so these illustrative files do not themselves confer execution or lifecycle authority.
 
 ## How It Is Built
 
@@ -29,6 +29,10 @@ The provider entries are empty per-provider settings objects, not an empty provi
 The retained `providerDegradation` illustration enables the detector and failsafe and sets the memory ratios to 0.8 and 0.92. These conservative settings are parsed by the focused `kernel/primitives/provider_degradation_settings.py` owner; their presence is configuration vocabulary, not a report of live provider health or measurement.
 
 The retirement illustration enables `autoLandOnIntegration`, `autoLandOnFinalize` and `autoCloseCompletedSeats`. The parser accepts the older `autoRetireOnIntegration` and `autoRetireOnFinalize` aliases, while current keys take precedence. Tool-log retention is also illustrated separately by `keepDays`, `maxBytes` and `enclosureMaxBytes`.
+
+### Server registration
+
+`server.example.json` is the single command/arguments declaration that each harness adapts inside its own configuration envelope, as the install guides describe: `uvx --refresh-package agents-remember-mcp agents-remember-mcp@latest` (the refresh option takes the package name, then the `@latest` command follows) with `--config` passed to that command, naming the authority settings file at `<ABSOLUTE_USER_CONFIG_FOLDER>/agents-remember/agents-remember-settings.json`. The placeholder must become an absolute path, because a JSON argument array does not expand `~`. The example carries no harness-specific keys and installs nothing.
 
 ### Coding guidelines
 
@@ -47,3 +51,5 @@ The retirement illustration enables `autoLandOnIntegration`, `autoLandOnFinalize
 - Gate delegation's standard settings home outranks the warning-bearing authority fallback. [6]
 - The old provider timeout spelling refuses and explains the separate uncapped indexing/seed boundary. [7]
 - Degradation settings retain explicit enable/failsafe switches and parsed threshold vocabulary. [8]
+
+- The common registration example runs `uvx` with the published package and an absolute user-config settings path. [9]

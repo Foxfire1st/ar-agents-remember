@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Canonical lifecycle and role-document registry to which this reference defers.\n\nAnchor: current role routing",
+      "note": "Canonical lifecycle and role-document registry to which this reference defers.\n\nAnchor: `composition-manifest.json`",
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
-            "content": "sha256:6c8851c74d00d29d5ed65c302ae546e6e1b1f75e4d50adcd5d1a661a48d67f69",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:cd01dc4bdf414f55e7a4193317fb4d9c5b1ec1d4f439b8abea77b868c2db347e",
             "locator": {
-              "kind": "file"
+              "end": 12,
+              "kind": "line_range",
+              "start": 6
             },
             "path": "skills/l-01-agent-lifecycles/SKILL.md"
           },
@@ -37,16 +39,16 @@
       ]
     },
     "3": {
-      "note": "The page documents only package-served skills: MCP resources with the server's own origin and URI, one generated package copy kept current by `sync-skills.py`, no `skills_install` tool and no harness mirror or coordination-root skill tree, plus the one-call first-run path that needs no skill read.",
+      "note": "The page documents only package-served skills: MCP resources with the server's own origin and URI, one generated package copy kept current by `sync-skills.py`, nothing that installs a skill folder and no harness mirror or coordination-root skill tree, plus the one-call first-run path that needs no skill read.\n\nAnchor: `SEP-2640`",
       "targets": [
         {
           "anchor": {
-            "blob": "331d4df51fde6f890d4819be6e13d43f889c2e79",
-            "content": "sha256:962ecd593f2932967845e6a427736cef70aecd7da56d2418a9f0fec52e31e7b9",
+            "blob": "a6530e395a63e338f0c0c8e7749124edff25e12a",
+            "content": "sha256:136bdd60ab1efdbb9b368674bdb93de58c17ebb9e105c17108700aa86b57830c",
             "locator": {
-              "end": 20,
+              "end": 56,
               "kind": "line_range",
-              "start": 1
+              "start": 3
             }
           },
           "kind": "code"
@@ -54,14 +56,16 @@
       ]
     },
     "4": {
-      "note": "Current source account and its stated boundaries.",
+      "note": "Current source account and its stated boundaries.\n\nAnchor: `generated-copies.json`",
       "targets": [
         {
           "anchor": {
-            "blob": "331d4df51fde6f890d4819be6e13d43f889c2e79",
-            "content": "sha256:0edd3a662ced257bec4553a69dad6e1d0e16bf427e12a58c3dbb3a4a6bc14095",
+            "blob": "a6530e395a63e338f0c0c8e7749124edff25e12a",
+            "content": "sha256:c9a1804230045bd196c78a8fab5c7bb42322633551e37a5581e0d94faad1f5e0",
             "locator": {
-              "kind": "file"
+              "end": 56,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

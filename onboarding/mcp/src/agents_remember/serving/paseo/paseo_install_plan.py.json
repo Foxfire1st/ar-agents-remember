@@ -1,0 +1,122 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_install_plan.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9bb03aa95076ae8db462dd46dd333917f6aa58c9",
+        "content": "sha256:9008e3e7ca0611add0e6db47828870e548d006dc1ca223beee0d60edeb1da205",
+        "locator": {
+          "kind": "symbol",
+          "name": "planned_changes"
+        }
+      },
+      "id": "RLZ-8CKKJ0",
+      "invariant": "INV-WK67MP",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v2 preview parity as amended v3/v4",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Builds the explicit install action list from current Node, installation, settings, plugin and owned-process observations without executing the plan.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The ordered, read-only plan; no change when a restart is held back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bb03aa95076ae8db462dd46dd333917f6aa58c9",
+            "content": "sha256:9008e3e7ca0611add0e6db47828870e548d006dc1ca223beee0d60edeb1da205",
+            "locator": {
+              "kind": "symbol",
+              "name": "planned_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A setting is described with provider ids only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bb03aa95076ae8db462dd46dd333917f6aa58c9",
+            "content": "sha256:6ed586ecb434d2f8738fd44e6ae0daf289ec01406678904d943aceeff8bd8df3",
+            "locator": {
+              "kind": "symbol",
+              "name": "setting_change"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The embed and plugin-copy writes a pass will make.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bb03aa95076ae8db462dd46dd333917f6aa58c9",
+            "content": "sha256:fd59313c2cef741507202f49b5153a9faec05d6d0293ae5bdf459c13b205294c",
+            "locator": {
+              "kind": "symbol",
+              "name": "home_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The single plugin load operation after a wrong-path registration is removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bb03aa95076ae8db462dd46dd333917f6aa58c9",
+            "content": "sha256:6b28b22a47a2711dc45fda1c11d2d015a27b8a15ad8500a9a43ebd769cbb5ad8",
+            "locator": {
+              "kind": "symbol",
+              "name": "plugin_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The installed CLI version read from its manifest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bb03aa95076ae8db462dd46dd333917f6aa58c9",
+            "content": "sha256:46828e0f898e63afd7b4a8247944cb0d23f710fdcfa2e2af5ce176ebbee69a38",
+            "locator": {
+              "kind": "symbol",
+              "name": "installed_manifest_version"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A plugin registered in a stopped daemon's file counts as loading on start.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bb03aa95076ae8db462dd46dd333917f6aa58c9",
+            "content": "sha256:7d6670bb16084a9832dd13ceea9cb20fd6a151a27e206dbe99e6253f9ff57caa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_configured_plugin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

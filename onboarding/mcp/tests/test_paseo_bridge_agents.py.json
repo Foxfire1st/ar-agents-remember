@@ -7,10 +7,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9470c93c9f16fb7f0c168235e9d25567fb600ab0",
-            "content": "sha256:e10544157c4eed5acb26b7d5c339ac98b228eb10ad1f9b3a5eca700039d0ebde",
+            "blob": "c3e9a4d12bf8633b9abb9436528e77bae366981e",
+            "content": "sha256:88e4726b19c54c4c99242bdaeabad9e709b1447c41411ccd4e6b75d30eb3ce54",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_workspace_open_reuses_or_creates_through_the_public_client"
             }
           },
           "kind": "test"
@@ -22,10 +23,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9470c93c9f16fb7f0c168235e9d25567fb600ab0",
-            "content": "sha256:e10544157c4eed5acb26b7d5c339ac98b228eb10ad1f9b3a5eca700039d0ebde",
+            "blob": "c3e9a4d12bf8633b9abb9436528e77bae366981e",
+            "content": "sha256:228b1cc3cf1f005098c942a50ca5ea775720284d5c8817a1bb1818145713e7ae",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_service_tier_is_native_creation_data_and_unsupported_is_rejected_before_create"
             }
           },
           "kind": "test"
@@ -37,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9470c93c9f16fb7f0c168235e9d25567fb600ab0",
+            "blob": "c3e9a4d12bf8633b9abb9436528e77bae366981e",
             "content": "sha256:2b65b9c73e88e00e53428936bb9e7ab495e8532da493ba1346a982c61350d3e2",
             "locator": {
               "end": 166,

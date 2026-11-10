@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "486df76371233ac389a477475154153b54d0a8e0",
-        "content": "sha256:7aeeba6281080bc7e8dae194990fd8dc383ddc1d35ad7b72544adc931e98fe16",
+        "blob": "aff60b405c8c322b9c868ded07b85ec8a52198dd",
+        "content": "sha256:f23b64db640b3d3489c5db1845666e39d9e0de7f159d5aa089b35d3d753fad91",
         "locator": {
           "kind": "file"
         }
@@ -16,22 +16,22 @@
         "handoffEntry": "L192-W-R199-12",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "docs/architecture.md at C still presents both substrates as retired and the providers guide as 'a retirement and old-install cleanup account' (91-93), with the leftover tree described as what an older installation left behind.",
+      "rationale": "docs/architecture.md presents both substrates as retired and calls the Providers guide 'a retirement and old-install cleanup account' (line 113). It describes the providers tree as inert scaffolding plus what an older installation left behind.",
       "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "By-path Intent needs no provider; meaning and relationship providers remain retired and have no active search engine.",
+      "note": "By-path Intent needs no provider; meaning and relationship providers remain retired and have no active search engine.\n\nAnchor: `By path (Intent)`",
       "targets": [
         {
           "anchor": {
-            "blob": "486df76371233ac389a477475154153b54d0a8e0",
-            "content": "sha256:3d976934134098f14c86cf7efe6e0d7644b98c006bb175ebdb349b5f5a6fc994",
+            "blob": "aff60b405c8c322b9c868ded07b85ec8a52198dd",
+            "content": "sha256:a91483a7328bdc9398f195356b097f6868ab891529d05ac6a5fbdbf3dd6b8cbb",
             "locator": {
-              "end": 114,
+              "end": 109,
               "kind": "line_range",
-              "start": 104
+              "start": 107
             }
           },
           "kind": "code"
@@ -39,16 +39,16 @@
       ]
     },
     "2": {
-      "note": "GrepAI and CodeGraphContext remain retired; the architecture page names no product route installing, enabling, starting, indexing or querying them, and labels the providers subtree as older-install leftovers.",
+      "note": "GrepAI and CodeGraphContext remain retired; the architecture page names no product path enabling, starting, indexing or querying them, and says runtime installation copies inert shipped scaffolding into the `providers/` tree, which can also hold user data and older-install leftovers.\n\nAnchor: `CodeGraphContext`",
       "targets": [
         {
           "anchor": {
-            "blob": "486df76371233ac389a477475154153b54d0a8e0",
-            "content": "sha256:b49ecf83af94da80edd152a20159f1ee41f1466fd70d57839c24826d7c3ab3bc",
+            "blob": "aff60b405c8c322b9c868ded07b85ec8a52198dd",
+            "content": "sha256:2350dd65ca739ab0efe633165dfd8936dba3a1d793b0246fc0b67a88e2d8b4a4",
             "locator": {
-              "end": 114,
+              "end": 111,
               "kind": "line_range",
-              "start": 112
+              "start": 111
             }
           },
           "kind": "code"
@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "486df76371233ac389a477475154153b54d0a8e0",
+            "blob": "aff60b405c8c322b9c868ded07b85ec8a52198dd",
             "content": "sha256:95e6eac54fc8d3b1785ec93d98278de8e2f161959c8decd02d3cd2c98c0687b9",
             "locator": {
-              "end": 114,
+              "end": 113,
               "kind": "line_range",
-              "start": 114
+              "start": 113
             }
           },
           "kind": "code"
@@ -77,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "486df76371233ac389a477475154153b54d0a8e0",
+            "blob": "aff60b405c8c322b9c868ded07b85ec8a52198dd",
             "content": "sha256:a704b74dfc69b732d5d2ee4407b5a18dbb6c99572e073ea513aea419fe9960e7",
             "locator": {
-              "end": 136,
+              "end": 135,
               "kind": "line_range",
-              "start": 136
+              "start": 135
             }
           },
           "kind": "code"
@@ -94,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "486df76371233ac389a477475154153b54d0a8e0",
+            "blob": "aff60b405c8c322b9c868ded07b85ec8a52198dd",
             "content": "sha256:c014469cb96c7778015a1921c51e6f3e76cc6fd72a96613be64cbc9ea794fdd4",
             "locator": {
-              "end": 47,
+              "end": 46,
               "kind": "line_range",
-              "start": 46
+              "start": 45
             }
           },
           "kind": "code"
@@ -107,28 +107,16 @@
       ]
     },
     "6": {
-      "note": "The installed-runtime layout still draws the providers subtree; the retrieval section qualifies it as old-install leftovers.",
+      "note": "The installed-runtime layout draws the providers subtree; the retrieval section qualifies it as inert shipped scaffolding that can also hold user data and older-install leftovers.\n\nAnchor: `providers/`",
       "targets": [
         {
           "anchor": {
-            "blob": "486df76371233ac389a477475154153b54d0a8e0",
-            "content": "sha256:f8df8f22005883765df38707cc77bcb386621e0eb72b092a594cc81a9a966233",
+            "blob": "aff60b405c8c322b9c868ded07b85ec8a52198dd",
+            "content": "sha256:1ed9cdb9c9c1adcded945768a1de5d4ac36a3821295ec86b8b533215550118b6",
             "locator": {
-              "end": 44,
+              "end": 43,
               "kind": "line_range",
               "start": 28
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "486df76371233ac389a477475154153b54d0a8e0",
-            "content": "sha256:b49ecf83af94da80edd152a20159f1ee41f1466fd70d57839c24826d7c3ab3bc",
-            "locator": {
-              "end": 114,
-              "kind": "line_range",
-              "start": 112
             }
           },
           "kind": "code"
@@ -136,14 +124,14 @@
       ]
     },
     "7": {
-      "note": "This architecture page does not specify Docker/Ollama requirements, provider command flags, the unused-key field name, a safety detector or provider UI; the new converted-knowledge layout/gate sections do not advertise a provider engine.",
+      "note": "This architecture page does not specify Docker/Ollama requirements, provider command flags, the unused-key field name, a safety detector or provider UI; the converted-knowledge layout/gate sections do not advertise a provider engine.",
       "targets": [
         {
           "anchor": {
-            "blob": "486df76371233ac389a477475154153b54d0a8e0",
-            "content": "sha256:7aeeba6281080bc7e8dae194990fd8dc383ddc1d35ad7b72544adc931e98fe16",
+            "blob": "aff60b405c8c322b9c868ded07b85ec8a52198dd",
+            "content": "sha256:f23b64db640b3d3489c5db1845666e39d9e0de7f159d5aa089b35d3d753fad91",
             "locator": {
-              "end": 161,
+              "end": 160,
               "kind": "line_range",
               "start": 1
             }

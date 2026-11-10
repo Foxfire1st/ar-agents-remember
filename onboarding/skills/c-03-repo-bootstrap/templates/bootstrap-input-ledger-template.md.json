@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The input ledger records run metadata, onboarding root, source inventory gate status, and the presented source inventory with status, planned use, and user decision.",
+      "note": "The input ledger records run metadata, onboarding root, source inventory gate status, and the presented source inventory with status, planned use, and user decision.\n\nAnchor: `## Presented Source Inventory`",
       "targets": [
         {
           "anchor": {
-            "blob": "6dbd803ead31b1ec9368b823c0996f522331ba4d",
-            "content": "sha256:a48381719299a83ed6f2d3e5106dbc2216d5320b3f10e7651fc34477b59317e3",
+            "blob": "5e1807306dea0db879047271a7f319b3f3fda2cb",
+            "content": "sha256:9655f2fed8cf8cdcbaf36a82ea19a942effa7732d9d033a3f9448a7ee229be3f",
             "locator": {
-              "end": 19,
+              "end": 21,
               "kind": "line_range",
               "start": 1
             }
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dbd803ead31b1ec9368b823c0996f522331ba4d",
-            "content": "sha256:6f56edbd8b23987a555930d8308e5a2de34cb5e04721410742bcba4188eae51f",
+            "blob": "5e1807306dea0db879047271a7f319b3f3fda2cb",
+            "content": "sha256:a0181eb67f39e71f32abc7016829d0ffc7a9eefb0a738288e2e8ee38a937f556",
             "locator": {
-              "end": 100,
+              "end": 102,
               "kind": "line_range",
-              "start": 21
+              "start": 23
             }
           },
           "kind": "code"
@@ -37,16 +37,16 @@
       ]
     },
     "3": {
-      "note": "Settings excludes are a review checklist and not a hidden substitute for pathRules.",
+      "note": "Settings excludes are a review checklist and not a hidden substitute for pathRules.\n\nAnchor: `## Settings Path-Rule Exclude Review`",
       "targets": [
         {
           "anchor": {
-            "blob": "6dbd803ead31b1ec9368b823c0996f522331ba4d",
-            "content": "sha256:f7e87593bd23fc35c7642035db9156ef76fad03aca21c0565382ff04e2e66d37",
+            "blob": "5e1807306dea0db879047271a7f319b3f3fda2cb",
+            "content": "sha256:5113a36b12185ebb2afe23e2107ccbe79ac6d4ee33a060a503437f93bb7a26dd",
             "locator": {
-              "end": 74,
+              "end": 76,
               "kind": "line_range",
-              "start": 53
+              "start": 55
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dbd803ead31b1ec9368b823c0996f522331ba4d",
+            "blob": "5e1807306dea0db879047271a7f319b3f3fda2cb",
             "content": "sha256:4dda52df0417e3528f3135b75e32ced31900d8baecc646fccd4c38f57e7636a2",
             "locator": {
-              "end": 100,
+              "end": 102,
               "kind": "line_range",
-              "start": 76
+              "start": 78
             }
           },
           "kind": "code"
@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
             "content": "sha256:8e79cc13e2fe4c4f7f063f71244158da91f25feb23be503c240d706f89dd1d67",
             "locator": {
-              "end": 203,
+              "end": 172,
               "kind": "line_range",
-              "start": 197
+              "start": 166
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
@@ -89,16 +89,16 @@
       ]
     },
     "6": {
-      "note": "The reviewed source inventory is written to the input ledger using this template.",
+      "note": "The reviewed source inventory is written to the input ledger using this template.\n\nAnchor: `bootstrap/input-ledger.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:99de1810a49b2892fddfeab2874ffbbbd4a20e6af5411844d01662a00c6caa5c",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:3fe6910470d1fdb6c914ab7f509df1e31c3d7939accfd980ddc710879f38e8f1",
             "locator": {
-              "end": 270,
+              "end": 239,
               "kind": "line_range",
-              "start": 264
+              "start": 233
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },

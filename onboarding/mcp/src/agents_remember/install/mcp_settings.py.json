@@ -1,0 +1,146 @@
+{
+  "path": "mcp/src/agents_remember/install/mcp_settings.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ac4670747f78a91e49fbf29b8155530085c4747d",
+        "content": "sha256:b2f9866e55b6ab8412e3e2ec5880cae2e1346d9ac347aa6243c453d2a772bb3d",
+        "locator": {
+          "kind": "symbol",
+          "name": "copy_mcp_settings"
+        }
+      },
+      "id": "RLZ-KV8KZF",
+      "invariant": "INV-AFA5WS",
+      "origin": {
+        "handoffEntry": "MIK-R84@v10 part4 / user settings and copy-once installation",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This exclusive destination creation preserves old source, existing destination, permissions and dry-run behavior.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ac4670747f78a91e49fbf29b8155530085c4747d",
+        "content": "sha256:b2f9866e55b6ab8412e3e2ec5880cae2e1346d9ac347aa6243c453d2a772bb3d",
+        "locator": {
+          "kind": "symbol",
+          "name": "copy_mcp_settings"
+        }
+      },
+      "id": "RLZ-XAZ4N1",
+      "invariant": "INV-BT9HFV",
+      "origin": {
+        "handoffEntry": "L84-D1-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The permission branch returns a structured state/path/remedy instead of aborting the wider install.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The old settings convention path the copy reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac4670747f78a91e49fbf29b8155530085c4747d",
+            "content": "sha256:8f97b783c4af777c7a0075d182a536700ee825efe1444d46539e2298309b9385",
+            "locator": {
+              "kind": "symbol",
+              "name": "OLD_SETTINGS_CONVENTION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Already-present, no-source and dry-run states return before any write.\n\nAnchor: `already-present`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac4670747f78a91e49fbf29b8155530085c4747d",
+            "content": "sha256:9ec27d3cbfed27a37f05126dace97e2b2c4d4e374176c7803e5a6c113cbc79e8",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exclusive creation, byte and metadata copy, and removal of an incomplete destination.\n\nAnchor: `os.O_EXCL`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac4670747f78a91e49fbf29b8155530085c4747d",
+            "content": "sha256:c76a69d0c94035982304c29963a58f3ea6ddcde30584484e87178673a7b11942",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Errors become permission or refused reports with a remedy.\n\nAnchor: `PermissionError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac4670747f78a91e49fbf29b8155530085c4747d",
+            "content": "sha256:0bde8e77af1503cf511b3c99ec2a0190fa6ae885039d0ce9ca1b484f6170bf50",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The user MCP settings file sits beside the user role settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7625b34c2c0d36ce1713bb7436c5e24a114b1ef8",
+            "content": "sha256:3fba13967434e16d35b880bf5eca5e052cd063ebdf1e1f7911c2ea1abfbad85a",
+            "locator": {
+              "kind": "symbol",
+              "name": "mcp_settings_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The install result carries the copy report.\n\nAnchor: `copy_mcp_settings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:04fbf5329c29670620a4617c8ccbf988d1dadcae8d3119a76b5a89909cd1e3c0",
+            "locator": {
+              "end": 895,
+              "kind": "line_range",
+              "start": 886
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

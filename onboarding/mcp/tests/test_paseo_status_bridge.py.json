@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
+        "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
         "content": "sha256:fecf2d36460f0d06cd70a9387f9e3cef3944f37bd03ea66d3aa37b3f968095ea",
         "locator": {
           "kind": "symbol",
@@ -26,10 +26,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
-            "content": "sha256:98d8a99adf75000433e09ab0a43b9c78682e55b51d03ccf8dc65d518ee2b9e82",
+            "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
+            "content": "sha256:a7f97523b2b838577374e08c5d2b272667bae94271afc28195c5016b0f5ea8aa",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "AgentStateScriptTests"
             }
           },
           "kind": "test"
@@ -37,14 +38,15 @@
       ]
     },
     "2": {
-      "note": "The scripted daemon client enforces 200-entry pages, `hasMore` without a cursor, archived filtering and the ten-page bound.",
+      "note": "The scripted daemon client enforces 200-entry pages, `hasMore` without a cursor and archived entries; the listing case asserts the paging, archived filtering and the ten-page bound.",
       "targets": [
         {
           "anchor": {
-            "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
-            "content": "sha256:98d8a99adf75000433e09ab0a43b9c78682e55b51d03ccf8dc65d518ee2b9e82",
+            "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
+            "content": "sha256:4841d4269b0ac434529b00a560dbf86697b40f7a5422b6276f6233f10965c775",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_agents_live_lists_in_pages_and_says_when_the_listing_did_not_end"
             }
           },
           "kind": "test"
@@ -56,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
+            "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
             "content": "sha256:0f323e399faab1a46d28c9384d8a0d313747138bb890dd3afd5a3ff8e74217e0",
             "locator": {
               "end": 448,
@@ -68,7 +70,7 @@
         },
         {
           "anchor": {
-            "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
+            "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
             "content": "sha256:fecf2d36460f0d06cd70a9387f9e3cef3944f37bd03ea66d3aa37b3f968095ea",
             "locator": {
               "end": 464,
@@ -85,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
+            "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
             "content": "sha256:32da7dfd170f15bde5d90f7e810d6c69a8c8a12ebec048615d3ffe9d1d6d449d",
             "locator": {
               "end": 398,
@@ -97,7 +99,7 @@
         },
         {
           "anchor": {
-            "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
+            "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
             "content": "sha256:4841d4269b0ac434529b00a560dbf86697b40f7a5422b6276f6233f10965c775",
             "locator": {
               "end": 414,

@@ -1,5 +1,11 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "The link reader preserves unread knowledge as undetermined, and the admission owner returns the matching remedy, so the unchanged-context family never turns unread evidence into a false claim of no attribution."
+  },
   "applicability": "Review source-content reads (/api/review/intent/source-content) of one leaf's review comparison, for a path its requested measured tree pair does not list as changed.",
   "conditions": [
     "The link is asked per half with the read owner's exact claim-at-path query, which expands no family and so cannot fail on scope size.",

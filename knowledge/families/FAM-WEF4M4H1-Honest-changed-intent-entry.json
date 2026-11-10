@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Shared pair admission, revision counting, typed unavailable states and entry revalidation together make the compact review control report the selected comparison honestly without eager subject reads; no member guarantees that complete entry behavior."
+  },
   "guarantee": "The task entry opens the reviewed comparison through one compact control whose +/- numbers are that comparison's changed-intent counts - revision heads only one side holds, under the reviewer's own head rule and pair preflight - never change-set line totals and never a zero for knowledge that was not read; for a tree comparison the control also states the attribution of the changed files (unexplained and unknown counts, or that it is partial or unknown), never a zero for an attribution that was not measured; the entry reads no subject catalogue, and its counts are re-validated at the ruled points where the developer looks at it again.",
   "id": "FAM-WEF4M4H1",
   "members": [

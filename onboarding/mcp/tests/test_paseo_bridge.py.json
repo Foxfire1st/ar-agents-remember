@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4c1d204bc5a30ab44576139eea533ccc2f1cf191",
+        "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
         "content": "sha256:a8ff78834aa8e40d8eb2794197eb0363833aa2df216d9522bbdea822c3b5e288",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "4c1d204bc5a30ab44576139eea533ccc2f1cf191",
-        "content": "sha256:e581f6fb5d955923dc82167737ef738270ccbef667166b020ef88fb587bb3899",
+        "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+        "content": "sha256:1f1d6191085574539ce04a70548d1721f28bfc549afbc90af4e635140e0c16a1",
         "locator": {
           "kind": "symbol",
           "name": "BridgeProcessTests.test_unconfigured_or_never_started_runtime_refuses_before_any_process"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "4c1d204bc5a30ab44576139eea533ccc2f1cf191",
-        "content": "sha256:d668c67be23f2f5d57ca0fca445560bd24178605a932e1ac5f449effb3b97aca",
+        "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+        "content": "sha256:33870b954aab173b125241809fd916b0f653e3897b25cc46e3c3fde5de239196",
         "locator": {
           "kind": "symbol",
           "name": "BridgeProcessTests.test_the_script_is_pointed_at_the_configured_runtime_and_no_other"
@@ -56,14 +56,26 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "The wrapper's process boundary: unconfigured refusal, the configured runtime as the only target, named failures, undecodable output and an unterminated call. The scoped current source carries the module/document behavior described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "4c1d204bc5a30ab44576139eea533ccc2f1cf191",
-            "content": "sha256:869b3d0b452b30ee5454b8780ef93fe38a5c7ac410d5a9092255ec06aed24f82",
+            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+            "content": "sha256:db1284932c90323074f0a2e947a9de55200992c599bb908c813feeee87de20eb",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "BridgeProcessTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+            "content": "sha256:bec7e9da7fc53aeeb9d18c3738cf7eab21ab083f7f6fea61446d558297a5a81b",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeScriptHeaderTests"
             }
           },
           "kind": "test"
@@ -75,33 +87,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c1d204bc5a30ab44576139eea533ccc2f1cf191",
-            "content": "sha256:67abba28f1bedffba95f06f4ee1eff3a7845167947037a3ef5742ff12706c500",
+            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+            "content": "sha256:1f1d6191085574539ce04a70548d1721f28bfc549afbc90af4e635140e0c16a1",
             "locator": {
               "kind": "symbol",
-              "name": "BridgeProcessTests"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4c1d204bc5a30ab44576139eea533ccc2f1cf191",
-            "content": "sha256:393b850c4952e117c9749373b3780cf9767b62cda1f3af69909d707d28501967",
-            "locator": {
-              "end": 260,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4c1d204bc5a30ab44576139eea533ccc2f1cf191",
-            "content": "sha256:869b3d0b452b30ee5454b8780ef93fe38a5c7ac410d5a9092255ec06aed24f82",
-            "locator": {
-              "kind": "file"
+              "name": "test_unconfigured_or_never_started_runtime_refuses_before_any_process"
             }
           },
           "kind": "test"
@@ -113,10 +103,23 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c1d204bc5a30ab44576139eea533ccc2f1cf191",
-            "content": "sha256:869b3d0b452b30ee5454b8780ef93fe38a5c7ac410d5a9092255ec06aed24f82",
+            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+            "content": "sha256:ffb63994c1564c8f0bb930e9c1e4f062fd4ea691c4a4ff1ba6a50f185b96a774",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "BridgeScriptTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+            "content": "sha256:69d51389533d0b96b03b2e2fcc01a7569a27c5bd464e09a847d5b53bfe48e882",
+            "locator": {
+              "end": 827,
+              "kind": "line_range",
+              "start": 432
             }
           },
           "kind": "test"

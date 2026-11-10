@@ -4,14 +4,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Table construction retains each row's fields, uses, cases, bound and interim ownership.\n\nAnchor: `build_tool_answer_table`",
+      "note": "Table construction retains each row's fields, uses, cases, bound and interim ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "30cc33614b7ad9177eb2b105ce504bb1808b5c2e",
-            "content": "sha256:e9b41d5b0a10196c01095cdc3a74bc0604be2950e927c44964569be1d656649e",
+            "blob": "6b3ac4ac6a1f098676dc141a71eb25ee5e0752ab",
+            "content": "sha256:be26165859dfe0965812002585f16cc0f47d2314b4f5ad0a17c66813d33473f9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "build_tool_answer_table"
             },
             "path": "mcp/tests/tool_answer_table_support.py"
           },
@@ -20,14 +21,15 @@
       ]
     },
     "2": {
-      "note": "Cases are checked against missing uses, extra fields and bounds.\n\nAnchor: `validate_row_case`",
+      "note": "Cases are checked against missing uses, extra fields and bounds.",
       "targets": [
         {
           "anchor": {
-            "blob": "30cc33614b7ad9177eb2b105ce504bb1808b5c2e",
-            "content": "sha256:e9b41d5b0a10196c01095cdc3a74bc0604be2950e927c44964569be1d656649e",
+            "blob": "6b3ac4ac6a1f098676dc141a71eb25ee5e0752ab",
+            "content": "sha256:42177258d3478085014935889d03303ecb36215c82f8d7cf1fff986ea1718da4",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_validate_shaped_row"
             },
             "path": "mcp/tests/tool_answer_table_support.py"
           },
@@ -68,14 +70,15 @@
       ]
     },
     "6": {
-      "note": "The delivery observer patches record_tool_completed and compares delivered tokens with returned and logged counts.\n\nAnchor: `ToolAnswerFinalMeasureTests`",
+      "note": "The delivery observer patches record_tool_completed and compares delivered tokens with returned and logged counts.",
       "targets": [
         {
           "anchor": {
-            "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
-            "content": "sha256:0531a708a6505155d3f518232ee7620c0f49ef6422df23a47e1f51d887348b4e",
+            "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
+            "content": "sha256:b01506c61ab1a33f6e5211bfa428e05b0a0e3dab8d87410c9df3d6170c294703",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_ordinary_answer_observer_matches_delivered"
             },
             "path": "mcp/tests/test_tool_answer_table_measure.py"
           },
@@ -84,14 +87,15 @@
       ]
     },
     "7": {
-      "note": "Ordinary and largest install fixtures pin copiedFiles=18 and createdDirs=44/43 as projection-equality fixtures under the existing answer bounds.\n\nAnchor: `_INSTALL_ORDINARY_CASE`, `_INSTALL_LARGEST_CASE`",
+      "note": "Ordinary and largest install fixtures pin copiedFiles=15 and createdDirs=42/41 as projection-equality fixtures under the existing answer bounds.",
       "targets": [
         {
           "anchor": {
-            "blob": "30cc33614b7ad9177eb2b105ce504bb1808b5c2e",
-            "content": "sha256:e9b41d5b0a10196c01095cdc3a74bc0604be2950e927c44964569be1d656649e",
+            "blob": "6b3ac4ac6a1f098676dc141a71eb25ee5e0752ab",
+            "content": "sha256:60587bbfa242367e2461e25750cd754b1150e45ea60011ac3654bd85fb5d2491",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_INSTALL_ORDINARY_CASE"
             },
             "path": "mcp/tests/tool_answer_table_support.py"
           },
