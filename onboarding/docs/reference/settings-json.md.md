@@ -68,7 +68,7 @@ Historical source account (detached from live reference 7; docs/reference/settin
 
 **L184 — NEW-R192-EXTRA-ARGS.** This is the document that states what the settings file's keys mean, so a new key has to be described here rather than inferred from code. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
 
-- The reference states five settings homes/cadences, explicit user-owned open/close commands and nonmutating exact-path mode reporting; role agents do not acquire user-settings write authority. [4]
+- [4]
 
 - The reference distinguishes per-use host/role choices and permission authority from retained accepted-but-unread settings. Its correct-input canonical-amendment passage keeps read/check/validation/sync refusals, starts, product guards and commit gates as stops, and when no admitted route works the write is made openly by hand and logged. [5]
 

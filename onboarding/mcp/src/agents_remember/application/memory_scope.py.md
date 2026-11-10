@@ -17,7 +17,7 @@ execution and asynchronous run identity cannot re-derive different work from the
 `resolve_memory_scope` first authorizes `repo_id`. An absent contract selects the configured
 official onboarding tree and configured coordination authority. A supplied contract is confined to
 the coordination root and delegated to `resolve_leaf_memory_scope`, which requires a leaf contract
-for the same repository, its own external-memory worktree, and a live onboarding directory. The
+for the same repository and its own live external-memory worktree directory with a `.git` marker. The onboarding child may be absent; the scope still names that leaf child. The
 leaf result carries its code worktree, memory worktree, enclosure report path, managed cache
 authority, and code-base commit. There is deliberately no leaf-to-official fallback.
 
@@ -27,7 +27,7 @@ Acceptance-oriented scope may also retain a selected prepared code view and its 
 prepared physical root is used only for quality reads when it matches the future candidate tree,
 while the retained predecessor commits anchor current-candidate provenance; a mismatched prepared
 tree yields to current logical candidate bytes, and an incomplete selected output becomes a typed
-refusal (`memory_scope.py:172-274`, `_resolve_prepared_code_source`:322-361).
+refusal (`memory_scope.py:172-274`, `_resolve_prepared_code_source`:321-360).
 
 Acceptance-oriented quality calls use `resolve_memory_candidate_scope`: configured admission
 still validates repository/enclosure authority, then the canonical pair resolver validates the
@@ -38,7 +38,7 @@ inherit that leaf provenance nor silently replace an invalid requested leaf.
 
 cit:([`resolve_memory_candidate_scope`], mcp/src/agents_remember/application/memory_scope.py:172-204)
 cit:([`revalidate_memory_candidate_scope`], mcp/src/agents_remember/application/memory_scope.py:207-274)
-cit:([`_leaf_scope`], mcp/src/agents_remember/application/memory_scope.py:277-319)
+cit:([`_leaf_scope`], mcp/src/agents_remember/application/memory_scope.py:277-318)
 
 ### Invariants And Boundaries
 
@@ -67,7 +67,7 @@ No configured Domain Documentation source applies; the authority contract is rep
 - Official scope resolves configured repository and onboarding authority. [2]
 - Leaf scope rejects cross-repository, non-leaf, missing-memory, and removed-worktree cases without fallback. [3]
 
-| Acceptance scope retains a proved prepared code view and predecessor-history anchors without replacing current candidate identity. | `_resolve_prepared_code_source`; `resolve_memory_candidate_scope` | mcp/src/agents_remember/application/memory_scope.py:172-204; mcp/src/agents_remember/application/memory_scope.py:322-361 |
+| Acceptance scope retains a proved prepared code view and predecessor-history anchors without replacing current candidate identity. | `_resolve_prepared_code_source`; `resolve_memory_candidate_scope` | mcp/src/agents_remember/application/memory_scope.py:172-204; mcp/src/agents_remember/application/memory_scope.py:321-360 |
 
 ### Cross-Repo References
 

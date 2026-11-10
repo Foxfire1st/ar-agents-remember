@@ -39,10 +39,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ae9be69551cbadc20563cb5e3ce7db43ea99b200",
-            "content": "sha256:991b2a0a451b2773408b062895c2ccad8ad9df234e5d2b28832bfacf2eac24ed",
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:c0ad04ef56c199e4145dee058c921ac7700e48c5b6c2392b857c0c04641fe5b9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "master_changeset"
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },

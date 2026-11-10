@@ -36,8 +36,10 @@ the change the resolver's own root was used unconditionally, so an explicitly re
 silently replaced by the official memory repo and the command would answer confidently about the
 wrong root. The two coincide for an official memory repo and differ for a leaf enclosure's memory
 worktree, whose settings live in the official repo the enclosure was cut from; `--onboarding-root`'s
-help text now states both supported shapes and the settings rule, and the `does not exist` refusal
-names the root actually measured.
+help text states both supported shapes and the settings rule. An absent onboarding collection is
+measured without creating it: uncovered added/copied/renamed sources retain storage-specific missing-onboarding findings,
+while no eligible additions produce no missing-card rows. Disabled storage and valid inline blocks
+retain their existing non-finding behavior.
 
 Since 260731-EFA-L3 the module runs no git subprocess of its own. It imports `run_git` from
 `agents_remember.kernel.git_command` and keeps one helper, `require_git`, which adds the module's
@@ -70,7 +72,7 @@ The module measures current eligible worktree additions before code commit. Crea
 - The measured tree is the caller's `--onboarding-root` when one was supplied, and the resolved
   context's root only when it was not; the **settings** always come from the resolved context. The
   command must not silently substitute the official memory root for a tree the caller named, and it
-  must not resolve settings from the measured worktree (which carries no `system/` of its own).
+  must use the resolved settings authority rather than infer it from the measured worktree.
 - Sidecar storage is detected by the boolean `is_sidecar_storage(storage_mode)`
   predicate (re-exported by the resolver), not by a truthy label string.
 - Sidecar-managed files require `onboarding/<source-path>.md`.

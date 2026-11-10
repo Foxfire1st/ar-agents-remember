@@ -197,6 +197,7 @@ These superseded descriptions retain their historical wording; the current accou
 - Retained reference account (no fresh execution or acceptance inferred): Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. [24]
 
 - Retained reference account (no fresh execution or acceptance inferred): Closeout onboarding refresh uses the context's resolved storage for route-index apply and dry-run preview through build_route_indexes. [25]
+- The exact-pair resolver, and the branch/base/ancestry proof it performs without mutation. [50]
 
 - Retained reference account (no fresh execution or acceptance inferred): The lifecycle state carries the optional worktree phase the panels render. [26]
 
@@ -240,7 +241,6 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): The prepared sandbox reobserves actual comparison source selection before manifest publication. [47]
 
-- Retained reference account (no fresh execution or acceptance inferred): The exact-pair resolver, and the branch/base/ancestry proof it performs without mutation. [50]
 
 - Retained reference account (no fresh execution or acceptance inferred): The closeout's memory side asks the lock before any stamping or commit. [51]
 

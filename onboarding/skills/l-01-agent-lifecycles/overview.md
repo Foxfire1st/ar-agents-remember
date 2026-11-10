@@ -114,7 +114,7 @@ Developer questions follow the supplied parent or documented reporting recipient
 
 Quality commands, executor, retry/resources and evidence contracts resolve from active repository memory. Focused diagnostics remain distinct from explicit full verification and certification; Radon reports are not enforcing passes. Retained R39/CCR-R12 doctrine fixes leaf-closeout/master-integration certification cadence, no leaf-integration rerun, no inferred fallback, suppressed automatic quality/test hooks inside the governed Git transaction, and a ledger refresh without a ledger commit. Those cadence and hook claims are inherited contracts here, not a new execution verdict. Closeout remains owner-run, binds real candidates and evidence, and records actual code/memory commits; Curator never invents future hashes, advances fingerprints onto uncommitted code or silences findings with attestation prose.
 
-Repository foundation is regular task work. Setup reads `memory_init`'s knowledge state, reports it, and names the user-started Architect as the next step; the Architect opens the real foundation task — a registered leaf under a master — and the curator starts on that task document and runs `c-14-knowledge-bootstrap` with the task's actual enclosure contract. The foundation entry therefore carries the repository id, resolved context, scope, sources and current knowledge state, and needs no incidental code delta. There is no taskless authoring entry: an instructed session does not stand in for task admission, and an instruction to author a foundation before any task exists is reported as the missing task it names. No synthetic leaf/worktree/contract supplies missing arguments. Planning remains default, developer authorization supplies the write word, and partial scope remains partial.
+Repository foundation is regular task work. Setup reads `memory_init`'s knowledge state, reports it, and names the user-started Architect as the next step; the Architect opens the real foundation task — a registered leaf under a master — and the curator starts on that task document and follows the repository-foundation detail in `reference/curator/repository-foundation.md` with the task's actual enclosure contract. The foundation entry therefore carries the repository id, resolved context, scope, sources and current knowledge state, and needs no incidental code delta. There is no taskless authoring entry: an instructed session does not stand in for task admission, and an instruction to author a foundation before any task exists is reported as the missing task it names. No synthetic leaf/worktree/contract supplies missing arguments. Planning remains default, developer authorization supplies the write word, and partial scope remains partial.
 
 Bootstrap owns read/report/setup boundaries, not foundation authorship. On a new memory root, setup reads what the baseline will carry without authoring onboarding or running a citation fixer, adopts the attributed baseline, then reports the foundation state; foundation authoring needs the memory commit and its own Architect task. Earlier foundation needs an existing memory commit. Onboarding, attributed baseline and authored knowledge are separate facts. `not-recorded`, recorded exact identity and `unusable` are distinct from `context-not-admitted`; missing revisions are admission failures, not empty knowledge. Unsupported layouts and unusable artifacts are reported rather than quietly overwritten, migrated or deleted.
 
@@ -151,12 +151,16 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 ## Evidence
 
 - Repository foundation is regular work in the real Architect task with its actual enclosure; onboarding is optional input and no incidental code delta is required. [21]
-
 - The writer section names one writer route, `knowledge-ingest` or the mounted `knowledge_write` with the task's leaf enclosure contract, for leaf work and for a repository foundation inside the Architect's regular task. [22]
+- The foundation entry receives the repository identifier, resolved context, scope, sources and current knowledge state; onboarding is optional, no incidental code delta is required, and a missing task is reported. [26]
+- Bootstrap reports the foundation state and names starting the Architect as the next step; it can finish with `not-recorded` and claims no foundation. [29]
+- The bootstrap operation writes user settings in step 4, initializes the memory root in step 5, reads what the baseline will carry in step 6, adopts the baseline in step 7, and reports the knowledge foundation's state in step 8. [31]
+- The procedure these carriers delegate to, and its own statement that there is no taskless entry to it: a curator's authoring seat is opened on a task document, and reading the knowledge state before such a task exists stays with the bootstrap seat. [34]
+- Authored migration prose uses the shared writing profile, and proposed rewrites receive independent meaning review before the normal writer publishes. [91]
+
 
 - Normal knowledge authoring uses the mounted knowledge_write or the admitted serving-build command-line writer; only the tool and input class of a covered correct write admit open manual recovery, and the derived index is never edited. [24]
 
-- The foundation entry receives the repository identifier, resolved context, scope, sources and current knowledge state; onboarding is optional, no incidental code delta is required, and a missing task is reported. [26]
 
 - The mounted knowledge_write and the admitted serving-build command-line writer with the task contract are the permitted writer routes. [27]
 
@@ -268,17 +272,14 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 
 - The Curator report carries foundation facts, examined/unexamined scope, per-record outcomes, written/no-write state and remaining/partial work. [28]
 
-- Bootstrap reports the foundation state and names starting the Architect as the next step; it can finish with `not-recorded` and claims no foundation. [29]
 
 - The bootstrap role's prohibition: the seat authors no knowledge records, runs no knowledge writer and does not organise their production. [30]
 
-- The bootstrap operation writes user settings in step 4, initializes the memory root in step 5, reads what the baseline will carry in step 6, adopts the baseline in step 7, and reports the knowledge foundation's state in step 8. [31]
 
 - The Bootstrap failure-state detail keeps not-recorded, recorded identity, unusable and refused admission distinct; these are reported rather than authored around. [32]
 
 - The bootstrap operation's completion facts carry the knowledge foundation's recorded identity, or the named state showing it is not recorded. [33]
 
-- The procedure these carriers delegate to, and its own statement that there is no taskless entry to it: a curator's authoring seat is opened on a task document, and reading the knowledge state before such a task exists stays with the bootstrap seat. [34]
 
 - The knowledge read route binds the assigned memory tree, its paired code checkout and the exact code tree, and names record files that the reader opens with its own tools. [40]
 
@@ -325,7 +326,6 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 
 - The shared writing profile requires an independent non-author meaning comparison with conforming, violating and boundary cases before a rewrite is classified or published. [90]
 
-- Authored migration prose uses the shared writing profile, and proposed rewrites receive independent meaning review before the normal writer publishes. [91]
 
 - Raw quality status is preserved; stale coherence rewrites combined status, current coherence sets readiness without rewriting it. [70]
 

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b20d5ffa05036534aafe210797d31b3b83d9fad0",
+        "blob": "1aa84cfdcb5c7c6a23646593b11f05bd874192c7",
         "content": "sha256:19189b87477f6189d9644c9846e1eacb19a6da7eb21eea4beb96664ee3246770",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "b20d5ffa05036534aafe210797d31b3b83d9fad0",
-        "content": "sha256:137e61e9e81506b0434187d74018517b5e7206be132d9909a6919b77d74ad11b",
+        "blob": "1aa84cfdcb5c7c6a23646593b11f05bd874192c7",
+        "content": "sha256:0edefe8588ada3ba9348f660637bc20d309b85d40188815e804bf03241088752",
         "locator": {
           "kind": "symbol",
           "name": "build_route_indexes"
@@ -36,6 +36,24 @@
       },
       "rationale": "This quality-input seam invokes the existing route-index owner for absent caches.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1aa84cfdcb5c7c6a23646593b11f05bd874192c7",
+        "content": "sha256:0edefe8588ada3ba9348f660637bc20d309b85d40188815e804bf03241088752",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_route_indexes"
+        }
+      },
+      "id": "RLZ-VC3THY",
+      "invariant": "INV-R1F96Z",
+      "origin": {
+        "handoffEntry": "MIK-R217@v1-empty-memory",
+        "leaf": "260928-MIK-L204"
+      },
+      "rationale": "Quality uses the route builder directly without inventing an absent-root build error.",
+      "role": "support"
     }
   ],
   "references": {
@@ -44,8 +62,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b20d5ffa05036534aafe210797d31b3b83d9fad0",
-            "content": "sha256:683d9f79d4ade5fd726f833012a85cbea147b6ff71d908293d4b19992fbcc9b8",
+            "blob": "1aa84cfdcb5c7c6a23646593b11f05bd874192c7",
+            "content": "sha256:e8e052a92c901c0264795745ef6271e66200a218a1b6392f030323173e616c4e",
             "locator": {
               "kind": "file"
             }

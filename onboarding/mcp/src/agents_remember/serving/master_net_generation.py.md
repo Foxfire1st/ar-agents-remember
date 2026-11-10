@@ -122,7 +122,6 @@ No configured Domain Documentation source exists for this file.
 - Independent half resolution: required code pair vs degradable memory leg, and the `cat-file` resolve check with its two broken-state kinds. [9]
 - Currentness measured against the live integrated tips in the same call. [10]
 
-- The thin delegating entry that consumes the selection and publishes `generation` + `currentness` + `scope`. [11]
 
 - The committed-range refusal vocabulary this module subclasses, with its three absence kinds. [12]
 - The nine cases that measure the selection (eight plus the F1 diff-failure case) through real contracts, repos and routes. [13]
@@ -134,4 +133,4 @@ cross-repository implementation source that governs its behavior.
 
 No applicable cross-repository source was found.
 
-
+- The thin delegating entry that consumes the selection and publishes `generation` + `currentness` + `scope`.  Anchor: `master_changeset` [11]

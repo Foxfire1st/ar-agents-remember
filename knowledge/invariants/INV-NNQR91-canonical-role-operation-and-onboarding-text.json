@@ -29,7 +29,7 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Canonical skills are authored in skills/ and propagated to the package-owned runtime skills tree for resource serving and capsule compilation, without installed harness mirrors.",
   "status": "proposed",

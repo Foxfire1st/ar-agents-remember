@@ -719,25 +719,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ae9be69551cbadc20563cb5e3ce7db43ea99b200",
-            "content": "sha256:bbf0e326902093c6e00715ba998657d468b896fade9c2f76f2e83d38b23eb81b",
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:1444b2e010878f824abb27a9e29ef4d5fbd94c32bd3f1fd4216395a4873a9cbc",
             "locator": {
-              "end": 349,
-              "kind": "line_range",
-              "start": 250
-            },
-            "path": "mcp/src/agents_remember/serving/changeset.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ae9be69551cbadc20563cb5e3ce7db43ea99b200",
-            "content": "sha256:f1c88b971953926bf88b7c64cb48ee0d6978cb6c2b43e28f87a331103eb5d0da",
-            "locator": {
-              "end": 546,
-              "kind": "line_range",
-              "start": 441
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -1277,7 +1262,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ae9be69551cbadc20563cb5e3ce7db43ea99b200",
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
             "content": "sha256:4c1ee7ea52690bf26e08d81dae077c82c25e2b12b98eac954503f2824feda89e",
             "locator": {
               "kind": "symbol",

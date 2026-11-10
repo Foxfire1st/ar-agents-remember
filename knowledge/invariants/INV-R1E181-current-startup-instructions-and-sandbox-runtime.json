@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Current startup instructions and sandbox/runtime dependencies use the one-call package-served path, not retired harness copies or their generators.",
   "status": "proposed",

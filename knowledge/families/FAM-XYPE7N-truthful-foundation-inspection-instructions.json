@@ -19,11 +19,11 @@
     "leaf": "260928-MIK-L26",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 3,
   "routes": [
-    "skills/c-14-knowledge-bootstrap"
+    "skills/l-01-agent-lifecycles/reference/curator"
   ],
   "schema": "ar-family/v1",
-  "status": "proposed",
+  "status": "retired",
   "title": "Truthful foundation inspection instructions"
 }

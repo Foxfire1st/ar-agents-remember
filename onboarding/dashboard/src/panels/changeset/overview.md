@@ -199,6 +199,7 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/file-viewer/markGutte
 
 - Diff highlight styling, fitting and effect teardown. [33]
 
+- The net and leaf summaries are computed separately, over different ranges; leaf working reads require a live worktree, and committed lists publish unrecorded state. [35]
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/changeset.py:147-213 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ee7dabb917b4d8d205da097032c3de3cced909e3; mcp/src/agents_remember/serving/changeset.py:591-634 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f141d164265e926be9249acf6ae680ccf9ffae61. Retired means the anchor no longer stands, not that the cited subject was deleted [35]
 
 - Recorded leaf endpoints use closeout cells or their recorded integrated equivalents. [36]

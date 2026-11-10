@@ -125,12 +125,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "830d89bb301c2fd59337d82f6f8aa7abf676b4e6",
+            "blob": "d10964f21e3c76aa32694f3f0a93ec04188987e8",
             "content": "sha256:5411749dbd3b184fb122907bb2b8bcf744cb6f96b7f6b3bb3af87b6b3157ba5b",
             "locator": {
-              "end": 301,
+              "end": 306,
               "kind": "line_range",
-              "start": 301
+              "start": 306
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -139,49 +139,14 @@
       ]
     },
     "5": {
-      "note": "The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it.\n\nAnchor: `select_master_net` `master_changeset`",
+      "note": "The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it.\n\nAnchor: `select_master_net`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c4737de45af72f420304b097f27413a794c58d4",
-            "content": "sha256:bb1552b9990cab8eab03e22d7d2af20357f59ad042a1edfbbd537312c727a338",
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:1444b2e010878f824abb27a9e29ef4d5fbd94c32bd3f1fd4216395a4873a9cbc",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/serving/master_net_generation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ae9be69551cbadc20563cb5e3ce7db43ea99b200",
-            "content": "sha256:991b2a0a451b2773408b062895c2ccad8ad9df234e5d2b28832bfacf2eac24ed",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/serving/changeset.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c4737de45af72f420304b097f27413a794c58d4",
-            "content": "sha256:7a575351d35d49184626d8535b1e76e3c313d05810ad25cf7446591727a247a6",
-            "locator": {
-              "kind": "symbol",
-              "name": "select_master_net"
-            },
-            "path": "mcp/src/agents_remember/serving/master_net_generation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ae9be69551cbadc20563cb5e3ce7db43ea99b200",
-            "content": "sha256:c0ad04ef56c199e4145dee058c921ac7700e48c5b6c2392b857c0c04641fe5b9",
-            "locator": {
-              "kind": "symbol",
-              "name": "master_changeset"
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },

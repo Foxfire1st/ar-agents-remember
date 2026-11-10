@@ -3,12 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
-        "content": "sha256:84b9d8ce6b5ed5909445940124c36d6fad71a9ce1c6ade5e9119ab425928ee06",
+        "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
+        "content": "sha256:cedcdbd5cf960e1ec08e535abc2e8d739e43963cb736ad9bbcb1faed388ca748",
         "locator": {
-          "end": 13,
-          "kind": "line_range",
-          "start": 7
+          "kind": "file"
         }
       },
       "id": "RLZ-3W9GWW",
@@ -22,12 +20,10 @@
     },
     {
       "anchor": {
-        "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
-        "content": "sha256:a40199ef3b7340b89d99bdd93e9f916861c3b0f15a0bf3dbf8e6374f8281321e",
+        "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
+        "content": "sha256:cedcdbd5cf960e1ec08e535abc2e8d739e43963cb736ad9bbcb1faed388ca748",
         "locator": {
-          "end": 19,
-          "kind": "line_range",
-          "start": 7
+          "kind": "file"
         }
       },
       "id": "RLZ-D6H32J",
@@ -36,22 +32,20 @@
         "handoffEntry": "L62-CUR-6db-attach-INV-09DXWE",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "The Curator's foundation detail makes foundation regular task work: the user-started Architect opens the real foundation task under a master and starts the Curator on it, the Curator uses that task's enclosure and the c-14 workflow, no incidental code delta or prior onboarding is required, a missing task is reported rather than fabricated, and partial scope is reported as partial.",
+      "rationale": "The Curator's foundation detail makes foundation regular task work: the user-started Architect opens the real foundation task under a master and starts the Curator on it, the Curator uses that task's enclosure and the repository-foundation detail, no incidental code delta or prior onboarding is required, a missing task is reported rather than fabricated, and partial scope is reported as partial.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "Foundation uses the real Architect-opened task and actual enclosure, needs no incidental code delta and authors no onboarding.\n\nAnchor: `c-14-knowledge-bootstrap`",
+      "note": "Foundation uses the real Architect-opened task and actual enclosure, needs no incidental code delta and authors no onboarding.\n\nAnchor: `Repository foundation`",
       "targets": [
         {
           "anchor": {
-            "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
-            "content": "sha256:4184185ffbd4c4d0d7f63f893112d2dcdb6f3f302c7df1e529a8999188bf47fc",
+            "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
+            "content": "sha256:cedcdbd5cf960e1ec08e535abc2e8d739e43963cb736ad9bbcb1faed388ca748",
             "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 5
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -63,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
+            "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
             "content": "sha256:254c860e03afd09f555010199ca3053e0385415d298217750e6b65c8d9528ce2",
             "locator": {
               "end": 13,
@@ -80,12 +74,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
-            "content": "sha256:dc70e4e89b7d99b2b5dd3b5ab933298924ee8c625df36c33d57aba2a196d013a",
+            "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
+            "content": "sha256:cedcdbd5cf960e1ec08e535abc2e8d739e43963cb736ad9bbcb1faed388ca748",
             "locator": {
-              "end": 19,
-              "kind": "line_range",
-              "start": 15
+              "kind": "file"
             }
           },
           "kind": "code"

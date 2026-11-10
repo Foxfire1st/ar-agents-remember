@@ -7,12 +7,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a41888e620748530db529f27a3472dae1cc1881a",
-            "content": "sha256:4d6bce282402d8cf492624b089bb5bcdb03eb6c62b096c2639d1add42d983ff0",
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
             "locator": {
-              "end": 540,
-              "kind": "line_range",
-              "start": 518
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -24,11 +22,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a41888e620748530db529f27a3472dae1cc1881a",
-            "content": "sha256:1f8b8be550abf7c1fe785e3a7a0fae8c15520d1e9fd813d03cfa4edf31b0a0e5",
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_invocation_the_procedure_prints_resolves_in_the_shipped_parser"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -40,11 +37,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a41888e620748530db529f27a3472dae1cc1881a",
-            "content": "sha256:7e5a81b822f1e51b3e2f0b76488243ba2696eef8e2ca58b10ee109ba91a05638",
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_compiled_curator_shape_names_the_procedure_it_would_receive"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -56,12 +52,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a41888e620748530db529f27a3472dae1cc1881a",
-            "content": "sha256:e3c24b9831303ebd3ee4cf39f32ecf362c406da453ad6d83ccc050b13d2209a1",
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
             "locator": {
-              "end": 628,
-              "kind": "line_range",
-              "start": 605
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -104,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a41888e620748530db529f27a3472dae1cc1881a",
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
             "content": "sha256:6762a2008226fd2fb9ac39550c94069e0492a0a84940179a680c87f36ebc8d8b",
             "locator": {
               "kind": "symbol",
@@ -120,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a41888e620748530db529f27a3472dae1cc1881a",
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
             "content": "sha256:33f2dd3141c1f8bbdf8e649bb737608004dfd09c8dbd33f1f86c31f07e73a0ae",
             "locator": {
               "kind": "symbol",
@@ -136,11 +130,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a41888e620748530db529f27a3472dae1cc1881a",
-            "content": "sha256:e5a10f99498d000ada633d47807fca25aad6df02cc9a72e7977882e9c58cbfba",
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_bootstrap_free_agent_receives_the_foundation_step"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -152,12 +145,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a41888e620748530db529f27a3472dae1cc1881a",
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
             "content": "sha256:29c5174c2e6838b8b91e37b4ba94b8e74fd7339bcbe4475b73e664b242d50892",
             "locator": {
-              "end": 389,
+              "end": 380,
               "kind": "line_range",
-              "start": 369
+              "start": 360
             }
           },
           "kind": "test"
@@ -169,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a41888e620748530db529f27a3472dae1cc1881a",
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
             "content": "sha256:5d5f8c4ec2d7d614a4b4728c30b580eaf9fb9af1a10674e47872bc20414a452c",
             "locator": {
-              "end": 428,
+              "end": 419,
               "kind": "line_range",
-              "start": 402
+              "start": 393
             }
           },
           "kind": "test"
@@ -186,11 +179,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a41888e620748530db529f27a3472dae1cc1881a",
-            "content": "sha256:e5a10f99498d000ada633d47807fca25aad6df02cc9a72e7977882e9c58cbfba",
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_bootstrap_free_agent_receives_the_foundation_step"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -202,12 +194,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a41888e620748530db529f27a3472dae1cc1881a",
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
             "content": "sha256:52de85908d4bbbcb1ce740f567c0f5c2c09c25763f8264b9423ae938d780ea37",
             "locator": {
-              "end": 515,
+              "end": 446,
               "kind": "line_range",
-              "start": 491
+              "start": 422
             }
           },
           "kind": "test"

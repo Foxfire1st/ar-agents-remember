@@ -5,7 +5,7 @@
     ],
     "justification": "Calling converted foundations universally not-recorded hides an actually authored or partially authored foundation and can cause an operator to duplicate or omit its authoring work."
   },
-  "applicability": "The c-14 bootstrap skill's foundation states.",
+  "applicability": "The l-01 bootstrap operation's foundation states (`skills/l-01-agent-lifecycles/operations/bootstrap.md`).",
   "conditions": [
     "Complete-empty, complete-authored, partial, admission and legacy states."
   ],
@@ -24,7 +24,7 @@
     "leaf": "260928-MIK-L26",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Bootstrap describes complete-empty, complete-authored, partial, admission and legacy states accurately.",
   "status": "proposed",

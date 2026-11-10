@@ -68,7 +68,6 @@ The observation seam reuses the exact R06 prerequisite owners: memory candidate 
 future code candidate capture, R02 task intent, R01 topology fingerprint, and the worktree Git
 helpers.
 
-- Pair identity and roots come from the canonical memory candidate pair owner. [1]
 
 - Code candidate tree comes from the memory-quality future-code capture. 
 
@@ -80,3 +79,5 @@ helpers.
 Anchor: `capture_future_code_candidate` [2]
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/modules/future_code_candidate.py::capture_future_code_candidate - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Pair identity and roots come from the canonical memory candidate pair owner.  Anchor: `resolve_memory_candidate_pair`, "return MemoryCandidatePairIdentity(" [1]

@@ -8,11 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
+            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
             "content": "sha256:60c738fbff7f8b76f037ac59d0174391ef8e585d380a03a671edb65809cf2021",
             "locator": {
-              "kind": "symbol",
-              "name": "build_route_indexes"
+              "end": 217,
+              "kind": "line_range",
+              "start": 201
             },
             "path": "mcp/src/agents_remember/kernel/route_index.py"
           },
@@ -20,23 +21,23 @@
         },
         {
           "anchor": {
-            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
-            "content": "sha256:03bd8a85010e049891e7c368c1934cc68fac935af49b4fcf5f0221a8a46e8369",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/route_index.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
+            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
             "content": "sha256:35647404308e6930bdcc34208b313a7414e220b2bc3dbe2794868555c60ce2fc",
             "locator": {
               "end": 230,
               "kind": "line_range",
               "start": 182
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
+            "content": "sha256:9fb670f1ea1eda7af09749b635c3f899fb6b2ae060b5fd701b80c2408a637d14",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/route_index.py"
           },

@@ -7,6 +7,7 @@ The public skill reference now documents package-served skills only. The tool se
 
 
 - The page documents only package-served skills: MCP resources with the server's own origin and URI, one generated package copy kept current by `sync-skills.py`, nothing that installs a skill folder and no harness mirror or coordination-root skill tree, plus the one-call first-run path that needs no skill read. [3]
+- Current source account and its stated boundaries. [4]
 
 
 
@@ -29,7 +30,7 @@ The page documents one canonical location (`agents-remember/skills/`) and the on
 
 The lifecycle reference row names architect, backend orchestrator, manager, worker, curator, investigator, adversarial reviewer and bootstrap. It describes native role agents receiving one role file and operation, and free chat creating or resolving the sprint, recording the developer's request, and starting an Architect with `role_start`; another role is selected this way only when the developer names the role and task. That reference row is documentation, not a claim that every listed lifecycle is a public launchable role.
 
-The retained Core Skills table lists `c-00`, `c-03`, `c-10`, `c-13` and `c-14`. Carryover lives with `c-10`; closeout and worktree lifecycle procedures live in the listed skills rather than in separate skills. The first-run path needs one Bootstrap call and no skill read: compiled role/operation instructions arrive in its first message. The c-13 table row still includes the words "provider indexing"; that is retained reference wording, not evidence that current setup starts indexing or a watcher.
+The page documents one served skill, `l-01-agent-lifecycles`: the agent lifecycles, the per-role files and operation files, and the report-template and reviewer-criteria libraries. Setup and repository preparation now live in the public docs: `docs/guides/onboard-existing-repo.md` initializes memory, `docs/guides/adopt-existing-memory.md` adopts the first baseline, and the l-01 repository-foundation and repository-research details carry the foundation procedure. The first-run path needs one Bootstrap call and no skill read: compiled role/operation instructions arrive in its first message. No setup, install, baseline-adoption or knowledge-bootstrap skill remains; those operations are docs pages and l-01 operations.
 
 ## Invariants And Boundaries
 
@@ -45,6 +46,3 @@ The retained Core Skills table lists `c-00`, `c-03`, `c-10`, `c-13` and `c-14`. 
 - Canonical lifecycle and role-document registry to which this reference defers. [1]
 
 - Sync script the page instructs running after skill edits. [2]
-
-
-- Current source account and its stated boundaries. [4]

@@ -28,10 +28,8 @@
 ### Repo-Internal References
 
 
-- not_checked, run_drift_summary and _run_converted_summary produce shared typed summary packets. [1]
 
 
-- The context-packet wire model that reads `DriftStatus` and gained the matching `error` field. [2]
 
 
 
@@ -44,3 +42,6 @@ The converted measurement adds its own optional keys to `DriftSummaryPacket`: `b
 - The packet carries the converted measurement fields alongside the legacy ones. [5]
 
 - The tool response model that dropped its third copy of the enum for the same alias. [3]
+
+- not_checked, run_drift_summary and _run_converted_summary produce shared typed summary packets.  Anchor: `not_checked` `run_drift_summary` `_run_converted_summary` [1]
+- The context-packet DriftSummary wire model uses DriftStatus and exposes an optional error field. [2]

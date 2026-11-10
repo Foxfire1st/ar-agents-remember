@@ -18,7 +18,7 @@ unconditionally. Converted memory elsewhere changes recovery wording, never admi
 a non-directory, or a definite non-repository. An actual legacy memory repository receives the
 central `legacy_format_refusal` even when it has never converted. The message identifies the
 operation and line, absent `knowledge/layout.json`, and two recovery routes: `worktree_sync` with
-`merge-memory` from a converted source, or the first conversion in `c-13-install-and-onboard` and
+`merge-memory` from a converted source, or the first conversion in
 `docs/guides/first-conversion.md`.
 
 `converted_memory_location` looks at local branch tips, then registered worktrees. `_converted_branch`
@@ -50,6 +50,7 @@ format boundary and conversion/crossing guidance. A failed probe is never an
 unlock. Converted location only explains recovery, and does not certify the
 converted candidate or replace its ordinary gate/coherence checks.
 
+- The unchanged central text carries the single probe-made case used for conversion guidance. [5]
 - The central legacy refusal and conversion guidance survive retirement of the separate prepared-certification adapter. [13]
 
 
@@ -64,7 +65,6 @@ which deliberately supersedes the earlier cutover-window exception. No live exte
 - Converted locations inform recovery but never unlock an ordinary legacy operation. [2]
 - Local branch marker probe in one batch. [3]
 - Registered working-tree marker lookup. [4]
-- The unchanged central text carries the single probe-made case used for conversion guidance. [5]
 - Only a definite non-repository reads as absent. [6]
 - Structural repository evidence prevents false absence. [7]
 - Failed or timed-out Git probes stay named. [8]

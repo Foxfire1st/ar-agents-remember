@@ -116,15 +116,14 @@
       ]
     },
     "11": {
-      "note": "Surviving descriptions (the `include_drift` description in core registration and docs/tool-details.md) state measurement/currentness/advisory wording. Both l-01-agent-lifecycles copies carry the drift commands, curation, stale-orientation and current-row doctrine (an `onboarding_trace` row answers; a counted change of the card alone never answers); both c-10 copies must state that drift acceptance lifts only the stale-anchor gate and still refuses validator violations as R198.1-reference-anchor and blocked-invalid.",
+      "note": "Surviving descriptions (the `include_drift` description in core registration and docs/tool-details.md) state measurement/currentness/advisory wording. The l-01-agent-lifecycles copies carry the drift commands, curation, stale-orientation and current-row doctrine (an `onboarding_trace` row answers; a counted change of the card alone never answers); the surviving l-01-agent-lifecycles copy must state that drift acceptance lifts only the stale-anchor gate and still refuses validator violations as R198.1-reference-anchor and blocked-invalid.",
       "targets": [
         {
           "anchor": {
-            "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
-            "content": "sha256:67f72a6b266c8d69bd9d381428f21a5f9c1f8cdcb810080b15d71c7a168f6be8",
+            "blob": "69503dc7656bd0a0027c713f7a4f8a1c35009d3a",
+            "content": "sha256:1c915134d13f9ec06c6eff69c62dd7e5c4c92e667ca98fe19e4f70e0c40bb12f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_descriptions_say_what_the_check_is"
+              "kind": "file"
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -137,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
+            "blob": "69503dc7656bd0a0027c713f7a4f8a1c35009d3a",
             "content": "sha256:341c2a6e29b416b644eb870c9f430bf31176a17301c15a41025633ac2a556f9d",
             "locator": {
               "kind": "symbol",
@@ -154,12 +153,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
+            "blob": "69503dc7656bd0a0027c713f7a4f8a1c35009d3a",
             "content": "sha256:116f20c356ac4d340fa3f2c4cc126016f9fa8fd202979134bdfc71d523be9c94",
             "locator": {
-              "end": 561,
+              "end": 528,
               "kind": "line_range",
-              "start": 524
+              "start": 491
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -181,15 +180,14 @@
       ]
     },
     "14": {
-      "note": "Static description assertions inspect surviving descriptions and both l-01-agent-lifecycles and c-10 copies, retain current-row doctrine, and reject restoration of the removed drift tool registration.",
+      "note": "Static description assertions inspect surviving descriptions and the l-01-agent-lifecycles copies, retain current-row doctrine, and reject restoration of the removed drift tool registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
-            "content": "sha256:67f72a6b266c8d69bd9d381428f21a5f9c1f8cdcb810080b15d71c7a168f6be8",
+            "blob": "69503dc7656bd0a0027c713f7a4f8a1c35009d3a",
+            "content": "sha256:1c915134d13f9ec06c6eff69c62dd7e5c4c92e667ca98fe19e4f70e0c40bb12f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_descriptions_say_what_the_check_is"
+              "kind": "file"
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -202,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
+            "blob": "69503dc7656bd0a0027c713f7a4f8a1c35009d3a",
             "content": "sha256:f58216ad6c1dec6c5c208a9730cf42e09686fff31688f595d74e0488b25a3c68",
             "locator": {
               "kind": "symbol",
@@ -303,12 +301,12 @@
         },
         {
           "anchor": {
-            "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
+            "blob": "69503dc7656bd0a0027c713f7a4f8a1c35009d3a",
             "content": "sha256:f58216ad6c1dec6c5c208a9730cf42e09686fff31688f595d74e0488b25a3c68",
             "locator": {
-              "end": 396,
+              "end": 363,
               "kind": "line_range",
-              "start": 351
+              "start": 318
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -316,12 +314,12 @@
         },
         {
           "anchor": {
-            "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
+            "blob": "69503dc7656bd0a0027c713f7a4f8a1c35009d3a",
             "content": "sha256:d1020bcb1bf04503d4cecf3f0ae6f8d1398a1184165f192fa8164e97d9af7119",
             "locator": {
-              "end": 393,
+              "end": 360,
               "kind": "line_range",
-              "start": 393
+              "start": 360
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -345,12 +343,12 @@
         },
         {
           "anchor": {
-            "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
+            "blob": "69503dc7656bd0a0027c713f7a4f8a1c35009d3a",
             "content": "sha256:f58216ad6c1dec6c5c208a9730cf42e09686fff31688f595d74e0488b25a3c68",
             "locator": {
-              "end": 396,
+              "end": 363,
               "kind": "line_range",
-              "start": 351
+              "start": 318
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -358,12 +356,12 @@
         },
         {
           "anchor": {
-            "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
+            "blob": "69503dc7656bd0a0027c713f7a4f8a1c35009d3a",
             "content": "sha256:d1020bcb1bf04503d4cecf3f0ae6f8d1398a1184165f192fa8164e97d9af7119",
             "locator": {
-              "end": 393,
+              "end": 360,
               "kind": "line_range",
-              "start": 393
+              "start": 360
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },

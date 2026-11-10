@@ -235,7 +235,8 @@ None.
 
 [4] mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py — code file
 
-- Paseo settings own strict nested runtime fields and the explicit unconfigured-runtime refusal. [4]
+[22]
+- [4]
 
 [5] mcp/src/agents_remember/kernel/primitives/runtime_config.py — code file
 
@@ -307,7 +308,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.p
 
 [22] mcp/src/agents_remember/kernel/primitives/fresh_host.py — symbol fresh_host_block
 
-- The five-key host block a cold settings file receives. [22]
 
 - Control vocabulary is a zero-internal-import owner of receipt/store/log names and bridge outcome bytes shared by execution, application, explainer and serving seams. [23]
 

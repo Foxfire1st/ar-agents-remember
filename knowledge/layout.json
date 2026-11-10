@@ -10,6 +10,12 @@
     "file:mcp/src/agents_remember/application/memory_quality/citation_runs.py": [
       "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json"
     ],
+    "file:mcp/src/agents_remember/application/memory_quality/knowledge_inputs.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/memory_scope.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
     "file:mcp/src/agents_remember/application/skill_resources/provider.py": [
       "knowledge/dependents/DPD-633P3W-l188-docs-llms-txt.json",
       "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",

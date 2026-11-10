@@ -14,5 +14,5 @@ Spell the `paseoRuntime` block a cold host needs before it can dispatch a start.
 
 ## Evidence
 
-- The five-key block built from the XDG homes, the default listen address and the dashboard origins. [1]
+[1]
 - The host authority is created with that five-key block and an existing block is never rewritten. [2]

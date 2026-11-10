@@ -278,12 +278,12 @@
       ]
     },
     "9": {
-      "note": "Retired invariants and families are never selected as live and are answered as retired.\n\nAnchor: `test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired` `test_a_retired_family_is_never_selected_as_live`",
+      "note": "Retired invariants and families are never selected as live and are answered as retired.\n\nAnchor: `test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired`",
       "targets": [
         {
           "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
+            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
+            "content": "sha256:5409d0e9fb3fdec4d1d4b3c9f2698f604b07311725b47559e71c721754107617",
             "locator": {
               "kind": "file"
             },

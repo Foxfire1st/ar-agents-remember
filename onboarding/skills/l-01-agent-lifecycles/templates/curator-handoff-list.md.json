@@ -170,8 +170,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
-            "content": "sha256:1cb3a2c5c896aa26e0acd24b96047cec6d88531a213b9b58970ad758204baa2d",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:d3c1273715f3b7fcc23d52d26d9e97f95de76f183b00dd1411403b29f9e9b21b",
             "locator": {
               "kind": "file"
             },

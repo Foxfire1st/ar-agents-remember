@@ -1453,8 +1453,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
-            "content": "sha256:588da5b8cf608f58098c5ab14c21c3367c04ad71c8faa96969f7916282235724",
+            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
+            "content": "sha256:e5004d73df5641d389a1812c7f9773b98beb179d83f8400047c198497d49a342",
             "locator": {
               "kind": "file"
             },
@@ -1803,12 +1803,12 @@
         },
         {
           "anchor": {
-            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
+            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
             "content": "sha256:7ab017492371811a9ba7b82b1b0d72b17404fabe25de51094b909e82f718eb5d",
             "locator": {
-              "end": 178,
+              "end": 175,
               "kind": "line_range",
-              "start": 108
+              "start": 105
             },
             "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
@@ -2189,56 +2189,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd710bd6a033d75cf06cff17f62b2844f8fc6bdd",
-            "content": "sha256:f5b4acb27fe33e47a48ba7ff762ff9cb8d9d2d88ba98c8a17a256ac4185ac3dd",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/task_leaf_binding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
-            "content": "sha256:01c9eca1b5b80bee68f3aaaa3e5c14d8529f479bf0441e4a7449987145ced87a",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
-            "content": "sha256:c5a2fd084e668cadc10135510d3635ab841914e4f4cfafe640271cfe0bf18e67",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
-            "content": "sha256:588da5b8cf608f58098c5ab14c21c3367c04ad71c8faa96969f7916282235724",
+            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
+            "content": "sha256:e5004d73df5641d389a1812c7f9773b98beb179d83f8400047c198497d49a342",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-            "content": "sha256:94e64fb092fd78ab42a89bc0b576504d016d9f34918201306df365d0c0a91193",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
           },
           "kind": "code"
         }

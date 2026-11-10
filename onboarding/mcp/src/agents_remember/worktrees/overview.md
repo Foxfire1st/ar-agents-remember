@@ -248,6 +248,7 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 - Retained reference account (no fresh execution or acceptance inferred): The port, the landing request and the direct verdict. [63]
 - Direct apply selects the history source, closes it, then judges the retained closed tree with restore on refusal; exact retry reuses the retained generation. [64]
 - The unconditional legacy-input refusal and its recovery wording. [65]
+- Task recovery guidance never invokes removed get: an established safe leaf can offer task_doc.replace with the exact slug, contract and fields, while an unknown leaf or parent path offers file repair without a guessed mutation. Launch copies contain the own leaf plus declared local requirements, name missing sources without failing launch solely for absence, and refresh/reclaim on canonical publication under the existing rollback and copy budgets. Status copy drift is informational; missing notice is not universal byte equality. Packet-owned refusal presentation preserves the central conversion sentence and single probe-made case, with exact sync args or quoted separate first-conversion argv and no step for unknown. These accounts change neither canonical-file authority, checkpoint/pause distinction, cleanup/reclamation eligibility, paired source lineage nor sync behavior. [99]
 - Retained reference account (no fresh execution or acceptance inferred): The worktree layer's helper that names the leaf's line. [66]
 - Retained reference account (no fresh execution or acceptance inferred): The managed sync asks the lock at admission. [67]
 - Retained reference account (no fresh execution or acceptance inferred): The closeout closes a reopened leaf's latest attempt. [68]
@@ -292,7 +293,6 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 - Binary staged bytes remain exact in cancellation ownership comparisons. [97]
 - Native merge faults are propagated before any cancellation mutation, and later work the transaction does not own is saved and named rather than refused. [98]
 
-- Task recovery guidance never invokes removed get: an established safe leaf can offer task_doc.replace with the exact slug, contract and fields, while an unknown leaf or parent path offers file repair without a guessed mutation. Launch copies contain the own leaf plus declared local requirements, name missing sources without failing launch solely for absence, and refresh/reclaim on canonical publication under the existing rollback and copy budgets. Status copy drift is informational; missing notice is not universal byte equality. Packet-owned refusal presentation preserves the central conversion sentence and single probe-made case, with exact sync args or quoted separate first-conversion argv and no step for unknown. These accounts change neither canonical-file authority, checkpoint/pause distinction, cleanup/reclamation eligibility, paired source lineage nor sync behavior. [99]
 
 - The start-progress owner suppresses lineage-refused beats before any progress write. [100]
 

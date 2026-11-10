@@ -55,7 +55,6 @@ No configured external domain source applies.
 
 - The frozen pair identity retains ledgerPath as information excluded from its authority digest. [1]
 - The strict frozen pair wire contract declares every required authority cell. [2]
-- The resolver is the sole producer of this identity. [3]
 
 ### Cross-Repo References
 
@@ -64,3 +63,5 @@ both repository addresses.
 
 
 No separate external implementation source applies to this file.
+
+- The resolver is the sole producer of this identity. [3]

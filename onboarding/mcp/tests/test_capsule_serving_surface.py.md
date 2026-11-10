@@ -20,9 +20,7 @@ this worktree's source, `_drive_exchange()` runs one client session against the 
 `_drive_extension_methods()` issues the extension's methods over the transport its declaration rode in on.
 
 - **Shipped corpus.** `test_the_shipped_corpus_parses_and_every_served_skill_has_a_root_revision` requires
-  exactly the six retained skills (`c-00-initialize-memory-repo`, `c-03-repo-bootstrap`,
-  `c-10-adopt-memory-baseline`, `c-13-install-and-onboard`, `c-14-knowledge-bootstrap`,
-  `l-01-agent-lifecycles`) in the served catalog and in both the canonical and packaged skill trees, and
+  exactly the one retained skill (`l-01-agent-lifecycles`) in the served catalog and in both the canonical and packaged skill trees, and
   frontmatter, a body digest and a readable URI per skill.
 - **Identity.** `test_the_composition_manifest_declares_the_skill_that_is_served` keeps the two planes agreeing
   on skill identity and origin.
@@ -61,6 +59,7 @@ catch, so no guard passes without being reached.
 
 
 - Shipped corpus, manifest identity, index shape and entry completeness. [2]
+- The served catalog and both the canonical and packaged skill trees hold exactly the six retained skills. [7]
 
 
 - The real stdio exchange and its client-observed checks. [3]
@@ -73,5 +72,3 @@ catch, so no guard passes without being reached.
 
 
 - Altitude admission, capsule seats, nesting and the legacy rename. [6]
-
-- The served catalog and both the canonical and packaged skill trees hold exactly the six retained skills. [7]

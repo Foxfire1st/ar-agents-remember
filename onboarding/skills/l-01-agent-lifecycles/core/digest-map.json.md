@@ -18,6 +18,6 @@ Stable source-unit IDs retain their baseline provenance. Current unit entries ca
 
 - The unit definition explains ID preservation and the role vocabulary. [2]
 
-- Current units distinguish reference evidence from selected digest lines; retired units keep their record. [3]
+[3]
 
 - The digest block binds the rendered digest path, hash and word maximum, and lists the places of the digest. [4]

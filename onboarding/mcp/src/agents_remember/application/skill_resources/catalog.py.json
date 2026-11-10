@@ -218,12 +218,12 @@
         },
         {
           "anchor": {
-            "blob": "cb5267fc9dfc7f51203dd06e839f793c8dcf5ade",
+            "blob": "18d5da5c5cd81c7959fae306901ea22aa9d180b6",
             "content": "sha256:547998cfaff795e86c9f2e2e3875d470ddc56280bd71591ff5304d6bfddf048d",
             "locator": {
-              "end": 474,
+              "end": 467,
               "kind": "line_range",
-              "start": 448
+              "start": 441
             },
             "path": "mcp/tests/test_capsule_serving_surface.py"
           },
@@ -231,12 +231,12 @@
         },
         {
           "anchor": {
-            "blob": "cb5267fc9dfc7f51203dd06e839f793c8dcf5ade",
+            "blob": "18d5da5c5cd81c7959fae306901ea22aa9d180b6",
             "content": "sha256:a93325d13b2b79be21da00cdf92251a99a5306c5430cfb4898da9b6681a8fe86",
             "locator": {
-              "end": 492,
+              "end": 485,
               "kind": "line_range",
-              "start": 477
+              "start": 470
             },
             "path": "mcp/tests/test_capsule_serving_surface.py"
           },
@@ -244,12 +244,12 @@
         },
         {
           "anchor": {
-            "blob": "cb5267fc9dfc7f51203dd06e839f793c8dcf5ade",
+            "blob": "18d5da5c5cd81c7959fae306901ea22aa9d180b6",
             "content": "sha256:b175fb6a2862de7ee5cc857bfda9588d95617311782fb2dd9914a9456440719a",
             "locator": {
-              "end": 671,
+              "end": 664,
               "kind": "line_range",
-              "start": 623
+              "start": 616
             },
             "path": "mcp/tests/test_capsule_serving_surface.py"
           },
@@ -275,12 +275,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb5267fc9dfc7f51203dd06e839f793c8dcf5ade",
+            "blob": "18d5da5c5cd81c7959fae306901ea22aa9d180b6",
             "content": "sha256:72779b94833275f73878d3c0aa0679f275ad91dd51e5ec859a712dfff4ac142d",
             "locator": {
-              "end": 425,
+              "end": 418,
               "kind": "line_range",
-              "start": 395
+              "start": 388
             },
             "path": "mcp/tests/test_capsule_serving_surface.py"
           },

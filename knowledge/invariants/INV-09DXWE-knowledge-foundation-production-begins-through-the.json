@@ -8,7 +8,7 @@
   "applicability": "The route from a finished Bootstrap setup to a repository's first knowledge foundation.",
   "conditions": [
     "The foundation is organised by a user-started Architect as regular task, master or sprint work.",
-    "c-14 remains the Architect/Curator continuation, not a Bootstrap execution stage."
+    "The l-01 curation and lifecycle operations remain the Architect/Curator continuation, not a Bootstrap execution stage."
   ],
   "exclusions": [
     "A taskless knowledge-authoring session.",
@@ -26,7 +26,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Knowledge foundation production begins through the user-started Architect as regular task/master/sprint work, not as taskless setup.",
   "status": "proposed",

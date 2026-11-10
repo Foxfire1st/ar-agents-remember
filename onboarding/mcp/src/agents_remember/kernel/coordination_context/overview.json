@@ -225,7 +225,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a203d370b91f8e34a9d49be343da9793f8e54a63",
+            "blob": "30e2ff45d5ee2851183199f50d122c1ccdd79e78",
             "content": "sha256:a4ec6a4020fc4eab6d9abd75d379c4e14e55871d7fdb74e90defcd799ecb1733",
             "locator": {
               "kind": "symbol",
@@ -242,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a203d370b91f8e34a9d49be343da9793f8e54a63",
+            "blob": "30e2ff45d5ee2851183199f50d122c1ccdd79e78",
             "content": "sha256:51b34a9383278d48dea1f3fd53658bfe17ed93cf8730528df2ba0244e0ae1d4e",
             "locator": {
               "kind": "symbol",
@@ -259,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
             "content": "sha256:8870c09e8bed95ded0d857d9f6194cfec03b84f590d4bb2065205ae282024c46",
             "locator": {
               "kind": "symbol",
@@ -276,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
             "content": "sha256:d1402594faf11a8a67261bc434c0c1dafe213d59a6f19ecb0b4552c1ea3316c1",
             "locator": {
               "kind": "symbol",
@@ -293,11 +293,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
-            "content": "sha256:1b38709e260da682648a0697eda088bafc5eb24ca08407c5db5e9e6cfb4b44d3",
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+            "content": "sha256:807a6da368258408347f1d18e329d1771082e2aa3e8220fccc55c245bc358d59",
             "locator": {
-              "kind": "symbol",
-              "name": "build_coordination_context"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
           },
@@ -310,7 +309,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
             "content": "sha256:6b7be52d4a4bacf6568b1c8675b88557018425e9148742c66c98c85eddfebd4a",
             "locator": {
               "kind": "symbol",

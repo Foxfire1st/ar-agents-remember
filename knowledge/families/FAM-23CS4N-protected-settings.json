@@ -22,14 +22,13 @@
     "leaf": "260928-MIK-L113",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "docs/reference",
     "mcp/src/agents_remember/install",
     "mcp/src/agents_remember/mcp/tools",
     "mcp/src/agents_remember/models",
-    "mcp/tests",
-    "skills/c-13-install-and-onboard"
+    "mcp/tests"
   ],
   "schema": "ar-family/v1",
   "status": "accepted",

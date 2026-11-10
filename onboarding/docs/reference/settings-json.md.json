@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+        "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
         "content": "sha256:012d7f3d967f181785205f452f928dff02fd7fe94ebb2a02a58b7aecf0995ad2",
         "locator": {
-          "end": 1002,
+          "end": 1037,
           "kind": "line_range",
-          "start": 987
+          "start": 1022
         }
       },
       "id": "RLZ-DYXENX",
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+        "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
         "content": "sha256:37ab52d75cfba4752d4e9a645af8035b5afdf0b780c127d4bb69f64466a4dc51",
         "locator": {
-          "end": 1159,
+          "end": 1194,
           "kind": "line_range",
-          "start": 1159
+          "start": 1194
         }
       },
       "id": "RLZ-FFEWN8",
@@ -42,8 +42,8 @@
     },
     {
       "anchor": {
-        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
-        "content": "sha256:c98b0e3e3c5cb5b8e117bf4f2398fa964cda9744bcd8c4a19aa0a5083029993a",
+        "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
+        "content": "sha256:6ffd29935c5ed39dac28a798b802d9cfc03b2e1f70d73d7dd0afb1537862e689",
         "locator": {
           "kind": "file"
         }
@@ -59,12 +59,12 @@
     },
     {
       "anchor": {
-        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+        "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
         "content": "sha256:c1d8008db2562e414b16242dddf7a3d460e6ed3ef52e590cb835a8e1feb3e99d",
         "locator": {
-          "end": 517,
+          "end": 525,
           "kind": "line_range",
-          "start": 508
+          "start": 516
         }
       },
       "id": "RLZ-JV8KJG",
@@ -78,12 +78,12 @@
     },
     {
       "anchor": {
-        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+        "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
         "content": "sha256:eb492c0f0960ad99c02c5eaa495514433ef989d5886a8905f08d590fae501a85",
         "locator": {
-          "end": 57,
+          "end": 60,
           "kind": "line_range",
-          "start": 24
+          "start": 27
         }
       },
       "id": "RLZ-KM0Q5C",
@@ -94,54 +94,18 @@
       },
       "rationale": "The section a user reads: why the file is closed, the command before an edit, the command that closes both again, and where the product names an open file.",
       "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
-        "content": "sha256:c98b0e3e3c5cb5b8e117bf4f2398fa964cda9744bcd8c4a19aa0a5083029993a",
-        "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-T847MJ",
-      "invariant": "INV-R1E181",
-      "origin": {
-        "handoffEntry": "L188-B11",
-        "leaf": "260928-MIK-L188"
-      },
-      "rationale": "The settings reference names the active MCP host authority and preserves the single user role-settings boundary.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
-        "content": "sha256:c98b0e3e3c5cb5b8e117bf4f2398fa964cda9744bcd8c4a19aa0a5083029993a",
-        "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-ZSHMC5",
-      "invariant": "INV-DKN3CG",
-      "origin": {
-        "handoffEntry": "L71-CURRENT242-W-18",
-        "leaf": "260928-MIK-L71"
-      },
-      "rationale": "The reference maps accepted settings keys individually. spawn.harness has actual role-default/terminal readers; concurrency is explicitly unenforced, while qualityGate resource policy is a separately described key whose enforcement cannot be inferred merely from this document.",
-      "role": "presentation"
     }
   ],
   "references": {
     "4": {
-      "note": "The reference states five settings homes/cadences, explicit user-owned open/close commands and nonmutating exact-path mode reporting; role agents do not acquire user-settings write authority.\n\nAnchor: `openUserSettings`",
+      "note": "Anchor: `openUserSettings`",
       "targets": [
         {
           "anchor": {
-            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
-            "content": "sha256:923c4fe233b04dfb4d4b44e0f3ec044b469b1478e892c428827e0d388c34a203",
+            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
+            "content": "sha256:6ffd29935c5ed39dac28a798b802d9cfc03b2e1f70d73d7dd0afb1537862e689",
             "locator": {
-              "end": 57,
-              "kind": "line_range",
-              "start": 3
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -153,48 +117,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
             "content": "sha256:101fef371e5a1826dda080bd40e1152d87cbe0a145295e40dc8e6cba404bb926",
             "locator": {
-              "end": 1163,
+              "end": 1198,
               "kind": "line_range",
-              "start": 1155
+              "start": 1190
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
             "content": "sha256:5819bd68e8f485b8358e37dc1901bc0d027bc82378c1eff8886d681860720cb5",
             "locator": {
-              "end": 168,
+              "end": 171,
               "kind": "line_range",
-              "start": 154
+              "start": 157
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
             "content": "sha256:10b3111502fc934ea5f0ab2b030343c4aaa3f324af00625ecbd4008cc4ca650c",
             "locator": {
-              "end": 961,
+              "end": 996,
               "kind": "line_range",
-              "start": 957
+              "start": 992
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
             "content": "sha256:28ff62537aaecc3db74413a7a3ac1aaae69677d74a6eaa9e2cc17a03354a066e",
             "locator": {
-              "end": 392,
+              "end": 400,
               "kind": "line_range",
-              "start": 382
+              "start": 390
             }
           },
           "kind": "code"
@@ -206,12 +170,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
             "content": "sha256:f54ae3e12143bd244243086141999177a99a01f1e4c488ffa4fa16d0b19a1cd1",
             "locator": {
-              "end": 669,
+              "end": 704,
               "kind": "line_range",
-              "start": 642
+              "start": 677
             }
           },
           "kind": "code"
@@ -223,12 +187,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
             "content": "sha256:68586d44d8715931aba2bde00f066e1b337863af624d87df6615a32e1dbdfb30",
             "locator": {
-              "end": 640,
+              "end": 675,
               "kind": "line_range",
-              "start": 635
+              "start": 670
             }
           },
           "kind": "code"

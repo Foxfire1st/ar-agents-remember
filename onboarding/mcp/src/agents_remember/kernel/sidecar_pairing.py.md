@@ -63,7 +63,8 @@ beneath `root` and refuses ANY symlink, even one pointing back inside the root.
 It rejects empty/absolute/backslash/NUL paths and `.`/`..` segments, proves
 the root is a real non-symlink directory, walks each part with `lstat` (missing
 components surface as `FileNotFoundError` for the caller), and finishes with a
-containment proof against the resolved root. All refusals are `AuthorityError`.
+containment proof against the resolved root. Invalid paths and symlinks raise `AuthorityError`;
+missing components retain `FileNotFoundError`.
 
 ### Invariants And Boundaries
 
@@ -72,8 +73,9 @@ containment proof against the resolved root. All refusals are `AuthorityError`.
   event/ledger side effects stay in `read_files.py`.
 - **A missing sidecar is never an error.** `route_sidecar_status` returns `absent`
   and `sidecar_body` returns `None`; callers decide how to present "this source has
-  no onboarding yet". The module raises only `AuthorityError`, and only from
-  `confine_rel` on an out-of-root / absolute path.
+  no onboarding yet". Confinement is a separate boundary: `confine_rel` rejects
+  absolute or escaping paths with `AuthorityError`; `confine_non_symlink_rel` also
+  rejects symlink aliases and leaves missing components as `FileNotFoundError`.
 - **The route index is authoritative when present.** The nearest-first governing
   walk decides; the mirror-file probe is only the fallback when no governing index
   exists. The `route_index` public surface (`sidecar_status` + the name constants)
@@ -92,7 +94,6 @@ containment proof against the resolved root. All refusals are `AuthorityError`.
 
 - The dashboard files API that reuses this module (forward + reverse pairing, the path guard). [2]
 
-- `sidecar_status` + `INDEX_FILE_NAME` / `ROUTE_OVERVIEW_NAME` / `ENTITY_CATALOG_NAME` consumed read-only. [3]
 
 - The `meaningful_body` extractor applied to a sidecar body here. [4]
 - The mirror sidecar-path helper (`onboarding_root/<rel>.md`) used for the body read and the no-index probe. [5]
@@ -101,3 +102,5 @@ containment proof against the resolved root. All refusals are `AuthorityError`.
 
 
 - The `AuthorityError` raised on an out-of-root / absolute path. [7]
+
+- `sidecar_status` + `INDEX_FILE_NAME` / `ROUTE_OVERVIEW_NAME` / `ENTITY_CATALOG_NAME` consumed read-only. [3]

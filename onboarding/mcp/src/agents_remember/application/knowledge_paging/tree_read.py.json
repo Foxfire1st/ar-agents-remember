@@ -203,38 +203,14 @@
       ]
     },
     "16": {
-      "note": "Converted trees refuse unheld seeds; mounted tools refuse legacy memory without opening a database.\n\nAnchor: `test_a_converted_tree_refuses_a_seed_it_does_not_hold` `test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database`",
+      "note": "Converted trees refuse unheld seeds; mounted tools refuse legacy memory without opening a database.\n\nAnchor: `test_a_converted_tree_refuses_a_seed_it_does_not_hold`",
       "targets": [
         {
           "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
+            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
+            "content": "sha256:5409d0e9fb3fdec4d1d4b3c9f2698f604b07311725b47559e71c721754107617",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/tests/test_knowledge_index_surfaces.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:c56f96e5b76b517748e7c36fddf6f1d863d0d60d5636bb0b2ab6b04dc3e481ef",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_converted_tree_refuses_a_seed_it_does_not_hold"
-            },
-            "path": "mcp/tests/test_knowledge_index_surfaces.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:35cd6c3d19d38de1c42fefdcc64d139ae6134334dfae7d81d6fc76e74a1bfd45",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
             },
             "path": "mcp/tests/test_knowledge_index_surfaces.py"
           },

@@ -45,7 +45,7 @@ Original-target custody: the nine slots named test_fresh_user_harness.py blob 7e
 - The test imports fixture, scenario and runner through e2e_harness-qualified identities from the scripts root and asserts the four governed paths exist; the four e2e lifecycle artifact rows register those harness modules. Reviewer R11, its authoritative identifier correction and its idempotence addendum supply the candidate-bound review evidence; this account claims no execution by its author. [9]
 
 - Fresh-user fixture construction owns disposable repository paths. [5]
-- The fresh-user flow distinguishes product calls, emulated bootstrap, persisted review outcome and partial closeout checks. Both fresh-user fixtures and their invariant report are assembled here. Retained fresh-user flow co-targets. Product-call record status and candidate authority checks. [6]
+[6]
 - The fresh-user entry point writes a transcript and derives its exit code from invariants and checkpoints. The transcript directory constant. [8]
 - The scenario records each checkpoint's expected value, actual value and pass/fail status without aborting the run; CheckpointRecorder.report includes all checkpoint and diagnostic records. [15]
 - Quality result projection extends terminal run facts with attempted/completed/skipped steps, exit codes and optional gate, selection and failure evidence, plus Codex and causal-failure report pointers. [17]

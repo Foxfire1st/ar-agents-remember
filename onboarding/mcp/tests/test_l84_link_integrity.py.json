@@ -3,24 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
-        "content": "sha256:5142693dd2035f1c2066baa3a07271dcd1595f9fabf612e3b9e45ae59a9e5084",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_the_round_7_handoff_template_fragments_are_caught"
-        }
-      },
-      "facet": "Points the c-14 admission link or the c-13 history-rows link back at curator-handoff-list.md and shows the scan then fails.",
-      "id": "PRF-2FSEVB",
-      "invariant": "INV-TYY2XF",
-      "origin": {
-        "handoffEntry": "L84-CUR-06",
-        "leaf": "260928-MIK-L84"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
+        "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
         "content": "sha256:a17680692db206f52706e490c1367e799f08cc691b9542575369df697e584b6a",
         "locator": {
           "kind": "symbol",
@@ -37,24 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
-        "content": "sha256:c20449d6dc531eab63e945f755ed8c9ffeb1b141cdcf55de836f76de19c67721",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_every_fragment_link_in_every_skill_resolves"
-        }
-      },
-      "facet": "Scans every fragment link of every skill, in source and package, and fails when a link's file or section heading does not exist.",
-      "id": "PRF-AGWWPE",
-      "invariant": "INV-TYY2XF",
-      "origin": {
-        "handoffEntry": "L84-CUR-06",
-        "leaf": "260928-MIK-L84"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
+        "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
         "content": "sha256:86732d011cde84f3ab6eb044d061bd6e8626cda727ec082975df23728e6a1daf",
         "locator": {
           "kind": "symbol",
@@ -71,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
+        "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
         "content": "sha256:48284341f1300d902b8269fc9049eccaeb6254c41e394fc7da6b45ab99c13680",
         "locator": {
           "kind": "symbol",
@@ -90,7 +56,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
+        "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
         "content": "sha256:86732d011cde84f3ab6eb044d061bd6e8626cda727ec082975df23728e6a1daf",
         "locator": {
           "kind": "symbol",
@@ -108,44 +74,8 @@
     },
     {
       "anchor": {
-        "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
-        "content": "sha256:c20449d6dc531eab63e945f755ed8c9ffeb1b141cdcf55de836f76de19c67721",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_every_fragment_link_in_every_skill_resolves"
-        }
-      },
-      "id": "RLZ-7VF40Y",
-      "invariant": "INV-TYY2XF",
-      "origin": {
-        "handoffEntry": "L84-CUR-06",
-        "leaf": "260928-MIK-L84"
-      },
-      "rationale": "This pin scans fragment links in every skill, source and package, not only l-01.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
-        "content": "sha256:5142693dd2035f1c2066baa3a07271dcd1595f9fabf612e3b9e45ae59a9e5084",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_the_round_7_handoff_template_fragments_are_caught"
-        }
-      },
-      "id": "RLZ-Y362KG",
-      "invariant": "INV-TYY2XF",
-      "origin": {
-        "handoffEntry": "L84-CUR-06",
-        "leaf": "260928-MIK-L84"
-      },
-      "rationale": "This test shows the scan fails when either link points back at curator-handoff-list.md.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
-        "content": "sha256:18cde2ced1ef7d719c73dece8746afb9ada36e55dcc647d93a34dcb1e2afd5aa",
+        "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+        "content": "sha256:c2cbe5f378568fee014103294af3683c78308d81abf6a3fac63989a933f2bf84",
         "locator": {
           "kind": "file"
         }
@@ -166,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
             "content": "sha256:19f94d44afd1a3ca0be2def473aed540110bdf48224871327fcc8f49d02884cf",
             "locator": {
               "kind": "symbol",
@@ -178,15 +108,14 @@
       ]
     },
     "10": {
-      "note": "Re-pointing the c-13 or c-14 handoff section link at `curator-handoff-list.md` fails as a missing anchor.",
+      "note": "Re-pointing the retired handoff section link at `curator-handoff-list.md` fails as a missing anchor.",
       "targets": [
         {
           "anchor": {
-            "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
-            "content": "sha256:5142693dd2035f1c2066baa3a07271dcd1595f9fabf612e3b9e45ae59a9e5084",
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+            "content": "sha256:c2cbe5f378568fee014103294af3683c78308d81abf6a3fac63989a933f2bf84",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_round_7_handoff_template_fragments_are_caught"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -198,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
             "content": "sha256:e531e34b32255c5388ce35bf784e6459673c5676ef4b539e540129f4e6ffd576",
             "locator": {
               "kind": "symbol",
@@ -214,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
             "content": "sha256:48284341f1300d902b8269fc9049eccaeb6254c41e394fc7da6b45ab99c13680",
             "locator": {
               "kind": "symbol",
@@ -230,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
             "content": "sha256:b5619c8ecdb996d021ed9b14420fc06b3a17e242ac840a2feb3a471deb7d3709",
             "locator": {
               "kind": "symbol",
@@ -246,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
             "content": "sha256:c86283bddda42de48a51f43a4bee979144cac5c4fc9526af36d85167002d5871",
             "locator": {
               "kind": "symbol",
@@ -262,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
             "content": "sha256:a17680692db206f52706e490c1367e799f08cc691b9542575369df697e584b6a",
             "locator": {
               "kind": "symbol",
@@ -278,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
             "content": "sha256:86732d011cde84f3ab6eb044d061bd6e8626cda727ec082975df23728e6a1daf",
             "locator": {
               "kind": "symbol",
@@ -294,7 +223,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
             "content": "sha256:95c85267bd7fef4e366fa2c41cafffef5ad689ee529fdda54b274ba09480b2a0",
             "locator": {
               "kind": "symbol",
@@ -310,11 +239,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a08c4b2ae5f4029f7bccc24c58c77bddc037ae7",
-            "content": "sha256:c20449d6dc531eab63e945f755ed8c9ffeb1b141cdcf55de836f76de19c67721",
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+            "content": "sha256:c2cbe5f378568fee014103294af3683c78308d81abf6a3fac63989a933f2bf84",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_fragment_link_in_every_skill_resolves"
+              "kind": "file"
             }
           },
           "kind": "test"

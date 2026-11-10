@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
             "content": "sha256:275845a2f77f125f3714f8a467012e311f24a739fbdfb8a6b4eba32dfae00ffd",
             "locator": {
               "end": 52,
@@ -298,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
+            "blob": "7331a6448187c3fff44b1db1361260375567276e",
             "content": "sha256:d174d5c0eae82899cd6b148dc02f3b18757f181586675ef661120bb467985064",
             "locator": {
               "end": 10,
@@ -311,7 +311,7 @@
         },
         {
           "anchor": {
-            "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
+            "blob": "7331a6448187c3fff44b1db1361260375567276e",
             "content": "sha256:a662a61930f6cdf0db9ea04fbdf718b9da9d859836f88d1da6960f94d2db483e",
             "locator": {
               "end": 452,
@@ -410,18 +410,16 @@
       ]
     },
     "24": {
-      "note": "Setup reports the knowledge state and hands foundation work to the user-started Architect's regular task and its Curator; the following provider stage retires providers.\n\nAnchor: `Stage 6 - Retire Providers`",
+      "note": "Setup reports the knowledge state and hands foundation work to the user-started Architect's regular task and its Curator; the following provider stage retires providers.",
       "targets": [
         {
           "anchor": {
-            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
-            "content": "sha256:d5ad1bbf4f2564b9a165599238f96dd2b0f2fcdb9c0c469a55cbad90706d06c5",
+            "blob": "4684108df7310811b1e02a2f9889b34c350dcb13",
+            "content": "sha256:1a9a92eef605905e95d0727f1efc72821ab490886da1d750190546ffc515b0da",
             "locator": {
-              "end": 442,
-              "kind": "line_range",
-              "start": 407
+              "kind": "file"
             },
-            "path": "skills/c-13-install-and-onboard/SKILL.md"
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
           },
           "kind": "code"
         }
@@ -486,7 +484,7 @@
         },
         {
           "anchor": {
-            "blob": "cb387e06b709a3883efb52c666e10e12dc7f0e0d",
+            "blob": "abbf38be0ff7bd2ed7528a156ba8e8d2819dc73b",
             "content": "sha256:0554ac02600d7d6977d55444c59f1b02169a2af7d4a1f38bccbc77312bcf8416",
             "locator": {
               "end": 15,
@@ -517,7 +515,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
+            "blob": "7331a6448187c3fff44b1db1361260375567276e",
             "content": "sha256:ca1b631139a9903c5ae94cc55512b90f6e0eeaa6d8b079c16263edff78126b07",
             "locator": {
               "end": 145,
@@ -531,29 +529,14 @@
       ]
     },
     "3": {
-      "note": "The settings reference separates MCP boot authority, per-use host runtime, memory topology and global/repository agentic settings; the user's `settings.json` is not the MCP authority file, which lives beside it as `agents-remember-settings.json` unless `--config` selects another, and merge/permission boundaries remain explicit.\n\nAnchor: `is NOT an MCP authority file`",
+      "note": "Anchor: `is NOT an MCP authority file`",
       "targets": [
         {
           "anchor": {
-            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
-            "content": "sha256:c090f64e2a90ed9841bde2a7ae14fc9b5a75727b5ccd2b5267bf842df6a288d5",
+            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
+            "content": "sha256:6ffd29935c5ed39dac28a798b802d9cfc03b2e1f70d73d7dd0afb1537862e689",
             "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 3
-            },
-            "path": "docs/reference/settings-json.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
-            "content": "sha256:5819bd68e8f485b8358e37dc1901bc0d027bc82378c1eff8886d681860720cb5",
-            "locator": {
-              "end": 168,
-              "kind": "line_range",
-              "start": 154
+              "kind": "file"
             },
             "path": "docs/reference/settings-json.md"
           },
@@ -582,12 +565,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
             "content": "sha256:5819bd68e8f485b8358e37dc1901bc0d027bc82378c1eff8886d681860720cb5",
             "locator": {
-              "end": 168,
+              "end": 171,
               "kind": "line_range",
-              "start": 154
+              "start": 157
             },
             "path": "docs/reference/settings-json.md"
           },
@@ -600,7 +583,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf83397085f979e6f9a524a18c8d4d11e5b07440",
+            "blob": "b2cfe595977a5397139802662d26e5ea37fc4362",
             "content": "sha256:205e68a9412ec6503eda37b3746eba48fc70d7c9d5eee991927e6da66691af51",
             "locator": {
               "end": 6,

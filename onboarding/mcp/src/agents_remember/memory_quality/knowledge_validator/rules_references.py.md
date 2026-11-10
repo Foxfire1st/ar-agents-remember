@@ -12,9 +12,8 @@
 
 ### Logic
 
-- `R22.3-markers` (`check_markers`): every marker of an onboarding Markdown file has a reference in its sidecar, and every reference is used. Markdown without a sidecar (a record's Markdown included) holds no markers. A file sidecar without Markdown holds no references, and a route sidecar must sit beside its `overview.md`. When the paired sidecar exists but does not parse, the Markdown is skipped, because its shape violation is reported instead.
-- `R22.3-sidecar-without-markdown` (**migration_debt**): the file sidecar is a repair finding
-  (MIK-R21 rule 5), carried only when a base already lacks its Markdown at that sidecar path.
+- `R22.3-markers` (`check_markers`): every marker of an onboarding Markdown file has a reference in its sidecar, and every reference is used. Markdown without a sidecar (a record's Markdown included) holds no markers. A file sidecar holding only realization or proof entries needs no Markdown; a file sidecar with references needs its Markdown card. A route sidecar must sit beside its `overview.md`. When the paired sidecar exists but does not parse, the Markdown is skipped, because its shape violation is reported instead.
+- `R22.3-sidecar-without-markdown` (**migration_debt**): outside a conversion an entries-only sidecar without Markdown needs no card and reports nothing; in a conversion or a `conversion_debt` tree the same sidecar reports R22.3 migration debt — "file sidecar without Markdown in a conversion: its entries wait for a curator to re-home or retire them (MIK-R21 rule 5)" — while a carried entries-only sidecar keeps the carried-debt message. A references-bearing sidecar without its card refuses when new and keeps debt only when a base already held its references; adding references to a base entries-only sidecar is a new finding (MIK-R21 rule 5).
 - `R22.3-record-links`: every ID a sidecar reference target, an entry's `invariant`, a record's `supersedes` or a record link target names must exist in `record_ids`; route targets are exempt, and a retired record still resolves.
 - `R22.3-relations`: the `relation` problems found while parsing.
 - `R22.3-unresolved-target` (**migration_debt**): each `unresolved` target, carried only when a base

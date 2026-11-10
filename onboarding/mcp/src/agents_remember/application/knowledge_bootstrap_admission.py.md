@@ -104,6 +104,10 @@ None recorded.
 ### Repo-Internal References
 
 - `admit_bootstrap_context` owns the current boundary described above. [28]
+- **The module's own statement of why the enclosure shape is wrong here and what the third option is.** [31]
+- **The ordered chain, where no step is skipped because a later one might have answered.** [37]
+- Why an absent coordination root is refused rather than created by Git. [38]
+- The memory initializer this module's authority document is shared with (since MIK-R24 it also writes `knowledge/layout.json` for a brand-new root, and never for an existing one). [50]
 - `bootstrap_scope` owns the current boundary described above. [29]
 - `_source_revisions` owns the current boundary described above. [30]
 
@@ -122,14 +126,11 @@ empty, so nothing here names, reads or writes another repository.
 
 No meaningful cross-repo references found.
 
-- **The module's own statement of why the enclosure shape is wrong here and what the third option is.** [31]
 - The retry-scope prefix that keeps a repository's bootstrap and a task's knowledge two operations. [32]
 - **The authority a taskless bootstrap was admitted under, with the declared/resolved memory-root pair carried rather than collapsed.** [33]
 - The authority reference in one stable spelling, for a report or a progress record. [34]
 - **Why a repository could not be admitted, and the route that re-observes the condition.** [35]
 - **The retry scope as a function of the repository alone, so a resume asks the same question.** [36]
-- **The ordered chain, where no step is skipped because a later one might have answered.** [37]
-- Why an absent coordination root is refused rather than created by Git. [38]
 - Why a declared code root that is not a Git checkout cannot supply exact source inputs. [39]
 - **The resolver called with no enclosure selector, and the refusal that keeps a guessed path out.** [40]
 - **The equality check between the declared and the resolved memory root, and the enclosure refusal.** [41]
@@ -141,5 +142,3 @@ No meaningful cross-repo references found.
 - **The settings document and repository entry that are the authority here.** [47]
 - The shipped Git runner every revision read goes through. [48]
 - The contract reader the resolver is given, which answers an empty selector with no contract. [49]
-
-- The memory initializer this module's authority document is shared with (since MIK-R24 it also writes `knowledge/layout.json` for a brand-new root, and never for an existing one). [50]

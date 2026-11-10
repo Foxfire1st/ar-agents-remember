@@ -531,27 +531,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
-            "content": "sha256:84b9d8ce6b5ed5909445940124c36d6fad71a9ce1c6ade5e9119ab425928ee06",
+            "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
+            "content": "sha256:cedcdbd5cf960e1ec08e535abc2e8d739e43963cb736ad9bbcb1faed388ca748",
             "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 7
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator/repository-foundation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
-            "content": "sha256:43b2ab69f6edf4ea7cdd98f1f0b5a42c74c1ceb83dd9c73f0dfaee5803fb57fc",
-            "locator": {
-              "end": 61,
-              "kind": "line_range",
-              "start": 53
-            },
-            "path": "skills/c-14-knowledge-bootstrap/SKILL.md"
           },
           "kind": "code"
         }
@@ -592,27 +577,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
-            "content": "sha256:84b9d8ce6b5ed5909445940124c36d6fad71a9ce1c6ade5e9119ab425928ee06",
+            "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
+            "content": "sha256:cedcdbd5cf960e1ec08e535abc2e8d739e43963cb736ad9bbcb1faed388ca748",
             "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 7
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator/repository-foundation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
-            "content": "sha256:43b2ab69f6edf4ea7cdd98f1f0b5a42c74c1ceb83dd9c73f0dfaee5803fb57fc",
-            "locator": {
-              "end": 61,
-              "kind": "line_range",
-              "start": 53
-            },
-            "path": "skills/c-14-knowledge-bootstrap/SKILL.md"
           },
           "kind": "code"
         }

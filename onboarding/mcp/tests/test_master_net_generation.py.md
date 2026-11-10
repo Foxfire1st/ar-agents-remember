@@ -108,7 +108,6 @@ No configured Domain Documentation source exists for this file.
 
 
 
-- The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it. [5]
 
 
 ### Cross-Repo References
@@ -122,4 +121,4 @@ No applicable cross-repository source was found.
 
 - The lane manifest registers mcp/tests/test_master_net_generation.py in unit-regression. Membership selects evidence and does not establish execution. [4]
 
-
+- The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it. [5]

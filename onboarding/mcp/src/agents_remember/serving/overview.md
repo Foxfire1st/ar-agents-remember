@@ -366,7 +366,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** [55]
 
-- **The caller that owns the degradation policy and (260921-ICR-L25) carries the code half's named absence instead of raising it: the two sides resolve independently, and only an unrecorded memory half empties.** [56]
+- **The caller resolves the two sides independently: an unselected repository returns an empty range before endpoint admission; caught `not-recorded` supplies a code detail and no memory detail, while other endpoint errors propagate.** [56]
 
 - **The doc-reader entry point that publishes the unrecorded state in the body.** [57]
 

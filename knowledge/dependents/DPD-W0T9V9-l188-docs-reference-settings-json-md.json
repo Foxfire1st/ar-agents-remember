@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "40475ce5dbd82a4b45ebd637b4ffcfa2dc2e7e02",
-    "commit": "81180617aed517835314526b8309d37d5be8b3b7",
+    "codeTree": "5be86e031913a59eeb03a465f1b86fa1a22170ba",
+    "commit": "b9856a62a07735382b6f0c16525d33ed23d0f13d",
     "role": "curator",
     "statement": "The settings reference now places the tool-server settings beside the user's settings.json, documents provider env for harness homes and the harness-home-would-change refusal, and lists the designer and strategist keys as accepted but ignored, all as the code does, while its catalog, ID-before-label and role-initialization statements still agree with the unchanged functions it stands on.",
-    "task": "260928-MIK-L84",
+    "task": "260928-MIK-L204",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {

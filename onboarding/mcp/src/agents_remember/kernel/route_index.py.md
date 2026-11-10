@@ -6,7 +6,9 @@
 
 ## Current source account — Missing-cache builds versus explicit refresh
 
-The shared checked survey remains snapshot-based. Explicit build_route_indexes obeys dry_run and refreshes differing caches when enabled. build_missing_route_indexes instead builds only absent caches, counts existing stale caches without overwriting them, and reports per-path rendering/write failures through build_errors. cache_build_summary counts actual built_indexes rather than the explicit refresh preview written count. Source ownership and path rules remain separate from cache currentness.
+The shared checked survey remains snapshot-based. Explicit build_route_indexes obeys dry_run and refreshes differing caches when enabled. build_missing_route_indexes instead builds only absent caches, counts existing stale caches without overwriting them, and reports per-path rendering/write failures through build_errors. cache_build_summary counts actual built_indexes rather than the explicit refresh preview written count. Source ownership and path rules remain separate from cache currentness. An absent onboarding
+collection has no overviews and yields zero indexes without creating the directory. After the code root passes its directory check, an existing
+non-directory at that path raises `NotADirectoryError` rather than reporting an empty collection.
 
 This source-bound correction covers the described L54 seams only. Unrelated inherited prose and references below are preserved, not recertified; no installed behavior, test execution, permission, landing or MEMORY acceptance is inferred.
 

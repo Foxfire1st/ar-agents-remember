@@ -158,43 +158,16 @@
       ]
     },
     "15": {
-      "note": "ReadableMemoryMode is external/disabled for persisted reads; the startable MemoryMode is external only. Packet memory.mode and worktree.memoryMode use the readable alias.  Anchor: `ReadableMemoryMode` `MemorySummary` `WorktreeSummary`",
+      "note": "ReadableMemoryMode is external/disabled for persisted reads; the startable MemoryMode is external only. Packet memory.mode and worktree.memoryMode use the readable alias.  Anchor: `ReadableMemoryMode` `MemorySummary` `WorktreeSummary`\n\nAnchor: `ReadableMemoryMode`",
       "targets": [
         {
           "anchor": {
-            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
-            "content": "sha256:2b4818134f49410d6832ecc39e5708273fe0459f5e8c220db2c72c90aba12c3f",
+            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+            "content": "sha256:1fb555cee42b2d9f78cda94fd3df6ccfef7dab25458d2912ac85e12dd7621257",
             "locator": {
-              "end": 299,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/memory_mode.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
-            "content": "sha256:ec6a43c10031afafbadf524019e10c4e54aed4192c4b75c206c49a4d6d629f9e",
-            "locator": {
-              "end": 167,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
-            "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
-            "locator": {
-              "end": 335,
-              "kind": "line_range",
-              "start": 276
-            },
-            "path": "mcp/src/agents_remember/models/worktree.py"
           },
           "kind": "code"
         }

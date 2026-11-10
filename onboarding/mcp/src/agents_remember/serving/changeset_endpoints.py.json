@@ -107,22 +107,11 @@
       ]
     },
     "12": {
-      "note": "**The caller that owns the degradation policy: the code half carries its own `not-recorded` absence into the body as `state`/`stateDetail` while only an unrecorded **memory** half may empty, and both sides resolve independently.**\n\nAnchor: `_leaf_range` `leaf_file_diff`",
+      "note": "The caller resolves code and memory independently. A missing selected repository returns an empty result before endpoint admission. Among entered endpoint-owner failures, NOT_RECORDED carries code detail or empties memory; other failures propagate. leaf_changeset publishes the code detail as state/stateDetail alongside counters.",
       "targets": [
         {
           "anchor": {
-            "blob": "ae9be69551cbadc20563cb5e3ce7db43ea99b200",
-            "content": "sha256:991b2a0a451b2773408b062895c2ccad8ad9df234e5d2b28832bfacf2eac24ed",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/serving/changeset.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ae9be69551cbadc20563cb5e3ce7db43ea99b200",
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
             "content": "sha256:e108a3c317e025490ff19943c9e4cf5b0ac1c619561eb8f36991dd011867056b",
             "locator": {
               "kind": "symbol",
@@ -134,7 +123,19 @@
         },
         {
           "anchor": {
-            "blob": "ae9be69551cbadc20563cb5e3ce7db43ea99b200",
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_changeset"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
             "content": "sha256:7ea5a0c462acdae6785d07dfc32269df86c64c5edaad40f655ecfb5f2a020f63",
             "locator": {
               "kind": "symbol",

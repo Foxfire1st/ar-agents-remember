@@ -1,9 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations"
+      "prevents_costly_mistake"
     ],
-    "justification": "Branch policy decided in two places that disagree produces worktrees nobody can reconcile, so it is durable only while the worktree tools (worktrees/source_lineage.py, reading the master's recorded execution nature) decide it and the bootstrap route (c-14 SKILL.md) restates no conflicting policy."
+    "justification": "A worktree opened from the wrong source line or branch silently curates and lands against the wrong history; the guarantee prevents that costly mistake."
   },
   "applicability": "The worktree intent and branch policy that a light task or a bootstrap decides before work starts.",
   "conditions": [
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Worktree intent and branch policy follows recorded organizational versus atomic execution nature instead of creating a branch for every master.",
   "status": "proposed",

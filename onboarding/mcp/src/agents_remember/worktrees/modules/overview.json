@@ -371,20 +371,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
-            "content": "sha256:146d1e195f9fda3ff811d27e114460685f43291ee4a5aa98893919092af9f6d2",
-            "locator": {
-              "kind": "symbol",
-              "name": "refresh_route_indexes_for_context"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
-            "content": "sha256:03bd8a85010e049891e7c368c1934cc68fac935af49b4fcf5f0221a8a46e8369",
+            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
+            "content": "sha256:9fb670f1ea1eda7af09749b635c3f899fb6b2ae060b5fd701b80c2408a637d14",
             "locator": {
               "kind": "file"
             },
@@ -1026,23 +1014,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95544419b0b670b95be5e07d8fae1cdffc3d4c88",
-            "content": "sha256:3abe5e591f9a2a07420ecc288ff6a9aea2d60f4fa7d39af093ba0797e91a7fb5",
+            "blob": "a9956955cfa2e9523c51450b0cfbd3082f4addbb",
+            "content": "sha256:e7b534df57725494bff31f3d7ca150af72124986297d4467cde5ddaff2755166",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_memory_candidate_pair"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "95544419b0b670b95be5e07d8fae1cdffc3d4c88",
-            "content": "sha256:a08427c583b4eeba9568bb21e31d646c4bf625376585ba18a2b15f26fb53175d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_branch_plan"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py"
           },

@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
             "content": "sha256:907a7c54268547768443caf4a951558264f1103a2f07645e48b2325959dab15c",
             "locator": {
               "end": 256,
@@ -57,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa1278faa6b68a3af50046422353bcee5f7d239a",
+            "blob": "32ff03db3253579891e606d2a180d606bd5cf547",
             "content": "sha256:94bb5e83d16840c06ad5123ae62303323ecaf03f5628da78a7da1f7b3f5164cb",
             "locator": {
               "kind": "symbol",
@@ -74,114 +74,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
-            "content": "sha256:b702fcc6b7224134cdfaa0f72d195586e176d0cdf299b70ea4027a156e8392d8",
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:6fa184b11c49fad4d4d20a5ff4245413935839f726560f5e8908c0e6a76a6631",
             "locator": {
-              "end": 220,
-              "kind": "line_range",
-              "start": 179
-            },
-            "path": "scripts/e2e_harness/fresh_user_scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
-            "content": "sha256:36328d6605bc1362355e66699abaa2222081594b6b295d03758721c5c951d906",
-            "locator": {
-              "end": 290,
-              "kind": "line_range",
-              "start": 259
-            },
-            "path": "scripts/e2e_harness/fresh_user_scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
-            "content": "sha256:24b46b6324077a88a6edf768a178761903b9ddad6020278b75153a99d375d953",
-            "locator": {
-              "end": 640,
-              "kind": "line_range",
-              "start": 560
-            },
-            "path": "scripts/e2e_harness/fresh_user_scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
-            "content": "sha256:050ec5f7d4197d0c8da35953b8452a0486ce3fe3a021df79501d519adfe5ada9",
-            "locator": {
-              "end": 792,
-              "kind": "line_range",
-              "start": 750
-            },
-            "path": "scripts/e2e_harness/fresh_user_scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
-            "content": "sha256:aec13a57ebfbb49d4ac31c089f8ca903e9b27d37b7e3532aa748ac970d39abda",
-            "locator": {
-              "end": 990,
-              "kind": "line_range",
-              "start": 908
-            },
-            "path": "scripts/e2e_harness/fresh_user_scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
-            "content": "sha256:25cdd1f54345bac026896ac58fc1cdbe70a006f204c2c058b653f387866f3f6d",
-            "locator": {
-              "kind": "symbol",
-              "name": "run_fixture_scenario"
-            },
-            "path": "scripts/e2e_harness/fresh_user_scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
-            "content": "sha256:aec13a57ebfbb49d4ac31c089f8ca903e9b27d37b7e3532aa748ac970d39abda",
-            "locator": {
-              "kind": "symbol",
-              "name": "run_fresh_user_acceptance"
-            },
-            "path": "scripts/e2e_harness/fresh_user_scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
-            "content": "sha256:29aa85d00b66a53d96cfbf39aa2aaed72eb1842882b205ca3fb7df34c7ffbbc3",
-            "locator": {
-              "end": 777,
-              "kind": "line_range",
-              "start": 549
-            },
-            "path": "scripts/e2e_harness/fresh_user_scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
-            "content": "sha256:f595acab6909f9e6e1277038d2d48e129ebee4e9e77aade37ca4c1ea6cf22dfb",
-            "locator": {
-              "end": 313,
-              "kind": "line_range",
-              "start": 259
+              "kind": "file"
             },
             "path": "scripts/e2e_harness/fresh_user_scenario.py"
           },
@@ -223,12 +119,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "blob": "ddb1be4adab8f7eae3ab91bc1c28476e00fd369a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4815,
+              "end": 4861,
               "kind": "line_range",
-              "start": 4740
+              "start": 4786
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

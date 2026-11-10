@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Admission, context resolution, route survey, drift and changeset pairing must agree on the declared memory source; choosing official cards when the leaf has none would measure the wrong tree."
+  },
+  "applicability": "Leaf memory admission and onboarding readers operating on a declared memory source before onboarding cards exist.",
+  "conditions": [
+    "Leaf admission requires a live memory worktree directory, its Git marker and the recorded repository identity; other contract, branch and ancestry checks remain in force.",
+    "Converted drift measurement requires knowledge/layout.json and admitted source roots. An absent collection contains zero cards and routes. Uncovered added/copied/renamed sources retain applicable storage-specific missing-onboarding findings.",
+    "Working changeset mode selects leaf memory; committed mode selects its declared memory repository. Neither mode changes that selection because the onboarding child is absent."
+  ],
+  "exclusions": [
+    "For leaf admission: missing memory worktrees or Git markers and foreign repository bindings. Existing non-directory onboarding paths are never empty collections.",
+    "Legacy-format measurement and failures reading or validating a converted tree.",
+    "Waiving real per-file card creation, full quality or other authoring admission before the first realization."
+  ],
+  "id": "INV-R1F96Z",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "clean-focused-tests.txt: 28 passed; fresh-path-before-final.txt: original wrong-tree regression; sandbox public-tool evidence."
+      ],
+      "path": "L204-curator-handoff-draft.json"
+    },
+    "handoffEntry": "MIK-R217@v1-empty-memory",
+    "leaf": "260928-MIK-L204",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A live leaf memory worktree is valid before it has onboarding cards, and its readers measure its own absent onboarding collection as zero without selecting the official tree.",
+  "status": "proposed",
+  "supersedes": []
+}

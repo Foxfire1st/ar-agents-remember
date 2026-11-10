@@ -45,10 +45,10 @@ identical, so a reader who follows either learns the same rule.
 - The landing-workflow setting, both its values and the reader that parses it. [1]
 
 - The spine, and the issue-and-PR trigger for each change kind. [2]
-
 - The local landing flow is the landing itself, and its gates are given in one line: commit approval, one push approval, then the agent owns push, PR, checks, merge, cleanup and carryover. [3]
-
 - The `local` flow starts its worktree with `worktree_start` and points its commit gate and closeout to the l-01 closeout procedure. [7]
+
+
 
 - The `pull-request` publication of an already-integrated `H`, with `B`, `H`, `M` and the refusal of
   squash and rebase. [4]

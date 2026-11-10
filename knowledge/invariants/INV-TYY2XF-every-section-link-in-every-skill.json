@@ -1,10 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
-      "guarded_by_test"
+      "prevents_costly_mistake"
     ],
-    "justification": "The links stand in c-13 and c-14 and their package copies and point into the l-01 ingestion template; a scan over every skill fails on a dangling section link, which would otherwise send an agent to a section that does not exist."
+    "justification": "The Part 2 removal leaves this guarantee as a single-file, test-adjacent mistake guard; it no longer spans locations or names a proof entry, so the admission is demoted rather than the invariant retired."
   },
   "applicability": "Every Markdown section link in every skill, in the canonical source and in the packaged copy.",
   "conditions": [
@@ -25,9 +24,9 @@
     "leaf": "260928-MIK-L84",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Every section link in every skill resolves, in source and in the package copy; the c-14 and c-13 links to the admission criteria and history rows point at curator-handoff-ingestion.md, which holds those sections.",
+  "statement": "Every section link in every skill resolves, in source and in the package copy; the l-01 links to the admission criteria and history rows point at curator-handoff-ingestion.md, which holds those sections.",
   "status": "proposed",
   "supersedes": []
 }

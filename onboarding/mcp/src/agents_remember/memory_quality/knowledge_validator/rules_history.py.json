@@ -641,12 +641,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
+            "blob": "915f129fdf2d6dbd0e54f7ecd9793fd9cacf8a49",
             "content": "sha256:49bdb69b04d940bd2a58bf1ce6eada9e10055e8505ba45b5e33c39642538577e",
             "locator": {
-              "end": 332,
+              "end": 335,
               "kind": "line_range",
-              "start": 332
+              "start": 335
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -654,12 +654,12 @@
         },
         {
           "anchor": {
-            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
+            "blob": "915f129fdf2d6dbd0e54f7ecd9793fd9cacf8a49",
             "content": "sha256:d2f3d96dd8948e4416449730447149f27c8cf5b9d69b79f5949fa145243ee771",
             "locator": {
-              "end": 320,
+              "end": 323,
               "kind": "line_range",
-              "start": 320
+              "start": 323
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },

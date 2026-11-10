@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
+            "blob": "bfa0e900805e61cca784cc1ff46e1e15fcea75fc",
             "content": "sha256:922aa423e78e317326a19c42d8aad1231c280f3ec6ce398a4e4e867bb486f2ac",
             "locator": {
               "end": 16,
@@ -20,16 +20,14 @@
       ]
     },
     "2": {
-      "note": "The next step is to start the Architect; the Curator authors the foundation inside the Architect's task, and Bootstrap claims no foundation work.\n\nAnchor: `c-14-knowledge-bootstrap`",
+      "note": "The next step is to start the Architect; the Curator authors the foundation inside the Architect's task, and Bootstrap claims no foundation work.\n\nAnchor: `name-the-next-step`",
       "targets": [
         {
           "anchor": {
-            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
-            "content": "sha256:b523e6c1a9bc94d392e5455d3e11e891f30ad40a92255e96534c61844d8e5705",
+            "blob": "bfa0e900805e61cca784cc1ff46e1e15fcea75fc",
+            "content": "sha256:e8273f95fb816c142bfa5711a9887fe639fc0e5fa4f7eb4da685f1a645e5b3d6",
             "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 18
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -59,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "blob": "4684108df7310811b1e02a2f9889b34c350dcb13",
             "content": "sha256:c8feee4c1392c33120f68868301cc3bf21cb9d4a758cb09b883e7bd9dea60869",
             "locator": {
               "end": 141,

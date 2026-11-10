@@ -297,7 +297,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
+            "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
             "content": "sha256:a0bf2c3889850dab1979e16c2e436db1829b62d71562a6cf60052a3cfee09baf",
             "locator": {
               "kind": "symbol",
@@ -344,7 +344,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
             "content": "sha256:b4ac54ce5b407c6b284a6e53ad2c4a201c6b22b4346c5895fb70b893f0a38eb9",
             "locator": {
               "kind": "symbol",
@@ -361,7 +361,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
             "content": "sha256:a9befde4b5936a384a7ed09a1e2ddc0a9c52af4a88f1955b2b44d9a99200c818",
             "locator": {
               "kind": "symbol",
@@ -456,7 +456,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
+            "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "kind": "symbol",
@@ -500,27 +500,14 @@
       ]
     },
     "24": {
-      "note": "**The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.**\n\nAnchor: `admit_bootstrap_context`, `BootstrapRefusal`",
+      "note": "**The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.**\n\nAnchor: `admit_bootstrap_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "c6f19d716614b209612597c6edbf85090014aac3",
-            "content": "sha256:60cb10c962c281de167b8c9f199e2c4b7a7eccaa8279ae40fe7b64a5560b1eb5",
+            "blob": "dcbd9ce3d1bcc4f2805f2ccf47e3b8a14119ec63",
+            "content": "sha256:5cdaf2e9510dbdc04146abcef8ff00e91a0b4d27dce7faac33bd6a7da5e9d974",
             "locator": {
-              "kind": "symbol",
-              "name": "admit_bootstrap_context"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c6f19d716614b209612597c6edbf85090014aac3",
-            "content": "sha256:dac4c3b59ebe0e1d2b495423aae98a64684c5cf87f48c82bee98242b4b375c6f",
-            "locator": {
-              "kind": "symbol",
-              "name": "BootstrapRefusal"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py"
           },
@@ -810,7 +797,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
             "content": "sha256:a9befde4b5936a384a7ed09a1e2ddc0a9c52af4a88f1955b2b44d9a99200c818",
             "locator": {
               "kind": "symbol",
@@ -822,7 +809,7 @@
         },
         {
           "anchor": {
-            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
             "content": "sha256:b4ac54ce5b407c6b284a6e53ad2c4a201c6b22b4346c5895fb70b893f0a38eb9",
             "locator": {
               "kind": "symbol",
@@ -954,7 +941,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
+            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
             "content": "sha256:60c738fbff7f8b76f037ac59d0174391ef8e585d380a03a671edb65809cf2021",
             "locator": {
               "kind": "symbol",
@@ -971,7 +958,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
+            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
             "content": "sha256:60c738fbff7f8b76f037ac59d0174391ef8e585d380a03a671edb65809cf2021",
             "locator": {
               "kind": "symbol",

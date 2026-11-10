@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+        "content": "sha256:549c7f66a3de6bdbf26c4b84688f20287c704eacf10f9b6e841296feca020315",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_coordination_context"
+        }
+      },
+      "id": "RLZ-FQ7BCC",
+      "invariant": "INV-R1F96Z",
+      "origin": {
+        "handoffEntry": "MIK-R217@v1-empty-memory",
+        "leaf": "260928-MIK-L204"
+      },
+      "rationale": "Leaf resolution keeps the contract-owned onboarding path before any card exists.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "10": {
       "note": "The coordination root of a selected contract, with the path probe and resolution recorded.",
       "targets": [
         {
           "anchor": {
-            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
             "content": "sha256:e71fc697cdd06b7fd9098300a4a9f188b88bd10532b3030a3b27cfa1a40e95af",
             "locator": {
               "kind": "symbol",
@@ -23,10 +42,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
-            "content": "sha256:ab165177414de65c8e5269b54f628ddc28fd94bd7bdb2a73507fdcc7e4bd9359",
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+            "content": "sha256:549c7f66a3de6bdbf26c4b84688f20287c704eacf10f9b6e841296feca020315",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "build_coordination_context"
             }
           },
           "kind": "code"
@@ -87,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
             "content": "sha256:d1402594faf11a8a67261bc434c0c1dafe213d59a6f19ecb0b4552c1ea3316c1",
             "locator": {
               "kind": "symbol",
@@ -103,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
             "content": "sha256:771f59366c7551772aeb1e73865929e124bc1c1b4ea65aa5a86aab84a11ed0fd",
             "locator": {
               "kind": "symbol",
@@ -119,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
             "content": "sha256:b32c60af0859592dfe4425df0f7ba7bbb048901372b075788f02de7b284ca549",
             "locator": {
               "kind": "symbol",
@@ -135,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
             "content": "sha256:41c28d25069604480dea511b8d54fa04434bde78a3a2a769590e0eb118c2e96b",
             "locator": {
               "kind": "symbol",
@@ -151,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
             "content": "sha256:8870c09e8bed95ded0d857d9f6194cfec03b84f590d4bb2065205ae282024c46",
             "locator": {
               "kind": "symbol",
@@ -167,10 +187,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
-            "content": "sha256:ab165177414de65c8e5269b54f628ddc28fd94bd7bdb2a73507fdcc7e4bd9359",
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+            "content": "sha256:8bd3b372b5e0645ab9bba2c5ec87f4c8b77a70352527c34d20e3bf9bead003b9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_context_from_selection"
             }
           },
           "kind": "code"
