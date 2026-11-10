@@ -1,0 +1,72 @@
+{
+  "path": "mcp/tests/test_task_authoring_templates.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Rich leaf and master prose survives rendering",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "080f93864f7541076fb9821debd7ae5627422d0d",
+            "content": "sha256:42bd5fa10b60cbcde6321d710501abce54cfaa1d45a7d4a9e6ff3488ee14d9a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rich_leaf_and_master_prose_survives_rendering"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Master examples are freeform prose and the leaf absence field is refused on a master",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "080f93864f7541076fb9821debd7ae5627422d0d",
+            "content": "sha256:033f56bfb12cfeaad4d483367a4151d31634589ec674ce4a3c02cdf766afe663",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_master_examples_use_freeform_prose_and_refuse_the_leaf_absence_field"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The packet template retains every parsed obligation heading",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "080f93864f7541076fb9821debd7ae5627422d0d",
+            "content": "sha256:e5b83fddd0b9144f54f761f78e48517286bbd291129e8a04f6edb59cf05a988e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_packet_template_retains_every_parsed_obligation_heading"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The injected packet roles",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21f12072ead0b60e84065450aa5be8378eec7d57",
+            "content": "sha256:992d095240c825ce963d23b101e9605dcd135c0b2f4188c927e54987fd84e1e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "INJECTED_PACKET_ROLES"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/packets.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -38,16 +38,15 @@
       ]
     },
     "11": {
-      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.\n\nAnchor: L16–L35",
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
-            "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
             "locator": {
-              "end": 35,
-              "kind": "line_range",
-              "start": 16
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
             },
             "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
           },
@@ -60,12 +59,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
-            "content": "sha256:1370d89348c253989e44556933ef532f9e18cb312db58b4d7c604dea6da98bb4",
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
             "locator": {
-              "end": 101,
-              "kind": "line_range",
-              "start": 38
+              "kind": "symbol",
+              "name": "validate_instruction_detail_artifacts"
             },
             "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
           },
@@ -220,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
             "content": "sha256:e8181a0720290a24893083991566ddd792976aeb263d08e9046d7d6ef75c9097",
             "locator": {
               "kind": "symbol",
@@ -232,12 +230,12 @@
         },
         {
           "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
             "content": "sha256:23240413395f0870408b2e3081f13621edce1e1fd1bfd54b1e279e2fe0c1da41",
             "locator": {
-              "end": 853,
+              "end": 847,
               "kind": "line_range",
-              "start": 819
+              "start": 813
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },
@@ -250,35 +248,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
             "content": "sha256:3457497d1f83653411517625d1ef81417210b9171d8c2fb902e8e7475cd7d598",
             "locator": {
               "kind": "symbol",
               "name": "test_the_discovery_registry_is_not_the_model_visible_catalog"
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
-            "content": "sha256:0731ce888c5344263193519986fccf77d35e1c3355afa12391c30389b1ac6d9b",
-            "locator": {
-              "end": 891,
-              "kind": "line_range",
-              "start": 865
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
-            "content": "sha256:ad3d94e6364f84bb66c0c762b33c3ee884d2fb94066e18b3964f3c9321ecec05",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },

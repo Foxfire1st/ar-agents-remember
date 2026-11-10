@@ -1,40 +1,22 @@
 # skills/l-01-agent-lifecycles/roles/architect.md
 
-## Current supported-pair account — R100/R116 composition
+## Rounds and starts
 
 Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
 
-This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
-
-
-- Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
-
-Earlier caption detached from live reference 2: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 36–38; `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 52–60; `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 68–70. The caption above is retained as prose; the numbered clause below describes the current source.
-
-Retained authoring-row wording:
-
-Finding: Beyond-settings rounds may be granted for a shrinking sealed list with a concrete repair; unchanged failed repairs or requirement-meaning disputes need a ruling. The Architect releases execution coordination and retains actual returned role identities, while permission decisions remain within its own permissions.
-
-Anchor: `current role or template contract`
-
-Source: skills/l-01-agent-lifecycles/roles/architect.md:58-58; skills/l-01-agent-lifecycles/roles/architect.md:74-80; skills/l-01-agent-lifecycles/roles/architect.md:94-98
-
 - The Architect may grant a beyond-settings round for a concrete shrinking repair set, and an unchanged failed repair or disputed requirement meaning needs a ruling instead. [5]
-
-
 
 ## Current Source Qualification
 
-The flat-mode exception now names the kept procedures: the Architect may coordinate the paired closeout only under the already-delegated authority of `../operations/closeout.md` and its `../../w-02-light-task-workflow/workflows/closeout.md` workflow, after independent review and the required curation evidence exist. The retired `c-09`/`c-12` skill names in the inherited account below are the removed owners of that authority, not current routing, and the packaged copy the tool server serves is the only generated copy of this page.
+Flat mode means only the developer-chosen direct-coordination exception: when no Manager or Orchestrator owns closeout, the Architect may coordinate the paired closeout only under the already-delegated authority of `../operations/closeout.md` (the developer's explicit commit approval, or series authority recorded in the task document), after independent review and the required curation evidence exist.
 
 ## Message/file transport
 
 This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
 
-
 ## Governing Overview
 
-[l-01 role overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -46,7 +28,7 @@ Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Archi
 
 ### Logic
 
-Registration is also the publication trigger. Where the resolved memory carries `system/task-publication.md`, the Architect follows that file: registering a leaf creates its open linked issue, and the issue URL is recorded in the task's `references` through `task_doc set_field` with every existing entry preserved. Where that file is absent from the resolved memory, registration publishes nothing — no issue, comment, label or board item follows from it.
+When the resolved memory layer holds `system/task-publication.md`, the Architect follows it: registering a leaf creates its open linked issue. Where that file is absent, it publishes nothing.
 
 A `From explainer ·` message carries the developer's words only when their SHA-256 matches the filed message in `developer-messages/`. When no master-to-architect record names this Architect for a master, it claims the master with `explainer_control` on `agents-remember-task`, action `claim`.
 
@@ -55,6 +37,8 @@ A `From explainer ·` message carries the developer's words only when their SHA-
 When the packet names an effect on a recorded invariant or family, the Architect declares `expectedKnowledgeEffects` through `task_doc` on the bound task server before implementation. A packet naming no such effect declares nothing. This is the Architect’s planning duty, not permission for the Curator to change tasks, requirements or held role claims.
 
 For work inside one master, the Architect first starts one Manager on that canonical master and hands it the coordination; when two or more masters are worked on at the same time, it first starts one Orchestrator on the selected canonical sprint, which starts one Manager for each master. Direct coordination is the developer-chosen exception, and the developer may also ask for an Orchestrator above a single master. Native starts and peer messages use `role_start`/`role_message` on the bound task server, preserving actual agent, report and handover identities and exact canonical selections. An unknown start is reconciled with its original request ID; finding-specific repair returns to the same Worker.
+
+Its detail files, each read before the action its pointer names, are `reference/coordination/architect/` (process decisions, developer decisions, models and settings, claim verification, Curator measurement), `reference/coordination/shared/` (requirement design, master state, child questions, seat recovery, third rejected round), `reference/knowledge/commands.md`, `reference/knowledge/use.md`, `reference/tasks/document-authoring.md`, `reference/sandbox-actors.md` and `reference/message-handover.md`; short rules on timing targets, page proofs, compute cost, master scope and status reads, bound briefs and side problems, and failed developer checks are written at their actions in the role file.
 
 Briefs and task reads preserve exact requirement revisions, relevant families, paired/report roots and evidence class. Use supplied task-read arguments and the returned canonical document path rather than loading the full hierarchy. Developer decisions remain in the Architect’s own chat. A dashboard-started role needs no parent, and a finished turn is neither independent review, curation, semantic acceptance nor paired-Git publication.
 
@@ -71,11 +55,13 @@ approval increments the requirement version.
 
 ### Invariants And Boundaries
 
-Canonical lifecycle doctrine owns this source; generated copies are synchronization outputs. Native assignments preserve approved requirement IDs/versions, exact task/paired/report bindings and actual returned role-agent identities. An approved packet is not rewritten in place and delivery roles do not acquire semantic revision authority. No inferred repository/parent, uncertain duplicate, self-approval or shell-publication substitute is allowed; existing delegated authority of the kept closeout procedures (`operations/closeout.md` with `w-02-light-task-workflow`'s `workflows/closeout.md`) remains required for Architect closeout coordination.
+Canonical lifecycle doctrine owns this source; generated copies are synchronization outputs. Native assignments preserve approved requirement IDs/versions, exact task/paired/report bindings and actual returned role-agent identities. An approved packet is not rewritten in place and delivery roles do not acquire semantic revision authority. No inferred repository/parent, uncertain duplicate, self-approval or shell-publication substitute is allowed; the delegated authority of `operations/closeout.md` remains required for Architect closeout coordination.
 
 Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
 outputs. An approved requirement packet is never
 rewritten in place. A worker/reviewer classification cannot become semantic authority.
+
+Task-document authoring remains wholly upstream of activation and queue state. The Architect may approve otherwise-valid task changes; the affected disposable projection is then invalidated and rebuilt. A selector or queue cannot veto planning, and no valid task or master is discarded merely to free a runtime selection.
 
 ## CCR-R12@v5 Transaction Boundary
 
@@ -83,20 +69,15 @@ Current role duty remains targeted/scoped evidence with failed or unrun results 
 
 This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only, save the normal Curator authoring pass, which remains the standing full memory-quality/coherence exception. Requested reviews retain the sealed finding list and settings-owned round limit.
 
-## 260928-MIK-L99 — a leaf's agents hand over to each other
+## Questions received from children
 
-The Architect keeps its delegation, developer conversation and direct-coordination duties; the change adds the same harness freedom and boundary paragraph the other roles carry, and no leaf-level routing.
-
-## 260928-MIK-R93 — questions received from children
-
-The Architect answers a child's question within its authority and says the answer is its own; otherwise it puts it to the developer in its own chat, naming the originating role, task number and purpose, agent id, question and recommendations. It returns the developer's answer to the asker with the receiving agent's id and the quoted words, and every parent on the way down passes those three unchanged. When a child waits at a permission prompt, the Architect tells the developer which chat to open, names the permission as supplied or "not supplied", and lists every waiting agent with its role, task and agent id instead of a count. The Architect's own questions still go in its own chat.
+Before answering a child's question or returning the developer's answer, the Architect reads `reference/coordination/shared/child-questions.md` for the relay, attribution and instruction-delivery rules; a child waiting at a permission prompt is relayed upward by `operations/coordination.md#relay-a-childs-permission-notice`.
 
 ## Evidence
 
 - The Architect declares recorded invariant/family effects through task_doc before implementation only when the packet names them. [3]
 
-- Registration creates the leaf's open linked issue only where the resolved memory carries the publication instruction; where that file is absent, registration publishes nothing. [4]
-
+- When the resolved memory layer holds the publication file, the Architect follows it and registering a leaf creates its open linked issue; where that file is absent, nothing is published. [4]
 
 ### Docs References
 
@@ -110,90 +91,14 @@ Worker source inventory, reviewer verdict, and governing route overview.
 
 No meaningful cross-repo references.
 
-## Historical L23 Thematic Master Recovery
-
-The architect treats a resumed master that trails super as a synchronization
-condition on the existing thematic master, not a reason to fork a replacement
-master. The plane derives ancestry from task structure and returns the contract
-address needed for backend recovery.
-
-## Historical 260713-TES-L5 Current Delta — Mailbox Custody, Not Ladder Rungs
-
-The terminal-custody section now says rows whose entire owner chain is dead surface to the
-architect as a mailbox (the timed escalation ladder is retired), rows land at the architect's
-turn boundary (the system acks), and `operator_inbox_consume` is an optional attribution
-marker. The developer remains an authority, not an address.
-
-<!-- Base heading superseded by the Historical prefix at the cut; body kept verbatim above: ## 260713-TES-L5 Current Delta — Mailbox Custody, Not Ladder Rungs -->
-
-## Historical 260815-DAG-L2 Planning Authority
-
-The architect inspects `executionGraph` plus every commanded master's `executionNature` before
-spawning backend execution. A missing or materially stale topology produces a recommendation to
-run a strategist, never an automatic dispatch. The initial strategist and its plan-review reviewer
-are architect children and finish before the orchestrator exists; runtime reshapes still route
-through that architect-owned loop. A strategist skip authorizes the orchestrator to author the
-same explicit artifact, not an implicit default.
-
-## IAS Source-Pair Activation Planning Boundary
-
-The reviewed graph-less choice is now the source-pair-selected atomic-sequential mode. Canonical
-commanded-master order is only the stable equal-priority tie-break; selecting another atomic master
-may logically pause the former without forcing integration, contract retirement, or process and
-worktree termination. The architect therefore judges dependency truth independently of runtime
-selection and does not manufacture an edge merely to explain serialization.
-
-Task-document authoring remains wholly upstream of activation and queue state. The architect may
-approve otherwise-valid task changes; the affected disposable projection is then invalidated and
-rebuilt. A selector or queue cannot veto planning, and no valid task/master is discarded merely to
-free a runtime selection.
-
-
 ## Current Investigator contract impact
 
 The Architect keeps the developer conversation and may check, measure, run tests and builds, read the code and sources of the product, the host and the harnesses, and try things out in a sandbox himself, on a copy; that work informs his rulings, his requirements and the developer but never stands in for a leaf's build, review, curation or gate, and he changes no leaf's code or memory. A check before a landing is not a landing step. A check or investigation he does not do himself goes under delegation to the actual Manager or Orchestrator; developer-chosen direct coordination assigns a leaf check to Worker/Reviewer and a non-leaf concern to Investigator. Investigator starts remain within admitted Projects, sprint or master containment, and still-forbidden starts route to the actual parent or a parentless blocker. One Manager remains the default for one master.
 
-
-- This source owns the stated current Investigator scope or canonical vocabulary.
-
-Earlier caption detached from live reference 1: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 8–8; `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 24–28; `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 52–60. The caption above is retained as prose; the numbered clause below describes the current source.
-
-Retained authoring-row wording:
-
-Finding: The Architect owns the developer conversation and approved requirements, delegates one master to a Manager or multiple masters to an Orchestrator, and may check on a copy without replacing leaf build, review, curation or gate authority.
-
-Anchor: `current role or template contract`
-
-Source: skills/l-01-agent-lifecycles/roles/architect.md:8-8; skills/l-01-agent-lifecycles/roles/architect.md:50-58; skills/l-01-agent-lifecycles/roles/architect.md:104-106
-
-- This source owns the stated current Investigator scope or canonical vocabulary.
-
-Earlier caption detached from live reference 6: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 8–8; `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 24–28; `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 52–60. The caption above is retained as prose; the numbered clause below describes the current source.
-
-Retained authoring-row wording:
-
-Finding: The Architect may check product, host and harness sources and run checks on a copy; a leaf check it delegates goes through the coordinating owner, or to Worker/Reviewer under developer-chosen direct coordination, while a non-leaf concern goes to Investigator.
-
-Anchor: `current role or template contract`
-
-Source: skills/l-01-agent-lifecycles/roles/architect.md:104-106
-
-
-The earlier fixed-three budget wording is superseded by MIK-R116: the settings limit governs ordinary CODE and separately counted MEMORY rounds, with recorded Architect-or-developer extras. This updates the operative transaction-boundary account, not the retained historical task authority.
-
-- Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect. A factual correction may be applied; a finding that adds, narrows or overrides a rule beyond the developer’s words goes to the developer first, quoted beside those earlier words.
-
-Earlier caption detached from live reference 8: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 14–16. The caption above is retained as prose; the numbered clause below describes the current source.
-
-Retained authoring-row wording:
-
-Finding: Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect; a fact correction may be applied, but adding, narrowing or overriding a rule beyond the developer's words requires the developer's decision with both texts quoted.
-
-Anchor: `current role or template contract`
-
-Source: skills/l-01-agent-lifecycles/roles/architect.md:36-36
-
 - The Architect owns the developer conversation and approved requirements, delegates one master to a Manager or multiple masters to an Orchestrator, and may check on a copy without replacing leaf build, review, curation or gate authority. [1]
-- Beyond-settings rounds may be granted for a shrinking sealed list with a concrete repair; unchanged failed repairs or requirement-meaning disputes need a ruling. The Architect releases execution coordination and retains actual returned role identities, while permission decisions remain within its own permissions. [2]
+
+- Beyond-settings rounds may be granted for a shrinking sealed list with a concrete repair; unchanged failed repairs or requirement-meaning disputes need a ruling. The Architect releases execution coordination and keeps the actual returned role identities, while it answers formal permission prompts only as far as its own seat's permissions reach. [2]
+
 - The Architect may check product, host and harness sources and run checks on a copy; a leaf check it delegates goes through the coordinating owner, or to Worker/Reviewer under developer-chosen direct coordination, while a non-leaf concern goes to Investigator. [6]
+
 - Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect; a fact correction may be applied, but adding, narrowing or overriding a rule beyond the developer's words requires the developer's decision with both texts quoted. [8]

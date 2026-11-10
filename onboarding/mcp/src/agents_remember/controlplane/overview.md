@@ -40,7 +40,7 @@ These former current claims are retained as history, not as instructions or pres
 
 - Guarded durable-store composition preserves coordinator containment and held-lock rewrite. [8]
 
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:251-285 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 8a2d4b478971bf40cca0f24d5e5d24a0844bd563; mcp/src/agents_remember/cli/dashboard.py:120-166 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 0346da9c572e1eb913a8eb4130e9a9e9d37343c8; mcp/src/agents_remember/cli/dashboard.py:1-553 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 58161c69b8254fe8080805650a2b3984000059d8. Retired means the anchor no longer stands, not that the cited subject was deleted [10]
+- Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. [10]
 
 - Undeclared checkout targets are restricted; primary checkout is refused [18]
 

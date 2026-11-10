@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "2a5f8a8f33152825aa0d093e104fb1014dedb321",
+        "blob": "0e5ae59cace1440387186d5a5d0e679126b41da5",
         "content": "sha256:eb6d1fdddd85ef74723c684bcb51ce8f0e1c1123f0f873efbd2df3dfa5e0784b",
         "locator": {
           "kind": "symbol",
@@ -26,10 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a5f8a8f33152825aa0d093e104fb1014dedb321",
-            "content": "sha256:3c64326c2cc882bb3c97e5013fe7973f8ee05906629ac3ccbe2aaf546a7b58d0",
+            "blob": "0e5ae59cace1440387186d5a5d0e679126b41da5",
+            "content": "sha256:dbbc5cf98361573f3d73bb9cf1b0670c6ab39016409b249656276a48fea36f7b",
             "locator": {
-              "kind": "file"
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
@@ -37,16 +39,15 @@
       ]
     },
     "2": {
-      "note": "The accounting-cost case measures calling-thread CPU with `time.thread_time()` for exactly 10,000 recorded units under the unchanged 0.5-second bound. It excludes scheduler waiting and does not establish installed processor share or a wall-time ceiling.",
+      "note": "The accounting-cost case measures calling-thread CPU with `time.thread_time()` for exactly 10,000 recorded units under a 0.5-second bound. It excludes scheduler waiting and does not establish installed processor share or a wall-time ceiling.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a5f8a8f33152825aa0d093e104fb1014dedb321",
-            "content": "sha256:75394eacb843e8d30d1ec79f6265afdf092be8f15ca8476f3ff21af065324fc9",
+            "blob": "0e5ae59cace1440387186d5a5d0e679126b41da5",
+            "content": "sha256:e6fa433d2be62d39716f75cf565faf33bb3af25df05fc1493ba208b537800a1f",
             "locator": {
-              "end": 668,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "AccountingCostTests"
             }
           },
           "kind": "test"

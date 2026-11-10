@@ -1,0 +1,93 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/sandbox-actors.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sandbox settings are bound per run; a user-level harness file created by an agent is reported, not changed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18fcb79cc562579422d0426a70b817bb09428a2f",
+            "content": "sha256:1469a9b13d909d6450a1cf6a10f5db18446875e13a6c6ec069eb1ca982d215a3",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Test actors use the cheapest model of the configured harness, named in the command and record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18fcb79cc562579422d0426a70b817bb09428a2f",
+            "content": "sha256:5400e03f4fb685ed142c0faf477e33b81787a15cf678e81e6ff17e95363af7ab",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The product never edits user-owned harness files, and model turns run through the sandbox product's launch home.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18fcb79cc562579422d0426a70b817bb09428a2f",
+            "content": "sha256:9a76db47a4276c54edc00b34a4711422260dc43ec25508dad5a0326510180366",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Actor binding is proved with a stub and an agent count around the first start.\n\nAnchor: `role_start`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18fcb79cc562579422d0426a70b817bb09428a2f",
+            "content": "sha256:bc01568dd75c96fcf7861837c263d2f43a0f5d5ca2ea54383a8bef7ce06d7eef",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Worker role points here before configuring a sandbox harness, its launch home or actor starts.\n\nAnchor: `sandbox-actors.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:922bd7441b46682d6f64031ae00b017082b60a9d783c5dd9b467adb5a13224ae",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

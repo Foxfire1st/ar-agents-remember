@@ -4,16 +4,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The template describes an integrity-bulwark report, two risk axes and mutations retained by the spawning main loop.\n\nAnchor: `AR state mutations stay in`",
+      "note": "The Reviewer uses the template for planned-work conflicts and risks to landed work and owns its helper's contribution; the spawning agent alone changes AR state.",
       "targets": [
         {
           "anchor": {
-            "blob": "04517415093319b6e7ffec33e218c7006efc7aea",
-            "content": "sha256:d31037b2aa934d884a162e310e39f156e6f389494eddeadfd6b7b41fad33f302",
+            "blob": "3184d622a6b8badcd2ec4dcc4b56609509eebb04",
+            "content": "sha256:22cbc5117252ff96a4ad45d9907f480b55e9736d3cd10a83500a6c6729b2cdc6",
             "locator": {
-              "end": 6,
+              "end": 5,
               "kind": "line_range",
-              "start": 1
+              "start": 3
             }
           },
           "kind": "code"
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04517415093319b6e7ffec33e218c7006efc7aea",
-            "content": "sha256:e00b5e72dc13ed931504ca2f0521f81510ba5ad2546d28239d7fd987657cd016",
+            "blob": "3184d622a6b8badcd2ec4dcc4b56609509eebb04",
+            "content": "sha256:d85bc8f43a94ea418f6d32dd5571e3c3f227b73632b514f28a781e694fc3f8be",
             "locator": {
-              "end": 17,
+              "end": 16,
               "kind": "line_range",
-              "start": 8
+              "start": 7
             }
           },
           "kind": "code"
@@ -38,16 +38,16 @@
       ]
     },
     "3": {
-      "note": "Recipient, author, subject and timestamp are report fields, with analytical rather than occupant authorship.\n\nAnchor: `<analysis role / bounded fan-out label>`",
+      "note": "Recipient, author, subject and timestamp are report fields, with analytical rather than occupant authorship.",
       "targets": [
         {
           "anchor": {
-            "blob": "04517415093319b6e7ffec33e218c7006efc7aea",
-            "content": "sha256:a0700fb05d3de17ab2f6b11ff0ffc575e5bb07b1d13265cd9c4e85ec5bcf0d8d",
+            "blob": "3184d622a6b8badcd2ec4dcc4b56609509eebb04",
+            "content": "sha256:cfe303c451b842226410de2dac4fe68d5e7d51a8568258d71e51e7b27bded2d8",
             "locator": {
-              "end": 29,
+              "end": 28,
               "kind": "line_range",
-              "start": 19
+              "start": 21
             }
           },
           "kind": "code"
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04517415093319b6e7ffec33e218c7006efc7aea",
-            "content": "sha256:68580573afcc25c1f5ff40a9f52614cc58ba70a185e0e60289ba92649cec6ce9",
+            "blob": "3184d622a6b8badcd2ec4dcc4b56609509eebb04",
+            "content": "sha256:46a0f3449dd7e3a52b43dbcdf0a5d5175766436b6a97715dd46dd55f79b8a9dd",
             "locator": {
-              "end": 42,
+              "end": 41,
               "kind": "line_range",
-              "start": 31
+              "start": 30
             }
           },
           "kind": "code"
@@ -72,16 +72,16 @@
       ]
     },
     "5": {
-      "note": "Evidence inventory requires naming followed by native opens, and the bottom line claims no mutation.\n\nAnchor: `read_ar_files namings (IDs and cards, then natively opened)`",
+      "note": "The evidence inventory records `read_ar_files` identifiers and card paths and the natively opened files, and the actions section performs no mutation.",
       "targets": [
         {
           "anchor": {
-            "blob": "04517415093319b6e7ffec33e218c7006efc7aea",
-            "content": "sha256:a1897b233b03e39514b5b02d184f341839009baed0def2cb276916ab55d174a6",
+            "blob": "3184d622a6b8badcd2ec4dcc4b56609509eebb04",
+            "content": "sha256:13f066958586e1b510ac7be9120b5377a2f263a672a86ff361946d1806e315d7",
             "locator": {
-              "end": 50,
+              "end": 48,
               "kind": "line_range",
-              "start": 44
+              "start": 43
             }
           },
           "kind": "code"
@@ -93,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
             "content": "sha256:349e8630cdb780d1cffca9c046cb75c2eaf259d769e87f9fb0814123aa25ecc9",
             "locator": {
               "end": 39,
@@ -111,12 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
-            "content": "sha256:6c61ba22a9cc4ff30212b6b41381b3c7cdaec6fc9af4df16e85c75a6a2666bdb",
+            "blob": "07f0c5669d43b8cd223098b2a27aa424b980f6d3",
+            "content": "sha256:187dc47fd4a1b243ad4b98627067d966a10aa40e26113af740e94455c58e5642",
             "locator": {
-              "end": 44,
+              "end": 93,
               "kind": "line_range",
-              "start": 38
+              "start": 89
             },
             "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
           },

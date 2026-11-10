@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Comparison-bound knowledge selection, exact-path matching, typed admission and explicit refusals together permit attributed unchanged context without widening the measured change inventory; no member controls the entire admission boundary."
+  },
   "guarantee": "In a review, an unchanged file is readable only as context of a realization -- or, in an index-backed comparison, a proof -- that the same comparison's recorded knowledge anchors at exactly that path, at that comparison's exact endpoints, stated as unchanged context and never counted as a change; every other unchanged path, and every path whose link cannot be established, is refused by name.",
   "id": "FAM-2HBJREC2",
   "members": [

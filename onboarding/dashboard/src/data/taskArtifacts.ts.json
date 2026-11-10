@@ -4,14 +4,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The cockpit takeover renders the reader with this target spread.\n\nAnchor: `NotesTakeover`",
+      "note": "The cockpit takeover renders the reader with this target spread.",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:0bc7e102d5d0320aa01152ab96f80761578200cdcfeab2d5b98782ba42543f7f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "NotesTakeover"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The bounded-task-read family needs this obligation to limit body projection to addressed documents while keeping the separate direct-grant census cost explicit."
+  },
   "applicability": "Task-document body projection with optional external direct-grant annotation.",
   "conditions": [
     "Canonical reads are addressed by the requested document, graph-named masters and explicit children, or owning master and explicit file-bearing task rows.",

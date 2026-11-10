@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The bounded-listing family needs the row-level symlink check and its stated metadata cost, preserving confinement while avoiding full path resolution for every ordinary entry."
+  },
   "applicability": "Historical: the list walk over one master's notes root. Current: the folder open and row examination of GET /api/notes/folder.",
   "conditions": [
     "The folder opens through held descriptors without following symlinks (O_NOFOLLOW).",

@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[coordination_context overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -15,9 +15,11 @@ functions derive paths and probe the file system; they parse no settings content
 ### Roots and settings
 
 - `resolve_coordination_root_hint(hint)` resolves an explicit hint. Without one it takes the root found by
-  `agents_repo_from_script()` when that directory has `skills`, `system`, `memory-repos` and `tasks`
+  `agents_repo_from_script()` when that directory has `system`, `memory-repos` and `tasks`
   (`looks_like_installed_coordination_root`), and otherwise the sibling `../ar-coordination`
-  (`DEFAULT_AR_COORDINATION_ROOT`).
+  (`DEFAULT_AR_COORDINATION_ROOT`). `agents_repo_from_script()` returns the first ancestor of this module
+  that passes the same three-directory check, else the module's sixth parent; a `skills` directory is not
+  part of either check.
 - `external_memory_root(coordination_root, name)` is the resolved path of
   `<coordination root>/memory-repos/ar-<name>`.
 - `settings_path_for_roots(memory_root, coordination_root)` returns the memory root's `system/settings.md`
@@ -26,7 +28,10 @@ functions derive paths and probe the file system; they parse no settings content
   resolved settings path. A settings file inside `memory-repos/ar-<name>` gives that repository and the
   coordination root two levels above it. A settings file under a directory named `ar-memory` is refused as
   the removed mode `internal`, naming the file. Any other location is taken as a coordination root.
-- `path_settings_path_for` is the same path with the suffix `.json`.
+- `path_settings_path_for(settings_path, coordination_root=...)` is the same path with the suffix `.json`,
+  except that a settings file one folder below the given coordination root (its grandparent is that
+  root, as in `<root>/system/settings.md`) maps to the user's settings file through
+  `require_user_agentic_settings_path`.
 
 ### What is recorded
 
@@ -66,6 +71,10 @@ blocks that are marked `yaml`, `yml` or unmarked.
 ## Evidence
 
 - The coordination root from a hint, the installed root or the sibling default. [2]
+
+- An installed coordination root needs `system`, `memory-repos` and `tasks`; the script walk uses the same check [12]
+- A coordination-root settings file maps to the user's settings file [13]
+
 - The external memory root is a recorded resolution. [3]
 - The settings file priority, with each probe recorded. [4]
 - The two admitted settings locations and the refusal of the removed layout. [5]

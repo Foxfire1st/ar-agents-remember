@@ -3,14 +3,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization.\n\nAnchor: `_attach_lifecycle_tail` `bound_next_step` `_tool_payload`",
+      "note": "The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
-            "content": "sha256:611cce8419f2f98ceb4edd0b31ea0dc5fe740280eed2d76a3dce05c98fa22b14",
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:60e27a120bfb8dc9f33714fb08d00eefa653f16db19cf2acb29230f633cf6a6c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_attach_contract_guidance"
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -83,14 +84,16 @@
       ]
     },
     "2": {
-      "note": "`NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal.\n\nAnchor: `NextStep` `ResponseModel` `FlexibleResponseEnvelope`",
+      "note": "`NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal.",
       "targets": [
         {
           "anchor": {
-            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
-            "content": "sha256:9a0d5793850004aa14c40ba9565c3926c5407d032778d4b68f3eb416b7c40e0b",
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:c95ff90ec2352fe3b0c399f2dca3eaec9f6fc92f163a386219c2bbd19882cc1b",
             "locator": {
-              "kind": "file"
+              "end": 72,
+              "kind": "line_range",
+              "start": 49
             },
             "path": "mcp/src/agents_remember/models/base.py"
           },

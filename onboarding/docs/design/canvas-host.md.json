@@ -4,29 +4,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The design states the two surfaces and the origin/policy arrangement.",
+      "note": "The design states the two surfaces and the origin/policy arrangement.\n\nAnchor: `trusted API`",
       "targets": [
         {
           "anchor": {
-            "blob": "defe41e155a41e80e5370d6550406aef229719ed",
-            "content": "sha256:317c7d5560a855d0a5900bee7ba60558bd924addc415a1929d30f5c2494315cd",
+            "blob": "42fe920ead2363bb3ad97f88eb8add4854a704a5",
+            "content": "sha256:378d00836a295f2f9af64095d97b38dabc7317f17ef14b9653c601e939dfb8e4",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Scripts are gated on the browser proof, and an uncovered page is served with no script.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "defe41e155a41e80e5370d6550406aef229719ed",
-            "content": "sha256:317c7d5560a855d0a5900bee7ba60558bd924addc415a1929d30f5c2494315cd",
-            "locator": {
-              "kind": "file"
+              "end": 47,
+              "kind": "line_range",
+              "start": 6
             }
           },
           "kind": "code"
@@ -34,14 +21,16 @@
       ]
     },
     "3": {
-      "note": "The presenter, protocol and session bounds are stated once in one design document.",
+      "note": "The presenter, protocol and session bounds are stated once in one design document.\n\nAnchor: `canvas/protocol.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "defe41e155a41e80e5370d6550406aef229719ed",
-            "content": "sha256:317c7d5560a855d0a5900bee7ba60558bd924addc415a1929d30f5c2494315cd",
+            "blob": "42fe920ead2363bb3ad97f88eb8add4854a704a5",
+            "content": "sha256:50c24b30dd001931f615b3fa05d071b5d02f3735359c8b58313609ca92dfeae5",
             "locator": {
-              "kind": "file"
+              "end": 156,
+              "kind": "line_range",
+              "start": 88
             }
           },
           "kind": "code"
@@ -49,14 +38,16 @@
       ]
     },
     "4": {
-      "note": "The remaining limits are named instead of being implied away.",
+      "note": "The remaining limits are named instead of being implied away.\n\nAnchor: `canvas-kit.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "defe41e155a41e80e5370d6550406aef229719ed",
-            "content": "sha256:317c7d5560a855d0a5900bee7ba60558bd924addc415a1929d30f5c2494315cd",
+            "blob": "42fe920ead2363bb3ad97f88eb8add4854a704a5",
+            "content": "sha256:75b8167fd43aa6072b5c5dd27cd856f7b4026bebd9a22757a7e8d0ed4138d19b",
             "locator": {
-              "kind": "file"
+              "end": 198,
+              "kind": "line_range",
+              "start": 174
             }
           },
           "kind": "code"
@@ -68,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "defe41e155a41e80e5370d6550406aef229719ed",
+            "blob": "42fe920ead2363bb3ad97f88eb8add4854a704a5",
             "content": "sha256:76b3befa3f70cf1767c0d764476b5f3fcbc864bdba96fe140a95f174b5050d8a",
             "locator": {
               "end": 11,
@@ -85,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "defe41e155a41e80e5370d6550406aef229719ed",
+            "blob": "42fe920ead2363bb3ad97f88eb8add4854a704a5",
             "content": "sha256:e03eacd4a00411b97cb3225af821b9af741ff3569f6bddeb31f8d1d9b3d96780",
             "locator": {
-              "end": 153,
+              "end": 155,
               "kind": "line_range",
-              "start": 144
+              "start": 146
             }
           },
           "kind": "code"

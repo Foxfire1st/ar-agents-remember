@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
+        "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
         "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
-        "content": "sha256:d5220185ab90d8d914ef5886270ca75dfad669f4cd11fb752658d62eefa21eae",
+        "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
+        "content": "sha256:2426fced85f34cf83e40cf94e29efbb811e2ba36856351c52940fd0738d71079",
         "locator": {
           "kind": "symbol",
           "name": "bridge_call"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
+        "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
         "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
-        "content": "sha256:e6ac20fa9c60f9e6eca92061429e6def6b4ad414a95e63f02495cade94adc56d",
+        "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
+        "content": "sha256:1f5135d018b4dae368c2e370956a8a3daf03e1793afe2f252a3df7dfb3d7b084",
         "locator": {
           "kind": "file"
         }
@@ -75,16 +75,33 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of bridge_call supporting the stated file behavior.",
+      "note": "The implementation of bridge_call supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
-            "content": "sha256:d5220185ab90d8d914ef5886270ca75dfad669f4cd11fb752658d62eefa21eae",
+            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
+            "content": "sha256:2426fced85f34cf83e40cf94e29efbb811e2ba36856351c52940fd0738d71079",
             "locator": {
               "kind": "symbol",
               "name": "bridge_call"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The communication Node is the product Node, else the proven running host's Node, else `node_not_installed`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02387f06f44ac84c5fece1f21e3d6345ac559559",
+            "content": "sha256:2eae16a269076d88acdda7bb30c46655bfa580acc10ef905579dc40f925d076c",
+            "locator": {
+              "kind": "symbol",
+              "name": "communication_node"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_running_node.py"
           },
           "kind": "code"
         }
@@ -95,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
+            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
             "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
             "locator": {
               "kind": "symbol",
@@ -111,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
+            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
             "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
             "locator": {
               "kind": "symbol",
@@ -123,16 +140,15 @@
       ]
     },
     "4": {
-      "note": "Checks exact endpoint/server-id environment and removal of inherited PASEO/AR_PASEO values.\n\nAnchor: `BridgeProcessTests.test_the_script_is_pointed_at_the_configured_runtime_and_no_other`",
+      "note": "Checks exact endpoint/server-id environment and removal of inherited PASEO/AR_PASEO values.",
       "targets": [
         {
           "anchor": {
-            "blob": "4c1d204bc5a30ab44576139eea533ccc2f1cf191",
-            "content": "sha256:f34816fb4a70b77bbfa9b0a7dee87da1021f400f938206cbe0461cfde77b5d97",
+            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+            "content": "sha256:33870b954aab173b125241809fd916b0f653e3897b25cc46e3c3fde5de239196",
             "locator": {
-              "end": 160,
-              "kind": "line_range",
-              "start": 122
+              "kind": "symbol",
+              "name": "test_the_script_is_pointed_at_the_configured_runtime_and_no_other"
             },
             "path": "mcp/tests/test_paseo_bridge.py"
           },
@@ -141,16 +157,15 @@
       ]
     },
     "5": {
-      "note": "Checks absent settings or home server-id start no process.\n\nAnchor: `BridgeProcessTests.test_unconfigured_or_never_started_runtime_refuses_before_any_process`",
+      "note": "Checks absent settings or home server-id start no process.",
       "targets": [
         {
           "anchor": {
-            "blob": "4c1d204bc5a30ab44576139eea533ccc2f1cf191",
-            "content": "sha256:b59b161f244726713a524ace1e547221a395af17b831b6f382163b26a4805d80",
+            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+            "content": "sha256:1f1d6191085574539ce04a70548d1721f28bfc549afbc90af4e635140e0c16a1",
             "locator": {
-              "end": 120,
-              "kind": "line_range",
-              "start": 100
+              "kind": "symbol",
+              "name": "test_unconfigured_or_never_started_runtime_refuses_before_any_process"
             },
             "path": "mcp/tests/test_paseo_bridge.py"
           },
@@ -163,12 +178,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c1d204bc5a30ab44576139eea533ccc2f1cf191",
+            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
             "content": "sha256:3b8af58ec78e297588eec4751d1b8fec24f819da57cbf06628ff2d25a642eefd",
             "locator": {
-              "end": 688,
+              "end": 689,
               "kind": "line_range",
-              "start": 581
+              "start": 582
             },
             "path": "mcp/tests/test_paseo_bridge.py"
           },
@@ -177,12 +192,12 @@
       ]
     },
     "7": {
-      "note": "The bridge launch that starts the product's Node by full path with the packaged script and names this build's install state.",
+      "note": "The bridge launch runs the packaged script on the communication Node, maps a missing Node to `node_not_installed`, and adds the host's restart reason and remedy to an answered reply.",
       "targets": [
         {
           "anchor": {
-            "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
-            "content": "sha256:d5220185ab90d8d914ef5886270ca75dfad669f4cd11fb752658d62eefa21eae",
+            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
+            "content": "sha256:2426fced85f34cf83e40cf94e29efbb811e2ba36856351c52940fd0738d71079",
             "locator": {
               "kind": "symbol",
               "name": "bridge_call"
@@ -197,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
+            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
             "content": "sha256:309e342dd4baae0cfd50164ae67c8029bd56f7b0a9fcf255eb384b0f81b9dfae",
             "locator": {
               "kind": "symbol",
@@ -213,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
+            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
             "content": "sha256:309e342dd4baae0cfd50164ae67c8029bd56f7b0a9fcf255eb384b0f81b9dfae",
             "locator": {
               "kind": "symbol",

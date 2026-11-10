@@ -59,21 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
-            "content": "sha256:048cf3be161a39d78b024e226d6b771802e3c125f55e63739e5ba93284db829c",
-            "locator": {
-              "end": 746,
-              "kind": "line_range",
-              "start": 711
-            },
-            "path": "mcp/src/agents_remember/memory/baseline.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
-            "content": "sha256:048cf3be161a39d78b024e226d6b771802e3c125f55e63739e5ba93284db829c",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
+            "content": "sha256:4a22ee9b6321b636b8277d22c6d5fd5735eb65cc24655fd564b6b99b9760dce1",
             "locator": {
               "kind": "symbol",
               "name": "_converted_adopt_gate"

@@ -6,7 +6,7 @@ Resolve launch defaults, workspace, scoped readers, instructions and handover be
 
 ## Governing Overview
 
-[MCP package overview](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Current Contract — Scoped Launch And Settings Changes
 
@@ -18,15 +18,9 @@ Canonical task JSON/rendered copy metadata, missingCopies disclosure, report/scr
 
 ## Current operative account — MIK-R112
 
-The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
-
 - Launch-aware AR guidance follows the launch's actual exclusion record, not a universal exclusion_applied=False. A known AR server on Claude gets record-backed providerOptions MCP exclusion and omits the other-server choice; unknown/indeterminate acceptance and other harnesses retain their conditional choice wording. This is source-owned instruction selection, not new real-host acceptance.
 - MIK-R109 changes the read guidance to a `files` list of repository-relative path strings. `read_ar_files` names knowledge locations and carries no file text; the agent opens named files with its harness's own file tool. Exact leaf `readerArguments` and the missing-`task_context` capability refusal remain unchanged.
 - The compiled role-message guidance distinguishes host acceptance from product holding: permission prompts, unfinished starts and unwritable turns are held and later delivered in order. A held permission wait still reports permission-pending. Actual parent identity, leaf peer references, permission non-bypass and report ownership do not change; product holding grants no right to answer a harness permission prompt.
-
-### Superseded inventory
-
-- Pre-repair card claim: Card’s preservation account exempts only older R98 wording changes. This is superseded archival wording, not a current prescription.
 
 ### Source and authority bounds
 
@@ -36,11 +30,9 @@ The current source facts below replace the former operative inventory. The separ
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
-Historical producer-custody note (not an L88 verdict): the pre-successor CUR-C04 source concatenated the baseline rather than composing notes, and the then-moving producer inserted composed instructions without that card independently admitting its successor. Current L88 source composes frozen detail pointers before user notes; source inspection here supplies no new CODE PASS, MEMORY verdict or host-actual witness.
-
 ## Current account — the preparer's own boundary (MIK-R193)
 
-The preparer assembles a launch: it resolves the selection, writes the task-document copies and the folder set, compiles the hand-over object, and calls `role_brief_message.brief_prompt` to compose the first message and the complete hand-over's content. It publishes neither hand-over file — `role_launch_routes` calls `role_handover_publication.publish_handover_files` before the start is sent — and it sends nothing. Assembling the message's text is no longer here; what stays is the launch's inputs, the shared direction constant and the call that builds.
+The preparer assembles a launch: it resolves the selection, writes the task-document copies and the folder set, compiles the hand-over object, and calls `role_brief_message.brief_prompt` to compose the first message and the complete hand-over's content. It publishes neither hand-over file — `role_launch_routes` calls `role_handover_publication.publish_handover_files` before the start is sent — and it sends nothing. What stays here is the launch's inputs, the shared direction constant and the call that builds.
 
 The report path and its folder name have their own owner, `role_report_preparation.role_report_path`. That owner computes the request-qualified report name and settles the request's hand-over locator at the canonical report folder before the report folder or any frozen detail is written, so a colliding or retargeted alias refuses the launch at preparation rather than after content exists. This module imports that owner and keeps no report-folder constant of its own.
 
@@ -48,16 +40,11 @@ The same module carries the one instruction every role's first message repeats a
 
 ## Grant-backed leaf preparation and revival
 
-> **Retained historical source account — superseded by the current contract:**
-> Leaf revival recomputes the canonical task/contract pair before comparing the saved receipt: a current readable direct grant binds the exact leaf to the master series contract; an ungranted leaf retains its canonical enclosure. Unreadable grant evidence refuses without caller-root fallback. The comparison precedes bridge revival and creates/starts nothing; a receipt is evidence, not cached permission. Handover reader arguments carry this actual contractPath and copied-document location. Historical host/custody limitations remain separately attributed.
+Leaf revival recomputes the canonical task/contract pair before comparing the saved receipt: a current readable direct grant binds the exact leaf to the master series contract; an ungranted leaf retains its canonical enclosure. Unreadable grant evidence refuses without caller-root fallback. The comparison precedes bridge revival and creates/starts nothing; a receipt is evidence, not cached permission. Handover reader arguments carry this actual contractPath and copied-document location.
 
 ## Current source contract evidence
 
 - Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.
-
-Retained R111 pre-sync qualified source account; volatile numbers name that earlier epoch, not the composed source: The launch preparer consumes resolved task identity and canonical files without calling the removed task_doc.get. Read metadata names json_path/rendered_path instead of an operation=get request. taskDocumentFiles includes the own-leaf copy set derived from INDEX, absolute file locations and missingCopies. Compiled task context and launch admission keep their existing owners; file copies do not become task authority or a historical approval witness.
-
-The original source carried canonical/read-copy metadata and parent/peer handover values, but its first-read sentence still said task_doc only rather than the current scoped refusal recovery. Earlier caption retained as prose; its original citation used mcp/src/agents_remember/cli/role_launch_preparation.py at blob `6295b3c90a86ff77e4b13ec5bab3ab1830114d78`. Reference 10 now carries the current clause and current source targets; it does not retain those earlier targets.
 
 Retained authoring-row wording:
 
@@ -76,9 +63,9 @@ Granted direct-leaf revival binds the canonical leaf to its master series contra
 
 ## Current source contract
 
-Task-document first-read metadata says task_doc first, followed only on correct-input refusal by logged canonical amendment under reference/refused-write.md. The owning next publication refreshes renders/projections, and rendered copies are never parsed back. The same instruction retains stops for read/check/validation/sync, starts, product guards and commit gates; it is not a general fallback or permission bypass.
+Task-document first-read metadata says to use task_doc first. A correct-input refusal of a covered write (task_doc edits, including an admitted task retirement or folder movement, knowledge_write, citation_fix, citation_note_revision and curator_coherence publication) follows the same-tool/input-class ladder in reference/refused-write.md before a stop applies; if no admitted route works, the agent records the refusal, tells the owner, then makes that write openly by hand and logs it. The owning next publication refreshes renders/projections, and rendered copies are never parsed back. The same instruction retains stops for read/check/validation/sync refusals, starts, other product guards and commit gates; it is not a permission bypass.
 
-- First-read metadata replaces absolute task_doc-only wording with qualified same-tool refusal recovery. [17]
+- First-read metadata names task_doc first, the same-tool refusal ladder for covered writes, and an open, logged hand write when no admitted route works. [17]
 
 ## Historical original card — preserved, not the current operative account
 
@@ -87,7 +74,7 @@ Task-document first-read metadata says task_doc first, followed only on correct-
 
 ## Governing Overview
 
-[Route overview](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
@@ -203,7 +190,10 @@ Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-963
 
 - The `_resolve_workspace` implementation now lives in its extracted owner.  Anchor: actual current supporting source [3]
 
-- Frozen implementation of the narrow parented-coordinator handover values. [4]
-- The current source implements this file’s stated Investigator boundary. [8]
+- The parented handover values: `ownerRelation` from `_owner_relation`, and a `developerQuestions` value that sends developer decisions to the actual parent agent id; a parentless launch keeps the own-chat sentence. [4]
+
+- An Investigator's assignment comes from `investigator_assignment` with the actual starting parent: a parented start takes its concern from the parent's first message, a parentless start asks the developer. [8]
+
 - Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]
+
 - The preparer carries bound canonical/read-copy metadata, composes source-bound instructions and preserves parent/peer routing. Source inspection establishes these implementation boundaries, not live-host execution or acceptance. [10]

@@ -4,17 +4,30 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception.\n\nAnchor: \"The Architect's first delegation for one master\"",
+      "note": "One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception.",
       "targets": [
         {
           "anchor": {
-            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
-            "content": "sha256:905477a73eb39f2cce3446be15e29751fcf57051d49d2d9d9982dafbbfbbe4fd",
+            "blob": "46f59b0c9f749bf68245a1871eed5dbac5d1adad",
+            "content": "sha256:ae35cfb6ea74638ad05e1c03c8d37abb1426a57a76c9bfc3be365c230ba112be",
             "locator": {
-              "end": 24,
+              "end": 33,
               "kind": "line_range",
-              "start": 24
+              "start": 33
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
+            "content": "sha256:76e00e7ce3e49a4e30717d84e1d6dabc3f9a2342ab3b8b983f30065fe9216131",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
           },
           "kind": "code"
         }
@@ -25,12 +38,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
-            "content": "sha256:ef9c3f942919b9d97918a97dafe834b3bc9b7376adff2a2663fbd5f87ce9fa48",
+            "blob": "46f59b0c9f749bf68245a1871eed5dbac5d1adad",
+            "content": "sha256:7b0dca449eaf84798877714054e05a0e9eb5771b396bc655f4876023cca50d9f",
             "locator": {
-              "end": 4,
+              "end": 10,
               "kind": "line_range",
-              "start": 4
+              "start": 8
             }
           },
           "kind": "code"
@@ -38,16 +51,16 @@
       ]
     },
     "3": {
-      "note": "A packet-named recorded invariant/family effect is declared by the Architect before implementation; no named effect means no declaration.",
+      "note": "A packet-named recorded invariant/family effect is declared by the Architect before implementation; no named effect means no declaration.\n\nAnchor: `expectedKnowledgeEffects`",
       "targets": [
         {
           "anchor": {
-            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
-            "content": "sha256:21526c22afb70fde0ba372d37ce39fe367ea726f5b53c8c788e14f266b32c5a3",
+            "blob": "46f59b0c9f749bf68245a1871eed5dbac5d1adad",
+            "content": "sha256:a6a4c2898ff549afbd9bfb1d70e57fdc253d9cf5e908cf2125dcc77084c713ef",
             "locator": {
-              "end": 31,
+              "end": 43,
               "kind": "line_range",
-              "start": 28
+              "start": 43
             }
           },
           "kind": "code"
@@ -59,10 +72,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
-            "content": "sha256:ec4e036bb3190f1e55609b940535c59cceaf5563d3116f54041cb7cbdc28de5c",
+            "blob": "46f59b0c9f749bf68245a1871eed5dbac5d1adad",
+            "content": "sha256:3ff5705f68745036538ab70641c1bb1de319e773239f7ffaaa5c3546820aa957",
             "locator": {
-              "end": 51,
+              "end": 79,
               "kind": "line_range",
               "start": 1
             }
@@ -72,16 +85,28 @@
       ]
     },
     "5": {
-      "note": "Planning marks the Architect-only alignment, Prepared-context, effect-declaration and intent-review work explicitly, with all-role planning scope and permission boundaries outside that audience slice.",
+      "note": "Planning marks the Architect-only alignment sweep, knowledge-effect declaration, intent-review and cold-read Prepared-context work explicitly, with all-role requirement, ownership, Prepared-context and plan-boundary text outside that audience slice.",
       "targets": [
         {
           "anchor": {
-            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
-            "content": "sha256:0abf423d44ffef03dcfaa10fd81e39c57c74152190c1897eb8b0df53a9754831",
+            "blob": "46f59b0c9f749bf68245a1871eed5dbac5d1adad",
+            "content": "sha256:ec1a6f2e1c54a419f51cbef9684dd484aed7a8a8ec281d245b1f0a400ff1a0be",
             "locator": {
-              "end": 42,
+              "end": 49,
               "kind": "line_range",
-              "start": 6
+              "start": 14
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46f59b0c9f749bf68245a1871eed5dbac5d1adad",
+            "content": "sha256:f5f51420d0e8e84d593ce7dc84afccc84c084a1aac8255e3288c7d5c06cac6cf",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 65
             }
           },
           "kind": "code"
@@ -93,12 +118,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
-            "content": "sha256:21526c22afb70fde0ba372d37ce39fe367ea726f5b53c8c788e14f266b32c5a3",
+            "blob": "46f59b0c9f749bf68245a1871eed5dbac5d1adad",
+            "content": "sha256:10550187e9fe19bfe335b30824eefb735f35a8f835520452d23a5deeaad738af",
             "locator": {
-              "end": 31,
+              "end": 47,
               "kind": "line_range",
-              "start": 28
+              "start": 45
             }
           },
           "kind": "code"
@@ -106,41 +131,30 @@
       ]
     },
     "7": {
-      "note": "Before release, a reader other than the drafter compares a new or revised packet in both directions against every open leaf packet of its master, before the intent-review choice and again before go after review changes. Changed promises go to the developer; stale facts are fixed through registered revisions, and an issue stays in its original leaf unless another charter already covers it. Before any seat starts, Prepared context names record IDs/state, code/files/lines, unattributed callers and traps, including complete paged knowledge and the code it leaves unattributed. A packet adding a row, disposition, writer field or gate states how its own curation completes on the installed build; new behavior is proven on fixtures and scratch copies. Reported complete checks name included and excluded work, and pre-existing failures need same-cause base evidence. Under developer-chosen direct coordination, the Reviewer receives its exact bound intake first; plan/super-exit reviews have no startable seat and go through the Architect. The Architect reports an hour-long small item or a second repair round/freeze that day with a proposal to bound it. A UI fix is called working only after observation on the developer installation; otherwise it is landed and not verified there. At a handover or held/full-store result, the named message-handover detail owns sender and receipt handling.",
+      "note": "Before release, a reader other than the drafter compares a new or revised packet in both directions against every open leaf packet of its master, before the intent-review choice and again before go after review changes. Changed promises go to the developer; stale facts are fixed through registered revisions, and an issue stays in its original leaf unless another charter already covers it. Before any seat starts, Prepared context names record IDs/state, code/files/lines, unattributed callers and traps, including complete paged knowledge and the code it leaves unattributed. A packet adding a row, disposition, writer field or gate states how its own curation completes on the installed build; new behavior is proven on fixtures and scratch copies. Reported checks name what ran and what was left out, and pre-existing failures need same-cause base evidence. Under developer-chosen direct coordination, the Reviewer receives its exact bound intake first; plan/super-exit reviews have no startable seat and go through the Architect. The Architect reports an hour-long small item or a second repair round/freeze that day with a proposal to bound it. A UI fix is called working only after observation on the developer installation; otherwise it is landed and not verified there. At a full-store refusal, the named message-handover section owns the pending handover, single retry and second-refusal report.",
       "targets": [
         {
           "anchor": {
-            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
-            "content": "sha256:b61d506cc6cddf28708301c8f2e8b3c0e1bd58b46c4372916b7948271b74d813",
+            "blob": "46f59b0c9f749bf68245a1871eed5dbac5d1adad",
+            "content": "sha256:ae053cbaaadfb83cce795f90691b7c408ac00a5797a6bfd09499790421040dd9",
             "locator": {
-              "end": 22,
+              "end": 79,
               "kind": "line_range",
-              "start": 4
+              "start": 17
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
-            "content": "sha256:0d028d29066bb7319076c906e36c1a4617cb4acf8295ac050caf4c9296d09a7f",
+            "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+            "content": "sha256:77bcb1fd1a01f8b2eb55c578c107afd966902163264b8a90e2606b1aeda26023",
             "locator": {
-              "end": 42,
+              "end": 107,
               "kind": "line_range",
-              "start": 26
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
-            "content": "sha256:6606a45af0fa9239ba4d9a517148a19677268b67a2235b9c535893c47dfd290e",
-            "locator": {
-              "end": 51,
-              "kind": "line_range",
-              "start": 47
-            }
+              "start": 107
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
           },
           "kind": "code"
         }

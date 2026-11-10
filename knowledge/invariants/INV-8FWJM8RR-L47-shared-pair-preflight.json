@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The honest-entry family needs the catalogue and summary to reject unusable comparison operands in the same order so their available subjects and displayed counts cannot disagree about whether the pair was read."
+  },
   "applicability": "The subject catalogue (list_knowledge_review_entries) and the changed-intent summary (intent_summary_of) for one resolved review pair.",
   "conditions": [
     "The pair is resolved from canonical task context by the reviewer's resolution."

@@ -1,0 +1,93 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/review-baseline.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Route work is organised by the Reviewer with optional harness helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eb41ca41e71fe01629cea89a1b74f46f8dc7f9e",
+            "content": "sha256:a2da08de0419d8020999cfc20186d099eed7632c01130ce760c107b4606d633b",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "All three lenses are covered and evidence must match the requirement's class.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eb41ca41e71fe01629cea89a1b74f46f8dc7f9e",
+            "content": "sha256:44f495fca212bfa6c91343e88779c987030458ee67837de7571aa601631989e3",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Weakness records and document staleness are recorded knowledge, not findings, except in-scope unrepaired weaknesses and unconfirmed dependents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eb41ca41e71fe01629cea89a1b74f46f8dc7f9e",
+            "content": "sha256:4b43af94b238cd7211a1ba8b501310d70543e05f90b4536dd8dc4fa89a83646d",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "An empty first-pass list terminates the baseline; focused tests cover every changed surface, with full-suite authority in the role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eb41ca41e71fe01629cea89a1b74f46f8dc7f9e",
+            "content": "sha256:4eec2a75c57f52f942c5cd4ec98e29d063063cd0ccb010f20f7b85a2d792c52e",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Reviewer role points here before preparing a baseline review.\n\nAnchor: `review-baseline.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:6b8cdfa852a54be4404ab7e58c52b956149da7ffb591189502e4a05a23b122ca",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

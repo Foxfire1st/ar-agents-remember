@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fff08e3cef4891f6ea1d05fe4327f6794782a099",
-        "content": "sha256:4ccb7e95482d04ff2b4865088b70df63cf565b3ea3d90260575063feb71c909e",
+        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+        "content": "sha256:a801839c908a1556102e5b810654315d8fd55ec1bc2e0c7936d1c87416e36d9a",
+        "locator": {
+          "end": 17,
+          "kind": "line_range",
+          "start": 17
+        }
+      },
+      "id": "RLZ-0W0MTJ",
+      "invariant": "INV-85VB61",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The seat-binding table's Projects row states that an Architect start names no document: the sprint document holds the developer's request, and the developer names it to the Architect in the dashboard.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+        "content": "sha256:9d53d054f96ed5825a90c34ec46af97b615b2b10a9f56215e79e428d79f509ce",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +39,46 @@
     },
     {
       "anchor": {
-        "blob": "fff08e3cef4891f6ea1d05fe4327f6794782a099",
-        "content": "sha256:4ccb7e95482d04ff2b4865088b70df63cf565b3ea3d90260575063feb71c909e",
+        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+        "content": "sha256:8d5cece31a056c6dfee460571a08b10320d084ffcd3d9689f2665073898b505e",
+        "locator": {
+          "end": 43,
+          "kind": "line_range",
+          "start": 43
+        }
+      },
+      "id": "RLZ-C0SB4V",
+      "invariant": "INV-0V8R02",
+      "origin": {
+        "handoffEntry": "L84-P5-12",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Unit AU4.2 holds its per-start override definition at source instead of a link into its own every-role digest place.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+        "content": "sha256:504a3d76f4d3082d9e46f23392ddd2feb9cfa1e10871342fd207c591d4839ac3",
+        "locator": {
+          "end": 124,
+          "kind": "line_range",
+          "start": 124
+        }
+      },
+      "id": "RLZ-CQARG2",
+      "invariant": "INV-8VNSKJ",
+      "origin": {
+        "handoffEntry": "L84-R1-05",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This authority paragraph is the home of the correct-write recovery for a refused covered write.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+        "content": "sha256:9d53d054f96ed5825a90c34ec46af97b615b2b10a9f56215e79e428d79f509ce",
         "locator": {
           "kind": "file"
         }
@@ -37,12 +94,12 @@
     },
     {
       "anchor": {
-        "blob": "fff08e3cef4891f6ea1d05fe4327f6794782a099",
-        "content": "sha256:29319c20f0f3639efd8877e52f1e22a4b9eac3e6042ba315a5f6a30be38ce100",
+        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+        "content": "sha256:1e02634cecb808b144f41c7a79412e5269aad2fade9577bcc56a8a4542989cd2",
         "locator": {
-          "end": 124,
+          "end": 108,
           "kind": "line_range",
-          "start": 37
+          "start": 98
         }
       },
       "id": "RLZ-RJJN3V",
@@ -51,13 +108,13 @@
         "handoffEntry": "L62-CUR-6414-continuation",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "AU10.3 describes collection, progress checks, declaration and no watcher/polling mechanism. Core authoring rule retains same helper boundary.",
+      "rationale": "The shared handover-and-wait section bans watchers, polling and timer loops for every role, and states native helper collection within the turn and the declared ACP helper wait with its progress check and no parent progress message.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "fff08e3cef4891f6ea1d05fe4327f6794782a099",
-        "content": "sha256:4ccb7e95482d04ff2b4865088b70df63cf565b3ea3d90260575063feb71c909e",
+        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+        "content": "sha256:9d53d054f96ed5825a90c34ec46af97b615b2b10a9f56215e79e428d79f509ce",
         "locator": {
           "kind": "file"
         }
@@ -70,20 +127,56 @@
       },
       "rationale": "This shared source retains its existing duty while replacing only the developer-question channel and required quote provenance.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+        "content": "sha256:770dca9b9df063334899eea2f18f89454690f1083ee6d307afa918d10e6b8513",
+        "locator": {
+          "end": 106,
+          "kind": "line_range",
+          "start": 106
+        }
+      },
+      "id": "RLZ-WH7GSH",
+      "invariant": "INV-0V8R02",
+      "origin": {
+        "handoffEntry": "L84-P5-12",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Unit AU10.3 holds its helper-collection definition at source, including the D709 neutral sentence that helpers run on the seat's own model unless the developer names another.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "Canonical structural seat and parent authority; shared corpus is not proof of capsule injection.",
+      "note": "Canonical structural seat and parent authority; the file is an authoring reference whose shared duties reach roles through the every-role digest.",
       "targets": [
         {
           "anchor": {
-            "blob": "fff08e3cef4891f6ea1d05fe4327f6794782a099",
-            "content": "sha256:323611fd29905476ea8de1b757ade01f2ffe9beb8409761d95abe2ef161533b5",
+            "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+            "content": "sha256:8225c6fb00b3dc55bfbac8431ef07d9a5b44597bd060bf433c2d006ff44ebe80",
             "locator": {
-              "end": 131,
+              "end": 27,
               "kind": "line_range",
-              "start": 3
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared rules for sandbox evidence, scratch-path removal and live-host operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+            "content": "sha256:88dd1ddd5da803a340087dbb72957ffdc9c23004c057c3ca51cd4e0b9de78bdc",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 110
             }
           },
           "kind": "code"

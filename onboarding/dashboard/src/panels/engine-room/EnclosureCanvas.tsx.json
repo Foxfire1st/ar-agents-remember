@@ -532,7 +532,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
             "locator": {
               "kind": "symbol",
@@ -544,7 +544,7 @@
         },
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:8ad3ab8e99817b1e4b23b7b6259fc08e02b0810861d5f984fa3479bfc83258a5",
             "locator": {
               "kind": "symbol",
@@ -557,60 +557,15 @@
       ]
     },
     "25": {
-      "note": "CommitRefNode carries source/worktree commit observations and fact state.\n\nAnchor: \"export interface CommitRefNode {\"",
+      "note": "CommitRefNode carries source/worktree commit observations and fact state.",
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:407beea369f329c1ee37299cf65f5684b3934b5a70a6cc82bf178a2ed77a5834",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "content": "sha256:50f9ff4de6d7ea1b819ab16e492bc8eff46f9491168de6e4c82d8bce0c2c8ba9",
             "locator": {
-              "end": 103,
-              "kind": "line_range",
-              "start": 103
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 154,
-              "kind": "line_range",
-              "start": 154
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "ProviderBootNode carries the booted provider identity, role and runtime state.\n\nAnchor: \"export interface ProviderBootNode {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:e689f6a5a54fde85422b822245b860021c45e208e01310e4195b668a0e515aab",
-            "locator": {
-              "end": 390,
-              "kind": "line_range",
-              "start": 390
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 502,
-              "kind": "line_range",
-              "start": 502
+              "kind": "symbol",
+              "name": "CommitRefNode"
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -619,60 +574,15 @@
       ]
     },
     "27": {
-      "note": "LandingRefNode carries observed landing state and freshness details.\n\nAnchor: \"export interface LandingRefNode {\"",
+      "note": "LandingRefNode carries observed landing state and freshness details.",
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "content": "sha256:d8d8424fdf7ae090bc461cc55ab5359acd917b91a4fa5c073ffa65b35d42cd2e",
             "locator": {
-              "end": 231,
-              "kind": "line_range",
-              "start": 231
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:397e3d2420eb398a0853c67b0004ceff2425c88096a5333a71cefbe3cc471d21",
-            "locator": {
-              "end": 301,
-              "kind": "line_range",
-              "start": 301
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "ProviderNode carries workspace/worktree provider health and indexing observations.\n\nAnchor: \"export interface ProviderNode {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 403,
-              "kind": "line_range",
-              "start": 403
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 509,
-              "kind": "line_range",
-              "start": 509
+              "kind": "symbol",
+              "name": "LandingRefNode"
             },
             "path": "dashboard/src/types/projection.ts"
           },

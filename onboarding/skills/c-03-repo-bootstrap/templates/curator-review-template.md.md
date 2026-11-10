@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Repository onboarding overview](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
@@ -16,7 +16,7 @@ The curator review records repository and review-time metadata, the wave manifes
 
 ### Conventions
 
-The checklist covers route-local mirrored placement, strict one-to-one file onboarding, governing-overview backlinks and overview downlinks, separation from task-local planning, reference buckets and direct evidence, exclusion of registry and embedding proof, relative-path discipline, LOW-confidence handling, deferred files, and state updates. Its converted-card checks require no citation table left after the fixer and every numbered marker resolving to a sidecar reference. The checklist does not prescribe append-only card history; that narrow observation is not a general finding about history policy elsewhere.
+The checklist covers route-local mirrored placement, generated route indexes beside changed route overviews that reflect changed file-level sidecar coverage, strict one-to-one file onboarding, governing-overview backlinks and overview downlinks, separation from task-local planning, reference buckets and direct evidence, exclusion of registry and embedding proof, relative-path discipline, LOW-confidence handling, deferred files, and state updates. Its converted-card checks require no citation table left after the fixer and every numbered marker resolving to a sidecar reference. The checklist does not prescribe append-only card history; that narrow observation is not a general finding about history policy elsewhere.
 
 ### Invariants And Boundaries
 
@@ -37,10 +37,15 @@ Inherited applicability note: the old card treated this as a repository-local te
 The following same-repository source ranges support the template description and the retained cross-file bootstrap responsibilities. The template and skill define the format and responsibilities, not an actual completed bootstrap wave.
 
 - The format supplies placeholder review identity, statuses, summary, and file-by-file review outcomes. [1]
-- The checklist preserves placement, reference, state, and converted-citation checks; it contains no append-only card-history requirement. [2]
+
+- The checklist preserves placement, generated route-index, reference, state, and converted-citation checks; it contains no append-only card-history requirement. [2]
+
 - The review format captures reference health, bucket corrections, fixes, questions, and next-wave recommendations. [3]
+
 - Phase 4I requires a curator review after each overview or onboarding wave and names its checks, including index coverage. [4]
+
 - Automated mode retains evidence gates, curator reviews, state updates, and handoff despite changing pause behavior. [5]
+
 - Current citation guidance delegates resolved references and sidecar writing to the fixer rather than manual authorship. [6]
 
 ### Cross-Repo References

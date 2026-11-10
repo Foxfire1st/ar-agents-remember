@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The generation reader verifies immutable record identity and retained evidence, while judgment custody preserves the admitted bytes and live readiness independently checks current inputs, preventing historical integrity from becoming a false currentness claim."
+  },
   "applicability": "Immutable curator generations and publication-owned evidence custody for an admitted external-memory leaf.",
   "conditions": [
     "The exact content address, typed leaf/contract identity, deterministic projection, retained attestation and declared evidence validate.",

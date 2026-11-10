@@ -3,7 +3,45 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
+        "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
+        "content": "sha256:ccef649cfb9c5920459964c07c131e0f441fe6fcbcd58256813b75148449c149",
+        "locator": {
+          "end": 78,
+          "kind": "line_range",
+          "start": 77
+        }
+      },
+      "id": "RLZ-89YAFC",
+      "invariant": "INV-B6D2SA",
+      "origin": {
+        "handoffEntry": "L84-K3C-B6D2SA-05",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The served state tail carries buildCurrentness and the serving process id beside the serving build.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
+        "content": "sha256:6a5949fd85ef75f78bf1d85b77240ece55cca9a3e7665b65a75dd3c0e14d0a9d",
+        "locator": {
+          "end": 87,
+          "kind": "line_range",
+          "start": 81
+        }
+      },
+      "id": "RLZ-A4Q22M",
+      "invariant": "INV-B6D2SA",
+      "origin": {
+        "handoffEntry": "L84-K3C-B6D2SA-06",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The served state tail carries buildCurrentness and the serving process id beside the serving build.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
         "content": "sha256:96bc17dac4ecd6b124c259786c6d1c54306fff30e52a9ecf9744ff3cb4debd9d",
         "locator": {
           "kind": "symbol",
@@ -21,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
-        "content": "sha256:d5b14e0dd89daf242a1a210997442450ae72426379f0b1e3114e4493a3eb4826",
+        "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
+        "content": "sha256:f291636bb189cf456b4704997cb79d5449c512c83c0b1a5010fdf6398fdb616a",
         "locator": {
           "kind": "symbol",
           "name": "served_state_tail"
@@ -40,14 +78,15 @@
   ],
   "references": {
     "1": {
-      "note": "Optional servingBuild and watcherHealth extend the observer projection; notifier, supervisor and terminal-health tails remain removed.\n\nAnchor: `ServedWorkspaceProjection`",
+      "note": "Optional servingBuild, watcherHealth, checkoutBinding, buildCurrentness and servingProcessId extend the observer projection.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
-            "content": "sha256:417c2431a934da24b20f221e9f0a06d716367d668c4bf1661c7df98f40533c1a",
+            "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
+            "content": "sha256:54e29f7445ed60cd40874c54db0938b16b8218f2e6559440c44b79c022e4503a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ServedWorkspaceProjection"
             }
           },
           "kind": "code"
@@ -55,14 +94,15 @@
       ]
     },
     "2": {
-      "note": "Absent build or watcher facts are omitted; a supplied watcher reading is validated and an invalid reading is omitted.\n\nAnchor: `served_state_tail`",
+      "note": "Absent build or watcher facts are omitted; a supplied watcher reading is validated and an invalid reading is omitted.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
-            "content": "sha256:417c2431a934da24b20f221e9f0a06d716367d668c4bf1661c7df98f40533c1a",
+            "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
+            "content": "sha256:f291636bb189cf456b4704997cb79d5449c512c83c0b1a5010fdf6398fdb616a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "served_state_tail"
             }
           },
           "kind": "code"
@@ -70,17 +110,51 @@
       ]
     },
     "3": {
-      "note": "The current tail vocabulary is exactly servingBuild, watcherHealth and checkoutBinding.",
+      "note": "The current tail vocabulary is exactly servingBuild, watcherHealth, checkoutBinding, buildCurrentness and servingProcessId.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
-            "content": "sha256:d283df1699a79f263206566f44140a110617baba1d881df0cc7cdda399228560",
+            "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
+            "content": "sha256:6a5949fd85ef75f78bf1d85b77240ece55cca9a3e7665b65a75dd3c0e14d0a9d",
             "locator": {
-              "end": 68,
-              "kind": "line_range",
-              "start": 66
+              "kind": "symbol",
+              "name": "SERVED_TAIL_FIELDS"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A present build adds the answering process id, and a supplied currentness reading is dumped into the tail.\n\nAnchor: `os.getpid()`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
+            "content": "sha256:76480251a5d3ccd94fdd1f77462bccf1ab0a5159779c2d35f1ad0893151344cd",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The dashboard supervisor refuses an answer whose process id differs from the socket owner.\n\nAnchor: `servingProcessId`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "689568d7b4ef58dea3bafd55f21100a7454e3b43",
+            "content": "sha256:2b0f080dcf4bf4bd268b40ca5f7de227f274532ec587079d3d5ada9404abef0a",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/serving/daemon_identity.py"
           },
           "kind": "code"
         }

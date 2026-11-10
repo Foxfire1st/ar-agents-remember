@@ -107,12 +107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
             "content": "sha256:3b0303542991bb45b8c52d7aa4a80fafe5aab7c09493db6cf8512947d8413af0",
             "locator": {
-              "end": 429,
+              "end": 434,
               "kind": "line_range",
-              "start": 343
+              "start": 348
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },

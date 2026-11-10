@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "218393b48ed815f8108902ef82778bad06accf66",
-        "content": "sha256:7dce5ca680145c5c000c12584ca843d64e7d2f13777cdc6227076808a23367b4",
+        "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+        "content": "sha256:3deb9c9eb9f10a3bd2448ca80a5415fb5e0b383d6b3895aafcb3f3e202be5f25",
         "locator": {
-          "end": 16,
+          "end": 52,
           "kind": "line_range",
           "start": 4
         }
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "218393b48ed815f8108902ef82778bad06accf66",
-        "content": "sha256:ec6956a389409d834247ec0fa17f19497905ab6aa3e7ad6f9cf4a5bfcb6995ba",
+        "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+        "content": "sha256:5f96765bd480015dd201e0e99308c06a69fe32f205e55b2f25ffba81f75d8259",
         "locator": {
-          "end": 32,
+          "end": 85,
           "kind": "line_range",
-          "start": 26
+          "start": 78
         }
       },
       "id": "RLZ-3QTBC5",
@@ -41,8 +41,27 @@
     },
     {
       "anchor": {
-        "blob": "218393b48ed815f8108902ef82778bad06accf66",
-        "content": "sha256:f79d875a5459baea525fba1d9b6e0b924517fc636c5b0041b5a428c810945a38",
+        "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+        "content": "sha256:5120ba3868a8a19481ec6a7015246af0f409f915154041909761e3b6e9f1f2e1",
+        "locator": {
+          "end": 52,
+          "kind": "line_range",
+          "start": 43
+        }
+      },
+      "id": "RLZ-6P4D1B",
+      "invariant": "INV-MTRR08",
+      "origin": {
+        "handoffEntry": "L100-R100-doctrine-coherence",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "Worker first tells Manager to start Reviewer, then hands the exact freeze directly to the started Reviewer; the same clause sends the producer list only after code PASS.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+        "content": "sha256:a4ab1088ea6a45a3c900a15960d864e2c59386af7c01f1f6dc77d16b2cadb596",
         "locator": {
           "kind": "file"
         }
@@ -58,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "218393b48ed815f8108902ef82778bad06accf66",
-        "content": "sha256:ec6956a389409d834247ec0fa17f19497905ab6aa3e7ad6f9cf4a5bfcb6995ba",
+        "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+        "content": "sha256:340b75c0f75cd25023fcd41e73c89607ce9b14d0f2d8aad9c385e2d1bc4a7c2d",
         "locator": {
-          "end": 32,
+          "end": 85,
           "kind": "line_range",
-          "start": 26
+          "start": 83
         }
       },
       "id": "RLZ-7KXE63",
@@ -77,10 +96,10 @@
     },
     {
       "anchor": {
-        "blob": "218393b48ed815f8108902ef82778bad06accf66",
-        "content": "sha256:7dce5ca680145c5c000c12584ca843d64e7d2f13777cdc6227076808a23367b4",
+        "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+        "content": "sha256:3deb9c9eb9f10a3bd2448ca80a5415fb5e0b383d6b3895aafcb3f3e202be5f25",
         "locator": {
-          "end": 16,
+          "end": 52,
           "kind": "line_range",
           "start": 4
         }
@@ -91,7 +110,7 @@
         "handoffEntry": "L71-CURRENT242-W-19",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "Canonical Implementation owns task-bound own-file reads, task_doc-first edits with scoped correct-write recovery, memory as read-only context, truthful report/check evidence and direct freeze delivery; generated copies add no independent authority.",
+      "rationale": "Canonical Implementation owns task-bound own-file reads through the Worker's assignment, task_doc-first edits through orientation's primary-tool rule, memory as read-only context, truthful report and check evidence, and direct freeze delivery to the Reviewer. It carries no correct-write recovery pointer of its own.",
       "role": "primary-authority"
     }
   ],
@@ -101,13 +120,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "218393b48ed815f8108902ef82778bad06accf66",
-            "content": "sha256:f79d875a5459baea525fba1d9b6e0b924517fc636c5b0041b5a428c810945a38",
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:a214d72d4436bafca4d0b439d16882af5e8466e5a38d4c4674dbd4c8f1060d2e",
             "locator": {
-              "end": 36,
+              "end": 48,
               "kind": "line_range",
-              "start": 1
+              "start": 45
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:f640afccb884091254869352840d254da88070e10f70804288c7d417a84cd40f",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
           "kind": "code"
         }
@@ -118,12 +150,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "218393b48ed815f8108902ef82778bad06accf66",
-            "content": "sha256:f79d875a5459baea525fba1d9b6e0b924517fc636c5b0041b5a428c810945a38",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:61e5581f71a234466784c2854f3180ca251705dc41e6369cf1b2fab8b662df2d",
             "locator": {
-              "end": 36,
+              "end": 121,
               "kind": "line_range",
-              "start": 1
+              "start": 121
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:89a01d31fa37bc62f88cc1d3268a51f2c417ab0e3ac7b0caeee74fd6cfaaa09e",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 85
             }
           },
           "kind": "code"
@@ -135,13 +180,39 @@
       "targets": [
         {
           "anchor": {
-            "blob": "218393b48ed815f8108902ef82778bad06accf66",
-            "content": "sha256:f79d875a5459baea525fba1d9b6e0b924517fc636c5b0041b5a428c810945a38",
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:9a55e35d84457acf3218843c28532fefed39979cfc1cd497185d7de91aa612c2",
             "locator": {
-              "end": 36,
+              "end": 74,
               "kind": "line_range",
-              "start": 1
+              "start": 70
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+            "content": "sha256:008a9d834646564a39bfc0b0f957c855878328eca3c3e4fb664c80e66df6e370",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+            "content": "sha256:2af566a11122e448ce75709750cbdf82b8c541d5a2d66f431d11e64e64b8eb1e",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/message-handover.md"
           },
           "kind": "code"
         }
@@ -152,10 +223,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "218393b48ed815f8108902ef82778bad06accf66",
-            "content": "sha256:f79d875a5459baea525fba1d9b6e0b924517fc636c5b0041b5a428c810945a38",
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:a4ab1088ea6a45a3c900a15960d864e2c59386af7c01f1f6dc77d16b2cadb596",
             "locator": {
-              "end": 36,
+              "end": 93,
               "kind": "line_range",
               "start": 1
             }
@@ -165,17 +236,42 @@
       ]
     },
     "5": {
-      "note": "The Worker-only operation now carries conditional sync, direct repair and per-finding freeze evidence; its all-role audience marker adds no other seat.",
+      "note": "The Worker-only operation carries conditional sync, direct repair and per-finding freeze evidence; its all-role audience marker adds no other seat.",
       "targets": [
         {
           "anchor": {
-            "blob": "218393b48ed815f8108902ef82778bad06accf66",
-            "content": "sha256:f79d875a5459baea525fba1d9b6e0b924517fc636c5b0041b5a428c810945a38",
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
             "locator": {
-              "end": 36,
+              "end": 1,
               "kind": "line_range",
               "start": 1
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:81a43bbfdc8bfca71585cedebd0b3dcac4a105ad3361ee3f4901529ea9f6de96",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:40d78f4501ce5a5ec6fe2a7214201741a166fda03410c5fe70b3ae38c7a1f2b4",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
           "kind": "code"
         }
@@ -186,12 +282,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "218393b48ed815f8108902ef82778bad06accf66",
-            "content": "sha256:151b95656d39d2911a19c33b0f91f59b6f2395cbfd117dc4a7acf76202639b95",
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:c50264ab8ae886b8cc191cf9bc35799880ea1f228aebd4d81863bcba8cbaf409",
             "locator": {
-              "end": 34,
+              "end": 81,
               "kind": "line_range",
-              "start": 8
+              "start": 66
             }
           },
           "kind": "code"
@@ -203,12 +299,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "218393b48ed815f8108902ef82778bad06accf66",
-            "content": "sha256:151b95656d39d2911a19c33b0f91f59b6f2395cbfd117dc4a7acf76202639b95",
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:8dde060e2db755c2555199a3c33fa773d79ab1374d30820c374c60d9e4b6356c",
             "locator": {
-              "end": 34,
+              "end": 48,
               "kind": "line_range",
-              "start": 8
+              "start": 39
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:2a67283b79019c7469fb5a39a5e4dc0e156b2a87199c7b96b29c6ab664a5ec26",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 68
             }
           },
           "kind": "code"

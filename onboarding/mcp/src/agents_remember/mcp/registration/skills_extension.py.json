@@ -199,12 +199,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "blob": "cb5267fc9dfc7f51203dd06e839f793c8dcf5ade",
             "content": "sha256:07b2d018f61e7eee032ab39fac5eab11793315e6ce434103eabbc38475ee366b",
             "locator": {
-              "end": 381,
+              "end": 392,
               "kind": "line_range",
-              "start": 306
+              "start": 317
             },
             "path": "mcp/tests/test_capsule_serving_surface.py"
           },
@@ -217,12 +217,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "blob": "cb5267fc9dfc7f51203dd06e839f793c8dcf5ade",
             "content": "sha256:121a8847c559a9a6db5e74967695da263150846f1f0a123e5d682ca57eca4ff2",
             "locator": {
-              "end": 523,
+              "end": 534,
               "kind": "line_range",
-              "start": 507
+              "start": 518
             },
             "path": "mcp/tests/test_capsule_serving_surface.py"
           },

@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+        "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
         "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
         "locator": {
-          "end": 223,
+          "end": 220,
           "kind": "line_range",
-          "start": 222
+          "start": 219
         }
       },
       "id": "RLZ-F6DSAT",
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+        "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
         "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
         "locator": {
-          "end": 223,
+          "end": 220,
           "kind": "line_range",
-          "start": 222
+          "start": 219
         }
       },
       "id": "RLZ-N47KE8",
@@ -42,8 +42,8 @@
     },
     {
       "anchor": {
-        "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
-        "content": "sha256:e78db7db14fd63cddb31b56b69755e6fb29c7437299a3023c85d25ace0c32d2e",
+        "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
+        "content": "sha256:1da51f41e73f2c4deb2cff68402c60a0c8b863f3537b821d16d5fdafc6f5d806",
         "locator": {
           "kind": "file"
         }
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
-        "content": "sha256:e78db7db14fd63cddb31b56b69755e6fb29c7437299a3023c85d25ace0c32d2e",
+        "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
+        "content": "sha256:1da51f41e73f2c4deb2cff68402c60a0c8b863f3537b821d16d5fdafc6f5d806",
         "locator": {
           "kind": "file"
         }
@@ -77,16 +77,16 @@
   ],
   "references": {
     "1": {
-      "note": "The reference header states 40 public tools while the literal roster declares 44; the older header and roster counts are historical, not live advertisement.",
+      "note": "The reference header names `PUBLIC_TOOLS` in `public_roster.py` as the public roster and states no tool count; the literal roster declares 44 entries.\n\nAnchor: `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
-            "content": "sha256:f9e8d8278ea6c455e34139e07f4eb8439d2ce07b7074c4e361c3daddafccff76",
+            "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
+            "content": "sha256:ce3ae8ad628842fc7801c786654e24896929f46d9262e6c130a0b5e5609b3da4",
             "locator": {
-              "end": 5,
+              "end": 4,
               "kind": "line_range",
-              "start": 1
+              "start": 3
             }
           },
           "kind": "code"
@@ -109,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
             "content": "sha256:f830511c4f62c22e7965dc06064b2b9d76daf2031a058dedbf6c4295a1fd6fa0",
             "locator": {
               "end": 74,
@@ -121,24 +121,24 @@
         },
         {
           "anchor": {
-            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
             "content": "sha256:2336696b9446853246534160c429950395d95574f02dc7f827ffe2edd750a2a3",
             "locator": {
-              "end": 454,
+              "end": 452,
               "kind": "line_range",
-              "start": 429
+              "start": 427
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
             "content": "sha256:78b3873206ec624658a775b9d411cdb2c5b8ef2d976593cd6e393eefffca843d",
             "locator": {
-              "end": 427,
+              "end": 425,
               "kind": "line_range",
-              "start": 416
+              "start": 414
             }
           },
           "kind": "code"
@@ -150,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
             "content": "sha256:ca1b631139a9903c5ae94cc55512b90f6e0eeaa6d8b079c16263edff78126b07",
             "locator": {
               "end": 145,
@@ -167,12 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "blob": "6ef8feb28ccdaed331797747b61028e85aed2b6a",
             "content": "sha256:9909c510242a60b9724d65b9a21055f5f13c95e48dbaa06b50f00be4db47b94f",
             "locator": {
-              "end": 159,
+              "end": 228,
               "kind": "line_range",
-              "start": 145
+              "start": 214
             },
             "path": "docs/tool-details.md"
           },

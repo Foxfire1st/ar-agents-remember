@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Repository area overview](../../overview.md)
+[overview](../../overview.md)
 
 ## Purpose
 
@@ -10,7 +10,9 @@ Bootstrap onboarding in bounded, locality-first waves for a new repository or an
 
 ## Current Contract
 
-Resolve context and source eligibility before building root and route-local overviews, evidence packs, file cards and file-level onboarding. The source-inventory gate precedes automation; uncertain low-confidence claims remain unresolved. The skill owns the planning/promotion sequence, while c-05 owns file-level card semantics. Converted evidence is authored through citation_fix rather than hand-written sidecars. Handoff names the actual cards, fixer state, baseline and moment-specific foundation state. Bootstrap output does not itself establish a baseline or knowledge foundation; onboarding/bootstrap audit files and a memory-root bootstrap staging directory have different commit treatment. This is the instruction contract, not evidence of an executed bootstrap or adopted baseline.
+Resolve context and source eligibility before building root and route-local overviews, evidence packs, file cards and file-level onboarding. The source-inventory gate precedes automation; uncertain low-confidence claims remain unresolved. The skill owns the planning/promotion sequence, while the l-01 Curator card procedure (`skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md`) defines file-level card semantics. Context resolution goes through the l-01 context and knowledge tool reference, and each writing step points to its own template instead of a central template table. Converted evidence is authored through citation_fix rather than hand-written sidecars. Handoff names the actual cards, fixer state, baseline and moment-specific foundation state. Bootstrap output does not itself establish a baseline or knowledge foundation; onboarding/bootstrap audit files and a memory-root bootstrap staging directory have different commit treatment. This is the instruction contract, not evidence of an executed bootstrap or adopted baseline.
+
+Before ordinary source-file work, the skill sends the reader to the l-01 knowledge-use guidance (`reference/knowledge/use.md`): start with a text search or `knowledge_read`, expand the candidates with `knowledge_read`, and read code and knowledge together. It states no index-first or prose-last order.
 
 ## Canonical Source Ownership
 
@@ -22,7 +24,7 @@ The byte-equal packaged skill is a distribution carrier, not an independent role
 
 ## Current Source Qualification
 
-The current relationship table pairs this skill with `c-05-create-or-update-onboarding-files` for post-bootstrap promotion: touched files move from deferred to covered under that skill, which now also carries the memory-quality and findings-capture procedures. The retired `c-02-memory-quality-control` skill the inherited copy names in that row is history of those bytes, not a current neighbour.
+The relationship table pairs this skill with the l-01 context and knowledge tool reference (the required first step), the Curator card procedure (final file-level semantics; after bootstrap, touched files move from deferred to covered) and the knowledge-use guidance (consumes bootstrapped overviews and file maps for Intent and uses native search for concept and relationship questions), beside `c-10-adopt-memory-baseline`, `c-14-knowledge-bootstrap` and `l-01-agent-lifecycles`.
 
 ## Inherited Source-Epoch Commentary
 

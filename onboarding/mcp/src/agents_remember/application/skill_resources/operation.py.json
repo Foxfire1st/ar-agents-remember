@@ -67,7 +67,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
+            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
             "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
             "locator": {
               "kind": "symbol",
@@ -101,35 +101,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
             "content": "sha256:3457497d1f83653411517625d1ef81417210b9171d8c2fb902e8e7475cd7d598",
             "locator": {
               "kind": "symbol",
               "name": "test_the_discovery_registry_is_not_the_model_visible_catalog"
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
-            "content": "sha256:f5d7c778e1d2acee984a940089be45ee070ca9f6a9576e15f3b5d81e9fff1096",
-            "locator": {
-              "end": 887,
-              "kind": "line_range",
-              "start": 861
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
-            "content": "sha256:ad3d94e6364f84bb66c0c762b33c3ee884d2fb94066e18b3964f3c9321ecec05",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },

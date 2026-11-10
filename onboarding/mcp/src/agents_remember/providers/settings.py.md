@@ -94,7 +94,7 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 
 - Provider status no longer writes generated lifecycle settings: at C `status.py` reports configured/enabled plus `skipped` and calls no `watchers_run`; the writer this entry recorded is gone.
 
-- Runtime install uses generated lifecycle settings when installing provider dependencies from the MCP tool. [3]
+- Runtime install passes lifecycle_settings_from_config() to the provider watcher rebind; enabled provider keys drive no dependency installation. [3]
 
 - GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend. [4]
 - CodeGraphContext lifecycle settings define Docker runner image/build/lock/container settings and FalkorDB backend settings. [5]

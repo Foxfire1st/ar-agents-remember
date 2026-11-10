@@ -4,16 +4,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The document defines build/install explanations and distinguishes read-only drift reporting from exact-pair stale-anchor publication refusal, with an additional carried-deleted-path refusal; documentation is not fresh execution evidence.",
+      "note": "The document distinguishes read-only drift reporting from exact-pair stale-anchor publication refusal, with an additional refusal for an anchor carried at a path the leaf deleted.",
       "targets": [
         {
           "anchor": {
-            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
-            "content": "sha256:896e30c87965527164fb3a5da91f5f7f18798424669f113b527fa7f24a007dae",
+            "blob": "6ef8feb28ccdaed331797747b61028e85aed2b6a",
+            "content": "sha256:fc5d481c4d89d45428eb76a683c38169f16ec15564978bb9fdd8be7ec00884ac",
             "locator": {
-              "end": 121,
+              "end": 190,
               "kind": "line_range",
-              "start": 1
+              "start": 177
             }
           },
           "kind": "code"
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "blob": "6ef8feb28ccdaed331797747b61028e85aed2b6a",
             "content": "sha256:78d67ba0ef29ee678d16703dec6acf3e7e3e12d1fea8234992c425154a97993b",
             "locator": {
-              "end": 176,
+              "end": 245,
               "kind": "line_range",
-              "start": 124
+              "start": 193
             }
           },
           "kind": "code"
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "blob": "6ef8feb28ccdaed331797747b61028e85aed2b6a",
             "content": "sha256:587fd50aef8cf94f65d8c0119390ffc913c3628342eaf1a598204bf3d36f603d",
             "locator": {
               "end": 84,
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "blob": "6ef8feb28ccdaed331797747b61028e85aed2b6a",
             "content": "sha256:82b8238d6fd78956bc50f48081a5e38742ba85e581c6e93ab7a812b0b79002c0",
             "locator": {
-              "end": 159,
+              "end": 228,
               "kind": "line_range",
-              "start": 147
+              "start": 216
             },
             "path": "docs/tool-details.md"
           },
@@ -72,12 +72,12 @@
         },
         {
           "anchor": {
-            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "blob": "6ef8feb28ccdaed331797747b61028e85aed2b6a",
             "content": "sha256:82b8238d6fd78956bc50f48081a5e38742ba85e581c6e93ab7a812b0b79002c0",
             "locator": {
-              "end": 159,
+              "end": 228,
               "kind": "line_range",
-              "start": 147
+              "start": 216
             }
           },
           "kind": "code"
@@ -89,12 +89,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "blob": "6ef8feb28ccdaed331797747b61028e85aed2b6a",
             "content": "sha256:f45081bbf07e62bfe5f1aa8cdde8066eaef1ab3dbf4e1a25b45df3b9ae151ea8",
             "locator": {
-              "end": 287,
+              "end": 356,
               "kind": "line_range",
-              "start": 276
+              "start": 345
             },
             "path": "docs/tool-details.md"
           },
@@ -102,12 +102,12 @@
         },
         {
           "anchor": {
-            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "blob": "6ef8feb28ccdaed331797747b61028e85aed2b6a",
             "content": "sha256:f45081bbf07e62bfe5f1aa8cdde8066eaef1ab3dbf4e1a25b45df3b9ae151ea8",
             "locator": {
-              "end": 287,
+              "end": 356,
               "kind": "line_range",
-              "start": 276
+              "start": 345
             }
           },
           "kind": "code"

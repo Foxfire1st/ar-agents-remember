@@ -3,12 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-        "content": "sha256:17107ef2711c40bf55d97b6c58d9da47bf5d6dc0a2be747c09b8186a847380e6",
+        "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+        "content": "sha256:f8e91b1d9a28194f42e8b1acedf204973fc0d7c152c7c86bd80d7007df3ec827",
         "locator": {
-          "end": 6,
+          "end": 112,
           "kind": "line_range",
-          "start": 6
+          "start": 112
+        }
+      },
+      "id": "RLZ-0R6J6V",
+      "invariant": "INV-S9H78W",
+      "origin": {
+        "handoffEntry": "L84-P5-19 / L84-P5-18 pair 6",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The review boundaries state the Manager's part: gate acceptance and recording the extra-round approval.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+        "content": "sha256:45d120a106e80247dd87b12e2244a5e0e636cae5369f2b68ab2ef91b3d30075e",
+        "locator": {
+          "end": 8,
+          "kind": "line_range",
+          "start": 8
         }
       },
       "id": "RLZ-B1MFGH",
@@ -22,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-        "content": "sha256:c54a4bcb4c1190b98231a01fed81e00782612f9cdb5016f1d8f4738f0117173c",
+        "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+        "content": "sha256:6cdc52f8a3d877c0c44e23f94eb53d1b173ad177c8c9a3a424ba6e374f2c216e",
         "locator": {
-          "end": 20,
+          "end": 38,
           "kind": "line_range",
-          "start": 16
+          "start": 31
         }
       },
       "id": "RLZ-B6YVXW",
@@ -41,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-        "content": "sha256:f5cb33453eeecae2d770c4eae98c026c089e49c413a50442b3d76a0144c5e831",
+        "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+        "content": "sha256:6913ea0e53f0eb04fe025c9cfe4c2376b7fa77a5ad52ccdfbe64ef3a5603ca38",
         "locator": {
-          "end": 33,
+          "end": 67,
           "kind": "line_range",
-          "start": 33
+          "start": 62
         }
       },
       "id": "RLZ-B884C1",
@@ -60,12 +79,12 @@
     },
     {
       "anchor": {
-        "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-        "content": "sha256:42e502ae9701aad7881a87d070ee7baf7d9ca00fb0abb25bf148a26f2cc5ba99",
+        "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+        "content": "sha256:cf7230e7309ba83d5e2db7882380de84beb1475be94f18b2fa2d88b1cc9189c0",
         "locator": {
-          "end": 55,
+          "end": 114,
           "kind": "line_range",
-          "start": 38
+          "start": 82
         }
       },
       "id": "RLZ-MN85JH",
@@ -74,36 +93,17 @@
         "handoffEntry": "R99-2a-code-memory-lanes",
         "leaf": "260928-MIK-L99"
       },
-      "rationale": "The operation assigns ordinary leaf code-round begin/result to Reviewer and separates memory reports, IDs and count from passed code review. Recorded memory lanes apply after landing; under-way memory checks finish as begun.",
+      "rationale": "The review operation assigns ordinary leaf code-round begin and result records to the Reviewer, and keeps the memory lane separate: its own sealed reports, identifiers and pass count recorded with reviewKind=memory, the same settings limit and approval, and no change to passed code review state.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-        "content": "sha256:71bd7eb7f9aea55163c813b0b4e6299f8e63d8bb45d0412e21a186f94a1725e6",
+        "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+        "content": "sha256:d0a76f09943a152508be904cb8cb0d0ba116d240b624280a0b2802723ed38792",
         "locator": {
-          "end": 60,
+          "end": 128,
           "kind": "line_range",
-          "start": 60
-        }
-      },
-      "id": "RLZ-QBD8GV",
-      "invariant": "INV-9S49CW",
-      "origin": {
-        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
-        "leaf": "260928-MIK-L93"
-      },
-      "rationale": "This role/operation source points to operations/orientation.md for developer questions and relayed answers; it is not a self-contained duplicated full-clause home or native delivered-message witness.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-        "content": "sha256:0e6ccbb6df43c930869184823443a80dea15a4085cf149dd9e0f716e947f30a8",
-        "locator": {
-          "end": 55,
-          "kind": "line_range",
-          "start": 55
+          "start": 121
         }
       },
       "id": "RLZ-R5RASM",
@@ -117,12 +117,50 @@
     },
     {
       "anchor": {
-        "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-        "content": "sha256:5503aa8df111151ae30db644bf56b144778f7649d50b3e921df92d545f000586",
+        "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+        "content": "sha256:0af4b6a2a90a4908da58ff5014766dd5cfaec4eb66f2c6f34fbae1456c3fa2c9",
         "locator": {
-          "end": 44,
+          "end": 98,
           "kind": "line_range",
-          "start": 38
+          "start": 98
+        }
+      },
+      "id": "RLZ-V5SQ32",
+      "invariant": "INV-S9H78W",
+      "origin": {
+        "handoffEntry": "L84-P5-19 / L84-P5-18 pair 6",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The fix-verification-at-the-limit section states who approves a round beyond the limit, in the Architect's ruled wording.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+        "content": "sha256:42a068030f45d966198bb6a3cc14cd4bd594e6b33b3f9d7f1d820f1cd16bf148",
+        "locator": {
+          "end": 79,
+          "kind": "line_range",
+          "start": 69
+        }
+      },
+      "id": "RLZ-VV75SF",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "K3-ZNJ14G-review-leaf-handover",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Every leaf handover names the leaf, exact object, report or verdict path and the whole next stretch; the Worker's freeze message reaches the Reviewer directly as a factual handover.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+        "content": "sha256:9ef05dc10ac25a4a4c30ca83b197f4aaa9d67340693434dc7972533900c1edf1",
+        "locator": {
+          "end": 98,
+          "kind": "line_range",
+          "start": 82
         }
       },
       "id": "RLZ-ZP7MHN",
@@ -141,12 +179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-            "content": "sha256:a2547dfdac20a79dd7e8e81e8f43663eb7d99af78433817683dc5119d46466d2",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:6913ea0e53f0eb04fe025c9cfe4c2376b7fa77a5ad52ccdfbe64ef3a5603ca38",
             "locator": {
-              "end": 35,
+              "end": 67,
               "kind": "line_range",
-              "start": 29
+              "start": 62
             }
           },
           "kind": "code"
@@ -158,12 +196,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-            "content": "sha256:42e502ae9701aad7881a87d070ee7baf7d9ca00fb0abb25bf148a26f2cc5ba99",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:20e89a40d302bcf0f55b93eec944dfac9d80bd0185d2ab3673254acffc5365ee",
             "locator": {
-              "end": 55,
+              "end": 54,
               "kind": "line_range",
-              "start": 38
+              "start": 54
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:48b8445332fed459a4e21ba40ee8348dc0597f51af95642ce0308eff17ce44d8",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 94
             }
           },
           "kind": "code"
@@ -175,24 +225,49 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-            "content": "sha256:4456aa8ca0ee211fdbb56291ab06b4779efe0fd0254617e13f8c40b56e59b058",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:8e56d5e3f247f76c29190f75c6950030a66324e29bf99877902367f2f0d842cb",
             "locator": {
-              "end": 55,
+              "end": 118,
               "kind": "line_range",
-              "start": 50
+              "start": 118
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:3cff65b86d44b6d4ded161b897410a3c1cc29874e0035b79e14aa8bade04ba99",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 82
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "77193c73e40d8dcf1ac8b7158debe508e2d02065",
-            "content": "sha256:c1c9eaecfc614b2b83262b80580096eb99d1d34056cc4439649c71ddad0e5b72",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:a8cf97939d549365f28f41a2e5bd76aad85ca7fd9c57591a52560fb7e2da374c",
             "locator": {
-              "end": 38,
+              "end": 114,
               "kind": "line_range",
-              "start": 1
+              "start": 110
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5c547f2f6818f886972bce92087be9d041c1fc9",
+            "content": "sha256:98a88f3d6b99d1ee48fc97423dd5173af6fc71e646c63f9784917ed0bbe47e52",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 13
             },
             "path": "skills/l-01-agent-lifecycles/reference/refused-write.md"
           },
@@ -201,16 +276,16 @@
       ]
     },
     "4": {
-      "note": "A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE.",
+      "note": "A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval. Separate MEMORY reports/counts do not reset CODE.",
       "targets": [
         {
           "anchor": {
-            "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-            "content": "sha256:9c1ef05071f5b2af3dbc125f71db81e8e1cd4a3ba8da1babf3f727aa4b8325b6",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:9ef05dc10ac25a4a4c30ca83b197f4aaa9d67340693434dc7972533900c1edf1",
             "locator": {
-              "end": 55,
+              "end": 98,
               "kind": "line_range",
-              "start": 33
+              "start": 82
             }
           },
           "kind": "code"
@@ -222,10 +297,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-            "content": "sha256:9ce18b86a587453034f52c538aab64b29200a8c53586813a078d41352ee64539",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:2cc78e8e3916f399e3636ea5bafd4c556976890b7b00303149979e7f28fc1bf8",
             "locator": {
-              "end": 65,
+              "end": 137,
               "kind": "line_range",
               "start": 1
             }
@@ -235,16 +310,16 @@
       ]
     },
     "6": {
-      "note": "Current review separates common mode/round boundaries from Reviewer handover, record-only repair and code-concern duties. It records MEMORY as a separate lane under the same settings limit; existing reviews finish as begun and recorded lanes apply after landing.",
+      "note": "Current review separates common mode/round boundaries from Reviewer handover, record-only repair and code-concern duties. It records MEMORY as a separate lane under the same settings limit.",
       "targets": [
         {
           "anchor": {
-            "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-            "content": "sha256:fa634aa80071560aa73d4373fe5fe93712756925835dff29638cac185f276e44",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:d75fff27b789bdce1152ae9615ec1fa96363a9a8e7ec4dd7e010637bc8cb1519",
             "locator": {
-              "end": 65,
+              "end": 118,
               "kind": "line_range",
-              "start": 12
+              "start": 48
             }
           },
           "kind": "code"
@@ -252,16 +327,16 @@
       ]
     },
     "7": {
-      "note": "Current review separates common mode/round boundaries from Reviewer handover, record-only repair and code-concern duties. It records MEMORY as a separate lane under the same settings limit; existing reviews finish as begun and recorded lanes apply after landing.",
+      "note": "Current review separates common mode/round boundaries from Reviewer handover, record-only repair and code-concern duties. It records MEMORY as a separate lane under the same settings limit.",
       "targets": [
         {
           "anchor": {
-            "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-            "content": "sha256:fa634aa80071560aa73d4373fe5fe93712756925835dff29638cac185f276e44",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:d75fff27b789bdce1152ae9615ec1fa96363a9a8e7ec4dd7e010637bc8cb1519",
             "locator": {
-              "end": 65,
+              "end": 118,
               "kind": "line_range",
-              "start": 12
+              "start": 48
             }
           },
           "kind": "code"
@@ -273,12 +348,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65a6c8155209c4086ba8c92103f163a960a7aad6",
-            "content": "sha256:a2547dfdac20a79dd7e8e81e8f43663eb7d99af78433817683dc5119d46466d2",
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:6d6c044c515d8a9d4c5f6655e86b094789d473a302ab286442f4117960acd9dc",
             "locator": {
-              "end": 35,
+              "end": 77,
               "kind": "line_range",
-              "start": 29
+              "start": 75
             }
           },
           "kind": "code"

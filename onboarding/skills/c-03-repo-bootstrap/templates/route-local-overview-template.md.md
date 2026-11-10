@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Repository area overview](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
@@ -10,7 +10,7 @@ Template for a durable overview at a mirrored source route, used as the local co
 
 ## Current Contract
 
-Explain what belongs in the route and elsewhere, its structures, operating model, flows, load-bearing files and local traps. Keep a compact hot-path summary plus file/child overview maps and the broad-to-narrow read order. Same-repository, cross-repository and documentation evidence stay in distinct explanatory sections and pass through citation_fix. The actual template mentions evidence packs in prose, not a requirement that a particular depth-aware link placeholder is present. File-specific knowledge still belongs in its file-level card; unresolved findings stay in Needs Verification.
+Explain what belongs in the route and elsewhere, its structures, operating model, flows, load-bearing files and local traps. Open with a `## Governing Overview` link to the parent overview. Keep a compact hot-path summary plus file/child overview maps, and point readers changing files under the route to the l-01 knowledge-use guidance before the promotion check. Same-repository, cross-repository and documentation evidence stay in distinct explanatory sections and pass through citation_fix. The actual template mentions evidence packs in prose, not a requirement that a particular depth-aware link placeholder is present. File-specific knowledge still belongs in its file-level card; unresolved findings stay in Needs Verification.
 
 ## Canonical Source Ownership
 

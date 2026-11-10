@@ -2,34 +2,23 @@
 
 ## Governing Overview
 
-[Tests overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
 Checks sync-runtime target replacement removes stale files and excludes cache directories. The
-current target roster is exactly `agents-md-files`, `benchmarks`, `providers` and `system`, confined
+current target roster is exactly `benchmarks`, `providers` and `system`, confined
 to MCP package data rather than harness starter directories. The missing-canonical-source case
-refuses to call two absent trees synchronized and accepts matching present trees. The earlier
-`eve-runtime` target and its per-target ignore case were removed; their CAPS-L9 account is historical.
+refuses to call two absent trees synchronized and accepts matching present trees.
 These are temporary-tree fixture assertions, not proof that installed runtime projections have
 just been refreshed.
-
-> Retained earlier card wording; superseded by the current account above:
-> Checks sync-runtime target replacement removes stale files and excludes cache directories. The
-> default target roster — which since 260915-CAPS-L9 includes the `eve-runtime` target — is confined
-> to MCP package data rather than harness starter directories. Since 260915-CAPS-L9 it also pins the
-> **per-target** ignore rule (only the eve application target ignores `node_modules`/`.eve`/
-> `.output`/`.vercel`) and the refusal to report an absent canonical source in sync. It is an actual
-> temporary-tree copy test, not proof that installed runtime projections have just been refreshed.
 
 
 ## Code Commentary
 
 ### Logic
 
-The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
-history describe prior populations and must not be used to recreate removed tests or claim they
-still run. The retained behavior and its fixture limits, described above, govern this card.
+The current evidence boundary is the source-listed behavior below. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
@@ -58,8 +47,7 @@ No external domain claim is required.
 
 ### Repo-Internal References
 
-Each current definition below can be inspected in the exact source file. Historical references
-to removed methods are superseded by this current inventory.
+Each current definition below can be inspected in the exact source file.
 
 - Sync target replaces target with source tree [1]
 

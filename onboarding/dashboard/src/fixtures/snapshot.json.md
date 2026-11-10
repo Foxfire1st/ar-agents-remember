@@ -2,14 +2,14 @@
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[overview](../overview.md)
 
 ## Purpose
 
-The dashboard's stand-in for the server: one `WorkspaceProjection` payload, 1,982 lines at the
-`260831-LOCR-L17` candidate, shaped like the persisted `latest-state.json`. Its remaining readers include `test/contract.test.ts` (which measures the
+The dashboard's stand-in for the server: one `WorkspaceProjection` payload shaped like the persisted
+`latest-state.json`, plus sampled served-tail fields. Its remaining readers include `test/contract.test.ts` (which measures the
 TypeScript mirror against the sample), `test/fixtures/wire.ts` (which takes retained builder
-bases from it), and `data/store.test.ts`. The removed production-e2e test is not a current reader.
+bases from it), and `data/store.test.ts`.
 
 Task entries carry native identity, stage/activity, ordered child keys, counts, nested summaries and bound worktrees. Optional reader, completion, dependency and graph values remain hand-authored shape examples, not native finalization, dependency resolution or scheduling proof.
 
@@ -30,32 +30,32 @@ sample could miss because their values are currently null or absent.
 
 The manual sprint/master/leaf examples now use TaskEntry membership and nested TaskSummary content. They exercise qualified navigation without analytics document/series joins; illustrative seats and graph data remain invented samples. The master also samples `names-another-master`, `listed-twice` and `unresolvable-master` disagreements, including the unresolved literal. These are hand-maintained wire-shape examples, not a diagnosis or repair of real records, and they do not exhaust every permitted kind.
 
-L23 extends the manual sample with representative lifecycle-operation rows. The sample carries public progress/result/failure/guidance fields
+The manual sample carries representative lifecycle-operation rows. The sample carries public progress/result/failure/guidance fields
 including public identity/component fingerprints and approval state, but no private operation key
 or worker PID, preserving the
 producer's private-plane boundary while making the generated dashboard contract measurable.
 
-The current sample carries `watcherHealth` and omits `servingBuild`. The retired
-`terminalObserverHealth`, `agentNotifierHeartbeat` and `supervisorHeartbeat` surfaces are no
-current fixture or served-tail fields. The contract guard's sole `KnownUnsampled` path is
-`projection.servingBuild`; its vocabulary checks apply to the current generated schema.
+The current sample carries the served-tail fields `watcherHealth`, `checkoutBinding`,
+`buildCurrentness` (an installed-mode `stale` example with both Python digests, the first-seen time,
+reason and remedy) and `servingProcessId`, and omits `servingBuild`. The contract guard's
+`KnownUnsampled` paths are `projection.servingBuild` and `projection.tasks[].providerLimit`; its
+vocabulary checks, including the `buildCurrentness` mode and state vocabularies, apply to the current
+generated schema.
 
 ## Code Commentary
 
 ### Logic
 
-The `sim-op-ledger-commit` enclosure sample is removed because `ledger-commit` is no longer
-a legal lifecycle phase. Code and memory publication samples remain. The retained
-`analytics.ledgers` data represents a downstream consumer projection, so removing the obsolete
-Git-operation sample does not remove the ledger from the dashboard fixture.
+Code and memory publication samples are present. The `analytics.ledgers` data represents a
+downstream consumer projection.
 
-The serialized root carries tasks and taskCounts instead of session lifecycles and duplicate analytics task-document/series catalogues. Operational enclosures, closeout queues, analytics, metrics and watcherHealth remain sample data; provider records and setup-progress/setup-summary collections are removed.
+The serialized root carries tasks and taskCounts instead of session lifecycles and duplicate analytics task-document/series catalogues. Operational enclosures, closeout queues, analytics, metrics and watcherHealth remain sample data; the sample carries no provider records or setup-progress/setup-summary collections.
 
-The earlier formatting-only reserialization is historical, not a description of later fixture semantics. Native entries and operation meaningfulRevision values are hand-maintained coverage examples.
+Native entries and operation meaningfulRevision values are hand-maintained coverage examples.
 
 ### Conventions
 
-- The sample combines the persisted projection core with sampled watcherHealth. servingBuild is absent and is the sole current contract.test.ts::KnownUnsampled residue. The served tail declares only servingBuild and watcherHealth; the removed terminal/notifier heartbeat surfaces are not fixture gaps.
+- The sample combines the persisted projection core with sampled watcherHealth, checkoutBinding, buildCurrentness and servingProcessId. servingBuild is absent and is one of the two contract.test.ts::KnownUnsampled residues, beside a task's providerLimit. The served tail declares servingBuild, watcherHealth, checkoutBinding, buildCurrentness and servingProcessId.
 - Non-uniform on purpose. Arrays are keyed by TYPE in the mirror walk, so coverage is accumulated across representative rows. The payload does not have to be uniform; it has to be
   COMPLETE between its rows.
 - Timestamps sit in a single fabricated window around `2026-06-14T09:00`, and identifiers are
@@ -64,9 +64,7 @@ The earlier formatting-only reserialization is historical, not a description of 
 ### Invariants And Boundaries
 
 - **Every declared mirror path must stay sampled.** Deleting a field, or emptying an array, is not a
-  neutral edit. A reviewer proved the cost during this leaf: deleting `stateEnteredAt` and
-  `gate.evidenceRefs` and emptying `expectationRows` and `landing` produced zero new `tsc` errors and a
-  green suite. **An empty array is worse than a missing field** — it is blindness in both directions at
+  neutral edit. **An empty array is worse than a missing field** — it is blindness in both directions at
   once, because `AsJsonModule` accepts `never[]` as assignable to anything and `ServedOnlyPaths<never, …>`
   is `never`. `MirrorOnlyPaths` now names any path that stops being reached, so this is enforced, not
   merely asked for.
@@ -92,8 +90,7 @@ The earlier formatting-only reserialization is historical, not a description of 
 4. **The sample remains manual while the mirror is generated.** Do not describe this JSON payload as
    generated, and do not describe its coverage limits as a missing producer-to-TypeScript contract.
 5. **Provenance wording must preserve that split.** The remaining `test/fixtures/wire.ts` and
-   `contract.test.ts` owners distinguish manual sample coverage from generated mirror provenance;
-   the production-e2e reader is removed.
+   `contract.test.ts` owners distinguish manual sample coverage from generated mirror provenance.
 
 ## Manual direct-grant display samples
 
@@ -144,19 +141,23 @@ absent from the file rather than present as `null`.
 
 
 
-- The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. Anchor: "served ⊇ mirror" [10]
+- The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. [10]
 
 
 - The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion. [11]
 
 
 
-- INDEX_SIGNATURE_SITES exhaustively names the current absorbing nodes and reasons; the old seven-node census is historical. [12]
+- INDEX_SIGNATURE_SITES is a closed, exhaustive record naming every current absorbing node with its reason. [12]
 
 
 
 
-- KnownUnsampled contains only projection.servingBuild; the manual sample carries watcherHealth, and the served tail declares servingBuild and watcherHealth. [13]
+
+- KnownUnsampled names projection.servingBuild and a task's providerLimit; the manual sample carries the other served-tail fields. [13]
+- The served tail declares servingBuild, watcherHealth, checkoutBinding, buildCurrentness and servingProcessId. [21]
+- The sample carries a stale installed-mode build currentness and a serving process id. [22]
+
 
 
 - The snapshot is manual; the projection command generates and stale-checks the schema and TypeScript mirror. Anchor: `generated` [14]
@@ -172,7 +173,7 @@ sides live in `agents-remember`.
 
 The producer and fixture both belong to this repository; their implementation evidence is listed above.
 
-## L23 Source-Lineage Samples
+## Source-Lineage Samples
 
 Engine Process fixtures now sample aggregate `current`, `blocked`, and
 `unavailable` states, every edge relation/side/state, and one
@@ -180,22 +181,22 @@ contract-addressed `worktree_sync` recovery. These are wire-contract examples,
 not frontend-derived Git facts.
 
 
-## 260815-DAG-L12 Fixture Graph View
+## Fixture Graph View
 
-The sprint fixture (`sim-master` / `sim-master-b` scenario) carries the render-ready `executionGraphView` (L12-R4): a segmented master with a joined title and an early leaf, plus a dependent second master waiting on it with a recorded predecessor reason and judgment id. Those rows remain representative contract examples; complete enum ownership stays with schema generation.
+The sprint fixture (`sim-master` / `sim-master-b` scenario) carries the render-ready `executionGraphView`: a segmented master with a joined title and an early leaf, plus a dependent second master waiting on it with a recorded predecessor reason and judgment id. Those rows remain representative contract examples; complete enum ownership stays with schema generation.
 
 
-## 260815-DAG Master Full-Gate Repair
+## Source-Relation and Graph-View Samples
 
-The snapshot fixture gained a super-to-leaf source-relation entry (`relation: "super-to-leaf"`, state `current`) and two execution-graph view nodes (a `segment` with `frontierState: "landed"` and a `lump` with `frontierState: "ready"`) as representative dashboard contract examples.
+The snapshot fixture carries a super-to-leaf source-relation entry (`relation: "super-to-leaf"`, state `current`) and two execution-graph view nodes (a `segment` with `frontierState: "landed"` and a `lump` with `frontierState: "ready"`) as representative dashboard contract examples.
 
-## 260831-CCR-L15 Fixture Cursor Sample
+## Fixture Cursor Sample
 
-The hand-kept fixture snapshot now seeds `meaningfulRevision: 1` on the lifecycle
-operation node that previously carried only the revision-less projection fields, so dashboard and
+The hand-kept fixture snapshot seeds `meaningfulRevision: 1` on lifecycle
+operation nodes, so dashboard and
 wire-fixture consumers have a cursor-carrying sample matching the regenerated schema.
 
-## 260928-MIK-L126 Current Delta — Product-Record Fixture Flags
+## Product-Record Fixture Flags
 
 Two sampled decisions carry explicit `product_record: false`, so the hand-maintained fixture
 exercises the product-record marking the projection serves: authored decisions stay unmarked
@@ -216,6 +217,6 @@ while writer constants mark records.
 
 - The manual master sample carries three disagreement shapes and the unresolvable literal; this is sample coverage, not live membership evidence. [20]
 
-## 20261023-L190-v2 Dismissible Action Sample
+## Dismissible Action Sample
 
-The sampled `permission-wait:agent-7` row now carries `dismissible: true` (`snapshot.json:52`), the value the v2 producer publishes for a live native cause; `itemClass` stays `action`, and the row's agent, prompt and held-message identities are unchanged. The fixture now samples a dismissible action row beside the operational and notice rows. Its attention rows stay in hand-authored order and are not a claim about the served newest-first order, and the sample remains a wire shape rather than proof that a dismissal is served.
+The sampled `permission-wait:agent-7` row carries `dismissible: true`, the value the producer publishes for a live native cause; `itemClass` stays `action`, and the row's agent, prompt and held-message identities are unchanged. The fixture samples a dismissible action row beside the operational and notice rows. Its attention rows stay in hand-authored order and are not a claim about the served newest-first order, and the sample remains a wire shape rather than proof that a dismissal is served.

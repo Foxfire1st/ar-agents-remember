@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8f79d3605010a4388c8f472d0820416be81f2783",
-        "content": "sha256:e31949a50d00e95c63e95c214016fd6c74baf973a47d97436a391240b67a6a33",
+        "blob": "5443e6bbbdeeec3bba72e1f6cfb2be9913ec246f",
+        "content": "sha256:a4befa3e9f20fcf5064aaef874cd516146183ce911be9fc98d0bf403ec821de3",
         "locator": {
           "kind": "file"
         }
@@ -25,10 +25,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f79d3605010a4388c8f472d0820416be81f2783",
-            "content": "sha256:e31949a50d00e95c63e95c214016fd6c74baf973a47d97436a391240b67a6a33",
+            "blob": "5443e6bbbdeeec3bba72e1f6cfb2be9913ec246f",
+            "content": "sha256:a01e869b09e5838daf95e7467bf9e98415633689983daa457d60c3644367047a",
             "locator": {
-              "kind": "file"
+              "end": 22,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5443e6bbbdeeec3bba72e1f6cfb2be9913ec246f",
+            "content": "sha256:62ff1c1b469cc537f6d732e6dd63a357820793fb791c24b7d8d055b8615e1631",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5443e6bbbdeeec3bba72e1f6cfb2be9913ec246f",
+            "content": "sha256:d63a134b9e25e5d13a36284ebdfb976873905f8caef9d5c5715989ee3db29dc0",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
             }
           },
           "kind": "code"
@@ -40,10 +66,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f79d3605010a4388c8f472d0820416be81f2783",
-            "content": "sha256:e31949a50d00e95c63e95c214016fd6c74baf973a47d97436a391240b67a6a33",
+            "blob": "5443e6bbbdeeec3bba72e1f6cfb2be9913ec246f",
+            "content": "sha256:8ab73523f21f039ba71dd98b8d35a032082109cdeb9000d2f2d5ad713a377c78",
             "locator": {
-              "kind": "file"
+              "end": 31,
+              "kind": "line_range",
+              "start": 22
             }
           },
           "kind": "code"
@@ -51,14 +79,16 @@
       ]
     },
     "3": {
-      "note": "Apply commits nothing; `carryover-pending` blocks cleanup and finalization until the memory publication lands.",
+      "note": "Apply commits nothing; `carryover-pending` blocks cleanup and finalization until the memory publication lands.\n\nAnchor: `carryover-pending`",
       "targets": [
         {
           "anchor": {
-            "blob": "8f79d3605010a4388c8f472d0820416be81f2783",
-            "content": "sha256:e31949a50d00e95c63e95c214016fd6c74baf973a47d97436a391240b67a6a33",
+            "blob": "5443e6bbbdeeec3bba72e1f6cfb2be9913ec246f",
+            "content": "sha256:75f8312876d7acda281b42f3257fc94807e87e08e6c52bdd59ce69ed0a67e607",
             "locator": {
-              "kind": "file"
+              "end": 63,
+              "kind": "line_range",
+              "start": 55
             }
           },
           "kind": "code"

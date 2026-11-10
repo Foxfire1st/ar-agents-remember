@@ -1,0 +1,96 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/card-sentence-decisions.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "29a37e57866879bce30d64e630b07eae72742e1b",
+        "content": "sha256:edf0ed82e8773a51d728f6ab0435c1fceb5e363d73ca4dbd529504afc13fbdc3",
+        "locator": {
+          "end": 15,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-FFXM6R",
+      "invariant": "INV-6A3N48",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-current-truth",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Complete sentence-by-sentence current truth/all-carrier/class repair/history-after-final-edit duty.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Each sentence is decided individually; true sentences keep their wording; a sentence about what happens needs code that runs today.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29a37e57866879bce30d64e630b07eae72742e1b",
+            "content": "sha256:11ce17cb8884be9536e5d57b5fe3edc816be8bb7d16fb97f6b800a3bbae07eb9",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The decision list is written before editing and reported; reworded sentences are verified as new claims.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29a37e57866879bce30d64e630b07eae72742e1b",
+            "content": "sha256:a80c2ae8b0e4a87f94a3e59f6d4542e2ae740ef2fb1673ba9d8f152f71d0b601",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "False claims are repaired across all carriers, and past accounts move to the history row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29a37e57866879bce30d64e630b07eae72742e1b",
+            "content": "sha256:dccb8117b8f0bb1bda7c01f5adf6b96887f6e72d658634344ec11953323bd137",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Curator role points here before editing a card or its paired notes.\n\nAnchor: `card-sentence-decisions.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:3118029c7bcb3ed9155870c2c377394cf6cab999ca984d736e5125cf9b9e92df",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

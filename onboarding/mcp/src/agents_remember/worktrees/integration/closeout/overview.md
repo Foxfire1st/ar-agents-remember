@@ -98,7 +98,7 @@ The closeout door first allows the recorded candidate tree itself. For a differe
 - Door source facts use current Git and task authority. [2]
 - Coherence observes exact candidates, validates current identities and dependencies, and shares per-record measurement projection. [3]
 
-- Publication derives the input statement, files prepared candidates, binds assessment authorship and verifies generations before pointer replacement; optional file transport preserves the required identities. [4]
+- Publication derives its input statement from the declared publication members, names caller-supplied delivery identities, and accepts judgments and review assessments inline or from one judgments file whose SHA-256 the publish answer carries. [4]
 
 - Assessment evidence has a task-root destination and mandatory retained-byte read-back; immutable generation reads verify structured and projected content. [5]
 

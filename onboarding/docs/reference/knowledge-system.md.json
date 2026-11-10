@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d84f65771545c5ea4800b350e27c6726d751e92",
+            "blob": "81e1358ecbd3d6a82a6a6e2f4f1c85ed5c33b905",
             "content": "sha256:b41af88b8e88a2a5540118ce19918c00ae91639525cee2069e0fa2068a0087af",
             "locator": {
               "end": 41,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d84f65771545c5ea4800b350e27c6726d751e92",
+            "blob": "81e1358ecbd3d6a82a6a6e2f4f1c85ed5c33b905",
             "content": "sha256:22e2fef61d7896b1bbfce90c7a2a63e19bee43daf79bcd586a9ac6e830eac7a1",
             "locator": {
               "end": 90,
@@ -37,14 +37,14 @@
       ]
     },
     "3": {
-      "note": "Reads, admitted writes and crossing describe distinct effects and authority.",
+      "note": "Reads, admitted writes and crossing describe distinct effects and authority.\n\nAnchor: `knowledge_write`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d84f65771545c5ea4800b350e27c6726d751e92",
-            "content": "sha256:26d86ce9a6064a2d3722f92772c64e58b7d6218a1c6160d3e2d92bb04102a8fa",
+            "blob": "81e1358ecbd3d6a82a6a6e2f4f1c85ed5c33b905",
+            "content": "sha256:56d71c9452d7f4124c569b914a9b296ebb4d554ad406e849cb535417a10a14ec",
             "locator": {
-              "end": 163,
+              "end": 177,
               "kind": "line_range",
               "start": 92
             }

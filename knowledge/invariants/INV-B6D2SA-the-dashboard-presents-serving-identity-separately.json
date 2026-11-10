@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "A test proves current, stale and unknown readings update the stamp without replacing the boot identity; this is where the dashboard says the stale state the family promises."
+  },
+  "applicability": "The dashboard's serving-build stamp.",
+  "conditions": [
+    "The server supplies a build-currentness reading beside the serving build."
+  ],
+  "exclusions": [
+    "The client-bundle mismatch note, which is a separate identity.",
+    "An absent serving build, for which the stamp shows nothing."
+  ],
+  "id": "INV-B6D2SA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A012 freeze report /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/worker/88048054-fcd8-4402-831d-ec1434384185/role-launch/260928-MIK-L84-worker-88048054-fcd8-4402-831d-ec1434384185.md (sha256 24bae8b521caee9e403ff2b3360e0fb33762507a48a93f7df877a908bcb13215); records /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/worker/88048054-fcd8-4402-831d-ec1434384185/role-launch/L84-A012-records/ (manifest sha256 e2fe9e9d5ccad5ff658be0d30a04f9962d89e5ef843b6af7f46ac104ca8be9ae): checks-bounded.log (test_suite_load_independence.py + test_dashboard_build_currentness.py: 36 passed, 5 subtests, 0 failed), dashboard lint/typecheck/full vitest (289 files, 2,205 tests passed), fast gate PASS, on the clean copy of 40475ce5; mutation pass 4/4 caught; last full suite on A007 8d974809 (L84-A007-records/gate325-8d974809.log); the Architect's landing check of A011 (STOP 20261110T010206Z, c5e4f401...) reran both full lanes there and reruns them on A012; Reviewer P5 round-8 code PASS on A011 (/home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round8-fix-verification-verdict.md, sha256 11813eaf6d634dcc2e234789f3a6e672494afed4480d706974fec505c2f4a67d), reopened for L84-LC-01/02 only; round-9 fix-verification pending",
+        "K3 judged this hunk (sha256:15837b5e3269be6d354a866b09a98d65bbaef8976a001071793b77d52abeecd4) to realize CAND-STALE-SERVER, deduplicated to INV-B6D2SA; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:85e531e88012d96c45bb1376450ae747b95362fe6e3ea48a107adbe09d9e7eb4) to realize CAND-STALE-SERVER, deduplicated to INV-B6D2SA; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:f1fce8bee30ebc96295f6e3bcd22027db637a395aca4764a293d2fa66d398a60) to realize CAND-STALE-SERVER, deduplicated to INV-B6D2SA; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:df8143ba56a06bf9ea2306b73967387661e5b80b23b2ee6a8c26b447d24d4daf) to realize CAND-STALE-SERVER, deduplicated to INV-B6D2SA; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:ba106acec38531dad0eb9f9a9d7d843a453e37b5673ea3d7bf8abcdedcef7f26) to realize CAND-STALE-SERVER, deduplicated to INV-B6D2SA; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:eb448343fc865c8d19fbf7e0ca5c9e295fde4ff3ebb591534f947b00a8dfbd4e) to realize CAND-STALE-SERVER, deduplicated to INV-B6D2SA; lines read at C 40475ce5."
+      ],
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "MIK-R84@v5 retained v1 rules1/4 dashboard currentness",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The dashboard presents serving identity separately from changing current, stale, unknown and checkout observations.",
+  "status": "proposed",
+  "supersedes": []
+}

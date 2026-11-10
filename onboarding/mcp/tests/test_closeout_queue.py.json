@@ -4,21 +4,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Retired the unused three-commit close_contract helper while retaining historical cache seeds and task/door fixture behavior.\n\nAnchor: `enable_direct_execution` `QueueFixture`",
+      "note": "`QueueFixture` is the task/door fixture retained for non-queue lifecycle suites and carries no three-commit `close_contract` helper; its constructor builds the code and memory repositories, ledger, task documents and contracts, and seeds no cache",
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:8152e6a4d868803287c8564f0f256429d97aa4579380f2f284344cb4cebd99dd",
             "locator": {
               "kind": "symbol",
@@ -34,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:3a2ce78772f24eb3111762b6e8df1676b7f650a97d71c14d37796f31c9e87c0b",
             "locator": {
               "kind": "symbol",
@@ -50,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:6306ed8086b5c34a58098304ef58d7bcf818e5c9f55d748ebb4abdffbc541ad9",
             "locator": {
               "kind": "symbol",
@@ -66,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:4c03e74c85001b40bdbe4f657bb76e41b1773561af993928ed4a12d9540196ee",
             "locator": {
               "kind": "symbol",
@@ -82,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:4c03e74c85001b40bdbe4f657bb76e41b1773561af993928ed4a12d9540196ee",
             "locator": {
               "kind": "symbol",
@@ -94,14 +84,15 @@
       ]
     },
     "14": {
-      "note": "Queuefixture.\n\nAnchor: `enable_direct_execution`",
+      "note": "`QueueFixture` is the shared task, door and projection fixture class",
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:8152e6a4d868803287c8564f0f256429d97aa4579380f2f284344cb4cebd99dd",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "QueueFixture"
             }
           },
           "kind": "test"
@@ -109,14 +100,15 @@
       ]
     },
     "15": {
-      "note": "The retained task/door/projection fixture class that non-queue lifecycle suites construct.\n\nAnchor: `enable_direct_execution`",
+      "note": "The retained task/door/projection fixture class that non-queue lifecycle suites construct",
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:8152e6a4d868803287c8564f0f256429d97aa4579380f2f284344cb4cebd99dd",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "QueueFixture"
             }
           },
           "kind": "test"
@@ -124,14 +116,15 @@
       ]
     },
     "16": {
-      "note": "Start a canonical leaf with no work started: the master's subtask, judgment and priority rows, the leaf document with its route review, and -- on converted memory -- the fixture change row its own code change needs.\n\nAnchor: `author_unstarted_leaf` `start_leaf`",
+      "note": "Command a canonical leaf with no work started: the master's subtask row, the leaf's task document and its judgment and priority register rows are written, while no enclosure contract, branch or worktree exists",
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:07c2ece7529bb0f68d85ba0c8aaed029671b1b453901326309388624e3f937df",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "author_unstarted_leaf"
             }
           },
           "kind": "test"
@@ -139,21 +132,11 @@
       ]
     },
     "17": {
-      "note": "Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches.\n\nAnchor: `start_leaf`",
+      "note": "Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches",
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:cc373d45116d9eea8e9d85e1a315c0e79fb55c13c878be089d65f5e2e90bfd3a",
             "locator": {
               "kind": "symbol",
@@ -165,21 +148,11 @@
       ]
     },
     "18": {
-      "note": "Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade.\n\nAnchor: `declare_leaf`",
+      "note": "Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade",
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:1737be0353e70123498466c90a50f523b07c7370452f4360e124ba8f5b01d316",
             "locator": {
               "kind": "symbol",
@@ -190,26 +163,48 @@
         }
       ]
     },
-    "2": {
-      "note": "The retired three-commit `close_contract` convenience method is gone; what remains is the fixture class the non-queue lifecycle suites build their task, door and projection state from.\n\nAnchor: `enable_direct_execution` `QueueFixture`",
+    "19": {
+      "note": "An Architect or Orchestrator judgment row grades a closeout candidate with that author, a row digest and hashed evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:07d3168938b42fb2e45d13635c39c790b679c2fdac9488d3a98396db3a69176d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_canonical_grade_uses_admitted_register_author"
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "2": {
+      "note": "`QueueFixture` is the fixture class the non-queue lifecycle suites build their task, door and projection state from; it has no three-commit `close_contract` convenience method",
+      "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:8152e6a4d868803287c8564f0f256429d97aa4579380f2f284344cb4cebd99dd",
             "locator": {
               "kind": "symbol",
               "name": "QueueFixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Any other register author is refused with closeout-grade-author-refused and the evidence is left unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:c658e46bb4ed5c31122a18438a061d456ee948027393a56954ef4117af44b77b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_canonical_grade_refuses_other_register_authors"
             }
           },
           "kind": "test"
@@ -221,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:ab74a4ed92d2983083f1eac442d52bcac70bb4360cd65f402f3df9bccd59e084",
             "locator": {
               "kind": "symbol",
@@ -237,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:ab74a4ed92d2983083f1eac442d52bcac70bb4360cd65f402f3df9bccd59e084",
             "locator": {
               "kind": "symbol",
@@ -253,7 +248,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:d053e6131889082104d9b1784cb21740718548924a9008c15f25aa6e4c98ff50",
             "locator": {
               "kind": "symbol",
@@ -269,7 +264,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:4dfe681eb473f67b39acc0b79e4bcce1ba8d60961bd7e2388339115d5ac5f0a9",
             "locator": {
               "kind": "symbol",
@@ -285,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:4dfe681eb473f67b39acc0b79e4bcce1ba8d60961bd7e2388339115d5ac5f0a9",
             "locator": {
               "kind": "symbol",
@@ -301,7 +296,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:6f51cf73f8ab6620940e4ea52650329a9654430939f34e7d14d732e2419a01c4",
             "locator": {
               "kind": "symbol",
@@ -317,7 +312,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:6f51cf73f8ab6620940e4ea52650329a9654430939f34e7d14d732e2419a01c4",
             "locator": {
               "kind": "symbol",

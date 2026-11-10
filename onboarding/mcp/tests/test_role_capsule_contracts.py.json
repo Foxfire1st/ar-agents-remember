@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d2bd203cf5de9b1161913f47e102e305489f5657",
+            "blob": "cf86c55b7c2ab2e93b68b7e65def40678f2e8542",
             "content": "sha256:c78a3e432545031136345dc4fd98f9f611e8551998e47dc8a332297686da9e45",
             "locator": {
               "end": 100,
@@ -24,12 +24,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d2bd203cf5de9b1161913f47e102e305489f5657",
-            "content": "sha256:1031a20ee56f46b4310b327d9b1e739dfacb224a909669ffddc5f0a45d745cde",
+            "blob": "cf86c55b7c2ab2e93b68b7e65def40678f2e8542",
+            "content": "sha256:6da63f364e430802c89a3b7444f63e507cdb70dae1aea3451c74196409c98f0a",
             "locator": {
-              "end": 153,
-              "kind": "line_range",
-              "start": 103
+              "kind": "symbol",
+              "name": "test_shipped_contracts_have_one_matching_sender_and_receiver"
             }
           },
           "kind": "test"

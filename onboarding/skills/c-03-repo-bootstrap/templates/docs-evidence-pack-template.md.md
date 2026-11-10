@@ -37,9 +37,12 @@ Inherited applicability note: the old card treated this as a repository-local te
 The following same-repository source ranges support the template description and the retained cross-file bootstrap responsibilities. The template and skill define the format and responsibilities, not an actual completed bootstrap wave.
 
 - The template supplies placeholder identity and status metadata. [1]
+
 - The pack format covers scope, documentation sources, findings, constraints, terms, affected files, missing evidence, and questions. [2]
 - The example finding records evidence lines, a canonical-document link, applicability, and confidence. [3]
+
 - Phase 4E writes docs packs for documentation-sensitive priority routes and requires direct documentation evidence or explicit missing-evidence accounts. [4]
+
 - Downstream onboarding uses source-path ranges, keeps canonical URLs in prose, excludes routing registries as proof, and delegates sidecar creation to the fixer. [5]
 
 ### Cross-Repo References

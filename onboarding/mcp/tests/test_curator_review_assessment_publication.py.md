@@ -136,7 +136,7 @@ Superseded card wording retained for custody (not certified as true of any sourc
 - The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. [4]
 - The destination and read-back the survival and blocked cases measure. [5]
 
-- The typed collection the publish action accepts and the uniqueness rule it enforces. [6]
+- The record's `assessments` collection that the publish action accepts holds each assessment identity once, a rule kept separate from judgment-to-candidate coverage. [6]
 
 
 ## KS-R15@v1 Integration Protection

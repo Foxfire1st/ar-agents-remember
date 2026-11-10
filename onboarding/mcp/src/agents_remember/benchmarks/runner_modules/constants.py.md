@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[runner_modules overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -35,6 +35,7 @@ No configured sibling repository is required for this module.
 
 ## No skill-exposure constants
 
-`SKILL_EXPOSURE_MODES`, `SKILLS_EXPOSURE_NAMESPACE` and `COPYTREE_IGNORE` are gone, and `AGENTS_MD_TARGETS` no longer names `runtime/agents-md-files/skills/AGENTS.md`: nothing mirrors a skill tree into a benchmark workspace and no skills instruction file is installed.
+The module holds no skill-exposure constants and no coordinator instruction-file targets: nothing mirrors a skill tree into a benchmark workspace, and the coordinator startup files a benchmark workspace must not keep are named by `install.experiment.RETIRED_STARTUP_TARGETS`, which `filesystem.py` imports for `sync_runtime_assets`. The workspace `AGENTS.md` templates (`WORKSPACE_AGENTS_TEMPLATE`, `SOURCE_ONLY_AGENTS_TEMPLATE`) remain here.
 
-- The instruction targets a benchmark workspace receives. [3]
+- Workspace instruction templates remain declared constants [4]
+- The retired coordinator startup files are declared by the install experiment module [5]

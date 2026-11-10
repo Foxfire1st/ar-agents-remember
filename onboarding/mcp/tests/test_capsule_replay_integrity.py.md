@@ -50,4 +50,5 @@ without undoing the shared pytest stack.
 - A saved-start replay refuses missing details before the host call. [5]
 - A held opening refuses changed details and preserves waiting messages. [6]
 - Real local preparation and receipt restoration preserve frozen detail bytes for three role cases without launching a host. [7]
+
 - The fixture closes its private override stack before cleanup and checks the captured compiler identity. [8]

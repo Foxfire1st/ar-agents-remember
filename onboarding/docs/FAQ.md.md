@@ -64,8 +64,13 @@
 ## Evidence
 
 - By-meaning and by-relationship are described in the past tense as retired, with by-meaning left without an engine and by-path keeping the deterministic mirror address. [1]
+
 - By-path is called "the route with an engine today" and the providers page is characterized as a retirement and old-install cleanup account. [2]
+
 - The comparison answer says the product "used them" and that by-path reads now carry the finding job. [3]
+
 - The former providers built derived indexes over memory and code, never replaced it as the source of truth, and are retired. [4]
+
 - The memory-growth answer still describes an optional semantic index in the present tense. [5]
+
 - The page names no provider command, setting key or provider id. [6]

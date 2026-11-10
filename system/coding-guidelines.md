@@ -462,7 +462,7 @@ Repair failures before freezing, then check the final bytes. The freeze report n
 
 ## Tool building
 
-Tool replies carry the outcome and the next action's facts. Put full lists in workspace files and return their paths; a count names its unit, such as files, records or findings. Deterministic tools establish mechanical facts and leave semantic decisions to the role that owns them. Refusals follow [Guard Admissibility](#guard-admissibility), including an exact working remedy or an honest statement that none exists.
+Tool replies carry the outcome and the next action's facts. Put full lists in workspace files and return their paths and totals; a count names its unit, such as files, records or findings. Deterministic tools establish mechanical facts and leave semantic decisions to the role that owns them. Refusals follow [Guard Admissibility](#guard-admissibility), including an exact working remedy or an honest statement that none exists.
 
 A tool defect must not strand a correct write. Use the primary tool first and correct faulty input through that same tool. For a correct-input write refusal, retain the actual input and refusal, check the serving build and admitted route, and try an honest route that tool admits. If none exists, scoped correct-write recovery may authorize an open manual write only for the same tool and input class already admitted to the role. Notify the record or machine-state owner before writing; record manual provenance, every attempted input/refusal, every check that still works and the defect's issue row. Claim no tool receipt. Missing or unadmitted capability is not a refused correct write.
 

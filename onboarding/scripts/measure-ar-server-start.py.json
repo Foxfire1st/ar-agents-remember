@@ -18,6 +18,24 @@
       },
       "rationale": "The script creates a minimal ordinary/explainer world, times initialize and tools/list arrival from spawn, makes no tool call and records command/load. main reports best time and representativeness separately; source provenance is reported, not inferred from adjacency of a venv.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "edc6252aad3b2fd77a040162d5cf60d5cf71c92b",
+        "content": "sha256:6281b0b575a3141a9e01dd29bd804acc477d24b3f47b40fd07e3c52aa7c9f622",
+        "locator": {
+          "kind": "symbol",
+          "name": "measure"
+        }
+      },
+      "id": "RLZ-YFCZVT",
+      "invariant": "INV-JQ1WC6",
+      "origin": {
+        "handoffEntry": "K2b-JQ1WC6-startup-witness",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This function spawns the server exactly as a seat launches it, sends initialize and tools/list without a tool call, and times each answer's arrival from spawn; main records the load before and after and the environment facts beside it.",
+      "role": "enforcement"
     }
   ],
   "references": {

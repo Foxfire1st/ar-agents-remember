@@ -30,6 +30,8 @@ The viewport and rails hide their own overflow and leave internal scrolling to t
 - Narrow shell scrolling and stack heights exclude the review page. [1]
 - Resizing remains bounded and directional, with distinct optional names for review handles. [3]
 - Media-query changes have listener cleanup; narrow takeover styling remains a separate recipe. [4]
+
 - Cockpit selects its Operations/review tracks and narrow one-column grid. [5]
+
 - Sidebar IDs and strip styling connect the shared Operations controls to retained rails. [6]
 - The review chat surface and close-toggle line have their own styling without owning placement geometry. [7]

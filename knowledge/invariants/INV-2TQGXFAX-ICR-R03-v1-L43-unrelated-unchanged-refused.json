@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The source-admission family needs this refusal to keep an unchanged, unlinked path outside the comparison’s source-content read instead of presenting unrelated bytes as reviewed context."
+  },
   "applicability": "Review source-content reads (/api/review/intent/source-content) of one leaf's review comparison, for a path its requested measured tree pair does not list as changed.",
   "conditions": [
     "Every bound snapshot was read and none records a realization at the exact path.",

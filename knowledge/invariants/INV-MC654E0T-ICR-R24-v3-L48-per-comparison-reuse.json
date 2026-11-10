@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The read cycle admits only eligible whole answers and rejects old-epoch completions, while the bounded cache owns generation changes and explicit memory-input invalidation."
+  },
   "applicability": "Whole-subject review answers read by one mounted review surface.",
   "conditions": [
     "The answer was admitted, is whole rather than a page, and carried no refresh identity.",

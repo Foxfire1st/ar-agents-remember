@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The retained role Literal and native retirement request/response have no dispatch/shared-delivery DTO.\n\nAnchor: `StructuralRole`, `RetireChildRequest`, `RetireChildResponse`",
+      "note": "The retained role Literal and native retirement request/response have no dispatch/shared-delivery DTO.",
       "targets": [
         {
           "anchor": {
-            "blob": "858edcaf45e6805e2ad603908597559ce9fadaa1",
-            "content": "sha256:96a9e5bf6b409791761e42026f4e7840c29cfdf851f2200d10536d0abf436a4d",
+            "blob": "182e9581d550eb026fea26679a13a4d3022fd7a6",
+            "content": "sha256:3829c684ae59cffb1701fcae8c6e1137394ff4ea3518522b55546dd8e868a799",
             "locator": {
               "kind": "symbol",
               "name": "StructuralRole"
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "858edcaf45e6805e2ad603908597559ce9fadaa1",
+            "blob": "182e9581d550eb026fea26679a13a4d3022fd7a6",
             "content": "sha256:92207c7a7b2c5909efa2533946bf10f82923f6e216bf97cf823ec61f291f05a9",
             "locator": {
               "kind": "symbol",
@@ -29,11 +29,27 @@
         },
         {
           "anchor": {
-            "blob": "858edcaf45e6805e2ad603908597559ce9fadaa1",
+            "blob": "182e9581d550eb026fea26679a13a4d3022fd7a6",
             "content": "sha256:b1ae3f3e8367d7483e8a5195dbc73ce53a1d4891942a35a5d28d0183a5ec81e5",
             "locator": {
               "kind": "symbol",
               "name": "RetireChildResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The task-seat role literal holds seven canonical roles plus the system-specialist spelling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "182e9581d550eb026fea26679a13a4d3022fd7a6",
+            "content": "sha256:3829c684ae59cffb1701fcae8c6e1137394ff4ea3518522b55546dd8e868a799",
+            "locator": {
+              "kind": "symbol",
+              "name": "StructuralRole"
             }
           },
           "kind": "code"

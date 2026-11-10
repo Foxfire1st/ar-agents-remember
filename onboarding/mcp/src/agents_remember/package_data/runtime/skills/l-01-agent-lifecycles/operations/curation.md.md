@@ -38,9 +38,9 @@ Reconcile current intent, ruled change intent and implemented reality, maintain 
 
 MEMORY review keeps separate sealed reports, finding IDs and its own pass count, opening no CODE round or resetting its verdict/baseline. Its budget is the same settings limit as CODE; a further pass needs the Architect’s or developer’s words recorded by the Manager.
 
-On an AR-launched Paseo capsule, `documents[0].taskDocReadArgs` supplies exact rendered_path and json_path file locations, opened with the harness's own file tools. task_doc writes and does not read. AR calls use agents-remember-task and the actual reader schemas: knowledge_read takes memoryRoot; only read_ar_files carries task_context with the canonical task and enclosure contract. Read immutable baseline/candidate knowledge before semantic changes, contain outputs in the selected memory root and read admitted records back.
+On an AR-launched Paseo capsule, `documents[0].taskDocReadArgs` supplies exact rendered_path and json_path file locations, opened with the harness's own file tools. task_doc writes and does not read. AR calls use agents-remember-task and the actual reader schemas: knowledge_read takes memoryRoot; context_packet and read_ar_files both take the exact supplied leaf task_context with the canonical task reference and enclosure contract. Read immutable baseline/candidate knowledge before semantic changes, contain outputs in the selected memory root and read admitted records back.
 
-MIK’s writer remains authoritative. On converted memory, normally admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and refuses `--baseline`, `--publish` and `--publish-to`. Capsule-specific missing writer/command admission is reported as records not written; it does not erase MIK’s writer or admit another runtime/internal writer.
+MIK’s writer remains authoritative. On converted memory, normally admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and has no `--baseline`, `--publish` or `--publish-to` option. Capsule-specific missing writer/command admission is reported as records not written; it does not erase MIK’s writer or admit another runtime/internal writer.
 
 Normal curation requires the complete contract-scoped memory-quality operation, repair or exact blocked escalation of every curator-actionable finding, and reruns until the raw quality checklist is ready. Missing/stale coherence is cleared by the existing prepare → publish → validate authority. Scoped checks cannot stand for that full operation.
 
@@ -54,9 +54,9 @@ Author semantic scope and each target’s rationale. Examine a family’s own gu
 
 ## Foundation carrier and writer admission
 
-Repository foundation is regular task work: the user-started Architect opens the real foundation task, standalone or under a master or sprint, and the Curator seat starts on that task document with its actual enclosure contract. Bootstrap reads and reports the foundation state and names the Architect as the next step; no instructed session substitutes for task admission. Foundation authoring uses the contract-scoped leaf writer, and the developer's commit word is the whole of the write act. No invented task document or enclosure manufactures either admission.
+Repository foundation is regular task work: the user-started Architect opens the real foundation task as a registered leaf under a master, and the Curator seat starts on that task document with its actual enclosure contract. Bootstrap reads and reports the foundation state and names the Architect as the next step; no instructed session substitutes for task admission. Foundation authoring uses the contract-scoped leaf writer, and the developer's commit word is the whole of the write act. No invented task document or enclosure manufactures either admission.
 
-- Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context. Foundation authoring is regular task work inside the task the user-started Architect opens; the Curator seat is started on that task document with its actual enclosure contract, and no instructed session substitutes for task admission. \[6] Anchor: Foundation carrier and admission
+- Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot, and context_packet and read_ar_files both use the leaf task_context. Foundation authoring is regular task work inside the task the user-started Architect opens; the Curator seat is started on that task document with its actual enclosure contract, and no instructed session substitutes for task admission. \[6] Anchor: Foundation carrier and admission
 
 ## Conventions
 
@@ -79,7 +79,7 @@ surface with its card and the governing history rows carries it.
 Before converted-memory closeout, a seat that authored none of the leaf cards or records independently checks every changed statement against final code, each history disposition/effect/reason against the diff and important omissions. Blocking findings are repaired with a full curation-operation rerun. This is a lifecycle duty, not a new closeout predicate or helper self-check; neither raw quality nor coherence substitutes for the second reader.
 
 
-- Current curation contract separates normal judgment domains from rollout and lifecycle ownership. [6]
+- The curation contract keeps the Curator's memory reconciliation distinct from Worker, Reviewer and Manager ownership; the Manager owns the Git transaction. [6]
 
 
 ### Logic
@@ -126,12 +126,14 @@ Superseded card wording retained for custody (not certified as true of any sourc
 
 ### Repo-Internal References
 
-- Bound native intake, converted-card pre-read, selected-root writer ownership and the starting-server ruler. [8]
+- Bound Paseo intake reads the rendered task and canonical JSON with the agent's own file tools, the knowledge writer keeps its ownership inside the selected memory root, and curation binds to the starting serving build. [8]
+
 - Normal workflow reconciles meaning, states invariant scope and grouping guarantees, and runs full quality and independent fact-check before bounded repair. [9]
-- Authority/failure boundaries preserve source and transaction ownership, tool scope and coherence; handoff goes directly to Reviewer and permission refusals are not bypassed. [10]
+
+- Authority gates and failure handling keep source and transaction ownership, tool scope and coherence with their owners; the memory candidate goes directly to the Reviewer and harness permission decisions are not bypassed. [10]
 
 
-- An independent nonauthor fact-checks every changed curated statement and history-row judgment before converted-memory closeout; blocking repairs rerun full quality. The check is a lifecycle step that closeout does not mechanically perform. [5]
+- An independent nonauthor fact-checks every changed curated statement and history-row judgment before converted-memory closeout, and blocking findings are repaired before closeout. [5]
 
 
 ### Docs References
@@ -154,14 +156,15 @@ No meaningful cross-repository implementation dependency.
 ## Current Contract Evidence
 
 
-- Current review-budget and preserved ownership obligations are defined by these source instructions. [3]
+- Memory review keeps its own sealed reports, finding identifiers and pass count under the same ordinary limit as code review; a pass beyond the settings limit needs the Architect's or developer's instruction, which the Manager records. [3]
 
 
 - Before ingest, each hand-off target requires an authored rationale, directly or through an applicable entry-level default; the writer refuses unexplained targets on every run, before any file is written. [2]
 
 
 
-- Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context.
+- Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot, and context_packet and read_ar_files both use the leaf task_context.
 
-- Memory review has separate sealed reports, IDs and pass count, preserves code state and uses the code-review limit; extra passes need Architect/developer approval recorded by Manager. Curation requires the complete quality operation and independent fact-check, keeps direct Reviewer handover, and leaves acceptance and transactions to their owners. [4]
-- Bound curation intake reads the supplied canonical files and scopes its writer to the selected memory root. The intake detail gives knowledge_read workspace.memoryRoot and read_ar_files task_context; the foundation detail requires the real task opened by the user-started Architect and its actual enclosure contract, with no fabricated task or instructed-session substitute. [7]
+- Curation requires the complete memory-quality operation, repair or blocked escalation of every Curator-actionable finding, and the independent fact-check before handover. [4]
+
+- Bound curation intake gives `knowledge_read` the workspace memory root and gives `context_packet` and `read_ar_files` the exact supplied leaf `task_context`. [7]

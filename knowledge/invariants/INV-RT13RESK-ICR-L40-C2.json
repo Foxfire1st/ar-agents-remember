@@ -1,5 +1,11 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Family-context composition selects each side independently, while the shared revision owner defines retained heads; both are needed to preserve family context when the selected invariant's membership differs between snapshots."
+  },
   "applicability": "Family context composed for an invariant-identity or exact-invariant-revision selection within one bound review comparison.",
   "conditions": [
     "The existing invariant read policy discovers only the union of directly related family identities on the two bound snapshots; completed sibling rosters do not discover further families.",

@@ -1,5 +1,11 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "The evidence reader verifies confined recorded bytes, and the publisher verifies the immutable generation before replacing authority; together they keep corrupt evidence from replacing a reproducible prior generation."
+  },
   "applicability": "Retained Curator-coherence generation evidence integrity and pre-canonical validation of newly published Curator generations; not historical assessment-channel consumption by the Reviewer.",
   "conditions": [
     "Assessment evidence-bytes edges name the assessment’s own recorded destination directory, resolve within the task root, and are checked against the actual recorded digests.",

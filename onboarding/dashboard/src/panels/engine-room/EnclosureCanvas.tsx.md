@@ -413,10 +413,11 @@ Landing refs with `factState: stale` remain visible, carry an explicit state wor
 - The `engineState` selector that derives each workspace engine's runtime. [22]
 - The bird's-eye recipes it renders with (incl. `engineSpine`/`enginePetal`/`officialWire`/`canopyStroke`/`laneFlag`). [23]
 - Projection types `EngineProcessEdge`/`EngineProcessNode`. [24]
+
 - CommitRefNode carries source/worktree commit observations and fact state. [25]
-- ProviderBootNode carries the booted provider identity, role and runtime state. [26]
+
 - LandingRefNode carries observed landing state and freshness details. [27]
-- ProviderNode carries workspace/worktree provider health and indexing observations. [28]
+
 - 05o T3B — `checking`/`memGated` derivations + the `scanRing` `<circle data-fx="scan">` + `Conduit ghosted` (the `ghostedLane` inner-`<path>` ghost). [29]
 - The `scanRing` recipe is the full cyan stroked, transparent, glow style; `ghostedLane` is the full dim/desaturate style; `Conduit` applies `ghostedLane` to the inner path through `cx(flowConduit(...), ghosted && ghostedLane)`. [30]
 - The design prototype supplies the ported canopy bracket geometry, provider wire/flow links, and engine spine/petal decals: its canopy path, `wire`/`flow-g` links, provider geometry, and `.e-spine`/`.e-petal` recipes are present in the prototype. [31]

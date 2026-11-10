@@ -28,6 +28,6 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The canonical c12 closeout instructions show schema-valid named-leaf verify and create forms and describe generation journaling with code-proven/memory-missing and memory-proven/ledger-missing recovery and no second code commit, identically across all generated copies.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

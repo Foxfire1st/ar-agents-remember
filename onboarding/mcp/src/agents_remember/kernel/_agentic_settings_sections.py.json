@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d3b92b15b04467dce898722fe980347aee339810",
-        "content": "sha256:8fe792103f3ae51ad17cb0291273fd233c5f79f38b58c7ea587e0f2611fc1cd9",
+        "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+        "content": "sha256:38cba45da96925d6d1762ded17a3f6d2224f0c46e87ffd98c6a13f86c9141b37",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_role_keys"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "d3b92b15b04467dce898722fe980347aee339810",
-        "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
+        "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+        "content": "sha256:8343d50ac453b8c907bfd9bc6abaadcf129e011a1b631d0bcca4d96f02d6184f",
         "locator": {
           "kind": "file"
         }
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
             "content": "sha256:1f3717367e05643747bb649a0f1b85ab934558c626be9ffc1e1bf0d4674677d0",
             "locator": {
               "kind": "symbol",
@@ -54,15 +54,65 @@
         }
       ]
     },
-    "2": {
-      "note": "Frozen implementation of _parse_roles supporting the stated file behavior.",
+    "10": {
+      "note": "A portfolio strategist posture is dropped; other postures stay open strings",
       "targets": [
         {
           "anchor": {
-            "blob": "d3b92b15b04467dce898722fe980347aee339810",
-            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+            "content": "sha256:635537a1b3ad46eb5e1d2dbd83bad77fe1a72122015ab7e4afa657be5c08ef27",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_parse_loop_levels"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Removed role rows are skipped before shape checks\n\nAnchor: `UNUSED_ROLES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+            "content": "sha256:44129bb9cf0c67e981456267aae428d418d4bceba835173f29bce3d4311a4757",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 154
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`_resolve_role_keys` also admits the removed role names in `UNUSED_ROLES`, so an old `designer` or `strategist` row passes the unknown-key refusal as an inert key",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+            "content": "sha256:38cba45da96925d6d1762ded17a3f6d2224f0c46e87ffd98c6a13f86c9141b37",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_role_keys"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_parse_roles` resolves the role keys, skips removed role rows and builds one `RoleKnobs` per role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+            "content": "sha256:2609b1065a5df791f5c45120870ef9ad1fc733b98a725257b38511946c3562d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_roles"
             }
           },
           "kind": "code"
@@ -70,16 +120,15 @@
       ]
     },
     "3": {
-      "note": "The current source implements this file’s stated Investigator boundary.",
+      "note": "The earlier `system-specialist` key and the canonical Investigator key are compared within one settings file: equal content normalizes once and different content refuses.",
       "targets": [
         {
           "anchor": {
-            "blob": "d3b92b15b04467dce898722fe980347aee339810",
-            "content": "sha256:d888970bf9ce4dcff0e02989b4d291dbd019ce654faf3b940371cb9045a7ea46",
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+            "content": "sha256:38cba45da96925d6d1762ded17a3f6d2224f0c46e87ffd98c6a13f86c9141b37",
             "locator": {
-              "end": 435,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "_resolve_role_keys"
             }
           },
           "kind": "code"
@@ -87,14 +136,27 @@
       ]
     },
     "4": {
-      "note": "Existing role parsing attaches one typed alternative.\n\nAnchor: `_parse_roles`",
+      "note": "Existing role parsing attaches one typed alternative.",
       "targets": [
         {
           "anchor": {
-            "blob": "d3b92b15b04467dce898722fe980347aee339810",
-            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+            "content": "sha256:5c4f3b1aa4252853af25e257915f18ab3f89a8769495f8d18989bc2e191df063",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_parse_step_up"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+            "content": "sha256:a64905a0a9eafd21fdba0e3d7416ee2b8a3c3fd2ce22db01b24d08c716677969",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 176
             }
           },
           "kind": "code"
@@ -102,14 +164,15 @@
       ]
     },
     "5": {
-      "note": "Ordinary shape parsing is shared without adding a new execution adapter.\n\nAnchor: `_role_choices`",
+      "note": "Ordinary shape parsing is shared without adding a new execution adapter.",
       "targets": [
         {
           "anchor": {
-            "blob": "d3b92b15b04467dce898722fe980347aee339810",
-            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+            "content": "sha256:a5df2717f2db4ac7c03a1e4ba24cf0bb184d85e34e14f5b2686c9fdc773b354b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_role_choices"
             }
           },
           "kind": "code"
@@ -117,14 +180,15 @@
       ]
     },
     "6": {
-      "note": "Counted-role-only threshold defaults to three and refuses nested/unknown fields.\n\nAnchor: `_parse_step_up`",
+      "note": "Counted-role-only threshold defaults to three and refuses nested/unknown fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "d3b92b15b04467dce898722fe980347aee339810",
-            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+            "content": "sha256:5c4f3b1aa4252853af25e257915f18ab3f89a8769495f8d18989bc2e191df063",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_parse_step_up"
             }
           },
           "kind": "code"
@@ -153,7 +217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
+            "blob": "825208f3241118550bd4b710b5e746422eeec8bd",
             "content": "sha256:f20ed00d27338637e8f7a84bdd816ab4bcbcc115e2ed530f1992d85a96462a51",
             "locator": {
               "kind": "symbol",
@@ -166,14 +230,15 @@
       ]
     },
     "9": {
-      "note": "`_resolve_role_keys` admits `CAPABILITY_IDS` keys beside the role keys, which is how a capability's launch block passes the unknown-key refusal without becoming a dispatchable seat. \\[9]",
+      "note": "`_resolve_role_keys` admits `CAPABILITY_IDS` keys beside the role keys, which is how a capability's launch block passes the unknown-key refusal without becoming a dispatchable seat.",
       "targets": [
         {
           "anchor": {
-            "blob": "d3b92b15b04467dce898722fe980347aee339810",
-            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+            "content": "sha256:38cba45da96925d6d1762ded17a3f6d2224f0c46e87ffd98c6a13f86c9141b37",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_resolve_role_keys"
             }
           },
           "kind": "code"

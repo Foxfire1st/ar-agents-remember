@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The anchor-observation vocabulary and member-source reference have separate defining modules whose unchanged re-exports preserve the existing import contract without duplicating those definitions."
+  },
   "applicability": "Imports of the anchor-observation vocabulary and the family member-source reference.",
   "conditions": [
     "Callers import these names from models/knowledge/read.py or models/knowledge/review_family_context.py."

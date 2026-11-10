@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Serving overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -12,12 +12,12 @@ Own the serving lifetime, its retained background loops and drained shutdown. Te
 
 Held-delivery collaborators keep usage-read-before-delivery ordering, then trigger moved comparison after ended-seat delivery. The dedicated watcher task joins the owned shutdown task list.
 
-Startup compacts the workspace river before projector prime, then starts projection, provider metrics, leaf-archive recovery, held-message delivery and river-compaction tasks. Heap tracing and malloc trimming are separately opt-in. The archive loop awaits one tick through the drained thread boundary, sleeps after each completed attempt and closes its archive owner in finally; it introduces no second recovery timer. Shutdown first invokes the review-tree child shutdown hook, then cancels and awaits every background task. A cancelled shielded worker is awaited before cancellation is re-raised, so serving cannot return while that worker still writes. Provider sampling/recording/degradation/compaction use the same drained boundary. Source inspection does not supply new teardown execution.
+The lifespan first records this dashboard process in the coordination root's running-server records (`register_server(..., "dashboard")`, `runtime/servers/<pid>.json`) and removes that record first in its finally, so `runtime_install` and `server_info` can list it with its build state. Startup compacts the workspace river before projector prime, then starts projection, provider metrics, leaf-archive recovery, held-message delivery and river-compaction tasks. Heap tracing and malloc trimming are separately opt-in. The archive loop awaits one tick through the drained thread boundary, sleeps after each completed attempt and closes its archive owner in finally; it introduces no second recovery timer. Shutdown first closes projector readiness, cancels and awaits the master-preparation task and closes master preparation, then runs the review-tree child shutdown hook as owned startup work, then cancels and awaits every background task. A cancelled shielded worker is awaited before cancellation is re-raised, so serving cannot return while that worker still writes. Provider sampling/recording/degradation/compaction use the same drained boundary. Source inspection does not supply new teardown execution.
 
-The serving lifetime retains the L81 shared background ledger and server-side host-start loading watch. Archive recovery, provider metrics, held-message work and each native resume are attributed to their executing worker units. The loading driver uses shared OS lease/progress, records completion or cancellation, and drains before its claim closes. Removed terminal observation and notifier sweeps are not reintroduced by that loading watch. The measured warmup resume receives `run.role_receipts[agent_id]`, so receipt identity is republished before native resume. This reuses the existing loading driver and offload/drain accounting; it is not the host-activity intake and adds no host polling timer.
+The serving lifetime retains the shared background ledger and server-side host-start loading watch. Archive recovery, provider metrics, held-message work and each native resume are attributed to their executing worker units. The loading driver uses shared OS lease/progress, records completion or cancellation, and drains before its claim closes. Removed terminal observation and notifier sweeps are not reintroduced by that loading watch. The measured warmup resume receives `run.role_receipts[agent_id]`, so receipt identity is republished before native resume. This reuses the existing loading driver and offload/drain accounting; it is not the host-activity intake and adds no host polling timer.
 
 
-**L184 — NEW-LIMIT-FROM-REPORT-ONLY, NEW-R192-RULE19-PORT.** The lifespan owns the refresher's lifetime, so no reaper of its own is needed. The lifespan consumes the collaborator it was given instead of reaching into cli, which is the edge the finding was about. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+The lifespan owns the refresher's lifetime, so no reaper of its own is needed. The lifespan consumes the collaborator it was given instead of reaching into cli.
 
 ## Held-message delivery tick
 
@@ -81,4 +81,4 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 - Held-delivery collaborators keep usage-read-before-delivery ordering, then trigger moved comparison after ended-seat delivery. The dedicated watcher task joins the owned shutdown task list. [29]
 
-- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_lifespan.py:360-420 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 87992ce842079a7a4f161bd4bfcc4aed5307178b. Retired means the anchor no longer stands, not that the cited subject was deleted.
+- The serving lifespan registers the dashboard's running-server record at start and removes it first on exit. [30]

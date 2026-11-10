@@ -1,0 +1,93 @@
+{
+  "path": "mcp/src/agents_remember/package_data/host-harness-homes.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each harness entry lists its home variables and documentation sources.\n\nAnchor: `CODEX_SQLITE_HOME`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7e0857ffef6d6d48aeb8df07e08537a2d5a2ce8",
+            "content": "sha256:0e00c36ee9baa440b91801aaf0048884b80c85b20e52cc3d4a901e7300b0a13f",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An entry may name no variable and explain its storage choice instead.\n\nAnchor: `storage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7e0857ffef6d6d48aeb8df07e08537a2d5a2ce8",
+            "content": "sha256:484a78048708b57a82131170a1b3ca1612dd0fa3a7bc793765f8b00dd6d62c29",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The serving code loads this catalog once at import.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c03c109ea6657493ddd32b5171e1917e73ea61",
+            "content": "sha256:7171b2a015be48fd88c786e1840cd0aedf68b1f423033f8ad8626a666598ff72",
+            "locator": {
+              "kind": "symbol",
+              "name": "HOME_CATALOG"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_harness_homes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The observed variable names are the union of every entry's variables.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c03c109ea6657493ddd32b5171e1917e73ea61",
+            "content": "sha256:557544a8320911b6daf0e8265376ac476132e4d493a2eadacc5b6acf9dbb50b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "home_variable_names"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_harness_homes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A provision refuses before stopping the host when a listed home would change.\n\nAnchor: `harness-home-would-change`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c03c109ea6657493ddd32b5171e1917e73ea61",
+            "content": "sha256:94aa425e94a83cb55a7282842a5a5d243c9a5ba7dac3bc12618e1de014f427e9",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_harness_homes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

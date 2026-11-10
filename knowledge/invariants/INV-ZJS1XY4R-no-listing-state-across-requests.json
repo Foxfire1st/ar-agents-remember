@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The bounded-listing family requires every folder request to read live state, so confinement and bounded work do not come at the cost of stale notes after an earlier listing."
+  },
   "applicability": "GET /api/notes/folder (list_folder and row helpers) over one master's notes root.",
   "conditions": [
     "Every request opens and reads the live folder inside the call; no cache or module-level state."

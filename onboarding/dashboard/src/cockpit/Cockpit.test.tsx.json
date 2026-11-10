@@ -109,10 +109,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "VIEWS"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -125,10 +126,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:ee59bf32cd91e8947c89a98d01bb5870d522a6f8a849945813e9bf77551d943c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "shellFlags"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -226,14 +228,16 @@
       ]
     },
     "33": {
-      "note": "The Chats view mounts one `<RoleChatsPane>` inside its persistent chats layer; the document rail (`DocumentChat.tsx`) mounts the same pane for its bound selection.",
+      "note": "The Chats view mounts one `<RoleChatsPane>` inside its persistent chats layer; the document rail (`DocumentChat.tsx`) mounts the same pane for its bound selection.\n\nAnchor: `RoleChatsPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:0e083528be45ad099dc01a9c0c450064660ea4947830ae120697f07fd2b38969",
             "locator": {
-              "kind": "file"
+              "end": 723,
+              "kind": "line_range",
+              "start": 720
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

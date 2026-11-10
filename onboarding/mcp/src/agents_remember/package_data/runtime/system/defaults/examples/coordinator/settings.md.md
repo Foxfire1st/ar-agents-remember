@@ -23,7 +23,7 @@ Docker-wrapped providers/backends and must not require host-level PostgreSQL,
 FalkorDB, Ollama, OS services, launch agents, package-manager services, Python
 virtual environments, or global user daemons for normal managed mode.
 
-The GrepAI guidance says one `grepai-memory` provider can declare multiple memory roots in workspace mode, covering the configured external memory repos with explicit `{ projectId, path }` entries; the former repo-internal `ar-memory/` roots were removed from the product and are no longer an indexing target. Managed lifecycle tooling indexes those live roots in place and git-ignores GrepAI's per-root `.grepai/` working directory so generated GrepAI artifacts stay out of memory commits. GrepAI config, state, cache, home files, and provider state live under `providers/runners/grepai/`; operator logs live under `logs/providers/grepai/`; all memory roots share one lifecycle-owned Docker network, PostgreSQL/pgvector container with durable state under `providers/data/grepai/postgres/`, and Ollama container for embeddings. GrepAI itself runs from the Docker runner container, so managed mode must not install GrepAI or Ollama into host user space. A `.grepai/` directory inside any indexed memory root is runtime artifact output rather than durable memory.
+The GrepAI guidance says one `grepai-memory` provider can declare multiple memory roots in workspace mode, covering the configured external memory repos with explicit `{ projectId, path }` entries. Managed lifecycle tooling indexes those live roots in place and git-ignores GrepAI's per-root `.grepai/` working directory so generated GrepAI artifacts stay out of memory commits. GrepAI config, state, cache, home files, and provider state live under `providers/runners/grepai/`; operator logs live under `logs/providers/grepai/`; all memory roots share one lifecycle-owned Docker network, PostgreSQL/pgvector container with durable state under `providers/data/grepai/postgres/`, and Ollama container for embeddings. GrepAI itself runs from the Docker runner container, so managed mode must not install GrepAI or Ollama into host user space. A `.grepai/` directory inside any indexed memory root is runtime artifact output rather than durable memory.
 
 The CodeGraphContext guidance says one `codegraphcontext-code` provider can
 declare multiple code repository roots. Lifecycle tooling expands those roots
@@ -46,7 +46,7 @@ Repo-specific rules belong in the selected memory layer rather than this coordin
 
 ### Invariants And Boundaries
 
-`c-08-ar-coordination-context-resolver` skill remains the route from coordinator context into the target repository's active memory settings, tools, sources, onboarding, and ledger paths. Context providers must not replace source proof, verified onboarding, drift checks, branch validity, or memory promotion rules. Disposable GrepAI runtime artifacts must stay under `providers/runners/grepai/` or per-root git-ignored `.grepai/` working directories, disposable CGC runtime artifacts must stay under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, durable database state must stay under `providers/data/`, CGC command execution must stay Docker-owned, and process-only env keys must not be persisted into `.env` when CGC v0.4.10 rejects them as invalid config.
+Product context resolution (`context_packet`) is the route from coordinator context into the target repository's active memory settings, tools, sources, onboarding, and ledger paths. Context providers must not replace source proof, verified onboarding, drift checks, branch validity, or memory promotion rules. Disposable GrepAI runtime artifacts must stay under `providers/runners/grepai/` or per-root git-ignored `.grepai/` working directories, disposable CGC runtime artifacts must stay under `providers/runners/codegraphcontext/<repo-id>/.codegraphcontext/`, durable database state must stay under `providers/data/`, CGC command execution must stay Docker-owned, and the CGC process environment must not be blindly persisted into `.env`; only keys the installed CGC version accepts are persisted.
 
 ### Todos
 
@@ -60,10 +60,12 @@ No external documentation is needed.
 
 ### Repo-Internal References
 
-- The current source example still contains inherited provider install, start/status, watcher and indexing guidance. Actual generated lifecycle settings are disabled and empty; runtime installation instead attempts leftover-watcher stop and reports enabled keys as unused, and the advertised PUBLIC_TOOLS literal contains no provider tool. The template text is not evidence of present managed provider availability or executed behavior. [7]
+- The example still carries inherited provider install, start/status, watcher and indexing guidance, while the runtime_install tool stops leftover provider watchers, reports unused provider keys and starts none; the template text is not evidence of managed provider availability or executed behavior. [7]
 
 - The example states that coordinator settings are workspace-wide and do not replace per-repository memory settings. [1]
-- The routing section tells agents to invoke "c-08-ar-coordination-context-resolver" and treat repository-specific memory guidance as more specific. [2]
+
+- The routing section tells agents to resolve the target repository through the product (`context_packet`) and treat repository-specific memory guidance as more specific. [2]
+
 - The provider section defines semantic, relationship, and intent retrieval substrates and keeps provider authority in MCP settings. [3]
 - The provider lifecycle section routes behavior through MCP/package-owned tooling, removes `_bin` and `_venvs` from the managed contract, and prefers Docker-wrapped providers/backends over host services. [4]
 - The GrepAI notes define workspace roots, live-root indexing, `.grepai/` containment, runner/config/log/data locations, and Docker-owned execution. [5]

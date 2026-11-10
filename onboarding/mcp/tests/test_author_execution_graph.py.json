@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1e731d99a443c979492a9f79f5070d8f4a5df3",
+            "blob": "2b56e1b25956bb0c71e9ee7e3e59857c00b0f740",
             "content": "sha256:c93502fc83f660ad1478420261f34213449bcceb68a687ed15c146aae6d8fa46",
             "locator": {
               "kind": "symbol",
@@ -23,11 +23,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1e731d99a443c979492a9f79f5070d8f4a5df3",
+            "blob": "2b56e1b25956bb0c71e9ee7e3e59857c00b0f740",
             "content": "sha256:9dcdbb1c0392f1ef197433424ec770214c2c3e40cf18da5f041a51041e90c9e2",
             "locator": {
               "kind": "symbol",
               "name": "test_batch_atomicity_leaves_everything_untouched_on_failure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An Orchestrator-authored ruling still authors the graph.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b56e1b25956bb0c71e9ee7e3e59857c00b0f740",
+            "content": "sha256:55ac4b851186f01cece6c23e4d15542fc017ddbe8be3ef4b285e287590ad029f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_orchestrator_ruling_still_authors_the_graph"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every other or retired ruling author is refused without writes, on dry run and apply.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b56e1b25956bb0c71e9ee7e3e59857c00b0f740",
+            "content": "sha256:fbc62831958bc7d3f9c08d5344c7ec42afa367340b1cfe3a6fc9a58687bbe405",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_other_and_retired_ruling_authors_refuse_without_writes"
             }
           },
           "kind": "test"

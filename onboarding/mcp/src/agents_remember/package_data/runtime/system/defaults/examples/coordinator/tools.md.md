@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[overview.md](../../../../../../../../overview.md)
+[overview](../../../../../../../../overview.md)
 
 ## Current source contract evidence
 
@@ -17,12 +17,12 @@ execution authority or the actual advertised MCP roster.
 ## Code Commentary
 
 Repository-specific commands belong in memory `system/tools.md`; resolve the selected
-repository before choosing its task, memory or validation paths. Source/package-owned
+repository through `context_packet` before choosing its task, worktree, memory or validation paths. Source/package-owned
 legacy lifecycle and Docker mechanics are distinct from coordinator-local scripts and
 shared authoritative settings. Discovery evidence never replaces verified source/intent.
 
-The current context_packet example is context_packet(repo_id="<repoId>"), without include_providers. Pre-retirement provider dependency/setup and enabled-provider prose remains legacy specimen material, not current provider execution authority. These are legacy specimen descriptions, not current calls
-against the L112 candidate: the two retired providers never count as enabled, normal setup
+The current context_packet example is context_packet(repo_id="<repoId>"), without include_providers. Pre-retirement provider dependency/setup and enabled-provider prose remains legacy specimen material, not current provider execution authority. These are legacy specimen descriptions, not current calls:
+the two retired providers never count as enabled, normal setup
 starts nothing, and former provider search/status/watcher tools are absent. Runtime
 installation retains scaffold/copy and old-watcher-stop behavior; explicit deletion is
 separately requested through providers-remove. Do not revive provider workflows or alter
@@ -31,71 +31,8 @@ managed configuration because an old command shape appears in this template.
 ## Current evidence
 
 
-- The coordinator-level tools example: global commands, the MCP status and install entry points, the managed provider lifecycle, and the containment checks that keep provider output as discovery evidence. [6]
+- The coordinator-level tools example: global commands, the runtime_install and context_packet MCP entry points, the managed provider lifecycle, and the containment checks that keep provider output as discovery evidence. [6]
 
-
-## Historical superseded body (non-operative)
-
-The following text is the prior onboarding account, retained for provenance.
-It is not current setup, query, publication, or tool-call guidance; the current
-contract above replaces its provider/tool/database and hook generalizations.
-
-
-
-This example documents the coordinator-level tools surface, including the shared provider setup entrypoint and expected lifecycle command shapes for configured context providers.
-
-## Code Commentary
-
-### Logic
-
-The file says coordinator tools are commands useful across many repositories.
-Repo-specific checks, branch workflow, and code quality tools belong in
-memory-layer `system/tools.md`. When MCP `contextProviders` are enabled,
-runtime installation is exposed through the `runtime_install` MCP tool and
-lower-level provider diagnostics use explicit generated settings with
-`--from-settings`. GrepAI search is documented through the `grepai_search` MCP tool
-tool rather than a host binary, global command, or path filter. CGC commands
-expand configured roots into per-repo runtime
-instances under `providers/runners/codegraphcontext`, ensure the shared FalkorDB
-Docker backend is healthy, start or stop one watcher per configured code repo,
-run bounded native relationship queries through `cgc ... run -- <native cgc
-args>`, and launch the long-running visualizer through `cgc ... visualize --port
-<port>`. The provider notes distinguish long-running daemon/server actions from
-bounded query actions: watcher starts/stops, CGC start/stop/visualize, and
-GrepAI watcher start/stop/refresh must run from a durable host process
-namespace, while lifecycle status reports `processNamespace` diagnostics.
-Benchmark/worktree setup remains settings-gated and may use package-local
-provider setup for CGC seed export/import with path rewrite before fallback
-refresh.
-
-### Conventions
-
-Global commands stay here; repository-specific command details and code quality
-tools stay in the selected memory layer. Setup flows should use the MCP
-`runtime_install` tool for installation; direct `provider-lifecycle.py` calls
-are lower-level provider diagnostics and operations. GrepAI lifecycle commands
-read the `grepai-memory` settings, expand workspace roots into explicit
-projects, ensure the shared Docker network plus PostgreSQL/pgvector and Ollama
-containers are healthy, watch the live memory roots in place (read-write
-bind-mounted into the watcher), and write GrepAI workspace config under
-`providers/runners/grepai/home/.grepai/workspace.yaml`. The GrepAI
-binary lives in the Docker runner container, not under `providers/_bin`.
-CGC/FalkorDB runtime env
-keys are process env only; for CGC v0.4.10 they should not be written into
-`<instanceRoot>/.codegraphcontext/.env`. Use `start` or `start-all` to start
-every configured watcher and `stop`, `stop-all`, or `shutdown-all` to stop every
-configured watcher; single-repo CGC operations add `--repo-id`. Use `cgc
-visualize --port <port>` for the visualizer server instead of hiding it behind
-`cgc run`. Use `watchers status`/provider status to inspect `processNamespace`
-before starting daemons from automation or sandbox-like harnesses.
-
-### Invariants And Boundaries
-
-Agents should resolve the target repository with `c-08-ar-coordination-context-resolver` skill before choosing task, worktree, memory, validation paths, or context provider roots. Provider output is discovery evidence only, and source/onboarding proof remains required. Managed mode should fail containment/health checks if CGC writes `.cgcignore`, `.codegraphcontext`, reports, databases, or logs inside indexed source code repositories. GrepAI indexes the live memory roots in place, so its `.grepai/` working dir is expected inside each memory root and is kept out of git via the root's `.gitignore` (it must still not land in indexed source code repositories). Daemon/server lifecycle actions must be launched from a durable host process namespace; bounded retrieval commands like `cgc run` remain usable from sandboxed harnesses.
-
-### Todos
-
-None.
 
 ## Evidence
 
@@ -108,12 +45,18 @@ No relevant external documentation found.
 ### Repo-Internal References
 
 
-- The coordinator tools example separates global commands from repository-specific checks, branch workflow, and code quality tools. [1]
+- The coordinator tools example places repository-specific checks, commands, branch workflow and code quality tools in the selected memory layer's system/tools.md, not here. [1]
 
-- The provider command section records MCP runtime install, `grepai_search`, aggregate provider status/watcher flows, and CGC bounded `run -- ...` plus long-running `visualize --port 8000` command shapes. [2]
+
+- The provider command block shows only the `runtime_install` and `context_packet(repo_id="<repoId>")` MCP call shapes; the CGC `run -- ...` and `visualize --port <port>` shapes appear in the lifecycle notes. [2]
+
 - The provider notes say GrepAI lifecycle commands expand `grepai-memory` workspace roots, ensure Docker network/PostgreSQL/Ollama health, bind-mount and index the live memory roots in place, write provider-owned workspace config/state, and use the Docker runner container instead of host binaries; CGC lifecycle commands expand the configured `roots` array, ensure FalkorDB Docker, start/stop every configured root unless `--repo-id` narrows it, pass post-`--` arguments to native CGC for bounded queries, and expose the visualizer as a separate long-running lifecycle command. [3]
-- The process namespace note says long-running daemon actions such as watcher start/stop/shutdown, CGC start/stop/visualize, and GrepAI watcher start/stop/refresh must run from a durable host namespace, while lifecycle status reports `processNamespace` diagnostics and refuses `--die-with-parent` sandboxes. [4]
+
+- The process namespace note says long-running daemon actions such as watcher start/stop/shutdown, CGC start/stop/visualize, and GrepAI watcher start/stop/refresh must run from a durable host namespace; lifecycle status reports `processNamespace` diagnostics, and daemon actions refuse to run from `--die-with-parent` sandboxes. [4]
+
 - The containment notes say a CGC provider should not be used in managed mode if indexing writes `.cgcignore`, `.codegraphcontext`, reports, databases, or logs into the indexed source repository, and a GrepAI provider should not be used if indexing creates `.grepai/` inside source repositories or durable memory roots. [5]
+
+- The notes tell agents to resolve the target repository through `context_packet` before choosing task, worktree, memory or validation paths. [8]
 
 ### Cross-Repo References
 

@@ -4,117 +4,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The literal/tuple agreement guard, the launcher-is-not-a-role guard, and the ten-role/nine-operation census the leaf extended.",
+      "note": "The eight-role/nine-operation census, the literal/tuple agreement guard and the launcher-is-not-a-role guard.",
       "targets": [
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
-            "content": "sha256:72aeaaba12a344662d7d84168795d915b1a04887df428d2857cbe8abbec06a6d",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:1729ebbdf3e2e1f72b157fe8add6a179b376f9b258a3a0568e13b0c36a8e75bc",
             "locator": {
               "kind": "symbol",
-              "name": "test_the_frozen_vocabulary_is_exactly_the_ten_roles_and_nine_operations"
-            },
-            "path": "mcp/tests/test_role_capsule_admission.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
-            "content": "sha256:2621e56d55e0fb0455d1af05b2d3a65bafd1c0f7b69d33b0656132c56ad1e1ed",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_role_and_operation_literals_agree_with_their_runtime_tuples"
-            },
-            "path": "mcp/tests/test_role_capsule_admission.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
-            "content": "sha256:5fd6ab94aea5614649efeb8e41ec50f350635e96e8bd58f436f9a45b43addd3b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_launcher_is_a_seat_kind_and_not_a_role"
-            },
-            "path": "mcp/tests/test_role_capsule_admission.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
-            "content": "sha256:2af0167c866e8e0555789b60c73ad9eb396e43766a4c5c26923b9652421a89da",
-            "locator": {
-              "end": 143,
-              "kind": "line_range",
-              "start": 138
-            },
-            "path": "mcp/tests/test_role_capsule_admission.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
-            "content": "sha256:24ee2a429d6cf61a9dc6c086ab30c650b1f056fb8bb8d74a894272b1955a97a0",
-            "locator": {
-              "end": 150,
-              "kind": "line_range",
-              "start": 145
-            },
-            "path": "mcp/tests/test_role_capsule_admission.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
-            "content": "sha256:9aaf0965851acb3ba7851b2961d1a437800437e5e01813983a73b9e724a65436",
-            "locator": {
-              "end": 156,
-              "kind": "line_range",
-              "start": 152
-            },
-            "path": "mcp/tests/test_role_capsule_admission.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
-            "content": "sha256:64e0e480b68fa469482a805923873d4dea2630d4c24170ea616542af67cca3db",
-            "locator": {
-              "end": 147,
-              "kind": "line_range",
-              "start": 142
-            },
-            "path": "mcp/tests/test_role_capsule_admission.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
-            "content": "sha256:93415aaca7ab2dfa02a55eee9566545e6bde49125acfa17ef4793f868131578c",
-            "locator": {
-              "end": 154,
-              "kind": "line_range",
-              "start": 149
-            },
-            "path": "mcp/tests/test_role_capsule_admission.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
-            "content": "sha256:64705d563ae3eca69e611ecbf0a7a272cfebe826a6e54388d515e5adc4dd2c97",
-            "locator": {
-              "end": 160,
-              "kind": "line_range",
-              "start": 156
+              "name": "test_the_frozen_vocabulary_is_exactly_the_eight_roles_and_nine_operations"
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -123,16 +21,15 @@
       ]
     },
     "2": {
-      "note": "The independent role census this module's runtime tuple is compared against. Anchor: `SHIPPED_ROLES` `SHIPPED_OPERATIONS`",
+      "note": "The independent role census this module's runtime tuple is compared against.",
       "targets": [
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
-            "content": "sha256:9b008fe112479535ecde29b4117b0800d457eca7f994f5841b1588aeed53387b",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:c09f88cdc76bed96c2e5f65d6aada85dc64d8f52df4091725c171cd9da011974",
             "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 68
+              "kind": "symbol",
+              "name": "SHIPPED_ROLES"
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -140,36 +37,10 @@
         },
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:dd76f42e46accac0c85e2afbb7053c96a8f73fffd7d3b19758efc24ff0a7d341",
             "locator": {
-              "end": 91,
-              "kind": "line_range",
-              "start": 81
-            },
-            "path": "mcp/tests/test_role_capsule_admission.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
-            "content": "sha256:6a1982f58c5de1336717525b201c47a34e38a228960d2f79e44de204ed3f7b0e",
-            "locator": {
-              "end": 81,
-              "kind": "line_range",
-              "start": 70
-            },
-            "path": "mcp/tests/test_role_capsule_admission.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
-            "content": "sha256:c07f8f9de8b2f8a7a6578664ccc33a4ff25b4b4ad0565966b5a89e7992bfa498",
-            "locator": {
-              "end": 88,
+              "end": 89,
               "kind": "line_range",
               "start": 79
             },
@@ -179,25 +50,12 @@
         },
         {
           "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
-            "content": "sha256:08f93f8810987da19a6c62dfda42a0efc8a826fd2b9ab8e86083ced0a2fa47af",
-            "locator": {
-              "end": 1198,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/tests/test_role_capsule_admission.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:9caad7c0acbb81f00dc722d5ebb1905a53306888b50387f58df3b87174e4ae37",
             "locator": {
-              "end": 92,
+              "end": 90,
               "kind": "line_range",
-              "start": 83
+              "start": 81
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -303,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
             "content": "sha256:f0dad0a8df6fd0a2092f0cfbc762f0978e1200280daa6856c932da956fc8f041",
             "locator": {
               "end": 6,
@@ -321,35 +179,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
-            "content": "sha256:5ee7af22f1475511d413b6813ad1187f76c2decd5725f7d5f68615d5f062aea0",
+            "blob": "825208f3241118550bd4b710b5e746422eeec8bd",
+            "content": "sha256:0a603f7916f3b0c99d6900adf6c5dd4f7f693c4a3ed81117e2a7f194034be25c",
             "locator": {
               "kind": "symbol",
               "name": "KNOWN_ROLES"
-            },
-            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
-            "content": "sha256:583553444822b40df56b808e08d4ece7e7172b232e2340b26c006711e82dc851",
-            "locator": {
-              "end": 94,
-              "kind": "line_range",
-              "start": 78
-            },
-            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
-            "content": "sha256:916f4f6f4ec526d877dcfa348f36d22280cccfc684f813741121351feebfc7bb",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
           },
@@ -358,12 +192,12 @@
       ]
     },
     "7": {
-      "note": "The retained capsule role registry ends with bootstrap; the removed task-binding set supplies no current admission.",
+      "note": "The capsule role registry ends with bootstrap; no task-binding set supplies admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
-            "content": "sha256:6811946246157d4d86d1215e8aa358f70653c11feeffd6b1d134adeb2cda0c71",
+            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
+            "content": "sha256:ca87be70f1004fe8f0b93c44eca5442b2a733b7770811673bac424afbd4a167c",
             "locator": {
               "kind": "symbol",
               "name": "CAPSULE_ROLES"

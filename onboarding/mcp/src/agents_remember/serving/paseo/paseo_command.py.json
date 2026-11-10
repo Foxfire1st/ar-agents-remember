@@ -3,27 +3,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The command boundary with the product environment and Node.",
+      "note": "The command boundary: the product environment for every call, the product Node for a host start or a staged install root, the communication Node for every other call.",
       "targets": [
         {
           "anchor": {
-            "blob": "09352e9108115b24900230bcb373ba2cef6e83a1",
-            "content": "sha256:4493c3fee9db7800ece0996f60ab273406d8e2bdfb0ab2ea361b10d4ada1f390",
+            "blob": "b0b644e38df6cee1c62a56818b779a842b23e62e",
+            "content": "sha256:fe0e82d74cfabb87df06c1d9f3ac12888aed0366ac5c403624ccce4c11df19c7",
             "locator": {
               "kind": "symbol",
               "name": "PaseoCli"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "09352e9108115b24900230bcb373ba2cef6e83a1",
-            "content": "sha256:d11d06b8621027bbda50a19ac2975087a3aa92f95a236b4136487ac94e98f881",
-            "locator": {
-              "end": 120,
-              "kind": "line_range",
-              "start": 60
             }
           },
           "kind": "code"
@@ -41,6 +29,23 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A call that does not start a host selects its Node through the running-node selector.\n\nAnchor: `communication_node`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0b644e38df6cee1c62a56818b779a842b23e62e",
+            "content": "sha256:124cefb58d98efeef944dc8398eae136dc4892101ee30172a8303e48eb58150d",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 105
+            }
           },
           "kind": "code"
         }

@@ -23,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:b9f12efffa9bc01eba2239a37d0e44c42c4d2e8ff6a837c2cf3fd59ec966bc3c",
             "locator": {
-              "end": 249,
+              "end": 259,
               "kind": "line_range",
-              "start": 188
+              "start": 198
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -252,30 +252,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:adc5e70699b6beb4f6da806e367cc006d742e94259f35a0eafbb048349540fd4",
             "locator": {
-              "end": 185,
+              "end": 195,
               "kind": "line_range",
-              "start": 185
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "ProviderNode is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface ProviderNode {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 403,
-              "kind": "line_range",
-              "start": 403
+              "start": 195
             },
             "path": "dashboard/src/types/projection.ts"
           },

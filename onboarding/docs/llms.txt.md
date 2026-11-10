@@ -14,7 +14,7 @@ Historical source wording retained verbatim (docs/llms.txt blob 24ae5ecc1c485103
   same list still credits "provider indexes that clone into a worktree instead of rebuilding", so the summary list keeps
   the index-cloning claim while retiring the providers that produced the indexes.
 
-The current summary pairs retired-provider/by-path framing with paired publication and a disposable knowledge index; only the later cheap-isolation section retains residual live provider-index cloning prose.
+The current summary pairs retired-provider/by-path framing with paired publication and a disposable knowledge index.
 - The trust paragraph states the same position as history: semantic and graph search "were optional accelerators for
   *finding* a note — both are retired now, and neither was ever the thing you trust." The trust claim itself is unchanged:
   the note, plus Git's answer on whether it still matches the code.
@@ -38,12 +38,13 @@ Current first-run text registers the server, serves packaged skills and starts B
   containment stay in the bullet unchanged.
 - The Providers link in "Learn more" now points at "the retired semantic and code-graph providers, and how leftover state
   from an older install is cleaned up."
-- The cheap-isolation section and its summary line are untouched: the section still narrates the providers in the
-  present tense — re-crawling a code graph, re-embedding a semantic index, exporting and re-importing a graph bundle,
-  cloning a vector database, streaming an embedding model between containers, and giving each worktree "its own isolated,
-  namespaced provider stack". It closes by saying providers "can be created alongside a worktree and thrown away with
-  it", and "How the pieces fit" still lists "**Index cloning** makes that isolation cheap enough to use by default." So
-  the removal lands in the framing and history sentences; the isolation mechanism is still described as live machinery.
+- The "Task isolation and disposable indexes" section says each task's paired code and memory worktrees isolate its
+  changes, that the former semantic and code-graph providers are retired so worktree setup does not provision their
+  stacks, clone their databases or seed their watchers, and that the knowledge index is an SQLite view derived from a
+  selected memory text tree, cached by tree identity, rebuilt when absent and never written by knowledge writers.
+  "How the pieces fit" now lists "The **disposable knowledge index** is rebuilt from the selected text tree." in place of
+  the former index-cloning line; only the table-of-contents entry "Cheap isolation: indexes are cloned, not rebuilt"
+  still uses cloning wording.
 
 ### Superseded inventory
 
@@ -75,14 +76,15 @@ Current first-run text registers the server, serves packaged skills and starts B
 
   The provider-health and index-query examples are removed; the list now runs orienting, drift checking and closeout
   preview.
-- Superseded by MIK-R199: `starts provider indexing when providers are enabled`. The first-run paragraph now says the
-  skill starts nothing provider-side and that the former search providers are retired.
+- Superseded by MIK-R199: `starts provider indexing when providers are enabled`. The current setup paragraph says no
+  provider indexing or setup-authored knowledge is part of the setup path.
 
 ### Source and authority bounds
 
-- Source comparison: `docs/llms.txt:1-484`, read in full.
-- Source comparison: `docs/llms.txt:1-1` (version/creation-date/hash header), `docs/llms.txt:259-294` (the isolation
-  section left in present tense), `docs/llms.txt:444-453` (the summary list that still credits index cloning).
+- Source comparison: `docs/llms.txt:1-456`, read in full.
+- Source comparison: `docs/llms.txt:1-1` (version/creation-date/hash header), `docs/llms.txt:258-267` (the task-isolation
+  section), `docs/llms.txt:417-434` (the "How the pieces fit" list, which now names the disposable knowledge index),
+  `docs/llms.txt:50-50` (the table-of-contents entry that still names cloned indexes).
 - The file names no `providerSetupSeconds` and carries no settings example: the only settings references are the
   authority-settings bullet and the Settings Reference link, and the fenced blocks it does carry are a path mirror and a
   ledger table. This card therefore records nothing about a settings block, a setup timeout, or a setup detector.
@@ -96,14 +98,22 @@ Historical source account (detached from live reference 2; docs/llms.txt blob 24
 
 - The product summary says both search providers are retired and by-path reads carry the product, while the same list still credits provider indexes cloned into a worktree.
 
-- The summary still retires semantic/code-graph providers, but its Git-memory bullet now names paired code/memory publication and a disposable knowledge index rebuilt from the selected text tree; the separate cheap-isolation section still contains residual live provider-cloning prose.
-- The trust paragraph keeps the note as the thing trusted and marks search as retired history. [3]
-- The retrieval routes are stated in the past tense with their providers retired, while by-path stays always available. [4]
-- The read-only tool list no longer includes provider health, graph or semantic-index queries. [5]
-- First-run setup starts nothing provider-side, and by-path memory needs neither Docker nor providers. [6]
-- Authority settings cover repositories and report old provider keys once as unused. [7]
-- The isolation section still describes provider indexes as live machinery and says providers can be created with a worktree. [8]
-- The composition summary still credits index cloning as what makes isolation cheap. [9]
-- The Providers link now describes retired providers and leftover-state cleanup. [10]
+- The summary still retires semantic/code-graph providers, but its Git-memory bullet now names paired code/memory publication and a disposable knowledge index rebuilt from the selected text tree; the task-isolation section says the retired providers' databases are not cloned, and only the table-of-contents entry still names cloned indexes.
 
-- The summary still retires semantic/code-graph providers, but its Git-memory bullet now names paired code/memory publication and a disposable knowledge index rebuilt from the selected text tree; the separate cheap-isolation section still contains residual live provider-cloning prose. [2]
+- The trust paragraph keeps the note as the thing trusted and marks search as retired history. [3]
+
+- The retrieval routes are stated in the past tense with their providers retired, while by-path stays always available. [4]
+
+- The read-only tool bullet names orienting on a repository, checking drift and previewing closeout, with no provider-health, graph or semantic-index query. [5]
+
+- First-run setup includes no provider indexing or setup-authored knowledge, and by-path memory needs neither Docker nor providers. Anchor: `provider indexing or setup-authored knowledge is part of this path` [6]
+
+- Authority settings cover repositories and report old provider keys once as unused. Anchor: `old provider keys are reported once as unused` [7]
+
+- The task-isolation section states the former providers are retired, so worktree setup provisions, clones and seeds none of their stacks, and describes the knowledge index as a disposable SQLite view. [8]
+
+- The composition summary now credits the disposable knowledge index rebuilt from the selected text tree; only the table-of-contents entry still names cloned indexes. Anchor: `The **disposable knowledge index** is rebuilt from the selected text tree.` [9]
+
+- The Providers link now describes retired providers and leftover-state cleanup. Anchor: `[Providers](guides/providers.md)` [10]
+
+- The summary retires the semantic and code-graph providers so by-path reads carry the product, and its Git-memory bullet names paired code/memory publication and a disposable knowledge index rebuilt from each selected text tree. [2]

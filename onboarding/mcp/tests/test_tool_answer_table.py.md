@@ -50,8 +50,12 @@ table is caught.
 - The three largest answers are operation-produced and pinned. [9]
 
 - Table construction retains each row's fields, uses, cases, bound and interim ownership. [1]
+
 - Cases are checked against missing uses, extra fields and bounds. [2]
+
 - An explicitly over-long log path becomes its exact length and digest. [3]
 - Produced install answers read the sandbox MCP authority, without an XDG user-settings precondition. [4]
+
 - The delivery observer patches record_tool_completed and compares delivered tokens with returned and logged counts. [6]
-- Ordinary and largest install fixtures pin copiedFiles=18 and createdDirs=44/43 as projection-equality fixtures under the existing answer bounds. [7]
+
+- Ordinary and largest install fixtures pin copiedFiles=15 and createdDirs=42/41 as projection-equality fixtures under the existing answer bounds. [7]

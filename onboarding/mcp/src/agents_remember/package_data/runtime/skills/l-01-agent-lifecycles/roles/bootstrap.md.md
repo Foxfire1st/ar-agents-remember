@@ -49,7 +49,7 @@ The source-owner repair restored the explicit workspace.scratchRoot temporary-fi
 
 
 
-- The packaged Bootstrap copy retains the canonical naming-reader retirement and forbids retire_child outside setup powers. [17]
+- The packaged Bootstrap copy forbids retire_child alongside the other task, role-start and closeout calls outside its setup surfaces. [17]
 
 
 ## Historical original card — preserved, not the current operative account
@@ -175,30 +175,30 @@ No relevant documentation found after checking live sources.
 
 - Canonical source this package-data copy is sync-propagated from. [1]
 
-- The role declares no inherited core blocks — it is a free agent, not a task seat, and is started by a call. [2]
+- Bootstrap is a free agent: a setup role started from the dashboard with no task document, brief or parent; the user starts it with one call from their own chat. [2]
 
 
-- The role's start is a call rather than a dispatch: nothing dispatches this agent, and nothing names its report path.
+- The role's start is a call rather than a dispatch: nothing dispatches this agent, and the launch handover names its report path.
 
 
-- The seat sits outside the task-dispatch transaction as its shape: a task document, gate, packet, or compiled brief is not an input, and its absence is not an error. [4]
+- Bootstrap starts with no task document, brief or parent, never waits for a task document and does not treat its absence as a defect to repair. [4]
 
 
-- The role's instructions are the capsule itself — this page plus the bootstrap operation — and its brief is not a brief. [5]
+- The role's instructions are this file plus the Bootstrap operation; nothing dispatches it. [5]
 
 
-- The permitted-write surface, the stop-and-report cases, and the report's own inline shape, which no template file owns.
+- The permitted-write surface, the stop-and-report cases, and the report's shape, which the Bootstrap report template owns.
 
 - The operation block the role carries: workflow, failure inventory and authority gates. [7]
 - The manifest entry declaring the free-agent altitude, its five tools and its three operations. [8]
 
-- The frozen vocabulary extension that publishes the role and its operation. [11]
+- The capsule vocabulary appends bootstrap to both CAPSULE_ROLES and CAPSULE_OPERATIONS, publishing the role and its operation. [11]
 
 
 - The shipped source checks publish bootstrap as a free-agent role while excluding it from sprint/master/leaf role sets, inspect the source declarations for the same exclusion, and require a nonblank manifest altitude outside those task altitudes. These three cases do not assert a taskless launch/admission route. [12]
 
 
-- The current corpus check explicitly supersedes fixed section order and minimum length with concise, well-formed, self-contained source checks. [13]
+- The corpus check test_every_role_source_is_concise_and_well_formed supersedes fixed section order and minimum length with concise, well-formed, self-contained role-source checks. [13]
 
 
 - The generated copies this file is one of, proved current by the generator's own check. [14]
@@ -237,7 +237,10 @@ by `scripts/sync-skills.py` into this package-owned copy and the eight harness s
 
 </details>
 
-- Bootstrap describes its start as the dashboard call of a parentless free agent; its own report contract requires a durable developer-visible path stated on the report’s first line. [3]
-- The permitted-write surface, the stop-and-report cases, and the report's own inline shape, which no template file owns. [6]
-- Bootstrap starts no role and messages none; developer questions go in its own chat, and it reports the setup state without task-transaction messaging. [15]
-- Bootstrap is a parentless setup/report role: it uses the named setup surfaces, writes one developer-visible report, authors neither onboarding nor knowledge and sends no role messages. [16]
+- Bootstrap writes one report at the launch handover's taskReportPath and states that exact path on the report's first line. [3]
+
+- The permitted surfaces are the five setup tools plus read-only context_packet, server_info and read_ar_files and native state reads; the report's sections and state fields come from the Bootstrap report template. [6]
+
+- Bootstrap starts no role and messages no one; it asks the developer in its own chat and routes no setup finding through a task transaction. [15]
+
+- Bootstrap is a setup/report role: it mutates only through the permitted setup surfaces, starts and messages no role, and authors neither onboarding nor knowledge. [16]

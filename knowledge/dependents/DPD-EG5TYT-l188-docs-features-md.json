@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6db7c75557a5d040db6cc2938c3f8a53f658bebe",
-    "commit": "59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0",
+    "codeTree": "40475ce5dbd82a4b45ebd637b4ffcfa2dc2e7e02",
+    "commit": "81180617aed517835314526b8309d37d5be8b3b7",
     "role": "curator",
-    "statement": "The revised feature page’s package-served skills claim still matches the unchanged shipped_skill_tree provider.",
-    "task": "260928-MIK-L62",
+    "statement": "The revised feature page still states that canonical skills are package-served resources, matching the unchanged shipped_skill_tree provider, and it no longer claims that native instruction files carry a first-action directive.",
+    "task": "260928-MIK-L84",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {

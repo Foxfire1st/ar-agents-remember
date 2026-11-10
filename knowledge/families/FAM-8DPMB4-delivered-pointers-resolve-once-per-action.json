@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "A resolving link can still be a second pointer for one action, a unique pointer can still dangle, and agreeing steps say nothing about either; only together does an agent find one working pointer at each action with honest receipt metadata."
+  },
+  "guarantee": "Every link and anchor that the l-01 skill delivers resolves in the source and in the packaged copy; each native first message carries one pointer per action; the manifest's declared step for a detail names exactly the actions of the pointers to that file; and no core unit links the every-role place that projects it.",
+  "id": "FAM-8DPMB4",
+  "members": [
+    "INV-W6HBYY",
+    "INV-Q2HENX",
+    "INV-HJ5A68",
+    "INV-0V8R02"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "fam-delivered-pointers",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "skills/l-01-agent-lifecycles",
+    "mcp/tests",
+    "mcp/test_support/agents_remember_test_support/testing"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Delivered l-01 pointers resolve, and each action has one"
+}

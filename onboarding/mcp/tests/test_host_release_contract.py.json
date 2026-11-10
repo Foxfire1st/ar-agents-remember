@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "20c836e7a4b2fff1ef94a62c6f1951d5f2e3b29a",
+        "blob": "f50bb8a3613032175dfbd4a66cd4e91f6f1c1b02",
         "content": "sha256:cae0a20a11eb68589ff854a24d2bf73afc0039e7979f9eb7de53bf97010b32ab",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20c836e7a4b2fff1ef94a62c6f1951d5f2e3b29a",
+            "blob": "f50bb8a3613032175dfbd4a66cd4e91f6f1c1b02",
             "content": "sha256:cae0a20a11eb68589ff854a24d2bf73afc0039e7979f9eb7de53bf97010b32ab",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20c836e7a4b2fff1ef94a62c6f1951d5f2e3b29a",
+            "blob": "f50bb8a3613032175dfbd4a66cd4e91f6f1c1b02",
             "content": "sha256:ddba604a888f7451816b1701378764fd98be8fe06eaefae32c1684048ff5c5f3",
             "locator": {
               "kind": "symbol",
@@ -53,7 +53,7 @@
         },
         {
           "anchor": {
-            "blob": "20c836e7a4b2fff1ef94a62c6f1951d5f2e3b29a",
+            "blob": "f50bb8a3613032175dfbd4a66cd4e91f6f1c1b02",
             "content": "sha256:d8d159f3e0f9f92134223b1712c163176e210bb49370b1600873d10d34407b0a",
             "locator": {
               "end": 83,
@@ -70,12 +70,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20c836e7a4b2fff1ef94a62c6f1951d5f2e3b29a",
-            "content": "sha256:4d10b9c9171547e934922978fc16ba8a2c73b31f8e6994f39618d6f8044fb7c3",
+            "blob": "f50bb8a3613032175dfbd4a66cd4e91f6f1c1b02",
+            "content": "sha256:baf46569022e02c0c12a278b0f5efb7f0e0ebe322ead71b6dd9a5c4fc7a8ef9d",
             "locator": {
-              "end": 167,
-              "kind": "line_range",
-              "start": 128
+              "kind": "symbol",
+              "name": "test_retired_selector_notice_once_on_each_public_command_and_dashboard_line"
             }
           },
           "kind": "test"

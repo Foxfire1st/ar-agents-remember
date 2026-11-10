@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Route overview](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
@@ -13,7 +13,7 @@ Runs one bounded JavaScript bridge command and interprets its one JSON reply.
 bridge_call sends prompt/payload as stdin data and stops a process at 60 seconds. _bridge_environment removes inherited PASEO/AR_PASEO values, then supplies configured URL, home server ID, pin and deadline. Missing settings/identity refuse before process start; unreadable replies, replacement-decoded output and bounded fatal lines remain named failures.
 
 
-**L184 — NEW-LIMIT-FROM-REPORT-ONLY, corrected.** This is the dynamic reply adapter, not a typed one: `bridge_call` returns an unrestricted `dict[str, Any]` decoded from the bridge's JSON reply, so a field it does not describe is still carried instead of being refused, and no strict usage DTO is declared here. The Python branch is the configuration adapter; the bounded subprocess, environment, identity and deadline guarantees above stand. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+This is the dynamic reply adapter, not a typed one: `bridge_call` returns an unrestricted `dict[str, Any]` decoded from the bridge's JSON reply, so a field it does not describe is still carried instead of being refused, and no strict usage DTO is declared here. The Python branch is the configuration adapter; the bounded subprocess, environment, identity and deadline guarantees above stand.
 
 ## Bounded bridge calls (MIK-R76)
 
@@ -30,9 +30,11 @@ closing archive budget.
 
 ## Evidence
 
-- Frozen implementation of bridge_call supporting the stated file behavior. [1]
+- The implementation of bridge_call supporting the stated file behavior. [1]
+
 - Frozen implementation of _bridge_environment supporting the stated file behavior. [2]
 - Frozen implementation of _configured_server_id supporting the stated file behavior. [3]
+
 - Checks exact endpoint/server-id environment and removal of inherited PASEO/AR_PASEO values. [4]
 
 - Checks absent settings or home server-id start no process. [5]
@@ -40,11 +42,14 @@ closing archive budget.
 - Exercises different/missing connected server identity and named refusal with reconnect disabled. [6]
 
 
-## 260928-MIK-L96 Node and remedy text
+## The Node a bridge call runs on
 
-The bridge starts the product's Node by its full path instead of looking for `node` on `PATH`; a missing product Node is named as the install step's state. The remedy that used to say the Paseo bridge needs Node.js on PATH now names the install step, and the not-installed text names the install step while the not-configured text keeps its own meaning.
+The bridge runs its script on a Node named by full path, never on `node` from `PATH`. `serving/paseo/paseo_running_node.communication_node` picks this build's product Node when it is installed, otherwise the Node executable of the owned running host that the host's process record and live process prove; it grants no right to start a host on that older Node. With neither Node present the call fails `node_not_installed`, naming `runtime_install` and the provision command; other selection failures are `paseo_bridge_unavailable`. The not-configured text keeps its own meaning.
 
-- The bridge launch that starts the product's Node by full path with the packaged script and names this build's install state. [7]
+After the bridge answers, the call reads the owned host's process. When that host runs on another Node than this build's, the reply carries `node`, `nodeExecutable`, `restartRequired: ["node"]` and the terminal provision `restartRemedy` beside the answer; it is not a refusal. A host that exits or cannot be read after answering leaves the reply unchanged.
+
+- The bridge launch runs the packaged script on the communication Node, maps a missing Node to `node_not_installed`, and adds the host's restart reason and remedy to an answered reply. [7]
+- The communication Node is the product Node, else the proven running host's Node, else `node_not_installed`. [10]
 
 - The configured-runtime requirement the bridge enforces before any process starts. [8]
 

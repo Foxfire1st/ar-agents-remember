@@ -190,7 +190,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7abd6ad79f05d4928c2eb63e7beea399853a5e59",
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
             "content": "sha256:8f09e6eb513ec1e3b96652de09519b0d96ef811cbc36202bf17ca56fc631bb35",
             "locator": {
               "kind": "symbol",
@@ -202,12 +202,12 @@
         },
         {
           "anchor": {
-            "blob": "7abd6ad79f05d4928c2eb63e7beea399853a5e59",
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
             "content": "sha256:d29922ee58fb7322040679a9cefe25226867202ca615df89397420548dc95040",
             "locator": {
-              "end": 54,
+              "end": 51,
               "kind": "line_range",
-              "start": 44
+              "start": 41
             },
             "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
           },

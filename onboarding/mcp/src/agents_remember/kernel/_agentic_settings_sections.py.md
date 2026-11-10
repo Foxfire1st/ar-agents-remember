@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[MCP package overview](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
@@ -16,7 +16,7 @@ Parses role/default and other agentic settings sections.
 
 `_parse_harnesses` returns two parts: the effective harness IDs (the built-in ID prefix followed by settings-added IDs) and each harness's `extraArgs` entries, which are handed on beside the IDs rather than folded into them. Entries must remain objects with known legacy execution keys, but those fields are not read or validated as execution choices. `_parse_roles` likewise admits unused legacy launch/session keys without placing them in `RoleKnobs`, and it admits a role's `extraArgs` only where `_require_extra_args_place` allows it: never for a confined capability, and never for a named harness that takes no extra arguments in this build. The host catalog validates actual launch choices later; neither retained vocabulary nor ignored input is a native adapter fallback.
 
-L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any other value. CCR-R22@v1 (L22, commit `685f83c44055`) removed the executor key from the quality gate parser entirely: `_parse_quality_gate` now rejects any `executor` key as an unknown key (fail loud via the shared machinery) and returns `QualityGateSettings(memory_cap_bytes=...)` only -- executor identity belongs to the repository certification profile.
+`_parse_quality_gate` rejects any `executor` key as an unknown key (fail loud via the shared machinery) and returns `QualityGateSettings(memory_cap_bytes=...)` only -- executor identity belongs to the repository certification profile.
 
 - `_parse_loops`
 - `_parse_loop_defaults`
@@ -31,25 +31,22 @@ L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any
 - `_parse_service_tier`
 - `_resolve_role_keys`
 - `_parse_spawn`
-- `_parse_quality_gate` (260731-EFA-L17/L24: `orchestration.qualityGate`,
+- `_parse_quality_gate` (`orchestration.qualityGate`,
   absent/empty means adapter-runtime-managed, fail-loud unknown keys, positive-int
-  `memoryCapBytes` when present; CCR-R22 removed the `executor` key)
+  `memoryCapBytes` when present; no `executor` key)
 
 ### Role Runtime and Scope
 
-_parse_service_tier accepts only a nonempty string when serviceTier is present; Boolean fast flags or blank/wrong-shaped values refuse. _parse_roles places it in RoleKnobs for normal and per-altitude settings. Actual provider feature capability is validated at native launch, not guessed during config parsing. `_parse_roles` now also reads optional `mode`/`notes` text and a `featureValues` map of booleans or nonempty option ids into RoleKnobs, and harness ids are shape-checked free strings while catalog validation stays at launch; the `harness_ids` parameter is gone from `_parse_roles`/`_parse_roles_per_level`.
+_parse_service_tier accepts only a nonempty string when serviceTier is present; Boolean fast flags or blank/wrong-shaped values refuse. _parse_roles places it in RoleKnobs for normal and per-altitude settings. Actual provider feature capability is validated at native launch, not guessed during config parsing. `_parse_roles` now also reads optional `mode`/`notes` text and a `featureValues` map of booleans or nonempty option ids into RoleKnobs, and harness ids are shape-checked free strings while catalog validation stays at launch; `_parse_roles`/`_parse_roles_per_level` take no `harness_ids` parameter.
 
 
-**L184 — NEW-R192-EXTRA-ARGS.** The section definitions are the shape a settings file is read as, so the three-value rule is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
-
-## 260731-EFA-L17/L24 Quality-Gate Parser
+## Quality-Gate Parser
 
 `_parse_quality_gate` parses `orchestration.qualityGate` into
 `QualityGateSettings`: an absent family/key keeps `memory_cap_bytes=None`, unknown keys
 fail loud via `_refuse_unknown(block, KNOWN_QUALITY_GATE_FIELDS, ...)`, and
-`memoryCapBytes` must be a positive integer (`_require_positive_int`). Since CCR-R22 the
-former `executor` key is no longer a known field: any value under it is rejected as an
-unknown key (the old permissive `dagger`-only acceptance branch was deleted). A `null` at the
+`memoryCapBytes` must be a positive integer (`_require_positive_int`). `executor` is not a
+known field: any value under it is rejected as an unknown key. A `null` at the
 family key is refused by `_refuse_null_families` before this parser runs.
 
 ## Invariants And Boundaries
@@ -65,6 +62,11 @@ _parse_step_up admits only ordinary KNOWN_ROLE_LAUNCH_FIELDS plus afterTries. af
 Choice shape remains nonempty harness/model/effort strings, optional mode/notes text and boolean/nonempty-option feature values. Host capability validation and effective no-op checks remain later boundaries; repository stepUp authority is refused by the loader, not silently honored by this parser.
 
 Loop budgets, quality memoryCapBytes-only parser, landing timeout and accepted-unused legacy execution keys retain their existing distinct contracts.
+
+`_parse_roles` skips a row keyed by a removed role name (`UNUSED_ROLES`: `designer`, `strategist`) without checking its shape, so it never becomes `RoleKnobs`; `_parse_loop_levels` drops a `portfolio` posture of `strategist` and keeps every other nonempty posture string.
+
+- A portfolio strategist posture is dropped; other postures stay open strings [10]
+- Removed role rows are skipped before shape checks [11]
 
 ## Evidence
 
@@ -90,33 +92,32 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 
 - Frozen implementation of _parse_service_tier supporting the stated file behavior. [1]
 
-## L23 Final Candidate Disposition
+## Quality Executor Ownership
 
 The quality section parses only optional `memoryCapBytes`; every `executor` key is refused as unknown. Executor identity is profile-owned, not a parser-selected adapter.
 
-## R39 Dagger-Only Settings Refusal
+## Dagger-Only Settings Refusal
 
 The parser accepts no executor key, including a Dagger-valued key. The optional positive cap is resource-policy data; adapter execution policy is owned outside this parser.
 
-## CCR-L42 current candidate
+## Review Round Budget
 
-`_parse_loop_defaults` accepts every positive whole-number `maxRounds` and uses `DEFAULT_LOOP_MAX_ROUNDS` when absent. It no longer checks a hard ceiling. Zero, negative numbers, fractions and booleans still fail through `_require_positive_int` with the settings field; reviewer reuse and complexity parsing are unchanged.
+`_parse_loop_defaults` accepts every positive whole-number `maxRounds` and uses `DEFAULT_LOOP_MAX_ROUNDS` when absent, with no upper ceiling. Zero, negative numbers, fractions and booleans still fail through `_require_positive_int` with the settings field; reviewer reuse and complexity parsing are unchanged.
 
 ## Investigator scope and request identity
 
 The one earlier role key and canonical Investigator key are compared within each settings file before layering. Equal effective values normalize once; conflicting values refuse with the shared role-alias notice rather than choosing a winner. Stored settings files are not rewritten and no additional aliases are admitted.
 
 
-
-- The current source implements this file’s stated Investigator boundary. [3]
-
+- The earlier `system-specialist` key and the canonical Investigator key are compared within one settings file: equal content normalizes once and different content refuses. [3]
 
 
 ## Refreshed current evidence
 
 
-- Frozen implementation of _parse_roles supporting the stated file behavior. [2]
-
+- `_parse_roles` resolves the role keys, skips removed role rows and builds one `RoleKnobs` per role. [2]
 
 
 - `_resolve_role_keys` admits `CAPABILITY_IDS` keys beside the role keys, which is how a capability's launch block passes the unknown-key refusal without becoming a dispatchable seat. [9]
+
+- `_resolve_role_keys` also admits the removed role names in `UNUSED_ROLES`, so an old `designer` or `strategist` row passes the unknown-key refusal as an inert key [12]

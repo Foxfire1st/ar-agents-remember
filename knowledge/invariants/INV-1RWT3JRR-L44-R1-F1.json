@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The family’s promise to show only regions established in the recorded blob requires an out-of-bounds line range to remain unresolved instead of displaying invented lines."
+  },
   "applicability": "Anchor observations of a recorded line_range locator on the exact recorded blob.",
   "conditions": [
     "The blob's lines are read from the requested tree's exact recorded blob."

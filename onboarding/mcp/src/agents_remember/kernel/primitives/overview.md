@@ -2,7 +2,7 @@
 
 ## What This Area Is
 
-This directory owns the shared runtime configuration, checkout coordination isolation, gate policy and vocabulary, provider identity, optional memory-cap planning, drift snapshot and observer paths, command capture, tool reports, provider-degradation settings, version identity, and host authority primitives. Higher layers consume these definitions without making the primitive owners depend on MCP, controlplane, providers, or worktrees.
+This directory owns the shared runtime configuration, checkout coordination isolation, gate policy and vocabulary, provider identity, optional memory-cap planning, drift snapshot and observer paths, command capture, tool reports, provider-degradation settings, version identity, the user-config locations of the role settings file and the MCP settings file, and host authority primitives. Higher layers consume these definitions without making the primitive owners depend on MCP, controlplane, providers, or worktrees.
 
 ## Hot Path Summary
 
@@ -20,6 +20,8 @@ directExecutionEnabled is ignored for every value and warned when trusted settin
 > The runtime record and parser live in kernel so consumers can share configuration without importing the MCP package. The record separates repository and provider scopes, gate policy, dashboard settings, degradation settings, retirement settings and tool-log settings. The Paseo runtime is read through the shared authority reader rather than stored as a boot snapshot.
 
 The host primitives comprise the packaged host/Node contract, release-owned Node paths, the active MCP authority-file reader, the session-environment filter, and the strict Paseo settings parser. Node path selection requires Linux x86_64 with `/proc`. A configured Paseo block requires `installPrefix`, `home`, `listen`, `providers` and `embed`; `version` is optional and does not select a build. The authority reader uses the `paseoRuntime` block of the server's own `--config` settings file and reads it per use, with no user-settings or per-harness fallback. The environment filter removes named session variables plus the `PASEO_` and `AR_SPAWN_` prefixes, while retaining unrelated login/configuration variables.
+
+`user_settings_location.py` names the user's role settings file (`agents-remember/settings.json` under `XDG_CONFIG_HOME` or `~/.config`) and refuses its old coordination-root location; `mcp_settings_location.py` places the separate MCP settings file, `agents-remember-settings.json`, in that same directory. Command-line config discovery and the install-time settings copy both select that one user-config file, independently of the working directory.
 
 Model, effort and service tier are separate role settings. The agentic settings records and parsers preserve those fields and their settings precedence; the native CLI catalog owner resolves their provider/model scope and refuses selections the host does not offer. Effort remains model-bound and requires a selected model. These primitives do not themselves perform launch or establish host readiness.
 
@@ -49,6 +51,7 @@ Other modules provide command-module output capture, drift snapshot path/removal
 | `tool_reports.py` | Bulk tool-report retention/redaction. |
 | `version.py` | Installed package identity with an explicit metadata-or-source fallback resolver. |
 | `fresh_host.py` | The five-key `paseoRuntime` host block a cold settings file receives. |
+| `mcp_settings_location.py` | The MCP settings file location, beside the user's role settings file in the user config directory. |
 
 The host modules described above and `user_settings_location.py` also belong to this directory; the preserved inventory table predates those entries.
 
@@ -129,6 +132,7 @@ The following route and onboarding tables are retained metadata. Their `covered`
 | `provider_degradation_settings.py` | [`provider_degradation_settings.py.md`](provider_degradation_settings.py.md) | covered | Degradation settings. |
 | `tool_reports.py` | [`tool_reports.py.md`](tool_reports.py.md) | covered | Tool reports. |
 | `version.py` | [`version.py.md`](version.py.md) | covered | Version identity. |
+| `mcp_settings_location.py` | [`mcp_settings_location.py.md`](mcp_settings_location.py.md) | covered | MCP settings file location. |
 
 ## Child Overviews
 
@@ -237,13 +241,13 @@ None.
 
 - Runtime configuration owns repository/profile parsing and reads shared host authority per use. [5]
 
-[6] mcp/src/agents_remember/kernel/_agentic_settings_core.py — code file
+[6] mcp/src/agents_remember/kernel/_agentic_settings_core.py — lines 435-464
 
-- Agentic settings keep model, effort and service tier separate and resolve role settings precedence; this file also contains the disclosed upward model import. [6]
+- Agentic settings keep model, effort and service tier as separate role knobs and resolve the role-settings precedence (level override over role default). [6]
 
-[7] mcp/src/agents_remember/kernel/_agentic_settings_sections.py — code file
+[7] mcp/src/agents_remember/kernel/_agentic_settings_sections.py — lines 252-271
 
-- Role settings parsers shape-check independent fields; quality-gate caps remain optional. [7]
+- Role settings parsers shape-check each independent field of a role row. [7]
 
 [8] mcp/src/agents_remember/kernel/primitives/paseo_authority.py — symbol load_authority_paseo_runtime
 
@@ -306,3 +310,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.p
 - The five-key host block a cold settings file receives. [22]
 
 - Control vocabulary is a zero-internal-import owner of receipt/store/log names and bridge outcome bytes shared by execution, application, explainer and serving seams. [23]
+
+- The MCP settings file sits beside the user's role settings file [24]
+- Command-line discovery selects the MCP settings file from the user config directory [25]

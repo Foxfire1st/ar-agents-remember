@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
-        "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
+        "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+        "content": "sha256:650e3921322b752568ef34c5bfe590d313d8c8f0150059d05d61392ffc668e94",
         "locator": {
           "kind": "file"
         }
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
-        "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
+        "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+        "content": "sha256:650e3921322b752568ef34c5bfe590d313d8c8f0150059d05d61392ffc668e94",
         "locator": {
           "kind": "file"
         }
@@ -38,8 +38,27 @@
     },
     {
       "anchor": {
-        "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
-        "content": "sha256:dce445b9c5221bd0d4deb183d855826142a7c31f1443b2db5f00d4157064716a",
+        "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+        "content": "sha256:53d2638b897f7aeb49028d4492a9a5718fc70aaceadfc655491a152944d68949",
+        "locator": {
+          "end": 46,
+          "kind": "line_range",
+          "start": 44
+        }
+      },
+      "id": "RLZ-Q6805W",
+      "invariant": "INV-B3FPFJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This --config help now says that an omitted --config reads the user settings file under XDG_CONFIG_HOME or ~/.config, whatever the current directory, as discover_config() does; at A010 it claimed working- or current-directory discovery.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+        "content": "sha256:a86c8995cd82bf4343cb85f86c75fa431f88445dc685e5cd88c47d626d006c6b",
         "locator": {
           "kind": "symbol",
           "name": "run"
@@ -57,14 +76,15 @@
   ],
   "references": {
     "1": {
-      "note": "CLI declarations make --contract optional for the two fixer admissions and keep --document as a repeatable per-call selection.\n\nAnchor: `add_arguments`",
+      "note": "CLI declarations make --contract optional at the parser (required except for --fix on the configured memory root before its first attributed baseline) and keep --document as a repeatable per-call selection.",
       "targets": [
         {
           "anchor": {
-            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
-            "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
+            "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+            "content": "sha256:45817c349df65c2cf8422ae8639486a5c316aed1d48a439541c497e5c4151ccc",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "add_arguments"
             }
           },
           "kind": "code"
@@ -72,25 +92,16 @@
       ]
     },
     "2": {
-      "note": "Dispatch requires a contract for modes other than fix and forwards the fixer's optional contract to its application owner.\n\nAnchor: `run`",
+      "note": "Dispatch requires a contract for modes other than fix and forwards the fixer's optional contract to its application owner.\n\nAnchor: `citation_fix_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
-            "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
+            "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+            "content": "sha256:1ff20cca07e028513474c653d91c581249e54cc3343fed6b57e51da8769df433",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
-            "content": "sha256:dce445b9c5221bd0d4deb183d855826142a7c31f1443b2db5f00d4157064716a",
-            "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "end": 119,
+              "kind": "line_range",
+              "start": 97
             }
           },
           "kind": "code"
@@ -139,25 +150,16 @@
       ]
     },
     "5": {
-      "note": "The --document help states the converted form: --document alone.\n\nAnchor: `add_arguments`",
+      "note": "The --document help states the converted form: --document alone.",
       "targets": [
         {
           "anchor": {
-            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
-            "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
+            "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+            "content": "sha256:48bef87050aa3b105cb5a2037185187a818f51b02fda1368fd0694febfd9a3dd",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
-            "content": "sha256:3a37719e3e1cec8ff5224140c9ccaf38c09ab4bf683b81f3d5df821c4ce08f14",
-            "locator": {
-              "kind": "symbol",
-              "name": "add_arguments"
+              "end": 66,
+              "kind": "line_range",
+              "start": 55
             }
           },
           "kind": "code"
@@ -165,22 +167,12 @@
       ]
     },
     "6": {
-      "note": "The CLI declares report/fix and optional contract with repeatable document selection.\n\nAnchor: `add_arguments`",
+      "note": "The CLI declares report/fix and optional contract with repeatable document selection.",
       "targets": [
         {
           "anchor": {
-            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
-            "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
-            "content": "sha256:3a37719e3e1cec8ff5224140c9ccaf38c09ab4bf683b81f3d5df821c4ce08f14",
+            "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+            "content": "sha256:45817c349df65c2cf8422ae8639486a5c316aed1d48a439541c497e5c4151ccc",
             "locator": {
               "kind": "symbol",
               "name": "add_arguments"

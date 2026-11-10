@@ -1,0 +1,76 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/memory-handover.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Reviewer compares base and candidate trees in Git; the Curator records no comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc3db2ea07da3101fabdcc6c9ca966d1bc163825",
+            "content": "sha256:e7f572b482e62f26806629cddd2811295383ecc2cceaa97d24f313def6ab4716",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each handover names the leaf, code head, change hash, memory candidate, report path and whole next stretch, and the memory-lane rules come from the review operation's boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc3db2ea07da3101fabdcc6c9ca966d1bc163825",
+            "content": "sha256:64c162d625ca9dd469d265a57891b223564256b3320d448c40c51e09a169877a",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Findings and verdicts travel directly between Reviewer and Curator, without a Manager relay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc3db2ea07da3101fabdcc6c9ca966d1bc163825",
+            "content": "sha256:9d1da7897710c3dcd3210bea6cfa3c71b10173566fb49f5043a454ad9e4f48dc",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The review operation's boundaries hold the memory lane's separate reports, identifiers and pass count.\n\nAnchor: `reviewKind=memory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "content": "sha256:4e6bf8994a2889ebd2ead57252c36edc23ec9aaf19e314edbdf5f8746ae40f19",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

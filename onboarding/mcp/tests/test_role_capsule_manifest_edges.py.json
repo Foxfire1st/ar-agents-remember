@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_role_capsule_manifest_edges.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "76323c843ed21f293723f053fcc5b375b377d255",
+        "content": "sha256:b6d6d9ec61512564716e5e1456dd7f2f820f06db6499ed7e981c4f9f5cbce8db",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_structured_shared_digest_is_delivered_once_and_seals_each_role"
+        }
+      },
+      "facet": "Compiles every shipped role and operation pair and finds the digest text exactly once in the rendered first message and never as a capsule block.",
+      "id": "PRF-S4KAMN",
+      "invariant": "INV-40JW44",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 shared digest",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,11 +26,139 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
             "content": "sha256:1aee787b1b1f9ba42a6e85c9de08d79e89e3cb96a0ddcc1d87533586adcb81e0",
             "locator": {
               "kind": "symbol",
               "name": "test_launch_refuses_malformed_audience_markers_after_common_or_excluded_passages"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Every digest place, clause and unit has exactly one home with matching hashes, headings and audiences; lost or ambiguous bindings fail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
+            "content": "sha256:6891b5cbeb21d3fab384d46b85872473e4a7637ab70bd404ab62483e8f4cbc91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_digest_places_reject_lost_or_ambiguous_bindings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Clause and unit audiences match the role prefixes the digest delivers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
+            "content": "sha256:2e72c1f04f772b8c01af5d847427a74ec4e1703470f1e12b6beee24cc5bcb05d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_digest_line_and_unit_audiences_match_the_delivered_prefixes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The every-role digest is delivered once outside the capsule instructions and seals each role's semantic digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
+            "content": "sha256:b6d6d9ec61512564716e5e1456dd7f2f820f06db6499ed7e981c4f9f5cbce8db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_structured_shared_digest_is_delivered_once_and_seals_each_role"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Retired core units require the exact recorded retirement decision and carry no live binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
+            "content": "sha256:bbbd4185f5763ca85c51e05eb799a59ef4ac87d37b56dc262a3f75f5e079ea90",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retired_core_units_require_the_exact_admitted_decision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The Git-root scope rule has one complete source unit and one digest home for every role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
+            "content": "sha256:1e7fea68b86660ec1128c1073ac4fadc3b03a7fbaa85f9a80b1624b675064718",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_git_root_scope_has_one_complete_source_and_digest_home"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The Reviewer's complete-diff rule stands inline once in its role file and not in the knowledge-use detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
+            "content": "sha256:727b5f8d80bd28da9d03183746594f89d4e2df82922e6c5c2597568921a68bc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reviewer_complete_diff_rule_stays_inline_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The Architect's template pointers must survive compilation; a removed or displaced pointer fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
+            "content": "sha256:d90c5ae7c5c2ff182f45362846c677ff576fdaf0f8f3811337e258e88dcfaf6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_architect_ordinary_template_reach_rejects_compiled_pointer_loss"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The Curator's inline workflow paragraphs must reach its delivered Normal workflow; a removed paragraph fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
+            "content": "sha256:68d0d049472c247b77bd1481d0933bcb3b047acd7eb6cc1274af53af54f69574",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_curator_inline_workflow_rejects_compiled_owner_paragraph_loss"
             }
           },
           "kind": "test"
@@ -23,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
             "content": "sha256:880ffd52d0f2cf6093efe6e5f093589d3e3edfa8b37b6fa09509de74588f29ad",
             "locator": {
               "kind": "symbol",
@@ -39,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
             "content": "sha256:f7a8c15b128fbbe1b94d7a56c9f2dc633b53a08a88d26208df3d825d6c4dbd50",
             "locator": {
               "kind": "symbol",
@@ -55,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
             "content": "sha256:bf01b4cfe9a9ddff0257e9be358654f654a4d12a74732e1238bf18e5694a751e",
             "locator": {
               "kind": "symbol",
@@ -71,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
             "content": "sha256:eb7345d4fc079e261dd4ccdcb3ed61ae3cfe65bc41d803f477c155d7ea148a7b",
             "locator": {
               "kind": "symbol",
@@ -87,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
             "content": "sha256:a5bd4a6fd2dcc6ff5a853f1d1b99e516dd8a5370050380bdaead27722c897a0c",
             "locator": {
               "kind": "symbol",
@@ -103,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
             "content": "sha256:d30a4ab35d65243f4831bef69681de90577243916998e9dc48e4e03bfd01ce5b",
             "locator": {
               "kind": "symbol",
@@ -119,7 +266,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
             "content": "sha256:43e607fc7ca33f080a794c760c1014fa2cbfed04c0ecea65b79028012ac92a46",
             "locator": {
               "kind": "symbol",
@@ -131,112 +278,15 @@
       ]
     },
     "9": {
-      "note": "Real-corpus cases bind Investigator concern review, coordination progress judgment and Architect measurement details to declared source, audience and exact step. The frozen core-unit map checks each range digest and exact non-heading line coverage. Inherited detail audiences retain source and undeclared-file negative controls. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "note": "Real-corpus cases bind the Investigator's instruction-shortfall review, the Architect's and Manager's third-rejected-round progress judgment and the Architect's Curator-measurement detail to their declared source, roles and step and to the exact read action that links them, with clause-removal and displaced-action controls. The frozen core-unit map checks each range digest and exact non-heading line coverage. Inherited detail audiences retain source and undeclared-file negative controls. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
-            "content": "sha256:25eee38cd9723b571439fa9332a07fb16e0d424b57a6da9712450925ed4a9b55",
+            "blob": "76323c843ed21f293723f053fcc5b375b377d255",
+            "content": "sha256:4f7bc803481f1cb1a1d0ec32ff03f3339cc9fb1df84e761f5e003338db859c8c",
             "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 3
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
-            "content": "sha256:7fe7f6e633bb2f86158379843a31405f96816dfe87df112c56eb3a017cfd1068",
-            "locator": {
-              "end": 24,
-              "kind": "line_range",
-              "start": 17
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
-            "content": "sha256:40f6abc82a7132f2f6ffe63aaa8c514f57111f9a49253bba99669d2beea6c01b",
-            "locator": {
-              "end": 87,
-              "kind": "line_range",
-              "start": 57
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
-            "content": "sha256:758b6016d4a4d07f995289b1818ee89b8232df6a931656eedf9b8b81f6adfdbe",
-            "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 90
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
-            "content": "sha256:ac1481ef42a12b1bb60a25a4d86308886c5b7e842fc63c2f07070d2e2beda325",
-            "locator": {
-              "end": 141,
-              "kind": "line_range",
-              "start": 109
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
-            "content": "sha256:2a3f398ba3af515efbc79a27dfaaee33a31e7d67bdbde3b75c6f8b94cd4de33d",
-            "locator": {
-              "end": 427,
-              "kind": "line_range",
-              "start": 401
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
-            "content": "sha256:c999b2054f08b466bb0881171aca88d3a9fb1457e5b8ab4212862fca45e081ea",
-            "locator": {
-              "end": 465,
-              "kind": "line_range",
-              "start": 430
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
-            "content": "sha256:716107356d2edf2f344fc6daafa506d146b0f7fa37c0394d530e59747021226b",
-            "locator": {
-              "end": 501,
-              "kind": "line_range",
-              "start": 468
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "22ac9dafb61b129dd642fe5b314dd96752b159c2",
-            "content": "sha256:d2a5a66ada61835a26c21d836295d4d93b0fae3c1bdf9fb7dc118c5623520f3f",
-            "locator": {
-              "end": 564,
-              "kind": "line_range",
-              "start": 504
+              "kind": "symbol",
+              "name": "test_progress_judgment_detail_reaches_all_declared_coordination_seats"
             }
           },
           "kind": "test"

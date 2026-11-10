@@ -40,12 +40,12 @@
         },
         {
           "anchor": {
-            "blob": "7abd6ad79f05d4928c2eb63e7beea399853a5e59",
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
             "content": "sha256:2cd15437ec639793c5a7cfcfffd4ecc59bd42ec05134e11abc18b28a1c8202ad",
             "locator": {
-              "end": 41,
+              "end": 38,
               "kind": "line_range",
-              "start": 40
+              "start": 37
             },
             "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
           },
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7abd6ad79f05d4928c2eb63e7beea399853a5e59",
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
             "content": "sha256:ab7694ae876f83cd557719f29cc32a5e66c3a017411e6b0edfcf414ce450efba",
             "locator": {
               "kind": "symbol",

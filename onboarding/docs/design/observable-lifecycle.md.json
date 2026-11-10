@@ -44,14 +44,16 @@
       ]
     },
     "3": {
-      "note": "R113 marks the entire observable-lifecycle design as historical: the session lifecycle, raised developer gates and product-owned agent hosting are removed. The earlier R112 session-driven transition account is superseded as present intent. The current tool surface is separately owned by docs/reference/mcp-tools.md; this retained design source grants no restored transition or execution acceptance.\n\nAnchor: `docs/design/observable-lifecycle.md`",
+      "note": "R113 marks the entire observable-lifecycle design as historical: the session lifecycle, raised developer gates and product-owned agent hosting are removed. The earlier R112 session-driven transition account is superseded as present intent. The current tool surface is separately owned by docs/reference/mcp-tools.md; this retained design source grants no restored transition or execution acceptance.\n\nAnchor: `MIK-R113`",
       "targets": [
         {
           "anchor": {
-            "blob": "ed196c9e349d46271a38ab6a543fb27f6a21c07a",
-            "content": "sha256:239f3277267892dc8f3a02760419e3292a63392136362d4e6660328a3513fe91",
+            "blob": "66849a0b573249f620bfbe8d70538cd8ae11cd38",
+            "content": "sha256:5e9576821abdf68601076a736b8e5c8192441fb7b8527cc463ea1cb99bc995cd",
             "locator": {
-              "kind": "file"
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
             }
           },
           "kind": "code"

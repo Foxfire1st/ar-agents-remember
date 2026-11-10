@@ -1,0 +1,76 @@
+{
+  "path": "skills/l-01-agent-lifecycles/capsule-budgets-d694.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Schema, decision scope and frozen hashes.\n\nAnchor: `scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f62977d0de63b77b2df24a5d26d17d09e061388",
+            "content": "sha256:76e4202d1a3d82dc863930e2d233b8f065d04612041a80ff612520b26bf37bd4",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Capsule and step-detail limits, including Designer and Strategist rows and flat reference names.\n\nAnchor: `current_limits`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f62977d0de63b77b2df24a5d26d17d09e061388",
+            "content": "sha256:424e679e09f64cabcf3ff3408f064925da25d75e64d9a3874de55511267bff35",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Ceilings and new-source budgets.\n\nAnchor: `current_capsule_ceilings_words`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f62977d0de63b77b2df24a5d26d17d09e061388",
+            "content": "sha256:4bfbcd456b6c23f037d8cdadb1960af1ed9b6d218eeb47ef17d653e5a230731e",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current record binds this file by hash.\n\nAnchor: `predecessorD694Sha256`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2978e0cc1e1cae259462842bfa712621afc46151",
+            "content": "sha256:1a17fc62e5b7ac74c11d6ae23d667397f3cb199f7af901907cac57d25f4cdb97",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

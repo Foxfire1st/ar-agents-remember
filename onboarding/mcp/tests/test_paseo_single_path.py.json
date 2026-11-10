@@ -7,10 +7,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "afe143a49dbda9e1f08ea03ea827645b2e28ae9d",
-            "content": "sha256:2e6afa2fb39a18355b50ee91c9198e0f3bab8ff4949e57072ce24a78d71e97b9",
+            "blob": "3fbc466472ad969f11c207a3a8a45ca5d36009ba",
+            "content": "sha256:1722d22b7eb7a4230a1f1caa8a2bbd3670687b1fd0913477826a363fd35a1464",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_only_the_bridge_and_the_runtime_commands_reach_paseo"
             }
           },
           "kind": "test"
@@ -18,14 +19,15 @@
       ]
     },
     "2": {
-      "note": "The single-path cases as they apply to the host modules.\n\nAnchor: `SinglePathTests`",
+      "note": "The single-path cases as they apply to the host modules.",
       "targets": [
         {
           "anchor": {
-            "blob": "afe143a49dbda9e1f08ea03ea827645b2e28ae9d",
-            "content": "sha256:2e6afa2fb39a18355b50ee91c9198e0f3bab8ff4949e57072ce24a78d71e97b9",
+            "blob": "3fbc466472ad969f11c207a3a8a45ca5d36009ba",
+            "content": "sha256:acb0c31f779456b25c85824a41f9a43e8f7a2f5c3bfdb52407982d304df9ce70",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "SinglePathTests"
             }
           },
           "kind": "test"
@@ -37,11 +39,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "afe143a49dbda9e1f08ea03ea827645b2e28ae9d",
-            "content": "sha256:2e6afa2fb39a18355b50ee91c9198e0f3bab8ff4949e57072ce24a78d71e97b9",
+            "blob": "e8862ff64178b6ef7a65e430a850f22e0b30dacf",
+            "content": "sha256:c0f96035095a6cafee6a525b8304484c3630e793efab340e18e7eb22a34b7dd6",
             "locator": {
-              "kind": "file"
-            }
+              "end": 59,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/tests/paseo_allowance_table.py"
           },
           "kind": "test"
         }
@@ -52,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "afe143a49dbda9e1f08ea03ea827645b2e28ae9d",
+            "blob": "3fbc466472ad969f11c207a3a8a45ca5d36009ba",
             "content": "sha256:764777268f10706986680e8c2d1f7545ffc5ca250585083ddcb938adab188703",
             "locator": {
               "end": 264,

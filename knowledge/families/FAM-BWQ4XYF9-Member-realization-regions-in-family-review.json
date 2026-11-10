@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Recorded-blob range resolution, required claim explanations and matching server/client fields together make each family-member source inspectable on its own recorded side without guessed regions; no member preserves that end-to-end attribution alone."
+  },
   "guarantee": "In a family review, every member's realization claim is shown on each side with the exact region that side's anchor resolver established in the exact recorded blob -- or an explicit statement that no region was established -- together with the claim's stored role and rationale; no region is ever guessed, read from prose, or placed on bytes the side did not find at the recorded path.",
   "id": "FAM-BWQ4XYF9",
   "members": [

@@ -383,21 +383,8 @@
       ]
     },
     "112": {
-      "note": "The two MCP payload builders are declared at these entry points.\n\nAnchor: \"def skills_install_payload(\"; \"def task_reopen_payload(\"",
+      "note": "The `task_reopen_payload` MCP payload builder is declared at this entry point; no `skills_install_payload` builder exists. Anchor: \"def task_reopen_payload(\"",
       "targets": [
-        {
-          "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:6a2aa5d982d228a0fd23c7f86da65caf86d85ce653aba78bb3e8e3d8bc987bd7",
-            "locator": {
-              "end": 162,
-              "kind": "line_range",
-              "start": 162
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/core.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "f831067a0a889a37f8501c831dbcefa3aa86540d",
@@ -418,11 +405,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
-            "content": "sha256:f2255e93851cd6bd0da5c5ad433f8ba26b7e65963b82470e14643e1406607308",
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:ad3bf78d4645f124ffffb64871cd3a6578a8abd6d974757dec64dfda336272e0",
             "locator": {
-              "kind": "symbol",
-              "name": "ResponseModel"
+              "end": 87,
+              "kind": "line_range",
+              "start": 63
             },
             "path": "mcp/src/agents_remember/models/base.py"
           },
@@ -2343,14 +2331,15 @@
       ]
     },
     "243": {
-      "note": "Historical pre-L109 test anchors for the older published-intent/legacy-format route. Current test_unconverted_memory_names_no_card and repeated-call controls instead demonstrate no card for unconverted memory and no per-session delivery state; the old anchors are not current mounted-route promises or fresh execution evidence.",
+      "note": "`test_unconverted_memory_names_no_card` shows that an unconverted memory root names no card for an existing file.",
       "targets": [
         {
           "anchor": {
-            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
-            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "content": "sha256:64e84fa1fa5adf49afbb1ece284423dae11fc10b35f1c5539f1145df60f8e529",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_unconverted_memory_names_no_card"
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -6919,7 +6908,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e29b07249c3d3096f247af46f87f64a495403a2",
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -6931,7 +6920,7 @@
         },
         {
           "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -7472,12 +7461,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
             "content": "sha256:fd8c70363abf5876c71198dd3923d239bccba5fad29d3338070de4b32a2eb3f8",
             "locator": {
-              "end": 861,
+              "end": 829,
               "kind": "line_range",
-              "start": 841
+              "start": 809
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -7522,15 +7511,28 @@
       ]
     },
     "478": {
-      "note": "**Retained historical source account — superseded by the current route account:** Complete response validation and logging remain separate from caller-sized status projection.",
+      "note": "Complete response validation and logging remain separate from caller-sized status projection.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
-            "content": "sha256:fa035cd072435d9389f5b3b0ea910cc8097887cebfb1f1c1cefb3c7a630c04f3",
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:bf895a7868d9b4e1a21a419b242360e1159533d5437b36380fbea589b819b6d5",
             "locator": {
               "kind": "symbol",
-              "name": "complete_tool_response"
+              "name": "_select_shaped_answer"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:8c982bfd69612cce66b87e4dab58b41df38e0248d3e0d6849c14d399fc740be5",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 419
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -7765,6 +7767,18 @@
       "targets": [
         {
           "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:7e87864407ba990037b6b009e45c52085bdd3767d360afd4516af3be93421340",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_document_copy_lists"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
             "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
             "locator": {
@@ -7786,19 +7800,6 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5a268dbcd0664e077105e782e568babce86bcf33",
-            "content": "sha256:d52ee99f33c8c6e37fbc3584efcef6cae97903ea1ab67089126b2199ebd586ed",
-            "locator": {
-              "end": 1089,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
           },
           "kind": "code"
         },
@@ -7838,8 +7839,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
-            "content": "sha256:71804e304a6ad2937390236ebe79f54948d63dacb84e089c2362c47b2846a2b4",
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:60e27a120bfb8dc9f33714fb08d00eefa653f16db19cf2acb29230f633cf6a6c",
             "locator": {
               "kind": "symbol",
               "name": "_attach_contract_guidance"
@@ -8398,26 +8399,15 @@
       ]
     },
     "514": {
-      "note": "The one role-harness write, made only when the destination is absent.\n\nAnchor: `initialize_role_settings`",
+      "note": "The one role-harness write, made only when the destination is absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
+            "blob": "5fa43f169fb341dff7f3842ee51d822ef98b1e32",
             "content": "sha256:fe2c9c9853b4fe5448816a275677328298baaedf989141461565f4781ad80948",
             "locator": {
               "kind": "symbol",
               "name": "initialize_role_settings"
-            },
-            "path": "mcp/src/agents_remember/application/user_settings_init.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
-            "content": "sha256:0da753f8e179a72a8aa7ea135ba4b6da2b459cfe863ab2a6e1a4fd17e36e6541",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/user_settings_init.py"
           },

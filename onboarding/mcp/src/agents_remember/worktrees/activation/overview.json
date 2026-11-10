@@ -49,25 +49,15 @@
       ]
     },
     "11": {
-      "note": "The former `validate_memory_refresh_attestations` composer is removed. Current `_onboarding_refresh_gate` applies converted onboarding traces; unconverted public input refuses upstream.\n\nAnchor: `_onboarding_refresh_gate`",
+      "note": "The memory-quality controller's _onboarding_refresh_gate applies converted onboarding traces: one repair finding per missing trace, unnecessary rows report-only; missing converted sides are incomplete and unconverted public inputs refuse upstream.",
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
-            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
+            "content": "sha256:6463ae48eea95244cea5e8b82e5a35b01859fb3bd5d564f7493aa05b81af995b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_onboarding_refresh_gate"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },

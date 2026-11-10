@@ -197,12 +197,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
-            "content": "sha256:68c8dbf4770fad096b2383f484019fb1c79b1da618b51752f8312a96003b1b29",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
+            "content": "sha256:4a22ee9b6321b636b8277d22c6d5fd5735eb65cc24655fd564b6b99b9760dce1",
             "locator": {
-              "end": 746,
-              "kind": "line_range",
-              "start": 591
+              "kind": "symbol",
+              "name": "_converted_adopt_gate"
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
@@ -439,16 +438,16 @@
       ]
     },
     "21": {
-      "note": "Manager guidance distinguishes native stage publication from explicit correction and organizational-master completion.",
+      "note": "Manager guidance distinguishes native stage publication from explicit correction and organizational-master completion.\n\nAnchor: `task_doc set_status`",
       "targets": [
         {
           "anchor": {
-            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
-            "content": "sha256:e2cfdf7ac3d421add7a5b46e1c0469c92492b9458578cb403c85a188a6d5c7b6",
+            "blob": "4071c218f26dd0b00193f0d591f38519b84b260a",
+            "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
             "locator": {
-              "end": 32,
+              "end": 58,
               "kind": "line_range",
-              "start": 32
+              "start": 58
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -461,12 +460,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
-            "content": "sha256:9ae1b010567a226d97a079177064a8aa48ac39f75842d9651fd07b8c036eae51",
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
             "locator": {
-              "end": 110,
-              "kind": "line_range",
-              "start": 16
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
             },
             "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
           },
@@ -709,7 +707,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
             "content": "sha256:e6efde98dbdc142eac05f01d17a88f64b2fe8efe87801079040c749718685126",
             "locator": {
               "end": 562,
@@ -722,7 +720,7 @@
         },
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
             "content": "sha256:974562a3cd9750ad0a9cc3f1a70581427003c81faa2bbad8837140eb6fc07428",
             "locator": {
               "end": 562,
@@ -735,7 +733,7 @@
         },
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
             "content": "sha256:3080713fc38cc6803cc646334343cdc8018c05d4c59a43cc6e515405f8293f2a",
             "locator": {
               "end": 580,
@@ -753,7 +751,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
             "content": "sha256:bf362a4869836a58bd9398725054613b098abc324776ebd66726107f6b454efe",
             "locator": {
               "end": 568,
@@ -766,7 +764,7 @@
         },
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "end": 580,
@@ -779,7 +777,7 @@
         },
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
             "content": "sha256:54db39c277083dab87a1a463a2d00dd6c303001aa204b4851452de4e461745cf",
             "locator": {
               "end": 610,
@@ -792,7 +790,7 @@
         },
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
             "content": "sha256:a38b006fa208d5b7b08c1be28979cfd217b1d8579a554fc8c910bb4f218144ed",
             "locator": {
               "end": 651,
@@ -805,7 +803,7 @@
         },
         {
           "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
             "content": "sha256:b5344ce16b76181101b0fc1f4b98ea59e464cbf1a314a25a84bb2650b3cd86a0",
             "locator": {
               "end": 623,

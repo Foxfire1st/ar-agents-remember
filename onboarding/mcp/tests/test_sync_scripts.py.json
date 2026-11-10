@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
         "content": "sha256:713db2fc9a66c6019298bca81e6a4cb4edfc4fc287002d1dfc5cd7b2893bb53a",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
         "content": "sha256:8964d88607d9a4930e00748d124b947a47eb3ec038b99c815a7a6baa2e4f9c66",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
         "content": "sha256:40b893cb03e01c4531019ce3bd905a44ce6ab2db2d7b2d1eddb98fb896e0f812",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
         "content": "sha256:d14f832e04e37b46f60b246384ae87c2ae4d04665cdb778d0be630131b6f9c80",
         "locator": {
           "kind": "symbol",
@@ -73,7 +73,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
         "content": "sha256:875fcf4be4ec36c73771b353e1cda604414bfc547fcbbd286670731d055377a5",
         "locator": {
           "end": 119,
@@ -128,12 +128,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
             "content": "sha256:17a81bccd3430a978370b90c55371ea8454ff195ab33a67e332de78e81cb11c7",
             "locator": {
-              "end": 148,
+              "end": 111,
               "kind": "line_range",
-              "start": 134
+              "start": 97
             },
             "path": "mcp/certification-profile-v1.json"
           },
@@ -159,12 +159,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
             "content": "sha256:f1849a57f486634563cfdfd5baccdd42da460e84a73375cc474cc0a904bcd284",
             "locator": {
-              "end": 199,
+              "end": 204,
               "kind": "line_range",
-              "start": 171
+              "start": 176
             }
           },
           "kind": "test"
@@ -176,25 +176,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-            "content": "sha256:fac708389f4be2411d00eed64bafb5eb9308c15e9062f27e0bb70e64e2d23a41",
+            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+            "content": "sha256:3c470419ee3a2821d24d0030d593942d83aacd5609323c0cc3fc4ea5e266a664",
             "locator": {
-              "end": 498,
-              "kind": "line_range",
-              "start": 472
-            },
-            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-            "content": "sha256:5ab4ab9a064cc24839c0886fef84aeef6ee17f03ca54927b8d1187a9aa3d6b18",
-            "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 104
+              "kind": "symbol",
+              "name": "OWED_STATEMENTS"
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },
@@ -207,38 +193,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:4cc9fe7eeee2508297caea004b93471c74e9636f01d03e1a271c45e90704eca6",
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "content": "sha256:392f4bbcd7b196c6b248883903b91670cea94afdb08769b75af2141e0780b3b8",
             "locator": {
-              "end": 139,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
-            "content": "sha256:8cc45eaf2fac5f180dbd904da6575fffab0eb238e11e03a70772c0a7bd318825",
-            "locator": {
-              "end": 97,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
-            "content": "sha256:81048cf1574047eb159b42caaccadab6709f9ae6e942183f0ee98e12cae46dc5",
-            "locator": {
-              "end": 638,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "PROJECTED_BOUNDARY_CLAUSES"
             }
           },
           "kind": "test"
@@ -258,24 +217,24 @@
         },
         {
           "anchor": {
-            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
             "content": "sha256:713db2fc9a66c6019298bca81e6a4cb4edfc4fc287002d1dfc5cd7b2893bb53a",
             "locator": {
-              "end": 614,
+              "end": 619,
               "kind": "line_range",
-              "start": 596
+              "start": 601
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
             "content": "sha256:3855579ed58f760ba8ec846d6d2803feaf8f14e1bb1b7cc661449bace67a6f9a",
             "locator": {
-              "end": 634,
+              "end": 639,
               "kind": "line_range",
-              "start": 616
+              "start": 621
             }
           },
           "kind": "test"
@@ -287,36 +246,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
             "content": "sha256:8964d88607d9a4930e00748d124b947a47eb3ec038b99c815a7a6baa2e4f9c66",
             "locator": {
-              "end": 315,
+              "end": 320,
               "kind": "line_range",
-              "start": 282
+              "start": 287
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
             "content": "sha256:40b893cb03e01c4531019ce3bd905a44ce6ab2db2d7b2d1eddb98fb896e0f812",
             "locator": {
-              "end": 349,
+              "end": 354,
               "kind": "line_range",
-              "start": 325
+              "start": 330
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
             "content": "sha256:e398991d72cf06771641a6a073f313211e5baf864bd393c7321fb2d91557b6b3",
             "locator": {
-              "end": 425,
+              "end": 430,
               "kind": "line_range",
-              "start": 366
+              "start": 371
             }
           },
           "kind": "test"
@@ -324,28 +283,15 @@
       ]
     },
     "7": {
-      "note": "The shared-profile marker participates in the positive canonical/copy loop; the seeded missing-copy case selects the Worker acceptance clause, not the profile. The two completion-truth markers and retired omissions remain.\n\nAnchor: Positive reach and Worker-specific seeded control",
+      "note": "The writing-profile marker participates in the positive canonical/copy loop; the seeded missing-copy case selects the Worker acceptance clause, not the profile. The three completion-truth markers and retired omissions remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
-            "content": "sha256:828b48ac3014febba22489ae481ce5ed60c101ed43f9543f36d0652cef5aa7e0",
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "content": "sha256:392f4bbcd7b196c6b248883903b91670cea94afdb08769b75af2141e0780b3b8",
             "locator": {
-              "end": 131,
-              "kind": "line_range",
-              "start": 122
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
-            "content": "sha256:ca3ac12c457ae49ca2ff7b4004154aed958dcd921551c0c307702e26562aea14",
-            "locator": {
-              "end": 634,
-              "kind": "line_range",
-              "start": 596
+              "kind": "symbol",
+              "name": "PROJECTED_BOUNDARY_CLAUSES"
             }
           },
           "kind": "test"

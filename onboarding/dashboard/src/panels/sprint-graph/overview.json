@@ -198,12 +198,12 @@
         },
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:177fca6a059e1ee8b373f832a2725a9b97761ec3b03fa9bf5f72b9a8929f8619",
             "locator": {
-              "end": 599,
+              "end": 609,
               "kind": "line_range",
-              "start": 565
+              "start": 575
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -211,12 +211,12 @@
         },
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:30130bf59300f0b9bd54a089663da88bb8ef3c1a3f323e9b87903068f1c39041",
             "locator": {
-              "end": 571,
+              "end": 581,
               "kind": "line_range",
-              "start": 537
+              "start": 547
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -229,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
             "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
             "locator": {
               "kind": "symbol",

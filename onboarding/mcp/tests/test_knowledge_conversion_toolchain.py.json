@@ -260,8 +260,20 @@
       ]
     },
     "18": {
-      "note": "Separate implementation custody path: producer whole/result projection, finalized whole-result detail input, redaction, destination and size/budget/write controls; not a log-readback assertion in the conversion test. \\",
+      "note": "Separate implementation custody path: producer whole/result projection, finalized whole-result detail input, redaction, destination and size/budget/write controls; not a log-readback assertion in the conversion test.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
@@ -290,25 +302,12 @@
         },
         {
           "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
             "content": "sha256:00f84b602709b475ee1d0a3428da2d636e7979e3476cf8f3dd2f8a21fbcd181b",
             "locator": {
-              "end": 178,
+              "end": 182,
               "kind": "line_range",
-              "start": 158
-            },
-            "path": "mcp/src/agents_remember/application/tool_response.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
-            "content": "sha256:98d0f529697788f3e9993d7032443115d43f3dfc5204a3bf70636aa798ffde17",
-            "locator": {
-              "end": 514,
-              "kind": "line_range",
-              "start": 388
+              "start": 162
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -484,38 +483,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:5416c4656b87f2dc7f927add3da95de8b35d5ef3cdf2cd76a5b9fde9eaa2a467",
-            "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 183
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
+            "blob": "830d89bb301c2fd59337d82f6f8aa7abf676b4e6",
             "content": "sha256:55aae7f94adeaee949444718419adb19e16cc7f7312f0ed50d8c4db0f98dc21f",
             "locator": {
-              "end": 201,
+              "end": 207,
               "kind": "line_range",
-              "start": 201
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:e7368c009c8609a6088fac7df42ebc4cd356189403a1f79102e8141a10b946f9",
-            "locator": {
-              "end": 167,
-              "kind": "line_range",
-              "start": 167
+              "start": 207
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -166,4 +166,4 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 
 
-- Curator preparation uses source-bound converted onboarding traces; missing converted sides are incomplete, with no legacy body/history fallback. [21]
+- Curator preparation uses source-bound converted onboarding traces; a memory side that cannot be established is incomplete and is reported as a finding, never a pass, and the onboarding refresh refuses an incomplete side instead of falling back. [21]

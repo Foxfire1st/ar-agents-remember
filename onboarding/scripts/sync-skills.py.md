@@ -65,7 +65,7 @@ No relevant external documentation found.
 - Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check. [3]
 
 
-- The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. [4]
+- The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. Anchor: `scripts/sync-skills.py` [4]
 
 
 ### Cross-Repo References

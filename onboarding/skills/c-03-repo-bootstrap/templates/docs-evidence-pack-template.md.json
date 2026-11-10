@@ -7,10 +7,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "747a395693c7026d90c23bc92a98965a6d3e5d3c",
-            "content": "sha256:2eca20d0305991a3358bacbe003888f14728b1cb0bdd0bd1635d2dceba1ff74e",
+            "blob": "b2bb923da560d017dcb2e0656539d6119acb5e0f",
+            "content": "sha256:884c9212d960796b81e4c370b733743024dcffca3d5c4aa8cc7367c93acbbb19",
             "locator": {
-              "end": 9,
+              "end": 11,
               "kind": "line_range",
               "start": 1
             }
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "747a395693c7026d90c23bc92a98965a6d3e5d3c",
+            "blob": "b2bb923da560d017dcb2e0656539d6119acb5e0f",
             "content": "sha256:4cad182e5a8e5564852a5ac38fe9ba26fa19b3cd5cbeba6b6898539e091d7d45",
             "locator": {
-              "end": 52,
+              "end": 54,
               "kind": "line_range",
-              "start": 11
+              "start": 13
             }
           },
           "kind": "code"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "747a395693c7026d90c23bc92a98965a6d3e5d3c",
+            "blob": "b2bb923da560d017dcb2e0656539d6119acb5e0f",
             "content": "sha256:943ea29f046bd4f56789b45f52df32255e0b418b02f4e0a70d0558e415862f40",
             "locator": {
-              "end": 25,
+              "end": 27,
               "kind": "line_range",
-              "start": 21
+              "start": 23
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:8d81292f60364437e4634d8d701c21c2cefb1c4c4d2a954406d84ad7ca6b2c0c",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:339959dde0dcfea84af43437542fb05c0cf3d5b780e7db454b708a2bb238cd23",
             "locator": {
-              "end": 934,
+              "end": 883,
               "kind": "line_range",
-              "start": 913
+              "start": 862
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
@@ -76,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:8bca39c6a0e848db3353e1531da63e95e3fbf54c481dbb90e54f3e14c45ab341",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:92b82d2358ab88b7dd408c78984f8ba780573a2c33eabb258829eae800c1c1c3",
             "locator": {
-              "end": 407,
+              "end": 354,
               "kind": "line_range",
-              "start": 399
+              "start": 346
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },

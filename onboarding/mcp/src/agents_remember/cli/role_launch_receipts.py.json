@@ -366,12 +366,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-            "content": "sha256:68e13b4b0280d43661f0c67fcbd35ca7a87e3ba3ccbe99b46027f3c11d604160",
+            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+            "content": "sha256:32588e1f8d8cb2f22e4ca3342630f20ef0e26ae0e75b071854362bb7155471f3",
             "locator": {
-              "end": 1177,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "test_a_worker_hands_its_frozen_report_directly_to_the_reviewer"
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },
@@ -384,12 +383,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-            "content": "sha256:68e13b4b0280d43661f0c67fcbd35ca7a87e3ba3ccbe99b46027f3c11d604160",
+            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+            "content": "sha256:7bc2ba3197ef6a4994f23c6570f2f1b152d10166661a59d92562744ea86b244e",
             "locator": {
-              "end": 1177,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance"
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },
@@ -516,7 +514,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b91bb19898ce63d1edea720a40237bcf5413f58b",
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
             "content": "sha256:140012d8899387d059b9e033e011bf0db1448125b40f693f41cf32aeea064279",
             "locator": {
               "kind": "symbol",

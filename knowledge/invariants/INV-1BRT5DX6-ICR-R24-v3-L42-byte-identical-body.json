@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The addressed task-document reader supplies schema-valid masters and explicit children, while the canonical-path selector preserves enumeration order, jointly keeping bounded projection equivalent to the canonical join."
+  },
   "applicability": "The projected body of any task document served by read_task_document_body, compared with the projection whose master join table is built from the whole canonical task-document set.",
   "conditions": [
     "Graph-named masters and their explicitly listed valid child documents supply the addressed graph join; ordinary dependency projection reads the owning master and its explicit children.",

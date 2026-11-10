@@ -129,12 +129,12 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 
 
 
-- The typed-linkage cross-check and altitude role sets this module relies on. [2]
+- The altitude role sets this module relies on. [2]
 
 
 
 
-- The typed-linkage cross-check and altitude role sets this module relies on. [17]
+- The typed-linkage cross-check: `masterRef` rows and seats belong only to an orchestration sprint. [17]
 
 
 

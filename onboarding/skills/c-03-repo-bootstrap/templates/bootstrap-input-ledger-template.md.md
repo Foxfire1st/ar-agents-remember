@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Repository overview](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
@@ -14,7 +14,7 @@ This authored `skills/` template defines an artifact format; the packaged runtim
 
 ### Logic
 
-The template captures target repo, control mode, bootstrap mode, memory root, onboarding root, topology, branch, source inventory gate status, presented source inventory, excluded sources, weak categories, user-added sources, corrections, source deltas, settings path-rule exclude review, cross-repo context, assumptions, hard stops, and operator decision.
+An opening comment names its user: the bootstrap orchestrator records the reviewed source inventory before research proceeds. The template captures target repo, control mode, bootstrap mode, memory root, onboarding root, topology, branch, source inventory gate status, presented source inventory, excluded sources, weak categories, user-added sources, corrections, source deltas, settings path-rule exclude review, cross-repo context, assumptions, hard stops, and operator decision.
 
 The header distinguishes `sourceInventoryGate` (pending / accepted / corrected / blocked) from the per-source status (readable / unreadable / unavailable) and user decision (approved / excluded / corrected / pending). Source inventory delta has added / refreshed / moved / deleted treatments for existing-memory slice maintenance. Settings excludes are explicitly a review checklist against resolved `system/settings.json`, not a hidden replacement for `pathRules`; its literal entries include dependency/build/cache directories, `.env` and `.env.*`, generated paths and both Zone.Identifier patterns. Cross-repo rows distinguish expected from actual branch and record matched / mismatch / missing with read-only / ignored use. The hard-stop list covers unresolved roots, unreadable required sources, ambiguous meanings, required-boundary branch mismatch, LOW-confidence durable claims, unresolved docs/code conflict and updates outside the target repository. Operator decision records control mode, added-source presence and proceed yes/no.
 
@@ -32,7 +32,7 @@ Preserved advisory boundary from the incoming card:
 
 The presented choices and empty `<...>` fields describe an intake artifact format. They do not say that sources were accepted, an operator approved this candidate, a required boundary matched, or execution may proceed. The settings review and branch mismatch fields expose decisions; this template alone does not enforce those decisions.
 
-The source header still literally offers `topology | external / mixed` at line 10. This is inherited template vocabulary, not evidence that mixed topology is currently supported; the governing overview states that only external topology is supported. The inherited choice is disclosed rather than silently rewritten.
+The source header offers only `topology | external`, matching the external-only topology the governing overview states.
 
 ### Historical And Verification Limits
 
@@ -75,8 +75,12 @@ These are preserved scope assessments, not a fresh sibling-repository inspection
 The citation rows below preserve the incoming template-evidence meanings while retargeting them to the canonical authored source and narrowing ranges to the information described. They prove the shape of a template, not execution or acceptance of its values. Inherited cross-file skill claims remain qualified above.
 
 - The input ledger records run metadata, onboarding root, source inventory gate status, and the presented source inventory with status, planned use, and user decision. [1]
+
 - The template captures excluded sources, weak source categories, additional user sources, corrections, source deltas, settings path-rule exclude review, cross-repo context, assumptions, hard stops, and proceed/no-proceed decision. [2]
+
 - Settings excludes are a review checklist and not a hidden substitute for pathRules. [3]
+
 - Expected/actual branch context, assumptions, hard stops and operator decision are explicit intake fields. [4]
 - The bootstrap skill requires accepted or corrected source inventory to be recorded in bootstrap/input-ledger.md before automated execution. [5]
+
 - The reviewed source inventory is written to the input ledger using this template. [6]

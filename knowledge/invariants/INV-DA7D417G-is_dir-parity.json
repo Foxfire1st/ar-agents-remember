@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The notes-listing family needs this error and ordering boundary to distinguish the current deterministic folder listing from the removed walk's different per-entry error promise."
+  },
   "applicability": "Historical: the _is_dir sort key of the list walk. Current: _folder_entries/_folder_row of the folder endpoint.",
   "conditions": [
     "The entry's stat raises OSError of any errno: the row is skipped, never listed."

@@ -125,6 +125,7 @@ These superseded reference captions remain history; the current evidence region 
 
 - Motion gate, scoped context pause and cleanup [26]
 - Current sibling overlay contains surge and attention [27]
+
 - EngineRoom conditionally mounted, contrary to inherited keep-alive account [28]
 
 - The current pre-contract fleeting assertion checks `nextAction`, and the replacement census rejects retired provider/setup fields and rendered traces; the former T7B retry/abandon and no-disabled-memory assertion remains historical. [29]

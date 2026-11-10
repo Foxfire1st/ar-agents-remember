@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3ea09011d0657bf89935264047f646078913e415",
-        "content": "sha256:d8a9e0a838a2074862aff79c874ea350dd48652aec3a8f002cd553845d3cd8e4",
+        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+        "content": "sha256:f59ace120b496f54794e2d7ad7e836fe6c8d4079bc3af0c1afa9927736d98cb6",
         "locator": {
           "kind": "file"
         }
@@ -38,73 +38,34 @@
       ]
     },
     "10": {
-      "note": "Evidence and working files stay outside the memory worktree.  Overview authoring is purpose-first, changes belong in their body section, and citation lines terminate the overview.",
+      "note": "An overview starts with its title, an optional governing overview and its purpose heading, puts a change into the body section that owns its meaning, and ends with all numbered citation lines together.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:fa818773877dec6d068de4be9fd08a8ce079eaffb73e52e06ff61809bb915ec8",
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:d1cb107832fa807b37b374922855df001cd309c13a97866d10628925183eadbb",
             "locator": {
-              "end": 71,
+              "end": 41,
               "kind": "line_range",
-              "start": 65
+              "start": 41
             },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7278abbdd039628f4afa41f7e871051e41866547",
-            "content": "sha256:d06e0b525746fbafe6e3ad6d41b81b07a86d36cbfbe00e09c201256c82c5644b",
-            "locator": {
-              "end": 27,
-              "kind": "line_range",
-              "start": 22
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
           },
           "kind": "code"
         }
       ]
     },
     "12": {
-      "note": "Current curation keeps reconciliation separate from transaction ownership, runs the full quality and independent fact-check workflow, and leaves Git base/candidate comparison to the Reviewer.",
+      "note": "Curation keeps reconciliation and memory writing with the Curator and the Git transaction with the Manager; the Curator runs no Git write, closeout preview or landing decision.",
       "targets": [
         {
           "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:f46dcb1a56028f631a030ff88a0c28e75e84188d1d91b2acb12af3f7d2fe9450",
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:8f50640da2d94e09cf1dc538da784d7394195b516df1cb2f2856c6e459ef0c6d",
             "locator": {
-              "end": 28,
+              "end": 18,
               "kind": "line_range",
-              "start": 25
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:7952eecd2c315628656620276b0011517dd71628f12ba784cc01382b99c099f5",
-            "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 75
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:c49a27f05bdf3b87d666fb6a88ad454a3992d44d087e2362e2d006bb03b7711a",
-            "locator": {
-              "end": 118,
-              "kind": "line_range",
-              "start": 118
+              "start": 16
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -113,71 +74,33 @@
       ]
     },
     "13": {
-      "note": "The leaf pass requires its admitted leaf task and enclosure. For repository foundation, c-14 allows a real Architect-opened leaf either standalone, under a master or under a sprint, with its own task document and enclosure; the existing foundation detail describes the under-master case. No taskless session or fabricated leaf substitutes for task admission.",
+      "note": "The leaf pass starts only on a leaf task document, never taskless; registered tasks belong to a master, and no standalone leaf, fake task, worktree or enclosure is fabricated for the leaf or foundation route.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:17d30d022454d0f0f094c3c23b95a38d28cb5458181b9fdbee086dc781a5a73b",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:7d29c8551fceea6befa2bb3368b9e56702729dafe74d57b7b0f84a8c5bd9f7f6",
             "locator": {
-              "end": 45,
+              "end": 49,
               "kind": "line_range",
-              "start": 41
+              "start": 47
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:40c2ae246e1761cc987ffcc4e3482e7cad60f2948c044dfe2d2ee25b7d261f99",
-            "locator": {
-              "end": 108,
-              "kind": "line_range",
-              "start": 104
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6f1b7f17a083434b9512a5614aaf5a9d344a7e09",
-            "content": "sha256:3518e92e94b8d2e963cd88e9f0333406e1693ab260408b6c6dd31d7f2ce70a8f",
-            "locator": {
-              "end": 7,
-              "kind": "line_range",
-              "start": 3
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-repository-foundation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
-            "content": "sha256:ebc4c54f8e8b0b0e0fda2163e029a7401437c6d39ba8d9032359b2ac11fd9c1d",
-            "locator": {
-              "end": 57,
-              "kind": "line_range",
-              "start": 52
-            },
-            "path": "skills/c-14-knowledge-bootstrap/SKILL.md"
           },
           "kind": "code"
         }
       ]
     },
     "14": {
-      "note": "Every reported cut has task-change causality; finding-clearing deletion is forbidden.  Historical source caption: \"Anchor: lines 141-148\"",
+      "note": "For every card cut by the quality check the Curator names the source evidence that makes the removed text untrue; text is never removed merely to clear a quality finding.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:8afd32a91dbe3f21c503c60671caf19d815046f13a0f5d4f92d02b1e0effee18",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:6038be5814e8f452acee52a8e9f79ebec01003bfacf61434586409c39243e5d7",
             "locator": {
-              "end": 82,
+              "end": 112,
               "kind": "line_range",
-              "start": 82
+              "start": 112
             }
           },
           "kind": "code"
@@ -185,174 +108,68 @@
       ]
     },
     "15": {
-      "note": "Current curation continues from a report to the next authorized step without a new Manager go. It verifies card sentences against source, repairs wrong or missing memory encountered along its way beyond quality-check findings, names each repair and makes no broad sweep. Code changes, requirement decisions and another leaf’s work return to their owner. A correction qualifies every affected false body claim; full checks and the independent fact-check run before handover.",
+      "note": "The Curator also repairs wrong or missing memory it encounters while curating, whoever left it and beyond the quality check's findings, through the writer; it names each repair, makes no broad sweep and routes repairs needing code, a requirement decision or another leaf's work.",
       "targets": [
         {
           "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:26d15a8474644613070af3dc356746c599dd45e5956032e51909a27df3ae174e",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f898ec3148ecaeb74251252927c4c5e8ce0edfffdb5573f0e13004aec0353bc2",
             "locator": {
-              "end": 82,
+              "end": 166,
               "kind": "line_range",
-              "start": 75
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:67c667cbed17d2ee093394b4cef63126c03e63e03d30612fd1e787b7ec6485b6",
-            "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 100
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:72fadf303fbbddb96fe8d68c9d150aea7569fb17eaeb5d4a8dd79655d2c68184",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 73
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:d8577622179dcbace8ad4c5d9e92f6121381f21cad17f964c58942b0e0018cc6",
-            "locator": {
-              "end": 150,
-              "kind": "line_range",
-              "start": 137
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+              "start": 166
+            }
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Three-way reconciliation, explicit retention, writer/readback and full quality duties.",
+      "note": "Curation reconciles three bodies of evidence (current intent, ruled change intent and implemented reality) and succeeds when they agree or every material divergence has reached its answering seat.",
       "targets": [
         {
           "anchor": {
-            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
-            "content": "sha256:b046e8d40ca7536f6e6d1649c97a69a6a8152c3dafa538ee5b127b086025f98b",
+            "blob": "7117f2f448a2507a4289d3849b7765d64be4d702",
+            "content": "sha256:29ee5d4d2c163edfeabf2b9d3ce01b2ef069e5d0800a01882b492d0340ec8cb4",
             "locator": {
-              "end": 41,
+              "end": 11,
               "kind": "line_range",
-              "start": 21
+              "start": 5
             },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
-            "content": "sha256:8a9a087bcfa7acc5393e36301bdea328977aef46d7704bee9c431ef85b0b7c45",
-            "locator": {
-              "end": 53,
-              "kind": "line_range",
-              "start": 45
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
-            "content": "sha256:244a5e0c650543adac4951f6642e9d4c868ca7cd3940238d59e2885e483f7ea3",
-            "locator": {
-              "end": 114,
-              "kind": "line_range",
-              "start": 108
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:abdfbfc75ec375a14b7ddf5b752210df870d96d48b38fcd3f73c672f060eaeca",
-            "locator": {
-              "end": 70,
-              "kind": "line_range",
-              "start": 53
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/intent-reconciliation.md"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The Curator performs no Git writes or code/gate/lifecycle/contract/closeout changes. Task-document edits use task_doc first with only its scoped correct-write recovery; source stamps cannot be advanced onto an uncommitted tree.",
+      "note": "The Curator runs no Git write and edits no code, gate, lifecycle state, worktree contract or closeout state; it edits a task document only as its writer under its assignment with the scoped correct-write recovery, and advances no fingerprint to an uncommitted tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:b670e5e8fbcfee44ee84f5d3fd6d789fce64eb772f02cf18f8266d7abe44cb1e",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:637b17373ac98070d32d4516a78c49d38c8233bce7ee4b07ac8d3cb86e6853e7",
             "locator": {
-              "end": 123,
+              "end": 156,
               "kind": "line_range",
-              "start": 114
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+              "start": 152
+            }
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Converted cards need current content-bound onboarding rows, and an independent nonauthor checks curated statements and row judgments before closeout.",
+      "note": "On converted memory a role agent that wrote none of the leaf's cards or records checks every changed card, sidecar and record statement by statement before closeout; judgment history belongs in content-bound Curator rows and a counted card edit alone never closes a trace.",
       "targets": [
         {
           "anchor": {
-            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
-            "content": "sha256:a4c86efc5de273fa8002c498bd37e6cf4835ce7cff207f8770df5f8a540d2c92",
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:aa8e7e0c4607242f4ebf11f911734729485f6e52a8190d5519ad12056f98c72e",
             "locator": {
-              "end": 12,
+              "end": 25,
               "kind": "line_range",
-              "start": 9
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:fa818773877dec6d068de4be9fd08a8ce079eaffb73e52e06ff61809bb915ec8",
-            "locator": {
-              "end": 71,
-              "kind": "line_range",
-              "start": 65
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-            "content": "sha256:0ba25bf7bd5021c9fc0c70d75575bbcf5c18009e7fb268ab093b3dd9a0c2c5a1",
-            "locator": {
-              "end": 39,
-              "kind": "line_range",
-              "start": 32
+              "start": 23
             },
             "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
@@ -361,131 +178,51 @@
       ]
     },
     "7": {
-      "note": "On converted memory knowledge-ingest is the file writer and publishes no dataset.",
+      "note": "The Curator writes knowledge with knowledge_write or the admitted serving-build command-line writer with the task contract, handoff list and commit; the commit option authorizes file writes, not Git or acceptance.\n\nAnchor: `knowledge_write`",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:3cf92085343c90e04efb30ec0ca0148475584e307dffedde80d3e67c2f149b02",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
             "locator": {
-              "end": 39,
+              "end": 138,
               "kind": "line_range",
-              "start": 37
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:f42534d6759b458fcf40b7e80eb67bcccee6bc1b93b89f12ab124deb9ebcc63f",
-            "locator": {
-              "end": 108,
-              "kind": "line_range",
-              "start": 107
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+              "start": 136
+            }
           },
           "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.",
+      "note": "When its part is complete the Curator marks only its own task-document step done through task_doc set_step with a one-line note; an incomplete, blocked or progress report never marks unfinished work done.\n\nAnchor: `task_doc`",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:5ffbf6fc0877ee6d347f690d78499536494a986eefd53c4924f7985c3e77906f",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:9fc1029ada509e1f4ceb7fbf037f09f8d905cba800f712197f1a8dad7bf6151f",
             "locator": {
-              "end": 150,
+              "end": 174,
               "kind": "line_range",
-              "start": 129
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:37acace39292198a835dda5aaac31a302750023a2974d39086c18f9f26a3d5c0",
-            "locator": {
-              "end": 180,
-              "kind": "line_range",
-              "start": 180
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:9cdd501356748fca03a98de167e62906d558d2392d58ca3d3e47c49caae79b8f",
-            "locator": {
-              "end": 166,
-              "kind": "line_range",
-              "start": 161
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+              "start": 174
+            }
           },
           "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "Batch citation previews and repairs use one documents list per wave. The stage ends with task knowledge written and checked and quality clean, distinguishing installed-writer publication from scoped manual provenance. Own-input and coherence faults are repaired through the same admitted tool; other correct-input refusals, permission, ownership and requirement questions stop dependent work except covered correct-write recovery. Beyond-settings memory review needs architect/developer approval recorded by Manager; review or publication is not acceptance.",
+      "note": "The stage ends when task knowledge is written and checked and quality is clean, distinguishing installed-writer publication from scoped manual provenance; own faulty-input refusals and coherence findings are repaired through the same writer, and open permission prompts, other correct-input refusals, unowned state and requirement-meaning questions stop the work.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:899f53ac3e7fe08f39480ce07351e6ead109d0e948ff41ce2c9451d20410aebb",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:fbbb91d1e376a5e9ec3a62fa0d7d79a423bb0647697d35d74ef38507471effb9",
             "locator": {
-              "end": 150,
+              "end": 170,
               "kind": "line_range",
-              "start": 135
+              "start": 162
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7278abbdd039628f4afa41f7e871051e41866547",
-            "content": "sha256:17285fd2535f8db51753f8b0c481afa531f4c4e1b7e3b5f3e11d3024c07e6712",
-            "locator": {
-              "end": 51,
-              "kind": "line_range",
-              "start": 47
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "896e170e9ff4b3ee595eeeb3285983629e0db7eb",
-            "content": "sha256:0f284486f90b96b01330a4b4583420666b043e9f165fd520509ec4cdab276b07",
-            "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 10
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-handoff-d301.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
-            "content": "sha256:8d8a0e638d84fc8380d3e64b07e2a420456155f33c376362e972568540cb4fa7",
-            "locator": {
-              "end": 166,
-              "kind": "line_range",
-              "start": 160
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
           "kind": "code"
         }

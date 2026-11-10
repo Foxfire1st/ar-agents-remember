@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The coherent-review family needs exact member context for every revision represented on a bounded page so claims and membership remain interpretable without fetching unselected roster content."
+  },
   "applicability": "Projection of a bounded family roster page for an exact selected family revision in a bound review snapshot.",
   "conditions": [
     "The page is selected by the existing knowledge read policy and carries content, membership or realization items.",

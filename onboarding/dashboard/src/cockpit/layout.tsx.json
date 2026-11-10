@@ -144,29 +144,15 @@
       ]
     },
     "5": {
-      "note": "Cockpit selects its Operations/review tracks and narrow one-column grid.\n\nAnchor: \"function railedColumns(state: CockpitShellState, narrow: boolean): CSSProperties {\"",
+      "note": "Cockpit selects its Operations/review tracks and narrow one-column grid.",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:0f34de1891da2b0c4cb281cd19f233193d5cb2d63dcadc148723f216f63ea515",
-            "locator": {
-              "end": 1076,
-              "kind": "line_range",
-              "start": 811
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
             "content": "sha256:d757d00659c1317b8fae09d60622d196a804ee9b0b139793a76dbba455db824d",
             "locator": {
-              "end": 822,
-              "kind": "line_range",
-              "start": 811
+              "kind": "symbol",
+              "name": "railedColumns"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -174,12 +160,12 @@
         },
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
             "content": "sha256:8de58d233a75f528a2c98b44eef26a891f8089ee72c75943086c2b7f81d0c61a",
             "locator": {
-              "end": 734,
+              "end": 733,
               "kind": "line_range",
-              "start": 723
+              "start": 722
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

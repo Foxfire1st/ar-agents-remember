@@ -210,33 +210,11 @@
       ]
     },
     "8": {
-      "note": "The two shared fixtures that had to carry the derived fields once this refusal existed, because they were modelling the damage state.\n\nAnchor: `_leaf` `_bind_task_without_review`",
+      "note": "The shared _leaf fixture carries both derived fields, seriesContractPath and the enclosure row, as task_doc stamps them against a leaf contract, so it does not model the damage state that start repairs.",
       "targets": [
         {
           "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_closeout_queue.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8a2d91358f72fe0c19192d61f3e1df91449d7061",
-            "content": "sha256:5a80340676011dfb942858443d99c5acd6bd593b04e383422aa5bf5436df2390",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
             "content": "sha256:d053e6131889082104d9b1784cb21740718548924a9008c15f25aa6e4c98ff50",
             "locator": {
               "kind": "symbol",

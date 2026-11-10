@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[agents-remember root overview](../../overview.md)
+[overview](../../overview.md)
 
 ## Purpose
 
@@ -22,7 +22,7 @@ Operations consumes one server-composed TaskEntry forest: authored task status s
 
 TaskSummary supplies revision-qualified prose, optional nonGoals, acceptance, completedAt and forward/reverse dependency references, with optional cycle-marked graph views. The producer generates the core schema and TypeScript/served tail; dev and manual snapshot values illustrate shape, not native derivation, task completion or host execution.
 
-Start at cockpit/Cockpit.tsx for shared inputs, retained layers and the Operations review slot; cockpit/layout.tsx owns responsive shell styles, cockpit/reviewPage.tsx positions the review and shared chat column, and cockpit/reviewHash.ts owns the review address. Above 40rem the reading column scrolls inside the review grid; at 40rem and below the review main covers the screen and scrolls the stacked tree and reading content. Retained readers and native chat keep their own activation and data owners.
+Start at cockpit/Cockpit.tsx for shared inputs, retained layers and the Operations review slot; cockpit/layout.tsx owns responsive shell styles, cockpit/reviewPage.tsx positions the review and shared chat column, and cockpit/reviewHash.ts owns the review address. cockpit/serving-build-stamp/ owns the top bar's serving-build stamp, which keeps the boot-time build identity, the live build currentness of the serving process's Python files and the client-bundle comparison distinct. Above 40rem the reading column scrolls inside the review grid; at 40rem and below the review main covers the screen and scrolls the stacked tree and reading content. Retained readers and native chat keep their own activation and data owners.
 
 For native role execution, follow `cockpit/RoleChats.tsx`, the role-launch model and launcher children, then `PaseoChatFrame.tsx` and its frame controller. The native Paseo role route retains canonical scope and exact request identity through RoleChatsPane composition, roleChatControls actions/storage, roleChatOptionsLoader adoption and RoleChatsView presentation. The shared RoleLauncher composes local controls with pure readiness/display and selection-repair owners; model/effort/tier and converted-memory/publication authorities remain separate. The launcher separates canonical document scope, options scope and exact execution request identity. Saved request receipts are matched by UUID rather than substituted by another execution with the same role. Result/report, Retry, Revive and restore remain tied to the selected request. Backend capacity and host execution remain backend responsibilities; a local receipt or missing browser guard is not evidence about the entire launch call path. The current ordinary public MCP roster contains 44 names in `models/tools/public_roster.py`; earlier 39/40/41-name populations are historical, and this source count establishes no execution result.
 
@@ -410,7 +410,7 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - **The one renderer every non-review state goes through.** [33]
 
-- Current imported source owns this scoped route boundary. [34]
+- Current imported source owns this scoped route boundary: the cockpit's persistent Chats layer mounts the Role-chats pane. [34]
 
 - The route's Role-chats pane owner. [35]
 
@@ -454,13 +454,12 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Preclick knowledge is bounded and polling belongs to visible pane/tab lifetime. [63]
 
-> Retained earlier citation wording: - Historical session State/phase vocabulary and lifecycle-state Metrics buckets, superseded by TaskEntry stage/activity and TaskCounts. [12]
 
 - The vocabulary tuples and their derived types are generated from the producer schema; `Metrics` carries only the ignored-host-agent count, and the per-stage and per-activity buckets are the `TaskCounts` fields the projection and each task entry carry. [12]
 
 - The generated lifecycle mirror carries the cursor beside coherent identity and version fields.  Anchor: "export interface LifecycleOperationProjection {" [16]
 
-- The fixture supplies a meaningful revision for the sample operation.  Anchor: "\"meaningfulRevision\": 1," [17]
+- The fixture supplies a meaningful revision for the sample operation. [17]
 
 - Unknown chat ownership does not hide the frame; only confirmed absence does. [62]
 
@@ -544,10 +543,10 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 Anchor: `ReviewSourceInventory` `intentReview` [28]
 
-Anchor: `VIEWS` `MainLayers` `useCockpitShellState` [44]
+- The four-entry product bar and retained product layers remain distinct from injected views; review URL state can override ordinary opening view. [44]
 
 Anchor: `startRead` `memoryWatchActions` `useSurface` [51]
 
-Anchor: `CockpitShell` [6]
+- Shell navigation, persistent layers and shared drivers. [6]
 
-Anchor: `shell` `RailedBody` `ChangeSetTakeover` [74]
+- Responsive shell style and the actual narrow railed/takeover consumers are separate from reviewer-local scroll ownership. [74]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "48dd42e88eb0ad63b801272e1675645d1ed24cb4",
-        "content": "sha256:2861b5d5b09c9e4f84c6c217cfe418849592e197f0d5e9c5cc9a5c42110fc0cc",
+        "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+        "content": "sha256:c2f5de0efb06134f6edc9ba655863667b983906e7024a9231cdf99fba3c464e5",
         "locator": {
           "kind": "file"
         }
@@ -15,17 +15,17 @@
         "handoffEntry": "MIK-R101@v1 rule 4",
         "leaf": "260928-MIK-L101"
       },
-      "rationale": "The protected closeout contract paragraphs retained from the leaf code base remain byte-for-byte at current lines3,5,11; new gate and handover paragraphs at7,9,13 lie outside that preserved old wording. This is protection of the kept passages, not whole-file byte identity.",
+      "rationale": "operations/closeout.md keeps the kept closeout points in meaning, rewritten to the writing guideline: authorized owner and the developer's explicit commit approval for a flat run (5-9), bound inputs and visible failures (11-19), the gates at each publication step (21-29), repair through the gate owner (31-35), and no claim before the owner's result is read back (37-39). The paragraphs are no longer byte-identical to the earlier wording.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "48dd42e88eb0ad63b801272e1675645d1ed24cb4",
-        "content": "sha256:286bee59bb11dd90a33100c68f0419a774f6b328dfe024f41bc47f7d313ef273",
+        "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+        "content": "sha256:608f59fac9c8c5caa15572ad67a8487bb3940fcac553f7f901ebeff55fbd193f",
         "locator": {
-          "end": 3,
+          "end": 7,
           "kind": "line_range",
-          "start": 3
+          "start": 7
         }
       },
       "id": "RLZ-DHZW33",
@@ -34,17 +34,17 @@
         "handoffEntry": "L72/MIK-R72@v2-direct-closeout-exception",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "The unchanged closeout operation independently names the owning Architect as the actor of the flat-run paired transaction under existing authority.",
+      "rationale": "The closeout operation names the owning Architect as the actor of a flat run's paired closeout, with neither Manager nor Orchestrator, only with the developer's explicit commit approval for that closeout or with series authority the developer delegated and recorded in the task document.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "48dd42e88eb0ad63b801272e1675645d1ed24cb4",
-        "content": "sha256:8fb316124faed8664023c9a15d6314fb939a959cbc4c3ba9670343b5e1f7e927",
+        "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+        "content": "sha256:73b7f36fd43f9e106eb89e649e52a254cbbcc612580ea64653c3d2628f14479d",
         "locator": {
-          "end": 11,
+          "end": 39,
           "kind": "line_range",
-          "start": 11
+          "start": 39
         }
       },
       "id": "RLZ-ZHVQ2K",
@@ -63,10 +63,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48dd42e88eb0ad63b801272e1675645d1ed24cb4",
-            "content": "sha256:2861b5d5b09c9e4f84c6c217cfe418849592e197f0d5e9c5cc9a5c42110fc0cc",
+            "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+            "content": "sha256:c2f5de0efb06134f6edc9ba655863667b983906e7024a9231cdf99fba3c464e5",
             "locator": {
-              "end": 13,
+              "end": 43,
               "kind": "line_range",
               "start": 1
             }

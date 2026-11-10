@@ -28,6 +28,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Transferred lifecycle procedures preserve executable publication, admission and recovery stops using tools that actually exist.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

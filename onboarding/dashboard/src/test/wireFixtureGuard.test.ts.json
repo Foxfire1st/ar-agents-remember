@@ -106,12 +106,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "blob": "b2fb15ff4b0e4fc28c8be6a41b1c58655d1c7601",
             "content": "sha256:cc552e64d9835d5841f2d0a4c809bb4ae532b93f7c7b46d16da823968bb51597",
             "locator": {
-              "end": 666,
+              "end": 668,
               "kind": "line_range",
-              "start": 666
+              "start": 668
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -119,12 +119,12 @@
         },
         {
           "anchor": {
-            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "blob": "b2fb15ff4b0e4fc28c8be6a41b1c58655d1c7601",
             "content": "sha256:cc552e64d9835d5841f2d0a4c809bb4ae532b93f7c7b46d16da823968bb51597",
             "locator": {
-              "end": 666,
+              "end": 668,
               "kind": "line_range",
-              "start": 666
+              "start": 668
             },
             "path": "dashboard/src/test/contract.test.ts"
           },

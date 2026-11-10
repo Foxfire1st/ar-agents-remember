@@ -40,7 +40,9 @@ No relevant external documentation found.
 ### Repo-Internal References
 
 - The requirement file pins GrepAI to `grepai==0.35.0`. [1]
+
 - The MCP runtime installer requires both CGC and GrepAI provider requirement files before copying provider defaults into the coordination root. [2]
+
 - The provider helper exposes the GrepAI pin and writes the managed requirements file through the package provider helper. [3]
 - The lifecycle installer reads the GrepAI pin and builds the Docker-owned runner image through the lifecycle facade. [4]
 

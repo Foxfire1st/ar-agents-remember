@@ -3,11 +3,11 @@
     "criteria": [
       "spans_locations"
     ],
-    "justification": "The nine protected kept-by-name clauses are carried by multiple role/operation homes. In the examined closeout pair, operations/closeout.md retains every base paragraph byte-for-byte at current lines1,3,5,11 while adding separate paragraphs; roles/curator.md:71 retains the closeout-evidence boundary sentence. This describes retained protected wording, not current whole-file byte identity."
+    "justification": "The nine protected kept-by-name clauses are carried by several role and operation homes; operations/closeout.md and the closeout passages of roles/curator.md keep their meaning in rewritten wording, so a change at any home can drop a kept point unnoticed."
   },
   "applicability": "The nine kept-by-name clauses wherever they stand, and operations/closeout.md with the named role closeout and integration passages.",
   "conditions": [
-    "Closeout and integration text stays byte-identical."
+    "The kept points keep their meaning wherever they stand; their wording follows the writing guideline."
   ],
   "exclusions": [
     "Wording outside the nine kept points."
@@ -24,7 +24,7 @@
     "leaf": "260928-MIK-L101",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Approval, review, memory-at-closeout, post-PASS faults, word-for-word closeout, coordination rules, never-touch list, recovery, and product facts all kept.",
   "status": "proposed",

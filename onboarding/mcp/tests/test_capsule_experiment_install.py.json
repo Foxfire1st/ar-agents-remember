@@ -8,12 +8,92 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
-            "content": "sha256:9b260fbadc47c2d1474173b3980f337b4ce135511332cc531545bb3b2e3d14a1",
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:c7505afd3991b0081249b9a481d21207f1781f9c61d391e876a05c795038eabe",
             "locator": {
-              "end": 540,
+              "kind": "symbol",
+              "name": "test_the_selection_is_recorded_per_run_and_never_persisted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The retired startup files are planted with the legacy fingerprint and must all be absent afterwards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:7f427fb820468e928c6cbbddb5660d3bce7e4b76a0a644dd791ec3d7b3269497",
+            "locator": {
+              "kind": "symbol",
+              "name": "plant_retired_startup_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "An unselected run removes planted startup files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:5cd80a90394094cf079605ad6a776ead849da2aa066f6b158de0ffab9f0527e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unselected_run_leaves_no_retired_startup_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Its preview reports the planted startup files without removing any.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:f05a60ef6230eaebd8674281faf2cb9a1d4cdd5def95671a3558c73d508c028d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unselected_preview_reports_retirement_without_removing_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The module docstring must say that an unselected (`legacy`) run keeps the old startup chain's install path while the cutover still retires the `AGENTS.md` copies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:766594bf2331c151977cceb388835470f8dec5ee005c6e45ecc6260bf0de96c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_module_states_that_an_unselected_install_still_retires_startup_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The benchmark asset sync retires the same startup files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:f37094a2942b39c4a9c53f302dece4c94a28a46f8fcbfea60f427afc37b4058a",
+            "locator": {
+              "end": 826,
               "kind": "line_range",
-              "start": 466
+              "start": 815
             }
           },
           "kind": "test"
@@ -25,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
             "content": "sha256:0e3f3bf103063d34a9ae0c7e32f941c0d73818f32b9ff94ed1be062f297fbe10",
             "locator": {
               "kind": "symbol",
@@ -41,24 +121,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
             "content": "sha256:d14da8f6cd5a1b9b6eb13015e0b1b6e7aef8cafa1fb49d56adfbba1563c12c6a",
             "locator": {
-              "end": 618,
-              "kind": "line_range",
-              "start": 567
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
-            "content": "sha256:4d13e8e44cead27f40556759f09b2694de2b515ec982f318c71c04ae77cdee6b",
-            "locator": {
-              "end": 540,
-              "kind": "line_range",
-              "start": 537
+              "kind": "symbol",
+              "name": "test_the_registered_tool_takes_the_selection_as_this_run_s_own_input"
             }
           },
           "kind": "test"
@@ -66,12 +133,12 @@
       ]
     },
     "4": {
-      "note": "The module drives the real installer end to end and reads its results back from the files it wrote: the legacy-to-capsule cutover, the per-run selection record and the rollback plan, with the install source tree left byte-identical.\n\nAnchor: `test_the_installed_application_keeps_its_machine_local_trees_out_of_the_mirror`",
+      "note": "The module drives the real installer end to end and reads its results back from the files it wrote: removal of the retired startup files in both modes, the capsule cutover and the per-run selection record, with the install source tree left byte-identical.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
-            "content": "sha256:5e014a5c45f03a49cf126e88367eec4f6dd4d04d846a0a0100a2c5bdf3503225",
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:55a68487f6cee94035afd20ae697e8a51490693c5e6e48329546cd3987ff4b53",
             "locator": {
               "kind": "file"
             }
@@ -81,16 +148,16 @@
       ]
     },
     "5": {
-      "note": "The current rollback test names the AGENTS.md restore row and its no-experiment restore command, and compares the payload rollback paths with those rows.",
+      "note": "An actual selected install reports an empty startup rollback and leaves no retired startup file.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
-            "content": "sha256:59c03c2641907a04cdef6d19b84d40f2142435c7bf6a779bc77aa337776b4134",
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:db83a658a4a89834ac51046b654a2c9f6a8be80650931768d4d104bc109119a3",
             "locator": {
-              "end": 656,
+              "end": 714,
               "kind": "line_range",
-              "start": 643
+              "start": 707
             }
           },
           "kind": "test"
@@ -98,14 +165,14 @@
       ]
     },
     "6": {
-      "note": "The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event.",
+      "note": "The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_capsule_experiment_install.py` as an exact consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:0a6ea03efe9703712535f05efeacc13a561b6fd40cb34b4ed9fe1a7122ed7558",
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:8c44a1944588203804e91045e5fc2a34c6354ba9f33d56f4d0f4efa278535795",
             "locator": {
-              "end": 821,
+              "end": 163,
               "kind": "line_range",
               "start": 65
             },
@@ -115,12 +182,12 @@
         },
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:e8d358fc83b0cd78d30c45fd0bf4727490538eac4f97a69b212a2078f94c56cf",
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:1cf0b6e693445548bac47b6ea2109f8dd223e6726435aa91345275691693084d",
             "locator": {
-              "end": 3096,
+              "end": 2451,
               "kind": "line_range",
-              "start": 2340
+              "start": 2353
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -129,14 +196,14 @@
       ]
     },
     "7": {
-      "note": "The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event.",
+      "note": "The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_capsule_experiment_install.py` as an exact consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:0a6ea03efe9703712535f05efeacc13a561b6fd40cb34b4ed9fe1a7122ed7558",
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:8c44a1944588203804e91045e5fc2a34c6354ba9f33d56f4d0f4efa278535795",
             "locator": {
-              "end": 821,
+              "end": 163,
               "kind": "line_range",
               "start": 65
             },
@@ -146,12 +213,12 @@
         },
         {
           "anchor": {
-            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
-            "content": "sha256:e8d358fc83b0cd78d30c45fd0bf4727490538eac4f97a69b212a2078f94c56cf",
+            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "content": "sha256:1cf0b6e693445548bac47b6ea2109f8dd223e6726435aa91345275691693084d",
             "locator": {
-              "end": 3096,
+              "end": 2451,
               "kind": "line_range",
-              "start": 2340
+              "start": 2353
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -160,28 +227,16 @@
       ]
     },
     "8": {
-      "note": "Private machine settings pre-exist both installations and retain their bytes.",
+      "note": "Private machine settings pre-exist both installations and retain their bytes.\n\nAnchor: `user_settings_path_for_write`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
-            "content": "sha256:ab503426fbe987464ed2e2e2cec25b7f3b2bc6db7ac9186017fd53fce204f5e4",
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:c7505afd3991b0081249b9a481d21207f1781f9c61d391e876a05c795038eabe",
             "locator": {
-              "end": 492,
+              "end": 604,
               "kind": "line_range",
-              "start": 485
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
-            "content": "sha256:4d13e8e44cead27f40556759f09b2694de2b515ec982f318c71c04ae77cdee6b",
-            "locator": {
-              "end": 540,
-              "kind": "line_range",
-              "start": 537
+              "start": 529
             }
           },
           "kind": "test"
@@ -193,7 +248,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
             "content": "sha256:d14da8f6cd5a1b9b6eb13015e0b1b6e7aef8cafa1fb49d56adfbba1563c12c6a",
             "locator": {
               "kind": "symbol",

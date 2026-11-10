@@ -5,11 +5,14 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current Stage 6 is Retire Providers with stop-only/unused-key observation. `server_info.openUserSettings` is relayed with both exact commands; setup changes no mode itself. Host catalog choices, not removed native-adapter vocabulary, govern role starts. `launchArgs`, `sessionCommands` and `promptKeywords` remain loadable but unread. Free chat writes the sprint request and starts an Architect via `role_start` without document references or a brief.
+
+- The concurrency settings (`orchestration.concurrency`: `maxParallelMasters`, `maxParallelLeaves`, `maxSubAgents`) are accepted, but no code reads or enforces them, so reaching a value refuses no start. Permission-mode interviews read `catalogDiscovery.source` and each agent's `discovery.modes.source`, say so when either is `saved` or `unknown`, and use only returned modes. Stage 6 reports configured index-provider entries as retired; the `paseoRuntime.providers` host map, hosted connector accounts and MCP server providers keep their own procedures. Context resolution goes through the product's context-resolution tool guidance rather than `c-08-ar-coordination-context-resolver`.
+
 - skills_install maintenance and old provider recovery evidence are obsolete.
 - New-memory Stage 5 initializes the root without onboarding or a citation fixer, adopts the first attributed baseline through its owning procedure with status read before and after, then reads and reports the knowledge state and tells the user to start the Architect. The Architect opens the regular foundation task for its Curator; setup neither authors knowledge nor creates its task, worktree or enclosure. A memory tree that already has a commit may reach its foundation before onboarding or baseline adoption; an unconverted tree converts before adoption or foundation authoring.
 - Onboarding/bootstrap audit files already present are retained by adoption unless the developer removes them beforehand; only memory-root-level bootstrap staging is excluded. Onboarding, baseline adoption and foundation remain separate outcomes with actual states and next actions. Without a task, Bootstrap reads and reports state and names the Architect; no instructed session substitutes for foundation task admission. A Curator starts on the real task document and uses its actual enclosure contract.
 - First conversion precedes ordinary operations even when the repository has no converted memory elsewhere. `read_ar_files` still returns unchanged cards marked `legacy-format`; no knowledge section is read. With no attributed baseline, run `agents-remember knowledge-convert MEMORY_ROOT --code CODE_REPOSITORY` on the root, then adopt its validated baseline; prior status is `legacy-format`, and initialization writes no marker. With an official line, start one new leaf, convert its memory worktree using its paired code worktree as the first memory change (explicit `--code-commit`, default code HEAD), then close out and land under validator/invariant gating against the converted base; conversion itself counts as no change. Landing moves the source branches, not the base; read back the landed memory commit and `Code-Commit` trailer plus the tip marker. Other open lines cross at `worktree_sync` with `merge-memory`. Validation failure writes no conversion changes; after conversion/crossing repeat the refused operation.
-- The procedure is named by `docs/guides/first-conversion.md` and `knowledge-convert --help`. The converter command, read-only legacy-database reader and conversion-format version 1 are permanent: other clones/machines may still need them. This master does not schedule retirement; removing any requires a separate developer decision.
+- The procedure is named by `knowledge-convert --help`; the skill no longer points to `docs/guides/first-conversion.md`. Before answering onboarding trace findings, it points to the l-01 card-sentence decisions and history-row template and the memory-quality tool guidance, then reruns `memory_quality_check` and previews closeout again; a standalone `knowledge-validate` against the unconverted base is refused. The converter command, read-only legacy-database reader and conversion-format version 1 are permanent: other clones/machines may still need them. This master does not schedule retirement; removing any requires a separate developer decision.
 
 
 - Stage 5 initializes without onboarding/fixer, adopts the attributed baseline, then reports knowledge state and names the Architect; existing-memory handling and audit retention remain explicit. [9]
@@ -127,7 +130,7 @@ Model-driven by design: there is no MCP tool and no hardcoded per-harness
 installer. A capable harness verifies and uses the copied package files rather
 than creating them during first-run setup. The
 skill delegates memory init to the `c-00-initialize-memory-repo` skill, bootstrap to the `c-03-repo-bootstrap` skill, baseline adoption to
-the `c-10-adopt-memory-baseline` skill, and context resolution to the `c-08-ar-coordination-context-resolver` skill.
+the `c-10-adopt-memory-baseline` skill; it does not reimplement `c-14-knowledge-bootstrap`, context resolution or the provider lifecycle tools.
 
 ### Invariants And Boundaries
 
@@ -158,11 +161,15 @@ No external documentation is needed to prove this repository-local skill contrac
 
 ### Repo-Internal References
 
-- Historical original-card/source account (not current setup authority): The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts. [1]
-- Historical original-card/source account (not current setup authority): Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks. [2]
-- Historical original-card/source account (not current setup authority): Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. [3]
-- Historical original-card/source account (not current setup authority): Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction. [4]
-- Historical original-card/source account (not current setup authority): Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers. [5]
+- The skill takes over setup after the developer installs and registers the MCP tool server; the server serves the skills from its packaged copy, and no starter package or renderer is required. [1]
+
+- Stage 0 checks MCP reachability, that skills are served rather than installed, settings, runtime state, retired index-provider entries, topology consistency and, on request, certification authority; it does not install hook files. [2]
+
+- Stage 1 runs or verifies `runtime_install()` and installs no skills and creates no skill folder during first-run setup. [3]
+
+- Stage 2 walks the developer through the four agentic-settings knob families and writes their answers only through the one initial `user_settings_init`, reporting an existing file rather than rewriting it. [4]
+
+- Stage 3 authors, validates and registers one repository-owned certification profile (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`, and runs only when the developer explicitly requests a certification or full quality operation. [5]
 
 - The starter/setup renderer that writes the shared coordination settings file when it is absent; the removed install-side seed writer is historical. \
 
@@ -203,6 +210,6 @@ a development leaf, worktree or enclosure to give the writer an argument list it
 
 The installed skill's preflight checks that the shared settings name a host, its runtime stage says that `runtime_install` brings the host and how to read the host part, and its report has a host line and ends with the one start. No step tells the user to run the provision as part of an install; the terminal provision is the explicit transition.
 
-- Historical original-card/source account (not current setup authority): The package copy of the install skill. [8]
+- This file is the package copy of the install skill. [8]
 
 </details>

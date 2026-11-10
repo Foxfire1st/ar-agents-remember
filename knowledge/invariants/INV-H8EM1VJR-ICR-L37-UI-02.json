@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "Coherent intent-and-source review needs the family guarantee and carried member statements beside the selected intent and expressions, with no invented content for an incomplete roster."
+  },
   "applicability": "Family and member review of recorded before/after family context.",
   "conditions": [
     "The context owner supplies exact selected family revisions and delivered members; absent partial-roster content is never invented.",

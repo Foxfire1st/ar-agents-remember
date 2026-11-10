@@ -14,7 +14,7 @@ pytest. Its projection census is now derived from the canonical repository decla
 
 ## Current source account
 
-The positive policy table now names only operations/curation.md and roles/curator.md and is read through missing_curation_policy_statements. It retains the normalized exact retired-wording and loop-gate scanners. MIK-R72@v2 rebuilt the retired set on the shipped-sentence contract: rows whose statement shipped on a named base surface are kept with that surface in `sources`, each with a distinctive probe that matches no kept live wording and a v2 reason naming the sentence’s specific obsolete duty; rows built only from this leaf’s unlanded drafts were removed, and the four adopted manifest descriptions are registered. This is an exact wording guard; novel semantic contradictions are outside that scan.
+The positive policy table now names only operations/curation.md and roles/curator.md and is read through missing_curation_policy_statements. It retains the normalized exact retired-wording and loop-gate scanners. Each retired row keeps the base surface that shipped its statement in `sources`, with a distinctive probe that matches no kept live wording and a reason naming the sentence’s specific obsolete duty. This is an exact wording guard; novel semantic contradictions are outside that scan.
 
 ## Code Commentary
 
@@ -28,9 +28,9 @@ in which the sentence is a defect **when it returns**, and it keeps a retained d
 developer request still governs full code quality and full tests — from reading as a regression.
 
 `CURATION_POLICY_STATEMENTS` names only `operations/curation.md` and `roles/curator.md`.
-The operation tuple declares its complete-curation rule and `prepare → publish → validate`; the Curator role tuple declares the exact intake/after-repair full-curation/coherence sentence.
-`missing_curation_policy_statements` reports a missing file or a file carrying none of its
-declared markers; its `any` check alone does not establish that both markers survive.
+The operation tuple declares its complete-curation rule, the `prepare`, `publish`, `validate` order, the complete check set with a per-check result, the full `memory_quality_check` operation, repair or escalation of every Curator-actionable finding, the repeat-until-ready condition and the coherence continuation. The Curator role tuple declares two pointer sentences that send the reader to the operation's complete-curation-checks and authority-gates sections before it acts.
+`missing_curation_policy_statements` reports a missing file or a file that lacks any one of its
+declared clauses; a source passes only when every declared clause is present.
 The canonical test checks every marker, while exact generated-copy byte equality is the
 stronger delivery proof.
 
@@ -43,9 +43,9 @@ deliberately **not** the matcher.
 The readers split by question: `retired_statement_findings(reading, surface_relative_path)` answers "is
 this one retired sentence present on this one surface", `doctrine_files` and `retired_curation_findings`
 sweep a tree, and `missing_curation_policy_statements` answers whether each declared compact source carries
-at least one current policy marker.
+every one of its declared policy clauses.
 `GENERATED_SKILL_COPIES` and `CURATION_DOCTRINE_SURFACES` define the sweep: the canonical `skills` tree
-plus every skills target declared by generated-copies.json, currently the single packaged runtime tree. A stale served copy remains a defect. The retired closeout-wording row now names the c05 spelling on the kept w-02 skill; source confinement, probe, normalization and reason remain the guard.
+plus every skills target declared by generated-copies.json, currently the single packaged runtime tree. A stale served copy remains a defect.
 
 ### Conventions
 
@@ -58,27 +58,27 @@ plus every skills target declared by generated-copies.json, currently the single
 
 - **This is not a semantic check, and the module says so.** A corpus that denied the rule in fresh
   vocabulary this registry has never seen would pass. What it buys is that the exact retired sentences
-  cannot come back; the compact positive check has the explicit marker-presence limit above.
+  cannot come back; the compact positive check is likewise an exact clause-presence check.
 - A restatement of the defect in new words is out of reach of the matcher; the guard does not claim to
   read meaning.
 - The module owns the reading half only. The falsifiability half — the seeded re-insertion proving the
   guard can fail — lives in the test module that calls it.
 
-## 260928-MIK-L99 — a leaf's agents hand over to each other
+## Retired leaf-handover wording
 
-The curation-doctrine registry keeps its single owner and matcher for retired curation sentences and field facts. The retired leaf-handover wording moved into its own data module (`retired_leaf_handover_wording.py`), the register now holds only actually retired sentences with exact carriers and probes, and compound preserved-plus-obsolete text was split into independent source-addressed rows.
+The curation-doctrine registry keeps its single owner and matcher for retired curation sentences and field facts. The retired leaf-handover wording lives in its own data module (`retired_leaf_handover_wording.py`); this module turns each of its source/sentence pairs into an independent source-addressed row with an exact carrier and probe.
 
-## 260928-MIK-L93 — the sixteen-statement R93 census
+## Developer-question and forwarding rows
 
-`RETIRED_CURATION_STATEMENTS` gains sixteen independently source-addressed R93 rows: the fourteen replaced role and operation sentences, the exact Manager/Orchestrator forwarding prohibition on both carriers, and the SKILL own-chat directive separated from the old coordinator exception. Each row carries its exact carrier, a distinctive probe and its specific reason. `test_developer_question_wording.py::test_exact_retired_directives_are_detected_as_independent_sentences` is the focused four-case control: each of the four named carrier/sentence pairs alone is reported while the undeclared current carrier stays clean. The every-row/per-carrier proof is the existing `mcp/tests/test_role_instruction_corpus.py::CurationGuardTeethTests::test_reinserting_each_retired_statement_is_detected_on_its_own_surface` loop over the registered statements. The earlier W01 fourteen-row state is predecessor provenance, not current truth.
+`RETIRED_CURATION_STATEMENTS` holds independently source-addressed rows for the replaced role and operation developer-question sentences, the exact Manager/Orchestrator forwarding prohibition on both carriers, and the SKILL own-chat directive separated from the old coordinator exception. Each row carries its exact carrier, a distinctive probe and its specific reason. `test_developer_question_wording.py::test_exact_retired_directives_are_detected_as_independent_sentences` is the focused four-case control: each of the four named carrier/sentence pairs alone is reported while the undeclared current carrier stays clean. The every-row/per-carrier proof is the existing `mcp/tests/test_role_instruction_corpus.py::CurationGuardTeethTests::test_reinserting_each_retired_statement_is_detected_on_its_own_surface` loop over the registered statements.
 
 ## Leaf-set and held-delivery retired wording
 
-The retired registry additionally names the actual shipped sentences replaced by sibling set preparation, the single-live-leaf-seat resolver, direct Worker freeze delivery and product-owned permission waiting. Their source-confined probes protect the old wording without changing the matcher into a semantic review. The positive set-start duty belongs to `leaf_instruction_wording.py`; no test-support function starts a role or writes knowledge.
+The retired registry additionally names the actual shipped sentences replaced by sibling set preparation, the single-live-leaf-seat resolver, direct Worker freeze delivery and product-owned permission waiting. Their source-confined probes protect the old wording without changing the matcher into a semantic review. The positive stage-start duties belong to `leaf_instruction_wording.py`; no test-support function starts a role or writes knowledge.
 
 ## Current scoped contract
 
-The Curator positive entry now accepts “At intake and after every repair, run the full curation operation and coherence gate”. The operation entry is unchanged. This is a table spelling update, not a wider retirement matcher or an automatic meaning check; existing retired-source custody and the positive reader's `any` limit remain.
+The Curator positive entry requires both of its pointer sentences, each naming its section anchor in `operations/curation.md`; the operation entry requires all seven of its clauses. This is an exact clause-presence check, not a wider retirement matcher or an automatic meaning check; retired matching stays source-confined.
 
 ## Evidence
 
@@ -97,15 +97,14 @@ No relevant documentation found after checking live sources.
 The module is the census the shipped-corpus guard reads. Its registry is the **retired** side and
 `CURATION_POLICY_STATEMENTS` the **compact positive-policy** side; the canonical every-marker
 case, generated-copy marker reader and seeded retired-wording controls live in
-`mcp/tests/test_role_instruction_corpus.py`. The marker reader retains the `any` limit
-described above.
+`mcp/tests/test_role_instruction_corpus.py`. The marker reader requires every declared clause.
 
 
 
 
 
 
-- The readers answer the per-surface and per-tree questions separately, and the completeness reader is the required-rule half. [4]
+- The readers answer the per-surface and per-tree questions separately, and the completeness reader is the required-rule half, requiring every declared clause. [4]
 
 - The consuming cases and the seeded re-insertion that proves the guard can fail. [5]
 - The repository sync script checks the declared package projection against canonical skills. [6]
@@ -118,9 +117,13 @@ No meaningful cross-repo references found.
 
 
 
-- The retired-sentence registry carries the exact statement, its shipped sources, its probe and its packet fragment. [1]
-- The required-rule table names the exact form each canonical surface must state, keyed by shipped path. [2]
-- The current Curator tuple carries the intake/after-repair full-operation marker, while the operation keeps COMPLETE_CURATION_RULE and prepare/publish/validate. Retired matching remains source-confined whole-sentence matching and the positive reader accepts any declared marker. [8]
+- The retired-sentence registry carries the exact statement, its shipped sources, its probe and its reason. [1]
+
+- The required-rule table names the exact clauses each compact curation source must state, keyed by shipped path. [2]
+
+- The operation tuple carries `COMPLETE_CURATION_RULE` and the six other curation clauses; the Curator tuple carries two pointer sentences into the operation's sections. [8]
+- A compact source passes only when every declared clause is present. [9]
+
 
 - The sweep adds canonical skills to every target from the generated-copy declaration, currently the single packaged runtime tree. [3]
 

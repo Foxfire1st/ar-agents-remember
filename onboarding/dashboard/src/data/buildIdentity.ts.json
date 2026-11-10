@@ -8,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:7ff733fb2911efbb7db59e34e56fe0d5d371080014662aee3951df3a6b764c24",
             "locator": {
-              "end": 393,
+              "end": 403,
               "kind": "line_range",
-              "start": 393
+              "start": 403
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -22,41 +22,18 @@
       ]
     },
     "2": {
-      "note": "Renders the comparison as a data attribute and adds a reload instruction to the mismatch tooltip.",
+      "note": "Renders the comparison as a data attribute and adds a reload instruction to the mismatch tooltip. Anchor: `data-client-build-current`",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:e57836a7bded493be6880aeceeda5dc025ed8d9e2840ea88d2cf95991982f44e",
+            "blob": "55465c1b52382000bb2af1af534a8e31d6407719",
+            "content": "sha256:f1809958f64ef893eba89b4d49ec111ea032dc053eb5e89e379d3b2d4c8f22fd",
             "locator": {
-              "kind": "symbol",
-              "name": "ServingBuildStamp"
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:472cf6a2e02a3ca636277df5bb65561f8f50bf1ed84c1499f67ecb165b32b818",
-            "locator": {
-              "end": 1035,
+              "end": 52,
               "kind": "line_range",
-              "start": 1009
+              "start": 27
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/cockpit/serving-build-stamp/ServingBuildStamp.tsx"
           },
           "kind": "code"
         }

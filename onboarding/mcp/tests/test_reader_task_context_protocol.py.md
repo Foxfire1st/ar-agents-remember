@@ -43,4 +43,4 @@ An in-memory registered MCP session verifies the optional exact task_context pai
 
 
 
-- The factory that pairs the process-wide request union with its per-server dispatcher.  Anchor: `create_server` [2]
+- The factory that pairs the process-wide request union with its per-server dispatcher, through the tool registrars it runs. [2]

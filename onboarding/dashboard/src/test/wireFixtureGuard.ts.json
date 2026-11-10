@@ -128,12 +128,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:854496aae40093e3268f94ebe54716fcb9770b38fbc20a6b0514c5ff671a751a",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "content": "sha256:96d5fb10ba0ff77cddcd147392db223f01b24821e9b8fafb4249101e5e238b69",
             "locator": {
-              "end": 522,
+              "end": 511,
               "kind": "line_range",
-              "start": 506
+              "start": 493
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "content": "sha256:b8e8aeb19a9db1aaff3be58de7dcb40ab4c0d47dcc5746109c9e140764475ea2",
+            "locator": {
+              "end": 678,
+              "kind": "line_range",
+              "start": 639
             },
             "path": "dashboard/src/types/projection.ts"
           },

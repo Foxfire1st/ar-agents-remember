@@ -1,0 +1,76 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/coordination/architect/claim-verification.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sends are verified in the message log; preservation claims need a same-day run; a design's origin is established before calling it defective.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405b6939680b867458b3dd4ea8aacabcc288ca8",
+            "content": "sha256:8004ccc688f23b495d17a50b0f1bac45fa64e58185671010da3011af603e23f7",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The complete code path is read before ruling, re-read before overruling an agreed reading, and a wrong ruling is withdrawn plainly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405b6939680b867458b3dd4ea8aacabcc288ca8",
+            "content": "sha256:15eb13fca5b578ec710081d1523b307d530bd8375737cde934806431af302fa2",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Claims about files outside scratch are checked against the file, its creation time and the session record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405b6939680b867458b3dd4ea8aacabcc288ca8",
+            "content": "sha256:00031761c69e62744d45d6f4dd53432ddc7f94b18d1df7c07e6004b8b5e50e90",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Architect role points here before ruling on a reported claim.\n\nAnchor: `claim-verification.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:41225521b9556275dc4b66a5b5dbb1bd396261025cf8cd77d881b4bbe30be133",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

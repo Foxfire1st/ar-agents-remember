@@ -1,0 +1,240 @@
+{
+  "path": "mcp/tests/test_l84_r1_05_wording_pin.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+        "content": "sha256:4fd1895a61e63d236f3dc7d051223afef1875a3c6a45e668549657c3edb18c47",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_manifest_steps_name_the_pointer_derived_actions"
+        }
+      },
+      "facet": "Compares every declared step and audience in source and package with the pointer-derived ones and fails on a mismatch.",
+      "id": "PRF-846ZFA",
+      "invariant": "INV-HJ5A68",
+      "origin": {
+        "handoffEntry": "L84-P5-05",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+        "content": "sha256:8c702fce9fcc0cea37e7295243b23263fb4f49abc5d8fdde2087ff1d99c76592",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_core_unit_sources_do_not_link_their_own_digest_place"
+        }
+      },
+      "facet": "Reads every core unit's lines from the digest map and fails when a unit links its own every-role place.",
+      "id": "PRF-9MFJFR",
+      "invariant": "INV-0V8R02",
+      "origin": {
+        "handoffEntry": "L84-P5-12",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+        "content": "sha256:e9eab6a3b05ddd000c6f696c05b3def3a963ca7bbd1f83e1a2f33b9142162a7f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r1_05_sentence_is_pinned_once_in_every_carrier"
+        }
+      },
+      "facet": "Requires the full recovery sentence exactly once, directly after the stop clause, in every carrier.",
+      "id": "PRF-EHPWVZ",
+      "invariant": "INV-8VNSKJ",
+      "origin": {
+        "handoffEntry": "L84-R1-05",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+        "content": "sha256:5676ebbf98175b392e0f756b73862efbb94fb1e3d0ad3df60ea21ed6fa73b0a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r1_05_carriers_also_name_the_same_tool_and_input_class"
+        }
+      },
+      "facet": "Requires every carrier to name the same-tool and input-class recovery before the hand write.",
+      "id": "PRF-MT12M8",
+      "invariant": "INV-8VNSKJ",
+      "origin": {
+        "handoffEntry": "L84-R1-05",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+        "content": "sha256:8c702fce9fcc0cea37e7295243b23263fb4f49abc5d8fdde2087ff1d99c76592",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_core_unit_sources_do_not_link_their_own_digest_place"
+        }
+      },
+      "id": "RLZ-JX6B2J",
+      "invariant": "INV-0V8R02",
+      "origin": {
+        "handoffEntry": "L84-P5-12",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This test reads every core unit's lines from digest-map.json and fails when a unit's block links its own every-role place; it fails on the A004 AU4.2 and A005 AC2.1 self-links.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The hand-write sentence is spelled once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "content": "sha256:69649b5d9247a7b1b05645b034a2e7ded7238d8cc8cc23320d5171ffd82353d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "SENTENCE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The carriers are the canonical and packaged core files, the launch preparation and the settings reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "content": "sha256:a31ce53e4a6c410e2237df0b5e83a79ab07447205dd1d5c6f1e93f98afb0b317",
+            "locator": {
+              "kind": "symbol",
+              "name": "CARRIERS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The sentence is pinned once in every carrier and fails when cut.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "content": "sha256:e9eab6a3b05ddd000c6f696c05b3def3a963ca7bbd1f83e1a2f33b9142162a7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r1_05_sentence_is_pinned_once_in_every_carrier"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Core unit sources do not link their own digest place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "content": "sha256:8c702fce9fcc0cea37e7295243b23263fb4f49abc5d8fdde2087ff1d99c76592",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_core_unit_sources_do_not_link_their_own_digest_place"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Manifest steps and audiences equal the pointer-derived actions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "content": "sha256:4fd1895a61e63d236f3dc7d051223afef1875a3c6a45e668549657c3edb18c47",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_manifest_steps_name_the_pointer_derived_actions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The source homes carry the Architect wording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "content": "sha256:0903749ae531ca452554d0b789c2a2ac7d6dc8a1ce850ede374aff8e612b3af2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_source_homes_carry_the_architect_wording"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The sandbox rules hold once in each home and not in the sandbox detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "content": "sha256:802bde229382aaeceac99d79617c6e71bce8dd8fa733b054dadd4e89eebee9ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_moved_sandbox_rules_hold_once_in_each_home"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Reviewer's repair-and-continue rule is pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "content": "sha256:dd9e708d30111f17051bb4a8c3821d61f8cfad82d2fc1e8e450b40ee568c3bba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reviewer_repair_and_continue_rule_is_pinned"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Every carrier names the same tool and input class.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "content": "sha256:5676ebbf98175b392e0f756b73862efbb94fb1e3d0ad3df60ea21ed6fa73b0a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r1_05_carriers_also_name_the_same_tool_and_input_class"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

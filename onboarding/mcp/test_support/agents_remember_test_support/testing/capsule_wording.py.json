@@ -3,16 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The helper checks affirmative clauses on delivered role/stage surfaces, compiles Curator instructions, obtains moved facets through delivered_step and checks the exact delivered Git-comparison sentence; this source inspection executes none of those checks.",
+      "note": "The helper checks affirmative clauses on delivered role/stage surfaces, compiles the owning seat's instructions, obtains moved facets through delivered_step and owning sections, and checks the exact delivered Git-comparison sentence; this source inspection executes none of those checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "7045585c9a5fcd1d9bd95924908841cdfe54f78a",
-            "content": "sha256:92cc41ef92247c70c07b6b5bc2859fd0008021886c2923fa9b5db98879876c1f",
+            "blob": "518ce4e48aa1f1fa279d5ff45db1f35e77009964",
+            "content": "sha256:3d91980af4ed87e88900672733e8fdbe7c78d98a97bd24e6120412b11336da1f",
             "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -20,30 +18,32 @@
       ]
     },
     "2": {
-      "note": "Current clause_surface resolves the busy-retry facet through the actual Worker, Reviewer or Curator role-operation pair and the independently pinned message-handover source and step, requiring its declared pointer before delivered_step. The Curator memory-leaves-code-untouched facet still uses its exact declared handoff detail.",
+      "note": "clause_surface resolves busy retry through the role-operation pair and message-handover detail, Curator memory facets through the memory-handover pointer, and other relocated facets through their owning sections.",
       "targets": [
         {
           "anchor": {
-            "blob": "7045585c9a5fcd1d9bd95924908841cdfe54f78a",
-            "content": "sha256:aa04be41789afbe8b93e5d342399493ec8be117d179f1b695ee8ed4fc3c8dcfd",
+            "blob": "518ce4e48aa1f1fa279d5ff45db1f35e77009964",
+            "content": "sha256:72e15b5cd6567c0cda5a671c8953f0aab2e6c919b743a617b04da28d09ba7007",
             "locator": {
-              "end": 139,
-              "kind": "line_range",
-              "start": 99
+              "kind": "symbol",
+              "name": "clause_surface"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "3": {
+      "note": "The identity facet reads the delivered memory-handover detail; the other memory facets read the shipped review Boundaries section.",
+      "targets": [
         {
           "anchor": {
-            "blob": "4961419e1d630a8702ba5e28562a275ffa800329",
-            "content": "sha256:7e9a1968ac3efb884478222ee7ebab121d978d3cb0f3132d01b0d13dd39462a4",
+            "blob": "518ce4e48aa1f1fa279d5ff45db1f35e77009964",
+            "content": "sha256:2d688b0e5a4054133f78dd4d9341c1480546123086eead13847613c375d3268c",
             "locator": {
-              "end": 86,
-              "kind": "line_range",
-              "start": 82
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py"
+              "kind": "symbol",
+              "name": "_curator_memory_surface"
+            }
           },
           "kind": "code"
         }

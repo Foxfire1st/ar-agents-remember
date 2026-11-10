@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The unchanged-context family requires opening attributed context to leave measured change totals untouched, so context inspection cannot manufacture changed files."
+  },
   "applicability": "The review's measured change inventory and its listed_total while attributed unchanged paths are opened.",
   "conditions": [
     "Admission reads the inventory and adds no entry to it."

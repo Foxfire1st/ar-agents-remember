@@ -1,0 +1,93 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/tasks/collaboration-method.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The method applies before choosing a task format, including in plain chat, and meta-questioning is for leverage, not delay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e0a00ea1f15ee66d9f9d02553a8656c1624b744",
+            "content": "sha256:e8aecd20b9e96a05dc96ba24077df2bc8036ae1cef320d44fdce3cd525393ca6",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Non-trivial requests get a reviewable reframing, and a scope-changing reframing waits for confirmation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e0a00ea1f15ee66d9f9d02553a8656c1624b744",
+            "content": "sha256:f4fc99604b8b04add75fad2886d49f919ca0b5b0741b4da5b755717e92466fc0",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Design reasoning runs in both directions, with assumptions, truth gaps, invariants and non-goals surfaced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e0a00ea1f15ee66d9f9d02553a8656c1624b744",
+            "content": "sha256:1f1dd491ded1d56ea7ed3d3a94745d3e2d7ca43e8b5ef76e513891f4ba012d8c",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Evidence and examples are visible before risky change, and the planning standard lists eight items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e0a00ea1f15ee66d9f9d02553a8656c1624b744",
+            "content": "sha256:680cd94a37977acbb41e962adf4d96ac2beb041256ce60418f28ccea8138fabe",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared invariants point here before scoping work.\n\nAnchor: `collaboration-method.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46e3c59e5839d4324a7a8be9126c188d689d1012",
+            "content": "sha256:44f93b96b12bdbef8012c4e6dc6c6d033d02d2314fdde6660746b8cf45ea775e",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "skills/l-01-agent-lifecycles/core/invariants.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

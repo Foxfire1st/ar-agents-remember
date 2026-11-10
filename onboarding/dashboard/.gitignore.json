@@ -44,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
+            "blob": "a36402fbbf7391c822d53964f1f01da98365bf44",
             "content": "sha256:7f018d8406443dcf8b4c9e0c9254e8427362d1a36e4e2d6a2d8fb56ef5b5b2e2",
             "locator": {
-              "end": 123,
+              "end": 120,
               "kind": "line_range",
-              "start": 102
+              "start": 99
             },
             "path": "mcp/tests/test_worktree_own_environment.py"
           },

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
-        "content": "sha256:0b2b8de55b06182edad0e23533ab4abb7618b277a69e0fd7296ccb878fa68139",
+        "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+        "content": "sha256:9be5158644ddcfc26a417aad8c6e8baf4535f03de6ac93a666bb61bdd3c30af5",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
-        "content": "sha256:0b2b8de55b06182edad0e23533ab4abb7618b277a69e0fd7296ccb878fa68139",
+        "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+        "content": "sha256:9be5158644ddcfc26a417aad8c6e8baf4535f03de6ac93a666bb61bdd3c30af5",
         "locator": {
           "kind": "file"
         }
@@ -32,34 +32,46 @@
         "handoffEntry": "MIK-R93@v1 rules6,11,13",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "The Manager brief retains gate acceptance and records Architect-or-developer approval for beyond-settings-limit CODE or MEMORY review while preserving sealed findings and its existing dispatch/report boundaries.",
+      "rationale": "The Manager brief keeps gate acceptance with the Manager, records an extra-round approval when one is needed, and preserves the monotonic sealed finding list within the settings limit, while its dispatch and report boundaries stay as before.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "Manager brief values bind execution nature, canonical source edge and supported role_start environment without guessing source branches; each leaf's exact owned primary revision is compiled separately from adjacent constraints before dispatch.",
+      "note": "Manager brief values bind execution nature and the canonical source edge without compiling branch names; each leaf's exact owned primary revision is compiled separately from adjacent dependency and preservation revisions before dispatch.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
-            "content": "sha256:26f75923fb0b10eee64f34554b8f08273ec522cf0aa240c445c3662d00fd0a86",
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:1543b6dcd8ade49588356d6be0262be0a85cfc8f4a01599dc7e46b97bf368730",
             "locator": {
-              "end": 44,
+              "end": 41,
               "kind": "line_range",
-              "start": 34
+              "start": 35
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
-            "content": "sha256:a2a60fa67649ff119c3d1bd101140e2125397c5ab963d7b4ff1b2e9f341fd90e",
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:ce349f15f367839a6ac593be8d4cd861bdb0177df85a526722f44b6ace758b27",
             "locator": {
-              "end": 87,
+              "end": 73,
               "kind": "line_range",
-              "start": 65
+              "start": 66
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:f3bfa3e3469330c8d23bc8023eba4508a42034200138ca0ffbc889b7287b4dfb",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 188
             }
           },
           "kind": "code"
@@ -71,12 +83,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
             "content": "sha256:1305e15ab630ef8c13130106ad2612492fce7446bd856eef28fea19da46a7214",
             "locator": {
-              "end": 156,
+              "end": 158,
               "kind": "line_range",
-              "start": 156
+              "start": 158
             }
           },
           "kind": "code"
@@ -84,14 +96,14 @@
       ]
     },
     "3": {
-      "note": "The Manager brief compiles candidate-bound immutable formal attempts, preserves accepted attempts and phase-sensitive malformed-row correction, and keeps the master attempt summary rebuildable and non-gating.",
+      "note": "The Manager brief binds the leaf journal, next handoff attempt, carried findings and frozen candidate evidence, deferring candidate binding, immutable records and invalid-record handling to acceptance; the master attempt summary stays rebuildable and non-gating.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
-            "content": "sha256:68a8ca2f5f03a522b46fb32af747c7cac978ad26a368bd79140fb6bb5f19eada",
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:4512d6230d81c6a0f7fe95a02c16a3efc32c525c4438790b06cebd9d6da91a58",
             "locator": {
-              "end": 87,
+              "end": 82,
               "kind": "line_range",
               "start": 75
             }
@@ -100,12 +112,12 @@
         },
         {
           "anchor": {
-            "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
-            "content": "sha256:b1c99088bad72e0d2a9fea3ac9dc6b4e3f722f6a1b28e5f72d2033bc6575e4a9",
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:7305f7cdd53589558ecac91266a738855ac040c64f46522fdec194d95b46fc70",
             "locator": {
-              "end": 127,
+              "end": 128,
               "kind": "line_range",
-              "start": 120
+              "start": 124
             }
           },
           "kind": "code"
@@ -117,24 +129,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
-            "content": "sha256:c12c218b2f11feb9940ff8c58c0d1ee668b3f0c443129b7718f4d2604331a855",
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:3a7d14b330cc9fed563524d90881d089b7d4308b6c1de81c3ff58e685d6dd030",
             "locator": {
-              "end": 137,
+              "end": 122,
               "kind": "line_range",
-              "start": 108
+              "start": 84
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
-            "content": "sha256:8481cb2fe8548c65fe9db6c9e5e63a64168d49a4c17ec99d8bf18df111558a45",
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:d33558467722233bacaf47a65c75e38a4548356ba15740844942794ac4227b63",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:a43c03f8f5f3fd2c714a5d444f75080bd871a6df3eff627d5b27a0710cfed129",
             "locator": {
               "end": 163,
               "kind": "line_range",
-              "start": 157
+              "start": 158
             }
           },
           "kind": "code"
@@ -146,48 +170,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
-            "content": "sha256:8d33e1767549522d8f42de7fe193725706823353276682a340e9b94b68fff1a2",
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:1b2d741579650d18ba3291eda82f356267d3c84d57e7dd0c3c4b08a61d1a1c7d",
             "locator": {
-              "end": 10,
+              "end": 11,
               "kind": "line_range",
-              "start": 7
+              "start": 9
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
             "content": "sha256:8e330fd4dde17e157ce47fb5fc689daf5592d1cd089f82a7bb2118447fc40dfa",
             "locator": {
-              "end": 53,
+              "end": 50,
               "kind": "line_range",
-              "start": 46
+              "start": 43
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
-            "content": "sha256:c12c218b2f11feb9940ff8c58c0d1ee668b3f0c443129b7718f4d2604331a855",
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:6525cd21e04ba2d49e6f5535db34839ecd84a5e74c7e30a00a9b7efd666cc6f0",
             "locator": {
-              "end": 137,
+              "end": 122,
               "kind": "line_range",
-              "start": 108
+              "start": 104
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
-            "content": "sha256:28e3f9953000901f072e14a73415e203b437da6fa944f1df9d8788f0b909868e",
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:d33558467722233bacaf47a65c75e38a4548356ba15740844942794ac4227b63",
             "locator": {
-              "end": 174,
+              "end": 138,
               "kind": "line_range",
-              "start": 157
+              "start": 134
             }
           },
           "kind": "code"
@@ -195,28 +219,28 @@
       ]
     },
     "6": {
-      "note": "Master input values require individual leaf role_start stages, one owned primary revision, sealed requested review and separate attempt lineage; full curation remains a standing prerequisite of the authorized transaction, distinct from opt-in full code/test operations.",
+      "note": "Master input values require individual leaf role_start stages, one owned primary revision, sealed requested review and separate attempt lineage; the closeout apply proves admission including the Curator's coherence record, and the published pair names the Worker's targeted checks and the complete Curator result.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
-            "content": "sha256:e54831eb9a5e832483b3248182866f51e93db427ad6a65ee7739e3001c7b2885",
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:c9b1915d9f75eda9fbdc1a93a947772aa5c7495f7168bf850ab6764f7baa650d",
             "locator": {
-              "end": 87,
+              "end": 98,
               "kind": "line_range",
-              "start": 55
+              "start": 60
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a4e6e9d0cc0abec9cca64d13bfbc2531d9864e0b",
-            "content": "sha256:55c229a2fb9fba362ea9b3a55fe8fa401dfeb2418e232534bdfb87f1c6678b37",
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:b089d425fe98107430ac3037dd20a22e0c738400dbe7645b9859190deca35c38",
             "locator": {
-              "end": 140,
+              "end": 138,
               "kind": "line_range",
-              "start": 108
+              "start": 104
             }
           },
           "kind": "code"
@@ -228,12 +252,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ea09011d0657bf89935264047f646078913e415",
-            "content": "sha256:83977738db41426244730104c6bc2a9e58a79f04121154ee89c3c48ba6b5c66d",
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:4d013d53b3c726420c15c8ab92373a540db9a5cbeb19dbebba4870686b0f6660",
             "locator": {
-              "end": 61,
+              "end": 89,
               "kind": "line_range",
-              "start": 61
+              "start": 89
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -241,12 +265,12 @@
         },
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:f0e10f4491be65b9f9a8c4940aa1d1a591d031f64996f2879d483e1c7418c9c2",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:8ff35a30909bc3945180cc36abe71d74b0dc4204910e2a15c66fa52d36a571ff",
             "locator": {
-              "end": 81,
+              "end": 71,
               "kind": "line_range",
-              "start": 77
+              "start": 70
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },

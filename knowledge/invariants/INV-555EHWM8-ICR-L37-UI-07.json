@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The coherent-review family needs catalogue rows to stay bound to the current comparison, because rows retained from another task could select intent outside the review on screen."
+  },
   "applicability": "The shared catalogue hook when repository, master or leaf target changes.",
   "conditions": [
     "The read target key must match the current target before rows can be returned.",

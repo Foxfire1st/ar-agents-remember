@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
-        "content": "sha256:747210c981896c1d6f0a12dda877823a7b46fd7c37495ec45d51344b2a769826",
+        "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+        "content": "sha256:2365237b89f6e902e092497a9fd09f806f9fd8c17d1dc9284b7b520f613259b7",
         "locator": {
           "kind": "file"
         }
@@ -16,7 +16,7 @@
         "handoffEntry": "L192-W-R199-09",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The root instruction at C copies only an admitted parameter into its context_packet call (AGENTS.md:64-71), which is what the entry asserts; the whole-file anchor is now recorded against C's bytes.",
+      "rationale": "The root instruction copies only an admitted parameter into its context_packet call (AGENTS.md:58-62) and says the retired search providers take no provider selection, which is what the entry asserts.",
       "role": "primary-authority"
     }
   ],
@@ -26,10 +26,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
-            "content": "sha256:502fdaf44329e840e866f9f55227fd7c8a2067c09e0c70a4adf343c2166031b0",
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "content": "sha256:66d508d9e3e5ec41bf4b4375c840db5848e77f2a28b9eac008f0e0ddf93b3c83",
             "locator": {
-              "end": 47,
+              "end": 46,
               "kind": "line_range",
               "start": 1
             }
@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
-            "content": "sha256:c525e2b1e0722a07ab56014d333dcd1e4538a6f4601d3247eb3556bd2f37481f",
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "content": "sha256:7a60e05f64afa47f724d7559bc983d5b7c06cafe83f26c356ba16f95154e4739",
             "locator": {
-              "end": 96,
+              "end": 95,
               "kind": "line_range",
-              "start": 50
+              "start": 47
             }
           },
           "kind": "code"
@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
-            "content": "sha256:db219917c9cfad021a9a0f8e706a3e2890989d70c99c776421a6f110af585747",
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "content": "sha256:033ea0097c2049db1cd9cf14bf1839ec531ae193867421b484f044b9ab9f5e17",
             "locator": {
-              "end": 153,
+              "end": 135,
               "kind": "line_range",
-              "start": 103
+              "start": 96
             }
           },
           "kind": "code"
@@ -73,16 +73,16 @@
       ]
     },
     "4": {
-      "note": "Current testing, diagnostic and enforcing policy.\n\nAnchor: `## Code Quality Instructions`",
+      "note": "Current testing, diagnostic and enforcing policy.",
       "targets": [
         {
           "anchor": {
-            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
             "content": "sha256:e3c8a94181a7d1874dc250f9be9690b52e73b10385f4e704aa157cf28cde7559",
             "locator": {
-              "end": 211,
+              "end": 192,
               "kind": "line_range",
-              "start": 155
+              "start": 136
             }
           },
           "kind": "code"

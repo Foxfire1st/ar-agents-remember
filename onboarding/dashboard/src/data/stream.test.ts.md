@@ -2,11 +2,11 @@
 
 ## Governing Overview
 
-[data overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-Verify state-stream sleep/wake recovery and the open-deadline honesty boundary.
+Verify state-stream sleep/wake recovery, the open-deadline honesty boundary and delivery of named state deltas such as build currentness.
 
 ## Code Commentary
 
@@ -14,9 +14,9 @@ Verify state-stream sleep/wake recovery and the open-deadline honesty boundary.
 
 A controlled EventSource proves that an open channel quietly cycles after a sleep-sized clock jump,
 hidden tabs are exempt from watchdog cycling, ordinary transport errors still signal loss, and a replacement
-that neither opens nor errors is eventually marked signal-lost and retried.
+that neither opens nor errors is eventually marked signal-lost and retried. A `buildCurrentness` event fired on the open source reaches the store without opening a second source.
 
-### 260928-MIK-L114 Ready Last-Feed Cases
+### Ready Last-Feed Cases
 
 Two cases prove the ready-marker parsing the store hydration depends on: the marker's
 last feed reaches the opener, and an unreadable marker still opens the gate.
@@ -50,6 +50,8 @@ No relevant external documentation is configured.
 
 - Production state-stream transport owns the deadline. [2]
 
+- Build currentness arrives on the existing state stream without a reconnect. [5]
+
 
 ### Cross-Repo References
 
@@ -61,5 +63,3 @@ No meaningful cross-repository references found.
 The moved-notice cases drive ControlledSource through the named review.explainer.moved event: a matching mounted subscriber receives the exact payload, another leaf does not, and no-work and cleared notices reach the same subscriber without reopening the page. These are event-wiring assertions over a stubbed EventSource, not live transport latency measurements.
 
 - The moved-notice cases drive ControlledSource through the named review.explainer.moved event: a matching mounted subscriber receives the exact payload, another leaf does not, and no-work and cleared notices reach the same subscriber without reopening the page. These are event-wiring assertions over a stubbed EventSource, not live transport latency measurements. [4]
-
-- Retired at the fifth freeze d59c3493: dashboard/src/data/stream.test.ts:38-122 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 842b487b854503d95c9c2d9dce1841198ba93c7d. Retired means the anchor no longer stands, not that the cited subject was deleted.

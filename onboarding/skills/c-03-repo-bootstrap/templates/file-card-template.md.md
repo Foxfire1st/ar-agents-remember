@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Repository onboarding overview](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
@@ -18,13 +18,13 @@ The required output is a converted card with a source-path title, relative `## G
 
 ### Conventions
 
-Phase 4G of the bootstrap skill creates file cards for priority source files before file-level onboarding is assigned, except for tiny repositories. Phase 4H gives each file worker one card and has it follow `c-05-create-or-update-onboarding-files`. The card keeps workers scoped and prevents broad rediscovery: permitted reads are listed, while unrelated areas, unlisted adjacent-repository files, broad directory scans and other areas' reports require escalation.
+Phase 4G of the bootstrap skill creates file cards for priority source files before file-level onboarding is assigned, except for tiny repositories. Phase 4H gives each file worker one card and has it follow the l-01 Curator card procedure (`reference/curator/card-formats-and-citations.md`). The card keeps workers scoped and prevents broad rediscovery: permitted reads are listed, while unrelated areas, unlisted adjacent-repository files, broad directory scans and other areas' reports require escalation.
 
 Source paths, targets, generation-time, classifications, suggested actions and waves, traps and questions are format placeholders, not evidence of an assignment, completion, authorization or current risk classification. The `Done When` checklist describes the expected output; it does not record a completed wave.
 
 ### Invariants And Boundaries
 
-A file card does not replace `c-05-create-or-update-onboarding-files`; it prepares bounded instructions for that skill's file-level onboarding. Durable onboarding explains only its concrete source file, stays self-sufficient, and links to the nearest governing overview. References are evidence-backed. Task-local planning stays out of durable onboarding, and open questions belong in the wave review or `STATE.md`.
+A file card does not replace the Curator card procedure; it prepares bounded instructions for the file-level onboarding that procedure governs. Durable onboarding explains only its concrete source file, stays self-sufficient, and links to the nearest governing overview. References are evidence-backed. Task-local planning stays out of durable onboarding, and open questions belong in the wave review or `STATE.md`.
 
 ### Todos
 
@@ -39,9 +39,13 @@ The checked template and relevant repository-local bootstrap-skill sections defi
 ### Repo-Internal References
 
 - The file card records targets, classification, governing context, inputs, bounded reads, explanations, traps, questions and done criteria. [1]
+
 - Required output uses a source-path title, relative governing-overview link, prose and temporary citation tables; the fixer owns numbering and sidecar generation. [2]
+
 - Phase 4G writes file cards for priority files and requires them before assignment except for tiny repositories. [3]
-- Phase 4H gives each file worker one card and delegates file-level onboarding to c-05 while preserving bounded reads, self-sufficiency and one-to-one mapping. [4]
+
+- Phase 4H gives each file worker one card to follow with the Curator card procedure while preserving bounded reads, self-sufficiency and one-to-one mapping. [4]
+
 - Done criteria require concrete-file onboarding, a governing backlink, evidence-backed references, no task-local planning and questions in review or state. [5]
 
 ### Cross-Repo References

@@ -2,11 +2,11 @@
 
 ## Governing Overview
 
-[data overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-Pure store assertions cover bounded events, task-keyed snapshots/deltas, published taskCounts, metrics/connection state, idle identity and canonical nonempty-queue reset. Removed lifecycle/heartbeat cases are not current coverage.
+Pure store assertions cover bounded events, task-keyed snapshots/deltas, published taskCounts, metrics/connection state, idle identity, build currentness and canonical nonempty-queue reset.
 
 ## Code Commentary
 
@@ -27,17 +27,16 @@ The suite drives the vanilla store without React. beforeEach calls canonical res
   `dashboardStore.getState().reset()`, then asserts exact queue emptiness and `gen + 1`. It never
   hand-clears the queue, so removing the canonical reset assignment makes the regression fail.
 
-Typed reparsed cloning bumps generatedAt and attention waits, not a removed TaskEntry age. Content-equal reparsed task deltas remain no-writes. Fifty idle snapshots require zero writes and stable state/tasks/analytics/time identity; redundant task deltas and absent removals are no-writes. Real eventAt changes apply, untouched tasks and equal servingBuild keep identity. The 500-tick/five-events-per-tick control retains task population/identity and a <=2000 event window; these are simulated source bounds, not a day-long performance result.
+Typed reparsed cloning bumps generatedAt and attention waits, not a removed TaskEntry age. Content-equal reparsed task deltas remain no-writes. Fifty idle snapshots require zero writes and stable state/tasks/analytics/time identity; redundant task deltas and absent removals are no-writes. Real eventAt changes apply, untouched tasks and equal servingBuild keep identity. The build-currentness case seeds a snapshot with currentness and a process id; an equal re-snapshot and an equal delta write nothing, a changed delta replaces only the currentness while tasks, serving build and process id keep their identity, and reset clears currentness and process id. A frame the producer cannot send (null, a list, a missing or unknown `mode` or `state`, a non-text optional field, an extra key) is dropped and leaves the store and the last observation untouched. The 500-tick/five-events-per-tick control retains task population/identity and a <=2000 event window; these are simulated source bounds, not a day-long performance result.
 
 ### Conventions
 
 Vitest with the `dashboardStore` vanilla store. `../fixtures/snapshot.json` reaches the store through
-`test/servedProjection.ts::asServedProjection`, NOT the `snapshot as unknown as WorkspaceProjection`
-double cast this file used to open with. That cast switched assignability off for the whole file, so
-a fixture that dropped a field the store reads would have typechecked; the helper's parameter type
+`test/servedProjection.ts::asServedProjection`, NOT a `snapshot as unknown as WorkspaceProjection`
+double cast. Such a cast switches assignability off for the whole file, so
+a fixture that dropped a field the store reads would typecheck; the helper's parameter type
 (`AsJsonModule<WorkspaceProjection>`) is a full structural check of everything `resolveJsonModule`'s
-literal-widening does not touch, and the cast inside it only re-narrows the erased vocabularies. This
-file therefore gained a check it never had.
+literal-widening does not touch, and the cast inside it only re-narrows the erased vocabularies.
 
 FIXTURE_TASKS and FIRST_KEY/SECOND_KEY come from projection.tasks, not a copied lifecycle population or count rollup.
 
@@ -57,7 +56,6 @@ mounted derived-view clearance belongs to `SprintGraphPage.test.tsx` rather than
   `setState({ closeoutQueues: [] })`, mock reset, or empty initial fixture would not prove it.
 - This regression covers dev/test scenario infrastructure. It does not specify production queue
   ingestion, retention, ordering, scheduling, or lifecycle behavior.
-- The removed heartbeat no-op/write-through cases are not current source coverage.
 
 ### Todos
 
@@ -74,7 +72,7 @@ No relevant external documentation found after checking live sources for the das
 
 ### Repo-Internal References
 
-The suite is the contract guard for the dashboard store reducers; the task-34 sliding-window test pins
+The suite is the contract guard for the dashboard store reducers; the sliding-window test pins
 the bounded buffer documented in the store sidecar.
 
 
@@ -84,13 +82,18 @@ the bounded buffer documented in the store sidecar.
 
 - Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel. [3]
 
+- Build currentness applies independently, equal observations write nothing, and reset clears it with the process id. [10]
+
 
 - The typed nonempty queue fixture and direct canonical-reset regression force exact queue clearance plus one generation increment. [4]
 
 
 - Fixture narrowing and task-derived keys/count replace lifecycle population. [6]
 - The parameter type that IS the check, and why the double cast was not one. [7]
-- Typed reparsed supplies cloning; the heartbeat builder is no longer used here. [8]
+
+- A build-currentness frame the producer cannot send is dropped and the last observation stays. [11]
+
+- A typed reparsed clone, with its volatile ages bumped, builds the idle snapshots of the change-gate tests. [8]
 
 - The projection mirror the store folds into its id-keyed maps on each snapshot. [9]
 

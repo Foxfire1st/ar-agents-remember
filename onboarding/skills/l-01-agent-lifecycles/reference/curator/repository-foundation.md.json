@@ -1,0 +1,115 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/repository-foundation.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
+        "content": "sha256:84b9d8ce6b5ed5909445940124c36d6fad71a9ce1c6ade5e9119ab425928ee06",
+        "locator": {
+          "end": 13,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-3W9GWW",
+      "invariant": "INV-CQCPAD",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 10",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The Curator's foundation detail makes repository foundation regular task work. The user-started Architect opens the real foundation task under a master, the Curator starts on that task document with its actual enclosure contract, setup's state report and next step are delegated to the bootstrap foundation-state detail, and no instructed session substitutes for task admission.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
+        "content": "sha256:a40199ef3b7340b89d99bdd93e9f916861c3b0f15a0bf3dbf8e6374f8281321e",
+        "locator": {
+          "end": 19,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-D6H32J",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-09DXWE",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The Curator's foundation detail makes foundation regular task work: the user-started Architect opens the real foundation task under a master and starts the Curator on it, the Curator uses that task's enclosure and the c-14 workflow, no incidental code delta or prior onboarding is required, a missing task is reported rather than fabricated, and partial scope is reported as partial.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Foundation uses the real Architect-opened task and actual enclosure, needs no incidental code delta and authors no onboarding.\n\nAnchor: `c-14-knowledge-bootstrap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
+            "content": "sha256:4184185ffbd4c4d0d7f63f893112d2dcdb6f3f302c7df1e529a8999188bf47fc",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A missing task is reported rather than fabricated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
+            "content": "sha256:254c860e03afd09f555010199ca3053e0385415d298217750e6b65c8d9528ce2",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Commit instructions and partial coverage are handled explicitly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
+            "content": "sha256:dc70e4e89b7d99b2b5dd3b5ab933298924ee8c625df36c33d57aba2a196d013a",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The curation operation points here before a first or resumed foundation.\n\nAnchor: `repository-foundation.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "content": "sha256:731b881a659217015ab8376f113422f316f678b2b4c2be94130f927654de8337",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

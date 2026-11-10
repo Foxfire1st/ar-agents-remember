@@ -7,10 +7,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6b878b1f5f1cde36700ed40ec9303794c4356ac",
-            "content": "sha256:a2f70cacf4382ccb096b03828a5ff8d8c98afeea03ebdafb45164f45e796f4fa",
+            "blob": "672c5ed793b9aa938debae4d40b53b807d9c4558",
+            "content": "sha256:b6fc41281fec45157fb8efa7456fc5e6d905393fd9edb07631d3ce33f3f3fed8",
             "locator": {
-              "end": 18,
+              "end": 20,
               "kind": "line_range",
               "start": 1
             }
@@ -20,16 +20,16 @@
       ]
     },
     "2": {
-      "note": "The checklist preserves placement, reference, state, and converted-citation checks; it contains no append-only card-history requirement.\n\nAnchor: `## Compliance Checklist`",
+      "note": "The checklist preserves placement, generated route-index, reference, state, and converted-citation checks; it contains no append-only card-history requirement.\n\nAnchor: `## Compliance Checklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6b878b1f5f1cde36700ed40ec9303794c4356ac",
-            "content": "sha256:afe8714a9fe4bed9f0288240b5f95b7864d22f8133843715094bf1174367f16d",
+            "blob": "672c5ed793b9aa938debae4d40b53b807d9c4558",
+            "content": "sha256:3d1d402997f00d3a5a697180ef3482057d90b758bcb0580ab65658b809461c16",
             "locator": {
-              "end": 39,
+              "end": 43,
               "kind": "line_range",
-              "start": 20
+              "start": 22
             }
           },
           "kind": "code"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6b878b1f5f1cde36700ed40ec9303794c4356ac",
+            "blob": "672c5ed793b9aa938debae4d40b53b807d9c4558",
             "content": "sha256:c3d9b980651ed0515c0b79357a197ead6defc52b76023aa2fd32caf5dace2368",
             "locator": {
-              "end": 63,
+              "end": 67,
               "kind": "line_range",
-              "start": 41
+              "start": 45
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:8c3df8083ab0db00a712889b96034fd1e73098f8c4e0634238ca8543e24eef2d",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:7870d4ef1b45b036f07d3abd1c2e73c19d16c555fe2d30d30c84cf1edfcd48e2",
             "locator": {
-              "end": 1048,
+              "end": 997,
               "kind": "line_range",
-              "start": 1021
+              "start": 970
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
@@ -76,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
             "content": "sha256:130651e3e293258e5ecf7082a75378381bedc24f7af8a0b9d828ccd99aa94ae8",
             "locator": {
-              "end": 214,
+              "end": 183,
               "kind": "line_range",
-              "start": 197
+              "start": 166
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },
@@ -94,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:8bca39c6a0e848db3353e1531da63e95e3fbf54c481dbb90e54f3e14c45ab341",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:7bf2bd72ca4f5848cba0224b8b0e05fed7c590185e6f12f598e76598424ce24a",
             "locator": {
-              "end": 407,
+              "end": 354,
               "kind": "line_range",
-              "start": 399
+              "start": 354
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },

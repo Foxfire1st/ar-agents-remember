@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
-        "content": "sha256:e6bf93bba9343c7e5745a763afa66ba650cdd0e61f20ce4f6595c1eddd38f132",
+        "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+        "content": "sha256:29b3ecae92e30f23935959857d5fb70e628f09d405a6e887e107df252e145f80",
+        "locator": {
+          "kind": "symbol",
+          "name": "DELTA_REDUCERS"
+        }
+      },
+      "id": "RLZ-5H6KYJ",
+      "invariant": "INV-AN0K8G",
+      "origin": {
+        "handoffEntry": "L84-LC-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The buildCurrentness reducer drops a frame that fails the parse and keeps the equal-returns-null and changed-replaces behaviour.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+        "content": "sha256:586a62f67766ccbb68a3b9fb7c0548b27f8b9de82e8cec3eaf9e84930316497d",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+        "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
         "content": "sha256:3e95f2199d191216a63e27bcda9874e9c33ec94beb0b0da84399870306b2d4f9",
         "locator": {
           "kind": "symbol",
@@ -38,8 +56,26 @@
     },
     {
       "anchor": {
-        "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
-        "content": "sha256:e6bf93bba9343c7e5745a763afa66ba650cdd0e61f20ce4f6595c1eddd38f132",
+        "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+        "content": "sha256:bdbc03a89802c43a88439fe83ac8cd60eb6bc0972637a2d67fadc7af51fd71a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "readsAsBuildCurrentness"
+        }
+      },
+      "id": "RLZ-XFVCV9",
+      "invariant": "INV-AN0K8G",
+      "origin": {
+        "handoffEntry": "L84-LC-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The checked parse replaces the cast and mirrors the producer's model, which forbids extra keys and omits None.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+        "content": "sha256:586a62f67766ccbb68a3b9fb7c0548b27f8b9de82e8cec3eaf9e84930316497d",
         "locator": {
           "kind": "file"
         }
@@ -90,12 +126,61 @@
         }
       ]
     },
+    "11": {
+      "note": "A parsed `buildCurrentness` delta is a no-op when it stable-equals the stored value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "content": "sha256:29b3ecae92e30f23935959857d5fb70e628f09d405a6e887e107df252e145f80",
+            "locator": {
+              "kind": "symbol",
+              "name": "DELTA_REDUCERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "A snapshot reuses an equal currentness and takes the process id as served.\n\nAnchor: `projection.servingProcessId`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "content": "sha256:b9a5070c70b178bfe150885444bb94e4f1adcc2ad7855d0b3fc24343d8241ba6",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 265
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A `buildCurrentness` frame that does not read as the producer's payload shape (literal `mode` and `state`, optional text fields, no other key) is dropped; no cast to the wire type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "content": "sha256:bdbc03a89802c43a88439fe83ac8cd60eb6bc0972637a2d67fadc7af51fd71a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "readsAsBuildCurrentness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "`servingBuild`",
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:b15319d1168a05c9de103355d5a33dd2a9447e9bb6404ffe235a8c1c9e6191fb",
             "locator": {
               "kind": "symbol",
@@ -107,7 +192,7 @@
         },
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:b15319d1168a05c9de103355d5a33dd2a9447e9bb6404ffe235a8c1c9e6191fb",
             "locator": {
               "kind": "symbol",
@@ -142,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
             "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
             "locator": {
               "kind": "symbol",
@@ -153,12 +238,12 @@
         },
         {
           "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
             "content": "sha256:53dd32decd9ed22d1b726bfcccda7d714314cb94874c8fd47c3b9e76c730fd16",
             "locator": {
-              "end": 301,
+              "end": 338,
               "kind": "line_range",
-              "start": 301
+              "start": 338
             }
           },
           "kind": "code"
@@ -166,16 +251,52 @@
       ]
     },
     "5": {
-      "note": "`pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state.\n\nAnchor: \"export const useDashboard\"",
+      "note": "`pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state.",
       "targets": [
         {
           "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
-            "content": "sha256:3df43af66aa8b16bb3c6c2a3005ae4d5a4cfaaf7bdf810fa802eabe4e46d605f",
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "content": "sha256:2f18f6e7b4d67baf5a8247a5f1b7ef458b6058c1f0ed8858151d5ad447397bbb",
             "locator": {
-              "end": 358,
+              "end": 71,
               "kind": "line_range",
-              "start": 358
+              "start": 71
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "content": "sha256:e23489ad9d339e2baa2d42dacc9ed8f0f188f181db472faab0a1afe4251bfb34",
+            "locator": {
+              "end": 364,
+              "kind": "line_range",
+              "start": 352
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "content": "sha256:ae5ff59699df0618b75b26c987e3744acc4f393fec19459e2afe9c42067e0d2b",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 388
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "content": "sha256:6a56c901afea38184326b1c2e63ff5b69b5bd62a647bf2754599525db187176d",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 316
             }
           },
           "kind": "code"

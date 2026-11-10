@@ -4,14 +4,28 @@
   "realizes": [],
   "references": {
     "2": {
-      "note": "Production state-stream transport owns the deadline.\n\nAnchor: `connectState`",
+      "note": "Production state-stream transport owns the deadline.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
-            "content": "sha256:e99de257558d12a8eb66451aa7963473fcb8d224617e586c45b5560c3eee00a3",
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:2ab4476def132e39fbaadd52fd20e58b4c44456a58d74317efe0e7bbba53d64e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "STATE_STREAM_OPEN_DEADLINE_MS"
+            },
+            "path": "dashboard/src/data/stream.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:45999c63a4a52fc58bf0dce80a80eda2a910b829ebef3365c6bf38c40f43226f",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 184
             },
             "path": "dashboard/src/data/stream.ts"
           },
@@ -20,14 +34,33 @@
       ]
     },
     "4": {
-      "note": "The moved-notice cases drive ControlledSource through the named review.explainer.moved event: a matching mounted subscriber receives the exact payload, another leaf does not, and no-work and cleared notices reach the same subscriber without reopening the page. These are event-wiring assertions over a stubbed EventSource, not live transport latency measurements.\n\nAnchor: file",
+      "note": "The moved-notice cases drive ControlledSource through the named review.explainer.moved event: a matching mounted subscriber receives the exact payload, another leaf does not, and no-work and cleared notices reach the same subscriber without reopening the page. These are event-wiring assertions over a stubbed EventSource, not live transport latency measurements.\n\nAnchor: `connectState moved notice (review.explainer.moved)`",
       "targets": [
         {
           "anchor": {
-            "blob": "44e16cf38bbc7a6028c0759fed7ece2450801025",
-            "content": "sha256:8650164e0ed06cfd27520ce479a9b30312b744ec95fbc3f7386da1efb9de9300",
+            "blob": "5ac6976794ecf699448a6ff16cfc98d851e31fd8",
+            "content": "sha256:6b162111b62773f53bfbc8489fb8b6b9292c1c51b70cb2dbe21121551c7df15c",
             "locator": {
-              "kind": "file"
+              "end": 250,
+              "kind": "line_range",
+              "start": 168
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Build currentness arrives on the existing state stream without a reconnect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac6976794ecf699448a6ff16cfc98d851e31fd8",
+            "content": "sha256:d2d1784f5f5eafe50bd5965d33718a91a05ebc0ee6f6193ebfe18f8bf9fdc5fa",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 49
             }
           },
           "kind": "test"

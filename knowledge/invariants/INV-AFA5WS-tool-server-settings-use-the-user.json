@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Realized by the settings location function and the exclusive copy; tests prove the copy happens once, leaves the old file and the harness folders untouched and that a dry run writes nothing."
+  },
+  "applicability": "The tool-server settings file in the user's config folder and runtime_install's copy into it.",
+  "conditions": [
+    "The old convention file is <workspace>/.claude/mcp/agents-remember-settings.json.",
+    "The destination is created exclusively, and only when it is absent."
+  ],
+  "exclusions": [
+    "An existing destination, which is left unchanged.",
+    "Workspace harness folders, which an install neither creates nor changes."
+  ],
+  "id": "INV-AFA5WS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A012 freeze report /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/worker/88048054-fcd8-4402-831d-ec1434384185/role-launch/260928-MIK-L84-worker-88048054-fcd8-4402-831d-ec1434384185.md (sha256 24bae8b521caee9e403ff2b3360e0fb33762507a48a93f7df877a908bcb13215); records /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/worker/88048054-fcd8-4402-831d-ec1434384185/role-launch/L84-A012-records/ (manifest sha256 e2fe9e9d5ccad5ff658be0d30a04f9962d89e5ef843b6af7f46ac104ca8be9ae): checks-bounded.log (test_suite_load_independence.py + test_dashboard_build_currentness.py: 36 passed, 5 subtests, 0 failed), dashboard lint/typecheck/full vitest (289 files, 2,205 tests passed), fast gate PASS, on the clean copy of 40475ce5; mutation pass 4/4 caught; last full suite on A007 8d974809 (L84-A007-records/gate325-8d974809.log); the Architect's landing check of A011 (STOP 20261110T010206Z, c5e4f401...) reran both full lanes there and reruns them on A012; Reviewer P5 round-8 code PASS on A011 (/home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round8-fix-verification-verdict.md, sha256 11813eaf6d634dcc2e234789f3a6e672494afed4480d706974fec505c2f4a67d), reopened for L84-LC-01/02 only; round-9 fix-verification pending",
+        "K3 judged this hunk (sha256:e83a46e9f62007daf22e99a659376489748e99252c9b529dfe78f11b084e21d4) to realize CAND-SETTINGS-HOME, deduplicated to INV-AFA5WS; lines read at C 40475ce5."
+      ],
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "MIK-R84@v10 part4 / user settings and copy-once installation",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Tool-server settings use the user config folder beside role settings. Installation copies the old convention file only into an absent destination, leaves the source and existing destination unchanged, and dry-run writes neither settings nor harness folders.",
+  "status": "proposed",
+  "supersedes": []
+}

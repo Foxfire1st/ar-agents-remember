@@ -7,13 +7,31 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
             "content": "sha256:fef33e4345b05251c341beb1cb33fe681ccdc2e9e1ef7eb99c15d8b7cdf293e1",
             "locator": {
-              "end": 152,
+              "end": 143,
               "kind": "line_range",
-              "start": 112
+              "start": 103
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The experiment payload reports the withheld targets and an empty rollback list.\n\nAnchor: `withheldStartupTargets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:22ef1aef188c52d0e92ee8363abd3de03d7873af12b8c1a024d22409cb7d56d2",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
           },
           "kind": "code"
         }
@@ -24,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
             "content": "sha256:dc678045d999a5624ced840f4cec1d1a4095fb40dd7771c65513f5b01b28f645",
             "locator": {
-              "end": 163,
+              "end": 154,
               "kind": "line_range",
-              "start": 155
+              "start": 146
             }
           },
           "kind": "code"
@@ -41,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
             "content": "sha256:db926e2a40e32261a659be470c47bcea9b40a3d61094944add71389351b9cb56",
             "locator": {
-              "end": 204,
+              "end": 195,
               "kind": "line_range",
-              "start": 177
+              "start": 168
             }
           },
           "kind": "code"
@@ -54,16 +72,16 @@
       ]
     },
     "4": {
-      "note": "Anchor: Coordinator startup targets withheld in selected installation.",
+      "note": "The three coordinator startup files every accepted install removes; the withheld name is the same tuple, kept for the experiment report.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
-            "content": "sha256:a2b413c2c06911dfd22baa8b4135d264d992e906ae514933d275748336a4ad25",
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "content": "sha256:529b3ce2b9cb43505ac990eeef6b525dbcc6f5560e292d4cd00d8f5b9f3edb83",
             "locator": {
-              "end": 74,
+              "end": 69,
               "kind": "line_range",
-              "start": 69
+              "start": 62
             }
           },
           "kind": "code"
@@ -75,24 +93,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
             "content": "sha256:03d773b1d912ac84c71ff59f0abf35296785fcc72dbcc1c989640f4389c4f92c",
             "locator": {
-              "end": 302,
+              "end": 293,
               "kind": "line_range",
-              "start": 279
+              "start": 270
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
             "content": "sha256:5a143d8f89544935fdf561b3be13a3f357b5a08c1f46d2bccff8fe4747f3cddf",
             "locator": {
-              "end": 257,
+              "end": 248,
               "kind": "line_range",
-              "start": 228
+              "start": 219
             }
           },
           "kind": "code"
@@ -104,40 +122,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
             "content": "sha256:701d26055947fd274117242ee2791ea2a3d31b3cbb1b16706f523f3f5e775912",
             "locator": {
-              "end": 333,
+              "end": 324,
               "kind": "line_range",
-              "start": 306
+              "start": 297
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
             "content": "sha256:ecb250ca21215332e73955262359f3a407373d5fb9287b0f3cde4f45fcaea31f",
             "locator": {
-              "end": 367,
+              "end": 358,
               "kind": "line_range",
-              "start": 348
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Normal runtime undo restores startup targets; explicit install_roots can still produce separately attributed legacy formatting rows.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
-            "content": "sha256:0303cffd194750b676f5e107a589315f260df9cdc820cf5543feb29c5bc5a778",
-            "locator": {
-              "kind": "symbol",
-              "name": "experiment_rollback_plan"
+              "start": 339
             }
           },
           "kind": "code"
@@ -145,12 +147,12 @@
       ]
     },
     "9": {
-      "note": "The startup targets capsule mode withholds, which no longer include a skills instruction file.",
+      "note": "The startup targets reported as withheld are the retired targets removed by every accepted install.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
-            "content": "sha256:ef6a042cd657b877f5efd6941b5c6a6d669f7c2257ab4088b3a1c3af0d6dec34",
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "content": "sha256:739a0ac4361ec6e48e3fc8118c047a11d1ac4e439c88a285300f2e9393ca9704",
             "locator": {
               "kind": "symbol",
               "name": "WITHHELD_STARTUP_TARGETS"

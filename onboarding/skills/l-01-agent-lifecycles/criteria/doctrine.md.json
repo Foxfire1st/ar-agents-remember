@@ -1,34 +1,16 @@
 {
   "path": "skills/l-01-agent-lifecycles/criteria/doctrine.md",
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
-        "content": "sha256:f29cfa29d45b1f3db753e86560b3c08d96ddf85df6ba78aa8d7979329660c57e",
-        "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-QBST6F",
-      "invariant": "INV-EAX9HM",
-      "origin": {
-        "handoffEntry": "L188-B13",
-        "leaf": "260928-MIK-L188"
-      },
-      "rationale": "The dated catching-evidence account remains history rather than becoming an executable retired-skill dependency.",
-      "role": "primary-authority"
-    }
-  ],
+  "realizes": [],
   "references": {
     "1": {
-      "note": "Canonical doctrine source binds baseline review and seals the narrower fix-verification scope.\n\nAnchor: `# Criteria Catalog — Doctrine Review`",
+      "note": "Canonical doctrine source binds its review through the Reviewer table and the shared catalog rules.",
       "targets": [
         {
           "anchor": {
-            "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
-            "content": "sha256:3e3bd3a33aab3fd35656caa0366bf166abb80994605cf6e1b2e21357528dfca7",
+            "blob": "77a79bf45a97634bd9f3182dd16d99236493da4d",
+            "content": "sha256:b11038435b45913a12abd38565a6f36db84252243c5b417cb8b1669564c75c0d",
             "locator": {
-              "end": 9,
+              "end": 5,
               "kind": "line_range",
               "start": 1
             }
@@ -38,16 +20,16 @@
       ]
     },
     "2": {
-      "note": "The reviewer binding table selects doctrine where the review type and change surfaces require it.\n\nAnchor: `The catalogs your review type binds`",
+      "note": "The reviewer binding table selects doctrine where the review type and change surfaces require it.",
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:313d6ae5d5d3eea6d4393cfae149e951e5d6fd2f165516d17d276b153d78b921",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:1f762636392a1025af19edf0cff6729b687350a2575e221e185d8ea49c58d5f3",
             "locator": {
-              "end": 57,
+              "end": 62,
               "kind": "line_range",
-              "start": 48
+              "start": 44
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -60,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
-            "content": "sha256:7f555e31c36f957a5c72ae7f3323d01160a4c83235250eb4bffb76b777f41a20",
+            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "content": "sha256:8f2ee02adb5091afb65c3d528c202589d6edd193ad5ecc44c7c9035a3392ad13",
             "locator": {
-              "end": 30,
+              "end": 31,
               "kind": "line_range",
-              "start": 29
+              "start": 31
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -74,16 +56,16 @@
       ]
     },
     "4": {
-      "note": "D-1 requires mechanism-backed enforcement claims; D-2 sweeps contradictory sibling doctrine; D-3 walks stuck states.\n\nAnchor: `### D-1 — Doctrine-vs-code anchoring`",
+      "note": "D-1 requires mechanism-backed enforcement claims; D-2 sweeps contradictory sibling doctrine; D-3 walks stuck states.",
       "targets": [
         {
           "anchor": {
-            "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
-            "content": "sha256:43c2923ee94e78b7dbdd41214b3d991d26c674910f8dd984799762b88bd0a687",
+            "blob": "77a79bf45a97634bd9f3182dd16d99236493da4d",
+            "content": "sha256:5d8946a2d4e3f42affb01558f451b38f7eeccfaeff6b27ffd7d3a23425953816",
             "locator": {
-              "end": 42,
+              "end": 19,
               "kind": "line_range",
-              "start": 13
+              "start": 9
             }
           },
           "kind": "code"
@@ -91,16 +73,16 @@
       ]
     },
     "5": {
-      "note": "D-4 distinguishes organizational/atomic topology and protects integration branches from feature/fix work.\n\nAnchor: `### D-4 — Topology and authority sweep`",
+      "note": "D-4 distinguishes organizational/atomic topology and protects integration branches from feature/fix work.",
       "targets": [
         {
           "anchor": {
-            "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
-            "content": "sha256:6dda64e0325e65e97c904bb8cc59daf4908771c65bdf477194c7456be7fdcfd0",
+            "blob": "77a79bf45a97634bd9f3182dd16d99236493da4d",
+            "content": "sha256:b96f2389dcb0c71564595bb051cbac0d3bb6f4163cc37c078f9ab7cf9be3d803",
             "locator": {
-              "end": 52,
+              "end": 25,
               "kind": "line_range",
-              "start": 44
+              "start": 21
             }
           },
           "kind": "code"
@@ -108,16 +90,16 @@
       ]
     },
     "6": {
-      "note": "D-5 separates detected facts from explicit role judgment and labels tie-breaking as such.\n\nAnchor: `### D-5 — Detection is not judgment`",
+      "note": "D-5 separates detected facts from explicit role judgment and labels tie-breaking as such.",
       "targets": [
         {
           "anchor": {
-            "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
-            "content": "sha256:ebe7bd9e0da80a1c3a6eaed0a0b0058a73e86f350be02dd9f1b5fd9533b444d5",
+            "blob": "77a79bf45a97634bd9f3182dd16d99236493da4d",
+            "content": "sha256:a65ba21546b98093bfc2a97eb8a0eea0e72121e884e2731267bf49689e4b9028",
             "locator": {
-              "end": 59,
+              "end": 29,
               "kind": "line_range",
-              "start": 54
+              "start": 27
             }
           },
           "kind": "code"
@@ -125,16 +107,16 @@
       ]
     },
     "7": {
-      "note": "D-6 permits durable requirement identifiers; its source census is a dated historical account.\n\nAnchor: `### D-6 — Source-comment requirement identifiers`",
+      "note": "D-6 checks source comments against the repository's Source Comment Scope, including its bounded requirement-identifier exception.",
       "targets": [
         {
           "anchor": {
-            "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
-            "content": "sha256:a5210db2eb791b0fb59a51ea25dac14eacca672a72f8b40c67d889616d685d09",
+            "blob": "77a79bf45a97634bd9f3182dd16d99236493da4d",
+            "content": "sha256:48e7c1188d69556d888d6ce64fb13bf802bfb4e1666558f65294859e02c7f329",
             "locator": {
-              "end": 72,
+              "end": 33,
               "kind": "line_range",
-              "start": 61
+              "start": 31
             }
           },
           "kind": "code"
@@ -142,17 +124,18 @@
       ]
     },
     "8": {
-      "note": "Novel lenses and the promotion ratchet apply to baseline review, not sealed fix-verification.\n\nAnchor: `## Exploratory Mandate`",
+      "note": "Novel lenses and the promotion ratchet apply to baseline review, not sealed fix-verification.",
       "targets": [
         {
           "anchor": {
-            "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
-            "content": "sha256:729f4a37d4c3767a46f56c79361ddfb96702c022b0f92b47b5f81a7b36d287b5",
+            "blob": "184327da1e5d1f280a1b44f65f0c18aa2d034869",
+            "content": "sha256:383951438d9f9e749a2deabc09dcc10dee8056b6e2e6ae15e681c00d66d07cb7",
             "locator": {
-              "end": 92,
+              "end": 29,
               "kind": "line_range",
-              "start": 74
-            }
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/code-seam.md"
           },
           "kind": "code"
         }

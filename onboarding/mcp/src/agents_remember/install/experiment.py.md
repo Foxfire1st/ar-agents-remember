@@ -2,15 +2,15 @@
 
 ## Governing Overview
 
-[overview.md](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
-Per-run experimental install selection, delivery decision, capability report and undo/run records. It does not install the removed Eve application or probe native adapter dependencies.
+Per-run experimental install selection, delivery decision, capability report and run record. It does not install an application or probe native adapter dependencies.
 
 ## Code Commentary
 
-Selection remains request before process environment before unselected, never a persisted settings switch. Unselected delivery is legacy; selected-and-available is capsule; selected-and-unavailable is refused, never fallback. The actual capability probe is now only the blocking canonical-corpus-anchor file digest. ExperimentRunRecord reports resolved selection/source, instruction-source digest, mode/reason, corpus anchor and capabilities; removed application/dependency-install fields are absent. Normal runtime-install undo rows restore withheld coordinator startup targets via an unselected install and name no skill root, because that installer supplies no skill roots. The rollback formatter still accepts explicit `install_roots` and can render separately attributed old `skills_install` rows; this retained formatting branch does not expose or run the retired install operation. Installation mode and current host role launch are distinct owners.
+Selection remains request before process environment before unselected, never a persisted settings switch. Unselected delivery is legacy; selected-and-available is capsule; selected-and-unavailable is refused, never fallback. The delivery mode does not decide what the installer writes: every accepted install removes the three retired coordinator startup files, and no mode installs or restores them. The actual capability probe is only the blocking canonical-corpus-anchor file digest. ExperimentRunRecord reports resolved selection/source, instruction-source digest, mode/reason, corpus anchor and capabilities. The module renders no undo rows; the install payload's `rollback` list is always empty. Installation mode and current host role launch are distinct owners.
 
 ## Evidence boundary
 
@@ -21,13 +21,16 @@ This account is current source interpretation only. It creates no executed test/
 - [1]
 - [2]
 - [3]
-- [4]
+
+- The three coordinator startup files every accepted install removes; the withheld name is the same tuple, kept for the experiment report. [4]
+
 - [6]
 - [7]
-- Normal runtime undo restores startup targets; explicit install_roots can still produce separately attributed legacy formatting rows. [8]
+
+- The experiment payload reports the withheld targets and an empty rollback list. [10]
 
 ## One delivery of the skill corpus
 
-`WITHHELD_STARTUP_TARGETS` no longer names `skills/AGENTS.md`: the coordinator startup chain withheld in capsule mode is `AGENTS.md`, `system/AGENTS.md` and `tasks/AGENTS.md`. No skill tree is installed beside the runtime at all, so the packaged corpus the capsule compiler reaches through `application/skill_resources` → `packaged_source_root()/runtime/skills` is the one delivery, and the coordination root holds nothing that could stand in for it.
+Every accepted install removes `AGENTS.md`, `system/AGENTS.md` and `tasks/AGENTS.md` from the coordination root; `WITHHELD_STARTUP_TARGETS` is the same tuple, named in the experiment report. No skill tree is installed beside the runtime at all, so the packaged corpus the capsule compiler reaches through `application/skill_resources` → `packaged_source_root()/runtime/skills` is the one delivery, and the coordination root holds nothing that could stand in for it.
 
-- The startup targets capsule mode withholds, which no longer include a skills instruction file. [9]
+- The startup targets reported as withheld are the retired targets removed by every accepted install. [9]

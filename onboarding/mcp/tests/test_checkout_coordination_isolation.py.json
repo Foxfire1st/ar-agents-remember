@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "06a9795d179558224cae3de5e32a54b02e419808",
+        "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
         "content": "sha256:3b04b8d5bc326d44d888f1eaa0038867c9acf9533bb47e35c1728aa71d687851",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
+            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
             "content": "sha256:7b9e477794f9711a01e233e8b69512a8f667059c3378bfef8bb4bc9548485d54",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
+            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
             "content": "sha256:8a169bdbcf1c97f4712f9841b1cbf866e2885f7a510d35e4cfcde5e9d1051875",
             "locator": {
               "kind": "symbol",
@@ -53,15 +53,32 @@
         }
       ]
     },
-    "2": {
-      "note": "Checkout config ignores live authority and uses only dummy root.\n\nAnchor: `test_checkout_config_ignores_live_authority_and_uses_only_dummy_root`",
+    "11": {
+      "note": "An installed coordination root is recognised by its system, memory-repos and tasks directories without a skills directory; a package-source shape is not.",
       "targets": [
         {
           "anchor": {
-            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
-            "content": "sha256:c0b2dd99ed7b8ad43b54b73bfe8290c5443ad18d71a813cadede9143509abd0b",
+            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "content": "sha256:1c1674626892b6bd4f246d964ec79ca384345ee9fd5ffe1e93380c848c2eeada",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "InstalledCoordinationRootTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checkout config ignores live authority and uses only dummy root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "content": "sha256:6d5124ad5a132dd3c220119f342a8293faa694d34b68fc85a16a74739a4788ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_checkout_config_ignores_live_authority_and_uses_only_dummy_root"
             }
           },
           "kind": "test"
@@ -69,14 +86,27 @@
       ]
     },
     "3": {
-      "note": "Incident shaped store write lands only in leaf dummy root.\n\nAnchor: `test_incident_shaped_inbox_write_lands_only_in_leaf_dummy_root`",
+      "note": "Incident shaped store write lands only in leaf dummy root.",
       "targets": [
         {
           "anchor": {
-            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
-            "content": "sha256:c0b2dd99ed7b8ad43b54b73bfe8290c5443ad18d71a813cadede9143509abd0b",
+            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "content": "sha256:cb920ae6fabc2644992bf98a85cd7f3b994e5d486f88658e23729bfaf74e2e41",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_incident_shaped_store_write_lands_only_in_leaf_dummy_root"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "content": "sha256:b6f6931f8991ed5a73447e855f3d91b9f3a87647f25f9dffbb6f41026fb1c0e2",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 239
             }
           },
           "kind": "test"
@@ -84,14 +114,15 @@
       ]
     },
     "4": {
-      "note": "Store guard refuses escape before creating lock or parent.\n\nAnchor: `test_store_guard_refuses_escape_before_creating_lock_or_parent`",
+      "note": "Store guard refuses escape before creating lock or parent.",
       "targets": [
         {
           "anchor": {
-            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
-            "content": "sha256:c0b2dd99ed7b8ad43b54b73bfe8290c5443ad18d71a813cadede9143509abd0b",
+            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "content": "sha256:3a4b5bc7679732eaff8402b49707f5859ae4b6672d8011c2ac27bff89cdc8a79",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_store_guard_refuses_escape_before_creating_lock_or_parent"
             }
           },
           "kind": "test"
@@ -99,14 +130,15 @@
       ]
     },
     "5": {
-      "note": "Enclosure report write is allowed without opening coordination escape.\n\nAnchor: `test_enclosure_report_write_is_allowed_without_opening_coordination_escape`",
+      "note": "Enclosure report write is allowed without opening coordination escape.",
       "targets": [
         {
           "anchor": {
-            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
-            "content": "sha256:c0b2dd99ed7b8ad43b54b73bfe8290c5443ad18d71a813cadede9143509abd0b",
+            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "content": "sha256:8ccf7c7fb123d08b1c40c18af4eb3ee7c6a447a32ce88a103d88b403610574db",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_enclosure_report_write_is_allowed_without_opening_coordination_escape"
             }
           },
           "kind": "test"
@@ -114,14 +146,15 @@
       ]
     },
     "6": {
-      "note": "Rewrite guard refuses a manually constructed live target.\n\nAnchor: `test_rewrite_guard_refuses_a_manually_constructed_live_target`",
+      "note": "Rewrite guard refuses a manually constructed live target.",
       "targets": [
         {
           "anchor": {
-            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
-            "content": "sha256:c0b2dd99ed7b8ad43b54b73bfe8290c5443ad18d71a813cadede9143509abd0b",
+            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "content": "sha256:bd2c2defc42e203994affdb99327c1cb9c9fd45db089cd520c221642fe410262",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_rewrite_guard_refuses_a_manually_constructed_live_target"
             }
           },
           "kind": "test"
@@ -133,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
+            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
             "content": "sha256:7620870ce2d414f236eb0c98bf52b22af7dc896de9af500f842346c204ab1a07",
             "locator": {
               "kind": "symbol",
@@ -149,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
+            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
             "content": "sha256:948f7e8675cce5e0c58602622f77dd3c5d7165bdfbccd911f37f9a20fd1a6f85",
             "locator": {
               "kind": "symbol",
@@ -161,14 +194,15 @@
       ]
     },
     "9": {
-      "note": "Any mode declaration lifts the primary refusal and the write confinement, with the refusal itself as the positive control.\n\nAnchor: `test_any_mode_declaration_lifts_the_primary_refusal_and_confinement`",
+      "note": "Any mode declaration lifts the primary refusal and the write confinement, with the refusal itself as the positive control.",
       "targets": [
         {
           "anchor": {
-            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
-            "content": "sha256:c0b2dd99ed7b8ad43b54b73bfe8290c5443ad18d71a813cadede9143509abd0b",
+            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "content": "sha256:ab75b0554224e32ede42b9d668c9f415a48e5e89b856e5e5256b37c63e371fae",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_any_mode_declaration_lifts_the_primary_refusal_and_confinement"
             }
           },
           "kind": "test"

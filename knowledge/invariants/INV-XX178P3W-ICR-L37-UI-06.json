@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The coherent-review family needs expression grouping to retain recorded source identity, preventing different historical bytes at one path from collapsing into a misleading single excerpt."
+  },
   "applicability": "Deduplication of family expression excerpts from carried before/after realization claims.",
   "conditions": [
     "Claims are grouped by repository path and recorded source identity.",

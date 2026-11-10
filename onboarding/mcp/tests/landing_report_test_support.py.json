@@ -3,14 +3,26 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A leaf pair is two git repositories at one base, and the landing cuts one card and adds one file without committing.",
+      "note": "A leaf pair is two git repositories at one base. The landing cuts one card and adds one file without committing.",
       "targets": [
         {
           "anchor": {
-            "blob": "16305e30d15ea0ed27b1e2dfe77dcad069c5d9e5",
-            "content": "sha256:0b8cd547f856cd8ae85c0d4252464d88340e0dd21bbb98a5d7571e0d5a714a37",
+            "blob": "33ea448dc2c6c9744c4dc42184bdb129cf106148",
+            "content": "sha256:1391ea6bffd73da7af36c51d6f2fdec3500761e9c2602eee99492241a9df142f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_leaf_pair"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "33ea448dc2c6c9744c4dc42184bdb129cf106148",
+            "content": "sha256:78d0d244ecd0e4de3737d1ea71be07abbca239ee7f2d62f070a1a1f03c7fedb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_land"
             }
           },
           "kind": "test"
@@ -18,14 +30,26 @@
       ]
     },
     "2": {
-      "note": "The loadable leaf contracts bind the fixture bases so the real gate and closeout phases can run on scratch trees.",
+      "note": "The loadable leaf contract binds the fixture code and memory bases. The paired gate contract loads that contract so the real gate and closeout phases can run on scratch trees.",
       "targets": [
         {
           "anchor": {
-            "blob": "16305e30d15ea0ed27b1e2dfe77dcad069c5d9e5",
-            "content": "sha256:0b8cd547f856cd8ae85c0d4252464d88340e0dd21bbb98a5d7571e0d5a714a37",
+            "blob": "33ea448dc2c6c9744c4dc42184bdb129cf106148",
+            "content": "sha256:7bb161115d8337309c1ee80bc868d22bdfe7777a84552e8c417de7c96f111480",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_operation_contract"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "33ea448dc2c6c9744c4dc42184bdb129cf106148",
+            "content": "sha256:a0ce130556764ec224c8e017ae54773beb2936061f2dbff451acbaabdfb39b1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_paired_gate_contract"
             }
           },
           "kind": "test"

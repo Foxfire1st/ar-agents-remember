@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "note": "Current source account and its stated boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "539308043e1b7731bc8509a2881531c8bfc99347",
-            "content": "sha256:f47b06c95610a1a2e69db7b77015f412eb69334ec53828014c10685905182afc",
+            "blob": "88847930eeeae2055c1ceac09a50f6b329a0748c",
+            "content": "sha256:426c967a53e470679c6ad0e8c26ae9e09f1375fd685a14b4a0890192c09b1c6b",
             "locator": {
-              "kind": "file"
+              "end": 87,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

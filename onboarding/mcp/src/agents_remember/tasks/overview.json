@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:542add22319edf16d9261747894ffc133e9b95cf87f19387da3795cde510bbfb",
             "locator": {
               "kind": "symbol",
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
             "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
             "locator": {
               "kind": "symbol",
@@ -146,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:18c03e5b7dfcd87d1b8c680f4c0f1d0a2c360e3f949f533c07f9bf16db74891d",
             "locator": {
               "end": 723,
@@ -159,7 +159,7 @@
         },
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:db858789ca3aa914c98fd790427e71d30c620e9082de56a1b6a5e6bcaf43ec48",
             "locator": {
               "end": 1076,
@@ -204,14 +204,16 @@
       ]
     },
     "17": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Its header line.\n\nAnchor: `_header_lines`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Its header line.\n\nAnchor: `Expected knowledge effects`",
       "targets": [
         {
           "anchor": {
-            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
-            "content": "sha256:689866728c320f96a106d6a34da2a9cd853f4652449f9ae2c64ef73e6812030f",
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:8b79b912cbb9537bec62927ca4bc3a49d02902c52ec8e0d571c76ac590569b82",
             "locator": {
-              "kind": "file"
+              "end": 285,
+              "kind": "line_range",
+              "start": 280
             },
             "path": "mcp/src/agents_remember/tasks/render.py"
           },
@@ -220,14 +222,16 @@
       ]
     },
     "18": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The declaration model and its refusals.\n\nAnchor: `ExpectedKnowledgeEffect` `_check_expected_knowledge_effects`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The declaration refusals: a master document, an empty list, a requirementRef naming no listed packet when the requirements list packets, and a repeated subject and effect.",
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
-            "content": "sha256:fa8b044677dd79fab9c5621308c459f97c7d85686fbbbab4f54a2854f040241d",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:c23f524fb637ebdce3e0dcc0ea64981509ce347d98d4ab94ffd6d8b9c1b95921",
             "locator": {
-              "kind": "file"
+              "end": 1038,
+              "kind": "line_range",
+              "start": 1008
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -240,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:a3708a4a6a894925bf1ecf58df345d4a1d4c8a129d386d1cff2c0b977d22ff8e",
             "locator": {
               "end": 726,
@@ -253,7 +257,7 @@
         },
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:0b5470421412c2136767f4ea27ff882448054a5aecb7997919508708ce94143e",
             "locator": {
               "end": 1079,
@@ -357,14 +361,15 @@
       ]
     },
     "22": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The header block.\n\nAnchor: `_header_lines`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The header block.",
       "targets": [
         {
           "anchor": {
-            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
-            "content": "sha256:689866728c320f96a106d6a34da2a9cd853f4652449f9ae2c64ef73e6812030f",
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:c3e2fb7048fbfd50fa4f54054394692c4d623a44ca70d00b59544e0159778617",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_header_lines"
             },
             "path": "mcp/src/agents_remember/tasks/render.py"
           },
@@ -568,7 +573,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:0c7c8dcfdc9438f9246386ee82160720791a66e64d007a0737f6707c7f968da9",
             "locator": {
               "end": 523,
@@ -581,7 +586,7 @@
         },
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:31d1061fd41033680594b708b8ba282eafb5212fb75a985d87230138f8a60e0c",
             "locator": {
               "end": 527,
@@ -806,14 +811,15 @@
       ]
     },
     "40": {
-      "note": "Kind separation, retained sprint identity, and leaf-only expected effects are explicit\n\nAnchor: `TaskDocument`",
+      "note": "Kind separation and leaf-only expected effects are explicit in the TaskDocument after-validator, which also checks sprint rows and seats.",
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
-            "content": "sha256:fa8b044677dd79fab9c5621308c459f97c7d85686fbbbab4f54a2854f040241d",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:1f50c2905cc9b290fc5f6aeeb62bb43b9f9efb26b0397f6eacbc4db84a70e42f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_check_kind_fields"
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -821,7 +827,7 @@
         },
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:7afedfa4a66c5a9076b56d4e4faa6e246a0842203125ab7be0c7fc009f6bb5ac",
             "locator": {
               "kind": "symbol",
@@ -1120,7 +1126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
             "content": "sha256:8139caea92c6724240cc28d18f596e5b348b96e0fe463fa0bda59ebabde6484b",
             "locator": {
               "kind": "symbol",
@@ -1247,11 +1253,36 @@
       ]
     },
     "58": {
-      "note": "Task intent-review models, rendering, order and normative allowlists share the canonical answer; open review is visible but absent from ready_ids, and the strict agreed revision rides go.",
+      "note": "The master Order table labels a task whose intent review is open in its state cell.",
       "targets": [
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:736ad19832ca176531804bda064dfea4f1b1f0ea00ca651a485403f30e32032b",
+            "locator": {
+              "kind": "symbol",
+              "name": "intent_review_open"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:506be68fce706e1d457facf8ecc86abe5f76ada4a4e97a22766c19b32ed52df4",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:2fff2d6b4d7b6b4a8fd6dca9e9821fd408f99eed6aef84d272b195f39f7e04ad",
             "locator": {
               "end": 729,
@@ -1264,7 +1295,7 @@
         },
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:550a539ed995de387b5ed22663e837a524e609c09ef19a4f50045a83bb2f7177",
             "locator": {
               "end": 696,
@@ -1277,7 +1308,7 @@
         },
         {
           "anchor": {
-            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
             "content": "sha256:d6da14c6a8c0b19a846b40ef7c08b229361903687089261e79dc4e101de153b1",
             "locator": {
               "end": 756,
@@ -1316,19 +1347,6 @@
         },
         {
           "anchor": {
-            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
-            "content": "sha256:689866728c320f96a106d6a34da2a9cd853f4652449f9ae2c64ef73e6812030f",
-            "locator": {
-              "end": 646,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/tasks/render.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
             "content": "sha256:9dd05c561299097e2391331336cbf06a3036cc935f4a44f59b73bcb3897ed15f",
             "locator": {
@@ -1359,14 +1377,15 @@
       ]
     },
     "7": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The task-document renderer regenerates markdown from the validated `TaskDocument`.\n\nAnchor: `render_markdown`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The task-document renderer regenerates markdown from the validated TaskDocument.",
       "targets": [
         {
           "anchor": {
-            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
-            "content": "sha256:689866728c320f96a106d6a34da2a9cd853f4652449f9ae2c64ef73e6812030f",
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:ddf7bdb26707cdc0cd8b0d97733fce2556f65c92be705efef62698ad0d9601ac",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "render_markdown"
             },
             "path": "mcp/src/agents_remember/tasks/render.py"
           },

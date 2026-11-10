@@ -16,4 +16,5 @@ The page separates current record meaning from judgment rows and derived indexes
 
 - The layout assigns current prose, records, sidecars, history and generated index fields to their owners. [1]
 - Worklists and validation judge the selected pair and do not replace semantic judgment or coherence. [2]
+
 - Reads, admitted writes and crossing describe distinct effects and authority. [3]

@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The state template records bootstrap mode, memory root, onboarding root, branch, topology, source inventory status, and phase status across the full `c-03-repo-bootstrap` skill lifecycle.",
+      "note": "The state template records bootstrap mode, memory root, onboarding root, branch, topology, source inventory status, and phase status across the full `c-03-repo-bootstrap` skill lifecycle.\n\nAnchor: `## Phase Status`",
       "targets": [
         {
           "anchor": {
-            "blob": "0514c95ee8e115043f9cbc9aed04159e39348c70",
-            "content": "sha256:6d531dc45542e5adfe29850acd3c738b3f31d6fbe04d0d49b14a9267c18625e0",
+            "blob": "e533a967c37e20cdd9b6dcf263e2521d9653df49",
+            "content": "sha256:e76fcb116a39f29feb9a9fbadf740fccd02ecb38af5dad3cf4a704e66d7eb934",
             "locator": {
-              "end": 31,
+              "end": 33,
               "kind": "line_range",
               "start": 1
             }
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0514c95ee8e115043f9cbc9aed04159e39348c70",
-            "content": "sha256:016804f9b28ead43f10e620ef044adc6b28dff143a4b9598176e5023a76c76f7",
+            "blob": "e533a967c37e20cdd9b6dcf263e2521d9653df49",
+            "content": "sha256:52b16bafd1cd7f1877d2c61206dfbe76b4153efb4be555d2b16bc55dae00e359",
             "locator": {
-              "end": 88,
+              "end": 90,
               "kind": "line_range",
-              "start": 33
+              "start": 35
             }
           },
           "kind": "code"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0514c95ee8e115043f9cbc9aed04159e39348c70",
+            "blob": "e533a967c37e20cdd9b6dcf263e2521d9653df49",
             "content": "sha256:bf9fddf1bf516f22e83796a42e6f0b80bbd683a2db54cfd4d7feca126cc3d574",
             "locator": {
-              "end": 72,
+              "end": 74,
               "kind": "line_range",
-              "start": 51
+              "start": 53
             }
           },
           "kind": "code"
@@ -54,16 +54,16 @@
       ]
     },
     "4": {
-      "note": "Deferred-file triggers, separate closeout request and one recommended next step complete the state format.",
+      "note": "Deferred-file triggers, separate closeout request and one recommended next step complete the state format.\n\nAnchor: `## Closeout Boundary`",
       "targets": [
         {
           "anchor": {
-            "blob": "0514c95ee8e115043f9cbc9aed04159e39348c70",
-            "content": "sha256:69491af18d84a29e466d5b19776daf2baae037932f626970cc5c06add1972982",
+            "blob": "e533a967c37e20cdd9b6dcf263e2521d9653df49",
+            "content": "sha256:3b1d31d002d52f0359fffa7bbee466f04a4d3c2b22c0b86e8d96005b7170b5f5",
             "locator": {
-              "end": 88,
+              "end": 90,
               "kind": "line_range",
-              "start": 74
+              "start": 76
             }
           },
           "kind": "code"
@@ -71,16 +71,16 @@
       ]
     },
     "5": {
-      "note": "Every bootstrap maintains bootstrap/STATE.md, reads it first and updates it last, using this template.",
+      "note": "Every bootstrap maintains bootstrap/STATE.md, reads it first and updates it last, using this template.\n\nAnchor: `bootstrap/STATE.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "4167674589ba512347b52a138b37ec4b5a885339",
-            "content": "sha256:d38e4cbe34b21a998a7952ecbcc9d2bf1aa7fe03fddba2adaa6cf45e17841fc1",
+            "blob": "a95def235ef8c2db7779b21a379cb0beb0429361",
+            "content": "sha256:37e41a91091a50b10d081e1ca7e78b721d40baffd794479b216e6815be5394b8",
             "locator": {
-              "end": 439,
+              "end": 386,
               "kind": "line_range",
-              "start": 429
+              "start": 378
             },
             "path": "skills/c-03-repo-bootstrap/SKILL.md"
           },

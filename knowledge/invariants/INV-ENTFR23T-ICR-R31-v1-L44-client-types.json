@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "Exact member realization regions require the client to preserve the server's locator, ranges and locator state rather than default an omitted field into invented region evidence."
+  },
   "applicability": "The dashboard client's type mirror of the family review payload's member source reference.",
   "conditions": [
     "The review transport delivers the server payload to the client without a runtime decoder."

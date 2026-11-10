@@ -1,0 +1,58 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/current-prose-and-history.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Overview prose changes in the meaning-owning section, with no leaf or date headings and no chronology.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b7ad995ce78da33c0723c12de5490812350f2cd",
+            "content": "sha256:abe4434a1253c4d506b77d473d657f58e15c6ad93467f6fdb8041e3292e0be55",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Changed-file history is answered by an `onboarding_trace` row through the writer, and unexplained items follow the template's no-invariant rules.\n\nAnchor: `onboarding_trace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b7ad995ce78da33c0723c12de5490812350f2cd",
+            "content": "sha256:b466d45010423ba0f66690b3777d241644d22698d39ad2644e7cd60fc37cb286",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Invariant history rows name effects only for `changed` and retiring `deleted` rows.\n\nAnchor: `retire`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b7ad995ce78da33c0723c12de5490812350f2cd",
+            "content": "sha256:8c824beb6e4406ab895e0c30d09456e366ceb98848b38c4107d32066bdf51b41",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

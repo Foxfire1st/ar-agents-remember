@@ -4,8 +4,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
-        "content": "sha256:27c52961a8380a0380b308d5fcf1b9a33df0704bfb19b8544a3f6260443d4db4",
+        "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
+        "content": "sha256:cc2938c4ff89fb216de7f342ffdc2a6fe08402e9e1503133ae4c873d23dc67f6",
+        "locator": {
+          "end": 359,
+          "kind": "line_range",
+          "start": 359
+        }
+      },
+      "id": "RLZ-BNZYK9",
+      "invariant": "INV-TYY2XF",
+      "origin": {
+        "handoffEntry": "L84-CUR-06",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The packaged copy is byte-equal, so the delivered link resolves too.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
+        "content": "sha256:0948cc82994bb0ea53092d62142b83ef10ebcf2c80a2089f734fdfe222b11d25",
         "locator": {
           "kind": "file"
         }
@@ -22,16 +41,16 @@
   ],
   "references": {
     "1": {
-      "note": "Historical original-card/source account (not current setup authority): The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts.\n\nAnchor: `# c-13-install-and-onboard Install And Onboard`",
+      "note": "The skill takes over setup after the developer installs and registers the MCP tool server; the server serves the skills from its packaged copy, and no starter package or renderer is required.",
       "targets": [
         {
           "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
-            "content": "sha256:4c828b8e267a0f4427383363bd45d0ad2b1a7084fd53d2181caa2235516a639e",
+            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
+            "content": "sha256:6839fb1a9492aee3346faedce5cce8e3f8c9d2760e7d6b8695113608c2ea9a70",
             "locator": {
-              "end": 273,
+              "end": 17,
               "kind": "line_range",
-              "start": 6
+              "start": 10
             }
           },
           "kind": "code"
@@ -39,16 +58,16 @@
       ]
     },
     "2": {
-      "note": "Historical original-card/source account (not current setup authority): Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks.\n\nAnchor: `## Stage 0 - Preflight`",
+      "note": "Stage 0 checks MCP reachability, that skills are served rather than installed, settings, runtime state, retired index-provider entries, topology consistency and, on request, certification authority; it does not install hook files.\n\nAnchor: `## Stage 0 - Preflight`",
       "targets": [
         {
           "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
-            "content": "sha256:aead4314fa1a66412d3015009735208f92ecabc319dbe380780703bc392f8052",
+            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
+            "content": "sha256:02807c9760a6c4cc4f56bce85755189d5771cefb2c852c837c7222f2a9b99986",
             "locator": {
-              "end": 103,
+              "end": 147,
               "kind": "line_range",
-              "start": 67
+              "start": 85
             }
           },
           "kind": "code"
@@ -56,16 +75,16 @@
       ]
     },
     "3": {
-      "note": "Historical original-card/source account (not current setup authority): Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup.\n\nAnchor: `## Stage 1 - Runtime Scaffold`",
+      "note": "Stage 1 runs or verifies `runtime_install()` and installs no skills and creates no skill folder during first-run setup.\n\nAnchor: `## Stage 1 - Runtime Scaffold`",
       "targets": [
         {
           "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
-            "content": "sha256:c7ff389a40b4fa3a3681e2d965830f241af1de3aa5d65e8abe39c82a49dbf3f0",
+            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
+            "content": "sha256:1d98b001321125dcefe24a88cce71dc01cb4d22f44b2dba66a55108067576f2d",
             "locator": {
-              "end": 152,
+              "end": 175,
               "kind": "line_range",
-              "start": 133
+              "start": 149
             }
           },
           "kind": "code"
@@ -73,16 +92,16 @@
       ]
     },
     "4": {
-      "note": "Historical original-card/source account (not current setup authority): Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction.\n\nAnchor: `## Stage 2 - Agentic Settings: Interview The Developer`",
+      "note": "Stage 2 walks the developer through the four agentic-settings knob families and writes their answers only through the one initial `user_settings_init`, reporting an existing file rather than rewriting it.\n\nAnchor: `## Stage 2 - Agentic Settings: Interview The Developer`",
       "targets": [
         {
           "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
-            "content": "sha256:9585cbe7581de2608946730fde9623eb5702976df89ed2d87229a33323772c25",
+            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
+            "content": "sha256:4e22929078db36034fd650f1e9d3df5b2a5ceca3d20667a0fb494d57a785ca24",
             "locator": {
-              "end": 189,
+              "end": 197,
               "kind": "line_range",
-              "start": 125
+              "start": 177
             }
           },
           "kind": "code"
@@ -90,83 +109,59 @@
       ]
     },
     "5": {
-      "note": "Historical original-card/source account (not current setup authority): Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers.\n\nAnchor: \"## Stage 3 - Repository Certification Profile (explicit operation only)\"; \"## Stage 4 - Memory Repo: Ask Scaffold Vs Existing\"; \"## Stage 5 - Bootstrap\"; \"## Stage 6 - Configure Providers To Index\"",
+      "note": "Stage 3 authors, validates and registers one repository-owned certification profile (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`, and runs only when the developer explicitly requests a certification or full quality operation.\n\nAnchor: `## Stage 3 - Repository Certification Profile (explicit operation only)`",
       "targets": [
         {
           "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
-            "content": "sha256:09b4a7570c4f17602caa8be81cfedfd8c55d27fc84afe40f4f2c4c35cc3ecf3e",
+            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
+            "content": "sha256:cebd838b40ddf6b8b600b669747dd4f7e4f4e296b39372f6d1479f25f4459266",
             "locator": {
-              "end": 281,
+              "end": 294,
               "kind": "line_range",
-              "start": 244
+              "start": 257
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
-            "content": "sha256:e0de6277dfb0665d61964d21c74dcd5c9795894e6b81026b8cab7862c0a468d3",
-            "locator": {
-              "end": 316,
-              "kind": "line_range",
-              "start": 298
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
-            "content": "sha256:cda25ddd455b37d73454d5dba4ab29d3c7800645312edae8f3af642c17595c44",
-            "locator": {
-              "end": 342,
-              "kind": "line_range",
-              "start": 333
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
             "content": "sha256:b9450707ecd66cb37f6d07de47d2a43f2bad8cf40200275d6b3c9e2661d535de",
             "locator": {
-              "end": 335,
+              "end": 324,
               "kind": "line_range",
-              "start": 311
+              "start": 300
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
             "content": "sha256:210d484e28291729cc22b0c3d6cd839e9097f65a77fb58b6697614f6cb0301be",
             "locator": {
-              "end": 337,
+              "end": 326,
               "kind": "line_range",
-              "start": 337
+              "start": 326
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
             "content": "sha256:c53f2ad2a108573ca33c26bdbedd6c596a9959655cf7c2e960d2803a04729a03",
             "locator": {
-              "end": 447,
+              "end": 449,
               "kind": "line_range",
-              "start": 447
+              "start": 449
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
             "content": "sha256:610c23f45a3d190700fd68d19a7275ecdf411fdc81d442d19751807c80ed87c4",
             "locator": {
               "end": 405,
@@ -179,14 +174,16 @@
       ]
     },
     "8": {
-      "note": "Historical original-card/source account (not current setup authority): The package copy of the install skill.",
+      "note": "This file is the package copy of the install skill.\n\nAnchor: `c-13-install-and-onboard`",
       "targets": [
         {
           "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
-            "content": "sha256:27c52961a8380a0380b308d5fcf1b9a33df0704bfb19b8544a3f6260443d4db4",
+            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
+            "content": "sha256:e0b14eff98f28e0f747ee7f389e38da447c9da2ec2d453a0a03c668dd432191f",
             "locator": {
-              "kind": "file"
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -194,16 +191,16 @@
       ]
     },
     "9": {
-      "note": "Stage 5 initializes without onboarding/fixer, adopts the attributed baseline, then reports knowledge state and names the Architect; existing-memory handling and audit retention remain explicit.\n\nAnchor: current source",
+      "note": "Stage 5 initializes without onboarding/fixer, adopts the attributed baseline, then reports knowledge state and names the Architect; existing-memory handling and audit retention remain explicit.\n\nAnchor: `## Stage 5 - Bootstrap, The First Baseline, Then The Architect's Foundation`",
       "targets": [
         {
           "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
-            "content": "sha256:bb12b11ff6cf85340d89d82d9a38dacdb2e33e8f2fccc6570bf8fd7033135cc5",
+            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
+            "content": "sha256:8ed7164979bc9dfaf5ffbc7d1ef4c10628108e7978de29494350993676922739",
             "locator": {
-              "end": 433,
+              "end": 431,
               "kind": "line_range",
-              "start": 385
+              "start": 386
             }
           },
           "kind": "code"

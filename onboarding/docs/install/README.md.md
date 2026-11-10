@@ -8,9 +8,7 @@
 
 The install-guide index: how to register the Agents Remember MCP tool server with each agent harness
 and what the normal first-run path is. Per-harness pages are linked from it. The current page carries
-no starter package and no skill folder: the server serves the canonical skills as MCP resources, the
-optional native instruction or hook file carries only the first-action directive, and its path markers
-are replaced by hand.
+no starter package and no skill folder: the server serves the canonical skills as MCP resources.
 
 ## Current source account
 
@@ -20,7 +18,7 @@ In that seat's dashboard conversation, the developer chooses the repository/memo
 
 The shipped host remains Linux x86_64 with `/proc`, one exact host/whole npm lock, and Node 26.11.1 with its official archive digest. A missing `paseoRuntime` block is prepared in the active MCP authority settings file with absolute data/state paths and listen `127.0.0.1:8766`; an existing block is never rewritten. Invalid settings or a host that holds live sessions produce the actual failed stage and retained daemon state. They are not reported as a successful launch. The user role-settings file is a separate authority.
 
-The Windows long-path prerequisite and projected-path `worktree_start` refusal remain documented. Optional per-harness instruction/hook/rule files carry only a first-action directive; users replace their path markers by hand. There is no renderer, starter package, copied skill folder or skill-install step.
+The Windows long-path prerequisite and projected-path `worktree_start` refusal remain documented. There is no renderer, starter package, copied skill folder or skill-install step.
 
 ## Boundaries
 

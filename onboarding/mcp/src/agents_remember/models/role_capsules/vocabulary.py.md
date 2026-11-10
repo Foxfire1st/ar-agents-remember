@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[models overview](../overview.md)
+[overview](../overview.md)
 
 ## Purpose
 
@@ -14,12 +14,12 @@ authority that makes a manifest edit fail instead of minting a new role.
 
 ### Logic
 
-`CapsuleRole` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:34-45) is the ten-name
-lifecycle-role literal and `CapsuleOperation` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:48-58) the nine-name operation literal; `CAPSULE_ROLES` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:80-91) and
-`CAPSULE_OPERATIONS` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:96-106) are explicit runtime tuples; the literal/tuple agreement test keeps their names and order in step.
-`get_args` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:29-29; mcp/src/agents_remember/models/role_capsules/vocabulary.py:74-74) derives `CAPSULE_SEAT_KINDS`, not those two tuples.
-`CAPSULE_SEAT_KINDS` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:63-63; mcp/src/agents_remember/models/role_capsules/vocabulary.py:74-74) is the seat-kind
-vocabulary (`role` / `launcher`). The retained `CAPSULE_COMPOSITION_ORDER` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:111-116) lists
+`CapsuleRole` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:31-40) is the eight-name
+lifecycle-role literal and `CapsuleOperation` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:43-53) the nine-name operation literal; `CAPSULE_ROLES` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:75-84) and
+`CAPSULE_OPERATIONS` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:89-99) are explicit runtime tuples; the literal/tuple agreement test keeps their names and order in step.
+`get_args` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:27-27; mcp/src/agents_remember/models/role_capsules/vocabulary.py:69-69) derives `CAPSULE_SEAT_KINDS`, not those two tuples.
+`CAPSULE_SEAT_KINDS` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:58-58; mcp/src/agents_remember/models/role_capsules/vocabulary.py:69-69) is the seat-kind
+vocabulary (`role` / `launcher`). The retained `CAPSULE_COMPOSITION_ORDER` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:104-109) lists
 **core → role → operation → specialization**; actual seat composition uses
 `CAPSULE_ROLE_COMPOSITION_ORDER` (**role → operation**) or
 `CAPSULE_LAUNCHER_COMPOSITION_ORDER` (**core → operation**), selected by
@@ -32,22 +32,20 @@ that renamed or added a role or operation **fails compilation** rather than quie
 one. A caller-controlled string must never acquire another role.
 
 ``launcher`` is **deliberately absent** from `CAPSULE_ROLES`. The ambient launcher is a
-routing condition, not an eleventh role; it is reached through `CAPSULE_LAUNCHER_MODE` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:71-71) and
+routing condition, not a ninth role; it is reached through `CAPSULE_LAUNCHER_MODE` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:66-66) and
 composes its own core block.
 
-``bootstrap`` is **present and deliberately last**: it is the new user's first-hour seat, the
-only role that carries the `bootstrap` operation, and appending it to the registry order keeps the
-nine roles that pre-date it at their existing positions — so a compilation, a settings key or a
-dashboard projection addressed to an earlier role cannot shift because this one was added. It is a
-**FREE agent, not a structural seat**: a session opens with `AR_SPAWN_ROLE=bootstrap` and no task
-document, and its instructions are its compiled capsule rather than a dispatch brief. It is
-deliberately absent from the task layer's altitude sets and from `serving/structural_seats.py`, and
+``bootstrap`` is **present and last** in the registry order: it is the new user's first-hour seat and
+the only role that carries the `bootstrap` operation. It is a
+**FREE agent, not a structural seat**: its session has no task document, and its instructions are
+its compiled capsule. It is deliberately absent from the task layer's altitude sets
+(`SPRINT_ROLES`/`MASTER_ROLES`/`LEAF_ROLES`), and
 the absent altitude must **not** be "fixed" by adding one — a task altitude is the wrong shape for
 this seat.
 
 The four narrowing helpers are the only sanctioned way to cross from an untrusted string into
-the vocabulary: `is_capsule_role` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:143-143) and `is_capsule_operation` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:163-163) answer membership, and
-`capsule_role_or_none` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:169-169) and `capsule_operation_or_none` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:183-183) return the narrowed literal or `None` rather
+the vocabulary: `is_capsule_role` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:136-136) and `is_capsule_operation` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:156-156) answer membership, and
+`capsule_role_or_none` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:162-162) and `capsule_operation_or_none` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:176-176) return the narrowed literal or `None` rather
 than a coerced value.
 
 ### Conventions
@@ -58,13 +56,13 @@ file, **and** the generated copies must move together. The shipped check is what
 
 ### Invariants And Boundaries
 
-- The vocabulary is closed at **ten roles and nine operations**. An unknown role or operation is
+- The vocabulary is closed at **eight roles and nine operations**. An unknown role or operation is
   an explicit error, never a silent fallback.
 - These tuples are the authority the manifest is validated *against*. Never invert that by
   reading the vocabulary out of the manifest.
 - `launcher` is a `CapsuleSeatKind`, not a `CapsuleRole`. Do not add it to `CAPSULE_ROLES` to
   "simplify" seat handling — `CapsuleLauncherSeat` exists precisely so it needs no role.
-- `bootstrap` is the tenth role **and a free agent**. Its presence here makes it compilable; it does
+- `bootstrap` is the eighth role **and a free agent**. Its presence here makes it compilable; it does
   not make it a task seat, and its absent task altitude is the ruling rather than a missing field.
 - The literal types and explicit runtime tuples must keep the same names and order;
   the literal/tuple agreement test guards this deliberate duplication.
@@ -87,7 +85,9 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
-- The literal/tuple agreement guard, the launcher-is-not-a-role guard, and the ten-role/nine-operation census the leaf extended. [1]
+
+- The eight-role/nine-operation census, the literal/tuple agreement guard and the launcher-is-not-a-role guard. [1]
+
 
 - The independent role census this module's runtime tuple is compared against.
 
@@ -103,7 +103,7 @@ No relevant documentation found after checking live sources.
 
 
 
-- The retained capsule role registry ends with bootstrap; the removed task-binding set supplies no current admission. [7]
+- The capsule role registry ends with bootstrap; no task-binding set supplies admission. [7]
 
 ### Cross-Repo References
 
@@ -111,4 +111,4 @@ No sibling-repository contract defines this vocabulary.
 
 No meaningful cross-repo references found.
 
-- The independent role census this module's runtime tuple is compared against. Anchor: `SHIPPED_ROLES` `SHIPPED_OPERATIONS` [2]
+- The independent role census this module's runtime tuple is compared against. [2]

@@ -211,21 +211,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
             "content": "sha256:1d40fc985363eda8db8df6e94ff60adbb8380e4ca3f2f9b8fdbc7e003b1b7a7b",
-            "locator": {
-              "end": 331,
-              "kind": "line_range",
-              "start": 299
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
-            "content": "sha256:75269e93d2a941817ba14ab6e312139bef7451dc129b16e5e45f512721454678",
             "locator": {
               "end": 332,
               "kind": "line_range",
@@ -237,12 +224,12 @@
         },
         {
           "anchor": {
-            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
-            "content": "sha256:9e779eec0a5bb3435a4889ad985fe339292f653ed4f4a290181666889168dc56",
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
+            "content": "sha256:75269e93d2a941817ba14ab6e312139bef7451dc129b16e5e45f512721454678",
             "locator": {
-              "end": 496,
+              "end": 333,
               "kind": "line_range",
-              "start": 470
+              "start": 301
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -250,12 +237,25 @@
         },
         {
           "anchor": {
-            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
+            "content": "sha256:9e779eec0a5bb3435a4889ad985fe339292f653ed4f4a290181666889168dc56",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
             "content": "sha256:11ba019d483d09639cdc09632faf5bb3dd5601b68999e1a2f18558829c021821",
             "locator": {
-              "end": 237,
+              "end": 238,
               "kind": "line_range",
-              "start": 205
+              "start": 206
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -573,32 +573,6 @@
             "path": "mcp/tests/test_instrument_discipline.py"
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:9a07fce23808b431009c2389495b888beeed94b8ae3091bec11318b199e6de9a",
-            "locator": {
-              "end": 729,
-              "kind": "line_range",
-              "start": 716
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
-            "content": "sha256:5f93792a232a3c681c99a7d4224a8d7b8322cf51db3145ca2f6cc3946c5e7b78",
-            "locator": {
-              "end": 652,
-              "kind": "line_range",
-              "start": 639
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -727,14 +701,15 @@
       ]
     },
     "30": {
-      "note": "The retained named vocabularies are attention severity, lane and item class, plus process fact state and process health; the removed session state and phase vocabularies are not among them.\n\nAnchor: `NAMED_VOCABULARIES`",
+      "note": "The named vocabularies are attention severity, lane and item class, plus process fact state and process health.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
-            "content": "sha256:9b066e1d136c1c7e91470d66a0fadca820095b4afa462abacc8a89da3d80ef87",
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
+            "content": "sha256:edb644c716d72bdd8482e6d2ea697d3e14c63a0794946ebe4b15965cec678ab8",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "NAMED_VOCABULARIES"
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -747,7 +722,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
             "content": "sha256:9e779eec0a5bb3435a4889ad985fe339292f653ed4f4a290181666889168dc56",
             "locator": {
               "kind": "symbol",

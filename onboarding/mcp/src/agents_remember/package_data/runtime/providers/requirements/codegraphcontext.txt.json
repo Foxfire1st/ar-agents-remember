@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "The MCP runtime installer requires and copies `mcp/src/agents_remember/package_data/runtime/providers` into the coordination root.\n\nAnchor: `require_runtime_tree` `install_runtime`",
+      "note": "The MCP runtime installer requires and copies `mcp/src/agents_remember/package_data/runtime/providers` into the coordination root.",
       "targets": [
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:10561f1d1ab96d8b366013b6453df973fc3587f9095687469ad5c33fcd17ba04",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:455cea885ea3e302d893507526fb886cfff81e336312a3d9e2cf94649c5d6f3d",
             "locator": {
               "kind": "symbol",
               "name": "require_runtime_tree"
@@ -36,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
             "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
             "locator": {
               "kind": "symbol",
@@ -48,23 +48,12 @@
         },
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
             "content": "sha256:c420b140b52d7907e6c91da3ae959285c58c8a12bc2d23813b50848988d55a78",
             "locator": {
-              "end": 464,
+              "end": 449,
               "kind": "line_range",
-              "start": 453
-            },
-            "path": "mcp/src/agents_remember/install/runtime.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:98f3a29716db1ab43c170852a41719d17edc42985b176f5a4df252d893420af5",
-            "locator": {
-              "kind": "file"
+              "start": 438
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },

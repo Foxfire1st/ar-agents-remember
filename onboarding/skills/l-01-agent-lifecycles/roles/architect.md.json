@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:04f85c885112f262597c83158ab41e4fde68690d0a3ab55b439757ab78c7aa24",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:67547b080b8ed280c814484f6f83ad666e6ce0a338843f0d169f54c29dcd6ba0",
         "locator": {
-          "end": 104,
+          "end": 214,
           "kind": "line_range",
-          "start": 104
+          "start": 206
         }
       },
       "id": "RLZ-1GCP9C",
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
         "content": "sha256:1a037eb21173fb839661b344bf5886756e560da5642dc4347b03911c6587ed3c",
         "locator": {
-          "end": 80,
+          "end": 150,
           "kind": "line_range",
-          "start": 80
+          "start": 150
         }
       },
       "id": "RLZ-2T4Z9R",
@@ -42,12 +42,12 @@
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:d0e58240a8ee948790a53c0651e5f0785f352743d624d082c1f513c85d0555c0",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:5a02a974081995b9f1e8b1f1fb3a04b09ea06b6013d257e41daef37df263475a",
         "locator": {
-          "end": 106,
+          "end": 224,
           "kind": "line_range",
-          "start": 106
+          "start": 218
         }
       },
       "id": "RLZ-418WGG",
@@ -61,8 +61,8 @@
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:a176d9b1a6ad4068e83cb3d7f72aba06d1b6fc3bfde2e276e838339aeca5518b",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:f74a8bdcbfb929bdbab61a7e739ec7251665ea37e3061d29cad4c25c0bede1e6",
         "locator": {
           "kind": "file"
         }
@@ -78,12 +78,12 @@
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:b86ed0ec194e278b441cef1148daa0cf7592bd50a2542659a5f085efe326d984",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:b9ce7ad642d2730da9185358613f7ddf23af4dd9a16abb4ae95cfad682a61b75",
         "locator": {
-          "end": 54,
+          "end": 96,
           "kind": "line_range",
-          "start": 54
+          "start": 94
         }
       },
       "id": "RLZ-8W0HVX",
@@ -97,8 +97,8 @@
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:a176d9b1a6ad4068e83cb3d7f72aba06d1b6fc3bfde2e276e838339aeca5518b",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:f74a8bdcbfb929bdbab61a7e739ec7251665ea37e3061d29cad4c25c0bede1e6",
         "locator": {
           "kind": "file"
         }
@@ -109,17 +109,36 @@
         "handoffEntry": "MIK-R98@v1 §9",
         "leaf": "260928-MIK-L98"
       },
-      "rationale": "A20/A21 and non-leaf delegation are authored here.",
+      "rationale": "The Architect may start an Investigator without a task reference, on a sprint or on a sprint and master. It gives a check it does not do itself to the coordinating Manager or Orchestrator; under developer-chosen direct coordination it assigns a non-leaf check to an Investigator and a leaf's check to its Worker or Reviewer.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:0aee283aaa2809cb302a1129df61f643ee37549eb4d577a120817c87d17d8338",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:a0f25cd9907e94e0a691e762cc7c49aeca193218d79948e1dc5193df32ae1c3c",
         "locator": {
-          "end": 10,
+          "end": 66,
           "kind": "line_range",
-          "start": 10
+          "start": 66
+        }
+      },
+      "id": "RLZ-M47MGR",
+      "invariant": "INV-A6TJRJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-07-architect",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Restored verbatim from base 81180617a architect.md:38; it is the Architect's one pointer to system/task-publication.md.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:7fc81b3844390df75cff8e7862a2985739782f93bc193da149b9871571d02d8b",
+        "locator": {
+          "end": 16,
+          "kind": "line_range",
+          "start": 14
         }
       },
       "id": "RLZ-MJ0SZ8",
@@ -133,12 +152,12 @@
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:8954e24288f5e81d675e3ce856592924eb75933b4cc3ca2626896200d59d9581",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:a1523d3b7b0cf3f9eced3da540f6ae565c5d882dba07da716098f99f1acbd53d",
         "locator": {
-          "end": 58,
+          "end": 106,
           "kind": "line_range",
-          "start": 58
+          "start": 106
         }
       },
       "id": "RLZ-QVQ9HA",
@@ -152,12 +171,12 @@
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:ac120bb11619e3b43663010e5b1925471525ce7c6a0bf24038db1fbe0e26fc39",
         "locator": {
-          "end": 50,
+          "end": 88,
           "kind": "line_range",
-          "start": 50
+          "start": 86
         }
       },
       "id": "RLZ-SV2W4A",
@@ -171,8 +190,8 @@
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:a176d9b1a6ad4068e83cb3d7f72aba06d1b6fc3bfde2e276e838339aeca5518b",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:f74a8bdcbfb929bdbab61a7e739ec7251665ea37e3061d29cad4c25c0bede1e6",
         "locator": {
           "kind": "file"
         }
@@ -188,12 +207,12 @@
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:5a219c38640b4709e7f81f0e82ff9a1ba5547048ae641b89cf5f293a052a9efd",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:169bc5c76bba84f94fa0a1902a9c5ce6bf583adf4fd15c24d019e6a3994e0255",
         "locator": {
-          "end": 90,
+          "end": 168,
           "kind": "line_range",
-          "start": 90
+          "start": 168
         }
       },
       "id": "RLZ-XSMK0N",
@@ -207,12 +226,12 @@
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
         "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
         "locator": {
-          "end": 76,
+          "end": 146,
           "kind": "line_range",
-          "start": 76
+          "start": 146
         }
       },
       "id": "RLZ-Y1FRYJ",
@@ -226,10 +245,10 @@
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:f0f847994d138c1be039900a5ccb9991a564e99f58fa53f4070b4a613d22aa56",
         "locator": {
-          "end": 8,
+          "end": 10,
           "kind": "line_range",
           "start": 8
         }
@@ -245,12 +264,12 @@
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:ba8f889dfc6108ab403f35befaf9c5cbe8967308091228a240316a457a66c967",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:0f16ae738e30bc0020b9f0e05f3737b8435aaa300719837aa33eb4eaa4c265ac",
         "locator": {
-          "end": 36,
+          "end": 64,
           "kind": "line_range",
-          "start": 20
+          "start": 64
         }
       },
       "id": "RLZ-ZSC252",
@@ -264,8 +283,8 @@
     },
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:a176d9b1a6ad4068e83cb3d7f72aba06d1b6fc3bfde2e276e838339aeca5518b",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:f74a8bdcbfb929bdbab61a7e739ec7251665ea37e3061d29cad4c25c0bede1e6",
         "locator": {
           "kind": "file"
         }
@@ -286,8 +305,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:abc4c8156c501146eafe38c2a33f08bcb0519935c335c6cb3e306419ff819e63",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -298,24 +317,24 @@
         },
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:10952f2bf370df24f94b217c7c7cf96567b8427745e7874df08aec5c7ca74a7e",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:ac120bb11619e3b43663010e5b1925471525ce7c6a0bf24038db1fbe0e26fc39",
             "locator": {
-              "end": 58,
+              "end": 88,
               "kind": "line_range",
-              "start": 50
+              "start": 86
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:a44d905dbd2c543fcb17cf0cfd38155217e14bc5f720406f6301bad5737f77a3",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:ad7ed19fc78c3586c669dfed0807bbfdd542021337451a44e705451c9cebe936",
             "locator": {
-              "end": 106,
+              "end": 208,
               "kind": "line_range",
-              "start": 104
+              "start": 206
             }
           },
           "kind": "code"
@@ -323,41 +342,54 @@
       ]
     },
     "2": {
-      "note": "Beyond-settings rounds may be granted for a shrinking sealed list with a concrete repair; unchanged failed repairs or requirement-meaning disputes need a ruling. The Architect releases execution coordination and retains actual returned role identities, while permission decisions remain within its own permissions.",
+      "note": "Beyond-settings rounds may be granted for a shrinking sealed list with a concrete repair; unchanged failed repairs or requirement-meaning disputes need a ruling. The Architect releases execution coordination and keeps the actual returned role identities, while it answers formal permission prompts only as far as its own seat's permissions reach.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:8954e24288f5e81d675e3ce856592924eb75933b4cc3ca2626896200d59d9581",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:5b673a74c35ebecb9d5c2d62886df69ae934edca9156d954b5fd993744d25405",
             "locator": {
-              "end": 58,
+              "end": 144,
               "kind": "line_range",
-              "start": 58
+              "start": 144
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:cad8bae7c3d2d6a5196fbe44642e72b918fbf86863657592074a8cd981c27e37",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:c6a670214072893e28a9294ec8fff62087213b8f31ac99321a5f9f24b1fc04f7",
             "locator": {
-              "end": 80,
+              "end": 148,
               "kind": "line_range",
-              "start": 74
+              "start": 148
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:6e67ac9c0347fba54ccc0f98ebefaac5dc9f3b5018a186be9acc8b10bae07a1f",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:63b0e1accf417d7aa2ec0889318526a8b6927020091a142eaa8df4931f2e9cde",
             "locator": {
-              "end": 98,
+              "end": 104,
               "kind": "line_range",
-              "start": 94
+              "start": 104
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:8b3f8dbf011fde151a1298430b1a64c62777be7beb4db3dc45c355c92cabc14f",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
           },
           "kind": "code"
         }
@@ -368,12 +400,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
             "content": "sha256:2128e942e3b0ccb9cbd2e813f09585bea2ec8c46d7bf92e0085fd8452be1ddf0",
             "locator": {
-              "end": 40,
+              "end": 68,
               "kind": "line_range",
-              "start": 40
+              "start": 68
             }
           },
           "kind": "code"
@@ -381,16 +413,16 @@
       ]
     },
     "4": {
-      "note": "Registration creates the leaf's open linked issue only where the resolved memory carries the publication instruction; where that file is absent, registration publishes nothing.",
+      "note": "When the resolved memory layer holds the publication file, the Architect follows it and registering a leaf creates its open linked issue; where that file is absent, nothing is published.\n\nAnchor: `system/task-publication.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
             "content": "sha256:a0f25cd9907e94e0a691e762cc7c49aeca193218d79948e1dc5193df32ae1c3c",
             "locator": {
-              "end": 38,
+              "end": 66,
               "kind": "line_range",
-              "start": 38
+              "start": 66
             }
           },
           "kind": "code"
@@ -402,12 +434,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
             "content": "sha256:5b673a74c35ebecb9d5c2d62886df69ae934edca9156d954b5fd993744d25405",
             "locator": {
-              "end": 74,
+              "end": 144,
               "kind": "line_range",
-              "start": 74
+              "start": 144
             }
           },
           "kind": "code"
@@ -419,12 +451,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:a44d905dbd2c543fcb17cf0cfd38155217e14bc5f720406f6301bad5737f77a3",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:ad7ed19fc78c3586c669dfed0807bbfdd542021337451a44e705451c9cebe936",
             "locator": {
-              "end": 106,
+              "end": 208,
               "kind": "line_range",
-              "start": 104
+              "start": 206
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:6aa759cfae5ccefeff657672ded01538b8ae74d05b25182367d51a21b2c67a1f",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 214
             }
           },
           "kind": "code"
@@ -432,16 +476,16 @@
       ]
     },
     "7": {
-      "note": "Copied developer words in a From explainer message count as those words only after their hash matches the filed developer message; an Architect not named by the master-to-architect record claims that master through explainer_control.\n\nAnchor: line 10",
+      "note": "Copied developer words in a From explainer message count as those words only after their hash matches the filed developer message; an Architect not named by the master-to-architect record claims that master through explainer_control.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:0aee283aaa2809cb302a1129df61f643ee37549eb4d577a120817c87d17d8338",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:4645d96250a3ca6931b97ec902012c1b7c19881f126b7a3f1bf3c99e206deabe",
             "locator": {
-              "end": 10,
+              "end": 18,
               "kind": "line_range",
-              "start": 10
+              "start": 16
             }
           },
           "kind": "code"
@@ -453,12 +497,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
             "content": "sha256:0f16ae738e30bc0020b9f0e05f3737b8435aaa300719837aa33eb4eaa4c265ac",
             "locator": {
-              "end": 36,
+              "end": 64,
               "kind": "line_range",
-              "start": 36
+              "start": 64
             }
           },
           "kind": "code"

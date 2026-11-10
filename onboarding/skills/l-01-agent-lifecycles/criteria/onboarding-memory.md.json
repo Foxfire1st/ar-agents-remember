@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-        "content": "sha256:e59b9d79161e8faf48361fcbbb84c6ba81caf32017fb8b74c081b1bc0b4a65df",
+        "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+        "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
         "locator": {
-          "end": 37,
+          "end": 25,
           "kind": "line_range",
-          "start": 27
+          "start": 21
         }
       },
       "id": "RLZ-61E5ND",
@@ -22,10 +22,10 @@
     },
     {
       "anchor": {
-        "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-        "content": "sha256:3d1709936e588269503d3564218ba868baa8edc20455f0a12e4fa7fa648f5908",
+        "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+        "content": "sha256:3f41b6a506a8fa75fc81b4a8c56e6f9eece1d1873fd3bbe582608924cdbd77ea",
         "locator": {
-          "end": 18,
+          "end": 17,
           "kind": "line_range",
           "start": 13
         }
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-        "content": "sha256:eba7369a0ed23b6c06566e21210b242aa5fd61721d426a769852cdc8aa608055",
+        "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+        "content": "sha256:1887386723b64b571b1f2add708e149b687337e07cac1f45f16ef3092ebdeaf8",
         "locator": {
-          "end": 21,
+          "end": 19,
           "kind": "line_range",
-          "start": 19
+          "start": 17
         }
       },
       "id": "RLZ-P0EHMW",
@@ -60,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-        "content": "sha256:a76c9cdea1f77370a24a981ea0206e261c9c6fcb754015a6965003a494e5a0b9",
+        "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+        "content": "sha256:2659dc44a329a314fa74fd7f0a198d50cd065155ba83969663b2488eedd1c9fb",
         "locator": {
-          "end": 72,
+          "end": 57,
           "kind": "line_range",
-          "start": 55
+          "start": 47
         }
       },
       "id": "RLZ-SYBPB2",
@@ -79,12 +79,12 @@
     },
     {
       "anchor": {
-        "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-        "content": "sha256:e59b9d79161e8faf48361fcbbb84c6ba81caf32017fb8b74c081b1bc0b4a65df",
+        "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+        "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
         "locator": {
-          "end": 37,
+          "end": 25,
           "kind": "line_range",
-          "start": 27
+          "start": 21
         }
       },
       "id": "RLZ-X5BFFX",
@@ -98,10 +98,10 @@
     },
     {
       "anchor": {
-        "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-        "content": "sha256:69f76b794bc16196fbbcbd193bd87485ada086cca6f386a7b6e64fc3ca09206a",
+        "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+        "content": "sha256:dd6754027ab396e080da50fbd970eaff5c007b036d7a65ac8f8695409bd5f841",
         "locator": {
-          "end": 18,
+          "end": 17,
           "kind": "line_range",
           "start": 15
         }
@@ -122,12 +122,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-            "content": "sha256:ea7f71ef8bb55de4d6970c62b62ba110c24ea31adefb197291132c2cf8e1cc21",
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:2d94014feab76ac495757202671622b7c07f63939ce5644f556c2bf91e54d325",
             "locator": {
-              "end": 36,
+              "end": 19,
               "kind": "line_range",
-              "start": 12
+              "start": 13
             }
           },
           "kind": "code"
@@ -139,12 +139,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-            "content": "sha256:573343f4fdfdb33d3f6efc3ea4a612d700a9e7e15d444ec3554978146057d2ec",
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
             "locator": {
-              "end": 40,
+              "end": 25,
               "kind": "line_range",
-              "start": 30
+              "start": 21
             }
           },
           "kind": "code"
@@ -152,16 +152,16 @@
       ]
     },
     "3": {
-      "note": "Plausible admission, baseline exploration and the promotion/fix-verification boundaries remain distinct.",
+      "note": "Plausible admission is judged under OM-4; baseline exploration and the promotion/fix-verification boundaries come from the shared catalog rules.",
       "targets": [
         {
           "anchor": {
-            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-            "content": "sha256:3b58ad315c5421d9c1da51a37e3b9088d6fc0c1b80166859e74bbb5d0faf81ea",
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:711505f1e7b3c20f9d3c567408606fc14d82dd453347feeee03d52d02b6d394d",
             "locator": {
-              "end": 90,
+              "end": 45,
               "kind": "line_range",
-              "start": 42
+              "start": 1
             }
           },
           "kind": "code"
@@ -173,10 +173,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-            "content": "sha256:f191942a447e80c6cc3e96b3bf874febc1e9a433e4e9d1b858f933c6d63ef05b",
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:bf3c3b23e48b98821f50c00797f2c0ce4facbeca98e45826dd45256ffd403da6",
             "locator": {
-              "end": 109,
+              "end": 57,
               "kind": "line_range",
               "start": 1
             }
@@ -190,12 +190,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-            "content": "sha256:a76c9cdea1f77370a24a981ea0206e261c9c6fcb754015a6965003a494e5a0b9",
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:2659dc44a329a314fa74fd7f0a198d50cd065155ba83969663b2488eedd1c9fb",
             "locator": {
-              "end": 72,
+              "end": 57,
               "kind": "line_range",
-              "start": 55
+              "start": 47
             }
           },
           "kind": "code"
@@ -203,28 +203,16 @@
       ]
     },
     "6": {
-      "note": "OM-1 also checks affected paired notes and sibling cards found by a bounded search, including dated sections. Repair or withdraw the encountered false-claim class on every such current carrier and preserve true present-tense statements about retired things. The independent second reader still checks statements, history meaning and important omissions before closeout.",
+      "note": "OM-1 also checks affected paired notes and sibling cards found by a bounded search, including dated sections. Repair or withdraw the encountered false-claim class on every such current carrier and keep true statements about the current state. The independent second reader still checks statements, history meaning and important omissions before closeout.",
       "targets": [
         {
           "anchor": {
-            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-            "content": "sha256:41ec9bb92941f0676a23d6b90f652efe0e1c2a3779401fdfe9785d7948955056",
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:c98795b85f7bdb9a465a2c0136e776f84f41cf669d11cf54c1cc562a809a5fed",
             "locator": {
-              "end": 24,
+              "end": 25,
               "kind": "line_range",
               "start": 13
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
-            "content": "sha256:573343f4fdfdb33d3f6efc3ea4a612d700a9e7e15d444ec3554978146057d2ec",
-            "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 30
             }
           },
           "kind": "code"

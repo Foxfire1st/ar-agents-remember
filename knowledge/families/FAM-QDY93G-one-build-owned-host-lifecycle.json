@@ -19,7 +19,9 @@
     "INV-FM3V0M",
     "INV-YXP2R0",
     "INV-7HC1QH",
-    "INV-CB36W0"
+    "INV-CB36W0",
+    "INV-WK67MP",
+    "INV-E4E4N1"
   ],
   "origin": {
     "handoff": {
@@ -29,7 +31,7 @@
     "leaf": "260928-MIK-L96",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "mcp/src/agents_remember/serving/paseo",
     "mcp/src/agents_remember/application/runtime",

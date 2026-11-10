@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad4f47f50c6f201f318ea14e696c0f6e541793e6",
+            "blob": "ae0a85f021186e0bdad4433b5788a2114bdbaba2",
             "content": "sha256:bd256409258edf0dd5638a99e5f85d656f5f0f0265f76ceb87b1dc15591c4e71",
             "locator": {
-              "end": 84,
+              "end": 92,
               "kind": "line_range",
-              "start": 38
+              "start": 46
             }
           },
           "kind": "test"
@@ -24,24 +24,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad4f47f50c6f201f318ea14e696c0f6e541793e6",
+            "blob": "ae0a85f021186e0bdad4433b5788a2114bdbaba2",
             "content": "sha256:3b7defca2857b1b639140d01f57a492adfa8a0f0e1a1a267c45fe17757f85f7b",
             "locator": {
-              "end": 97,
+              "end": 105,
               "kind": "line_range",
-              "start": 87
+              "start": 95
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "ad4f47f50c6f201f318ea14e696c0f6e541793e6",
+            "blob": "ae0a85f021186e0bdad4433b5788a2114bdbaba2",
             "content": "sha256:8c88c135e14a03958cdec0a5d524dd43cf5aea9b8a19c1ab4615a66f9faae863",
             "locator": {
-              "end": 76,
+              "end": 84,
               "kind": "line_range",
-              "start": 71
+              "start": 79
             }
           },
           "kind": "test"
@@ -49,28 +49,96 @@
       ]
     },
     "3": {
-      "note": "`assert_message_handover_delivery` checks the real shared message-handover detail for every non-Bootstrap sender. It distinguishes queued held delivery from full-store busy refusal and checks withdrawal, no polling, receipt scope and the absence of semantic acceptance from a receipt. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "note": "`assert_message_handover_delivery` pins the held-delivery clause once in each non-Bootstrap role's compiled shared block (Bootstrap is only checked for an absent message-handover pointer) and checks each non-Bootstrap sender's own delivered message-handover action for the busy-refusal steps, receipt scope and no semantic acceptance from a receipt; these are source assertions, not a fresh invocation, host result or AR acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad4f47f50c6f201f318ea14e696c0f6e541793e6",
-            "content": "sha256:c76a261ea4113a61d4f5e7230ce597cb6f8b15f74cf1cb89327bd0ad1ac598b8",
+            "blob": "ae0a85f021186e0bdad4433b5788a2114bdbaba2",
+            "content": "sha256:b1ab3a282ccfdbe0a37029df53b818fd14a3faa3aab097ce10ca49d6bd040d48",
             "locator": {
-              "end": 29,
+              "end": 173,
               "kind": "line_range",
-              "start": 13
+              "start": 116
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "4": {
+      "note": "The relocated working steps name each owning file, heading and required clauses.",
+      "targets": [
         {
           "anchor": {
-            "blob": "ad4f47f50c6f201f318ea14e696c0f6e541793e6",
-            "content": "sha256:f214d7454460340e1eace3dbc218367aa5659a80a68e68bb5617bbbf97a56e20",
+            "blob": "ae0a85f021186e0bdad4433b5788a2114bdbaba2",
+            "content": "sha256:1582c0ca1e66a991854805d8ca8459d5a611582c0649a790d8fae28aba180322",
             "locator": {
-              "end": 137,
-              "kind": "line_range",
-              "start": 108
+              "kind": "symbol",
+              "name": "RELOCATED_WORKING_STEPS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A repeated ordinary label is accepted while every detail-marker link must stay exact; planted mutants fail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae0a85f021186e0bdad4433b5788a2114bdbaba2",
+            "content": "sha256:7d1656f358dbd32435010a7b842cee8efe77645d4a1ced9c6705f61473addc6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_detail_link_provenance_controls"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The coordination action steps name the pre-action pointers each owning step must carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae0a85f021186e0bdad4433b5788a2114bdbaba2",
+            "content": "sha256:acf59eeeff8253d1eaa18db123b2644a62ff12c50fee8b6a2bb83558fbf827ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "COORDINATION_ACTION_STEPS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A non-starting seat keeps its no-start boundary: the Reviewer's in its role file, the others by a start-no-role sentence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae0a85f021186e0bdad4433b5788a2114bdbaba2",
+            "content": "sha256:c1198a4015b0e774b2e1ac18a8a977ca8c16239f137e6a21135bf4c34f31fdb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_nonstarter_role_boundary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The memory-review owner-link checker rejects a missing action, wrong owner or fragment, and a repeated link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae0a85f021186e0bdad4433b5788a2114bdbaba2",
+            "content": "sha256:0afa5da5d7825366d5aa89b7e7b05b6cdbb0e61ac32f908df13f9ebe5771549e",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_memory_review_owner_link_controls"
             }
           },
           "kind": "test"

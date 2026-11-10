@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "da2b03b6526af1108b7a5ad87d55bc027e5d4bb0",
-        "content": "sha256:6f0f511a4925a487c7211c4ee23bac266fc0efb7ba0a65029f019021fc447526",
+        "blob": "b6bca2b32ba30446787d79c6ababe4bbe68795aa",
+        "content": "sha256:5124505eba50d95fab2ed6a8177eba3cd49f88dd42746430bb44760396f6f980",
         "locator": {
           "kind": "symbol",
           "name": "run"
@@ -18,6 +18,25 @@
       },
       "rationale": "The one place that removes such data, on the user's command: lists on a dry run, removes otherwise, names what it could not read or remove, goes on with the rest and ends 1 when anything stayed.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b6bca2b32ba30446787d79c6ababe4bbe68795aa",
+        "content": "sha256:53d2638b897f7aeb49028d4492a9a5718fc70aaceadfc655491a152944d68949",
+        "locator": {
+          "end": 47,
+          "kind": "line_range",
+          "start": 45
+        }
+      },
+      "id": "RLZ-JZ4QE0",
+      "invariant": "INV-B3FPFJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This --config help now says that an omitted --config reads the user settings file under XDG_CONFIG_HOME or ~/.config, whatever the current directory, as discover_config() does; at A010 it claimed working- or current-directory discovery.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -26,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da2b03b6526af1108b7a5ad87d55bc027e5d4bb0",
+            "blob": "b6bca2b32ba30446787d79c6ababe4bbe68795aa",
             "content": "sha256:c3d7596802c4e719523a1daf1802322dab878cbb96602e9d509b0012fce748fd",
             "locator": {
               "kind": "symbol",

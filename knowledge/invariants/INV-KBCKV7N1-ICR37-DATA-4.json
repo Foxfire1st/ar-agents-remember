@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Requiring authored applicability, conditions and exclusions prevents an invariant from being stored without semantic boundaries and later mistaken for a broader guarantee than its author established."
+  },
   "applicability": "Creation of invariant revisions from a curator handoff with one or more resolved targets.",
   "conditions": [
     "The curator supplies nonblank applicability and explicit lists of conditions and exclusions.",

@@ -6,16 +6,16 @@
 
 ## Purpose
 
-`coordination_context_resolver.py` is the public `c-08-ar-coordination-context-resolver` skill resolver facade and
-`python -m` entrypoint for one configured repository.
+`coordination_context_resolver.py` is the public compatibility facade for coordination context resolution
+for one configured repository; the command-line entrypoint is `cli/coordination_resolver.py`.
 
 ## Code Commentary
 
 ### Logic
 
 The module re-exports the stable public API from
-`agents_remember.kernel.coordination_context.*`, delegates command-line
-execution to `coordination_context.cli`, and preserves the existing
+`agents_remember.kernel.coordination_context.*`, is imported by the command-line
+entrypoint `cli/coordination_resolver.py` (it has no command-line entry of its own), and preserves the existing
 `agents_repo_from_script` monkeypatch seam used by resolver tests. The actual
 resolution, settings parsing, storage decisions, cross-repo checks,
 serialization, and contract loading now live in focused modules under
@@ -42,7 +42,7 @@ invokes it.
 
 ### Invariants And Boundaries
 
-- `c-08-ar-coordination-context-resolver` skill is facts-only and does not mutate Git, onboarding, or worktree state.
+- Context resolution is facts-only and does not mutate Git, onboarding, or worktree state.
 - Source-checkout `.env` files are not resolver authority; MCP settings or an
   explicit coordination root own that path.
 - Resolver behavior must not depend on deleted skill-local `_shared` paths.

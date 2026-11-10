@@ -294,16 +294,16 @@
       ]
     },
     "2": {
-      "note": "The public tool document maps operation families but is not a complete roster; registration/response owners remain authoritative. It now documents converted knowledge reads, integrity/worklist, file-writing-without-Git knowledge_write and separate coherence authority.",
+      "note": "The public tool document names `PUBLIC_TOOLS` in `public_roster.py` as the roster and says its tables name every registered public tool; it documents converted knowledge reads, integrity/worklist, file-writing-without-Git knowledge_write and separate coherence authority.\n\nAnchor: `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
-            "content": "sha256:ea42db9d83ad6ebc45b77d75f399941298589040109501093eb5048ea224e6ee",
+            "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
+            "content": "sha256:d174d5c0eae82899cd6b148dc02f3b18757f181586675ef661120bb467985064",
             "locator": {
-              "end": 18,
+              "end": 10,
               "kind": "line_range",
-              "start": 1
+              "start": 3
             },
             "path": "docs/reference/mcp-tools.md"
           },
@@ -311,25 +311,12 @@
         },
         {
           "anchor": {
-            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
-            "content": "sha256:c1faed3310bcb4f7be3364fa3c33d34df58f801cd0aecdaea1b10e5da010fd79",
-            "locator": {
-              "end": 405,
-              "kind": "line_range",
-              "start": 391
-            },
-            "path": "docs/reference/mcp-tools.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
             "content": "sha256:a662a61930f6cdf0db9ea04fbdf718b9da9d859836f88d1da6960f94d2db483e",
             "locator": {
-              "end": 454,
+              "end": 452,
               "kind": "line_range",
-              "start": 451
+              "start": 449
             },
             "path": "docs/reference/mcp-tools.md"
           },
@@ -423,16 +410,16 @@
       ]
     },
     "24": {
-      "note": "Setup reports the knowledge state and hands foundation work to the user-started Architect's regular task and its Curator; the following provider stage retires providers.",
+      "note": "Setup reports the knowledge state and hands foundation work to the user-started Architect's regular task and its Curator; the following provider stage retires providers.\n\nAnchor: `Stage 6 - Retire Providers`",
       "targets": [
         {
           "anchor": {
-            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
-            "content": "sha256:52e3fc7597b971bbd611df5f1a177a7cd11b961da52c3e0a4bb73fffc461b010",
+            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
+            "content": "sha256:d5ad1bbf4f2564b9a165599238f96dd2b0f2fcdb9c0c469a55cbad90706d06c5",
             "locator": {
-              "end": 443,
+              "end": 442,
               "kind": "line_range",
-              "start": 386
+              "start": 407
             },
             "path": "skills/c-13-install-and-onboard/SKILL.md"
           },
@@ -512,7 +499,7 @@
         },
         {
           "anchor": {
-            "blob": "19698025360b6b65d8046dac5ec8bed5d54924a1",
+            "blob": "f260fecfaf3eaa190474ddaabdf3b33e466a252b",
             "content": "sha256:c18516aed2d5fd457d50e0f2b16a1bcf31d079458182806cb73b25853a50c2df",
             "locator": {
               "end": 119,
@@ -530,7 +517,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "blob": "82d9b506342a5060bb723dc659a2b831983441c1",
             "content": "sha256:ca1b631139a9903c5ae94cc55512b90f6e0eeaa6d8b079c16263edff78126b07",
             "locator": {
               "end": 145,
@@ -544,16 +531,16 @@
       ]
     },
     "3": {
-      "note": "The settings reference separates MCP boot authority, per-use host runtime, memory topology and global/repository agentic settings; user configuration is not MCP boot authority, and merge/permission boundaries remain explicit.",
+      "note": "The settings reference separates MCP boot authority, per-use host runtime, memory topology and global/repository agentic settings; the user's `settings.json` is not the MCP authority file, which lives beside it as `agents-remember-settings.json` unless `--config` selects another, and merge/permission boundaries remain explicit.\n\nAnchor: `is NOT an MCP authority file`",
       "targets": [
         {
           "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
-            "content": "sha256:6218019904e7118fb33056307ef55ecfe213f44da6519d2635c2c6722e705804",
+            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
+            "content": "sha256:c090f64e2a90ed9841bde2a7ae14fc9b5a75727b5ccd2b5267bf842df6a288d5",
             "locator": {
-              "end": 54,
+              "end": 22,
               "kind": "line_range",
-              "start": 1
+              "start": 3
             },
             "path": "docs/reference/settings-json.md"
           },
@@ -561,38 +548,12 @@
         },
         {
           "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
             "content": "sha256:5819bd68e8f485b8358e37dc1901bc0d027bc82378c1eff8886d681860720cb5",
             "locator": {
-              "end": 165,
+              "end": 168,
               "kind": "line_range",
-              "start": 151
-            },
-            "path": "docs/reference/settings-json.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
-            "content": "sha256:4605d023883bb2c740960607b9528948aeca0bbf56566ec51e44984959682582",
-            "locator": {
-              "end": 554,
-              "kind": "line_range",
-              "start": 502
-            },
-            "path": "docs/reference/settings-json.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
-            "content": "sha256:79a6cc08c93430273c2a97d0180cce1084240081de73d1af68b9861f508044c5",
-            "locator": {
-              "end": 640,
-              "kind": "line_range",
-              "start": 583
+              "start": 154
             },
             "path": "docs/reference/settings-json.md"
           },
@@ -621,12 +582,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "blob": "a1673a11cda49a0b638ef35ed53697979b548a6d",
             "content": "sha256:5819bd68e8f485b8358e37dc1901bc0d027bc82378c1eff8886d681860720cb5",
             "locator": {
-              "end": 165,
+              "end": 168,
               "kind": "line_range",
-              "start": 151
+              "start": 154
             },
             "path": "docs/reference/settings-json.md"
           },
@@ -635,14 +596,16 @@
       ]
     },
     "6": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The runtime layout document.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The runtime layout document.\n\nAnchor: `runtime_install`",
       "targets": [
         {
           "anchor": {
-            "blob": "c7e4806f33bf2bfbce3dce4cd3a4645b5aa70cb3",
-            "content": "sha256:816795fe8b18d2fd6a28217cdb3f1b24863c36e25fe162fe2f0c3c0b4ff212dc",
+            "blob": "bf83397085f979e6f9a524a18c8d4d11e5b07440",
+            "content": "sha256:205e68a9412ec6503eda37b3746eba48fc70d7c9d5eee991927e6da66691af51",
             "locator": {
-              "kind": "file"
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "docs/reference/runtime-layout.md"
           },

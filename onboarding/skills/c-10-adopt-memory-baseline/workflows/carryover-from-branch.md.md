@@ -17,5 +17,7 @@ Plan is read-only and files no report; its candidates are reviewed before an app
 ## Evidence
 
 - The kept procedure owns the carryover sequence beside baseline adoption: plan read-only, review, approval-gated apply, curator rows, normal closeout publication. [1]
+
 - Candidate units keep their own selection keys and differ only within an identical conversion-format version; unconverted memory is refused rather than read further. [2]
+
 - Apply commits nothing; `carryover-pending` blocks cleanup and finalization until the memory publication lands. [3]

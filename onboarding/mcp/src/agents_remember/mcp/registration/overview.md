@@ -4,7 +4,7 @@
 
 Ordinary registration declares payload handlers lazily through registration.lazy; valid explainer binding selects the 22-tool surface separately, and dispatch checks the same allowlist and launched-seat identity. Core keeps both task_context readers and the removed-refresh refusal; read-only marks cover the actually selected roster after registration.
 
-[overview.md](../../../../../overview.md)
+[overview](../../../../../overview.md)
 
 ## Purpose
 
@@ -51,7 +51,7 @@ Native `retire_child` accepts the receipt-tracked agent_id and interrupt_turn th
 
 The core readers accept a task-scoped reader context where applicable. Their descriptions require the task-document reference and contract path together for canonical leaf reads; configured Projects scope applies when it is omitted. Retained attach/status resolution uses the shared `TaskRef` locator vocabulary; it does not restore public `resolve_context`.
 
-`runtime_install` constructs `RuntimeInstallRequest`, including the optional `experiment` input, and forwards it unchanged. Its current description covers preservation of user data, scaffold replacement, pruning legacy binaries, reporting unused provider keys, and provisioning the build-pinned host/plugin from the shared `paseoRuntime` block without writing shared settings. There is no host-selection parameter. The older experiment-selection and absent-block result promises are not stated by this registrar's current description; their application semantics remain an explicit verification gap.
+`runtime_install` constructs `RuntimeInstallRequest`, including the optional `experiment` input, and forwards it unchanged. Its current description covers preservation of user data, scaffold replacement, pruning legacy binaries, reporting unused provider keys, provisioning the build-pinned host/plugin from the active MCP authority's `paseoRuntime` block (daemon settings may be reconciled; user-settings protections and host-restart deferrals remain), reporting running-server currentness and every host action, and refreshing a running dashboard. There is no host-selection parameter. The older experiment-selection and absent-block result promises are not stated by this registrar's current description; their application semantics remain an explicit verification gap.
 
 ### Memory and knowledge contracts
 
@@ -235,4 +235,5 @@ The memory family extends the existing `citation_fix` declaration with flat `mod
 [32] mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 133-214; mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 235-294
 - \[10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__ The root PLR0913 exception supports the flat MCP registration signatures; it is not itself the PUBLIC_TOOLS or __all__ declaration. [11]
 - \[22] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check [23]
-- The ordered ordinary registrar tuple now includes explainer control. The same server selects ordinary versus bound explainer registration.  Anchor: `TOOL_REGISTRARS`, `create_server` [41]
+
+- The ordered ordinary registrar tuple includes explainer control, and the same server adds the bound explainer surface only for a launch that bound it as an explainer seat. [41]

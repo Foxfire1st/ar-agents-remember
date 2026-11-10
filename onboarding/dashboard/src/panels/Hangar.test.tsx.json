@@ -54,25 +54,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
-            "content": "sha256:4eaeacc9f5579463943c795a1791ff028f0003b88613ad1f1180f4c8042dfc35",
+            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "content": "sha256:c6f3f2966177305411eeff99d537a7f97c18ad607a2d33dc6ad239fc4d4ce1a8",
             "locator": {
-              "end": 64,
-              "kind": "line_range",
-              "start": 26
-            },
-            "path": "dashboard/src/data/store.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
-            "content": "sha256:ed1840c692704f7de124bf28b8ecc4e2d9fc5677485df9556bc99ac5466e258f",
-            "locator": {
-              "end": 274,
-              "kind": "line_range",
-              "start": 231
+              "kind": "symbol",
+              "name": "DashboardState"
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -121,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:5e7617b273ad3b1f42e12a7e7ad04fdc602557ac4de78278b73514a2327c4656",
             "locator": {
               "kind": "symbol",

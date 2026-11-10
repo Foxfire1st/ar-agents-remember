@@ -6,7 +6,7 @@
 
 ## Governing Overview
 
-[overview.md](../../../../overview.md)
+[overview](../../../../overview.md)
 
 ## Purpose
 
@@ -15,8 +15,8 @@ The `runner_modules` package contains the focused implementation modules behind 
 ## Hot Path Summary
 
 - `models.py`, `constants.py`, and `manifest.py` define case data, supported provider identifiers, manifest path validation, case loading, and prompt/variant selection.
-- `filesystem.py`, `commands.py`, and `workspace.py` prepare the source-only and with-memory workspaces: copy runtime assets, remove old paths, render instructions, prepare pinned Git checkouts and the memory repository, then write registration and invoke provider setup.
-- `mcp_registration.py` writes benchmark-local MCP settings and Codex configuration. Its runtime configuration helper constructs benchmark-scoped provider paths under `providers/runners` and `logs/providers`, with MCP transcripts under `logs/mcp`. Its lifecycle-settings helper takes no workspace argument and delegates to the shared generator, which emits `contextProviders.enabled=false` and an empty provider map. The setup call therefore does not establish the former promise that every benchmark builds provider indexes.
+- `filesystem.py`, `commands.py`, and `workspace.py` prepare the source-only and with-memory workspaces: copy provider assets, remove old paths and the retired coordinator startup files, render the workspace instructions, prepare pinned Git checkouts and the memory repository, then write registration and invoke provider setup.
+- `mcp_registration.py` writes benchmark-local MCP settings and Codex configuration. Its runtime configuration helper constructs benchmark-scoped provider paths under `providers/runners` and `logs/providers`, with MCP transcripts under `logs/mcp`. Its lifecycle-settings helper takes no workspace argument and delegates to the shared generator, which emits `contextProviders.enabled=false` and an empty provider map. The setup call therefore does not promise that every benchmark builds provider indexes.
 - `execution.py` resolves Codex from PATH, validates sandbox selection, constructs the command, records run metadata, schedules prompt/variant/repetition tasks, and writes summaries. It reads the workspace's Codex MCP configuration into command overrides so the run can use that workspace's configured server.
 - `analysis.py` extracts JSONL event counts, command counts, turn token usage, final answers and errors, combines them with run metadata, and renders summaries. `services.py` returns prepare/run payloads; `cli.py` calls those services and exposes list, prepare, run and analyze commands. `roots.py` selects an explicit benchmark root or the packaged benchmark cases.
 
@@ -46,7 +46,7 @@ Benchmark cases can clone external repositories, but the implementation owners d
 
 ## Authority Bounds
 
-The retained service implementations and CLI callers establish the local call flow described here. The inherited reference numbered 2 targets runtime skill installation, which does not call benchmark services; it cannot substantiate the former MCP benchmark-caller claim. Current MCP exposure is not established by that reference.
+The retained service implementations and CLI callers establish the local call flow described here.
 
 Lifecycle, landing and acceptance authority are outside this source account. Their current status is a named uncertainty: this inspection supplies no test execution, native-host execution, whole-build result, landing result or memory acceptance.
 
@@ -61,13 +61,13 @@ Lifecycle, landing and acceptance authority are outside this source account. The
 
 ## No skill exposure in a benchmark workspace
 
-Preparation no longer mirrors a skill tree into a workspace: `sync_runtime_assets` writes the instruction targets and the provider assets, the `.codex/skills` exposure helpers are removed, no preparation object carries a skill-exposure mode and no command accepts one. The workspace's harness reads the skills the tool server serves from its package copy, through the benchmark-local MCP registration the workspace writes.
+Preparation mirrors no skill tree into a workspace: `sync_runtime_assets` removes the retired coordinator startup files (`AGENTS.md`, `system/AGENTS.md`, `tasks/AGENTS.md`) and replaces the provider assets, no `.codex/skills` exposure helper exists, no preparation object carries a skill-exposure mode and no command accepts one. The workspace's harness reads the skills the tool server serves from its package copy, through the benchmark-local MCP registration the workspace writes.
 
 - The runtime-asset sync that writes no skill tree.
 
 [1] mcp/src/agents_remember/benchmarks/runner.py — lines 28-28; mcp/src/agents_remember/benchmarks/runner.py — lines 10-24; mcp/src/agents_remember/benchmarks/runner.py — lines 28-33
 [3] mcp/src/agents_remember/providers/grepai/seed.py — symbol GrepaiSeedOptions; mcp/src/agents_remember/providers/grepai/seed.py — symbol _clone_inputs; mcp/src/agents_remember/providers/cgc/seed.py — symbol _seed_precondition_skip
-[4] mcp/src/agents_remember/benchmarks/runner_modules/models.py — lines 1-156; mcp/src/agents_remember/benchmarks/runner_modules/constants.py — lines 1-40; mcp/src/agents_remember/benchmarks/runner_modules/manifest.py — lines 1-223; mcp/src/agents_remember/benchmarks/runner_modules/workspace.py — lines 1-293; mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py — lines 1-172
+[4] mcp/src/agents_remember/benchmarks/runner_modules/models.py — lines 1-156; mcp/src/agents_remember/benchmarks/runner_modules/manifest.py — lines 1-223; mcp/src/agents_remember/benchmarks/runner_modules/workspace.py — lines 1-293; mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py — lines 1-176
 [5] mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py — lines 1-300; mcp/src/agents_remember/providers/settings.py — lines 32-47; mcp/src/agents_remember/providers/provider_setup.py — lines 56-121; mcp/src/agents_remember/providers/setup_common.py — lines 66-102
 [6] mcp/src/agents_remember/benchmarks/runner_modules/commands.py — lines 1-57; mcp/src/agents_remember/kernel/git_command.py — lines 58-68; mcp/src/agents_remember/kernel/git_command.py — lines 151-231; mcp/src/agents_remember/kernel/git_command.py — lines 302-347; mcp/src/agents_remember/benchmarks/runner_modules/workspace.py — lines 38-75
 [7] mcp/src/agents_remember/benchmarks/runner_modules/execution.py — lines 1-420; mcp/src/agents_remember/benchmarks/runner_modules/analysis.py — lines 1-221; mcp/src/agents_remember/benchmarks/runner_modules/services.py — lines 1-117; mcp/src/agents_remember/benchmarks/runner_modules/cli.py — lines 1-185; mcp/src/agents_remember/benchmarks/runner_modules/roots.py — lines 1-17

@@ -2,13 +2,13 @@
 
 ## Governing Overview
 
-[MCP package overview](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
 Typed agentic settings models, constants, and validation primitives. The settings family (``orchestration.*``) is merged from a global and an optional repo-local settings file. This module owns the typed models, the fail-loud key vocabularies, the shared shape/type validators, and the seeded defaults; the parsers live in responsibility-split siblings and the loader in :mod:`agents_remember.kern...
 
-Defines typed role knobs and inherited agentic settings defaults. MIK-R113 removes expectation and notifier models: their old family keys, harness execution fields and role launch/session fields are accepted but not read or checked, and `unused_orchestration_keys` reports their dotted names. `AgenticSettings` carries effective harness IDs, not native adapter objects; settings compatibility never restores a launch implementation. Unknown keys outside the declared active-or-unused vocabularies still fail loud.
+Defines typed role knobs and inherited agentic settings defaults. There are no expectation or notifier models: their old family keys, harness execution fields and role launch/session fields are accepted but not read or checked, and `unused_orchestration_keys` reports their dotted names. `KNOWN_ROLES` holds the eight lifecycle roles; the removed role names in `UNUSED_ROLES` (`designer`, `strategist`) and a `portfolio` loop posture of `strategist` are accepted the same way and reported by their dotted names. `AgenticSettings` carries effective harness IDs, not native adapter objects; settings compatibility never restores a launch implementation. Unknown keys outside the declared active-or-unused vocabularies still fail loud.
 
 Defines role defaults and LandingSettings.commit_check_timeout_seconds=900 with the sole commitCheckTimeoutSeconds key.
 
@@ -16,7 +16,7 @@ Defines role defaults and LandingSettings.commit_check_timeout_seconds=900 with 
 
 `KNOWN_ORCHESTRATION_FIELDS` admits `roleMessageLimit`, and `AgenticSettings.role_message_limit` uses the shared `DEFAULT_ROLE_MESSAGE_LIMIT` of 1000. This bound counts role-message wake text, not sender/file pointer lines or full-file payloads. The core owns the typed setting/default; the loader validates it and the message facade reads the effective limit per call.
 
-L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qualityGate.executor` to `local`. CCR-R22@v1 (L22, commit `685f83c44055`) removed the executor field entirely: `QualityExecutor` is deleted, `KNOWN_QUALITY_GATE_FIELDS` now contains only `memoryCapBytes`, and `QualityGateSettings` carries only `memory_cap_bytes` -- executor identity belongs to the repository certification profile, not to agentic settings.
+`KNOWN_QUALITY_GATE_FIELDS` contains only `memoryCapBytes`, and `QualityGateSettings` carries only `memory_cap_bytes` -- executor identity belongs to the repository certification profile, not to agentic settings.
 
 - `AgenticSettingsError`
 - `LoopComplexity`
@@ -24,7 +24,7 @@ L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qual
 - `LoopSettings`
 - `RoleKnobs`
 - `ConcurrencySettings`
-- `QualityGateSettings` (260731-EFA-L17/L24: optional `orchestration.qualityGate.memoryCapBytes`; absent means host-managed RAM and swap; CCR-R22 removed the `executor` field -- the profile owns the adapter)
+- `QualityGateSettings` (optional `orchestration.qualityGate.memoryCapBytes`; absent means host-managed RAM and swap; no `executor` field -- the profile owns the adapter)
 - `AgenticSettings`
 - `agentic_settings_path`
 - `default_agentic_settings_seed`
@@ -41,13 +41,10 @@ L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qual
 RoleKnobs now carries optional service_tier. resolved_role_knobs merges tier independently of harness/model/effort, so a lower-level model or effort does not erase a role/altitude tier. Legacy role launch/session fields remain accepted-unused; the independent tier/default facts here are not execution-argument authority. RoleKnobs now also carries `mode`, `feature_values` and `notes` with per-choice `origins`: `NON_PERMISSION_FEATURES` (`service_tier`, `fast_mode`) marks speed authority while unknown features carry permission authority until classified, `role_feature_values` retains the configured tier spelling. Fresh catalog resolution, rather than settings parsing, matches IDs then labels without case when the offering is known. `agentic_settings_path` names the repository-local file only; `user_agentic_settings_path` and `require_user_agentic_settings_path` resolve and guard the single user file.
 
 
-**L184 — NEW-R192-EXTRA-ARGS.** Layering is decided in the core, so a new key's precedence is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
-
-## 260731-EFA-L17/L24 Quality-Gate Settings
+## Quality-Gate Settings
 
 The module owns the `orchestration.qualityGate` family:
-`KNOWN_QUALITY_GATE_FIELDS` contains only `memoryCapBytes` (the `executor` key was removed by
-CCR-R22); the frozen `QualityGateSettings` model uses `None` for the adapter-runtime-managed
+`KNOWN_QUALITY_GATE_FIELDS` contains only `memoryCapBytes`; the frozen `QualityGateSettings` model uses `None` for the adapter-runtime-managed
 default; and the generated settings seed deliberately omits the family. An explicit positive
 integer remains available for a constrained full-gate run. Unknown keys fail loud through
 the shared `_refuse_unknown` machinery exactly like every other orchestration
@@ -98,27 +95,29 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 ### Runtime Source References
 
 
-- Frozen implementation of RoleKnobs supporting the stated file behavior. [1]
+- `RoleKnobs` holds one role's frozen knob overrides; `None` means the role-file default. [1]
 
 
-
-- Frozen implementation of AgenticSettings supporting the stated file behavior. [2]
-
+- `AgenticSettings` is the merged, typed agentic settings value for one read (global <- local). [2]
 
 
-## L23 Final Candidate Disposition
+## Quality Executor Ownership
 
-Quality settings no longer carry an executor field at all (CCR-R22): the one adopted acceptance
+Quality settings carry no executor field: the one adopted acceptance
 adapter comes from the repository's certification profile. Optional resource policy configures the
 graph; agentic settings cannot select or constrain a second runner.
 
-## R39 Dagger Resource Ownership
+## Dagger Resource Ownership
 
 Executor identity belongs to the repository certification profile, not to these agentic settings. This module declares an optional positive memory cap; its omitted value is runtime-managed. The adapter runtime and fallback policy are owned outside this module.
 
-## CCR-L42 current candidate
+## Review Budget And Loop Defaults
 
-The review budget uses the settings number `orchestration.loops.defaults.maxRounds`. `MAX_REVIEW_ROUNDS` is removed; `DEFAULT_LOOP_MAX_ROUNDS` is the fallback used by `LoopDefaults` and the reference seed when no number is named. Any positive whole number is accepted by the parser. The settings/transition owners, not role prose, determine the number in force.
+The review budget uses the settings number `orchestration.loops.defaults.maxRounds`. `DEFAULT_LOOP_MAX_ROUNDS` is the fallback used by `LoopDefaults` and the reference seed when no number is named. Any positive whole number is accepted by the parser. The settings/transition owners, not role prose, determine the number in force. `DEFAULT_LOOP_PER_LEVEL` seeds only `leaf` (`scored`) and `master` (`seam-required`); `portfolio` remains a known loop level with no default posture.
+
+- The eight known roles and the removed role names kept as inert keys [12]
+- Per-level loop defaults name only leaf and master [13]
+- Unused-key report names removed role rows and a portfolio strategist posture [14]
 
 
-- `CAPABILITY_IDS` names the non-seat capabilities that carry a launch block (`review-presenter`): their choices live under `orchestration.roles.<capability>` with the same per-field provenance and refusal rules as a seat, while the capsule, dispatch and level tables stay seat-only. \[11] [11]
+- `CAPABILITY_IDS` names the non-seat capabilities that carry a launch block (`review-presenter`): their choices live under `orchestration.roles.<capability>` with the same per-field provenance and refusal rules as a seat, while the capsule, dispatch and level tables stay seat-only. [11]

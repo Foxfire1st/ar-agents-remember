@@ -59,7 +59,7 @@ When all candidate findings are closed and only the Worker’s report/evidence/h
 
 A Reviewer finding states the required property the candidate breaks; the showing case is proof, not the finding. If a repair leaves that finding open, the Worker states the property for every case and proves the construction or changes it, reporting which. A beyond-limit request carries that property-and-construction account.
 
-Read the selected requirement and leaf task only: open the exact rendered_path and json_path supplied by taskDocReadArgs with own file tools; these are file locations, not a tool-server read call. task_doc writes and does not read. Name relevant records through knowledge_read using supplied memoryRoot; only read_ar_files uses task_context with the canonical task and enclosure contract. Resolve missing facts from that canonical task and requirement without inferring a different task. Confirm paired code/read-only-memory/report bindings; do not load the whole task hierarchy or infer a different task.
+Read the selected requirement and leaf task only: open the exact rendered_path and json_path supplied by taskDocReadArgs with own file tools; these are file locations, not a tool-server read call. task_doc writes and does not read. Name relevant records through knowledge_read using supplied memoryRoot; both context_packet and read_ar_files use task_context with the canonical task reference and enclosure contract. Resolve missing facts from that canonical task and requirement without inferring a different task. Confirm paired code/read-only-memory/report bindings; do not load the whole task hierarchy or infer a different task.
 
 Inspect source before editing, make the smallest complete change and run relevant brief/repository checks. Repair failures in the Worker’s own work or instrument and continue; keep a failed or unrun check visible only when it cannot be made to pass on the Worker’s own ground, explicitly saying so. When invariant/family context applies, inspect affected claims and relevant unchanged siblings; report out-of-scope manifestations rather than editing them.
 
@@ -124,10 +124,10 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 | Exact leaf intake, read-only memory, targeted evidence, single report and uncommitted role boundary. | lines 8-26 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:8-26 |
 
 
-- The packaged worker declares its seat purpose, authority boundary, and no-commit contract. [1]
+- The packaged Worker leaves the candidate uncommitted and does not review or accept its own implementation, write memory onboarding, update task lifecycle or status, close out, commit, merge, push or publish. [1]
 
 
-- The role is a self-contained capsule — everything this seat does is on this page — and it declares no inherited shared sources. [2]
+- The Worker role file states the Worker's duties, and the supplied operation states the procedure. [2]
 
 - The canonical source owns this doctrine. [3]
 - MCP package data is copied from canonical skills and checked for drift. [4]
@@ -160,8 +160,12 @@ acceptance, leaf integration does not rerun it, and full acceptance belongs to m
 
 - The generated role carries its canonical repair-loop instructions without independent authority.
 
-- Worker ends at a final candidate meeting the requirement, clean-copy handover checks named by the memory coding guidelines and a report with Reviewer; own-fault repair and the three-repairs escalation remain explicit. [5]
-- Manager starts Worker at build, Reviewer at freeze and Curator after code PASS; Worker starts no checker and accepts or publishes no implementation. Its stage needs the final candidate and the coding guidelines’ clean-copy handover checks, with its report at Reviewer. Own faults are repaired; record-only checks reuse the round only with identical candidate and all candidate findings closed; repeated cases require the property and construction. [6]
+- The Worker's stage ends when the candidate meets the requirement, the handover checks named in system/coding-guidelines.md pass on a clean copy of the final bytes, and the report is with the Reviewer. [5]
+
+- After three failed repairs of the same check or finding the Worker stops and tells the Manager; with every candidate finding closed, a remaining record-only finding is repaired on the record and checked by the same Reviewer without a new round; a finding still open after a repair needs the property written for every case and the construction shown or changed. [6]
+
 - This packaged Worker role is byte-identical to its canonical source and carries its actual stage and repair duties; that mirror identity establishes no executed check or acceptance. [7]
-- Worker intake opens exact rendered_path/json_path files natively; task_doc on agents-remember-task writes rather than reads, and only read_ar_files carries the canonical task_context. [8]
-- The generated role carries its canonical repair-loop instructions without independent authority. [9]
+
+- Worker intake opens the exact rendered_path and json_path handover locations with its own file tools; they are file locations, not tool-server read calls, and both context_packet and read_ar_files take the task_context with the canonical task reference and enclosure contract. [8]
+
+- Before repairing a sealed finding in its own files, the generated Worker role follows the shared Repair a sealed own-file finding procedure in the implementation operation. [9]

@@ -6,54 +6,45 @@
 
 ## Purpose
 
-The Pi install page: what to copy from the repository's `.pi/` starter package, how to
-render it, how the project settings load the startup extension and the MCP adapter, and
-where Pi finds skills.
+The Pi install page: how to register the Agents Remember MCP server through
+`pi-mcp-adapter`, the one `role_start` call that begins setup, how Pi receives skills, and
+which harness-created files Agents Remember leaves alone.
 
 ## What The Page Establishes
 
-- Pi core has no built-in MCP client, so the starter package uses `pi-mcp-adapter` and keeps
-  the package self-contained with Pi's own project override rather than a shared `.mcp.json`.
-- The install is: copy `.pi/` to the workspace root, run the copied `.pi/render-starter`
-  with a single `--repo` list (the page shows `--repo my-app shared-lib`), then start or
-  reload Pi from the workspace once.
-- The renderer infers the workspace root from the copied `.pi/` folder, fills path and
-  repository placeholders, renders the project extension constant, and validates that each
-  named repository exists. The manual alternative is the same replacements by hand with no
-  placeholder left behind.
-- Package contents the page names: `.pi/settings.json` (project settings that load the local
-  extension, local skills and `npm:pi-mcp-adapter`), `.pi/extensions/agents-remember-start.ts`
-  (a project-local `before_agent_start` extension injecting the mandatory first-action
-  directive), `.pi/mcp/agents-remember-settings.json`, `.pi/mcp.json` (the Pi project
-  override consumed by the adapter), and `.pi/skills/`.
-- Skills: Pi loads skills from project `.pi/skills` and `.agents/skills`, global
-  `~/.pi/agent/skills` and `~/.agents/skills`, settings entries, package entries and repeated
-  `--skill <path>` flags. Pi can discover `SKILL.md` directories recursively, but skill names
-  should still match their parent folder for clean validation. First-run setup does not
-  install skills; the copied package already carries them.
-- MCP: Pi installs missing project packages on startup; the page prints the `.pi/mcp.json`
-  entry with `uvx ... --config <projects>/.pi/mcp/agents-remember-settings.json`, and points
-  to `/mcp` for adapter status and `/mcp setup` to adopt existing host-specific configs.
-- After the restart, `c-13-install-and-onboard` runs or verifies `runtime_install()` and
-  then handles memory and onboarding. The closing sentence states that nothing provider-side
-  starts because the two former search providers are retired.
+- Pi core has no built-in MCP client, so the project settings load `pi-mcp-adapter`; the
+  settings list no skill folder.
+- Registration adapts the common registration example and the shared settings setup to the
+  `mcpServers.agents-remember` entry of the adapter's configuration. The settings path is the
+  absolute user-config path, not a workspace file; `npm:pi-mcp-adapter` is configured through
+  Pi's package settings, and the harness is restarted or reloaded after a registration change.
+- Setup starts with one `role_start(role="bootstrap", request_id=...)` call that names no task
+  and no repository. It prepares the runtime scaffold, provisions and starts the Paseo host,
+  verifies the plug-in and starts one Bootstrap seat whose dashboard chat continues setup; a
+  retry with the same `request_id` reconciles to the same seat. Bootstrap ends at memory setup,
+  starts no role and authors no onboarding or knowledge.
+- Skills: Agents Remember writes no skill folder. The tool server publishes each skill as an
+  MCP resource (the SEP-2640 skills extension) and Pi reads them through the adapter, so there
+  is no skill tree to copy, render or keep in sync.
+- Harness-created files: Pi agents can create `~/.pi/agent/mcp.json`, which Agents Remember's
+  agents leave unchanged and report; running `pi` in a worktree creates `.pi/npm`, which Agents
+  Remember avoids by running harness commands only in scratch folders.
 
 ## Boundaries
 
 Provider setup is not among the install steps. The page names no provider id, setting or
-command and gives no enable, start, index or query step; the retirement appears only in that
-one sentence.
+command and gives no enable, start, index or query step.
 
-The page is instructions, not proof: it does not show that Pi installed the adapter, that
-the extension ran, that the renderer ran, or that `runtime_install()` executed. Pi's skill
-roots, its package installation and its adapter behaviour are stated as the page's account
-of that harness.
+The page is instructions, not proof: it does not show that Pi installed the adapter or that
+the `role_start` call ran. Pi's skill scanning, its package installation and its adapter
+behaviour are stated as the page's account of that harness.
 
 ## Evidence
 
-- Pi core has no built-in MCP client; the starter package uses `pi-mcp-adapter`. [1]
-- Copy `.pi/`, render with `--repo`, start or reload Pi once; manual replacement is the stated alternative. [2]
-- Package contents: settings, startup extension, authority settings, project MCP override, skills. [3]
-- `c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts. [4]
-- Skill roots, recursive discovery with the parent-folder naming rule, and the no-install first-run rule. [5]
-- The `.pi/mcp.json` entry, `/mcp` and `/mcp setup`. [6]
+- Pi core has no built-in MCP client, so the project settings load `pi-mcp-adapter`. [1]
+
+- Registration adapts the common example to the adapter's `mcpServers.agents-remember` entry, configures `npm:pi-mcp-adapter` through Pi's package settings, then restarts or reloads the harness. [2]
+
+- One `role_start(role="bootstrap")` call prepares the runtime scaffold, starts the Paseo host and one Bootstrap seat; Bootstrap ends at memory setup and starts no role. [4]
+
+- Skills arrive as MCP resources (the SEP-2640 skills extension) that Pi reads through the adapter; there is no skill tree to copy, render or keep in sync. [5]

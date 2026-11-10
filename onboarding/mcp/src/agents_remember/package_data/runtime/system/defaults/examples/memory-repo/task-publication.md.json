@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb67fe7ec041a7ed3223a669d45bb54f87167a79",
+            "blob": "78004296535df1add6a69eeaef5ee0f24d5007c7",
             "content": "sha256:53db09a3552377633435b4ff8f336358e2a1b5301603c7d9e38af33a0e04e7fc",
             "locator": {
               "end": 29,
@@ -20,14 +20,14 @@
       ]
     },
     "2": {
-      "note": "The example's own text for this part of the publication policy.",
+      "note": "The spine, and the issue-and-PR trigger for each change kind.\n\nAnchor: `Spine`",
       "targets": [
         {
           "anchor": {
-            "blob": "bb67fe7ec041a7ed3223a669d45bb54f87167a79",
-            "content": "sha256:d9c22c9567009dece1e7c0be89b615520225baae371a47a0ff9275802aea7e94",
+            "blob": "78004296535df1add6a69eeaef5ee0f24d5007c7",
+            "content": "sha256:bb2f6bdd3864a3e6869c5e36d4f4fcc457a9dfa4e64156e9665f863391f32339",
             "locator": {
-              "end": 49,
+              "end": 46,
               "kind": "line_range",
               "start": 30
             }
@@ -37,14 +37,14 @@
       ]
     },
     "3": {
-      "note": "The example's own text for this part of the publication policy.",
+      "note": "The local landing flow is the landing itself, and its gates are given in one line: commit approval, one push approval, then the agent owns push, PR, checks, merge, cleanup and carryover.",
       "targets": [
         {
           "anchor": {
-            "blob": "bb67fe7ec041a7ed3223a669d45bb54f87167a79",
-            "content": "sha256:227a332cd90964322eb4725bce4dda769a876cb67e0f0f10cf0208da265c64ca",
+            "blob": "78004296535df1add6a69eeaef5ee0f24d5007c7",
+            "content": "sha256:26d4cb71606cc3ae7818665bd78a9881f5c72fc8738c078b2d536a74e4ba30e9",
             "locator": {
-              "end": 80,
+              "end": 77,
               "kind": "line_range",
               "start": 50
             }
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb67fe7ec041a7ed3223a669d45bb54f87167a79",
+            "blob": "78004296535df1add6a69eeaef5ee0f24d5007c7",
             "content": "sha256:8bd6f65401452c011dca9370a052873fdcda5dd4b46a801138dfa4556ef3d8ce",
             "locator": {
               "end": 109,
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb67fe7ec041a7ed3223a669d45bb54f87167a79",
+            "blob": "78004296535df1add6a69eeaef5ee0f24d5007c7",
             "content": "sha256:0b12ca4c055aa50d07dbda7d4acdba3f097be3aab2e7d99ee84556fbbe807fb0",
             "locator": {
               "end": 123,
@@ -92,12 +92,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb67fe7ec041a7ed3223a669d45bb54f87167a79",
+            "blob": "78004296535df1add6a69eeaef5ee0f24d5007c7",
             "content": "sha256:1e37f7b7b44aafc0be916aa730f8053a532ddc798ef02f90a7b6ae001ffe7391",
             "locator": {
               "end": 158,
               "kind": "line_range",
               "start": 147
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `local` flow starts its worktree with `worktree_start` and points its commit gate and closeout to the l-01 closeout procedure.\n\nAnchor: `worktree_start`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78004296535df1add6a69eeaef5ee0f24d5007c7",
+            "content": "sha256:ee81f2d724f8cfc72994a02004bcfa5985a61ad59158c9f0c912c983284bfcaf",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 56
             }
           },
           "kind": "code"

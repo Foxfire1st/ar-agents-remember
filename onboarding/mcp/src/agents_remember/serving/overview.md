@@ -1,11 +1,11 @@
 # Serving — Dashboard, Hosted Sessions, And Review Boundaries
 
 ## Governing Overview
-[mcp/overview.md](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
-The serving package composes the local dashboard, projection/event streams and retained file, note, task, requirement, change-set, Knowledge and review readers over configured application ports. Native Paseo integration remains a separate retained subtree; the removed hosted terminal catalogue, harness adapter/control, conversation, notifier and supervisor plane is not this package's current responsibility.
+The serving package composes the local dashboard, projection/event streams and retained file, note, task, requirement, change-set, Knowledge and review readers over configured application ports. Native Paseo integration remains a separate retained subtree; the removed hosted terminal catalogue, harness adapter/control, conversation, notifier and supervisor plane is not this package's current responsibility. The package also owns the dashboard daemon's start, identity and restart, and the build-currentness reading by which a running dashboard or MCP server knows whether the Python build it loaded still matches the files at its package root.
 
 Role launch instructions are generic capsule-or-refused values; compilation and admission remain application-owned. The current ordinary source literal `PUBLIC_TOOLS` has 44 names, including `knowledge_write`, `user_settings_init` and `explainer_control`; a valid launch-bound explainer selects its separate 22-tool surface. Declaration, installation content, native receipt identity and observed host execution are separate facts; this overview creates no new CODE grade.
 
@@ -26,6 +26,16 @@ The process-shared moved watcher compares on review-page opening and relevant le
 ## Construction And Ownership
 
 Configured McpRuntimeConfig and admitted roots feed the dashboard; untrusted request values do not install arbitrary host roots. Compilation, task authority, canonical knowledge comparison, native role launch and independent acceptance remain with their actual owners. Serving capsule_delivery is an immutable copied value, not a harness-specific carrier/protocol planner.
+
+## Running Processes And Build Currentness
+
+`build_currentness` compares the Python digest a process loaded with the digest of the `*.py` files now at its package root (`build_info.runtime_source_digest`); the installed digest is computed only when a reading is asked for and cached for 30 s per root, and a digest that cannot be computed reads `unknown`. A process whose package root is a source checkout's `mcp/src/agents_remember` is compared only when a status request asks. A stale reading names both digests, the time the difference was first seen and the remedy (restart the dashboard, or restart or reconnect the MCP server). Markdown and other package data never make a process stale. The MCP server reads it before every tool call and, for an installed stale build, refuses the declared publication writes with `server-build-stale` (`mcp/build_staleness.py`); reads, dry runs and checkout processes are not refused.
+
+`server_registry` keeps one record per running dashboard or MCP server at `<coordination root>/runtime/servers/<pid>.json`, removed at exit; a reader removes the records of dead processes, and `server_inventory` reports each live server with its reading to `server_info` and `runtime_install`. The served state tail carries `buildCurrentness` and `servingProcessId`, the state ETag includes the reading, and the stream sends a `buildCurrentness` event when it changes.
+
+`daemon` records the dashboard's source digest in `daemon.json`. `ensure` adopts a running dashboard only when version, host, port and the installed Python digest agree, restarts it otherwise, and answers `unknown` without restarting when the installed digest cannot be computed. `daemon_identity` proves which dashboard answers a port from the process that owns the listening socket (`daemon_processes`, a native read per platform) and that dashboard's own `servingProcessId`, not from the saved PID; a dashboard whose identity cannot be proved, or that serves another coordination root, gets no signal. `plan_running_dashboard` and `ensure_running_dashboard` give `runtime_install` its read-only preview and its restart of a running dashboard on a build change; a dashboard that is not running stays stopped.
+
+In the Paseo subtree, a call that only talks to a running host runs on `communication_node`: the product Node when it is installed, otherwise the Node of the owned running host; starting a host uses the product Node only. A provisioning that would stop its own host refuses first with `harness-home-would-change` when a harness-home variable (package data `host-harness-homes.json`) of the running host would not reach the new host with the same value, unless the change is accepted with `--accept-harness-home-change`; the status and the provisioning report name the inherited harness homes. The install preview's `changes` come from the same plan descriptions as the real pass.
 
 ## Invariants And Boundaries
 
@@ -225,7 +235,7 @@ This is not a dashboard-wide stop switch. Projection/watch/healing and other own
 
 `register_changeset_routes` creates one bounded ChangesetCache, shared with the intent-summary route through its typed inputs/read port. Native Git remains the selector/diff owner. Reuse observes repository/configuration/reference/object and, when needed, working-tree generations plus dependencies discovered before consumption. Pending results enter retention only after matching fresh post-read observations; incomplete/changing dependencies and failed native reads do not become reusable successes. Object-absence proofs also invalidate on additions. This is not TTL-based permission to serve stale inputs or a new comparison generation. Successful change-set/summary responses derive weak ETags from their returned bytes and honor If-None-Match; an unwired summary keeps its named 503.
 
-Full task bodies have a separate app-scoped LRU of at most 1,024 entries/16 MiB, distinct from the background task-payload parse cache and native change-set/summary reuse. Captured filesystem inputs revalidate before body reuse; serialized TaskSummary bytes define its content revision. Unreadable/changing generations are served uncached and cannot justify a 304. State GET/SSE retain their separate projection-instance dump memo and servingBuild tail. None of these caches changes task stage, host activity, recorded operands, permission or acceptance.
+Full task bodies have a separate app-scoped LRU of at most 1,024 entries/16 MiB, distinct from the background task-payload parse cache and native change-set/summary reuse. Captured filesystem inputs revalidate before body reuse; serialized TaskSummary bytes define its content revision. Unreadable/changing generations are served uncached and cannot justify a 304. State GET/SSE retain their separate projection-instance dump memo and served tail (`servingBuild`, `buildCurrentness`, `servingProcessId`). None of these caches changes task stage, host activity, recorded operands, permission or acceptance.
 
 ## Open Review Memory Invalidations
 
@@ -251,7 +261,7 @@ refusal spellings for status mapping; that does not reinstate removed candidate 
 
 the change-set routes now run on a dedicated `_BoundedReads` scheduler: eight workers plus eight pending jobs, an explicit 503 over the cap, a queued job withdrawn on disconnect and a running job releasing its slot only at its physical end; the route returns 499 and the runner's one `_wait_process` kills the Git child and its group. Freshness is Git's own: id-keyed commit pairs are served with no observation, working views run `git status --porcelain=v2 -z` and have no cache where a plain read costs no more, and the object store is a `count-objects -v` census; the object/worktree walks are removed. The cache's result/repository/per-read maps are capacity-bounded, an abandoned read admits nothing, and the id-keyed accepted gap is named in the cache module. The intent-summary route keeps its 200/503/304 idiom and shares the same cache.
 
-**L184.** The serving tick reads usage reports at a new stamped end, writes the one limit file whole under an exclusive lock, pauses a limited recipient's drain before any host read, and reaches the bridge through the port the composition root binds.
+The serving tick reads usage reports at a new stamped end, writes the one limit file whole under an exclusive lock, pauses a limited recipient's drain before any host read, and reaches the bridge through the port the composition root binds.
 
 
 - The collaborator port and the registration before the static mount.
@@ -410,15 +420,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - The published surface, unchanged: the three route constants, the three ports and the two parsers. [83]
 
-- Current imported source owns this scoped route boundary. [84]
+- The dashboard composition root registers the native role-launch routes, then the developer chat/tray routes, as the app's extra API routes beside the retained review/read ports. [84]
 
-- Current imported source owns this scoped route boundary. [84] [85] [86] [87] [88]
-
-- Current imported source owns this scoped route boundary. [85]
-
-- Current imported source owns this scoped route boundary.   [86] [87] [88]
-
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_common.py:215-216 - the bytes it recorded now occur 42 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted [89]
+- The collaborator that stops the route's child computations. [89]
 
 - The runtime receives the shutdown callable from the collaborators. [90]
 
@@ -442,9 +446,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_commo
 
 - App registers three intent handlers plus separate summary, tree and reader ports before static delivery.  Anchor: create_app [110]
 
-- Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit.  Anchor: `_serving_lifespan`, `_held_delivery_loop`, `_to_thread_owned` (delegating to accounted cancellation-drained offload) [111]
+- Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit. [111]
 
-- Leaf-archive recovery alone uses the retained completion-relative background loop; no terminal-observation prime/poll remains. [112]
+- Leaf-archive recovery is the one loop under the terminal-observation owner: it sleeps after each attempt returns, and no terminal-observation prime or poll remains. [112]
 
 - Live pacing adds post-completion rest, so interval/heartbeat alone is not a total freshness bound.  Anchor: projection_completed; _next_deadline [113]
 

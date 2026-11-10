@@ -37,14 +37,27 @@
       ]
     },
     "13": {
-      "note": "The curation-doctrine registry and the statements a canonical instruction source must make.",
+      "note": "The curation-doctrine registry of retired statements. The statements a compact canonical instruction source must make.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:bd5eaeccab20cf440b49f03f82b4da4aa1d57faa241444f87db7f6de5da67f43",
+            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "content": "sha256:261b62cab695890333ccdcc5fde705a49532d741ccda1d4d049b5a3a18246c87",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURATION_POLICY_STATEMENTS"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
           },
@@ -118,14 +131,15 @@
       ]
     },
     "17": {
-      "note": "The registry of retired curation sentences.\n\nAnchor: `RETIRED_CURATION_STATEMENTS`",
+      "note": "The registry of retired curation sentences.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:bd5eaeccab20cf440b49f03f82b4da4aa1d57faa241444f87db7f6de5da67f43",
+            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
           },
@@ -264,14 +278,50 @@
       ]
     },
     "24": {
-      "note": "Retired handover wording is source/sentence data; affirmative wording uses normalized clause alternatives.",
+      "note": "Retired handover wording is source/sentence data. Affirmative wording uses normalized clause alternatives. Each retired sentence is detected only on its own source, and a removed source stays absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "2c414ec947cb6de52209c2c35f5570b04a118391",
-            "content": "sha256:211de5874d3d997b35cf1bcdaeaeaa3d41b7be9d0e2bbee776239237cefc0401",
+            "blob": "92b5ae07412e9128cf1c8bf269b09e148e265df2",
+            "content": "sha256:fc35aac64fce022ca7b9a7c853ef45011675ddf20931f3a9e6329a2835fbb4a6",
             "locator": {
-              "end": 35,
+              "kind": "symbol",
+              "name": "RETIRED_LEAF_HANDOVER_WORDING"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/retired_leaf_handover_wording.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+            "content": "sha256:559a620ddf3cecf6031fca15109270df200731fea2295943100dabd6cf7ba67e",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_clauses"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07fb1ba05181fb4f0c5748dcd295674974c546bf",
+            "content": "sha256:4fea96e541b8daf2d9fd6892f750f4237d26bf2af1fd4e79ae0c4c5216a7f1fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "REMOVED_INSTRUCTION_SOURCES"
+            },
+            "path": "mcp/tests/test_leaf_retirement_wording.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92b5ae07412e9128cf1c8bf269b09e148e265df2",
+            "content": "sha256:167044c7326a5b132b3532c6e91dc0ad0f68e21769eb6d4dee063dda62e9cd7d",
+            "locator": {
+              "end": 8,
               "kind": "line_range",
               "start": 1
             },
@@ -281,25 +331,12 @@
         },
         {
           "anchor": {
-            "blob": "4961419e1d630a8702ba5e28562a275ffa800329",
-            "content": "sha256:d8a86a0c0bf5d705de9015a0133bd33ec0381178a1ce0cb88eba6bd1df0e1b93",
+            "blob": "07fb1ba05181fb4f0c5748dcd295674974c546bf",
+            "content": "sha256:2c0ac44c32a8ab1f7e6e7c0a89ac5995737d14be3619dba9f6e8e4304e615d26",
             "locator": {
-              "end": 130,
+              "end": 81,
               "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3af4872c490802df8eb1c9bcb5cb7985aef87f11",
-            "content": "sha256:d6f8558b175b3bb31a05e03e747273e3b9fb3530c489c8c7cfcb4e953e79d5a0",
-            "locator": {
-              "end": 69,
-              "kind": "line_range",
-              "start": 1
+              "start": 70
             },
             "path": "mcp/tests/test_leaf_retirement_wording.py"
           },

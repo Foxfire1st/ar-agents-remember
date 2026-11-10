@@ -7,7 +7,7 @@
 
 ## Purpose
 
-`coordination_resolver.py` owns command-line argument parsing for the package-local `c-08-ar-coordination-context-resolver` skill resolver
+`coordination_resolver.py` owns command-line argument parsing for the package-local coordination context resolver
 entrypoint.
 
 ## Code Commentary

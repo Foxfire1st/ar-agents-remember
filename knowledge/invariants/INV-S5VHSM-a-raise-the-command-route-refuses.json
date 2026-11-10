@@ -9,7 +9,7 @@
   },
   "applicability": "A raise row the agents-remember knowledge-ingest leaf command cannot publish because it cannot reach the leaf's task document.",
   "conditions": [
-    "The refusal names one fixed clause for the cause met: no trusted settings at or above the working directory, the checkout guard, an unreadable settings file, or settings for another coordination root.",
+    "The refusal names one fixed clause for the cause met: no trusted settings file in the user config directory, the checkout guard, an unreadable settings file, or settings for another coordination root.",
     "The text names the mounted knowledge_write with absolute contractPath and handoffPath, the handoffName and the authorizationRef, and asks for a preview then commit: true.",
     "The whole batch is refused: nothing is written and no question is published.",
     "--config is not an option: the parser refuses it and no route reads it."
@@ -31,7 +31,7 @@
     "leaf": "260928-MIK-L186",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A raise the command route refuses names the one mounted knowledge_write that writes it, with the absolute contract and hand-off paths, the hand-off name and the authorization reference, and the dead --config is gone from the command.",
   "status": "proposed",

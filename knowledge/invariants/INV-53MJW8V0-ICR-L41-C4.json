@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "Reproducible review history needs uncaptured availability to stay distinct from measured absence, otherwise a sealed historical manifest could acquire a favorable assessment claim it never recorded."
+  },
   "applicability": "Availability metadata retained in historical comparison manifests; not a current Reviewer assessment or currentness channel.",
   "conditions": [
     "A retained availability descriptor admits only assessments; recorded requires a positive count, none_recorded requires zero, and unanswered states require no count and a nonblank next action.",

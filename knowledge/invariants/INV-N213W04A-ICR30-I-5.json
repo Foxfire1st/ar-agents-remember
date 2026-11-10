@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The attribution-and-landing-pairing guarantee requires accepted code and memory to land as one attributed pair while any ledger view remains derived from committed attribution rather than an independent authority."
+  },
   "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
   "conditions": [],
   "exclusions": [],

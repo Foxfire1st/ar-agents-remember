@@ -4,16 +4,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The app lifespan starts the diagnostic and trim loops only when their flags are enabled.  Anchor: \"def _serving_lifespan(\"",
+      "note": "The app lifespan starts the diagnostic and trim loops only when their flags are enabled. Anchor: `start_heap_tracing`",
       "targets": [
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
-            "content": "sha256:cfef1cb0d286dbaa9301a0b4e04d791ca3c8f47fe6740c332bc66c32300bf2b5",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:81939dd35f5d6f385a67f306affb51114302d250fa126965be46657b7907d66f",
             "locator": {
-              "end": 238,
+              "end": 565,
               "kind": "line_range",
-              "start": 238
+              "start": 557
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -21,25 +21,12 @@
         },
         {
           "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
             "content": "sha256:9f91f08e1abd86715bc1d8eadca91c9dc43002d75ef4ddf6056d6d0a460aef6d",
             "locator": {
-              "end": 255,
+              "end": 256,
               "kind": "line_range",
-              "start": 255
-            },
-            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 376,
-              "kind": "line_range",
-              "start": 376
+              "start": 256
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },

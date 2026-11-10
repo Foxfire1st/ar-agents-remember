@@ -38,7 +38,7 @@ The earlier `code_quality/completion_relay.py` account described a structural ce
 
 `testing/curation_doctrine.py` owns normalized retired-wording checks and positive checks for compact curation policy. It strips Markdown emphasis and collapses wrapping before matching retired statements on the surfaces that shipped them. A separate registry checks the retired repair-loop field pairing and the corrected field names in declared documents. The module imports neither pytest nor a fixed repository root, so callers can supply staged or synthetic trees. Its retired-wording scan is a census, not a semantic check: fresh vocabulary can escape it. The compact-policy helper accepts any listed statement for each declared source; the direct canonical-source test requires every listed statement. Complete curation remains the stated intent, and those different deciding predicates must not be described as equivalent.
 
-`code_quality/projection_types.py` folds the served projection's `servingBuild`, `watcherHealth` and `checkoutBinding` definitions into the generated dashboard contract. Its supplemental renames are `ServingBuildPayload`, `WatcherHealthPayload` and `CheckoutBindingPayload`; nullable fields omitted by `exclude_none=True` become optional output properties. The declared refinement keywords include `minimum` but not `maximum`, and unsupported schema keywords refuse generation. The former terminal observer-health payload and counter account is historical; it does not describe this candidate's served tail.
+`code_quality/projection_types.py` folds the served projection's `servingBuild`, `watcherHealth`, `checkoutBinding` and `buildCurrentness` definitions into the generated dashboard contract. Its supplemental renames are `BuildCurrentnessPayload`, `ServingBuildPayload`, `WatcherHealthPayload` and `CheckoutBindingPayload`; nullable fields omitted by `exclude_none=True` become optional output properties. The declared refinement keywords include `minimum` but not `maximum`, and unsupported schema keywords refuse generation. The former terminal observer-health payload and counter account is historical; it does not describe this candidate's served tail.
 
 > Retained earlier card wording; superseded by the current account above:
 > `code_quality/projection_types.py` carries the served observer-health schema into the generated dashboard contract. It renames `TerminalObserverHealthPayload` to `TerminalObserverHealth`, preserves its nullable properties as required `T | null` output fields, and documents numeric `maximum` as well as `minimum`. The serving serializer preserves payload nulls when observer health is present; the record schema bounds both serving-lifetime counters as unsigned 32-bit values.
@@ -106,8 +106,11 @@ Retained earlier citation wording, outside its current number: - Root configurat
 - Exact-candidate cache reuse checks selection identity. [9]
 - The adapter constructs an explicit phase-report path; the quality-plan owner registers its reporting plugin. [10]
 - Consumer-only catalog changes preserve old and new consumers; repository inputs use explicit consumer declarations. [12]
-- Retired-wording checks are normalized and surface-specific; compact-policy helper and canonical test use different predicates. [14]
-- The current projection generator derives the serialized TypeScript and schema contracts from the Pydantic declarations, folding the served tail fields (`servingBuild`, `watcherHealth`, `checkoutBinding`) that `ServedWorkspaceProjection` declares into the same generated output. [15]
+
+- Retired-wording checks read a normalized statement. Retired-statement matching is confined to the sources that shipped each sentence. The compact-policy helper reports a source unless every declared clause is present. The canonical test reports each missing declared clause of each compact curation source. [14]
+
+- The projection generator derives the serialized TypeScript and schema contracts from the Pydantic declarations and folds the served definitions into the same output. `ServedWorkspaceProjection` declares the served tail fields `servingBuild`, `watcherHealth`, `checkoutBinding`, `buildCurrentness` and `servingProcessId`. [15]
+
 - Evidence design separates development and diagnostic artifacts from immutable certifying publication and records Candidate A retirement. [16]
 - Case budgets are root declarations rather than overview-owned constants. [17]
 - Dagger owns the retained build and retry cache bindings. [18]

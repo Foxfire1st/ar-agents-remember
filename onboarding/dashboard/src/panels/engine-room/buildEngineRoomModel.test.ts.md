@@ -59,9 +59,10 @@ No exports; one `describe("buildEngineRoomModel")` block with five `it` cases pl
 - `node`/`lifecycle`/`worktreeEngine` fixture factories [2]
 - Lifecycle join + workspace lift + fallback cases [3]
 - `enclosureKey` = worktreeGroup stable-across-id-swap case [4]
+
 - EngineProcessNode is the generated projection contract consumed by this surface. [5]
-- LifecycleProjection is the generated projection contract consumed by this surface. [6]
-- ProviderNode is the generated projection contract consumed by this surface. [7]
+
+- `buildEngineRoomModel` takes one `EngineProcessNode[]` argument; the surface consumes no separate lifecycle projection type. [6]
 
 ## Series-Contract Notes
 

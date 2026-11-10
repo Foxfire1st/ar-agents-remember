@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f323c0763525775ff301210fbf45f389c159b10",
-            "content": "sha256:6cb99311c961b790cd804adc04a81ca4bfea0f5e0184dfc93b5e05149bbe5021",
+            "blob": "f69af73cd762f6132612cd5caff7d17a327beb47",
+            "content": "sha256:cb8820c7b2f7b9082cc430c9cefb620f99ceae9a8d26449cd81200d11c7291f8",
             "locator": {
               "kind": "symbol",
               "name": "CatalogPreparationLifetimeTests"

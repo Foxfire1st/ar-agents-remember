@@ -111,14 +111,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:635b971208acb3c2650c004fce4b12c1809f18c0a7a8c5d763ffd4df2b091698",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:1297cc6720fd77406c3b49582242e6faa38d2f037f3995de7c618d38e6057b8c",
             "locator": {
-              "end": 748,
+              "end": 510,
               "kind": "line_range",
-              "start": 748
+              "start": 505
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
+            "content": "sha256:7db2e4397ad712730e983140da67ac2cc4f7b3f02037c42e4e831f2cc9fb48e8",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83b4bd442bbeab34f2f4e4d7d95140c60cc3bee6",
+            "content": "sha256:353f62432aeec1b4e809106db774a2a920b614513dd9caa7a2b3543006fb52e0",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx"
           },
           "kind": "code"
         }
@@ -129,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:45c93cf1e942145f2816b5e9d8bb19cd003f7e26f0432411fbb3731897859efc",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:1297cc6720fd77406c3b49582242e6faa38d2f037f3995de7c618d38e6057b8c",
             "locator": {
-              "end": 688,
+              "end": 510,
               "kind": "line_range",
-              "start": 688
+              "start": 505
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

@@ -89,12 +89,12 @@
         },
         {
           "anchor": {
-            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
             "content": "sha256:9e779eec0a5bb3435a4889ad985fe339292f653ed4f4a290181666889168dc56",
             "locator": {
-              "end": 496,
+              "end": 497,
               "kind": "line_range",
-              "start": 470
+              "start": 471
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -250,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "kind": "symbol",

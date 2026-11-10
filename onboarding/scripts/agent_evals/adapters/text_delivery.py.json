@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "31000220dae64059c2df6844a9a4fa245a128703",
-        "content": "sha256:9e0c9a61928aa42642b461734f3935961e61aa77eb0c8e312d5f004d46e7b5d2",
+        "blob": "cc73274e2ae8c495b43ef1e127fca4ac2cc3afe2",
+        "content": "sha256:d7d9885cc32f15605ac3c9144226397795b0b284b5f515b360d76bf42fdf3797",
         "locator": {
           "kind": "file"
         }
@@ -25,10 +25,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31000220dae64059c2df6844a9a4fa245a128703",
-            "content": "sha256:9e0c9a61928aa42642b461734f3935961e61aa77eb0c8e312d5f004d46e7b5d2",
+            "blob": "cc73274e2ae8c495b43ef1e127fca4ac2cc3afe2",
+            "content": "sha256:d7d9885cc32f15605ac3c9144226397795b0b284b5f515b360d76bf42fdf3797",
             "locator": {
-              "kind": "file"
+              "end": 446,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Binding validates captured instruction origins, reads each emitted detail file, refuses any detail that is not ready and returns the read bodies as frozen contents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc73274e2ae8c495b43ef1e127fca4ac2cc3afe2",
+            "content": "sha256:ba28d74d286e5a48562781d4141d10a6dca8b325c0812c0caf05ffb82c5ff009",
+            "locator": {
+              "kind": "symbol",
+              "name": "bind_text_details"
             }
           },
           "kind": "code"

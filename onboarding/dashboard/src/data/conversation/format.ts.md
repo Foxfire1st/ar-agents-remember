@@ -26,7 +26,7 @@ No configured Domain Documentation source exists for this file.
 
 - Source tests assert absent-duration glyph and fixed readable durations, not the removed chip/ID/freshness helpers. [1]
 
-- ServingBuildStamp uses humanizeDuration for uptime; no notifier consumer remains. [3]
+- ServingBuildStamp uses humanizeDuration for uptime; it is the only production consumer and no notifier consumes it. [3]
 
 The developer visual-findings §A rules this module encodes (task-note pointer: `260720-developer-dashboard-visual-findings.md`).
 

@@ -9,7 +9,10 @@
   "id": "FAM-N36SWD",
   "members": [
     "INV-WR3J18",
-    "INV-7KDG7C"
+    "INV-7KDG7C",
+    "INV-MQ3K06",
+    "INV-ZA67WW",
+    "INV-40JW44"
   ],
   "origin": {
     "handoff": {
@@ -19,11 +22,13 @@
     "leaf": "260928-MIK-L88",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "mcp/src/agents_remember/models/role_capsules",
     "mcp/src/agents_remember/cli",
-    "skills/l-01-agent-lifecycles/operations"
+    "skills/l-01-agent-lifecycles",
+    "mcp/src/agents_remember/serving",
+    "mcp/test_support/agents_remember_test_support/testing"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

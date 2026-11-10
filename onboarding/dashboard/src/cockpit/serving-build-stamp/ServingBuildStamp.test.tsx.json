@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/cockpit/serving-build-stamp/ServingBuildStamp.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b1c079935e6da0bcff7392967dab12ecc908cbb9",
+        "content": "sha256:8557240d07345d16a154df3ffc32c3233ab14d2283f6a3b8f402d4c1be7a5633",
+        "locator": {
+          "kind": "symbol",
+          "name": "serving build currentness > updates current, stale and unknown state without replacing boot identity"
+        }
+      },
+      "facet": "Successive current, stale and unknown readings change the stamp's state while the boot identity stays the same.",
+      "id": "PRF-PCXMAD",
+      "invariant": "INV-B6D2SA",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rules1/4 dashboard currentness",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An absent build renders nothing; a build alone keeps the legacy stamp and sets no currentness attribute.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1c079935e6da0bcff7392967dab12ecc908cbb9",
+            "content": "sha256:f352665f36582d78c413d847350e0daa44cf83fb3213ec1377180666a719d674",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each currentness state arrives through the store delta and leaves the boot identity unchanged.\n\nAnchor: `applyDelta`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1c079935e6da0bcff7392967dab12ecc908cbb9",
+            "content": "sha256:8557240d07345d16a154df3ffc32c3233ab14d2283f6a3b8f402d4c1be7a5633",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checkout mode with an unknown state shows the reason and no digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1c079935e6da0bcff7392967dab12ecc908cbb9",
+            "content": "sha256:86bd758a1bc03b21b4ceac5c7d33d412b0413f0350a491d8802875a577cfea7c",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

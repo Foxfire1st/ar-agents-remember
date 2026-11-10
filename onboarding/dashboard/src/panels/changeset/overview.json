@@ -76,14 +76,15 @@
       ]
     },
     "11": {
-      "note": "The shell that hosts the takeover + restores the rails.\n\nAnchor: `CockpitShell`",
+      "note": "The shell that hosts the takeover + restores the rails.",
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:57e2f656bc20222f62328519d9d1cb2e901ebceaae50dfbc50c5bceaa6af534f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "CockpitShell"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -849,12 +850,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:066e1ba744f447f5596af0199d84b3d2111430af05a087a1367f60369cbd2598",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:b6ff6b3b418437727eeee62cc37589b298849175b11cd98a6292a93e4afabe84",
             "locator": {
-              "end": 587,
-              "kind": "line_range",
-              "start": 564
+              "kind": "symbol",
+              "name": "useTabChange"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -862,12 +862,12 @@
         },
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:db618817521d3e708a84294f9ed3d808e5f7393ec300458c7ba28d9130cf029a",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:ca59d839e82a68eafabc65aba27154fb1755c27619585ad9ea2ad66154e739ed",
             "locator": {
-              "end": 656,
+              "end": 320,
               "kind": "line_range",
-              "start": 612
+              "start": 305
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -875,12 +875,25 @@
         },
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:818b0b30224ef435a70f7804361132a5b03b88214aff9ff126db238f88027704",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:2d691199e9ba8d902f25e36d5dc9f6d6d329d9b9326007511214b4eac5da4649",
             "locator": {
-              "end": 985,
+              "end": 379,
               "kind": "line_range",
-              "start": 868
+              "start": 373
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:737fadd8edc8a14ce5f3cdecb9bad04e3ccfb3bc92befd9f559ae1f3b9265e02",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 388
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1233,12 +1246,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
-            "content": "sha256:81dbe576e0a23727344ff68b5e387620f5f1f8f5dc1c54ab78ce36d58096ff1e",
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:c6d8679bc2ab3dfcca99e099a16580215951cfd6bf0ab93b32263f14e9d81f76",
             "locator": {
-              "end": 361,
+              "end": 433,
               "kind": "line_range",
-              "start": 361
+              "start": 413
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "content": "sha256:fb95306a3be56b74a5a04d459fe7fa4ff6345e0b08807374cb7eef7ca62215ed",
+            "locator": {
+              "end": 863,
+              "kind": "line_range",
+              "start": 857
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

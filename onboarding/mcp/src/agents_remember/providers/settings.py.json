@@ -37,26 +37,27 @@
       ]
     },
     "3": {
-      "note": "Runtime install uses generated lifecycle settings when installing provider dependencies from the MCP tool.\n\nAnchor: `install_runtime_from_config`",
+      "note": "Runtime install passes lifecycle_settings_from_config() to the provider watcher rebind; enabled provider keys drive no dependency installation.",
       "targets": [
         {
           "anchor": {
             "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
-            "content": "sha256:c50f5a389711f42ae0e18423a9af4a2beb4a1def1cb1462fb0fa044b05787c25",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
             "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 11
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
-            "content": "sha256:98f3a29716db1ab43c170852a41719d17edc42985b176f5a4df252d893420af5",
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:d319f6613db38bb7e3cf9ddc7118345e05b6220e5ce2893aa81abe17c5fc7af8",
             "locator": {
-              "kind": "file"
+              "end": 858,
+              "kind": "line_range",
+              "start": 848
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },

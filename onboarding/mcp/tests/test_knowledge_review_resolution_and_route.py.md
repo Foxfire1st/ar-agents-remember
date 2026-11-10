@@ -107,4 +107,4 @@ No meaningful cross-repo references found.
 
 
 
-- The unit-regression lane row, beside its sibling's.  Anchor: `test_knowledge_review_resolution_and_route` [26]
+- The module's own unit-regression lane row. [26]

@@ -1,0 +1,59 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/governing-sources.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Governing documentation comes from the resolved sources registry and is opened, not taken from the registry entry.\n\nAnchor: `system/sources.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe521599c9146c1460204ca08e7ac812db2e1ac",
+            "content": "sha256:789cda255371dc6e265f085e9be8c54ee3dc1404f82b5e634005c2da09c9f03c",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Decisions that still constrain code become decision records; task-only decisions stay in the task.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe521599c9146c1460204ca08e7ac812db2e1ac",
+            "content": "sha256:ea1ecb932791c57be6700a094d7510c1e13d89f65d09ee18a44179f21f5a078d",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Curator role links the decision section before authoring a decision record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "content": "sha256:589f2cf80782d37464131fb8068c59515ac08c384d15c0618850501e0161bff4",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

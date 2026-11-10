@@ -1,0 +1,148 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+        "content": "sha256:2545f4afd1342b36e468538939400a02c0aeef5e5be04014fecd045af0c38c03",
+        "locator": {
+          "end": 17,
+          "kind": "line_range",
+          "start": 13
+        }
+      },
+      "id": "RLZ-BV2C0H",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The new command reference supplies exact public names, effects, callers/examples and supporting tool boundaries. Its interpreter/stamp paragraph supports the serving-writer binding; the rest is command documentation, including existing capabilities that grant no Bootstrap or other role new authority by their presence. Candidate-shape checks do not prove fired links or semantic acceptance.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+        "content": "sha256:3588289e4f62a9f22d76c4fb72ba738526f8e6616745d0fef25808c7c438075a",
+        "locator": {
+          "end": 81,
+          "kind": "line_range",
+          "start": 81
+        }
+      },
+      "id": "RLZ-D7DJK9",
+      "invariant": "INV-1ZJS8R",
+      "origin": {
+        "handoffEntry": "L188-B17",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The memory_quality_check row of the knowledge command reference is now the owner that c-10 names. It describes the measured findings and, for full contract-scoped runs, the Curator checklist and worklist, so no retired drift file is needed.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The reference grants no authority, keeps task contracts and binds examples and CLI work to supplied bindings and the serving build.\n\nAnchor: `AR_SERVING_PYTHON`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+            "content": "sha256:1de07f100ce7ba83f43706ff23cbf3e52678dd1130a515b3a03e3c85aef98d76",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The public CLI tables give each subcommand's effect, caller and example, and name the internal dispatcher branch.\n\nAnchor: `agents-remember-mcp`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+            "content": "sha256:ee88e0e5db1e07fc813043ded75aeaef6583e93f395ff9d56ab4cca17380e7cf",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The knowledge and workflow tool tables keep write effects, previews and role gates.\n\nAnchor: `accept_drift`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+            "content": "sha256:c57021d5a128fb0c8d0df6125e814ff814beb5ff9db5201cf49365653ec50754",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Asynchronous results are polled with their run identifier, and a started run is not clean.\n\nAnchor: `run_id`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+            "content": "sha256:b32a08a410949625ea303e0ce48e6326a7b8604d9d279a749f2190cd8002983e",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Producer checking resolves the named frozen tree and leaves writer judgment and publication separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+            "content": "sha256:bb266f36b658e27a3101d6972d80a5fc056074f7f35d7729e4bdf8f698552b30",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The owning CLI and MCP sources are named.\n\nAnchor: `leaf_enclosure_start.py::COMMAND`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+            "content": "sha256:08143afdb5bf476b3873c06330e2d478e771cfef58cfaf9cc7052f60cd073192",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

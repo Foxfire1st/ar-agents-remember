@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-        "content": "sha256:c4bfd1aab34469bf09cb0c22f736df81223f40386a1351a350cd2f46f0d51116",
+        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "content": "sha256:9359250171789554c452dd26998af32a77aaa53cbaba8d1a86056690a280f049",
         "locator": {
-          "end": 14,
+          "end": 22,
           "kind": "line_range",
-          "start": 8
+          "start": 14
         }
       },
       "id": "RLZ-6CFA2A",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-        "content": "sha256:ccae651d7233c2eb2ae3a933a4da76aec8a1adc3e5cf451bba2a9eacabfcd3b3",
+        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "content": "sha256:3378b5a3cef583f3fa374ebf228a6fc935d42ef1e9e8ec0e6a224892d231615c",
         "locator": {
-          "end": 22,
+          "end": 39,
           "kind": "line_range",
-          "start": 19
+          "start": 30
         }
       },
       "id": "RLZ-BPMMTC",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "cd8592766583b510530dc20a52461970ab25acb8",
+        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
         "content": "sha256:1474575fe1142856b37b1106b95e578f8ad8ae8c1982fe29d9324ceee1abb31e",
         "locator": {
-          "end": 27,
+          "end": 50,
           "kind": "line_range",
-          "start": 27
+          "start": 50
         }
       },
       "id": "RLZ-C5XM1T",
@@ -60,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-        "content": "sha256:b131f033604e57bf833349a2fbd22d8681ff216680361d3afd3a0303eff62e45",
+        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "content": "sha256:f48c0a63ffa84ad186b86c05326cc6fe2e0ec469a69b934dce1d0abb8d4c5e95",
         "locator": {
-          "end": 40,
+          "end": 94,
           "kind": "line_range",
-          "start": 27
+          "start": 48
         }
       },
       "id": "RLZ-CJF248",
@@ -74,17 +74,17 @@
         "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "The canonical orientation home states actual-parent questions, independent work, pending and unreachable-parent limits, quoted-answer provenance and permission authority; it points to message-handover detail for held/refused delivery. No native delivery is measured.",
+      "rationale": "The canonical orientation home sends developer questions to the role's instructed reporting recipient, else the `host.parent`, else the developer in the agent's own chat, and states independent work while waiting, pending questions, the unreachable-recipient limit, quoted-answer provenance and permission authority. It links the message-handover detail for a message that names files and for a full-store refusal. No native delivery is measured.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-        "content": "sha256:bc5d28d6ff0b697040b4a1a332c971fe8eb3e66bd13ca728920713de61e17eef",
+        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "content": "sha256:15bde61e6d0dc72017923683a12fbacba469eacfcea7fb7a14fd619fe271d62a",
         "locator": {
-          "end": 40,
+          "end": 79,
           "kind": "line_range",
-          "start": 30
+          "start": 53
         }
       },
       "id": "RLZ-E9F3YP",
@@ -93,13 +93,13 @@
         "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "Orientation preserves the actual-parent question/quoted-answer chain and directly links the separate held/refused-delivery procedure. It is not a native delivered-message witness.",
+      "rationale": "Orientation preserves the recipient-or-parent question route and the quoted-answer chain, and directly links the message-handover procedures for a message that names files and for a full-store refusal. It is not a native delivered-message witness.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-        "content": "sha256:127ead9498fbd9811abe4acfab1edbb53a446122a58924e1d1f045443759a651",
+        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "content": "sha256:3120f8aea8dbc2fafb10fd9722e54e4e58c03f87dbe630a343e44bdb87f5cd30",
         "locator": {
           "kind": "file"
         }
@@ -115,12 +115,12 @@
     },
     {
       "anchor": {
-        "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-        "content": "sha256:90c1134af65243f7ac535323798edcb2b590b7ff96945970bce4dfdc463ef128",
+        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "content": "sha256:23a643f1f5ba4c6a5af3f8f54dd0cce88bd8b5b1d422f95f0e44b98d012cf667",
         "locator": {
-          "end": 4,
+          "end": 10,
           "kind": "line_range",
-          "start": 4
+          "start": 6
         }
       },
       "id": "RLZ-PFED6V",
@@ -134,12 +134,12 @@
     },
     {
       "anchor": {
-        "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-        "content": "sha256:236cb2e06eedcca7c1dc845161ac7bd693f80e20a1542b80ef773596b3ddf317",
+        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "content": "sha256:2e1112b7ef33da25daefb5371adeb4895bbb998dc151aa67272b3be24c6f8dc9",
         "locator": {
-          "end": 27,
+          "end": 28,
           "kind": "line_range",
-          "start": 8
+          "start": 14
         }
       },
       "id": "RLZ-Q1RJX3",
@@ -150,20 +150,39 @@
       },
       "rationale": "The canonical operations/orientation.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "content": "sha256:67f370d932415d70f2bb9653e6a8898195b1d0e4afde9bbe4fac31ea4f588027",
+        "locator": {
+          "end": 99,
+          "kind": "line_range",
+          "start": 97
+        }
+      },
+      "id": "RLZ-SCX2F5",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "L84-K3E-BCEZZM-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Curator orientation's 'Bind curation to the serving build' is the single home of the serving-build producer boundary: decide and write through the starting server or its serving-build CLI, with clean main as the named reference build.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "Marks common text all-role and adds Curator-only serving-build producer constraints so they remain inline in this stage.",
+      "note": "Common orientation text is all-role, and a Curator-only section binds curation to the serving build.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-            "content": "sha256:8e793b4104bdadd01dcee590df4f24ec14f72028e8ea05e26fa3c43f3b6cdbf3",
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:34ee80c59459674ec9d85e17b3cf364874b31cdc6789b019345c46450127b67c",
             "locator": {
-              "end": 44,
+              "end": 99,
               "kind": "line_range",
-              "start": 4
+              "start": 94
             }
           },
           "kind": "code"
@@ -171,16 +190,16 @@
       ]
     },
     "2": {
-      "note": "The current Curator-only orientation section binds deciding and writing to the starting tool server or its serving-build CLI and names clean main serving commit as the ruler.",
+      "note": "The current Curator-only orientation section binds deciding and writing to the starting tool server or its serving-build CLI and names clean main serving commit as the ruler.\n\nAnchor: `## Bind curation to the serving build`",
       "targets": [
         {
           "anchor": {
-            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
-            "content": "sha256:f8adfbfbe7f33806f3df76de23dea522a29ceb28c0fd6bc98572c498223dcd78",
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:a957fb8d8eafe8f6e4c5137fcb93eb19b17dfa08040ba8a3dbe8d43daaa735c1",
             "locator": {
-              "end": 44,
+              "end": 99,
               "kind": "line_range",
-              "start": 43
+              "start": 96
             }
           },
           "kind": "code"

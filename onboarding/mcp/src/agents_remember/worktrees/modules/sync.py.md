@@ -85,7 +85,7 @@ No external Domain Documentation source is configured for this memory repo.
 - Ordinary transaction routing owns durable resume, continue, cancel, and recovery behavior. [4]
 - Stable status and recovery evidence lives at the enclosure-root journal, not in the queue. [5]
 
-- Current source authority and actual content conflict cases. [6]
+- Current source authority case: a pure fast-forward sync advances both sides and the contract. [6]
 
 
 ### Cross-Repo References

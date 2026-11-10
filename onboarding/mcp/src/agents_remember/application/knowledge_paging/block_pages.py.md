@@ -32,7 +32,7 @@
 ### Todos
 
 - **R2-1 resolved by L01:** a tail of more than 64 queued seeds is now refused by name, `seed_queue_exceeded`, instead of raising a `ValidationError` while minting (ruling 2026-09-29 23:21:57 chose the named refusal over chaining).
-- R2-2 (accepted as documented in c-04): a collapsed entry's `counts` carries `total` and `returned` but no `remaining`.
+- R2-2 is closed: a collapsed entry's `counts` carries `total`, `returned` (0) and `remaining` (equal to `total`) in both the leaf and the scope form (`PreparedLeaf.collapsed`, `PreparedScope.collapsed`). The c-04 skill that documented the earlier accepted gap no longer exists.
 
 ## Evidence
 

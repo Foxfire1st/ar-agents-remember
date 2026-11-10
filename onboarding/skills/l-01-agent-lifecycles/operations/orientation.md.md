@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[skills/l-01-agent-lifecycles/overview.md](../overview.md)
+[overview](../overview.md)
 
 ## Purpose
 
@@ -14,28 +14,12 @@ The instruction owns the session orientation that resolves context and source be
 
 ## Current composition and authoring contract
 
-Orientation still binds exact role/task/root/report facts, native task-file reads and canonical task_doc writes, scoped task-server discovery, parent questions, quoted-answer provenance and permission non-bypass. It also carries the reply rule: an agent's reply in a turn reaches a sender only when that sender waits on its own call, and otherwise the hand-over is sent with `role_message` on `agents-remember-task`; an agent that ends its turn unfinished sends what it awaits, and from whom. These common instructions stay in the all-role region.
+Orientation still binds exact role/task/root/report facts, native task-file reads and canonical task_doc writes, scoped task-server discovery, parent questions, quoted-answer provenance and permission non-bypass. It also carries the reply rule: an agent's reply in a turn reaches a sender only when that sender waits on its own call, and otherwise the reply is sent with `role_message` on `agents-remember-task`; an agent with no independent work left sends what it awaits, and from whom, to its question recipient. A developer question goes to the reporting recipient the role names, else the parent in `host.parent`, else the own chat. The reply and developer-question sections are marked for every role except Bootstrap; the other common instructions stay in the all-role region.
 
-A final Curator-only region supplies the existing development producer boundary in this stage: starting server or same-build CLI, clean main serving commit as ruler, no leaf self-production, fixture/scratch proof only, no install, guard disabling or substitute producer. It does not permit writes during orientation or give other roles a new producer.
-
+A Curator-only section, `Bind curation to the serving build`, supplies the existing development producer boundary in this stage: starting server or same-build CLI, clean main serving commit as ruler, no leaf self-production, fixture/scratch proof only, no install, guard disabling or substitute producer. It does not permit writes during orientation or give other roles a new producer.
 
 ## Evidence
 
-No separate reference list: the file's sidecar carries the realization entries this leaf re-anchored.
-
-
-Retained authoring-row wording:
-
-Finding: Marks common text all-role and adds Curator-only serving-build producer constraints so they remain inline in this stage.
-
-Anchor:
-
-Source: skills/l-01-agent-lifecycles/operations/orientation.md:4-44
-
 - The current Curator-only orientation section binds deciding and writing to the starting tool server or its serving-build CLI and names clean main serving commit as the ruler. [2]
 
-- Marks common text all-role and adds Curator-only serving-build producer constraints so they remain inline in this stage.
-
-Source epoch: `skills/l-01-agent-lifecycles/operations/orientation.md` at Git blob `541f15fba478277772b410bd15974fb889feaabc`. The preceding retained wording is detached from the live citation number; the current clause is supported separately.
-
-- Marks common text all-role and adds Curator-only serving-build producer constraints so they remain inline in this stage. [1]
+- Common orientation text is all-role, and a Curator-only section binds curation to the serving build. [1]

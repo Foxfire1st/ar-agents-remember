@@ -3,8 +3,59 @@
   "proves": [
     {
       "anchor": {
-        "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-        "content": "sha256:5c15a1060d7db02ad50b4abcf1d25bfad79af84f205c9b577853cce254de643a",
+        "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+        "content": "sha256:1178e0b1561493ea654429bf5ae1598e5180502fd4fe5819b32dd23deb1b86ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "DetectorTeethTests.test_owner_bound_approval_doctrine_is_not_a_contradiction"
+        }
+      },
+      "facet": "Adds Markdown-table rows: a turn-end-only row reads clean, and table rows or sentences that let a completed turn accept the handoff are caught as terminal-outcome-semantic-acceptance.",
+      "id": "PRF-HWCV7G",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "K3-5TKYXM-table-acceptance-cases",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+        "content": "sha256:49537733076e4480be289762a0b20d170c4f363a56477b8baa410892b233def0",
+        "locator": {
+          "kind": "symbol",
+          "name": "SilenceIsNotContradictionTests.test_stating_and_denying_is_contradicted_not_stated"
+        }
+      },
+      "facet": "Adds a rewritten turn-end-only sentence to the state-then-deny cases, which must read as contradicted.",
+      "id": "PRF-M037DA",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "K3-5TKYXM-stated-clause-cases",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+        "content": "sha256:ff4260a5c50e68b49b982d4e54e12357e67c2e132fb72918fdc9997728fabf20",
+        "locator": {
+          "kind": "symbol",
+          "name": "SilenceIsNotContradictionTests.test_a_stated_clause_is_stated"
+        }
+      },
+      "facet": "Adds the rewritten turn-end-only sentences as cases the classifier must read as stating the boundary.",
+      "id": "PRF-MZ7HNX",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "K3-5TKYXM-stated-clause-cases",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+        "content": "sha256:7bc2ba3197ef6a4994f23c6570f2f1b152d10166661a59d92562744ea86b244e",
         "locator": {
           "kind": "symbol",
           "name": "AgreementAcrossTheRoleSetTests.test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance"
@@ -20,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+        "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
         "content": "sha256:063c8695dc795bbad5e8779d073b6d4b23e0760cc8bbdf3eb751a799709cdc8b",
         "locator": {
           "kind": "symbol",
@@ -37,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+        "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
         "content": "sha256:e0f1cb203b018a760be7900c53cfa9d1c7e7169373135b21239c125573a96df2",
         "locator": {
           "kind": "symbol",
@@ -56,12 +107,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-        "content": "sha256:4e22ae6713630729385f1191d87540ab092448296376fe6323eaef27e762ccce",
+        "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+        "content": "sha256:e14065c9e7367e31b8c899fc1f91998b07e6492760fe545e581fd309a58f98ca",
         "locator": {
-          "end": 722,
+          "end": 716,
           "kind": "line_range",
-          "start": 686
+          "start": 669
         }
       },
       "id": "RLZ-1PRTFZ",
@@ -75,8 +126,8 @@
     },
     {
       "anchor": {
-        "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-        "content": "sha256:5ab4ab9a064cc24839c0886fef84aeef6ee17f03ca54927b8d1187a9aa3d6b18",
+        "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+        "content": "sha256:3d88ff7a50d1b51a4fe8f1032ceec8d0c43c76db6bd87bff19c58c7a43847ba2",
         "locator": {
           "kind": "symbol",
           "name": "COMPLETION_TRUTH_ROSTER"
@@ -93,12 +144,30 @@
     },
     {
       "anchor": {
-        "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+        "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+        "content": "sha256:eff9000261e0e44f8cbb63ee87b502382495a36a9de601fa5ceb4287f08b90b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_assert_owed"
+        }
+      },
+      "id": "RLZ-C6DX8W",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "K3-5TKYXM-template-referral-proof",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The owed-clause check used by every surface test: for a template that now refers to core/acceptance.md instead of restating the turn-end boundary, it checks that the relative link resolves to the shipped acceptance file and that the acceptance file states the owed clauses, then that the surface states its own owed clauses and contradicts none.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
         "content": "sha256:8553c53e1da3960d4320adf19fcb1fa209fc3f5957f6ba5d99a1b49c1151269a",
         "locator": {
-          "end": 740,
+          "end": 734,
           "kind": "line_range",
-          "start": 725
+          "start": 719
         }
       },
       "id": "RLZ-TM9N6T",
@@ -117,12 +186,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
-            "content": "sha256:7dda9e47e660291c4ce3e7d7cd45a3a9e093221ce2d67611c751b61665eb9289",
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:d2dd4dcc07156d56f62c61c675c345791a6988024dfbc99514f14034c89277c6",
             "locator": {
-              "end": 26,
+              "end": 18,
               "kind": "line_range",
-              "start": 3
+              "start": 7
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
           },
@@ -131,26 +200,15 @@
       ]
     },
     "2": {
-      "note": "The declared roster and vocabulary must equal the actual canonical speakers in both directions.\n\nAnchor: `COMPLETION_TRUTH_ROSTER`, `COMPLETION_TRUTH_VOCABULARY`",
+      "note": "The declared roster and vocabulary must equal the actual canonical speakers in both directions.",
       "targets": [
         {
           "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-            "content": "sha256:5ab4ab9a064cc24839c0886fef84aeef6ee17f03ca54927b8d1187a9aa3d6b18",
+            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+            "content": "sha256:063c8695dc795bbad5e8779d073b6d4b23e0760cc8bbdf3eb751a799709cdc8b",
             "locator": {
               "kind": "symbol",
-              "name": "COMPLETION_TRUTH_ROSTER"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-            "content": "sha256:53e5f76153d8946cde38f784d15496fae2efc137f8f64c56c1ef1705878e9306",
-            "locator": {
-              "kind": "symbol",
-              "name": "COMPLETION_TRUTH_VOCABULARY"
+              "name": "test_the_declared_roster_equals_the_surfaces_that_speak_the_vocabulary"
             }
           },
           "kind": "test"
@@ -158,28 +216,27 @@
       ]
     },
     "3": {
-      "note": "OWED_STATEMENTS declares each named surface’s required boundary clauses. RELAY_MECHANICS_SURFACES names the retained turn-report template; it is separate from the completion-truth roster and the mechanical-only reading vocabulary.",
+      "note": "OWED_STATEMENTS declares each named surface's required boundary clauses; the master-handover-packet and turn-report templates owe referral clauses to `core/acceptance.md`. RELAY_REFERENCE_SURFACES names the turn-report template, checked as a referral to the acceptance owner; it is separate from the completion-truth roster and the mechanical-only reading vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-            "content": "sha256:c6842cef218eb3d61aaada498ea346911aa724af25ba6e3c72d073bfb2b8a700",
+            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+            "content": "sha256:3c470419ee3a2821d24d0030d593942d83aacd5609323c0cc3fc4ea5e266a664",
             "locator": {
-              "end": 126,
-              "kind": "line_range",
-              "start": 101
+              "kind": "symbol",
+              "name": "OWED_STATEMENTS"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-            "content": "sha256:6e8db2d846da25081a2ae87d921a60b76adfc47b7d8fe0b18dc9ebe90d511dbe",
+            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+            "content": "sha256:9529e12fc4601882f633c85b70cb424f417758e6c31932b4ca1965df0e546d1e",
             "locator": {
-              "end": 498,
+              "end": 482,
               "kind": "line_range",
-              "start": 460
+              "start": 120
             }
           },
           "kind": "test"
@@ -191,36 +248,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
             "content": "sha256:31727a13a63633cb54db7b99d6f94f35466f5fef9525453282a9d4ed7be8ce89",
             "locator": {
-              "end": 458,
+              "end": 452,
               "kind": "line_range",
-              "start": 375
+              "start": 369
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
             "content": "sha256:f1749f701752accbc042e1e783409ab7b99cac27c56412d0b606e8afc89494df",
             "locator": {
-              "end": 566,
+              "end": 554,
               "kind": "line_range",
-              "start": 501
+              "start": 489
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
             "content": "sha256:dd53cf2d0734cc2f21cb42e07c7c269b29f5ba49fc16f563539d536d2573b39e",
             "locator": {
-              "end": 209,
+              "end": 206,
               "kind": "line_range",
-              "start": 169
+              "start": 166
             }
           },
           "kind": "test"
@@ -228,40 +285,15 @@
       ]
     },
     "5": {
-      "note": "The silence controls distinguish stated, absent and contradicted readings, including compact and expanded turn-end wording, split acceptance claims and in-place denial. Detector controls retain per-claim samples and whole-tree census; the declared-limit case pins the detector’s proximity-based misreading of another agent’s acceptance inside its window.",
+      "note": "The silence controls distinguish stated, absent and contradicted readings, including compact and expanded turn-end wording, split acceptance claims and in-place denial. Detector controls retain per-claim samples and whole-tree census; the declared-limit case pins the detector's proximity-based misreading of another agent's acceptance inside its window.",
       "targets": [
         {
           "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-            "content": "sha256:ba9232c7c2fb971d0bdf45c0c1f28e9e8d97f79e18746f40609282d091c40682",
+            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+            "content": "sha256:da2740bddda0f357b17156921296ee4fcd95d5f0457fc9361aef5c66d111fd25",
             "locator": {
-              "end": 1053,
-              "kind": "line_range",
-              "start": 907
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-            "content": "sha256:904c8715b7dd7d352fbe6c4ddbe572e1571ba2e607b8a77b83adfcfed31402aa",
-            "locator": {
-              "end": 1139,
-              "kind": "line_range",
-              "start": 1056
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-            "content": "sha256:d71edfb2ebe126f7c502b46929fbc270f2109b5801a4aa565ce9acac6f925d2a",
-            "locator": {
-              "end": 1173,
-              "kind": "line_range",
-              "start": 1142
+              "kind": "symbol",
+              "name": "SilenceIsNotContradictionTests"
             }
           },
           "kind": "test"
@@ -269,14 +301,15 @@
       ]
     },
     "6": {
-      "note": "The projection-side sibling that re-asserts the boundary clauses against the canonical doctrine tree and its one declared packaged copy.\n\nAnchor: `PROJECTED_BOUNDARY_CLAUSES` `BoundaryClause`",
+      "note": "The projection-side sibling that re-asserts the boundary clauses against the canonical doctrine tree and its one declared packaged copy.",
       "targets": [
         {
           "anchor": {
-            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
-            "content": "sha256:81048cf1574047eb159b42caaccadab6709f9ae6e942183f0ee98e12cae46dc5",
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "content": "sha256:713db2fc9a66c6019298bca81e6a4cb4edfc4fc287002d1dfc5cd7b2893bb53a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_every_declared_copy_carries_the_corrected_boundary_clauses"
             },
             "path": "mcp/tests/test_sync_scripts.py"
           },
@@ -285,40 +318,39 @@
       ]
     },
     "7": {
-      "note": "The relay detector requires an attributed relay action rather than mere co-occurrence of sweep, open and packet words; active and passive artifact-inspection examples still fail. Worker handoff checks bind Manager-first Reviewer creation and subsequent direct frozen-object delivery to their real sections, with per-clause deletion controls. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "note": "The relay detector requires an attributed relay action rather than mere co-occurrence of sweep, open and packet words; active and passive artifact-inspection examples still fail. Worker handoff checks bind the Manager stage-start notice and the direct frozen-object Reviewer handover to their real sections in the Worker role, the implementation operation and the every-role core, with per-clause deletion controls. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+            "content": "sha256:32588e1f8d8cb2f22e4ca3342630f20ef0e26ae0e75b071854362bb7155471f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_worker_hands_its_frozen_report_directly_to_the_reviewer"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
             "content": "sha256:1b20316afe45f6920e167f54a81a5af3e589fd2dc74c57b551aa8b2f68acb90f",
             "locator": {
-              "end": 391,
+              "end": 385,
               "kind": "line_range",
-              "start": 378
+              "start": 372
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
-            "content": "sha256:e93453fc97a7b79f0deada5731d091431fcd28cd6278a8dc0055c9a5181e9e64",
-            "locator": {
-              "end": 746,
-              "kind": "line_range",
-              "start": 685
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
             "content": "sha256:a59f9ae087ffc29c59fef2194da15fa1a7bd55ab573e1061355766328dfa86c7",
             "locator": {
-              "end": 1075,
+              "end": 1076,
               "kind": "line_range",
-              "start": 1059
+              "start": 1060
             }
           },
           "kind": "test"

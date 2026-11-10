@@ -140,8 +140,20 @@
       ]
     },
     "4": {
-      "note": "Publication derives the input statement, files prepared candidates, binds assessment authorship and verifies generations before pointer replacement; optional file transport preserves the required identities.\n\nAnchor: `_prepare` `_write_candidate_set` `_publish` `_read_judgments_file` `_exact_review_assessments` `_published_evidence_bytes` `_require_predecessor` `_publish_generation` `PUBLICATION_MEMBERS` `publication_input_statement` `CuratorCoherenceRequest` `_read_judgments_bytes` `_parse_judgments_payload` `_validate_file_entries`",
+      "note": "Publication derives its input statement from the declared publication members, names caller-supplied delivery identities, and accepts judgments and review assessments inline or from one judgments file whose SHA-256 the publish answer carries.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:6056a8e954ae75eb1c188747da2865b05c86acc1d71b16e70b5c3d533fa37f84",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_input_statement"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
@@ -150,17 +162,6 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
-            "content": "sha256:7fd3c6c2378c4bbc7cf578de5cac6b61de8b6217e6161425e43a285c4f577ae3",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
           },
           "kind": "code"
         },

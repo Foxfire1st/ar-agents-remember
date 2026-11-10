@@ -11,7 +11,7 @@
 ## Current source contract evidence
 
 
-- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [5]
+- `resolve_context_tool` is retained as an unregistered computation whose only caller is `scripts/pnt_sandbox/build_roots.py`; public orientation stays with `context_packet`. [5]
 
 
 ## Historical original card — all remaining original prose and evidence are non-operative

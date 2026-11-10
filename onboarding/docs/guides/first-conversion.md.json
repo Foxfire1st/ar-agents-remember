@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The source declares the qualified helper/document contract above; no execution is inferred.\n\nAnchor: complete source",
+      "note": "The source declares the qualified helper/document contract above; no execution is inferred.\n\nAnchor: `technical-english-profile.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "223948290e2eddea7650695e8c1e8843da5290a2",
-            "content": "sha256:d46d1dc9fe9edc20a20b023d7be00bdc552a062c2265e4d705423dd9ae3072ca",
+            "blob": "3d9a34ce88c71fa6f135f77023603cbdaedd5f3a",
+            "content": "sha256:29ca2be9f077862a3caac99bf16236f8391aa0e32f6944a80d765dcb7c530d68",
             "locator": {
               "end": 81,
               "kind": "line_range",

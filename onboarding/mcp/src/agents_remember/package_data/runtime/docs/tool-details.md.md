@@ -25,7 +25,9 @@ Long citation previews can start in the background and be polled with the same r
 
 The baseline-adoption explanation now distinguishes the actionable-drift gate from paired-tree validation. `accept_drift` can lift only the former; a stale code/test reference still refuses as `R198.1-reference-anchor`, and the first converted baseline is validated before commitment. The option does not make an invalid paired tree adoptable.
 
-The canonical and packaged document carry long explanations for `citation_fix`, `context_packet`, `curator_coherence`, baseline adoption, carryover planning, memory quality, child retirement, role-set start and route-index refresh. Short registration descriptions point here, but callable signatures remain defined by registration, not this document. The citation explanation now replaces source-index snapshot options with unconditional old-format refusal and conversion, while preserving finite card selection, measured admissions, sidecar authoring and full logged detail. The installer-owned documentation-copy route is unchanged.
+`knowledge-census` `inventory` writes `baseline.json` and `inventory.json` under `knowledge/census/ID/` and does not overwrite a completed census; `report` only reads. `knowledge-copies` deletes retired knowledge-database copies and unmanaged citation source indexes only with `--apply` and a reviewed dry-run report from the same coordination root, and a changed review digest refuses deletion. `memory-backfill` plans code-attribution trailer rewrites of memory history and writes nothing by default; `--apply` requires the reviewed plan's `--expected-digest`, keeps a rescue ref and moves the named refs in one transaction only after every rewritten tree passes the commit-check runner.
+
+The canonical and packaged document carry long explanations for `citation_fix`, `context_packet`, `curator_coherence`, baseline adoption, carryover planning, memory quality, child retirement, role-set start and route-index refresh, and for the `knowledge-census`, `knowledge-copies` and `memory-backfill` CLI commands. Short registration descriptions point here, but callable signatures remain defined by registration, not this document. The citation explanation now replaces source-index snapshot options with unconditional old-format refusal and conversion, while preserving finite card selection, measured admissions, sidecar authoring and full logged detail. The installer-owned documentation-copy route is unchanged.
 
 
 `server_info` takes no arguments and reports startup-loaded build/configuration, roots, allowed repositories, unused provider and removed-part settings keys, plus optional role binding. `openUserSettings` reports live open file/folder modes with the exact user close/edit commands; the call changes no settings byte or mode and does not enumerate tools. Configuration load failure remains a startup refusal.
@@ -69,7 +71,7 @@ cross-repository acceptance evidence is inferred.
 
 
 
-- The document defines build/install explanations and distinguishes read-only drift reporting from exact-pair stale-anchor publication refusal, with an additional carried-deleted-path refusal; documentation is not fresh execution evidence. [1]
+- The document distinguishes read-only drift reporting from exact-pair stale-anchor publication refusal, with an additional refusal for an anchor carried at a path the leaf deleted. [1]
 
 
 

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3c887ed66e21d7f6c637a87c55d389daeb3ba28",
+            "blob": "5f7759bf11034858fcac7e550177b3f25364cf64",
             "content": "sha256:3023d7f3a631cd58d9826f342dceeea0933e173bec2f6f01c34fef1105958c2b",
             "locator": {
               "end": 12,
@@ -20,28 +20,16 @@
       ]
     },
     "2": {
-      "note": "Shared Discipline now puts current card, sidecar and knowledge-record curation against approved changes in the leaf memory worktree before publication, alongside context, drift, implementation approval and configured checks. Knowledge in a Leaf separately requires fresh full quality/worklist/gate evidence and validated coherence without granting Git approval.",
+      "note": "Shared Discipline puts current card, sidecar and knowledge-record curation against approved changes in the leaf memory worktree before publication, alongside context, drift, implementation approval and configured checks. Knowledge in a Leaf separately requires fresh full quality/worklist/gate evidence and validated coherence without granting Git approval.\n\nAnchor: `Shared Discipline`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3c887ed66e21d7f6c637a87c55d389daeb3ba28",
-            "content": "sha256:501b7cf90660551387ea4ec8c48dbe7138db6d560418f376ce7b8fcfd82358e4",
+            "blob": "5f7759bf11034858fcac7e550177b3f25364cf64",
+            "content": "sha256:9832b343e0a3138aa2819efb864cdb20e0cdeafc55e145de498a0a6792fa770d",
             "locator": {
-              "end": 22,
+              "end": 92,
               "kind": "line_range",
               "start": 14
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b3c887ed66e21d7f6c637a87c55d389daeb3ba28",
-            "content": "sha256:8c5b389f6964562d805b78a3a91057dfe2eb7c8c61b0b0ef608f79f1d6c4daf8",
-            "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 70
             }
           },
           "kind": "code"
@@ -49,14 +37,14 @@
       ]
     },
     "3": {
-      "note": "The source names the three build modes the architect picks at decide: the research-only exit, the durable light task, and the master plus sub-task series.",
+      "note": "The source names the three build modes and what each produces.\n\nAnchor: `Research-only exit`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3c887ed66e21d7f6c637a87c55d389daeb3ba28",
-            "content": "sha256:0ca2c306475b4e92d53a494c301fbb2a6c79a7e50bd1d2d09bdd67422990e25f",
+            "blob": "5f7759bf11034858fcac7e550177b3f25364cf64",
+            "content": "sha256:21fe6501b9a4f336284023c3f42f76019478d98a1b4755d08dfee29937a75eff",
             "locator": {
-              "end": 54,
+              "end": 55,
               "kind": "line_range",
               "start": 24
             }
@@ -66,16 +54,16 @@
       ]
     },
     "4": {
-      "note": "The source states the worktree ladder, the contract beside the task file, and that the landing flow is deferred to the repository's task-publication instruction with its landing-workflow setting.",
+      "note": "The source states the worktree ladder and defers landing to `system/task-publication.md` with the `landing.workflow` setting.\n\nAnchor: `landing.workflow`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3c887ed66e21d7f6c637a87c55d389daeb3ba28",
-            "content": "sha256:7eff8cc3b714733b30dd0ef924a82f790303d2a35914cb2c724ff009beb940dc",
+            "blob": "5f7759bf11034858fcac7e550177b3f25364cf64",
+            "content": "sha256:bbb9abdd51075dc3161ac8ded9f74c03914d9795c2dbad79357f1de8687533c0",
             "locator": {
-              "end": 68,
+              "end": 72,
               "kind": "line_range",
-              "start": 56
+              "start": 57
             }
           },
           "kind": "code"
@@ -83,16 +71,16 @@
       ]
     },
     "5": {
-      "note": "The source's closing table maps each situation to its build mode.",
+      "note": "The source's closing table maps situations to build modes.\n\nAnchor: `Choosing A Build Mode`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3c887ed66e21d7f6c637a87c55d389daeb3ba28",
-            "content": "sha256:007294631aab5bf6264eedfc3b372d2cef98dcd44b844c80444fa300f6a444dc",
+            "blob": "5f7759bf11034858fcac7e550177b3f25364cf64",
+            "content": "sha256:14726de064ed3a4423629b2e3a3906118ea6140f09acb4802eb9c3cfceca4f52",
             "locator": {
-              "end": 98,
+              "end": 102,
               "kind": "line_range",
-              "start": 90
+              "start": 94
             }
           },
           "kind": "code"

@@ -421,12 +421,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
+            "blob": "830d89bb301c2fd59337d82f6f8aa7abf676b4e6",
             "content": "sha256:171ddebacbf664d00fdcf83eaa546bb02da4596111fc8eb2e16c6cc0785397b1",
             "locator": {
-              "end": 579,
+              "end": 596,
               "kind": "line_range",
-              "start": 579
+              "start": 596
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -544,8 +544,20 @@
       ]
     },
     "44": {
-      "note": "The validation the positive control drives directly.\n\nAnchor: `finalize_tool_response`",
+      "note": "The validation the positive control drives directly.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "a82c6e7b9b4fa460c90f61260685b7e5d3ec4fa7",
+            "content": "sha256:8614b4bd9643c8f33dfb3dbf05d3a66fce56cb3539fc9d636fe3b2d6d4e19164",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_tool_response"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_response.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
@@ -558,29 +570,6 @@
             "path": "mcp/tests/test_tool_entry_point_controls.py"
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1528f1fc6e82408f2ddd381ca2b6956cbf42f694",
-            "content": "sha256:da952330a65efb29805b76fe09e6f98d3d7e841d89f32f249b73be44c8de4868",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_response.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1528f1fc6e82408f2ddd381ca2b6956cbf42f694",
-            "content": "sha256:db1f8864146fed21cfc113c37453f85a5f1327c0ac702321cd6eccc0ce005fc8",
-            "locator": {
-              "kind": "symbol",
-              "name": "finalize_tool_response"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_response.py"
-          },
-          "kind": "code"
         }
       ]
     },

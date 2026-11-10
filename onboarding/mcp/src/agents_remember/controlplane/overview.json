@@ -33,16 +33,16 @@
       ]
     },
     "10": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path.  Anchor: `prepare_mcp_process` `_dev_app` `run`",
+      "note": "Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path.",
       "targets": [
         {
           "anchor": {
             "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
-            "content": "sha256:ee65e93de17de38b602990c4a3f36b247b8d652b2458858ede7aac7f91050fad",
+            "content": "sha256:0587e488ebdd2c60ba224ea263a4091c251e638b6ab089354e9f7a59c21a02b2",
             "locator": {
-              "end": 89,
+              "end": 91,
               "kind": "line_range",
-              "start": 80
+              "start": 79
             },
             "path": "mcp/src/agents_remember/application/runtime/startup.py"
           },
@@ -50,53 +50,27 @@
         },
         {
           "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
-            "content": "sha256:cbf84bdba619aefa1d80c91f3328f9ffb27e17ec2e2442228904a3f88f4f2067",
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:74cd97abd5406b17a2c7a00a502a873c545bfd7c790ef3cf3225bc0e788103e3",
+            "locator": {
+              "end": 676,
+              "kind": "line_range",
+              "start": 656
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:cd162c9dc16ebab0c70a9b30b436d0b395dca696a73594d90cc13757e6fed8dd",
             "locator": {
               "end": 777,
               "kind": "line_range",
-              "start": 734
+              "start": 771
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
-            "content": "sha256:b2a07885fecc6dc8c7ace0056428751a0b66df82ecebe6e26a1f7df04dbdc0f9",
-            "locator": {
-              "end": 156,
-              "kind": "line_range",
-              "start": 156
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
-            "content": "sha256:e26ef8683885e4c13344e79d00129018e3092fe07925ce6c1070a5facd649158",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
-            "content": "sha256:b92153e2d4b5e8e39fb22f8e3c36fbfaf92ad1984a562be174679233df2efa5a",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/application/runtime/startup.py"
           },
           "kind": "code"
         }

@@ -228,9 +228,7 @@ all domains so correctness fails open to a full refresh.
 
 - The live-input model selects actual watcher participation. [8]
 
-- Dashboard reload entry carries the pacing configuration.
-
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:101-153 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted [9]
+- Dashboard reload entry carries the pacing configuration. [9]
 
 - Native registration is explicit and retains watcher lifecycle.  Anchor: `ProjectionInputWatcher._watch_once` [10]
 

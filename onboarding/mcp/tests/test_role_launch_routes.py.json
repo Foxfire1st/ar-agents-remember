@@ -7,10 +7,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40b341f366d59e2108c5f4dd63eca10db01ee9f6",
-            "content": "sha256:3bff29767d75a18277b9e7f66a0fe1ae1f51003c101e4e41332503100e30c2ee",
+            "blob": "4fa0abfddd2cc263752f0d4ce25563995e117ce7",
+            "content": "sha256:7a9ab1a969e5825cd62bfe61224067b56a062c72c26c3325a2f9f24755b7d181",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TaskReportAccessTests"
             }
           },
           "kind": "test"

@@ -238,14 +238,15 @@
       ]
     },
     "9": {
-      "note": "`WorkspaceProjection` / `ObserverEvent` types each frame carries.\n\nAnchor: `WorkspaceProjection` `ObserverEvent`",
+      "note": "`WorkspaceProjection` / `ObserverEvent` types each frame carries.",
       "targets": [
         {
           "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:daaaf9f80d95ac50acc42b4097c5fcc9293b51a91e135d7b45f3ae87ee7e947f",
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "content": "sha256:833819a2086f399c2e96c1303b091dbf74f9707241e5cb699d17a5a44a464c32",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
             },
             "path": "dashboard/src/types/projection.ts"
           },

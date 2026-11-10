@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Nearest governing route overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -16,7 +16,7 @@ SyncFixture drives the public transaction with an explicit code and memory pair.
 
 ### Logic
 
-`SyncFixture` creates disposable code/memory worktrees and canonical contracts. Its default converted=True seeds knowledge/layout.json into the attributed base so ordinary scenarios reach converted judgment; converted=False is explicit legacy-format/refusal/crossing setup, not permission for ordinary legacy sync. Some setup deliberately retains or commits historical tracked memory.md states; these are inputs to prove cache independence, not cache commits created by the sync under test. `map_official_memory` writes attribution in a real memory-content commit.
+`SyncFixture` creates disposable code/memory worktrees and canonical contracts. Its default converted=True seeds knowledge/layout.json into the attributed base so ordinary scenarios reach converted judgment; converted=False is explicit legacy-format/refusal/crossing setup, not permission for ordinary legacy sync. Some setup deliberately retains or commits historical tracked memory.md states; these are inputs to prove cache independence, not cache commits created by the sync under test. `map_official_memory` writes attribution in a real memory-content commit. A `source_branch` argument (default `main`) names the official line: both repositories switch to it, the contract's code and memory plans and both worktrees start from it, and `move_official_code`/`map_official_memory` return its tip.
 
 The scenario definitions cover two-sided fast-forward, a retained code conflict and continuation, stale/missing/malformed source caches, cache-independent start and memory-candidate identity, an already-current descendant with changed cache rows, native memory merge conflicts, and quarantine of a nonregular journal without following it.
 
@@ -25,16 +25,7 @@ The native memory case checks both cache-only success and a genuine README confl
 - **L37 (P2 task 1).** `test_cancel_after_a_memory_conflict_restores_the_branch_and_its_tracked_cache`
   (integration lane): with the fixture's tracked `memory.md`, a conflicted memory sync is cancelled; the state is
   `sync-cancelled`, the head is restored, there is no `MERGE_HEAD`, `git status` is empty, the cache is still
-  tracked, and the next sync conflicts again. Before the fix in `sync_transaction_git.rollback_side` this case
-  returned `sync-operation-refused`.
-
-The following rationale records the pre-retirement CYCLE-02 population; it is historical, not the present lane budget.
-
-Both shapes share one collected case rather than taking one each, because the integration lane sits at its declared ceiling of 400 and a further collected case would breach it — above the ceiling conftest raises and the lane then runs zero tests, which is worse than either outcome it would report.
-
-The following is the unresolved evidence residue recorded for the pre-retirement CYCLE-02 fixture, not a claim about the current text-merge fixture. Its historical captures are not reconstructed here.
-
-One item is left **open rather than settled** in this population: `cancelArgs`, which every `sync-resolution-required` response carries, returns `sync-operation-refused` / `SyncGitProofError` in **both** orientations — including the INSERTED-row orientation round 2 verified as working — so the cancel half of the manual continuation could not be proven to settle in this fixture (most likely its missing canonical enclosure locator chain, already recorded as unresolved for the live route); it is named for the round-3 reviewer and is not widened into this leaf. Both captures are kept in the leaf's evidence: the verifier's own BEFORE at `notes/reports/2026-09-21-cycle-fix-verification/evidence/cycle02-orientation/summary-driven.json` and the AFTER at `…/evidence/cycle02-orientation-fixed/`.
+  tracked, and the next sync conflicts again.
 
 ### Conventions
 
@@ -71,7 +62,9 @@ These current source spans identify the implementation owners and the specific a
 
 
 - Tracked, missing, staged and untracked caches do not prevent memory removal; real memory and code files remain protected. [14]
+
 - The real Git fixture and attributed official memory update. [15]
+
 - Fast-forward and retained code conflict behavior. [16]
 - Cache-independent source admission, start, and candidate identity. [17]
 - Nonregular journal quarantine preserves the outside target. [18]

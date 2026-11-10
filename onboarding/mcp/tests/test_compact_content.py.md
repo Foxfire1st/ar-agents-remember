@@ -74,4 +74,4 @@ the compaction must never raise on non-JSON content.
 
 
 
-- `create_server()` installs the shim before registering tools.  Anchor: `create_server` [2]
+- `create_server()` installs the shim before registering tools. [2]

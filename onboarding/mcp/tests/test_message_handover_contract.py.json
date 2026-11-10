@@ -1,0 +1,73 @@
+{
+  "path": "mcp/tests/test_message_handover_contract.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one-home classifier for the held and refusal contracts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ceb3cbb0ce1726b23a2b93da741e2f063302594",
+            "content": "sha256:cdc413448c37d968304c451442889961335b75ccad15fa300d975f8e7d33e72c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_one_receipt_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The compiled capsule carries both homes once and a paraphrased duplicate in either home fails",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ceb3cbb0ce1726b23a2b93da741e2f063302594",
+            "content": "sha256:fc46a96b625116fac58d8945e2404468d03082d099d90663c0241435e287a5c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_receipt_contract_has_one_home_even_when_repeated_in_other_words"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The held-delivery home in the shared every-role block",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+            "content": "sha256:8d29e140ddd3d61e07c4e50481a745a5c699cc8c6d22b54b9bead5dc726e22c6",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The full-store refusal home",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+            "content": "sha256:5c1f0ccf7f823e73345cfc96fdd37088e28dea92e00c7dcfc62cdec065d64ce7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/message-handover.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

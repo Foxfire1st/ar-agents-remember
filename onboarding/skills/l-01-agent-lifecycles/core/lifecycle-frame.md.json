@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "401a6023b8ba2ea2c9c89487baed0bd40dc87e90",
-        "content": "sha256:50c7d2a5dd7659f8a9066bbff343ae32bb422b10068582e69627bfe28b2ae608",
+        "blob": "08004e49e2337e24b235a748f21b56bea44d8192",
+        "content": "sha256:661f7438655f25d884b1596b31cfcc04ba609633dd8e5906acc6f0b839cca405",
         "locator": {
           "kind": "file"
         }
@@ -21,16 +21,16 @@
   ],
   "references": {
     "1": {
-      "note": "Worktree location records, the landing contract and structural seat bindings; Architect starts without a document.",
+      "note": "Worktree location references, the terminal lifecycle and structural seat bindings; Architect and Bootstrap start without a document.",
       "targets": [
         {
           "anchor": {
-            "blob": "401a6023b8ba2ea2c9c89487baed0bd40dc87e90",
-            "content": "sha256:f3e6bb44745cf4ce2d26390bfc5313007cb8af8d64d5bb47736d9c5c8a0c4d18",
+            "blob": "08004e49e2337e24b235a748f21b56bea44d8192",
+            "content": "sha256:67bea92fe03b199c9359aa424c249afe5a95a580d5d90af9386c76dfb996350a",
             "locator": {
-              "end": 16,
+              "end": 17,
               "kind": "line_range",
-              "start": 3
+              "start": 5
             }
           },
           "kind": "code"
@@ -38,16 +38,16 @@
       ]
     },
     "2": {
-      "note": "Opening trust checkpoint and provider-degradation report/order/no-kill boundaries, not restored runtime authority.",
+      "note": "Supplied-assignment check and provider-degradation report/order/no-kill boundaries, not restored runtime authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "401a6023b8ba2ea2c9c89487baed0bd40dc87e90",
-            "content": "sha256:ae16757b425e14e4ff0a455ab441393eba0b5aa2efdfd6d9336d4903cce3bd35",
+            "blob": "08004e49e2337e24b235a748f21b56bea44d8192",
+            "content": "sha256:70e6316fb4ddda0a19fccb0bc0ba66dec4d777d3842f5e442dac43a63702ff79",
             "locator": {
-              "end": 37,
+              "end": 36,
               "kind": "line_range",
-              "start": 18
+              "start": 19
             }
           },
           "kind": "code"

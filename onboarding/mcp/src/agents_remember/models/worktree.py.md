@@ -76,7 +76,8 @@ The following source-backed definitions and producer seams retain the broader re
 - **Retained historical source account — superseded by the current contract:** The terminal-status projector distinguishes terminal-cleanup-completed from terminal-archive-ready and emits the archive cleanup operation as the next tool only when cleanup remains. [130]
 
 - **Retained historical source account — superseded by the current contract:** TerminalCleanupOperation is the two-member terminal-cleanup vocabulary (worktree_cleanup, worktree_abandon). [131]
-- **Retained historical source account — superseded by the current contract:** finalize_tool_response validates one declared response, applies optional caller enrichment, and counts tokens. [132]
+
+- finalize_tool_response validates one declared response, applies optional caller enrichment, and counts tokens. [132]
 
 - **Retained historical source account — superseded by the current contract:** TOOL_RESPONSE_MODELS maps each tool name to its declared response model. [133]
 

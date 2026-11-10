@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7986990eab54fc47b28637f9939d9043e6877c26",
+            "blob": "e63f7853bd67a21e836f43b1293ee925e6378d3f",
             "content": "sha256:56825013d765ced8088331d51c04e05a914acba8400344a04fa62fd21644e727",
             "locator": {
               "kind": "symbol",
@@ -19,14 +19,15 @@
       ]
     },
     "2": {
-      "note": "Default targets only write to mcp package data\n\nAnchor: `test_default_targets_only_write_to_mcp_package_data`",
+      "note": "Default targets only write to mcp package data",
       "targets": [
         {
           "anchor": {
-            "blob": "7986990eab54fc47b28637f9939d9043e6877c26",
-            "content": "sha256:e88c0e1d6505f47695228f21a862f6b1fc45511ccd4f05d8abf741de662ffae0",
+            "blob": "e63f7853bd67a21e836f43b1293ee925e6378d3f",
+            "content": "sha256:c0058171ed208314ef6b175c449ed4788e40fc2b2e26ac78d81e8ac983508941",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_default_targets_only_write_to_mcp_package_data"
             }
           },
           "kind": "test"
@@ -38,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7986990eab54fc47b28637f9939d9043e6877c26",
+            "blob": "e63f7853bd67a21e836f43b1293ee925e6378d3f",
             "content": "sha256:efa1f746c8d0712427120d4fff8f66ec2f0ec775cdc4bb5b380a1b66a713b93c",
             "locator": {
               "kind": "symbol",

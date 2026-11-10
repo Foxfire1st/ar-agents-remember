@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-        "content": "sha256:a176d9b1a6ad4068e83cb3d7f72aba06d1b6fc3bfde2e276e838339aeca5518b",
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:f74a8bdcbfb929bdbab61a7e739ec7251665ea37e3061d29cad4c25c0bede1e6",
         "locator": {
           "kind": "file"
         }
@@ -18,44 +18,39 @@
       },
       "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/architect.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+        "content": "sha256:a0f25cd9907e94e0a691e762cc7c49aeca193218d79948e1dc5193df32ae1c3c",
+        "locator": {
+          "end": 66,
+          "kind": "line_range",
+          "start": 66
+        }
+      },
+      "id": "RLZ-PAAE4A",
+      "invariant": "INV-A6TJRJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-07-architect",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The packaged Architect role is byte-equal.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
     "1": {
-      "note": "Architect scope is the developer conversation and semantic plan; it preserves explicit delegation and starts an Investigator with a scoped first message without fabricating task identity.",
+      "note": "The Architect starts an Investigator with role_start without a task reference, on a sprint, or on a sprint and master, and sends the scoped concern as its first role_message to the returned agent ID.\n\nAnchor: `role_start`",
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:b5cf057e37250e46352c3b42334342e5058395b71aff14001475feab3c0dda8e",
             "locator": {
-              "end": 8,
+              "end": 152,
               "kind": "line_range",
-              "start": 8
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:953b9c5c2e5aa8305345d49f87b9ec2a5bfbd0dcdbbfe0572ac8534a010b1439",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 82
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:10952f2bf370df24f94b217c7c7cf96567b8427745e7874df08aec5c7ca74a7e",
-            "locator": {
-              "end": 58,
-              "kind": "line_range",
-              "start": 50
+              "start": 152
             }
           },
           "kind": "code"
@@ -63,16 +58,16 @@
       ]
     },
     "2": {
-      "note": "The router's registry still names architect as the developer-facing owner seat.\n\nAnchor: `architect`",
+      "note": "The role file's frontmatter describes the Architect as the developer-facing owner for requirements, plans, delegation to role agents and semantic decisions.\n\nAnchor: `description`",
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:4104d9271e630345b80d1841ec49ace38f4207770d99c58816ad7b113cdf933c",
             "locator": {
-              "end": 8,
+              "end": 3,
               "kind": "line_range",
-              "start": 8
+              "start": 3
             }
           },
           "kind": "code"
@@ -84,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
             "content": "sha256:4642e8ea8de713715fb38326664bdaf76cf0a44f38d3a41013c8c03980288394",
             "locator": {
               "end": 6,
@@ -98,40 +93,16 @@
       ]
     },
     "4": {
-      "note": "Architect beyond-settings review authority depends on a shrinking sealed repair set; formal permission remains within its own permissions, and its checks and developer decisions remain separate from independent leaf acceptance.",
+      "note": "The Architect's own checks, measurements, tests, builds and sandbox trials inform rulings, requirements and the developer but never take the place of a leaf's build, review, curation or gate; it changes no leaf's code or memory, grades nothing it wrote and works on a copy.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:5f14784fbed919ec54832c7287bbd07a2e7466343e6c44eeb26ffb74bfbc29bf",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:ad7ed19fc78c3586c669dfed0807bbfdd542021337451a44e705451c9cebe936",
             "locator": {
-              "end": 78,
+              "end": 208,
               "kind": "line_range",
-              "start": 74
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:66bae430f3319ec9838944db63049974f5c63b7393a649dabc0a733d77077156",
-            "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 94
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:3b4603c5322ebc909cce9b07e28049ed998dc237e278b0438a75f9b3d09084ad",
-            "locator": {
-              "end": 122,
-              "kind": "line_range",
-              "start": 120
+              "start": 206
             }
           },
           "kind": "code"
@@ -139,108 +110,33 @@
       ]
     },
     "5": {
-      "note": "Architect may grant a beyond-settings round for a concrete shrinking repair set; repeated unchanged repairs or disputed requirement meaning need a ruling. It releases execution coordination after handover and handles formal permissions only within its own permissions. Child-permission notices follow the common procedure and held message receipts are not resubmitted.",
+      "note": "The Architect may grant a beyond-settings round when the sealed list has shrunk and the open repair is concrete; a repeated unchanged repair or a requirement-meaning dispute gets a ruling and no round. After the handover it releases execution coordination to the Orchestrator or Manager.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
             "content": "sha256:5f14784fbed919ec54832c7287bbd07a2e7466343e6c44eeb26ffb74bfbc29bf",
             "locator": {
-              "end": 78,
+              "end": 148,
               "kind": "line_range",
-              "start": 74
+              "start": 144
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:10952f2bf370df24f94b217c7c7cf96567b8427745e7874df08aec5c7ca74a7e",
-            "locator": {
-              "end": 58,
-              "kind": "line_range",
-              "start": 50
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:66bae430f3319ec9838944db63049974f5c63b7393a649dabc0a733d77077156",
-            "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 94
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
-            "content": "sha256:e5a702cb44501ff020ef129cc6c8e465327c207b1ae3dcd1b0c7f5ddf050b835",
-            "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 38
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:3b4603c5322ebc909cce9b07e28049ed998dc237e278b0438a75f9b3d09084ad",
-            "locator": {
-              "end": 122,
-              "kind": "line_range",
-              "start": 120
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1e006f679fb322bbd74e0377548c29c2a387f77d",
-            "content": "sha256:cface40d75bb6e5983aaafef9a299ed0f02e80bb1e889e068f862eb017bcef09",
-            "locator": {
-              "end": 15,
-              "kind": "line_range",
-              "start": 9
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/message-handover.md"
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "A gate or validator repair preserves the serving-build/sync route; Architect checks run on copies, replace no leaf build/review/curation/gate and confer no self-acceptance.",
+      "note": "A gate or validator repair does not silently free the task under test; the serving-build and synchronization route is preserved, and only a correct-input refusal of a covered write admits the bounded correct-write recovery.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:6437f8c6e3ee892e948c10efd940f151c68573457b404510238c5205f97a8d81",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
+            "content": "sha256:b4030c0d6c7648511cbec3ec172e0e38775c0690cb0e77da76432d58cfcd77ac",
             "locator": {
-              "end": 22,
+              "end": 48,
               "kind": "line_range",
-              "start": 22
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
-            "content": "sha256:a44d905dbd2c543fcb17cf0cfd38155217e14bc5f720406f6301bad5737f77a3",
-            "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 104
+              "start": 48
             }
           },
           "kind": "code"
@@ -252,12 +148,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "blob": "d830f8823cf3341d97040f30f1c4560f7bddf807",
             "content": "sha256:0f16ae738e30bc0020b9f0e05f3737b8435aaa300719837aa33eb4eaa4c265ac",
             "locator": {
-              "end": 36,
+              "end": 64,
               "kind": "line_range",
-              "start": 36
+              "start": 64
             }
           },
           "kind": "code"

@@ -12,6 +12,8 @@ Template for the onboarding bootstrap handoff and its explicit coverage boundari
 
 The handoff records run status, what exists now, trusted and deferred coverage, unresolved questions, decisions, risks and next waves. Fixer, baseline and knowledge-foundation states are separate facts: cards alone establish none of the other states. The template is an input to a report, not a green result or permission for separate closeout.
 
+Its resume steps send a future agent, before ordinary source-file work, to the l-01 knowledge-use guidance: start with a text search or `knowledge_read`, expand the candidates with `knowledge_read`, and read code and knowledge together.
+
 ## Canonical Source Ownership
 
 The byte-equal packaged skill is a distribution carrier, not an independent role, task or permission authority. The current source account above does not certify inherited prose, actual execution, launch delivery or grading.

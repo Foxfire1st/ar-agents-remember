@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Every briefed manifestation receives an immutable candidate-bound worker record containing its complete envelope.",
+      "note": "Every briefed manifestation receives an immutable candidate-bound worker record that cites its exact requirement anchor in the frozen expanded-evidence artifact, which holds the complete acceptance envelope once.",
       "targets": [
         {
           "anchor": {
-            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
-            "content": "sha256:5ea6de07b23027da0fbf23784c835ac49d0e476ecc7a539fc1f37409a90533ba",
+            "blob": "90fd7edc80943b84e31d2e6db8b935979cbab7ca",
+            "content": "sha256:2c1187d830491626bb757818fe771b97af664517c699240eb41da477977a5edd",
             "locator": {
-              "end": 130,
+              "end": 98,
               "kind": "line_range",
-              "start": 76
+              "start": 61
             }
           },
           "kind": "code"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
+            "blob": "90fd7edc80943b84e31d2e6db8b935979cbab7ca",
             "content": "sha256:14c1826ab9930719877331ee26d1f31c6a695f7cc62f226b218c8f48ce37043f",
             "locator": {
-              "end": 182,
+              "end": 161,
               "kind": "line_range",
-              "start": 170
+              "start": 149
             }
           },
           "kind": "code"
@@ -41,24 +41,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
+            "blob": "90fd7edc80943b84e31d2e6db8b935979cbab7ca",
             "content": "sha256:fe0511ac6270d1088839ec1c18125dd18d9c69e3c787368dadb3d07311eda1ff",
             "locator": {
-              "end": 170,
+              "end": 149,
               "kind": "line_range",
-              "start": 165
+              "start": 144
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
+            "blob": "90fd7edc80943b84e31d2e6db8b935979cbab7ca",
             "content": "sha256:09fc3341fad9960866b6337f2ca3aac49c8449f051fb5997ec1ad02ec3795ec5",
             "locator": {
-              "end": 211,
+              "end": 190,
               "kind": "line_range",
-              "start": 206
+              "start": 185
             }
           },
           "kind": "code"
@@ -66,14 +66,16 @@
       ]
     },
     "4": {
-      "note": "The retained worker artifact uses the report path its handover names, rather than a fixed default or a notifier lookup convention. Main-loop ownership, immutable requirement-attempt evidence, exact checks and file-based handovers remain; a host turn-end signal does not inspect or accept the report.",
+      "note": "The retained worker artifact is written at the local report path its handover names and referenced from the leaf task document. Main-loop ownership, immutable requirement-attempt evidence, exact checks and file-based handovers remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
-            "content": "sha256:7bfa72bddfaf0b83f79f80e4bd4627b3d06545f16dbe27c01ff8d1af83c47840",
+            "blob": "90fd7edc80943b84e31d2e6db8b935979cbab7ca",
+            "content": "sha256:e65ab97e4236149855d94b3fde5709df7e89c6db67edbf4ceae8de5221e3571b",
             "locator": {
-              "kind": "file"
+              "end": 27,
+              "kind": "line_range",
+              "start": 11
             }
           },
           "kind": "code"
@@ -85,25 +87,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
-            "content": "sha256:7bfa72bddfaf0b83f79f80e4bd4627b3d06545f16dbe27c01ff8d1af83c47840",
+            "blob": "90fd7edc80943b84e31d2e6db8b935979cbab7ca",
+            "content": "sha256:78e7d8c471b0d8badb9e2dca78c6f45bcfefacfbf62022b7f93903a0a12dbd1a",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Adds conditional visual-explainer/profile linkage; visuals supplement rather than replace mandatory evidence/report or acceptance.\n\nAnchor: Candidate instruction body, lines 1–45",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
-            "content": "sha256:1663838b0614609720429c72fa8291e6c4cc683bb63393debc9c81c2673602a4",
-            "locator": {
-              "end": 45,
+              "end": 190,
               "kind": "line_range",
               "start": 1
             }
@@ -112,35 +99,19 @@
         }
       ]
     },
-    "7": {
-      "note": "Adds conditional visual-explainer/profile linkage; visuals supplement rather than replace mandatory evidence/report or acceptance.\n\nAnchor: Candidate instruction body, lines 67–143",
+    "6": {
+      "note": "The Worker reads the visual-explainer guidance before adding an optional walkthrough to its freeze report.",
       "targets": [
         {
           "anchor": {
-            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
-            "content": "sha256:40b89128f4847bbd29913c35406bd907a559b9089598fde7b5d188ab72affc7e",
+            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "content": "sha256:ae77c7eff1226d8870397005080d03c0f99eabf310dcbc00e03863b866aeb500",
             "locator": {
-              "end": 143,
+              "end": 77,
               "kind": "line_range",
-              "start": 67
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Adds conditional visual-explainer/profile linkage; visuals supplement rather than replace mandatory evidence/report or acceptance.\n\nAnchor: Candidate instruction body, lines 145–211",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
-            "content": "sha256:8cb35673294d46e4acf0c7f41f7b31de48ac98e9bda5f9e7c887d34a4ce8b56e",
-            "locator": {
-              "end": 211,
-              "kind": "line_range",
-              "start": 145
-            }
+              "start": 77
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
           "kind": "code"
         }

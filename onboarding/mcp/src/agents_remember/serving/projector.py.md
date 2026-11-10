@@ -185,7 +185,7 @@ worktree cleanup while preserving cancellation as the public outcome.
 - Subscription activation registers its queue before current-snapshot capture and removes it in `finally`.  Anchor: "self._subscribers.add(queue)"; "self._subscribers.discard(queue)" [2]
 
 
-- The stream consumes one projector subscription under explicit aclosing, and decorates snapshot events with the build stamp and optional watcher-health tail. Missing build/health facts are omitted; deltas carry no whole-workspace tail. [3]
+- The stream consumes one projector subscription under explicit aclosing, and decorates snapshot events with the served-state tail (build stamp with the serving process id, build currentness, checkout binding and optional watcher health). Missing facts are omitted; deltas carry no whole-workspace tail. [3]
 
 
 

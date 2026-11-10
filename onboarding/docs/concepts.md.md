@@ -51,7 +51,7 @@ how a provider was configured — none of that is on this page, and no provider 
 command is named.
 
 It also does not define the router's decision procedure; it names the substrate trio and
-points at the retrieval-strategy skill, which is the owner of that procedure. Nothing on the
+points at the knowledge-use guidance, which is the owner of that procedure. Nothing on the
 page is a claim that any route, drift check or approval gate was exercised.
 
 ## Evidence
@@ -84,6 +84,9 @@ Historical source account (detached from live reference 5; docs/concepts.md blob
 
 - An onboarding unit maps source to a mirrored Markdown card; converted memory pairs it with a JSON sidecar for references, realizations and test proofs, while shared truths live under knowledge/. [1]
 - By-path notes remain direct and index-free; meaning and relationship are retired provider routes with no current engine. [2]
-- The router names Intent, Semantics and Relationship; Semantics/Relationship retain their retired-provider boundaries and Intent uses onboarding plus bounded source confirmation. [3]
+
+- The retrieval-strategy section points to knowledge-use guidance and names Intent, Semantics and Relationship; Semantics/Relationship keep their retired-provider boundaries and Intent uses onboarding plus bounded source confirmation. [3]
+
 - Provider output remains candidate routing evidence rather than proof; source, verified onboarding, drift, branch validity and approved promotion retain truth authority. [4]
-- Converted sidecars carry current code anchors and the named drift outcomes. Approval gating and route-local overviews remain; knowledge history rows answer a recomputed worklist under the exact-tree gate, while memory.md is an ignored attribution cache outside transaction authority. [5]
+
+- Converted sidecars carry code anchors; the drift summary counts reference anchors as current or stale and knowledge reads report invariant currentness. Approval gating and route-local overviews remain; knowledge history rows answer a recomputed worklist under the exact-tree gate, while memory.md is an ignored attribution cache outside transaction authority. [5]

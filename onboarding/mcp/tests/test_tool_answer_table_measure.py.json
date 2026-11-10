@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+        "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
         "content": "sha256:0d58d24d6d82082066743ec6c50f9e0085bf3c5fc54b85239ff018d99c6e7856",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+        "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
         "content": "sha256:db46871184a30b436a0a200d2c853cc871913ab7e8da92476876d7943b193522",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+        "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
         "content": "sha256:94ed41d185ae40718bc5b233de0dda7372e52cfc8035d200b31c9dacb41898ce",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+        "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
         "content": "sha256:8c5e32b1d38dde1de86b2dfa37e64b28d58a0d4c0002db32d3ddd5d6cdfbc70a",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+        "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
         "content": "sha256:84019f61f074f34604db9098415828d73896f446e95fa8fccedcccf733382f95",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+        "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
         "content": "sha256:f667bba5d2d2df3609e521ca8bd192519213ef1ee4c1c388e9dbc51b69d93e85",
         "locator": {
           "kind": "symbol",
@@ -111,10 +111,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
-            "content": "sha256:0531a708a6505155d3f518232ee7620c0f49ef6422df23a47e1f51d887348b4e",
+            "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
+            "content": "sha256:b8431e8d3fb89add4ed94e59560442d559071a9e1087b3051da3f102657ab0b6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_exact_edge_answer_guarded_by_its_log_location"
             }
           },
           "kind": "test"
@@ -126,10 +127,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
-            "content": "sha256:0531a708a6505155d3f518232ee7620c0f49ef6422df23a47e1f51d887348b4e",
+            "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
+            "content": "sha256:7dd6e79e66493902b572087b74a989de84657ab8c460ded0fb67610a545ea019",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ToolPartialWriteTests"
             }
           },
           "kind": "test"

@@ -66,7 +66,7 @@ The File Viewer's DualPane also supplies a tray target from its repository and t
 
 - The same-origin client wrapping that API. [7]
 
-Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx:802-807 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 7c56c11d651972515723b4090b8174087eb5236f. Retired means the anchor no longer stands, not that the cited subject was deleted [8]
+- The shell registers and keeps the file view mounted. [8]
 
 - The markdown renderer the sidecar pane reuses. [9]
 

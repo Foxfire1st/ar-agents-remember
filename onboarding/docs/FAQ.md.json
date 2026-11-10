@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
-        "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
+        "blob": "0703fd502c574b5cad6449ac6cf2f1e6675cf1af",
+        "content": "sha256:f786682266113a8a65061618408f87c6e58e4489a2638575dfd9f26b2d41928d",
         "locator": {
           "kind": "file"
         }
@@ -22,14 +22,16 @@
   ],
   "references": {
     "1": {
-      "note": "By-meaning and by-relationship are described in the past tense as retired, with by-meaning left without an engine and by-path keeping the deterministic mirror address.\n\nAnchor: `docs/FAQ.md:24-26`",
+      "note": "By-meaning and by-relationship are described in the past tense as retired, with by-meaning left without an engine and by-path keeping the deterministic mirror address.\n\nAnchor: `By meaning`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
-            "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
+            "blob": "0703fd502c574b5cad6449ac6cf2f1e6675cf1af",
+            "content": "sha256:1096f63021edc77395c62f3af60a5d607ca9fc119ce627e6e48dd078b7f2b110",
             "locator": {
-              "kind": "file"
+              "end": 26,
+              "kind": "line_range",
+              "start": 24
             }
           },
           "kind": "code"
@@ -37,14 +39,16 @@
       ]
     },
     "2": {
-      "note": "By-path is called \"the route with an engine today\" and the providers page is characterized as a retirement and old-install cleanup account.\n\nAnchor: `docs/FAQ.md:28`",
+      "note": "By-path is called \"the route with an engine today\" and the providers page is characterized as a retirement and old-install cleanup account.\n\nAnchor: `guides/providers.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
-            "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
+            "blob": "0703fd502c574b5cad6449ac6cf2f1e6675cf1af",
+            "content": "sha256:6e177c003d950c6ad088e468b941530be546faa0a40108ad86fec0be444612b6",
             "locator": {
-              "kind": "file"
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
             }
           },
           "kind": "code"
@@ -52,14 +56,16 @@
       ]
     },
     "3": {
-      "note": "The comparison answer says the product \"used them\" and that by-path reads now carry the finding job.\n\nAnchor: `docs/FAQ.md:124`",
+      "note": "The comparison answer says the product \"used them\" and that by-path reads now carry the finding job.\n\nAnchor: `used them`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
-            "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
+            "blob": "0703fd502c574b5cad6449ac6cf2f1e6675cf1af",
+            "content": "sha256:4e2bb988fe31cd23c84770b611ea8b357f439db9d65410447143d7a19d22bb8f",
             "locator": {
-              "kind": "file"
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
             }
           },
           "kind": "code"
@@ -67,14 +73,16 @@
       ]
     },
     "4": {
-      "note": "The former providers built derived indexes over memory and code, never replaced it as the source of truth, and are retired.\n\nAnchor: `docs/FAQ.md:136`",
+      "note": "The former providers built derived indexes over memory and code, never replaced it as the source of truth, and are retired.\n\nAnchor: `derived indexes`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
-            "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
+            "blob": "0703fd502c574b5cad6449ac6cf2f1e6675cf1af",
+            "content": "sha256:8a29705051f13fbea38d471d1dbfd54206778938fafcb89dc93e84fb4ab7bbd3",
             "locator": {
-              "kind": "file"
+              "end": 136,
+              "kind": "line_range",
+              "start": 136
             }
           },
           "kind": "code"
@@ -82,14 +90,16 @@
       ]
     },
     "5": {
-      "note": "The memory-growth answer still describes an optional semantic index in the present tense.\n\nAnchor: `docs/FAQ.md:40`",
+      "note": "The memory-growth answer still describes an optional semantic index in the present tense.\n\nAnchor: `optional semantic index`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
-            "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
+            "blob": "0703fd502c574b5cad6449ac6cf2f1e6675cf1af",
+            "content": "sha256:1ebaa6a599ce6e84188a19204fb3bbd013c1228b9e15c17958ffef76373df079",
             "locator": {
-              "kind": "file"
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
             }
           },
           "kind": "code"
@@ -97,14 +107,16 @@
       ]
     },
     "6": {
-      "note": "The page names no provider command, setting key or provider id.\n\nAnchor: `docs/FAQ.md:1-136`",
+      "note": "The page names no provider command, setting key or provider id.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
-            "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
+            "blob": "0703fd502c574b5cad6449ac6cf2f1e6675cf1af",
+            "content": "sha256:f786682266113a8a65061618408f87c6e58e4489a2638575dfd9f26b2d41928d",
             "locator": {
-              "kind": "file"
+              "end": 136,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

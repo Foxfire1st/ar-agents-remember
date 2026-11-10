@@ -88,4 +88,4 @@ The following pre-existing verification note is retained as metadata, outside th
 
 - Bootstrap and parent-leaf attach select; direct series attach only observes activation and checks resume prerequisites.  Anchor: `series_attach_result` [9]
 
-- Historical refresh composition named `validate_memory_refresh_attestations`; that composer is removed. Current `_onboarding_refresh_gate` applies converted onboarding traces, with unconverted public input refused upstream. [11]
+- The memory-quality controller's _onboarding_refresh_gate applies converted onboarding traces: one repair finding per missing trace, unnecessary rows report-only; missing converted sides are incomplete and unconverted public inputs refuse upstream. [11]

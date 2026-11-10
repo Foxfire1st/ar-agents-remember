@@ -153,9 +153,9 @@ No meaningful cross-repo references found.
 
 - The population setting includes modules below mcp/tests. The retained historical collection comment names its default-unit-lane collection method. [15]
 
-- The retained lane entries name three neighbouring test modules. The added test_task_projection.py row establishes this module's own unit-regression membership. [13]
+- The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution. [13]
 
 
-- The retained stored-operation-record row is separate from the added test_task_projection.py membership row. Catalog membership selects evidence and does not establish execution. [21]
+- The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution. [21]
 
 - The compiler seam these cases verify through, including its digest refusal. [10]

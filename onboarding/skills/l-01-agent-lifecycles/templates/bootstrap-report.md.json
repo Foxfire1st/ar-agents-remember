@@ -1,0 +1,76 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/bootstrap-report.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The role owns the report duty and the operation owns the evidence standard; the template supplies sections and fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6300c52608a32b54bebf8313aa8f7786998370dd",
+            "content": "sha256:ccf473874c614017383db87cef20248a7aa1b43026e80496bc2ea7298fe17016",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The report opens with its own path and records onboarding and knowledge-foundation state as read, never as made here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6300c52608a32b54bebf8313aa8f7786998370dd",
+            "content": "sha256:05cbc61d583285aa6c62e66620665ce09a7aa9f2c0e15315566f46e0e85312cd",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The named next step is starting the Architect, and the Boundaries checklist denies commits, branch moves, worktrees, migration and authored onboarding or knowledge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6300c52608a32b54bebf8313aa8f7786998370dd",
+            "content": "sha256:661fef17bf43d2c3f9b95619d0dcf3ecdcdf8eb194f58b8588b218d479b22235",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Bootstrap role points to this template before the report is written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "content": "sha256:69b9d360af49499e7753981a25f37d9979f03c6cbdc62b051e223081bbeed380",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

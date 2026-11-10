@@ -52,8 +52,8 @@ deterministic.
 The focused canvas case renders a stale landing ref with its stale tone, literal state, and age, then asserts no landing-flow packet is active. This pins the contract that unavailable remote truth stays visible without being animated as current.
 
 `nodeFrom(name)` pulls the first `EngineProcessNode` from a named `ENGINE_ROOM_SCENARIOS` fixture;
-`WORKSPACE_ENGINES` is a two-element `ProviderNode[]` (CGC code + GrepAI memory) for the official-line
-cases. A `beforeEach` sets `data-effects=off` (freeze GSAP/Motion to the After state); `afterEach` clears
+no `WORKSPACE_ENGINES` or `ProviderNode` remains: the provider-traces describe (MIK-R112 rule 2)
+asserts that no fixture node carries provider state and that no provider block or provider text renders. A `beforeEach` sets `data-effects=off` (freeze GSAP/Motion to the After state); `afterEach` clears
 it + RTL `cleanup`.
 
 - "renders a fleeting banner …" — `engine-precontract-blocked` → asserts the `fleeting-banner` contains
@@ -194,7 +194,9 @@ negative — it is the assertion that would fail if a polarity field were reintr
 - The scenario fixtures it renders; `engine-cgc-seed-refused` now seeds `edges({ cgc: "stale", … })`. [2]
 - The T9B/T9C refused-conduit describe block, including the `data-state=stale` / `data-refused-polarity` null pair. [3]
 - `refusedPolarityOf` — the derivation the test's amber expectation depends on. [4]
-- The `ProviderNode` shape `WORKSPACE_ENGINES` builds. [6]
+
+- The `EngineProcessNode` shape `nodeFrom` returns from the scenario fixtures. [6]
+
 - The jsdom stubs + determinism freeze. [7]
 
 ## Current L5I Maintenance

@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The read cycle rejects superseded answers and ordinary refresh merges, while the family-walk merger verifies comparison, subject, cursor and roster identity, so accumulated family context cannot cross questions."
+  },
   "applicability": "Client continuation of a displayed comparison and primary subject along one exact family-side-revision roster walk, as the read cycle admits it into the answer the reviewer reads.",
   "conditions": [
     "The admitted response agrees with comparison, candidate, selected subject/revisions, cursor, family selection, side/revision, guarantee and page scope.",

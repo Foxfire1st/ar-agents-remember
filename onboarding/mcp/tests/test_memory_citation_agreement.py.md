@@ -328,4 +328,4 @@ trap rather than a green light.
 
 - Both cells and the quote path preserve escaped/plain anchor agreement; the row case derives text from live cell spans. The separately retained budget-test range covers the declared-pair sentence, constant, marker-registration and older-budget-site assertions. [10]
 
-- The retained L192 instruction-parameter row is separate from this module's own unit-regression entry. The added citation-agreement row establishes its default-selection membership. [29]
+- The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution. [29]

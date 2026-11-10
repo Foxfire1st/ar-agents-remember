@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9add73107076b66f81f3e48071388ef8119188b0",
+        "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
         "content": "sha256:6669261fe24c27fc09b5b38c3a49c639f4b04159b815db48854f39efb73a1665",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "9add73107076b66f81f3e48071388ef8119188b0",
+        "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
         "content": "sha256:6669261fe24c27fc09b5b38c3a49c639f4b04159b815db48854f39efb73a1665",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "9add73107076b66f81f3e48071388ef8119188b0",
+        "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
         "content": "sha256:116f20c356ac4d340fa3f2c4cc126016f9fa8fd202979134bdfc71d523be9c94",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "9add73107076b66f81f3e48071388ef8119188b0",
+        "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
         "content": "sha256:116f20c356ac4d340fa3f2c4cc126016f9fa8fd202979134bdfc71d523be9c94",
         "locator": {
           "kind": "symbol",
@@ -77,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9add73107076b66f81f3e48071388ef8119188b0",
+            "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
             "content": "sha256:134dc7ef3399ce68ba808ab74fab503c5589c784529b77e17d19a22fa875c154",
             "locator": {
-              "end": 338,
+              "end": 396,
               "kind": "line_range",
-              "start": 246
+              "start": 304
             }
           },
           "kind": "test"
@@ -94,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9add73107076b66f81f3e48071388ef8119188b0",
+            "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
             "content": "sha256:1cef09cd763309befc3de7d116fa539d15c0a1d64561206d9c368666b95e464c",
             "locator": {
-              "end": 635,
+              "end": 693,
               "kind": "line_range",
-              "start": 466
+              "start": 524
             }
           },
           "kind": "test"
@@ -111,12 +111,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9add73107076b66f81f3e48071388ef8119188b0",
+            "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
             "content": "sha256:9078aba742605eed90dda358b945b706ea4bf722df3cb5c1456a57fb6522d826",
             "locator": {
-              "end": 588,
+              "end": 646,
               "kind": "line_range",
-              "start": 522
+              "start": 580
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The live drift surfaces are the context_packet registration, docs/tool-details.md, the lifecycle skill's knowledge, curation and handoff files and the c-10 skill copies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00a18e0352d581c25b1ab5098deb1eacc227f469",
+            "content": "sha256:67f72a6b266c8d69bd9d381428f21a5f9c1f8cdcb810080b15d71c7a168f6be8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_descriptions_say_what_the_check_is"
             }
           },
           "kind": "test"

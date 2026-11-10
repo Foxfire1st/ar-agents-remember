@@ -45,7 +45,7 @@ Historical source wording retained verbatim (docs/features.md blob 63b36c83fdfd0
   nothing there names an install path. The page also keeps the discipline sentence that "provider
   output is *candidate routing evidence, not proof*" (`docs/features.md:220-224`).
 
-The opening Git-memory bullet now describes paired publication and disposable knowledge-index rebuilding. The longer cheap-isolation provider-cloning section remains residual present-tense source text and does not restore the retired provider capability.
+The opening Git-memory bullet now describes paired publication and disposable knowledge-index rebuilding. The "Task isolation and disposable indexes" section says worktree setup does not provision retired provider stacks, clone their databases or seed their watchers, and describes the disposable SQLite knowledge index (`docs/features.md:256-265`).
 
 ### Superseded inventory
 
@@ -135,14 +135,17 @@ Historical source account (detached from live reference 9; docs/features.md blob
 
 - A present-tense provider-index cloning account remains in the page, including per-worktree provider stacks and index seeding.
 
-- The cheap-isolation section still describes provider-index cloning, namespaced stacks and watcher seeding in present tense. The opening Git-memory bullet now describes paired publication and disposable knowledge-index rebuilding instead; the residual section does not restore retired provider capability.
+- The opening tour keeps semantic/code-graph lookup as retired accelerators and by-path as the product route; its Git-memory bullet names paired publication and a disposable knowledge index rebuilt from the selected text tree. [1]
 
-- The opening tour keeps semantic/code-graph lookup as retired accelerators and by-path as the product route; its Git-memory bullet now names paired publication and a disposable knowledge index rebuilt from the selected text tree. [1]
 - Semantic and graph search remain retired historical accelerators; the note and Git currentness remain the documented trust controls. [2]
+
 - Meaning and relationship are past-tense retired-provider routes; the router works on by-path/Intent and provider output remains candidate evidence rather than proof. [3]
+
 - The pre-code session passage requires context resolution, drift checking, evidence and agreement before choosing how to build; it does not require provider-state checking. [4]
+
 - The read-only examples name repository orientation, drift and closeout preview, omitting provider-health and graph/semantic-query examples. [5]
-- Harness-native setup now registers the server, serves packaged skills and starts Bootstrap with one role_start call; setup-authored knowledge and provider indexing are excluded. The separate by-path assurance still needs no Docker/provider. [6]
+
+- Harness-native setup registers the server, serves packaged skills and starts Bootstrap with one role_start call; setup-authored knowledge and provider indexing are excluded. The separate by-path assurance still needs no Docker/provider. [6]
+
 - MCP authority settings declare permitted repositories, transcript location, timeout caps and root containment; old provider keys are reported once as unused. [7]
 - Learn more describes the Providers guide as retirement and older-install leftover cleanup. [8]
-- The cheap-isolation section still describes provider-index cloning, namespaced stacks and watcher seeding in present tense. The opening Git-memory bullet now describes paired publication and disposable knowledge-index rebuilding instead; the residual section does not restore retired provider capability. [9]

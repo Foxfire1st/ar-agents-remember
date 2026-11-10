@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
-        "content": "sha256:ba51f7604f2b82748550c405a260ebd6516773bf956bb736996ddea5c484d165",
+        "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+        "content": "sha256:ed32ffe768c30af33c544a10b0c43d1323057a1171bd730c4640b65490289091",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+        "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
         "content": "sha256:d709c4479088842b26eb621a81d5b87d5cbaaed0f4cbeb1813505a3c83b1ce59",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
-        "content": "sha256:de96f302cddeee779ff7c93fb3235cee8bbb220900f3e0bc32da5d820df43f78",
+        "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+        "content": "sha256:4c5220ce1159d02119e6b4cc4f52f67b92e0c81a41c786667cecb61be8636d80",
         "locator": {
           "kind": "symbol",
           "name": "_attach_role_origins"
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
-        "content": "sha256:0be9e9a1e1fe1bf57da33ce5b3b70802813ae8ad8b9a0f631090921b4498b4d2",
+        "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+        "content": "sha256:da4b80edce2f3ae5e88149907346eb3f15d3cca0951e61b01edfc42e18d6c8e0",
         "locator": {
           "kind": "symbol",
           "name": "_refuse_repository_role_authority"
@@ -76,22 +76,11 @@
   ],
   "references": {
     "10": {
-      "note": "Only effective IDs and accepted-unused execution keys remain.\n\nAnchor: `_parse_harnesses`",
+      "note": "Only effective IDs and accepted-unused execution keys remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "d3b92b15b04467dce898722fe980347aee339810",
-            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
             "content": "sha256:279eec2b84e1a34738d5aa671b2c797b80f76b01dd074c654e70c8a17206c7a8",
             "locator": {
               "kind": "symbol",
@@ -108,11 +97,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+            "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
             "content": "sha256:1f7d8cabdb66f9253762ba7529b1fae352e09021785e177ea484ca1762579593",
             "locator": {
               "kind": "symbol",
               "name": "_parse_orchestration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Origin attachment skips removed role rows in flat and per-level tables",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+            "content": "sha256:4c5220ce1159d02119e6b4cc4f52f67b92e0c81a41c786667cecb61be8636d80",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_role_origins"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The repository-authority refusal skips removed role rows",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+            "content": "sha256:da4b80edce2f3ae5e88149907346eb3f15d3cca0951e61b01edfc42e18d6c8e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_repository_role_authority"
             }
           },
           "kind": "code"
@@ -124,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+            "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
             "content": "sha256:d709c4479088842b26eb621a81d5b87d5cbaaed0f4cbeb1813505a3c83b1ce59",
             "locator": {
               "kind": "symbol",
@@ -140,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+            "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
             "content": "sha256:11c25713eedfff4a37e06ce5cce7318f395e7d40b6cca3a796b8c0bc55e019ef",
             "locator": {
               "kind": "symbol",
@@ -156,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+            "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
             "content": "sha256:90e67f339d06a4509906d3a8949d1655eea987a519d61673979c752150005722",
             "locator": {
               "kind": "symbol",
@@ -168,12 +189,12 @@
       ]
     },
     "5": {
-      "note": "Repository alternatives are refused, including altitude rows.",
+      "note": "Repository alternatives are refused, including altitude rows; rows keyed by a removed role name are skipped.",
       "targets": [
         {
           "anchor": {
-            "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
-            "content": "sha256:0be9e9a1e1fe1bf57da33ce5b3b70802813ae8ad8b9a0f631090921b4498b4d2",
+            "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+            "content": "sha256:da4b80edce2f3ae5e88149907346eb3f15d3cca0951e61b01edfc42e18d6c8e0",
             "locator": {
               "kind": "symbol",
               "name": "_refuse_repository_role_authority"
@@ -205,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
+            "blob": "825208f3241118550bd4b710b5e746422eeec8bd",
             "content": "sha256:78d7ff988ea8a2487021fd23b3ef8cb706b2be89621f6fb62ff36662ff84526a",
             "locator": {
               "kind": "symbol",
@@ -222,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
+            "blob": "825208f3241118550bd4b710b5e746422eeec8bd",
             "content": "sha256:83dc3d5d9258c885b9054f7ede52253c2c01c2ef1894983e70bfcdbf5e12fda4",
             "locator": {
               "kind": "symbol",
@@ -235,26 +256,15 @@
       ]
     },
     "9": {
-      "note": "Typed settings retain their independent defaults.\n\nAnchor: `AgenticSettings`",
+      "note": "Typed settings retain their independent defaults.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
+            "blob": "825208f3241118550bd4b710b5e746422eeec8bd",
             "content": "sha256:ef2bc14301ff63870a002e0102aef5094bb79e195d2e6597ac427533befd1194",
             "locator": {
               "kind": "symbol",
               "name": "AgenticSettings"
-            },
-            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
-            "content": "sha256:916f4f6f4ec526d877dcfa348f36d22280cccfc684f813741121351feebfc7bb",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
           },

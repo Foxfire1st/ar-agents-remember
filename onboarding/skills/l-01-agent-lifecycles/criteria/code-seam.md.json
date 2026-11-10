@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "No external/domain document defines this criterion; catching evidence is leaf-cited.\n\nAnchor: `## Standing Criteria (MUST RUN — the regression floor)`",
+      "note": "No external or domain document defines these criteria; promotion cites catching evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "272ca9c4d1892352756810902af3d365667c0392",
-            "content": "sha256:fbad8bf037bfbbf08ccaa8a8ed7e935aba037411d7a9a263331b0c5b0e9bea40",
+            "blob": "184327da1e5d1f280a1b44f65f0c18aa2d034869",
+            "content": "sha256:cfc4e46ecfb95846e911666d17025f18dd90fc40f7d5d5b69721dfaa855825a3",
             "locator": {
-              "end": 12,
+              "end": 29,
               "kind": "line_range",
-              "start": 10
+              "start": 19
             }
           },
           "kind": "code"
@@ -20,16 +20,16 @@
       ]
     },
     "2": {
-      "note": "The canonical criterion file's standing/candidate structure, mirrored into the packaged runtime copies.\n\nAnchor: `### CS-6 — Scaling & reclamation *(promoted — 2 catches)*`",
+      "note": "The canonical criterion file's standing/candidate structure, mirrored into the packaged runtime copies.",
       "targets": [
         {
           "anchor": {
-            "blob": "272ca9c4d1892352756810902af3d365667c0392",
-            "content": "sha256:67ae0d3753141effb9741a130cd0deccb97c566b2f6464161c5bde7e1d5295ee",
+            "blob": "184327da1e5d1f280a1b44f65f0c18aa2d034869",
+            "content": "sha256:fcf74c26ea7418ef53a7139b034453212156f54b9fb044a7b8de6e3e5b6c1cb4",
             "locator": {
-              "end": 84,
+              "end": 70,
               "kind": "line_range",
-              "start": 70
+              "start": 31
             }
           },
           "kind": "code"
@@ -41,10 +41,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "272ca9c4d1892352756810902af3d365667c0392",
-            "content": "sha256:fe0759b9189efc06eb2005bcd934b427bc6b9aaacd019a1e52c667f43fbbc1b3",
+            "blob": "184327da1e5d1f280a1b44f65f0c18aa2d034869",
+            "content": "sha256:2d9bde33b60855371a67f0235e0305e387e07bdd58763a3568380392ec1681de",
             "locator": {
-              "end": 107,
+              "end": 74,
               "kind": "line_range",
               "start": 1
             }
@@ -54,16 +54,16 @@
       ]
     },
     "4": {
-      "note": "The current criterion also treats a new UI control that duplicates an existing primitive as a finding and names the primitive to reuse. This is a check within the requested review, not another automatic review gate.",
+      "note": "The criterion also treats a new UI control that duplicates an existing primitive as a finding and names the primitive to reuse. This is a check within the requested review, not another automatic review gate.",
       "targets": [
         {
           "anchor": {
-            "blob": "272ca9c4d1892352756810902af3d365667c0392",
-            "content": "sha256:7fdcb0f236e7f57475bdba4f679b202d3e39846864ddafeadcbd05b57074e1f2",
+            "blob": "184327da1e5d1f280a1b44f65f0c18aa2d034869",
+            "content": "sha256:8a996cc2cd295f837d7a9b3c37fa51c2385405c73bb7fdd440b3c2bf2c729923",
             "locator": {
-              "end": 107,
+              "end": 74,
               "kind": "line_range",
-              "start": 105
+              "start": 72
             }
           },
           "kind": "code"

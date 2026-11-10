@@ -1,0 +1,58 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/seat-recovery.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Idle leaves are read first, and a silent turn with running helpers is told to collect and finish.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d0896c5126ef285f4f31bfe7f5ced400f8c76bd",
+            "content": "sha256:30aa16f37ef96f5d2b797c3af6de02b2a5c98a5252d9678a92d148502490f9ee",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Stopped or archived seats change only on the developer's word, and replacement preserves the predecessor's work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d0896c5126ef285f4f31bfe7f5ced400f8c76bd",
+            "content": "sha256:5a714d3ae2c8f4d988cdab0ecbc109af66e71f6dc944807f1ab815e4cd616694",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Unavailable-provider work moves through an authorized fallback role set, and other model changes go up for decision.\n\nAnchor: `role_start`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d0896c5126ef285f4f31bfe7f5ced400f8c76bd",
+            "content": "sha256:05a38985b7913d86d69be8c8eb7576f54347d7d7d8e5e42809114047d807a7aa",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

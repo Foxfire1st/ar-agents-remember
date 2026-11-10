@@ -62,7 +62,7 @@ Explicit report-only admission writes its report/upstream message and claims non
 
 For the leaf pass, start the Curator only on the admitted leaf task document and its actual enclosure; never substitute a taskless session or fabricate a leaf, worktree or enclosure.
 
-Repository foundation is regular task work in the real task the user-started Architect opens. c-14 explicitly allows a standalone leaf, a leaf under a master or one under a sprint according to scope; the Curator is launched on that task document and writes only into its actual enclosure’s memory worktree. The separate foundation detail describes its under-master case. No taskless or instructed session substitutes for task admission, and no task or enclosure is fabricated. The writer routes, developer commit word and one-writer/independent-review boundaries remain distinct.
+Repository foundation is regular task work in the real task the user-started Architect opens. c-14 has the Architect open a registered foundation leaf under a master; the Curator is launched on that task document and writes only into its actual enclosure’s memory worktree. The separate foundation detail describes its under-master case. No taskless or instructed session substitutes for task admission, and no task or enclosure is fabricated. The writer routes, developer commit word and one-writer/independent-review boundaries remain distinct.
 
 - Foundation authoring is task work inside the Architect's task under the Curator rules; the seat is leaf-bound, and no taskless session stands in for task admission. \[12] Anchor: Foundation carrier and admission
 
@@ -137,14 +137,14 @@ code into a decision record with the alternatives it weighed; decisions that mat
 the task. The step points to the hand-off template's "Decision records (MIK-R13)" section for the fields and rules.
 Lifting is guidance only; nothing enforces it mechanically.
 
-- **Converted memory (L37 fix round P1b).** Process step 2 now says that on converted memory the curator follows the
-  c-05 skill's converted-card workflow: cards have no metadata table, no Update History and no citation tables; a
+- **Converted memory.** On converted memory the curator follows the card formats, citation input and history
+  dispositions in `reference/curator/card-formats-and-citations.md`: cards have no metadata table, no Update History and no citation tables; a
   new card's evidence, or a refreshed reference, is a citation table that `citation_fix` turns into `- <finding>
   [n]` lines and sidecar references with resolved anchors; a changed file whose card needs no change is answered by
-  an `onboarding_trace` row written through `knowledge-ingest`. Step 3 now says that on converted memory the same
-  command is the file writer: `agents-remember knowledge-ingest --contract … --list … --authorization-ref … --commit
-  --json` writes files in the leaf's memory worktree and publishes no dataset; `--baseline`, `--publish` and
-  `--publish-to` are refused there, and the history rows answer the leaf's worklist items. The rationale step that
+  an `onboarding_trace` row written through `knowledge-ingest`. On converted memory the file writer is
+  `agents-remember knowledge-ingest --contract … --list … --authorization-ref … --commit --json`: it writes files in
+  the leaf's memory worktree and commits nothing to Git, an unconverted memory worktree is refused by name, and the
+  history rows answer the leaf's worklist items. The rationale step that
   INV-0FBA8M52 anchors here is unchanged.
 
 ### Conventions
@@ -165,13 +165,13 @@ No additional work is asserted by this card. Actual project publication and sema
 
 The overview contract reads from purpose: title, governing overview, then `## What This Repo Is`, `## What This Area Is` or `## Purpose`; construction follows, then invariants/boundaries, and all citation lines stand together at the end. An overview change belongs in its applicable body section, never a leaf- or date-named section. The instruction states validator refusals for misplaced purpose, dated/leaf sections and nonterminal citation lines; source instruction is not evidence that a validation invocation ran.
 
-The review budget is settings-owned (`orchestration.loops.defaults.maxRounds`), read at each begin; the task’s effective limit, including approved extras, is exposed by `task_doc.reviewState.limit`. CODE and MEMORY have separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval, with the Manager asking the task Architect.
+The review budget is settings-owned (`orchestration.loops.defaults.maxRounds`), read at each begin; the task’s effective limit, including approved extras, is exposed by `task_doc.reviewState.limit`. CODE and MEMORY have separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval, which the Manager requests through its assigned reporting route and records.
 
 Worker ends with requirement-satisfying bytes, focused checks and report with Reviewer; Reviewer records whole-requirement coverage and verdict; Curator writes and checks task knowledge, obtains clean full quality/coherence evidence and hands MEMORY directly to the independent Reviewer, distinguishing installed-writer publication from scoped manual provenance. Earlier Curator stage sentence, retained as prose: Curator writes, checks and publishes knowledge through the installed build and obtains clean full quality/coherence evidence before handing MEMORY directly to the independent Reviewer. Each stage repairs its own input/instrument slips through the same admitted tool and continues; permission prompts, correct-input guard refusals or unowned state, requirement-meaning questions and out-of-scope effects remain stops.
 
 ## Landing evidence and retained intent
 
-A cut-card observation calls for a causal account: the handover names the change of this task that made the removed master text untrue. Removing text to silence a quality finding is never the remedy. Evidence and working files belong to the task record or scratch root, not the memory worktree; durable onboarding and knowledge remain the Curator’s writable memory surface. This adds review content without transferring the one writer, full-quality loop or landing authority.
+For every card cut by the quality check, the handover names the source evidence that makes the removed text untrue. Text is never removed merely to clear a quality finding. Evidence and working files belong to the task record or scratch root, not the memory worktree; durable onboarding and knowledge remain the Curator’s writable memory surface. This adds review content without transferring the one writer, full-quality loop or landing authority.
 
 Read authoring at Curation workflow 1: Reconcile, and card formats/citations at Curation workflow 2: Before ingest, not before.
 
@@ -250,17 +250,24 @@ Source: skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md:9-12; s
 
 
 
-- Evidence and working files stay outside the memory worktree.  Overview authoring is purpose-first, changes belong in their body section, and citation lines terminate the overview. [10]
+- An overview starts with its title, an optional governing overview and its purpose heading, puts a change into the body section that owns its meaning, and ends with all numbered citation lines together. [10]
 
-- Every reported cut has task-change causality; finding-clearing deletion is forbidden.  Historical source caption: "Anchor: lines 141-148" [14]
+- For every card cut by the quality check the Curator names the source evidence that makes the removed text untrue; text is never removed merely to clear a quality finding. [14]
 
-- Current curation continues from a report to the next authorized step without a new Manager go. It verifies card sentences against source, repairs wrong or missing memory encountered along its way beyond quality-check findings, names each repair and makes no broad sweep. Code changes, requirement decisions and another leaf’s work return to their owner. A correction qualifies every affected false body claim; full checks and the independent fact-check run before handover. [15]
+- The Curator also repairs wrong or missing memory it encounters while curating, whoever left it and beyond the quality check's findings, through the writer; it names each repair, makes no broad sweep and routes repairs needing code, a requirement decision or another leaf's work. [15]
 
-- Three-way reconciliation, explicit retention, writer/readback and full quality duties. [2]
-- The Curator performs no Git writes or code/gate/lifecycle/contract/closeout changes. Task-document edits use task_doc first with only its scoped correct-write recovery; source stamps cannot be advanced onto an uncommitted tree. [3]
-- Converted cards need current content-bound onboarding rows, and an independent nonauthor checks curated statements and row judgments before closeout. [6]
-- On converted memory knowledge-ingest is the file writer and publishes no dataset. [7]
-- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [8]
-- Batch citation previews and repairs use one documents list per wave. The stage ends with task knowledge written and checked and quality clean, distinguishing installed-writer publication from scoped manual provenance. Own-input and coherence faults are repaired through the same admitted tool; other correct-input refusals, permission, ownership and requirement questions stop dependent work except covered correct-write recovery. Beyond-settings memory review needs architect/developer approval recorded by Manager; review or publication is not acceptance. [9]
-- Current curation keeps reconciliation separate from transaction ownership, runs the full quality and independent fact-check workflow, and leaves Git base/candidate comparison to the Reviewer. [12]
-- The leaf pass requires its admitted leaf task and enclosure. For repository foundation, c-14 allows a real Architect-opened leaf either standalone, under a master or under a sprint, with its own task document and enclosure; the existing foundation detail describes the under-master case. No taskless session or fabricated leaf substitutes for task admission. [13]
+- Curation reconciles three bodies of evidence (current intent, ruled change intent and implemented reality) and succeeds when they agree or every material divergence has reached its answering seat. [2]
+
+- The Curator runs no Git write and edits no code, gate, lifecycle state, worktree contract or closeout state; it edits a task document only as its writer under its assignment with the scoped correct-write recovery, and advances no fingerprint to an uncommitted tree. [3]
+
+- On converted memory a role agent that wrote none of the leaf's cards or records checks every changed card, sidecar and record statement by statement before closeout; judgment history belongs in content-bound Curator rows and a counted card edit alone never closes a trace. [6]
+
+- The Curator writes knowledge with knowledge_write or the admitted serving-build command-line writer with the task contract, handoff list and commit; the commit option authorizes file writes, not Git or acceptance. [7]
+
+- When its part is complete the Curator marks only its own task-document step done through task_doc set_step with a one-line note; an incomplete, blocked or progress report never marks unfinished work done. [8]
+
+- The stage ends when task knowledge is written and checked and quality is clean, distinguishing installed-writer publication from scoped manual provenance; own faulty-input refusals and coherence findings are repaired through the same writer, and open permission prompts, other correct-input refusals, unowned state and requirement-meaning questions stop the work. [9]
+
+- Curation keeps reconciliation and memory writing with the Curator and the Git transaction with the Manager; the Curator runs no Git write, closeout preview or landing decision. [12]
+
+- The leaf pass starts only on a leaf task document, never taskless; registered tasks belong to a master, and no standalone leaf, fake task, worktree or enclosure is fabricated for the leaf or foundation route. [13]

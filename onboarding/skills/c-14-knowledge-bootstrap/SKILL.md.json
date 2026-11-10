@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
-        "content": "sha256:6228428269334b703190939d37b2a5868d6b947565f815d7dc912082a10558c8",
+        "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+        "content": "sha256:0ce3823002c53da3f7803c06750fddccfabd5d449618cefa22142b0d5c21fbda",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,27 @@
     },
     {
       "anchor": {
-        "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
-        "content": "sha256:6228428269334b703190939d37b2a5868d6b947565f815d7dc912082a10558c8",
+        "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+        "content": "sha256:f7742437656b60ee5439c77a21ba46dc3f9e5b92c588379be2b5136ff34cbe40",
+        "locator": {
+          "end": 191,
+          "kind": "line_range",
+          "start": 182
+        }
+      },
+      "id": "RLZ-3PWXHB",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "c-14's writer step keeps the same-tool correct-write exception. The primary tool comes first, then an honest admitted route, then an open manual write with owner notice, every input, refusal and check reported, and a defect issue. Other tool and input classes keep their tools, and read, check, validation, sync, starts, guards and commit gates keep their stops.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+        "content": "sha256:0ce3823002c53da3f7803c06750fddccfabd5d449618cefa22142b0d5c21fbda",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
-        "content": "sha256:6228428269334b703190939d37b2a5868d6b947565f815d7dc912082a10558c8",
+        "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+        "content": "sha256:0ce3823002c53da3f7803c06750fddccfabd5d449618cefa22142b0d5c21fbda",
         "locator": {
           "kind": "file"
         }
@@ -54,8 +73,27 @@
     },
     {
       "anchor": {
-        "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
-        "content": "sha256:6228428269334b703190939d37b2a5868d6b947565f815d7dc912082a10558c8",
+        "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+        "content": "sha256:c9ea03e5c46bf15990c665ccf49d3144c438ecc42365ddef3e8d37372ea6e63c",
+        "locator": {
+          "end": 175,
+          "kind": "line_range",
+          "start": 175
+        }
+      },
+      "id": "RLZ-FZV310",
+      "invariant": "INV-TYY2XF",
+      "origin": {
+        "handoffEntry": "L84-CUR-06",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The admission link targets curator-handoff-ingestion.md#admission-of-new-records.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+        "content": "sha256:0ce3823002c53da3f7803c06750fddccfabd5d449618cefa22142b0d5c21fbda",
         "locator": {
           "kind": "file"
         }
@@ -71,8 +109,8 @@
     },
     {
       "anchor": {
-        "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
-        "content": "sha256:6228428269334b703190939d37b2a5868d6b947565f815d7dc912082a10558c8",
+        "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+        "content": "sha256:0ce3823002c53da3f7803c06750fddccfabd5d449618cefa22142b0d5c21fbda",
         "locator": {
           "kind": "file"
         }
@@ -89,16 +127,28 @@
   ],
   "references": {
     "1": {
-      "note": "Foundation procedure carriers are distinct from the leaf-bound Curator seat; historical taskless-seat availability is not restored.",
+      "note": "Foundation procedure carriers are distinct from the leaf-bound Curator seat; there is no taskless entry to the procedure, and a Curator started from the dashboard still needs its selected sprint, master and leaf.",
       "targets": [
         {
           "anchor": {
-            "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
-            "content": "sha256:6228428269334b703190939d37b2a5868d6b947565f815d7dc912082a10558c8",
+            "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+            "content": "sha256:f634ef62d5841f66459698b6fd6a09c34e7bc647b3800315ef597f3487e161a2",
             "locator": {
-              "end": 366,
+              "end": 62,
               "kind": "line_range",
-              "start": 1
+              "start": 58
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+            "content": "sha256:db32b4eccff4f0c51845315d8601929f686017b97119ff8ddcf247eb20f3e5b7",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 338
             }
           },
           "kind": "code"
@@ -110,10 +160,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
-            "content": "sha256:6228428269334b703190939d37b2a5868d6b947565f815d7dc912082a10558c8",
+            "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
+            "content": "sha256:0ce3823002c53da3f7803c06750fddccfabd5d449618cefa22142b0d5c21fbda",
             "locator": {
-              "end": 366,
+              "end": 362,
               "kind": "line_range",
               "start": 1
             }

@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L116",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "No role source or compiled capsule names a review-round number; each of the worker, reviewer, curator and manager texts holds its Where-your-stage-ends section with the rule 6-8 facets and the bound rule 5 and rule 9 sentences.",
+  "statement": "No role source or compiled capsule names a review-round number; each of the worker, reviewer, curator and manager texts holds its stage-end facets (the rule 6-8 facets and the bound rule 5 and rule 9 sentences) in the owning sections the stage contract names.",
   "status": "proposed",
   "supersedes": []
 }

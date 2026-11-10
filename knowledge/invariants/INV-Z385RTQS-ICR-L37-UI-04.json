@@ -1,5 +1,11 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Expression cards consume the page's recorded-range context choice while workspace state retains local group openings, keeping code inspection consistent across subject reads without creating a separate full-file authority."
+  },
   "applicability": "Code-range display and location-group state of the mounted review page.",
   "conditions": [
     "The code-context preference is stored under review.code-context.v1; Full context shows the whole recorded range, not a separate full-file read.",

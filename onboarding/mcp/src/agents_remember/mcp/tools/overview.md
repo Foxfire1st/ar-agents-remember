@@ -1,7 +1,7 @@
 # MCP Tool Payload Adapters
 
 ## Governing Overview
-[overview.md](../../../../../overview.md)
+[overview](../../../../../overview.md)
 
 ## Purpose
 
@@ -20,9 +20,9 @@ Registration constructs the request for the domain builder; the builder delegate
 > **Retained historical source account — superseded by the current route account:**
 > Response completion has two stages. `models/tools/tool_response.py::finalize_tool_response` validates against the name-indexed response registry, applies enrichment to declared model fields, and performs its single JSON dump and token-finalization pass. The application uses a supplied compact `answer` projection when present; otherwise it strips envelope fields and truncates lists from the finalized whole result. It then converts the selected answer's `nextStep` to `next`, attaches log information, and measures the delivered mapping against its bound. Whole-result validation, enrichment and logging remain separate from that supplied projection. Oversized answers use a short form. Late log errors trigger another guard, and a failed line append receives one retry; once shortened, the smaller overflow ceiling applies. The completed event records delivered-answer tokens. An active ambient lifecycle receives that event; other calls use the workspace tool-event stream. A log failure is surfaced without deliberately failing the operation.
 
-Ambient enrichment preserves a producer-supplied recovery `nextStep` before consulting phase guidance. Guidance naming an artifact is withheld when the response has no address or any guidance spelling contradicts the response's address. Equality or the contract's immediate containing directory is accepted, not arbitrary ancestors. Guidance with no artifact address can remain. An `awaiting-developer` lifecycle resumes on the next call except the named `lifecycle_turn_end_notification` call; this retained internal behavior does not advertise that removed tool. The exception-contained notifier lookup sets both `agentNotifierBanner` and `supervisorBanner` before whole-result serialization.
+Ambient enrichment preserves a producer-supplied recovery `nextStep` before consulting phase guidance. Guidance naming an artifact is withheld when the response has no address or any guidance spelling contradicts the response's address. Equality or the contract's immediate containing directory is accepted, not arbitrary ancestors. Guidance with no artifact address can remain. An `awaiting-developer` lifecycle resumes on the next call except the named `lifecycle_turn_end_notification` call; this retained internal behavior does not advertise that removed tool. The answer carries no notifier banner field.
 
-`context_packet` and `read_ar_files` obtain a reader-scoped configuration from the supplied repository and optional exact task context before calling their application owners. `server_info` reports configuration, serving-build information and an optional actual agent binding; it does not return the public roster.
+`context_packet` and `read_ar_files` obtain a reader-scoped configuration from the supplied repository and optional exact task context before calling their application owners. `server_info` reports configuration, serving-build information, the loaded build's currentness against its package files, the running-server registry's live records and an optional actual agent binding; it does not return the public roster.
 
 A citation-fix legacy refusal retains its central code and conversion message in the caller-visible projection, not solely in a full-result log; converted status counts and bounded entries stay unchanged.
 
@@ -66,7 +66,7 @@ Integrity selects a memory/code root pair, optionally completing missing roots a
 
 Citation repair delegates through the application authority and translates `ConfiguredContractAuthorityError` into a named refusal requiring developer decision. Its current builder retains the whole result and supplies a compact status answer: successes carry repair counts, while failures add slim actionable entries capped at 10 per selected list. Failed converted results project stale, unreadable-sidecar and authoring-refused entries; old-format inputs carry central legacy-format conversion recovery rather than a legacy repair list. Migration answer helpers are removed. The retained 50-entry `_bounded_citation_fix` helper is not called by this builder and does not describe its delivered answer. Finite multi-card selection belongs to the registered `documents` operand and application scope validation.
 
-Runtime installation forwards the run's `RuntimeInstallRequest`, including its experiment input and selection provenance. A dry run files no per-call report. Executed installs write the full result before compacting it. Carryover plans likewise file no per-call report; apply files the full result before returning decision-grouped and carried paths. Carryover accepts approval intent/review selection without a commit-message parameter; it writes the converted recovery worktree but makes no commit. Both plan and apply now pass their whole result to `_tool_payload` and a separate `answer=compact_carryover_payload(...)`; completion/detail custody is not the compact answer. The local compactor omits raw `candidates`, `carried`, `conversion` and `publication` from the answer, carries publication guidance as `next.summary`, and adds `reportPath` only for apply. Plan files no per-call report; apply files the full result before compaction. The local compactor retains those path lists whole; shared response completion supplies list truncation and answer guarding rather than a separate 25-entry adapter cap. The report primitive uses `temp/tool-reports/<tool>/`, prunes on writes to five retained files and seven days, and applies its implemented password-pattern redaction; this is not evidence of universal secret detection. Shared answer logging is a separate mechanism from these bulk reports.
+Runtime installation forwards the run's `RuntimeInstallRequest`, including its experiment input and selection provenance. A dry run files no per-call report. Executed installs write the full result before compacting it; the compact answer keeps the declared `runningServers` and `dashboard` fields. Carryover plans likewise file no per-call report; apply files the full result before returning decision-grouped and carried paths. Carryover accepts approval intent/review selection without a commit-message parameter; it writes the converted recovery worktree but makes no commit. Both plan and apply now pass their whole result to `_tool_payload` and a separate `answer=compact_carryover_payload(...)`; completion/detail custody is not the compact answer. The local compactor omits raw `candidates`, `carried`, `conversion` and `publication` from the answer, carries publication guidance as `next.summary`, and adds `reportPath` only for apply. Plan files no per-call report; apply files the full result before compaction. The local compactor retains those path lists whole; shared response completion supplies list truncation and answer guarding rather than a separate 25-entry adapter cap. The report primitive uses `temp/tool-reports/<tool>/`, prunes on writes to five retained files and seven days, and applies its implemented password-pattern redaction; this is not evidence of universal secret detection. Shared answer logging is a separate mechanism from these bulk reports.
 
 ## Invariants And Boundaries
 
@@ -100,7 +100,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 ## The settings initializer payload
 
-`role_agents.py` builds the `user_settings_init` answer: a preview or one create of the role-harness settings file, with a refusal answered as data — `state: refused` and its code, detail, next action, path and target — rather than raised. `core.py`'s `server_info` no longer reports a harness skill root, and the response-model registry binds the new tool name.
+`role_agents.py` builds the `user_settings_init` answer: a preview or one create of the role-harness settings file, with a refusal answered as data — `state: refused` and its code, detail, next action, path and target — rather than raised. `core.py`'s `server_info` reports no harness skill root, and the response-model registry binds the `user_settings_init` tool name.
 
 ## Citation preview projection
 
@@ -169,7 +169,7 @@ The memory payload owner routes synchronous citation repair and background previ
 
 - The linear-half hint delegates to the worktree guidance state machine. [20]
 
-- The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. [22]
+- The `ResponseEnvelope` union of the strict and flexible envelope bases, both of which declare the choke-point fields `nextStep`, `next`, `log`, `logError` and `buildCurrentness`; no banner field is declared. [22]
 
 - The application request owner has only code and memory messages. [24]
 
@@ -198,11 +198,11 @@ The memory payload owner routes synchronous citation repair and background previ
 
 - **Retained historical source account — superseded by the current route account:** One model-owned 41-name successor roster (42 on the rejected freeze; resolve_context removed), including adoption, native-role, native retirement and knowledge names. [45]
 
-- **Retained historical source account — superseded by the current route account:** Whole-result validation precedes supplied/default answer selection, logging and final guards. [47]
+- Whole-result validation precedes supplied/default answer selection, logging and final guards. [47]
 
-- **Retained historical source account — superseded by the current route account:** Guidance uses exact response address and enrichment precedes serialization [48]
+- Guidance uses the exact response address, and enrichment precedes serialization. [48]
 
-- **Retained historical source account — superseded by the current route account:** Server info reports binding/build rather than roster; context reader is scoped [49]
+- Server info reports the agent binding and serving build rather than a roster, and the context-packet reader is task-scoped. [49]
 
 - **Retained historical source account — superseded by the current route account:** Adoption is explicit, confined and preview-identity approved [50]
 

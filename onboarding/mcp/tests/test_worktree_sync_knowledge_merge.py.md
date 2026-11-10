@@ -2,17 +2,17 @@
 
 ## Governing Overview
 
-[mcp/tests/overview.md](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-Tests for the knowledge merge in managed sync: the structural merge of knowledge files on converted or crossing memory merges, the conversion boundary, and since MIK-R66 the reference alignment through the real transaction.
+Tests for the knowledge merge in managed sync: the structural merge of knowledge files on converted or crossing memory merges, the conversion boundary, and the reference alignment through the real transaction (MIK-R66).
 
 ## Code Commentary
 
 The tests drive structural knowledge merging on converted or crossing memory merges and the conversion boundary. All-unconverted fast-forward/merge movement refuses with the central `legacy-format` message before mutation; converted merges never fall back to plain Git when the structural merge is unbound. Already-current and `skip-memory` plans are not structural-merge claims.
 Both-lines-added references align to a fresh number through the transaction; the report seam checks renumbered-reference, evidence-only, skip-only, conflict, converted and empty plans; it asserts no alignedCards-only emission control; and a successful sync
-carries the journaled report and counts.
+carries the journaled report and counts. `_unconverted_line` and `_converted_lines` take a `source_branch` (default `main`) and pass it to `SyncFixture`, and `Lines` moves code on that branch, so another suite can build converted lines on a named official branch.
 
 ## Evidence
 

@@ -3,24 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
-        "content": "sha256:07d369082bba32393797225673368f15b55744f61957647b11b5c5113f405624",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_worker_brief_template_names_no_candidate_interpreter"
-        }
-      },
-      "facet": "All ten worker-brief surfaces contain the tool-notes pointer and actual-interpreter recording rule and no forbidden interpreter tokens.",
-      "id": "PRF-1A4Z2S",
-      "invariant": "INV-4AQ26N",
-      "origin": {
-        "handoffEntry": "MIK-R136 rule 3",
-        "leaf": "260928-MIK-L136"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
+        "blob": "a36402fbbf7391c822d53964f1f01da98365bf44",
         "content": "sha256:7f018d8406443dcf8b4c9e0c9254e8427362d1a36e4e2d6a2d8fb56ef5b5b2e2",
         "locator": {
           "kind": "symbol",
@@ -37,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
+        "blob": "a36402fbbf7391c822d53964f1f01da98365bf44",
+        "content": "sha256:47195bd0d551bf62ed6a9d89edd73c4cba486ab8d340014b7152c016b62c210a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_worker_candidate_environment_names_no_candidate_interpreter"
+        }
+      },
+      "facet": "Fails when the Worker role file or its packaged copy names a candidate interpreter, drops the pointer to system/tools.md, or loses one of its four candidate-environment sentences, including the one that requires recording the interpreter each run used.",
+      "id": "PRF-B95B6V",
+      "invariant": "INV-4AQ26N",
+      "origin": {
+        "handoffEntry": "K2-4AQ26N-worker-environment-proof",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a36402fbbf7391c822d53964f1f01da98365bf44",
         "content": "sha256:1ed433becb49a8350fe3995d2bdc1b24e990cb3d7ec4fe6f1f8ef052fe6cfca3",
         "locator": {
           "kind": "symbol",
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
-        "content": "sha256:cb9682c662985f74bb3eb713b7e30a30d7965aaaa590f17743e525744bf75c5b",
+        "blob": "a36402fbbf7391c822d53964f1f01da98365bf44",
+        "content": "sha256:2c7fb784dea4b18e9a5f6e88b6be7a19d99b9cfe9112d2c126c156da74b0dd53",
         "locator": {
           "kind": "symbol",
           "name": "test_the_guard_reports_the_retired_interpreter_line"
@@ -73,7 +73,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
+        "blob": "a36402fbbf7391c822d53964f1f01da98365bf44",
         "content": "sha256:7f018d8406443dcf8b4c9e0c9254e8427362d1a36e4e2d6a2d8fb56ef5b5b2e2",
         "locator": {
           "kind": "symbol",
@@ -92,15 +92,15 @@
   ],
   "references": {
     "1": {
-      "note": "All shipped worker briefs must delegate environment setup and record the actual interpreter.",
+      "note": "Every shipped copy of the Worker candidate-environment action must delegate environment setup and record the actual interpreter.",
       "targets": [
         {
           "anchor": {
-            "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
-            "content": "sha256:07d369082bba32393797225673368f15b55744f61957647b11b5c5113f405624",
+            "blob": "a36402fbbf7391c822d53964f1f01da98365bf44",
+            "content": "sha256:47195bd0d551bf62ed6a9d89edd73c4cba486ab8d340014b7152c016b62c210a",
             "locator": {
               "kind": "symbol",
-              "name": "test_worker_brief_template_names_no_candidate_interpreter"
+              "name": "test_worker_candidate_environment_names_no_candidate_interpreter"
             }
           },
           "kind": "test"
@@ -112,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
+            "blob": "a36402fbbf7391c822d53964f1f01da98365bf44",
             "content": "sha256:1ed433becb49a8350fe3995d2bdc1b24e990cb3d7ec4fe6f1f8ef052fe6cfca3",
             "locator": {
               "kind": "symbol",
@@ -128,8 +128,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
-            "content": "sha256:cb9682c662985f74bb3eb713b7e30a30d7965aaaa590f17743e525744bf75c5b",
+            "blob": "a36402fbbf7391c822d53964f1f01da98365bf44",
+            "content": "sha256:2c7fb784dea4b18e9a5f6e88b6be7a19d99b9cfe9112d2c126c156da74b0dd53",
             "locator": {
               "kind": "symbol",
               "name": "test_the_guard_reports_the_retired_interpreter_line"
@@ -140,14 +140,15 @@
       ]
     },
     "4": {
-      "note": "The accounting case requires a built venv and excludes either environment directory from the working inventory; it does not run the lifecycle.\n\nAnchor: `test_candidate_accounting_excludes_worktree_environments`",
+      "note": "The accounting case requires a built venv and excludes either environment directory from the working inventory; it does not run the lifecycle.",
       "targets": [
         {
           "anchor": {
-            "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
-            "content": "sha256:f19692b4590a1616b1dbd5a0d8027ff7796e0c2f7ab054334f90c0315ad42bc2",
+            "blob": "a36402fbbf7391c822d53964f1f01da98365bf44",
+            "content": "sha256:7f018d8406443dcf8b4c9e0c9254e8427362d1a36e4e2d6a2d8fb56ef5b5b2e2",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_candidate_accounting_excludes_worktree_environments"
             }
           },
           "kind": "test"
@@ -159,12 +160,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
+            "blob": "a36402fbbf7391c822d53964f1f01da98365bf44",
             "content": "sha256:7f018d8406443dcf8b4c9e0c9254e8427362d1a36e4e2d6a2d8fb56ef5b5b2e2",
             "locator": {
-              "end": 123,
+              "end": 120,
               "kind": "line_range",
-              "start": 102
+              "start": 99
             }
           },
           "kind": "test"

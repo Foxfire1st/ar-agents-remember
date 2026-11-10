@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Test suite overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -14,11 +14,13 @@ Checkout-local coordination isolation at configuration and store boundaries.
 
 Loaded source identifies the linked checkout regardless of cwd. Its effective configuration uses the dummy coordination root, disables live providers and services, and writes an incident-shaped inbox only there. Escape writes refuse before parent or lock creation; the admitted report path remains writable.
 
-Since `260918-TSIP-L3` the suite also holds **two pins on the execution-mode boundary, and they assert today's behaviour on purpose** (`T30`/`T28`): `declare_execution_mode` is one assignment with no caller identity, PID or parent check, environment proof, signature or operation record, so the boundary checks only *was any mode declared* — `checkout_cli_location` and `require_durable_write_target` both test `is not None`. The first pin is a two-arm case: **arm A** is the plane's real refusal of an undeclared primary checkout and of a write outside any checkout, and **arm B** is that one `declare_execution_mode("mcp")` lifts both and makes `load_config` read the declared fixture settings (preserving the configured coordination root and asserting the retired direct_execution_enabled field is absent) rather than the synthetic non-authority config. Arm A is the positive control — without it a case that passes after the declaration could be passing because the refusal never fired. The second pin drives `declare_lifecycle_operation_process()`, whose docstring reserves the mode to a plane-owned operation record while the function itself is a bare declaration with **zero callers** in `mcp/src` or `mcp/tests`, and shows `durable_store.declared_process_role()` reporting it as a declared writer of every store `mcp` owns. Both are **pins, not endorsements**: authentication is deliberately not implemented (registered as `D-L3-1` in `notes/defect-index.md`), so a future leaf that authenticates the declaration will red these cases and should read the register before repairing them.
+`InstalledCoordinationRootTests` pin the installed-root shape: a root holding `system`, `memory-repos` and `tasks` directories is an installed coordination root with no `skills/` directory, each of the three must be a directory, implicit discovery from the module's own location returns that root while an explicit hint still wins, and a package-source shape with `runtime/skills` and an `AGENTS.md` is not recognised, so discovery falls back to the ancestor default.
+
+The suite also holds **two pins on the execution-mode boundary, and they assert today's behaviour on purpose** (`T30`/`T28`): `declare_execution_mode` is one assignment with no caller identity, PID or parent check, environment proof, signature or operation record, so the boundary checks only *was any mode declared* — `checkout_cli_location` and `require_durable_write_target` both test `is not None`. The first pin is a two-arm case: **arm A** is the plane's real refusal of an undeclared primary checkout and of a write outside any checkout, and **arm B** is that one `declare_execution_mode("mcp")` lifts both and makes `load_config` read the declared fixture settings (preserving the configured coordination root and asserting the retired direct_execution_enabled field is absent) rather than the synthetic non-authority config. Arm A is the positive control — without it a case that passes after the declaration could be passing because the refusal never fired. The second pin drives `declare_lifecycle_operation_process()`, whose docstring reserves the mode to a plane-owned operation record while the function itself is a bare declaration with **zero callers** in `mcp/src` or `mcp/tests`, and shows `durable_store.declared_process_role()` reporting it as a declared writer of every store `mcp` owns. Both are **pins, not endorsements**: authentication is deliberately not implemented (registered as `D-L3-1` in `notes/defect-index.md`), so a future leaf that authenticates the declaration will red these cases and should read the register before repairing them.
 
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
@@ -64,6 +66,9 @@ The retained source anchors below support the fixture roles and assertion bounda
 - Explicit test mode preserves temporary store writes. [8]
 
 - Any mode declaration lifts the primary refusal and the write confinement, with the refusal itself as the positive control. [9]
+
+- An installed coordination root is recognised by its system, memory-repos and tasks directories without a skills directory; a package-source shape is not. [11]
+
 
 - The reserved lifecycle-operation mode is declarable by any caller, and reports as a writer of every store `mcp` owns. [10]
 

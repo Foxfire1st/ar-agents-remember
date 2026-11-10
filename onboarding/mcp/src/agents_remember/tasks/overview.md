@@ -115,7 +115,8 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Task intent-review models, rendering, order and normative allowlists share the canonical answer; open review is visible but absent from ready_ids, and the strict agreed revision rides go.
 
 - Retained reference account (no fresh execution or acceptance inferred): The `task_doc` application entry point authors documents through this package. Anchor: `task_doc_tool` [5]
-- Task intent-review models, rendering, order and normative allowlists share the canonical answer; open review is visible but absent from ready_ids, and the strict agreed revision rides go. [58]
+
+- The master Order table labels a task whose intent review is open in its state cell. [58]
 
 - The persisted route-review record declares the optional base stamp. [56]
 - The exhaustive field taxonomy classifies the stamp as evidence. [57]
@@ -124,7 +125,9 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Retained reference account (no fresh execution or acceptance inferred): Task-document publication rejects a route review missing intent identity. [3]
 - Retained reference account (no fresh execution or acceptance inferred): Mutation classification consumes the accepted/candidate field delta. [4]
 - Retained reference account (no fresh execution or acceptance inferred): Leaf writes keep same-root master rows synchronized through the dedicated planner. [6]
-- Retained reference account (no fresh execution or acceptance inferred): The task-document renderer regenerates markdown from the validated `TaskDocument`. [7]
+
+- Retained reference account (no fresh execution or acceptance inferred): The task-document renderer regenerates markdown from the validated TaskDocument. [7]
+
 - Retained reference account (no fresh execution or acceptance inferred): The persisted worktree contract is the analogous model-to-text precedent. [8]
 - Retained reference account (no fresh execution or acceptance inferred): The persisted-contract peer this schema mirrors. [9]
 - Retained reference account (no fresh execution or acceptance inferred): Task source snapshots and publication. [10]
@@ -134,12 +137,17 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Retained reference account (no fresh execution or acceptance inferred): Ordinal Mermaid identity allocation and rendering. [14]
 - Retained reference account (no fresh execution or acceptance inferred): The field. [15]
 - Retained reference account (no fresh execution or acceptance inferred): Its classification. [16]
+
 - Retained reference account (no fresh execution or acceptance inferred): Its header line. [17]
-- Retained reference account (no fresh execution or acceptance inferred): The declaration model and its refusals. [18]
+
+- Retained reference account (no fresh execution or acceptance inferred): The declaration refusals: a master document, an empty list, a requirementRef naming no listed packet when the requirements list packets, and a repeated subject and effect. [18]
+
 - Retained reference account (no fresh execution or acceptance inferred): The field on the task document. [19]
 - Retained reference account (no fresh execution or acceptance inferred): Its normative classification. [20]
 - Retained reference account (no fresh execution or acceptance inferred): The optional intent slot, absent when undeclared. [21]
+
 - Retained reference account (no fresh execution or acceptance inferred): The header block. [22]
+
 - Retained reference account (no fresh execution or acceptance inferred): The strict lookup and the decision answer. [23]
 - Retained reference account (no fresh execution or acceptance inferred): The one rule for a leaf naming no master, and the sync's own call. [24]
 - Retained reference account (no fresh execution or acceptance inferred): The placement guard. [25]
@@ -156,7 +164,9 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Completed master terminality requires no blockers; abandonment is independent [38]
 - Parent-row stage mirrors the native task document directly, not a step-derived rollup or an independent landing verdict. [39]
 - Master-to-sprint mirroring uses the native commanding census and exact typed/legacy row correlation with named ambiguity/unreadability refusals. [54]
-- Kind separation, retained sprint identity, and leaf-only expected effects are explicit [40]
+
+- Kind separation and leaf-only expected effects are explicit in the TaskDocument after-validator, which also checks sprint rows and seats. [40]
+
 - Registration can replace a mismatched enclosure, while missing derived links are separately filled [41]
 - Canonical placement guards derived write targets [42]
 - Maintenance scope is lifecycle; declarations are normative; invalidation classes are limited [43]

@@ -222,16 +222,15 @@
       ]
     },
     "6": {
-      "note": "Current source authority and actual content conflict cases.\n\nAnchor: `WorktreeSyncTests.test_pure_fast_forward_sync_advances_both_sides_and_contract`; `WorktreeSyncTests.test_code_merge_conflict_is_retained_and_can_continue`; `WorktreeSyncTests.test_sync_uses_source_refs_when_the_cache_is_stale_missing_or_malformed`; `WorktreeSyncTests.test_memory_merge_settles_content_conflicts_in_the_transaction`",
+      "note": "Current source authority case: a pure fast-forward sync advances both sides and the contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
             "content": "sha256:b11cca83b4e3bc23bfae5ce8fad3d08929203cdf21f308683d2930176f6a73e7",
             "locator": {
-              "end": 159,
-              "kind": "line_range",
-              "start": 139
+              "kind": "symbol",
+              "name": "test_pure_fast_forward_sync_advances_both_sides_and_contract"
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -239,12 +238,12 @@
         },
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
             "content": "sha256:90300c8308c8d7bcdd095cbf7b67fbe5375bd3925973e9732342578b43e689bb",
             "locator": {
-              "end": 196,
+              "end": 201,
               "kind": "line_range",
-              "start": 161
+              "start": 166
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -252,12 +251,12 @@
         },
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
             "content": "sha256:09a93975b5fcdccf4989ce4a7ee6d24e7049ccafa78d2ec5abea56f07a19950b",
             "locator": {
-              "end": 224,
+              "end": 229,
               "kind": "line_range",
-              "start": 198
+              "start": 203
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -265,12 +264,12 @@
         },
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
             "content": "sha256:3b0303542991bb45b8c52d7aa4a80fafe5aab7c09493db6cf8512947d8413af0",
             "locator": {
-              "end": 429,
+              "end": 434,
               "kind": "line_range",
-              "start": 343
+              "start": 348
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -278,38 +277,12 @@
         },
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
-            "content": "sha256:77c425778b5efeb27e26e9a031e40cdd3cd56ba85f186e87467d5ce2bb0fec85",
-            "locator": {
-              "end": 147,
-              "kind": "line_range",
-              "start": 127
-            },
-            "path": "mcp/tests/test_worktree_sync.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
-            "content": "sha256:6b3316768eba62f24b83628fed7b6a08f97e86571b84bd167c4d658221b3e3d6",
-            "locator": {
-              "end": 184,
-              "kind": "line_range",
-              "start": 149
-            },
-            "path": "mcp/tests/test_worktree_sync.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
             "content": "sha256:6081c02d296f913bc548c83dd6ce560ba47e6170bafae9cd2e1e1be50a8021bb",
             "locator": {
-              "end": 212,
+              "end": 217,
               "kind": "line_range",
-              "start": 186
+              "start": 191
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -317,12 +290,12 @@
         },
         {
           "anchor": {
-            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
             "content": "sha256:a1bc00041cb9f35447f1610dfa02c1a7c78305a6cd74d37cc7547f304bc911c1",
             "locator": {
-              "end": 417,
+              "end": 422,
               "kind": "line_range",
-              "start": 331
+              "start": 336
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },

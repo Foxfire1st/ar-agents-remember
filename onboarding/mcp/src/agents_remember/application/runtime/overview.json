@@ -113,8 +113,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
-            "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
+            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+            "content": "sha256:108053a14cda04d0e17993e2857e179f64c5761a9c7dc2f5b2bacd8a5881831f",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"
@@ -130,8 +130,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
-            "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
+            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+            "content": "sha256:108053a14cda04d0e17993e2857e179f64c5761a9c7dc2f5b2bacd8a5881831f",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"
@@ -275,12 +275,12 @@
         },
         {
           "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
             "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
             "locator": {
-              "end": 87,
+              "end": 91,
               "kind": "line_range",
-              "start": 75
+              "start": 79
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

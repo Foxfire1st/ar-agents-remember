@@ -12,7 +12,7 @@
 
 Repository-owned pytest isolation and evidence infrastructure. Ordinary pytest bootstrap and certifying startup are distinct. `pytest_bootstrap.py` supplies optional seeded collection ordering, an isolated cache directory for the pytest process, and the check that a test restores owned module-level state. Per-test restored rows, module-boundary reset rows and constant-for-tests rows have distinct treatments in a closed register; the register's collection-reset pass touches only already-loaded product owners. The module fixture separately imports the explicit kernel worktree-service holder and resets that object before and after the module; it is outside the syntactic collection census. The ordinary bootstrap carries no certifying or external-service capability. `certifying_bootstrap.py` admits a Dagger quality process before resolving the candidate test process.
 
-The route also owns instruction-wording registries and readers used to check the shipped instruction corpus. These helpers do not hold an AR seat or author knowledge. Test qualification, completed curation, semantic acceptance and Git publication retain their separate authorities; running a bootstrap or validator does not itself supply acceptance. Canonical skill sources and their sole generated package copy belong to the synchronization owner, `scripts/sync-skills.py`; no harness skill mirror is produced.
+The route also owns the instruction-wording registries, readers, delivery and pointer checks, and capsule audience and budget fixtures used to check the shipped instruction corpus, plus a few single-regression helpers. These helpers do not hold an AR seat or author knowledge. Test qualification, completed curation, semantic acceptance and Git publication retain their separate authorities; running a bootstrap or validator does not itself supply acceptance. Canonical skill sources and their sole generated package copy belong to the synchronization owner, `scripts/sync-skills.py`; no harness skill mirror is produced.
 
 The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.
 
@@ -24,7 +24,9 @@ The closed product-process register now includes agents_remember.kernel.primitiv
 - **Candidate-bound evidence.** `candidate_snapshot.py` gives the Git identity of a working candidate for non-certifying evidence routes. `evidence_provenance.py` records candidate and machine provenance for non-accepting Dagger evidence.
 - **Selection and reporting.** `retry_selection.py` collects the canonical population and executes only explicitly supplied retry files that were collected. `causal_dependency.py` derives exact-node source dependencies; `causal_failures.py` skips nodes identified by a causal preflight report and classifies observed failures. `cadence_runner.py` supplies non-accepting Dagger evidence for scheduled, provider-bump and migration triggers. `pytest_phase_reporter.py` records node outcomes and phase timings.
 - **Condition waits.** `waits.py` supplies synchronous and asynchronous named-condition waits under one shared hang guard. The condition supplies readiness; neither the guard nor the poll interval proves a producer had an opportunity.
-- **Instruction corpus.** `curation_doctrine.py` holds retired curation wording, corrected loop-gate field names and required instruction statements. `retired_leaf_handover_wording.py` holds verbatim retired handover sentences with their source carriers. `leaf_instruction_wording.py` holds affirmative clause tables and normalized readers for wording tests.
+- **Instruction corpus.** `curation_doctrine.py` holds retired curation wording, corrected loop-gate field names and required instruction statements. `retired_leaf_handover_wording.py` holds verbatim retired handover sentences with their source carriers. `leaf_instruction_wording.py` holds affirmative clause tables and normalized readers for wording tests, and `delivered_step`, which reads a named detail through real admission, compilation and launch delivery. `capsule_wording.py` resolves each leaf clause on its delivered role, operation or owning detail section. `coordination_wording.py` and `curator_contracts.py` hold expected coordination and Curator clauses; `curator_instruction_delivery.py` checks the delivered Curator, Reviewer-intake and refused-write wording. `pointer_uniqueness.py` checks that each first message points to a lifecycle file once per action, `manifest_step_derivation.py` derives each manifest reference's step and audience from the actual pointers, and `task_document_instruction_contracts.py` checks the task-authoring pointers, conventions, templates and manifest entries. `instruction_consistency.py` checks that commands, tools, `task_doc` operations and paths named in skills, docs and README exist.
+- **Capsule audience and budgets.** `capsule_audience_fixtures.py`, `capsule_audience_v13_fixtures.py` and `capsule_audience_v13_operation_inverse.py` hold the reviewed pointer actions, clauses and per-stage byte pins, and the inverses that restore current capsule bytes to those pins. `capsule_budget_snapshot.py` holds the frozen capsule-budget measurements; `capsule_budget_d694.py` checks the frozen `capsule-budgets-d694.json` record, and `capsule_budget_d695.py` checks the current `capsule-budgets-current.json` record.
+- **Single-regression helpers.** `agent_eval_checkout_provisioning.py` asserts that agent-eval trial provisioning declares test mode and that the scratch CLI child loads the trial's own settings. `memory_orphan_checkpoint.py` crashes a parked-candidate sync before its journal publish and requires recovery to keep every parked memory file.
 
 ## Construction And Operating Model
 
@@ -32,7 +34,7 @@ Ordinary local pytest uses the reusable bootstrap. Its random-order option defau
 
 Dependency analysis reconstructs the current file population, module ownership and relationships on each build. Per-file facts can be reused from a disposable store using a key that includes the analysis implementation, Python version, module identity, package identity and source bytes. The lane and lifecycle validators compare declarations with that source-derived population and ownership graph.
 
-The instruction helpers retain retired sentences separately from affirmative wording requirements. `curation_doctrine.py` normalizes readings and confines retired-sentence matches to the sources that carried them, across canonical and generated skill surfaces. It also checks loop-gate field wording and compact curation-policy statements. `retired_leaf_handover_wording.py` supplies source/sentence pairs; `leaf_instruction_wording.py` supplies affirmative clause alternatives and normalized checks used by the wording tests. These are wording checks, not semantic acceptance or knowledge verdicts.
+The instruction helpers retain retired sentences separately from affirmative wording requirements. `curation_doctrine.py` normalizes readings and confines retired-sentence matches to the sources that carried them, across canonical and generated skill surfaces. It also checks loop-gate field wording and compact curation-policy statements. `retired_leaf_handover_wording.py` supplies source/sentence pairs; `leaf_instruction_wording.py` supplies affirmative clause alternatives and normalized checks used by the wording tests. The delivery checks read instructions through the product's own admission, compilation and launch composition rather than concatenating source files, and they start no role. These are wording checks, not semantic acceptance or knowledge verdicts.
 
 ### The Two Test Catalogs
 
@@ -86,7 +88,7 @@ The generated route index lists the source files of this route and their cards.
 
 - Retired handover wording is source/sentence data; affirmative wording uses normalized clause alternatives.
 
-- Retired handover wording is source/sentence data; affirmative wording uses normalized clause alternatives. [24]
+- Retired handover wording is source/sentence data. Affirmative wording uses normalized clause alternatives. Each retired sentence is detected only on its own source, and a removed source stays absent. [24]
 
 - The ordinary bootstrap carries no certifying or external-service capability. [1]
 - Certifying setup admits Dagger before it resolves the candidate. [2]
@@ -96,10 +98,14 @@ The generated route index lists the source files of this route and their cards.
 - The union merge attribute for both catalogs. [8]
 - A leaked change of owned module-level state fails the test after restoration. [9]
 - Seeded ordering uses its own random generator. [10]
-- The curation-doctrine registry and the statements a canonical instruction source must make. [13]
+
+- The curation-doctrine registry of retired statements. The statements a compact canonical instruction source must make. [13]
+
 - The lifecycle loader starts with canonical-form findings and then validates against the source tree. [15]
 - The lane loader reports noncanonical lane lists and compares declared files with test modules. [16]
+
 - The registry of retired curation sentences. [17]
+
 - The shared parse refusal explains possible row interleaving and restoration of the landed file. [18]
 - Condition readiness is separate from the shared hang guard. [20]
 - Content identities reuse per-file facts without freezing current graph membership. [21]

@@ -657,8 +657,21 @@
       ]
     },
     "41": {
-      "note": "The ordered ordinary registrar tuple now includes explainer control. The same server selects ordinary versus bound explainer registration.  Anchor: `TOOL_REGISTRARS`, `create_server`",
+      "note": "The ordered ordinary registrar tuple includes explainer control, and the same server adds the bound explainer surface only for a launch that bound it as an explainer seat.\n\nAnchor: `register_explainer_surface`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:37ac1a3d42b41a1bfab8b5e89e34290a66825c96cd886a12e9f14ae72b132ba9",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 308
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
@@ -667,17 +680,6 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
-            "content": "sha256:51f72c9e21d93c397c1cad01152d976e289d22ca230c769b19a5303c8882a204",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
         }

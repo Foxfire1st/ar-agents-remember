@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "802882312b04f50e71322bf7465e4e97e93c605f",
+        "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
         "content": "sha256:75e42ad1c00d4b996d93f3b48b0a99a316bce0e75027910fd393ab6d8e4e4d04",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "802882312b04f50e71322bf7465e4e97e93c605f",
-        "content": "sha256:bef49c5911b65d945691fe32af9a2c3050af7f1ed1bb94b60de2268b870dee7d",
+        "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+        "content": "sha256:586b599d1c6174470873cdde7467bd2649e84850f324f6da59ea2d1181cdf91a",
         "locator": {
           "kind": "file"
         }
@@ -38,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "802882312b04f50e71322bf7465e4e97e93c605f",
-        "content": "sha256:bef49c5911b65d945691fe32af9a2c3050af7f1ed1bb94b60de2268b870dee7d",
+        "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+        "content": "sha256:586b599d1c6174470873cdde7467bd2649e84850f324f6da59ea2d1181cdf91a",
         "locator": {
           "kind": "file"
         }
@@ -55,8 +55,8 @@
     },
     {
       "anchor": {
-        "blob": "802882312b04f50e71322bf7465e4e97e93c605f",
-        "content": "sha256:bef49c5911b65d945691fe32af9a2c3050af7f1ed1bb94b60de2268b870dee7d",
+        "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+        "content": "sha256:586b599d1c6174470873cdde7467bd2649e84850f324f6da59ea2d1181cdf91a",
         "locator": {
           "kind": "file"
         }
@@ -77,11 +77,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "802882312b04f50e71322bf7465e4e97e93c605f",
+            "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
             "content": "sha256:0604516d08bb02b7f16747b3138c7fa9013d3b5eebebfc631ed9b5626bd03c5d",
             "locator": {
               "kind": "symbol",
               "name": "write_provider_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The recovery decision is observed without changing recovery files and shared by preview and recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+            "content": "sha256:40367785c95b36e60a73bdf29499ffeb52503281590084cf625dcc6532311b1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_recovery_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The running daemon's provider map is read through the port and an unread map refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+            "content": "sha256:22c5780c6c4e15d83140af1866284b15941eeb152ac24efe9912499a122d00d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "daemon_provider_extra_args"
             }
           },
           "kind": "code"

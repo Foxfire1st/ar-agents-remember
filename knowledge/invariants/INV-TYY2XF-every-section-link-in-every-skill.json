@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The links stand in c-13 and c-14 and their package copies and point into the l-01 ingestion template; a scan over every skill fails on a dangling section link, which would otherwise send an agent to a section that does not exist."
+  },
+  "applicability": "Every Markdown section link in every skill, in the canonical source and in the packaged copy.",
+  "conditions": [
+    "A link with a # fragment names a file that exists and a section heading that file holds."
+  ],
+  "exclusions": [
+    "Links without a fragment, which the l-01 link-integrity rule covers for l-01."
+  ],
+  "id": "INV-TYY2XF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-sealed-findings.md (sealed acceptance); /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round8-fix-verification-verdict.md (closed in round 8 at a867665b); defect at 8e7d5b2e: c-14 SKILL.md:175, c-13 SKILL.md:359 (Curator 20261109T234034Z, 7377b27f); Architect 234200Z (all-skills pin; c-13 :13/:236/:494 stay); /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round9-fix-verification-verdict.md (round 9: unchanged at 40475ce5)"
+      ],
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "L84-CUR-06",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every section link in every skill resolves, in source and in the package copy; the c-14 and c-13 links to the admission criteria and history rows point at curator-handoff-ingestion.md, which holds those sections.",
+  "status": "proposed",
+  "supersedes": []
+}

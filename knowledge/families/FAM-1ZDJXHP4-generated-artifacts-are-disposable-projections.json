@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Canonical instruction generation, task-document projection and index-independent reads together keep generated artifacts replaceable without creating a second authored authority; no member establishes that boundary across all three artifact types."
+  },
   "guarantee": "An artifact that is generated from another authored source is disposable: task Markdown is a projection of the JSON source of truth and is never parsed back, every skill copy is regenerated from the canonical root tree rather than edited in place, and the read path tolerates an absent derived route index instead of failing.",
   "id": "FAM-1ZDJXHP4",
   "members": [

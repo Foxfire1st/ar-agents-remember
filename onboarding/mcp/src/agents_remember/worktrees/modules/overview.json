@@ -34,14 +34,15 @@
       ]
     },
     "11": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The two entry points and the shared missing-onboarding refusal.\n\nAnchor: `_require_onboarded_sources` `validate_onboarding_traces_for_context`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The shared missing or unsupported sidecar refusal, called by the curator trace entry.",
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:ffb28bf9a4c6e34b73522b62adb283d47dff0aa21f431d42bf02adcaa1e94ce2",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_require_onboarded_sources"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },
@@ -366,14 +367,15 @@
       ]
     },
     "25": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply.\n\nAnchor: `refresh_route_indexes_for_context` `build_route_indexes`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Closeout onboarding refresh uses the context's resolved storage for route-index apply and dry-run preview through build_route_indexes.",
       "targets": [
         {
           "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:146d1e195f9fda3ff811d27e114460685f43291ee4a5aa98893919092af9f6d2",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "refresh_route_indexes_for_context"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },

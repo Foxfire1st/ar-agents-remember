@@ -46,4 +46,4 @@ No meaningful cross-repository boundary participates in this module.
 
 The diagnostic is wholly repository-local.
 
-- The app lifespan starts the diagnostic and trim loops only when their flags are enabled.  Anchor: "def _serving_lifespan(" [1]
+- The app lifespan starts the diagnostic and trim loops only when their flags are enabled. Anchor: `start_heap_tracing` [1]

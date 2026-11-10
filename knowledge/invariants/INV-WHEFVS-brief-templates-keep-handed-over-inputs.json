@@ -1,11 +1,11 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations"
+      "prevents_costly_mistake"
     ],
-    "justification": "Realized in templates/manager-brief.md and templates/worker-brief.md, which keep distinct dispatch value rows after role-text repeats were cut; two files carry the obligation."
+    "justification": "A brief that restates role rules competes with the role and operation files; the brief must carry only the master's values and defer to them."
   },
-  "applicability": "The four brief templates (manager, worker, curator, architect) and their value rows.",
+  "applicability": "The two brief templates (manager, curator) and their value rows.",
   "conditions": [
     "Brief rows carry leaf values; role and operation texts win on disagreement.",
     "Only the approved message-carrier guidance is repeated across templates; no fixed limit or new role/start/write grant is introduced."
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L101",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Brief templates carry handed-over inputs and requested outputs; role/operation sources keep procedural authority. The specifically approved message/file/body/attach/settings/return guidance is a bounded shared transport exception, not permission to duplicate other role procedures.",
   "status": "proposed",

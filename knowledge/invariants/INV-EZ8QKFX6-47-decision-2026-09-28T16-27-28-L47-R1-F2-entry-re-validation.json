@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The local entry-generation provider, explicit review-refresh control and scoped memory-watch hook jointly revalidate entry counts through one callback without introducing another event connection."
+  },
   "applicability": "The re-validation of the task entry's changed-intent summary in the dashboard cockpit.",
   "conditions": [
     "The cockpit provides IntentEntryRevalidation with shown = Operations view and no takeover; without its provider generation remains zero and revalidate is inert.",

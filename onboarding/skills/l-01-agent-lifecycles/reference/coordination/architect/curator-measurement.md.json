@@ -1,0 +1,75 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/coordination/architect/curator-measurement.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Measurement ownership, triggers, tooling location and run binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a87d91798f458610686f5bf7f28f9495cc6f975f",
+            "content": "sha256:079e4a272706cec96f9dcf770c8a598151b61f444ede6c7d62e30f45031c3e88",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Per-case and per-pair reporting, the failure threshold, the loop and the worse-theme reopening rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a87d91798f458610686f5bf7f28f9495cc6f975f",
+            "content": "sha256:1c9e9e03548a2ae9b837ced2a161eee99ec4abc6ed3fa1a32128987ec603b1f7",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Unknown trials are fixed and rerun by the Architect, and token usage is recorded without a spending wait.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a87d91798f458610686f5bf7f28f9495cc6f975f",
+            "content": "sha256:1d47495444f95883d346802ad72c474a3ddd43d60760ef53237f04587e161c76",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The loop is an observation process, not a product or automatic acceptance gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a87d91798f458610686f5bf7f28f9495cc6f975f",
+            "content": "sha256:ba6ad95b1f880d254444229c697270fcf65fe858328977a77f3d874d6c67a18c",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

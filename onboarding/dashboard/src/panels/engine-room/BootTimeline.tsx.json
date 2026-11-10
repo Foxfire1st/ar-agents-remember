@@ -8,6 +8,18 @@
       "targets": [
         {
           "anchor": {
+            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "content": "sha256:8ad3ab8e99817b1e4b23b7b6259fc08e02b0810861d5f984fa3479bfc83258a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "6c6fb3353eaaf5c876e680e34783ef2a1b24b47f",
             "content": "sha256:d5edf7185332fe06cf68e92ecdf66f0ea2a987d10cb1a4103e617bc27e803f71",
             "locator": {
@@ -75,19 +87,6 @@
               "kind": "line_range",
               "start": 74
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
-            "content": "sha256:76e4fbb0eebd8fbc52351462221a1e750d6f4a16012323e44a5facfd2407b8bf",
-            "locator": {
-              "end": 188,
-              "kind": "line_range",
-              "start": 188
-            },
-            "path": "dashboard/src/types/projection.ts"
           },
           "kind": "code"
         }

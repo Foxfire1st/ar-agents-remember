@@ -155,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
             "content": "sha256:4f8406d88a585b0f3f3c9f656cb6f58e31724246d0a9f20578e79d354bcc66c2",
             "locator": {
               "kind": "symbol",
@@ -172,6 +172,18 @@
       "targets": [
         {
           "anchor": {
+            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
+            "content": "sha256:4a22ee9b6321b636b8277d22c6d5fd5735eb65cc24655fd564b6b99b9760dce1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_adopt_gate"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
             "content": "sha256:cab05899bedafd53520adfbc53526a3b92c684ac434bf63cceea0f3d82a66b0a",
             "locator": {
@@ -179,19 +191,6 @@
               "kind": "line_range",
               "start": 187
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
-            "content": "sha256:048cf3be161a39d78b024e226d6b771802e3c125f55e63739e5ba93284db829c",
-            "locator": {
-              "end": 746,
-              "kind": "line_range",
-              "start": 711
-            },
-            "path": "mcp/src/agents_remember/memory/baseline.py"
           },
           "kind": "code"
         }

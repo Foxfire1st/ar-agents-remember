@@ -117,6 +117,22 @@
           "kind": "code"
         }
       ]
+    },
+    "9": {
+      "note": "The common registration example runs `uvx` with the published package and an absolute user-config settings path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83d266c17ed12c87af617e7bf2e0253b3d658475",
+            "content": "sha256:9658e928f6bca748ad6a7fcf2bcca1c0a89d8e59156031b22489aec568b27951",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "examples/mcp/server.example.json"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

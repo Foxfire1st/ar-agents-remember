@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_curator_healing_contracts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each avoided-debt or own-fault-only phrasing yields exactly its one finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53cf14db55f39e9d1020cd2c97ee975f51c977d7",
+            "content": "sha256:66227cf699fc9a450e4833415c52bcfd9f48c82d501d7051009fda3171f72695",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_healing_check_rejects_avoided_debt_and_own_fault_only"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The role's healing clauses, bounded routing and positive repair duties yield no finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53cf14db55f39e9d1020cd2c97ee975f51c977d7",
+            "content": "sha256:740917fa1885083dced340e27b8f16ea9c28aff257b13bf68c2751ba3ebe3e08",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_healing_check_keeps_bounded_routing_and_positive_repair_duties"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

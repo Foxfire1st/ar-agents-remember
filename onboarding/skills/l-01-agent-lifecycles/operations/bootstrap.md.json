@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-        "content": "sha256:40ab756d202e7a3a15c529b28863ca2b42c13f201b0ae945ee7fc4106a5f9982",
+        "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+        "content": "sha256:a3a92cabd39a9494798da6c0006a0e0f3e8676566aa09583f99a4519fb4b87e5",
         "locator": {
           "end": 79,
           "kind": "line_range",
-          "start": 64
+          "start": 61
         }
       },
       "id": "RLZ-942ZBQ",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-        "content": "sha256:8ee46540770891de1b0c855b3e246282462b4f07da29cfbc78f7c3a00cf5ccf1",
+        "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+        "content": "sha256:adf23a3d714aa283da02c408c94a90944eb022ac87242746d3965acf4b63b5f6",
         "locator": {
           "kind": "file"
         }
@@ -40,14 +40,28 @@
   ],
   "references": {
     "1": {
-      "note": "The bootstrap carrier is a taskless free agent whose capsule arrives as session environment.",
+      "note": "The bootstrap carrier is taskless; its first message carries the compiled instructions, and a launch that cannot compile them reports its refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:8ee46540770891de1b0c855b3e246282462b4f07da29cfbc78f7c3a00cf5ccf1",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:09357e84d6f5f7a7cadfd2cd382c470aa0df75a45abeb43bed8894b7c9e055a7",
             "locator": {
-              "kind": "file"
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:bdb5cb67d7e0162a99056fe5d99add434e33e029187db4feb5303f68bcebbfc6",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 121
             }
           },
           "kind": "code"
@@ -55,26 +69,14 @@
       ]
     },
     "10": {
-      "note": "The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline.",
+      "note": "The operation keeps all-role marking and named-step details. Setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:aa80e8ef6408db3454d8527c5e528cb8c7aa2893f13d9fbd93e9e2f8acf729fc",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
             "locator": {
-              "end": 157,
-              "kind": "line_range",
-              "start": 153
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:670007992bc77a0deb89e33ca60bd2bd4cbb880ba68df0f441c6bcab21e3e073",
-            "locator": {
-              "end": 4,
+              "end": 1,
               "kind": "line_range",
               "start": 1
             }
@@ -83,25 +85,62 @@
         },
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:78e6683599d450cfd8d19548cb8ed0a6ab216444e3fdeb52769cb7a31946fee7",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:2673f2b1ad22fdb002fd601f07eb03a13a149c1be955c6a7e022987016693e1b",
             "locator": {
-              "end": 79,
+              "end": 83,
               "kind": "line_range",
-              "start": 71
+              "start": 83
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:b19c3e7d349b86a1829e770cf79d389f01929ffd56721b1097e7c989458ee427",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:5cb472b0a8848ed98be8599614747ebb119fee7b223de4476854dbd712d5069b",
             "locator": {
-              "end": 161,
+              "end": 79,
               "kind": "line_range",
-              "start": 153
+              "start": 77
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:49f3bc779f5dfc6730cbe2aef4aa43978f3c506bf63ebe514b46df0e5ba5a562",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:605b6aa760bb11c98d39713d118d1ce2fe28714dd33b4995b8dd25eff156775e",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
+            "content": "sha256:60920ec89a287e8e3898945af6c235f20293b455c2486dd739ebd4cafa22b9b7",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
           },
           "kind": "code"
         }
@@ -112,28 +151,30 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a969e658eb6bf16c5762b123a0d9df57192cae8",
-            "content": "sha256:e7b8dc44b1eb7b759262123bc0d5a0c7ab662f375819b9bf3b2c7caa8f04a664",
+            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
+            "content": "sha256:d78d785d29729717c81da4e693fc8e4f1e524a41effcdb0c9f06339f9980277e",
             "locator": {
-              "end": 13,
+              "end": 22,
               "kind": "line_range",
-              "start": 3
+              "start": 5
             },
-            "path": "skills/l-01-agent-lifecycles/reference/bootstrap-foundation-d301.md"
+            "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The nine setup steps run through their owning surfaces, from stating what the setup will change to configuring indexing or naming it deferred, with first baseline adoption at step 7 and the knowledge foundation handed to the Architect at step 8.",
+      "note": "The eight setup steps run through their owning surfaces, from explaining what the setup changes to reporting the knowledge foundation's state, with first baseline adoption at step 7.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:8ee46540770891de1b0c855b3e246282462b4f07da29cfbc78f7c3a00cf5ccf1",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:c56d54fd99f6910cf5d10790ab2d0d28fac929f50cc55ce7aad74fa4343da26b",
             "locator": {
-              "kind": "file"
+              "end": 79,
+              "kind": "line_range",
+              "start": 35
             }
           },
           "kind": "code"
@@ -145,10 +186,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:8ee46540770891de1b0c855b3e246282462b4f07da29cfbc78f7c3a00cf5ccf1",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:5cb472b0a8848ed98be8599614747ebb119fee7b223de4476854dbd712d5069b",
             "locator": {
-              "kind": "file"
+              "end": 79,
+              "kind": "line_range",
+              "start": 77
             }
           },
           "kind": "code"
@@ -156,16 +199,16 @@
       ]
     },
     "4": {
-      "note": "Fresh setup orders settings, memory root, the baseline and then the Architect handover; onboarding and the foundation are later task work, not setup steps.\n\nAnchor: \"Read what the baseline will carry, and author none of it.\"",
+      "note": "Fresh setup orders settings, memory root, the baseline and then the Architect handover; onboarding and the foundation are later task work, not setup steps.\n\nAnchor: `### 6. Inspect what the baseline will carry`",
       "targets": [
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:b30e88dc16f750ff31ae0f1d94c07ffee4e9597dd867b7f73ee4e9adef8c8e32",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:eff794644e5f44b23002709a33555eb0e970d34d5d9374f75a4e8d1ec8b5a271",
             "locator": {
-              "end": 87,
+              "end": 79,
               "kind": "line_range",
-              "start": 64
+              "start": 53
             }
           },
           "kind": "code"
@@ -177,10 +220,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:8ee46540770891de1b0c855b3e246282462b4f07da29cfbc78f7c3a00cf5ccf1",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:adf23a3d714aa283da02c408c94a90944eb022ac87242746d3965acf4b63b5f6",
             "locator": {
-              "kind": "file"
+              "end": 141,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -188,14 +233,14 @@
       ]
     },
     "6": {
-      "note": "The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline.",
+      "note": "The operation keeps all-role marking and named-step details. Setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:f823820b500e56f783f1a3022e3bd03c308b4c7310dfdfbd1c491349ce971a28",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
             "locator": {
-              "end": 39,
+              "end": 1,
               "kind": "line_range",
               "start": 1
             }
@@ -204,104 +249,22 @@
         },
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:670007992bc77a0deb89e33ca60bd2bd4cbb880ba68df0f441c6bcab21e3e073",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:2673f2b1ad22fdb002fd601f07eb03a13a149c1be955c6a7e022987016693e1b",
             "locator": {
-              "end": 4,
+              "end": 83,
               "kind": "line_range",
-              "start": 1
+              "start": 83
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:78e6683599d450cfd8d19548cb8ed0a6ab216444e3fdeb52769cb7a31946fee7",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:5cb472b0a8848ed98be8599614747ebb119fee7b223de4476854dbd712d5069b",
             "locator": {
               "end": 79,
-              "kind": "line_range",
-              "start": 71
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:b19c3e7d349b86a1829e770cf79d389f01929ffd56721b1097e7c989458ee427",
-            "locator": {
-              "end": 161,
-              "kind": "line_range",
-              "start": 153
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:d9e819f9404d295d78ea4b58ce75511d25c4915c43b61661e1cc5174f9c99b46",
-            "locator": {
-              "end": 70,
-              "kind": "line_range",
-              "start": 54
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:670007992bc77a0deb89e33ca60bd2bd4cbb880ba68df0f441c6bcab21e3e073",
-            "locator": {
-              "end": 4,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:78e6683599d450cfd8d19548cb8ed0a6ab216444e3fdeb52769cb7a31946fee7",
-            "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 71
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:b19c3e7d349b86a1829e770cf79d389f01929ffd56721b1097e7c989458ee427",
-            "locator": {
-              "end": 161,
-              "kind": "line_range",
-              "start": 153
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:f07c217fb2588656eb3a7281dbe4d9777486e58211c62dca460676a40c144993",
-            "locator": {
-              "end": 106,
               "kind": "line_range",
               "start": 77
             }
@@ -310,10 +273,52 @@
         },
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:670007992bc77a0deb89e33ca60bd2bd4cbb880ba68df0f441c6bcab21e3e073",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:49f3bc779f5dfc6730cbe2aef4aa43978f3c506bf63ebe514b46df0e5ba5a562",
             "locator": {
-              "end": 4,
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:605b6aa760bb11c98d39713d118d1ce2fe28714dd33b4995b8dd25eff156775e",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
+            "content": "sha256:60920ec89a287e8e3898945af6c235f20293b455c2486dd739ebd4cafa22b9b7",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The operation keeps all-role marking and named-step details. Setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
+            "locator": {
+              "end": 1,
               "kind": "line_range",
               "start": 1
             }
@@ -322,51 +327,154 @@
         },
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:78e6683599d450cfd8d19548cb8ed0a6ab216444e3fdeb52769cb7a31946fee7",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:2673f2b1ad22fdb002fd601f07eb03a13a149c1be955c6a7e022987016693e1b",
             "locator": {
-              "end": 79,
+              "end": 83,
               "kind": "line_range",
-              "start": 71
+              "start": 83
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:b19c3e7d349b86a1829e770cf79d389f01929ffd56721b1097e7c989458ee427",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:5cb472b0a8848ed98be8599614747ebb119fee7b223de4476854dbd712d5069b",
             "locator": {
-              "end": 161,
+              "end": 79,
               "kind": "line_range",
-              "start": 153
+              "start": 77
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:49f3bc779f5dfc6730cbe2aef4aa43978f3c506bf63ebe514b46df0e5ba5a562",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:605b6aa760bb11c98d39713d118d1ce2fe28714dd33b4995b8dd25eff156775e",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
+            "content": "sha256:60920ec89a287e8e3898945af6c235f20293b455c2486dd739ebd4cafa22b9b7",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The operation keeps all-role marking and named-step details. Setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:2673f2b1ad22fdb002fd601f07eb03a13a149c1be955c6a7e022987016693e1b",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:5cb472b0a8848ed98be8599614747ebb119fee7b223de4476854dbd712d5069b",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:49f3bc779f5dfc6730cbe2aef4aa43978f3c506bf63ebe514b46df0e5ba5a562",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:605b6aa760bb11c98d39713d118d1ce2fe28714dd33b4995b8dd25eff156775e",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
+            "content": "sha256:60920ec89a287e8e3898945af6c235f20293b455c2486dd739ebd4cafa22b9b7",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
           },
           "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline.",
+      "note": "The operation keeps all-role marking and named-step details. Setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:64f70e17b3d7cedea1208b71edeb267341a28b725e2014eee726b834ee2d663d",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
             "locator": {
-              "end": 125,
-              "kind": "line_range",
-              "start": 108
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:670007992bc77a0deb89e33ca60bd2bd4cbb880ba68df0f441c6bcab21e3e073",
-            "locator": {
-              "end": 4,
+              "end": 1,
               "kind": "line_range",
               "start": 1
             }
@@ -375,25 +483,62 @@
         },
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:78e6683599d450cfd8d19548cb8ed0a6ab216444e3fdeb52769cb7a31946fee7",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:2673f2b1ad22fdb002fd601f07eb03a13a149c1be955c6a7e022987016693e1b",
             "locator": {
-              "end": 79,
+              "end": 83,
               "kind": "line_range",
-              "start": 71
+              "start": 83
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
-            "content": "sha256:b19c3e7d349b86a1829e770cf79d389f01929ffd56721b1097e7c989458ee427",
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:5cb472b0a8848ed98be8599614747ebb119fee7b223de4476854dbd712d5069b",
             "locator": {
-              "end": 161,
+              "end": 79,
               "kind": "line_range",
-              "start": 153
+              "start": 77
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:49f3bc779f5dfc6730cbe2aef4aa43978f3c506bf63ebe514b46df0e5ba5a562",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "content": "sha256:605b6aa760bb11c98d39713d118d1ce2fe28714dd33b4995b8dd25eff156775e",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
+            "content": "sha256:60920ec89a287e8e3898945af6c235f20293b455c2486dd739ebd4cafa22b9b7",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
           },
           "kind": "code"
         }

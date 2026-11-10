@@ -26,11 +26,11 @@
 ### Invariants And Boundaries
 
 - **What is selected does not change:** the rows are `select_recorded_scope`'s items; the reviewer found every real walk's union equal to `select_knowledge_scope`.
-- In a collapsed walk a seed's last page states `enumerationComplete: true` while `continuation` moves on to the next seed; consumers follow `continuation` (R2-2, documented in c-04).
+- In a collapsed walk a seed's last page states `enumerationComplete: true` while `continuation` moves on to the next seed; consumers follow `continuation` until a page carries none (R2-2). The c-04 skill that documented this no longer exists; the current knowledge-use guidance (`skills/l-01-agent-lifecycles/reference/knowledge/use.md`) says to read every page through `continuation` until enumeration is complete and does not state the collapsed-walk case.
 
 ### Todos
 
-- R2-2: the collapsed entry's `counts` has no `remaining` (accepted, ruling 21:32:34).
+- R2-2 counts gap (accepted, ruling 21:32:34) is closed: the collapsed entry's `counts` carries `total`, `returned` (0) and `remaining` (equal to `total`).
 
 ## Evidence
 

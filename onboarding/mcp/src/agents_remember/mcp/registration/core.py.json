@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
-        "content": "sha256:94beaf856da073ad11a5185a4c4b146fda61446305666a69bb15fa0140e9ad3e",
+        "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+        "content": "sha256:fe269adba5522b5fc3243b19d52c6a9a2796d487fc613bd4b0d2d33f88ff1fca",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
+        "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
         "content": "sha256:77aaf76054d694febd932671143e3a4d603210f203a54a1c1c7999e4562dccdd",
         "locator": {
           "kind": "symbol",
@@ -39,30 +39,13 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "Six of the seven payload builders (all but `read_ar_files_payload`).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
-            "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_ar_files_payload"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
-      "note": "The install tool registration whose description states the scaffold-only install.",
+      "note": "The install tool registration whose description states the scaffold install, running-server currentness report and running-dashboard refresh.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
-            "content": "sha256:e7ef247c42233cb2c63e39de6f03de03ec99c917445eb66c0a79869e7ff837c4",
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
@@ -73,14 +56,15 @@
       ]
     },
     "11": {
-      "note": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused.\n\nAnchor: `_register_orientation_tools`",
+      "note": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
-            "content": "sha256:94beaf856da073ad11a5185a4c4b146fda61446305666a69bb15fa0140e9ad3e",
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:77aaf76054d694febd932671143e3a4d603210f203a54a1c1c7999e4562dccdd",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_register_orientation_tools"
             }
           },
           "kind": "code"
@@ -104,30 +88,13 @@
         }
       ]
     },
-    "3": {
-      "note": "`TaskRef` — the locator bundle `resolve_context` packs.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0b7d94fc2a811ecaa875d929ec1242369625dadc",
-            "content": "sha256:099fc8a76c1c3855e16525e55b4246e43e679d8c7af08b945c90347ee2c062d4",
-            "locator": {
-              "kind": "symbol",
-              "name": "TaskRef"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_ref.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
-      "note": "The registration gained the keyword-only `experiment` parameter and builds the run's request itself.\n\nAnchor: `RuntimeInstallRequest`",
+      "note": "The registration takes the keyword-only `experiment` parameter and builds the run's request itself.\n\nAnchor: `RuntimeInstallRequest`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
-            "content": "sha256:293819cf4092e8fcb1936055b547376f8a35905d83296e9375569862c5561114",
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:659f44a97ee634fa227884e9e5816bf543fbfc009d3d0da30be6e482b4e63904",
             "locator": {
               "end": 150,
               "kind": "line_range",
@@ -143,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
             "content": "sha256:dcb834f03fccd05554205c7589796d4f8d2da74c9ba8e718c9dfd370cb513481",
             "locator": {
               "kind": "symbol",
@@ -155,14 +122,15 @@
       ]
     },
     "6": {
-      "note": "Frozen implementation of _register_orientation_tools supporting the stated file behavior.",
+      "note": "`_register_orientation_tools` declares the read-only orientation tools `context_packet` and `read_ar_files` and scrubs the removed `refresh` argument from the advertised schema.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
-            "content": "sha256:94beaf856da073ad11a5185a4c4b146fda61446305666a69bb15fa0140e9ad3e",
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:77aaf76054d694febd932671143e3a4d603210f203a54a1c1c7999e4562dccdd",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_register_orientation_tools"
             }
           },
           "kind": "code"
@@ -174,8 +142,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
-            "content": "sha256:e7ef247c42233cb2c63e39de6f03de03ec99c917445eb66c0a79869e7ff837c4",
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
@@ -190,10 +158,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
-            "content": "sha256:94beaf856da073ad11a5185a4c4b146fda61446305666a69bb15fa0140e9ad3e",
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:4f8406d88a585b0f3f3c9f656cb6f58e31724246d0a9f20578e79d354bcc66c2",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "context_packet"
             }
           },
           "kind": "code"
@@ -205,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
             "content": "sha256:08a3cac0c3fc80034bcf5e1347273b2005f1b3be7af895b9bb2eb027bdd53df0",
             "locator": {
               "end": 69,

@@ -198,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed196c9e349d46271a38ab6a543fb27f6a21c07a",
+            "blob": "66849a0b573249f620bfbe8d70538cd8ae11cd38",
             "content": "sha256:08e9ccac76338c54bdbeb4df5f4904f9af59cbff1c4a2a0560792425d8396e7f",
             "locator": {
               "end": 96,
@@ -211,7 +211,7 @@
         },
         {
           "anchor": {
-            "blob": "ed196c9e349d46271a38ab6a543fb27f6a21c07a",
+            "blob": "66849a0b573249f620bfbe8d70538cd8ae11cd38",
             "content": "sha256:9da299dd4bd36bef6edf8cc49bab7c5a152392d3a145e71b72e6f51cb17650a7",
             "locator": {
               "end": 243,
@@ -224,12 +224,12 @@
         },
         {
           "anchor": {
-            "blob": "ed196c9e349d46271a38ab6a543fb27f6a21c07a",
+            "blob": "66849a0b573249f620bfbe8d70538cd8ae11cd38",
             "content": "sha256:6c6789aeb30ae7e6f25c82d3c71282ee294cc6b15db750db337a48c7d01e9e0d",
             "locator": {
-              "end": 368,
+              "end": 363,
               "kind": "line_range",
-              "start": 346
+              "start": 341
             },
             "path": "docs/design/observable-lifecycle.md"
           },
@@ -462,14 +462,16 @@
       ]
     },
     "37": {
-      "note": "The canvas-host amendment retires old authoring POSTs and the dedicated native presenter launch; retained authoring port and explicit browser readiness remain bounded.",
+      "note": "The canvas-host amendment retires old authoring POSTs and the dedicated native presenter launch; retained authoring port and explicit browser readiness remain bounded.\n\nAnchor: `UnconfiguredPresenterRunner`",
       "targets": [
         {
           "anchor": {
-            "blob": "defe41e155a41e80e5370d6550406aef229719ed",
-            "content": "sha256:317c7d5560a855d0a5900bee7ba60558bd924addc415a1929d30f5c2494315cd",
+            "blob": "42fe920ead2363bb3ad97f88eb8add4854a704a5",
+            "content": "sha256:e03eacd4a00411b97cb3225af821b9af741ff3569f6bddeb31f8d1d9b3d96780",
             "locator": {
-              "kind": "file"
+              "end": 155,
+              "kind": "line_range",
+              "start": 146
             },
             "path": "docs/design/canvas-host.md"
           },
@@ -500,7 +502,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed196c9e349d46271a38ab6a543fb27f6a21c07a",
+            "blob": "66849a0b573249f620bfbe8d70538cd8ae11cd38",
             "content": "sha256:ddac7b86418fbd902379f17d85eff15448093e8e7b068b99147bd7bb9fcfcc41",
             "locator": {
               "end": 17,

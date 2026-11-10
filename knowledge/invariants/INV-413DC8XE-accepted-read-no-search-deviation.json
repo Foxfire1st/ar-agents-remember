@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The notes-folder tests pin the present-but-empty answer for a readable unsearchable directory and preserve the distinct 500 cases, preventing a permission-case repair from changing the wrong boundary."
+  },
   "applicability": "A single-folder read (GET /api/notes/folder) naming a readable-but-unsearchable directory (read permission without search, e.g. mode 0o444) under the notes root.",
   "conditions": [
     "_folder_row skips each entry whose stat fails instead of listing it, so the folder answer carries exists true with empty entries and zero total.",

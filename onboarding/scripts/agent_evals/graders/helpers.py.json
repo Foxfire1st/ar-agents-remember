@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0ab5edfb216f9a764624710e9c346afa0c124294",
-        "content": "sha256:9311e6def8af3d12926de74bcfb4bf12f1c66c6d0621b6202cc8b9d2087447b0",
+        "blob": "52c128239678cdf6d2b31fcddbbb86f2f9bf3c2a",
+        "content": "sha256:562270696f2568f771ef65f04e4d60215da8bfd1602001bc798302ac4190f8a2",
         "locator": {
           "kind": "file"
         }
@@ -25,10 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ab5edfb216f9a764624710e9c346afa0c124294",
-            "content": "sha256:9311e6def8af3d12926de74bcfb4bf12f1c66c6d0621b6202cc8b9d2087447b0",
+            "blob": "52c128239678cdf6d2b31fcddbbb86f2f9bf3c2a",
+            "content": "sha256:562270696f2568f771ef65f04e4d60215da8bfd1602001bc798302ac4190f8a2",
             "locator": {
-              "kind": "file"
+              "end": 342,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

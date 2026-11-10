@@ -1,5 +1,10 @@
 {
-  "admission": "legacy-unassessed",
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Delivered-comparison tests reject missing memory cells and noncommit or unavailable endpoint IDs while preserving the actual landed code commit, preventing historical review from opening a substitute delivery pair."
+  },
   "applicability": "Review of a leaf whose enclosure records a delivery: its closeout or its integration reached a completed or checkpointed state, so the delivery's code and memory endpoints are the records the enclosure holds.",
   "conditions": [
     "The enclosure records which commit its successful landing produced and which memory content commit its closeout published.",

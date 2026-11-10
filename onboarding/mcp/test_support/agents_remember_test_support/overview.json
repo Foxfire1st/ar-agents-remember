@@ -91,11 +91,11 @@
       ]
     },
     "14": {
-      "note": "Retired-wording checks are normalized and surface-specific; compact-policy helper and canonical test use different predicates.\n\nAnchor: `normalize_statement` `retired_statement_findings` `missing_curation_policy_statements`",
+      "note": "Retired-wording checks read a normalized statement. Retired-statement matching is confined to the sources that shipped each sentence. The compact-policy helper reports a source unless every declared clause is present. The canonical test reports each missing declared clause of each compact curation source.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
             "content": "sha256:271d2d23357019e973438aeec81355449cae42d8c0e5c0f6ac4c79380fdf8a5e",
             "locator": {
               "kind": "symbol",
@@ -107,7 +107,7 @@
         },
         {
           "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
             "content": "sha256:4283e2bb761c34415d2c87bf643c62017dc2090c29c30cb06d18000c9f4b60bf",
             "locator": {
               "kind": "symbol",
@@ -119,8 +119,8 @@
         },
         {
           "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:67a7b91537aa4ee924ffc0f7791af8cf4ade43ee51ad27b8bae097057a50126f",
+            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "content": "sha256:debeac8cac97a796bf8a8abb553c6449ce20d0ebe002c6f53f4f7a95202fdee2",
             "locator": {
               "kind": "symbol",
               "name": "missing_curation_policy_statements"
@@ -131,54 +131,28 @@
         },
         {
           "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:b52a2c281e814bea8fa12049e72bdd1dfa031f39e30cd2326990d58e3c3d6391",
+            "blob": "71ccc2132582d64927138c5ee287ee17091b1824",
+            "content": "sha256:43d488b8f085d000371db395f0f9ded1d856123893b2225ad1ea8b29d291e4d4",
             "locator": {
-              "end": 627,
-              "kind": "line_range",
-              "start": 589
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e2aa34ce785d08c8720a6440e2f97c04f950e1ce",
-            "content": "sha256:8a1ec3a16709d860bee5ff85a7629913bfac5f3932ac24c1d429ebf2bf530e81",
-            "locator": {
-              "end": 820,
-              "kind": "line_range",
-              "start": 804
+              "kind": "symbol",
+              "name": "test_each_compact_curation_source_states_its_complete_quality_policy"
             },
             "path": "mcp/tests/test_role_instruction_corpus.py"
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
-            "content": "sha256:bd5eaeccab20cf440b49f03f82b4da4aa1d57faa241444f87db7f6de5da67f43",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "15": {
-      "note": "The current projection generator derives the serialized TypeScript and schema contracts from the Pydantic declarations, folding the served tail fields (`servingBuild`, `watcherHealth`, `checkoutBinding`) that `ServedWorkspaceProjection` declares into the same generated output.\n\nAnchor: `ServedWorkspaceProjection`",
+      "note": "The projection generator derives the serialized TypeScript and schema contracts from the Pydantic declarations and folds the served definitions into the same output. `ServedWorkspaceProjection` declares the served tail fields `servingBuild`, `watcherHealth`, `checkoutBinding`, `buildCurrentness` and `servingProcessId`.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
-            "content": "sha256:df4fd1e4005c972c35bc3ee807f55c44bd65516a99ab58f8c9559537e46172af",
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
+            "content": "sha256:6285abfbfa354b2eb26d261d3b6e727140b5315a3eca3c4be3f17a92d5b20116",
             "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "DEFINITION_RENAMES"
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -186,10 +160,11 @@
         },
         {
           "anchor": {
-            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
-            "content": "sha256:417c2431a934da24b20f221e9f0a06d716367d668c4bf1661c7df98f40533c1a",
+            "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
+            "content": "sha256:6a5949fd85ef75f78bf1d85b77240ece55cca9a3e7665b65a75dd3c0e14d0a9d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "SERVED_TAIL_FIELDS"
             },
             "path": "mcp/src/agents_remember/serving/served_state.py"
           },
