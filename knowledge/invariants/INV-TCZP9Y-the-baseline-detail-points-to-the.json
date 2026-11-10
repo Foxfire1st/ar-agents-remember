@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A detail that restates a rule drifts from the stage text it copies, so a Reviewer follows a superseded rule while the always-loaded stage says another."
+  },
+  "applicability": "The lifecycle baseline-review detail that a Reviewer reads before preparing a baseline review.",
+  "conditions": [
+    "The review operation carries the rule itself, so the detail names and links it rather than copying its sentences."
+  ],
+  "exclusions": [
+    "Other details and templates, which carry their own duties."
+  ],
+  "id": "INV-TCZP9Y",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Baseline detail measures 268 words at its 268 limit and names the review-stage rule without restating it"
+      ],
+      "path": "l205-producer-list"
+    },
+    "handoffEntry": "MIK-R218.4@v1",
+    "leaf": "260928-MIK-L205",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The baseline detail points to the review-stage rule instead of restating it.",
+  "status": "proposed",
+  "supersedes": []
+}

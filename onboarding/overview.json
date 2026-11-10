@@ -2688,12 +2688,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
             "content": "sha256:ccc8390918d834c06073f607a6aaf9bffcd58acbbe4d032ccd858b44c0690592",
             "locator": {
-              "end": 86,
+              "end": 88,
               "kind": "line_range",
-              "start": 76
+              "start": 78
             },
             "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
           },
@@ -2981,7 +2981,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7753e090bc36773c67e31607c93cbb49f25d3f42",
+            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
             "content": "sha256:f99dee2daa7c12f714742a3d1e3cd1c2f61d619b732187ae057690e80770f581",
             "locator": {
               "end": 5318,
@@ -2994,7 +2994,7 @@
         },
         {
           "anchor": {
-            "blob": "7753e090bc36773c67e31607c93cbb49f25d3f42",
+            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
             "content": "sha256:4b1885fa8d857b3d16689566ac3a51f71126997664a24b3733c493165b62e51f",
             "locator": {
               "end": 4751,
@@ -3007,7 +3007,7 @@
         },
         {
           "anchor": {
-            "blob": "7753e090bc36773c67e31607c93cbb49f25d3f42",
+            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
             "content": "sha256:ea28febb5d3a24513ca9e517d91504d8a3846465f62439d0bfb43e4eaa445f50",
             "locator": {
               "end": 5025,
@@ -3033,7 +3033,7 @@
         },
         {
           "anchor": {
-            "blob": "d19f0560fa7568b2e7b32ea5e12a08fb8d06a933",
+            "blob": "7e6c25daf3eb9e6306f3d8198ce2108f26e7783b",
             "content": "sha256:2fb05d08cfa4eb8da599b6c3fd9bcc24e545a5f6d9ac5646fbf6a2ba594ceb0c",
             "locator": {
               "end": 129,

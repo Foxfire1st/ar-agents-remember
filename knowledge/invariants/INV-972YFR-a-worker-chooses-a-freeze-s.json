@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A hand-picked focused suite runs none of the tests that name a changed file or rule without importing it, so a change can pass review and still break tests that already existed; the recorded search is what surfaces them before the freeze."
+  },
+  "applicability": "A Worker freeze of a candidate change and each repair round that follows it, in this lifecycle.",
+  "conditions": [
+    "The search population is the repository's own tracked test files, named by the repository's own paths, tools and test-support folders.",
+    "The searched names are every repository path or bare file name the change touches and every rule, tool or record identifier whose behaviour or text it touches.",
+    "The searched names and the resulting file list are recorded in the freeze report's checks, and that set is run."
+  ],
+  "exclusions": [
+    "A test-support file that the search finds but that no test file uses.",
+    "A whole-suite run, which this rule does not require."
+  ],
+  "id": "INV-972YFR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Independent reviewer search repeats the recorded search (27 direct test files identical; 9 further files via the one-step support expansion; union 36) and the rerun passes 511 tests with 1478 subtests; reader A answer in worker evidence/reader-grades.md"
+      ],
+      "path": "l205-producer-list"
+    },
+    "handoffEntry": "MIK-R218.1@v1",
+    "leaf": "260928-MIK-L205",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A Worker chooses a freeze's focused tests by searching the repository's tracked test files for each touched path or bare name and each touched rule, tool or record identifier, adds the tests that use a matching test-support file, the knowledge lookup's recorded proofs, and its own tests, records the searched names and files in the freeze report's checks, and runs that set, including for a repair.",
+  "status": "proposed",
+  "supersedes": []
+}

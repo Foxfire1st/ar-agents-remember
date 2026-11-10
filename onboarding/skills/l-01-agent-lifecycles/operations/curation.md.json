@@ -515,12 +515,12 @@
         },
         {
           "anchor": {
-            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "blob": "778d8bf121da98696a3b9a8b382007ae99277f00",
             "content": "sha256:4e6bf8994a2889ebd2ead57252c36edc23ec9aaf19e314edbdf5f8746ae40f19",
             "locator": {
-              "end": 114,
+              "end": 118,
               "kind": "line_range",
-              "start": 114
+              "start": 118
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
