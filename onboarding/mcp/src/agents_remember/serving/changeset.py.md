@@ -138,7 +138,7 @@ resource). The live-**code**-worktree requirement that makes `working` meaningfu
 leaf view, the `state`/`stateDetail` pair), so the L4 viewer renders them unchanged; two-commit
 `committed` diffs run against the repository that holds the recorded commits (durable, and it shares
 the worktree's object store), keeping it valid post-cleanup. `_leaf_onboarding_root` picks the live
-worktree's `onboarding/` for `working`, else the repo's, for the `hasSidecar` tagging.
+worktree's `onboarding/` for `working`, else the repo's, for the `hasSidecar` tagging. The selected child need not exist; selection never tries the other root. `None` is returned only when the contract names no memory root for the selected mode.
 
 ### Conventions
 
@@ -178,10 +178,10 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 - **A committed range is two recorded commits or nothing** (260921-ICR-L1) — `mode=committed` reads
   the contract's recorded cells through `recorded_committed_range` and never binds a branch tip or
   the worktree `HEAD`; a side whose landed commit is not recorded yet has **no committed range**, and
-  only an unrecorded **memory** half degrades to an empty list (so the resolved code half is still
+  an unrecorded **memory** endpoint degrades to an empty list (so the resolved code half is still
   published). **How the code half reports that absence changed in 260921-ICR-L25**: it is answered,
   never refused — `leaf_changeset` publishes `state="unrecorded"` with the route's own `stateDetail`
-  sentence and withholds the counter total, because a `404` for a state every live leaf passes
+  sentence alongside counters. The client withholds the counter total, because a `404` for a state every live leaf passes
   through was a browser console error on the page whose accepted criterion is zero (register B6).
   `working` remains the one view whose after-side is a filesystem location, and its own `mode` says
   so.
@@ -251,10 +251,7 @@ has always published for a leaf that does not run memory — while the code half
 recorded commit, is still published. The **code** half carries the same `not-recorded` absence in its
 own return value instead of raising it (the `260921-ICR-L25` section above corrects this paragraph's
 earlier "keeps the refusal" wording: the endpoint *is* the view, so the view still publishes no list
-for it, but the fact is now named in the body rather than refused). Every other absence stays
-a refusal on both sides: `no-repository` (the contract names no repository for that side) and
-`unresolvable` (a recorded commit this checkout does not hold, checked with `git cat-file -e`) are
-broken state, and reporting either as an empty range would publish a measurement the caller never made.
+for it, but the fact is now named in the body rather than refused). Once recorded endpoint admission runs, other endpoint errors propagate. When the selected repository is `None`, the function returns an empty list and an empty detail before that admission; a missing side worktree in working mode returns the same pair. An unresolvable recorded commit is refused rather than reported as an exact range.
 `leaf_file_diff`'s committed branch now reads both sides from `recorded.repository`, so the before/after
 content comes from the same recorded pair as the path list.
 
@@ -262,9 +259,8 @@ content comes from the same recorded pair as the path list.
 `worktree-HEAD → worktree`, the one view whose after-side is a filesystem location, and its own `mode`
 says so. The two modes are never mixed.
 
-- **The two sides resolve independently, with the code half carrying its named absence in the return value while only an unrecorded memory half degrades to empty.** [7]
+- **The caller resolves each side independently. An unselected repository returns an empty range before endpoint admission. Among entered endpoint errors, only not-recorded is caught: code carries a detail and memory carries none; other endpoint errors propagate.** [7]
 
-- The committed branch of the file diff, now reading both sides from the recorded range's own repository. [8]
 
 - The doc-reader entry point that publishes the `committed` view's `state`/`stateDetail` and states the live-worktree requirement for `working`. [9]
 
@@ -298,7 +294,6 @@ limit widening. `LeafSummary` rows carry the new `state` (`committed`/`working`,
 `_leaf_state`).
 
 
-- **The thin delegating entry: pins in, selection resolved, endpoint-to-endpoint diffs per side, `generation` + `currentness` + `scope` published; unknown master degrades, missing code endpoints refuse.** [12]
 
 - **One side's net between two validated commits: empty pair degrades to `[]`, failed read refuses as `unresolvable`, missing repository refuses as `no-repository`.** 
 - **The pinned AFTER side: live integrated result unpinned, exact recorded tip pinned; unresolvable pins refused, never re-resolved.** [14]
@@ -326,8 +321,7 @@ still not a measurement.
 
 `_leaf_range` now returns `tuple[list[dict[str, Any]], str]` — the range plus that side's named
 absence — and only the code side ever carries one. The `RecordedEndpointAbsent` it catches with
-`kind == NOT_RECORDED` is **carried, not raised**; `no-repository` and `unresolvable` still raise on
-both sides, and the memory side's unrecorded endpoint still degrades to the same `[], ""` it has
+`kind == NOT_RECORDED` is **carried, not raised**; other errors raised by endpoint admission still propagate. A missing selected repository returns `[], ""` before admission. The memory side's unrecorded endpoint still degrades to the same `[], ""` it has
 always published for a leaf that does not run memory. `leaf_changeset` publishes the carried
 sentence as `state: "unrecorded"` / `stateDetail` on the body, so **the two states the L1 account
 collapsed stay apart**: a leaf whose endpoint nothing has recorded yet is *unrecorded*, which is not
@@ -361,7 +355,6 @@ an empty `stateDetail`.
 
 
 
-- All three change-set routes share and return one app-owned conditional-read cache. [28]
 
 
 - Only actual successful response bytes get the ETag/no-cache and matching bodyless 304 path.
@@ -380,3 +373,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/worktree
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/worktree_contract.py:246-685 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The committed branch of the file diff, now reading both sides from the recorded range's own repository.  Anchor: `leaf_file_diff` [8]
+- **The thin delegating entry: pins in, selection resolved, endpoint-to-endpoint diffs per side, `generation` + `currentness` + `scope` published; unknown master degrades, missing code endpoints refuse.**  Anchor: `master_changeset` [12]
+- All three change-set routes share and return one app-owned conditional-read cache.  Anchor: `register_changeset_routes` [28]

@@ -10,7 +10,7 @@ Prepares derived route-index inputs and compact worklist/gate/proof-coverage sum
 
 ## Code Commentary
 
-build_route_indexes calls the missing-index owner, which leaves existing stale bytes untouched. A FileNotFoundError becomes a named onboarding-root build error only when the code root exists and onboarding root is absent; other cases re-raise. without_proof projects converted invariant coverage as informational rows/problem, returning None when unavailable under that owner. knowledge_briefs summarizes only already supplied worklist and gate results, omitting absent inputs.
+build_route_indexes calls the missing-index owner, which leaves existing stale bytes untouched. An absent onboarding collection produces zero routes and no build error; invalid-root exceptions propagate from the owner. without_proof projects converted invariant coverage as informational rows/problem, returning None when unavailable under that owner. knowledge_briefs summarizes only already supplied worklist and gate results, omitting absent inputs.
 
 ## Invariants And Boundaries
 

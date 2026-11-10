@@ -440,25 +440,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
-            "content": "sha256:dfd4223af6cc1abfd7ff62be6523ce9ffbdf6cd366929876a167e5e5e9c111de",
+            "blob": "ddb1be4adab8f7eae3ab91bc1c28476e00fd369a",
+            "content": "sha256:c936856b1402a7002c4e4f693dd6206459d1f0dfd34e958905af289a8090f2b8",
             "locator": {
-              "end": 391,
-              "kind": "line_range",
-              "start": 391
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
-            "content": "sha256:dfd4223af6cc1abfd7ff62be6523ce9ffbdf6cd366929876a167e5e5e9c111de",
-            "locator": {
-              "end": 2679,
-              "kind": "line_range",
-              "start": 2679
+              "kind": "file"
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

@@ -439,7 +439,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
             "content": "sha256:79c38491a2024c9ac0a828ac715c5af603d91e6b206a871d671ae7c660e11daa",
             "locator": {
               "kind": "symbol",
@@ -451,7 +451,7 @@
         },
         {
           "anchor": {
-            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
             "content": "sha256:a9befde4b5936a384a7ed09a1e2ddc0a9c52af4a88f1955b2b44d9a99200c818",
             "locator": {
               "kind": "symbol",
@@ -463,7 +463,7 @@
         },
         {
           "anchor": {
-            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
             "content": "sha256:a6fcc7a15019b01f3e3984df1fa653a8ff8650070ac1d0b537f19b24797e8249",
             "locator": {
               "kind": "symbol",
@@ -550,7 +550,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
+            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
             "content": "sha256:60c738fbff7f8b76f037ac59d0174391ef8e585d380a03a671edb65809cf2021",
             "locator": {
               "kind": "symbol",
@@ -8016,19 +8016,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
-            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
-            "content": "sha256:a9b5bf86d991de4050804e2263855e4126d2f150446b64fc6feaebe635b5253e",
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
+            "content": "sha256:fcb6171af4b6ce478f7e35c607afdb9bc26a2f753de4637bc5dfcb308c8b5c2e",
             "locator": {
               "kind": "file"
             },

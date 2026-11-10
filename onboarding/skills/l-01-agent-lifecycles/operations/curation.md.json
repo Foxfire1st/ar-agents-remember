@@ -686,12 +686,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
-            "content": "sha256:d1e531da9a371645d8f644c6299c98d3bf2b309a3c7c8826095389523c3467e9",
+            "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
+            "content": "sha256:cedcdbd5cf960e1ec08e535abc2e8d739e43963cb736ad9bbcb1faed388ca748",
             "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 3
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator/repository-foundation.md"
           },

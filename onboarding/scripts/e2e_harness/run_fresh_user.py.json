@@ -54,18 +54,15 @@
       ]
     },
     "4": {
-      "note": "The acceptance the entry point drives. Anchor: `run_fresh_user_acceptance`",
+      "note": "Anchor: `run_fresh_user_acceptance`",
       "targets": [
         {
           "anchor": {
-            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
-            "content": "sha256:29b0e83d4ec7c70e1cb2964cf30c36865f5c8db082d1f8b0a948a41c6c8a11a5",
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:352e3a5162ce41991abc596e7c4a90cb4dfbf086c5832cd295ee254a541174aa",
             "locator": {
-              "end": 1018,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+              "kind": "file"
+            }
           },
           "kind": "code"
         }
@@ -124,12 +121,12 @@
         },
         {
           "anchor": {
-            "blob": "9ead5f8fef6cae65071f901d98d590135a93e2c5",
+            "blob": "ddb1be4adab8f7eae3ab91bc1c28476e00fd369a",
             "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
             "locator": {
-              "end": 4816,
+              "end": 4862,
               "kind": "line_range",
-              "start": 4799
+              "start": 4845
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

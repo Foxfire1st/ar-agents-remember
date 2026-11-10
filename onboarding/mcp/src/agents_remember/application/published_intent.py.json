@@ -750,7 +750,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
             "content": "sha256:6eaf168c3acb84d55f616b2a2053c0747cfd9887fc8bacefca126202e04ad038",
             "locator": {
               "kind": "symbol",
@@ -853,49 +853,14 @@
       ]
     },
     "44": {
-      "note": "Unconverted roots refuse retired database selection and mounted tools open no legacy database.\n\nAnchor: `test_an_unconverted_memory_root_refuses_the_retired_database_selection` `test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database`",
+      "note": "Unconverted roots refuse retired database selection and mounted tools open no legacy database.\n\nAnchor: `test_an_unconverted_memory_root_refuses_the_retired_database_selection`",
       "targets": [
         {
           "anchor": {
-            "blob": "f158a3201f14ff80393fad28555b022b5b22dd25",
-            "content": "sha256:0cf7e5b796c12424500d39803ac9f1253c63edb72f172343a974b97005cbe132",
+            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
+            "content": "sha256:5409d0e9fb3fdec4d1d4b3c9f2698f604b07311725b47559e71c721754107617",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/tests/test_knowledge_index_reuse.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_knowledge_index_surfaces.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f158a3201f14ff80393fad28555b022b5b22dd25",
-            "content": "sha256:455cfb2088d34d872658261dfddba9e8e266bf30d43bb40d532e8b5a4fae450f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unconverted_memory_root_refuses_the_retired_database_selection"
-            },
-            "path": "mcp/tests/test_knowledge_index_reuse.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:35cd6c3d19d38de1c42fefdcc64d139ae6134334dfae7d81d6fc76e74a1bfd45",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
             },
             "path": "mcp/tests/test_knowledge_index_surfaces.py"
           },

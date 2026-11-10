@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+        "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
         "content": "sha256:6fe196a093f0db79a902b8a5b01fd41db223390679bb223e905753094647872c",
         "locator": {
           "end": 59,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+        "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
         "content": "sha256:03976d0884745ebcb81bf413b489a981683f962b97829625dab51bded6fd411a",
         "locator": {
           "end": 99,
@@ -46,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
             "content": "sha256:c021956a31dbdef4bc6a0d4266b9ced7d3f0aca55df4140b86b859dfbbc09b88",
             "locator": {
               "end": 62,
@@ -59,16 +59,14 @@
       ]
     },
     "10": {
-      "note": "The Stability section is the semver promise: skill IDs (its examples are `l-01-agent-lifecycles` and `c-10-adopt-memory-baseline`), MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals, provider internals and prompt wording may change in minor releases.",
+      "note": "The Stability section is the semver promise: skill IDs (its example is `l-01-agent-lifecycles`), MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals, provider internals and prompt wording may change in minor releases.",
       "targets": [
         {
           "anchor": {
-            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
-            "content": "sha256:adc07978b19e471120959adc17b0a46d99b8019ec2f4985ed2e2b7b71a993b8c",
+            "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
+            "content": "sha256:eef0ba41df24d59ce1d3bbcbab30f84820dfd752f923ea131a6030019adacf8d",
             "locator": {
-              "end": 344,
-              "kind": "line_range",
-              "start": 341
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -80,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
             "content": "sha256:f6e757f50314de45ed752df3d2fb828221716fb822264b73bd592d3f9fb919ad",
             "locator": {
-              "end": 349,
+              "end": 359,
               "kind": "line_range",
-              "start": 345
+              "start": 355
             }
           },
           "kind": "code"
@@ -129,18 +127,16 @@
       ]
     },
     "14": {
-      "note": "The install procedure the readme mirrors.\n\nAnchor: `c-13-install-and-onboard`",
+      "note": "The install procedure the readme mirrors.",
       "targets": [
         {
           "anchor": {
-            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
-            "content": "sha256:27fd0bc677f240fbb0d90d8fb004ce40e9a84a1e2e89b7aa715b8490980ee6bf",
+            "blob": "b0363044160707d9cbda3a899dfe7a3ecf14c039",
+            "content": "sha256:f14c7c6c06c55e02c76e7a6e6e81d57b79d4f822df61f86b0d580eeeaecda7b0",
             "locator": {
-              "end": 12,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
-            "path": "skills/c-13-install-and-onboard/SKILL.md"
+            "path": "docs/install/README.md"
           },
           "kind": "code"
         }
@@ -169,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
             "content": "sha256:cfc2442abcd89f0f6ac580ddda0d814be98ed874c4f7f9f8f4284e46689b0949",
             "locator": {
               "end": 79,
@@ -186,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
             "content": "sha256:27793a31e5e56505cb00d8e7fa4ecad35c2f727a103c20e651e8fc3f3d5ffeaf",
             "locator": {
               "end": 87,
@@ -203,7 +199,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
             "content": "sha256:7f95c3891cf1e4950fc64248166cc640c8aeea667a34e480bce777ae0ec69599",
             "locator": {
               "end": 94,
@@ -220,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
             "content": "sha256:515e4250e11db78df186d6ca3ec9c9b90b18f523e872f835593f936c3d844f90",
             "locator": {
               "end": 147,
@@ -237,12 +233,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
             "content": "sha256:2e7b87f694e25f5246c8da610a5c228a5b58305d437642929f71b59288ba1ebc",
             "locator": {
-              "end": 205,
+              "end": 215,
               "kind": "line_range",
-              "start": 192
+              "start": 202
             }
           },
           "kind": "code"
@@ -254,12 +250,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
-            "content": "sha256:494442df03359fd933e1c1ab37291fa8b66402a80d3363e4112ba2f255b1cc0a",
+            "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
+            "content": "sha256:eef0ba41df24d59ce1d3bbcbab30f84820dfd752f923ea131a6030019adacf8d",
             "locator": {
-              "end": 190,
-              "kind": "line_range",
-              "start": 148
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -271,12 +265,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
-            "content": "sha256:ffe17e6a8769eaf1d0b1f1144f126566edc8964fcc6ba495f9af7cca15ad2c42",
+            "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
+            "content": "sha256:eef0ba41df24d59ce1d3bbcbab30f84820dfd752f923ea131a6030019adacf8d",
             "locator": {
-              "end": 334,
-              "kind": "line_range",
-              "start": 207
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -288,12 +280,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd794d749ef0f3fe567de09a7ed38fae11844630",
+            "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
             "content": "sha256:d546aaa363b582fce1db67b5923a961ffd8c39773e299dbc9525cd671d97a244",
             "locator": {
-              "end": 340,
+              "end": 350,
               "kind": "line_range",
-              "start": 335
+              "start": 345
             }
           },
           "kind": "code"

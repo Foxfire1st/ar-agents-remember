@@ -1,7 +1,6 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
       "guarded_by_test"
     ],
     "justification": "The setup operation and installer must agree on initialization, attributed baseline and truthful state handover; the Architect/Curator continuation owns actual foundation authoring in its real task."
@@ -29,7 +28,7 @@
     "leaf": "260928-MIK-L45",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "New-repository setup runs memory_init and attributed baseline adoption without authoring onboarding or running its fixer, reports the knowledge state and tells the developer to start the Architect; the Architect opens the regular foundation task whose Curator authors against the required memory commit.",
   "status": "proposed",

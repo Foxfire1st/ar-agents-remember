@@ -23,7 +23,7 @@
     "leaf": "260928-MIK-L113",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "mcp/src/agents_remember/mcp/tools",
     "mcp/src/agents_remember/cli",
@@ -31,7 +31,6 @@
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/kernel/primitives",
     "dashboard/src/panels/detail-panel",
-    "skills/c-14-knowledge-bootstrap",
     "skills/l-01-agent-lifecycles"
   ],
   "schema": "ar-family/v1",

@@ -164,27 +164,16 @@
       ]
     },
     "7": {
-      "note": "A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist, and since MIK-R28 it also hands the checklist the \"without proof\" list (`None` for an unconverted tree).  Anchor: `resolve_leaf_memory_scope` `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist`",
+      "note": "A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist, and since MIK-R28 it also hands the checklist the \"without proof\" list (`None` for an unconverted tree).  Anchor: `resolve_leaf_memory_scope` `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist`\n\nAnchor: `resolve_leaf_memory_scope`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
-            "content": "sha256:a9b5bf86d991de4050804e2263855e4126d2f150446b64fc6feaebe635b5253e",
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
+            "content": "sha256:fcb6171af4b6ce478f7e35c607afdb9bc26a2f753de4637bc5dfcb308c8b5c2e",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_scope.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
-            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
           "kind": "code"
         }

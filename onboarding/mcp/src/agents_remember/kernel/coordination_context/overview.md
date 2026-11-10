@@ -22,7 +22,7 @@ root-selection route, parses settings, and calls `build_coordination_context` to
 - With `hints.onboarding_root`, the supplied onboarding path selects its own route. Topology is inferred
   from that path; settings supply the coordination and memory roots. A memory-worktree hint can select
   settings from the official memory repository. A loaded contract can subsequently select the effective
-  memory root and its existing onboarding and docs children.
+  memory root and always its onboarding child when it names a memory worktree, even before that child exists. Docs retain their existing existence-based selection.
 - Without that hint, `detect_coordination_selection` uses an explicit settings path when supplied;
   otherwise it selects the external root `<coordination root>/memory-repos/ar-<name>` when it exists.
   A missing selected memory root raises `MissingMemoryError`, whose message names the coordination root
@@ -133,7 +133,6 @@ path and its resolved target; `observed_path_exists` records both present and ab
 - The contract-file surface the resolver may use. [5]
 - A request without a contract reader is refused; an onboarding-root hint selects its own path. [6]
 - Root selection: explicit settings, the removed repository root, the external root, the missing-memory error. [7]
-- The context takes task root, worktree group, memory mode, worktrees and ledger path from the contract. [8]
 
 
 - The memory mode a topology implies. [9]
@@ -158,3 +157,5 @@ path and its resolved target; `observed_path_exists` records both present and ab
 - A path's existence as a recorded selection row. [20]
 
 - A skipped settings file of higher priority and a JSON-only settings file are recorded. [21]
+
+- The context takes task root, worktree group, memory mode, worktrees and ledger path from the contract. [8]

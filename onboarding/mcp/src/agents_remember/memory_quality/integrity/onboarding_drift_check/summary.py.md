@@ -22,7 +22,7 @@ The converted summary explicitly calls the shared converted checker with `includ
 
 ### Logic
 
-`run_drift_summary` refuses an absent onboarding root and an unreadable converted onboarding directory. Converted trees delegate to `_run_converted_summary`; nonconverted trees return a format-refusal error. `not_checked` returns only `status: notChecked`. Explicit `output.write_report=False` files neither report nor observer snapshot.
+`run_drift_summary` accepts an absent onboarding root on converted memory and measures zero cards. An existing non-directory onboarding path or a failed converted-tree measurement returns an error. Converted trees delegate to `_run_converted_summary`; nonconverted trees return a format-refusal error. `not_checked` returns only `status: notChecked`. Explicit `output.write_report=False` files neither report nor observer snapshot.
 
 Explicit report-producing calls also persist `actionableFingerprint` over the complete converted stale-reference finding population, not the bounded preview, counts or a clock. `_actionable_fingerprint` canonicalizes each row and sorts before hashing. An unreadable converted sidecar leaves that identity unknown (`None`). Current discovery is the converted checker, not removed legacy classification through `drift.py`.
 
@@ -69,7 +69,6 @@ The concrete snapshot filename is derived by the shared `drift_snapshot_path` he
   reason and no counts. An optional `KnowledgeBasePort` base selects the comparison base; the memory
   layer owns no base, the application callers that own a contract bind it.
 
-- A converted tree is measured from the converted check alone; legacy discovery never runs there. [10]
 
 
 
@@ -86,7 +85,6 @@ The concrete snapshot filename is derived by the shared `drift_snapshot_path` he
 
 - DriftSummaryPacket imports the canonical DriftStatus owner and retains optional converted measurement fields; the classification set is removed. [3]
 
-- The context-packet wire model that validates this packet's `status` — the one that used to lack `error`. [4]
 
 
 
@@ -100,6 +98,9 @@ The concrete snapshot filename is derived by the shared `drift_snapshot_path` he
 
 
 
-- Current source account and its stated boundaries. [15]
 
 - The tool response model that validates the same packet. [5]
+
+- The context-packet DriftSummary wire model validates the shared status vocabulary and exposes optional error diagnostics. [4]
+- A converted tree is measured from the converted check alone; legacy discovery never runs there. [10]
+- Current source account and its stated boundaries. [15]

@@ -114,13 +114,14 @@ The README routes readers into the split documentation tree and gives the curren
 - The quickstart is a short, harness-agnostic three-step agent-driven flow: copy `examples/mcp/settings.example.json` to the user-config settings path, register the locally built wheel with `uvx --config` by adapting the common registration example and restart the harness once, then make one `role_start(role="bootstrap", request_id="<UUID>")` call whose dashboard chat continues setup; no starter package, rendered settings or skill folder is copied. [5]
 
 - The `## Run The Dashboard` section: local-wheel build/sync and install first-class, `dashboard` with an optional `--config` that reads the user-config settings file independently of the working directory, daemon mode + autoStart, and the historical published pin named as the 3.13 artifact. [7]
-
 - The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes the one served package copy and `scripts/sync-runtime.py` as the runtime-asset helper, points harness registration at the common MCP registration example, states that the installed runtime carries no `skills/` folder, and notes the workspace-first `<workspace>/ar-coordination/` default. [8]
+- The Stability section is the semver promise: skill IDs (its example is `l-01-agent-lifecycles`), MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals, provider internals and prompt wording may change in minor releases. [10]
+- The install procedure the readme mirrors. [14]
+
 
 
 - The README's Status first paragraph distinguishes the Python 3.14 source candidate from the historical Python 3.13 artifact at the same `3.0.0rc8` version, states core-path and harness maturity, and sends stability guarantees to Stability and release notes to GitHub Releases, the canonical changelog rather than a local CHANGELOG.md. Its second paragraph describes the 3.0 arc with the rc settling caveat; it is not authority to restore product-owned session or gate surfaces. [9]
 
-- The Stability section is the semver promise: skill IDs (its examples are `l-01-agent-lifecycles` and `c-10-adopt-memory-baseline`), MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals, provider internals and prompt wording may change in minor releases. [10]
 
 - The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). [11]
 
@@ -174,7 +175,6 @@ The README distinguishes deterministic hooks and pull-request checks from lifecy
 The product's install brings the Paseo host: the `runtime_install` step fetches the build's own Node, installs the host release the packaged contract names and starts it, so a user who follows the install types no host command. `agents-remember dashboard --daemon` makes sure the host runs; stopping or restarting the dashboard never stops it, and `agents-remember paseo stop --config <file>` remains the one host-stop command. `agents-remember dashboard --status` prints one line for the dashboard and one for the host.
 
 
-- The install procedure the readme mirrors. [14]
 
 
 - The dashboard daemon start ensures the dashboard daemon and then the host. [15]

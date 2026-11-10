@@ -227,19 +227,14 @@ The curator role's `tools` list requests `knowledge_write` beside `knowledge_rea
 - The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [6]
 
 - The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message. [9]
+- The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message. [22]
+- The authored source owns this contract; the distribution copy is not a separate authority. [27]
+- All nine operation entries declare audience selection. The references registry contains 50 entries, 38 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. Anchor: `references` [29]
+- The manifest declares audience selection for all nine operations and records 50 reference entries, 38 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. Anchor: `composition_order` [30]
+- The registry contains 38 non-injected step-detail entries, including `refused-write` and `writing/visual-explainers`. Named readers and steps are declarations, not proof that a particular role read a file. [33]
 
 - The manifest retains canonical Investigator with seven declared tool IDs and separately names Bootstrap; the current public LauncherRole roster has eight canonical roles plus the system-specialist alias, not a second Investigator role. [14]
 
 - The role registry itself and the two role entries that show the per-seat shape. [18]
 
 - The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [19]
-
-- The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message. [22]
-
-- The authored source owns this contract; the distribution copy is not a separate authority. [27]
-
-- All nine operation entries declare audience selection. The references registry contains 50 entries, 38 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. Anchor: `references` [29]
-
-- The manifest declares audience selection for all nine operations and records 50 reference entries, 38 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. Anchor: `composition_order` [30]
-
-- The registry contains 38 non-injected step-detail entries, including `refused-write` and `writing/visual-explainers`. Named readers and steps are declarations, not proof that a particular role read a file. [33]

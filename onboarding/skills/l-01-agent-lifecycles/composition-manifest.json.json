@@ -563,7 +563,7 @@
         },
         {
           "anchor": {
-            "blob": "71ccc2132582d64927138c5ee287ee17091b1824",
+            "blob": "74bff535a61ae8c8531da0c57aee985359afb57e",
             "content": "sha256:11d5e725544b800c18eb49ec2165f047ec61603bda9a2b143868f6fa4386622d",
             "locator": {
               "kind": "symbol",
@@ -725,11 +725,9 @@
         {
           "anchor": {
             "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:2db2cc5a149110b6a8e475c3ae681257b43214afc58111ab8b63448114494b50",
+            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
             "locator": {
-              "end": 1092,
-              "kind": "line_range",
-              "start": 529
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -813,9 +811,7 @@
             "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
             "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
             "locator": {
-              "end": 1093,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -823,40 +819,14 @@
       ]
     },
     "29": {
-      "note": "All nine operation entries declare audience selection. The references registry contains 50 entries, 38 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. Anchor: `references`",
+      "note": "All nine operation entries declare audience selection. The references registry contains 50 entries, 38 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. Anchor: `references`\n\nAnchor: `references`",
       "targets": [
         {
           "anchor": {
             "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:fc8662c1aa3d27c2638c948df760a542894843b33317c640ea7521d5f0afd2db",
+            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
             "locator": {
-              "end": 132,
-              "kind": "line_range",
-              "start": 36
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:9c9d5cb4d21cf2f345b83ff0c12ce1c48f29d5a2469abafb7f39e808ab7f4d4d",
-            "locator": {
-              "end": 1081,
-              "kind": "line_range",
-              "start": 529
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:f618e05f91ea1d7cb0cdcd8a8eb245c92df41e6c2000f284e03e1031e232e098",
-            "locator": {
-              "end": 172,
-              "kind": "line_range",
-              "start": 158
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -881,52 +851,14 @@
       ]
     },
     "30": {
-      "note": "The manifest declares audience selection for all nine operations and records 50 reference entries, 38 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. Anchor: `composition_order`",
+      "note": "The manifest declares audience selection for all nine operations and records 50 reference entries, 38 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. Anchor: `composition_order`\n\nAnchor: `composition_order`",
       "targets": [
         {
           "anchor": {
             "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:fc8662c1aa3d27c2638c948df760a542894843b33317c640ea7521d5f0afd2db",
+            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
             "locator": {
-              "end": 132,
-              "kind": "line_range",
-              "start": 36
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:9c9d5cb4d21cf2f345b83ff0c12ce1c48f29d5a2469abafb7f39e808ab7f4d4d",
-            "locator": {
-              "end": 1081,
-              "kind": "line_range",
-              "start": 529
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:55abbf67bbcc1336fda8760504da813ee3c7f16b582499cb76817eb5f920c92f",
-            "locator": {
-              "end": 1093,
-              "kind": "line_range",
-              "start": 1082
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:f618e05f91ea1d7cb0cdcd8a8eb245c92df41e6c2000f284e03e1031e232e098",
-            "locator": {
-              "end": 172,
-              "kind": "line_range",
-              "start": 158
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -985,11 +917,9 @@
         {
           "anchor": {
             "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:9c9d5cb4d21cf2f345b83ff0c12ce1c48f29d5a2469abafb7f39e808ab7f4d4d",
+            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
             "locator": {
-              "end": 1081,
-              "kind": "line_range",
-              "start": 529
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -1148,11 +1078,9 @@
         {
           "anchor": {
             "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:2db2cc5a149110b6a8e475c3ae681257b43214afc58111ab8b63448114494b50",
+            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
             "locator": {
-              "end": 1092,
-              "kind": "line_range",
-              "start": 529
+              "kind": "file"
             }
           },
           "kind": "code"

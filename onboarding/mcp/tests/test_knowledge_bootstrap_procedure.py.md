@@ -23,19 +23,19 @@ This account is current source interpretation only. It creates no executed test/
 - [6]
 
 - The bootstrap free-agent capsule compiles with no task document, and its emitted foundation-state detail reaches the foundation procedure. [8]
+- Anchor: Served catalog procedure bytes are compared. [10]
+- Every printed invocation is placeholder-filled and run through the shipped parser for subcommand and option arity; bootstrap is not executed. [11]
+- The compiled-Curator-shape test checks the actual delivered foundation pointer and procedure text. Its docstring explicitly limits this to compiler shape and admits no taskless Curator; foundation authoring requires real task admission. These are source assertions, not a workflow run. [12]
+- Anchor: Current setup/onboarding prose reaches the same procedure. [13]
+- The Bootstrap capsule's state-reporting action points to the emitted foundation-state detail, which reaches the procedure and the start-the-Architect next step. [17]
 
 - [9]
-- [10]
 
-- Every printed invocation is placeholder-filled and run through the shipped parser for subcommand and option arity; bootstrap is not executed. [11]
 
 -
-- [13]
 - [14]
 
-- The compiled-Curator-shape test checks the actual delivered foundation pointer and procedure text. Its docstring explicitly limits this to compiler shape and admits no taskless Curator; foundation authoring requires real task admission. These are source assertions, not a workflow run. [12]
 
 - `delivered_foundation` binds source, role, delivery step, action pointer, delivered bytes and heading to the compiled manifest and the current capsule-budget view; the emitted copy equals the source except that each relative link is rewritten to the same shipped file and anchor. Its controls mutate the budget, heading, required sentence and declared pointer, and move the pointer to an unrelated action, independently. A synthetic Curator capsule proves this delivered procedure, while the procedure still requires real foundation task admission. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [15]
 
 - Printed invocations from both launchers keep their arguments and parser failures. [16]
-- The Bootstrap capsule's state-reporting action points to the emitted foundation-state detail, which reaches the procedure and the start-the-Architect next step. [17]

@@ -28,9 +28,9 @@ Current curation continues from a report to the next authorized step without a n
 
 Family coverage is authored from stored member obligations, their evidence and applicable intent. The guarantee and routes are independent judgments. The admitted file writer records members and examined revisions; the Curator reads back actual written family state and fabricates neither sibling records nor obsolete dataset-roster fields.
 
-The writer is the shipped `agents-remember knowledge-ingest` route, or the mounted `knowledge_write`, using the task's leaf enclosure contract — including repository foundation work under `c-14-knowledge-bootstrap`. A taskless `knowledge-bootstrap` command is not among this seat's routes. Its written/planned/refused state, actual record and entry IDs, history rows and bound code/memory trees are separate facts; file writing is neither a Git commit nor acceptance. Full scoped memory quality and structured coherence do not substitute for semantic approval.
+The writer is the shipped `agents-remember knowledge-ingest` route, or the mounted `knowledge_write`, using the task's leaf enclosure contract — including repository foundation work under the repository-foundation detail. A taskless `knowledge-bootstrap` command is not among this seat's routes. Its written/planned/refused state, actual record and entry IDs, history rows and bound code/memory trees are separate facts; file writing is neither a Git commit nor acceptance. Full scoped memory quality and structured coherence do not substitute for semantic approval.
 
-The curator does not edit code, task status/lifecycle or Git transaction records, directly write SQLite, invent future commit stamps, or repair source movement. Its only new task-step bookkeeping is completed matching own curation set_step; incomplete/blocked/progress/escalation work stays unfinished. Repository-foundation work follows c-14 inside its own real task and does not manufacture an enclosure; setup reads and reports its state and authors none of it.
+The curator does not edit code, task status/lifecycle or Git transaction records, directly write SQLite, invent future commit stamps, or repair source movement. Its only new task-step bookkeeping is completed matching own curation set_step; incomplete/blocked/progress/escalation work stays unfinished. Repository-foundation work follows the repository-foundation detail inside its own real task and does not manufacture an enclosure; setup reads and reports its state and authors none of it.
 
 The Curator's large-worklist duty is stated in the role text: enumerate one full-intake worklist of distinct outstanding memory actions in the report, count each underlying action once, and exclude already answered work, report-only observations and duplicate summaries. Invariant/family placement, admission, changes of meaning, the single `knowledge-ingest` write, the full memory-quality operation and the handoff stay with the seat. How the seat organises that work — including any harness sub-agents, at any size — is the seat’s own, and a harness without sub-agents does the same work.
 
@@ -129,7 +129,7 @@ Each detail file is read before the action its pointer names: intent reconciliat
 
 ## Current account — the authoring routes
 
-The role's authoring routes name the mounted `knowledge_write` beside `agents-remember knowledge-ingest`: it runs the same writer with the same arguments under the task's leaf contract, a repository foundation authored through `c-14-knowledge-bootstrap` uses the same route inside its own Architect task, and only the declared same-tool/input-class recovery for a covered correct-input write refusal permits manual authoring. The commit word is spelled both ways (`--commit`, `commit: true`), and the sentence that said no MCP tool writes knowledge is gone, because the mounted writer is one.
+The role's authoring routes name the mounted `knowledge_write` beside `agents-remember knowledge-ingest`: it runs the same writer with the same arguments under the task's leaf contract, a repository foundation authored through the repository-foundation detail uses the same route inside its own Architect task, and only the declared same-tool/input-class recovery for a covered correct-input write refusal permits manual authoring. The commit word is spelled both ways (`--commit`, `commit: true`), and the sentence that said no MCP tool writes knowledge is gone, because the mounted writer is one.
 
 ## Scratch roots
 
@@ -180,8 +180,8 @@ The Curator's closing paragraph admits `workspace.outsideScratchRoot` for what m
 - Every reported cut has task-change causality; finding-clearing deletion is forbidden. [12]
 
 - Repository foundation is authored by the Curator inside the real task the user-started Architect opens, a registered leaf under a master, with its actual enclosure. No taskless session or invented task, worktree or enclosure substitutes for task admission. [13]
-
 - Repository foundation is authored by the Curator inside the real task the user-started Architect opens, a registered leaf under a master, with its actual enclosure. No taskless session or invented task, worktree or enclosure substitutes for task admission. [15]
+
 
 - The worklist detail points to the writer's row, reconsideration and link-repair rules; the governing-sources detail records a rejected simplification or workaround with the chosen design, rejected option and reason, apart from unfinished work. [16]
 

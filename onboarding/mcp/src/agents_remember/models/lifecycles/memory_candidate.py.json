@@ -39,8 +39,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95544419b0b670b95be5e07d8fae1cdffc3d4c88",
-            "content": "sha256:3abe5e591f9a2a07420ecc288ff6a9aea2d60f4fa7d39af093ba0797e91a7fb5",
+            "blob": "a9956955cfa2e9523c51450b0cfbd3082f4addbb",
+            "content": "sha256:39a1bdc9e9ca2c63afe6f23da734fd785eb45b93c7dce794b47b33562fdd069d",
             "locator": {
               "kind": "symbol",
               "name": "resolve_memory_candidate_pair"

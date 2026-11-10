@@ -89,7 +89,8 @@ failure the case looks for.
 
 
 
-- Surviving descriptions (the `include_drift` description in core registration and docs/tool-details.md) state measurement/currentness/advisory wording. Both l-01-agent-lifecycles copies carry the drift commands, curation, stale-orientation and current-row doctrine (an `onboarding_trace` row answers; a counted change of the card alone never answers); both c-10 copies must state that drift acceptance lifts only the stale-anchor gate and still refuses validator violations as R198.1-reference-anchor and blocked-invalid. [11]
+- Surviving descriptions (the `include_drift` description in core registration and docs/tool-details.md) state measurement/currentness/advisory wording. The l-01-agent-lifecycles copies carry the drift commands, curation, stale-orientation and current-row doctrine (an `onboarding_trace` row answers; a counted change of the card alone never answers); the surviving l-01-agent-lifecycles copy must state that drift acceptance lifts only the stale-anchor gate and still refuses validator violations as R198.1-reference-anchor and blocked-invalid. [11]
+- Static description assertions inspect surviving descriptions and the l-01-agent-lifecycles copies, retain current-row doctrine, and reject restoration of the removed drift tool registration. [14]
 
 - The context-packet leaf route binds the leaf base. [12]
 
@@ -104,7 +105,6 @@ failure the case looks for.
 
 
 
-- Static description assertions inspect surviving descriptions and both l-01-agent-lifecycles and c-10 copies, retain current-row doctrine, and reject restoration of the removed drift tool registration. [14]
 
 
 

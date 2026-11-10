@@ -1,31 +1,13 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md",
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "f6b9ea88e1d9cce0a3389bf96bd60791329b9aca",
-        "content": "sha256:4fbedc7fa66a85cbb613579bc1cb931a33f76571debdf214da9b875092cccbf7",
-        "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-ABKXPC",
-      "invariant": "INV-NNQR91",
-      "origin": {
-        "handoffEntry": "L71-CURRENT242-W-19",
-        "leaf": "260928-MIK-L71"
-      },
-      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/investigator.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
-      "role": "propagation-persistence"
-    }
-  ],
+  "realizes": [],
   "references": {
     "1": {
       "note": "The Investigator starts without a task reference, on a sprint, or on a sprint and master, never on a leaf; its concern arrives in its parent's first role_message, or from the developer's request when it has no parent, and a missing concern or scope is asked for, never invented.\n\nAnchor: `role_message`",
       "targets": [
         {
           "anchor": {
-            "blob": "f6b9ea88e1d9cce0a3389bf96bd60791329b9aca",
+            "blob": "f9a6ca2e4eba21a38fa2d8e13b6f1325f0efc234",
             "content": "sha256:1a3fbdae5a641e6ba78c1b61efc7144ba9794425ce79c7278633fe4313354740",
             "locator": {
               "end": 18,
@@ -37,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "f6b9ea88e1d9cce0a3389bf96bd60791329b9aca",
+            "blob": "f9a6ca2e4eba21a38fa2d8e13b6f1325f0efc234",
             "content": "sha256:c1ecdf09b17272fddd1d11a81f35c1581f021fd96075cb4b49c6aa93dfc56bce",
             "locator": {
-              "end": 76,
+              "end": 78,
               "kind": "line_range",
-              "start": 76
+              "start": 78
             }
           },
           "kind": "code"
@@ -54,12 +36,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6b9ea88e1d9cce0a3389bf96bd60791329b9aca",
+            "blob": "f9a6ca2e4eba21a38fa2d8e13b6f1325f0efc234",
             "content": "sha256:5050eddc7ae94d38b46a52289e4c291723543e9cce31cc1f0776945fc590a448",
             "locator": {
-              "end": 54,
+              "end": 56,
               "kind": "line_range",
-              "start": 54
+              "start": 56
             }
           },
           "kind": "code"

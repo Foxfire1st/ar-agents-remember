@@ -1,0 +1,107 @@
+{
+  "path": "mcp/tests/test_empty_onboarding_readers.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "93653fb215d9193874c092abbf6e5f3c4d6ec9db",
+        "content": "sha256:b0bd06679dba2d822d73ac9c00044a5769beb38ff5157308544e1259336e7e7b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_route_index_readers_name_an_onboarding_file_as_not_a_directory"
+        }
+      },
+      "facet": "Explicit, missing-only and full-quality route builders raise NotADirectoryError with the non-directory path in the exact message.",
+      "id": "PRF-3BTCVQ",
+      "invariant": "INV-N4TG39",
+      "origin": {
+        "handoffEntry": "L204-non-directory-refusal",
+        "leaf": "260928-MIK-L204"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "93653fb215d9193874c092abbf6e5f3c4d6ec9db",
+        "content": "sha256:a6d17eec517e1b704a65543c3e4d7d32a73e9a497e8d06973422fe97d3ec60f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_route_and_drift_readers_measure_a_fresh_tree_without_creating_onboarding"
+        }
+      },
+      "facet": "All three route builders and converted drift measure zero routes/cards and do not create the absent collection.",
+      "id": "PRF-P3BAZH",
+      "invariant": "INV-R1F96Z",
+      "origin": {
+        "handoffEntry": "MIK-R217@v1-empty-memory",
+        "leaf": "260928-MIK-L204"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each builder names a non-directory path as the refused case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93653fb215d9193874c092abbf6e5f3c4d6ec9db",
+            "content": "sha256:b0bd06679dba2d822d73ac9c00044a5769beb38ff5157308544e1259336e7e7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_route_index_readers_name_an_onboarding_file_as_not_a_directory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Absent onboarding is measured without creating it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93653fb215d9193874c092abbf6e5f3c4d6ec9db",
+            "content": "sha256:a6d17eec517e1b704a65543c3e4d7d32a73e9a497e8d06973422fe97d3ec60f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_route_and_drift_readers_measure_a_fresh_tree_without_creating_onboarding"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Baseline status reads an absent card collection as zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93653fb215d9193874c092abbf6e5f3c4d6ec9db",
+            "content": "sha256:9847b60821cc0c1d3736a65602672e8d6e59c76bcd9f6cd4848e078cb7c609bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_status_measures_zero_cards_without_an_onboarding_directory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The CLI measures the empty changed-source selection instead of refusing the missing folder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93653fb215d9193874c092abbf6e5f3c4d6ec9db",
+            "content": "sha256:5d4f4cad2de9b170299a6fde30fc31a38be3f081ec94de1efae12f8146e90579",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_onboarding_command_reports_zero_instead_of_refusing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

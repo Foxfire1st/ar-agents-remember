@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e7e5a1fe916ed72035d31fab8e91f23a30af4af9",
-        "content": "sha256:4fd6e8e81ac2ab05d391eed8f1e0e43567aa8b674fb35ef746a2cfe31a4d0576",
+        "blob": "c54e0f95b7707ac110df1e31e2b482202f33e269",
+        "content": "sha256:e100b4735e8c0da517bfc0af1ae67eacefedb4393f66fd361684311f5159fb6b",
         "locator": {
           "kind": "file"
         }
@@ -18,23 +18,6 @@
       },
       "rationale": "docs/getting-started.md at C still describes setup without a provider step and says retired providers are reported as unused with no provider indexing or watcher started.",
       "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "e7e5a1fe916ed72035d31fab8e91f23a30af4af9",
-        "content": "sha256:4fd6e8e81ac2ab05d391eed8f1e0e43567aa8b674fb35ef746a2cfe31a4d0576",
-        "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-D995QR",
-      "invariant": "INV-DKN3CG",
-      "origin": {
-        "handoffEntry": "L71-CURRENT242-W-18",
-        "leaf": "260928-MIK-L71"
-      },
-      "rationale": "Getting-started text directs the user to the actual setup/catalog prerequisite rather than claiming an unavailable host already supplied options.",
-      "role": "presentation"
     }
   ],
   "references": {
@@ -43,12 +26,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e7e5a1fe916ed72035d31fab8e91f23a30af4af9",
-            "content": "sha256:4fd6e8e81ac2ab05d391eed8f1e0e43567aa8b674fb35ef746a2cfe31a4d0576",
+            "blob": "c54e0f95b7707ac110df1e31e2b482202f33e269",
+            "content": "sha256:e100b4735e8c0da517bfc0af1ae67eacefedb4393f66fd361684311f5159fb6b",
             "locator": {
-              "end": 86,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"

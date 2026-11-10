@@ -700,9 +700,14 @@ Past-epoch source custody: `skills/l-01-agent-lifecycles/capsule-budgets.json`, 
 - The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder. [86]
 
 - In task_doc construction, _build_doc refuses kind="light" with a TaskDocError directing the caller to a master or subTask; when kind is omitted, a leaf contract selects subTask and otherwise the default is master. [98]
+- Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section. [21]
+- Retained reference account (no fresh execution or acceptance inferred): The cutover lock refuses an unconverted memory line and names the crossing sync. [74]
+- Retained reference account (no fresh execution or acceptance inferred): An external-memory start requires the memory repository and its source branch and creates the worktree. [93]
 - build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
-
 - The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority. [146]
+- New files outside onboarding/, knowledge/ and system/ are listed with individual sizeBytes and summed bytes. [312]
+- Setup reports memory/baseline state and hands the user to Architect; actual foundation authorship requires its regular task, task document and enclosure under the Curator. [359]
+
 
 - Independent memory review inspects the quality result's removed-text and added-file reports: text removed without a named change, and a file added outside the knowledge without a place in the task's requirement, are findings. [316]
 
@@ -729,7 +734,6 @@ Past-epoch source custody: `skills/l-01-agent-lifecycles/capsule-budgets.json`, 
 - Retained reference account (no fresh execution or acceptance inferred): Proofs are read back for the invariant and family views, and the invariants without proof are listed. [18]
 - Retained reference account (no fresh execution or acceptance inferred): Text files in the memory repository are the source of truth for knowledge. [19]
 
-- Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section. [21]
 
 - Retained reference account (no fresh execution or acceptance inferred): The curator file writer refuses a memory tree that is not converted. [22]
 
@@ -764,7 +768,6 @@ Past-epoch source custody: `skills/l-01-agent-lifecycles/capsule-budgets.json`, 
 
 - The retained internal8,000-token threshold constant; the mounted naming pager applies the separate4,000-token delivered bound and list cap. [73]
 
-- Retained reference account (no fresh execution or acceptance inferred): The cutover lock refuses an unconverted memory line and names the crossing sync. [74]
 - Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses. [75]
 - Retained reference account (no fresh execution or acceptance inferred): The two declared case budgets. [76]
 - Retained reference account (no fresh execution or acceptance inferred): The scheduling mode of a sprint without an execution graph. [77]
@@ -781,7 +784,6 @@ Past-epoch source custody: `skills/l-01-agent-lifecycles/capsule-budgets.json`, 
 - Retained reference account (no fresh execution or acceptance inferred): The activation record is one replace-in-place snapshot per canonical series contract. [90]
 - Retained reference account (no fresh execution or acceptance inferred): Where the record of a sync transaction lies. [91]
 - Retained reference account (no fresh execution or acceptance inferred): The locations of a master's contract and of a leaf's enclosure contract. [92]
-- Retained reference account (no fresh execution or acceptance inferred): An external-memory start requires the memory repository and its source branch and creates the worktree. [93]
 - Retained reference account (no fresh execution or acceptance inferred): A moved source blocks `ff-only`, and `replay` asks for a resolution instead of creating a replay commit. [94]
 - Retained reference account (no fresh execution or acceptance inferred): Gate enforcement: a model-decided approval does not satisfy it, and a lifecycle without a gate of the kind is gateless. [95]
 - The retention of gate records and of the approval kinds whose applied snapshot is an authority record: an applied snapshot of a consumed kind never ages out, while withdrawn and superseded gates go immediately and live ones age out on the TTL. [96]
@@ -829,7 +831,6 @@ Past-epoch source custody: `skills/l-01-agent-lifecycles/capsule-budgets.json`, 
 
 - Retained reference account (no fresh execution or acceptance inferred): OM-4, mirrored into the package copy. [261]
 
-- Retained reference account (no fresh execution or acceptance inferred): c-14's admission paragraph, mirrored into the package copy. [262]
 
 - Retained reference account (no fresh execution or acceptance inferred): The ingestion template's planned-row paragraph, mirrored into the package copy. [263]
 
@@ -880,7 +881,6 @@ Past-epoch source custody: `skills/l-01-agent-lifecycles/capsule-budgets.json`, 
 
 - Workers build each worktree's environment as the tool notes say, report missing commands and record the interpreter each run used. [310]
 
-- Only external is supported; disabled stays readable for named recovery/status purposes without being writable. [312]
 Historical L111 predecessor account, not the composed R113 roster: - Public tools have one literal owner with 41 successor names (the rejected freeze had42; resolve_context removed), adding retire_child and role_start_set to the prior 39; live advertisement must match it, while internal spawn retains only its internal model. [313]
 Historical L111 predecessor account, not the composed R113 roster: - Historical roster account, retained but superseded: Public tools have one literal owner with 41 names, adding retire_child and role_start_set to the prior 39; live advertisement must match it, while internal spawn retains only its internal model. [313]
 - The invariant gate recomputes and treats open/incomplete/refusing inputs as repair findings; the local legacy applicability rule does not own cutover refusal. [317]
@@ -897,7 +897,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retrieval guidance keeps the names-only read route: `read_ar_files` names the knowledge governing up to twenty paths and returns no file text. [311]
 
 - Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named. [333]
-- New files outside onboarding/, knowledge/ and system/ are listed with individual sizeBytes and summed bytes. [312]
 > Retained earlier citation wording: - Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated. Retired provider IDs are disabled by the shared predicate; installation reports unused keys and continues after a failed old-watcher stop. Anchor: provider_enabled and install watcher phase [314]
 
 - For every card the quality check cuts, the Curator names the source evidence that makes the removed text untrue; text is not removed merely to clear a quality finding. Task-scoped readers derive roots only from a canonical admitted leaf; repository and enclosure bindings must agree. Anchor: Reader scope admission [315]
@@ -946,7 +945,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Current PUBLIC_TOOLS has 44 names, including mounted knowledge_write and user_settings_init; converted MQC answers carry cut/added counts and bounded first rows, with complete lists in retained logs. Static source, not execution or live-advertisement acceptance. [358]
 - The current 44-name roster carries the settings initializer and the mounted knowledge writer, and retains the native grant, retire_child and role_start_set boundaries; source declaration is not fresh live advertisement. [332]
 
-- Setup reports memory/baseline state and hands the user to Architect; actual foundation authorship requires its regular task, task document and enclosure under the Curator. [359]
 
 - Current source literal PUBLIC_TOOLS has 44 names; converted MQC status answers carry cut-card and added-file counts and bounded first rows. Complete lists are log data when retained, not a promise that an overflow kept the whole result. Static source census, no fresh live-advertisement or CODE execution. [313]
 - The measurement records spawn-to-initialize/tool-list arrival and environment/load context; no tool invocation or fresh result inferred. [360]

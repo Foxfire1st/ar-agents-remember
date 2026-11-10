@@ -7,11 +7,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a74244f8dff8b3cae163ef87730b710dce2c8013",
-            "content": "sha256:624b25ff701c56cadce092ae405d4429a816bb6a18e01a4ff58ef38474d03040",
+            "blob": "0eaef8fb2966ce40738225cccbbb3814c89da5c5",
+            "content": "sha256:78180989561acac0d64631f2d3766ea0661355ee738075a3766a8f600eae127c",
             "locator": {
-              "kind": "symbol",
-              "name": "fresh_host_block"
+              "kind": "file"
             }
           },
           "kind": "code"

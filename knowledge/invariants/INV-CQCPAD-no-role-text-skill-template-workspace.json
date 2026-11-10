@@ -27,7 +27,7 @@
     "leaf": "260928-MIK-L113",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "No role text, skill, template, workspace instruction file or reference tells an agent or a person to use a removed part, and the packaged copy follows: a Curator seat opens only on a leaf's task document, and an Architect is started without a document.",
   "status": "accepted",

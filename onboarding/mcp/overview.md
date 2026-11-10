@@ -645,6 +645,8 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands.
 
 - The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands. [103]
+- **Retained historical source account — superseded by the current route account:** Baseline adoption commits memory content and returns a cache observation. Source caption: `adopt_initial_baseline` `memory_content_commit` [158]
+- **Retained historical source account — superseded by the current route account:** The lock every memory route asks. [225]
 - The current task registration surface mounts task_reopen through _register_task_reopen_tools and delegates the call to its payload owner. [285]
 
 - Synchronous dispatch keeps validation and orders writes through worker completion. [389]
@@ -734,6 +736,7 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** The one dataset resolution every knowledge read applies. [88]
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [90]
 - **Retained historical source account — superseded by the current route account:** The command's inputs, scope answer and exit statuses. [91]
+- Named reporting and refusing routes. [312]
 - **Retained historical source account — superseded by the current route account:** The shared exclusion predicate. [92]
 - **Retained historical source account — superseded by the current route account:** The batch blob reader. [93]
 - **Retained historical source account — superseded by the current route account:** The format package's own map and its shape-only boundary. [94]
@@ -761,7 +764,6 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** Certifying publication and accepting consumers. [151]
 - **Retained historical source account — superseded by the current route account:** A ledger view is derived from Git and cache write failure is only an availability result. [156]
 - **Retained historical source account — superseded by the current route account:** Existing preparation retains actual Git binding and allows a distinct memory content view. [157]
-- **Retained historical source account — superseded by the current route account:** Baseline adoption commits memory content and returns a cache observation. Source caption: `adopt_initial_baseline` `memory_content_commit` [158]
 - The launch's instruction value: one of exactly two modes, a capsule compiled for the seat or a named refusal. [159]
 - **Retained historical source account — superseded by the current route account:** The one workspace rule and the selection that follows it. [273]
 > - **Retained historical source account — superseded by the current route account:** The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [161] [274]
@@ -807,7 +809,6 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 
 - **Retained historical source account — superseded by the current route account:** The crossing owner's route of knowledge-ingest. [222]
 
-- **Retained historical source account — superseded by the current route account:** The lock every memory route asks. [225]
 - **Retained historical source account — superseded by the current route account:** A copied Git index keeps the index file's modification time. [226]
 - **Retained historical source account — superseded by the current route account:** The cache's ignore rule alone. [227]
 > - **Retained historical source account — superseded by the current route account:** Current imported source owns this scoped route boundary. [228] [229] [230] [231]
@@ -951,7 +952,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 - `PUBLIC_TOOLS` is one literal tuple of 44 public names, including the native role, retirement and knowledge operations and excluding `dispatch_agent`. The landing-answer helper keeps cut and added counts and bounds inline rows; the Curator's curation operation requires an independent statement-by-statement fact-check before closeout. [288]
 
 - The shared application route resolves the paired memory base and passes that base, the contract-bound code root and worklist to the normal knowledge writer. [315]
-- Named reporting and refusing routes. [312]
 - Source bindings, membership and record models. [313]
 
 - Non-author statement/diff/omission fact-check. [314]

@@ -5,7 +5,7 @@
     ],
     "justification": "Foundation examples must name supported read views; otherwise a new project's first inspection is routed to an operation that cannot demonstrate its recorded knowledge."
   },
-  "applicability": "The c-14 bootstrap skill's foundation examples.",
+  "applicability": "The l-01 bootstrap operation's foundation examples (`skills/l-01-agent-lifecycles/operations/bootstrap.md`).",
   "conditions": [
     "The repository holds a converted foundation."
   ],
@@ -24,7 +24,7 @@
     "leaf": "260928-MIK-L26",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Bootstrap foundation examples name family, invariant and source_context views.",
   "status": "proposed",

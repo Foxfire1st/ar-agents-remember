@@ -1,0 +1,38 @@
+{
+  "path": "mcp/tests/fresh_repository_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The baseline and leaf begin without an onboarding directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0e3dcbdacada8aa36c1f0d2676989e3750959c0",
+            "content": "sha256:d545caa1ec7dcd4dc9051e068f1150f22c1d4782e3b08d7dd6a60dafd5be6155",
+            "locator": {
+              "kind": "symbol",
+              "name": "fresh_repository"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Actual cards and citations are authored after the empty-memory check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0e3dcbdacada8aa36c1f0d2676989e3750959c0",
+            "content": "sha256:8052817d48b4c29ce47c27f35bef94d675c605a2f84e4b0937a79266d779f77a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

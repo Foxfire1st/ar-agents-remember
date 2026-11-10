@@ -13,6 +13,8 @@ The current account is the converted-text and native role route after MIK-R74 an
 
 ## Hot Path Summary
 
+A live leaf memory worktree may precede its onboarding cards. Scope still requires the memory directory and Git marker and resolves its own onboarding child without an existence-based substitution. Quality delegates an absent collection to the route-index owner; missing caches, stale caches and actual build failures remain distinct.
+
 Requested certification is explicitly selected repository-profile work through Dagger and commits nothing. The profile and loader are still authority for that requested Gates 1–4 work; a selection named `closeout` is not an automatic closeout invocation. Ordinary closeout runs no gate but the invariant gate, retains exact candidate/approval/lineage checks and code-then-memory Git publication, and does not run certification, code-quality checks, test suites or independent review. A missing profile or certification result does not block that transaction. This does not remove canonical Curator/Reviewer duties or confer independent semantic acceptance on diagnostics.
 
 

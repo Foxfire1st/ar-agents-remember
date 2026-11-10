@@ -195,6 +195,7 @@ Fixture repositories and protocol doubles do not establish a live external integ
 
 
 - The lane row that selects this module, and the consumer rows of the two shared-support artifacts it imports (knowledge rows and read scope). [16]
+- The current lifecycle catalog declares test_knowledge_review_one_sided_statements.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. These current declarations establish no invocation or passing result; no former narrow-window identity is inferred. [17]
 
 
 - The `consumer_scope = "exact"` artifact whose list this module joined.
@@ -208,5 +209,3 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3309-3309 - the bytes it recorded now occur 32 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1672-1672 - the bytes it recorded now occur 8 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3367 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
-- The current lifecycle catalog declares test_knowledge_review_one_sided_statements.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. These current declarations establish no invocation or passing result; no former narrow-window identity is inferred. [17]

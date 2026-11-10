@@ -21,7 +21,7 @@ A file may trip a rule exactly as often as its entry says. One use more is a sec
 ### Repo-Internal References
 
 
-- Every allowance is a count and a written reason, per rule and per file, in the one table. [1]
+[1]
 
 
 

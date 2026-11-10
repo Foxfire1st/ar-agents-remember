@@ -24,7 +24,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Every surviving executable carryover reference resolves to the kept carryover workflow that states the procedure.",
   "status": "proposed",

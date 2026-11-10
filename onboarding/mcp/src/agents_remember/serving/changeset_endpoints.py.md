@@ -19,10 +19,12 @@ name**: nothing has recorded that side's landed commit yet, so the committed ran
 No `HEAD`, no branch and no working tree is substituted for it.
 
 The guard is a **kind**, not one flat failure, because a caller acts on the three reasons differently.
-`not-recorded` is an endpoint nothing has written yet, and it is the *only* absence a half may degrade
-to "nothing to show" for; `no-repository` (the contract names no repository for that side) and
-`unresolvable` (a recorded commit this checkout does not hold) are broken state that no view may
-report as an empty range, since that would publish a measurement the caller never made.
+`not-recorded` is an endpoint nothing has written yet; `no-repository` means the contract names no
+repository for that side, and `unresolvable` means a recorded commit is unavailable in that checkout.
+This owner raises these distinct values. Its `_leaf_range` caller returns an empty range before
+calling this owner when the selected repository is `None`. After endpoint admission begins, it
+catches only `not-recorded`: the code side carries a detail and the memory side has no detail.
+Other endpoint errors propagate.
 
 The module is deliberately narrow: it resolves the two recorded endpoints, checks that the repository
 actually holds them, and raises. It renders no payload, opens no route and decides no degradation —
@@ -85,15 +87,16 @@ FastAPI owner and cannot become a second route surface.
 
 - **A committed range is two recorded commits or it is nothing.** No `HEAD`, no branch tip and no
   working tree is ever an endpoint of a committed range.
-- **The three absences stay apart.** `not-recorded` is the only one a half may degrade to empty for;
-  `no-repository` and `unresolvable` are broken state and stay refusals on both sides.
+- **The three endpoint errors stay apart.** The owner raises `not-recorded`, `no-repository`
+  and `unresolvable` distinctly. The caller handles an unselected repository before invoking it;
+  of errors raised by this owner, the caller catches only `not-recorded`.
 - **A recorded commit that this checkout cannot resolve is a named absence.** `git cat-file -e` is the
   check, and its failure never escapes as an unhandled error.
 - **The repository travels with the ids.** A `RecordedRange` names the repository its two commits are
   read from.
 - **The module renders nothing.** It raises values the routes already map, and the degradation policy
-  belongs to the caller (`_leaf_range`), which is how the code half keeps its refusal while the memory
-  half may degrade.
+  belongs to the caller (`_leaf_range`): an unrecorded code endpoint carries a detail, while an
+  unrecorded memory endpoint produces an empty result without a detail.
 
 
 ## Current Behavior
@@ -128,8 +131,8 @@ module still raises `RecordedEndpointAbsent(kind="not-recorded")` for a side who
 not recorded yet — it owns *which* Git objects a range binds and has no view about HTTP. What changed
 is one layer up: `serving/changeset.py`'s `_leaf_range` now **catches** that absence for the **code**
 side and carries its sentence into the response body as `state="unrecorded"` / `stateDetail`, instead
-of letting it reach the route as a `404` (register B6). The memory side's degradation and the
-`no-repository`/`unresolvable` refusals are untouched.
+of letting it reach the route as a `404` (register B6). The owner still distinguishes `no-repository` and `unresolvable`; `_leaf_range` propagates those
+errors if raised after admission begins. An unselected repository returns before that owner runs.
 
 - **The module's own statement of what a committed range is, why `HEAD` may not stand in for it, and why the three absences are separated.** [1]
 - The published surface: the range value, the two absence types, the kind constant and the resolver. [2]
@@ -149,7 +152,6 @@ of letting it reach the route as a `404` (register B6). The memory side's degrad
 > Retained earlier citation wording: - The contract whose recorded cells this module reads, and the cells themselves. [11]
 
 
-- **The caller that owns the degradation policy: the code half carries its own `not-recorded` absence into the body as `state`/`stateDetail` while only an unrecorded **memory** half may empty, and both sides resolve independently.** [12]
 
 
 - **The case module that measures the bound range, the immovable endpoint, the state answered instead of a refusal, the route's own `200`, and the one-half degradation.** [13]
@@ -164,3 +166,5 @@ ranges beyond them.
 No meaningful cross-repo references found.
 
 - The contract whose recorded cells this module reads, and the cells themselves.  Anchor: `WorktreeContract` `load_contract` [11]
+
+- The caller resolves code and memory independently. A missing selected repository returns an empty result before endpoint admission. Among entered endpoint-owner failures, NOT_RECORDED carries code detail or empties memory; other failures propagate. leaf_changeset publishes the code detail as state/stateDetail alongside counters. [12]

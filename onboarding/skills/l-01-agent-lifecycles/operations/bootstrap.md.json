@@ -3,12 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-        "content": "sha256:a3a92cabd39a9494798da6c0006a0e0f3e8676566aa09583f99a4519fb4b87e5",
+        "blob": "4684108df7310811b1e02a2f9889b34c350dcb13",
+        "content": "sha256:1a9a92eef605905e95d0727f1efc72821ab490886da1d750190546ffc515b0da",
         "locator": {
-          "end": 79,
-          "kind": "line_range",
-          "start": 61
+          "kind": "file"
         }
       },
       "id": "RLZ-942ZBQ",
@@ -22,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-        "content": "sha256:adf23a3d714aa283da02c408c94a90944eb022ac87242746d3965acf4b63b5f6",
+        "blob": "4684108df7310811b1e02a2f9889b34c350dcb13",
+        "content": "sha256:1a9a92eef605905e95d0727f1efc72821ab490886da1d750190546ffc515b0da",
         "locator": {
           "kind": "file"
         }
@@ -44,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "blob": "4684108df7310811b1e02a2f9889b34c350dcb13",
             "content": "sha256:09357e84d6f5f7a7cadfd2cd382c470aa0df75a45abeb43bed8894b7c9e055a7",
             "locator": {
               "end": 22,
@@ -56,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "blob": "4684108df7310811b1e02a2f9889b34c350dcb13",
             "content": "sha256:bdb5cb67d7e0162a99056fe5d99add434e33e029187db4feb5303f68bcebbfc6",
             "locator": {
               "end": 127,
@@ -73,72 +71,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
+            "blob": "bfa0e900805e61cca784cc1ff46e1e15fcea75fc",
+            "content": "sha256:e8273f95fb816c142bfa5711a9887fe639fc0e5fa4f7eb4da685f1a645e5b3d6",
             "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:2673f2b1ad22fdb002fd601f07eb03a13a149c1be955c6a7e022987016693e1b",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 83
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:5cb472b0a8848ed98be8599614747ebb119fee7b223de4476854dbd712d5069b",
-            "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 77
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:49f3bc779f5dfc6730cbe2aef4aa43978f3c506bf63ebe514b46df0e5ba5a562",
-            "locator": {
-              "end": 6,
-              "kind": "line_range",
-              "start": 6
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:605b6aa760bb11c98d39713d118d1ce2fe28714dd33b4995b8dd25eff156775e",
-            "locator": {
-              "end": 69,
-              "kind": "line_range",
-              "start": 69
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
-            "content": "sha256:60920ec89a287e8e3898945af6c235f20293b455c2486dd739ebd4cafa22b9b7",
-            "locator": {
-              "end": 20,
-              "kind": "line_range",
-              "start": 18
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
           },
@@ -147,16 +83,14 @@
       ]
     },
     "11": {
-      "note": "The step-8 handover in its own words: the knowledge foundation is the curator's c-14-knowledge-bootstrap procedure run inside a task the Architect organises, and this seat reads its state — not-recorded, recorded at an exact identity, unusable, or a refused admission — reports it and authors no record.",
+      "note": "The step-8 handover in its own words: the knowledge foundation is the Curator's repository-foundation procedure (`skills/l-01-agent-lifecycles/reference/curator/repository-foundation.md`) run inside a task the Architect organises, and this seat reads its state — not-recorded, recorded at an exact identity, unusable, or a refused admission — reports it and authors no record.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
-            "content": "sha256:d78d785d29729717c81da4e693fc8e4f1e524a41effcdb0c9f06339f9980277e",
+            "blob": "bfa0e900805e61cca784cc1ff46e1e15fcea75fc",
+            "content": "sha256:e8273f95fb816c142bfa5711a9887fe639fc0e5fa4f7eb4da685f1a645e5b3d6",
             "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 5
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
           },
@@ -169,12 +103,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:c56d54fd99f6910cf5d10790ab2d0d28fac929f50cc55ce7aad74fa4343da26b",
+            "blob": "4684108df7310811b1e02a2f9889b34c350dcb13",
+            "content": "sha256:1a9a92eef605905e95d0727f1efc72821ab490886da1d750190546ffc515b0da",
             "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 35
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -186,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "blob": "4684108df7310811b1e02a2f9889b34c350dcb13",
             "content": "sha256:5cb472b0a8848ed98be8599614747ebb119fee7b223de4476854dbd712d5069b",
             "locator": {
               "end": 79,
@@ -203,12 +135,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:eff794644e5f44b23002709a33555eb0e970d34d5d9374f75a4e8d1ec8b5a271",
+            "blob": "4684108df7310811b1e02a2f9889b34c350dcb13",
+            "content": "sha256:1a9a92eef605905e95d0727f1efc72821ab490886da1d750190546ffc515b0da",
             "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 53
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -220,12 +150,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:adf23a3d714aa283da02c408c94a90944eb022ac87242746d3965acf4b63b5f6",
+            "blob": "4684108df7310811b1e02a2f9889b34c350dcb13",
+            "content": "sha256:1a9a92eef605905e95d0727f1efc72821ab490886da1d750190546ffc515b0da",
             "locator": {
-              "end": 141,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -237,72 +165,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
+            "blob": "bfa0e900805e61cca784cc1ff46e1e15fcea75fc",
+            "content": "sha256:e8273f95fb816c142bfa5711a9887fe639fc0e5fa4f7eb4da685f1a645e5b3d6",
             "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:2673f2b1ad22fdb002fd601f07eb03a13a149c1be955c6a7e022987016693e1b",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 83
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:5cb472b0a8848ed98be8599614747ebb119fee7b223de4476854dbd712d5069b",
-            "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 77
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:49f3bc779f5dfc6730cbe2aef4aa43978f3c506bf63ebe514b46df0e5ba5a562",
-            "locator": {
-              "end": 6,
-              "kind": "line_range",
-              "start": 6
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:605b6aa760bb11c98d39713d118d1ce2fe28714dd33b4995b8dd25eff156775e",
-            "locator": {
-              "end": 69,
-              "kind": "line_range",
-              "start": 69
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
-            "content": "sha256:60920ec89a287e8e3898945af6c235f20293b455c2486dd739ebd4cafa22b9b7",
-            "locator": {
-              "end": 20,
-              "kind": "line_range",
-              "start": 18
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
           },
@@ -315,72 +181,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
+            "blob": "bfa0e900805e61cca784cc1ff46e1e15fcea75fc",
+            "content": "sha256:e8273f95fb816c142bfa5711a9887fe639fc0e5fa4f7eb4da685f1a645e5b3d6",
             "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:2673f2b1ad22fdb002fd601f07eb03a13a149c1be955c6a7e022987016693e1b",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 83
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:5cb472b0a8848ed98be8599614747ebb119fee7b223de4476854dbd712d5069b",
-            "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 77
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:49f3bc779f5dfc6730cbe2aef4aa43978f3c506bf63ebe514b46df0e5ba5a562",
-            "locator": {
-              "end": 6,
-              "kind": "line_range",
-              "start": 6
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:605b6aa760bb11c98d39713d118d1ce2fe28714dd33b4995b8dd25eff156775e",
-            "locator": {
-              "end": 69,
-              "kind": "line_range",
-              "start": 69
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
-            "content": "sha256:60920ec89a287e8e3898945af6c235f20293b455c2486dd739ebd4cafa22b9b7",
-            "locator": {
-              "end": 20,
-              "kind": "line_range",
-              "start": 18
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
           },
@@ -393,72 +197,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
+            "blob": "bfa0e900805e61cca784cc1ff46e1e15fcea75fc",
+            "content": "sha256:e8273f95fb816c142bfa5711a9887fe639fc0e5fa4f7eb4da685f1a645e5b3d6",
             "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:2673f2b1ad22fdb002fd601f07eb03a13a149c1be955c6a7e022987016693e1b",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 83
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:5cb472b0a8848ed98be8599614747ebb119fee7b223de4476854dbd712d5069b",
-            "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 77
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:49f3bc779f5dfc6730cbe2aef4aa43978f3c506bf63ebe514b46df0e5ba5a562",
-            "locator": {
-              "end": 6,
-              "kind": "line_range",
-              "start": 6
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:605b6aa760bb11c98d39713d118d1ce2fe28714dd33b4995b8dd25eff156775e",
-            "locator": {
-              "end": 69,
-              "kind": "line_range",
-              "start": 69
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
-            "content": "sha256:60920ec89a287e8e3898945af6c235f20293b455c2486dd739ebd4cafa22b9b7",
-            "locator": {
-              "end": 20,
-              "kind": "line_range",
-              "start": 18
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
           },
@@ -471,72 +213,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
+            "blob": "bfa0e900805e61cca784cc1ff46e1e15fcea75fc",
+            "content": "sha256:e8273f95fb816c142bfa5711a9887fe639fc0e5fa4f7eb4da685f1a645e5b3d6",
             "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:2673f2b1ad22fdb002fd601f07eb03a13a149c1be955c6a7e022987016693e1b",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 83
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:5cb472b0a8848ed98be8599614747ebb119fee7b223de4476854dbd712d5069b",
-            "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 77
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:49f3bc779f5dfc6730cbe2aef4aa43978f3c506bf63ebe514b46df0e5ba5a562",
-            "locator": {
-              "end": 6,
-              "kind": "line_range",
-              "start": 6
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:605b6aa760bb11c98d39713d118d1ce2fe28714dd33b4995b8dd25eff156775e",
-            "locator": {
-              "end": 69,
-              "kind": "line_range",
-              "start": 69
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
-            "content": "sha256:60920ec89a287e8e3898945af6c235f20293b455c2486dd739ebd4cafa22b9b7",
-            "locator": {
-              "end": 20,
-              "kind": "line_range",
-              "start": 18
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
           },

@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f1c7b82e4146f0ca94137b49d845adef38178ff5",
+        "content": "sha256:a0ca51b1aa39ba72dd693c05c6e2bed106093b8e3a86fa61aa3afe099fadefae",
+        "locator": {
+          "kind": "symbol",
+          "name": "main"
+        }
+      },
+      "id": "RLZ-YZZFAK",
+      "invariant": "INV-R1F96Z",
+      "origin": {
+        "handoffEntry": "MIK-R217@v1-empty-memory",
+        "leaf": "260928-MIK-L204"
+      },
+      "rationale": "The CLI measures missing onboarding instead of refusing an absent folder.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Inline extraction is imported directly from inline.py; mirrored onboarding path construction is kernel-owned.",
@@ -54,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ad9297aa031e0aaa3931e246d19a8a360a25bd6",
+            "blob": "f1c7b82e4146f0ca94137b49d845adef38178ff5",
             "content": "sha256:a913d9dc81d27cff5f47e651ed413e4af66e6f47f2043133b9864bf62282a5da",
             "locator": {
               "kind": "symbol",

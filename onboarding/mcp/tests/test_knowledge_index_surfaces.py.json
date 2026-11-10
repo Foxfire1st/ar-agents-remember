@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+        "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
         "content": "sha256:5a6442a563e3a2f8029accaa75a67d4ec53fd717425167cf5d02fd27453ea949",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
             "content": "sha256:1802569038c5f13baf28df2e52e7098fb0db45931a54a1c4bee9bbbd1d40bea1",
             "locator": {
               "kind": "symbol",
@@ -37,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
             "content": "sha256:dc34d25ab0f5c792b247f4ec3ca1f509163e7a20baf31a05439060ebec1a37a6",
             "locator": {
               "kind": "symbol",
@@ -53,21 +53,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
+            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
+            "content": "sha256:5409d0e9fb3fdec4d1d4b3c9f2698f604b07311725b47559e71c721754107617",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:35cd6c3d19d38de1c42fefdcc64d139ae6134334dfae7d81d6fc76e74a1bfd45",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
             }
           },
           "kind": "test"
@@ -75,36 +64,14 @@
       ]
     },
     "12": {
-      "note": "Retired records are never live.\n\nAnchor: `test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired` `test_a_retired_family_is_never_selected_as_live`",
+      "note": "Retired records are never live.\n\nAnchor: `test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired`",
       "targets": [
         {
           "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
+            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
+            "content": "sha256:5409d0e9fb3fdec4d1d4b3c9f2698f604b07311725b47559e71c721754107617",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:5f9ef05754573b3b60836d951f5fa95e29012c6759d43150204cba2149e23200",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:7194126f77942be5b011aac4423f276edf1d4c69dbc4538ada04bcf761264d16",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_retired_family_is_never_selected_as_live"
             }
           },
           "kind": "test"
@@ -116,12 +83,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "830d89bb301c2fd59337d82f6f8aa7abf676b4e6",
+            "blob": "d10964f21e3c76aa32694f3f0a93ec04188987e8",
             "content": "sha256:222a6ff244f67693b41c16ff732f292d763843984688f77f46c8f03400b9bb92",
             "locator": {
-              "end": 229,
+              "end": 234,
               "kind": "line_range",
-              "start": 229
+              "start": 234
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -134,12 +101,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
             "content": "sha256:b9c0560212759180930079714f7dfa506672a0eee2c0aab2425374cffce32281",
             "locator": {
-              "end": 262,
+              "end": 234,
               "kind": "line_range",
-              "start": 213
+              "start": 185
             }
           },
           "kind": "test"
@@ -151,21 +118,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
+            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
+            "content": "sha256:5409d0e9fb3fdec4d1d4b3c9f2698f604b07311725b47559e71c721754107617",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:726c1b8aabb652cdc4703fe6e7d27e9752c81252e61e8169dc0e3d9bcb6efa2d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_knowledge_diff_with_no_after_revision_compares_with_the_working_tree"
             }
           },
           "kind": "test"

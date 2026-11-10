@@ -1,9 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations"
+      "prevents_costly_mistake"
     ],
-    "justification": "A quality procedure that asks for a file the product no longer writes cannot be run at all; the requirement and the adoption skill must name the current owner together."
+    "justification": "Skipping the transferred MQC or adopting a baseline without its attribution loses the evidence the foundation depends on; the guarantee prevents that costly mistake."
   },
   "applicability": "The transferred memory-quality-control and baseline-adoption procedure after the retirement.",
   "conditions": [
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "The transferred MQC and baseline-adoption procedure names the current report/result owner rather than requiring a retired task-start drift file.",
   "status": "proposed",

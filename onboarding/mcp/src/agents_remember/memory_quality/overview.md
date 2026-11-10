@@ -11,6 +11,8 @@ Legacy onboarding remains readable and convertible, but ordinary public memory o
 
 ## Hot Path Summary
 
+For converted memory, an absent onboarding collection is measured as zero routes/cards without creating that directory. An existing non-directory is an error. The added-source checker still reports eligible added sources lacking cards; absence is not permission to call those sources documented. The drift model retains the shared checked/error/notChecked vocabulary and optional error diagnostics.
+
 Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
 `check.py` normalizes the selected names and dispatches the registered checks. Without drift context its default population is style-only; supplied context adds integrity. Required unavailable inputs must be visible in a result rather than interpreted as an empty success. Enforcing findings affect `ok`; report-only findings remain separately counted and sampled. Total counts and bounded detail samples have different meanings.
@@ -221,6 +223,8 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Purpose heading, leaf/date heading and trailing citation rules refuse at leaf publication, with standalone-conversion exemptions. Their implementation is tracked in the frozen code tree. [83]
 - Checklist actionability has three terms; operational report and attestation receive separate atomic writes and exact bindings, and the returned whole result retains the three blocking populations. [84]
 - Governing resolution requires a metadata field, tests field/body independently, and observes missing body links. [85]
+- Retained reference account (no fresh execution or acceptance inferred): The shared drift model declares the vocabulary used by drift-check wire responses. [5]
+- Decision governs is a refusing rule. [58]
 - Converted summary names measured counts and unreadable sidecars; report/snapshot writes are conditional. [86]
 - The retained `check_references` helper reports mechanical currentness. Full converted quality and publication separately refuse stale reference anchors through R198. Scoped fixing excludes refused sidecars before refresh/write, after parsing. [87]
 - Family judgments newly published or edited require authored effect and their actual revision; exact historical rows are exempt. [88]
@@ -229,7 +233,6 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Named registry policy rather than unconditional report-only flags. [34]
 - Family writer deferral and named reporting boundaries. [36]
 - Admission findings use route and actual carried-state policy. [55]
-- Decision governs is a refusing rule. [58]
 - Migration completeness covers candidate onboarding and census routes. [95]
 - Membership, record and onboarding fact rendering. [96]
 - Converted snapshot identity uses all stale findings rather than the sampled packet and is withheld for unreadable sidecars; legacy snapshots hash their complete actionable rows, independently of snapshot time. [97]
@@ -240,7 +243,6 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 
 - The memory registrar exposes `memory_quality_check` to agents and routes it to the start, poll or whole-run payload. [2]
 
-- Retained reference account (no fresh execution or acceptance inferred): The shared drift model declares the vocabulary used by drift-check wire responses. [5]
 - Retained reference account (no fresh execution or acceptance inferred): The application surface projects readiness with no affected-closure plan. [16]
 - Retained reference account (no fresh execution or acceptance inferred): The caller-exclude surface on the registered tool and the CLI. [25]
 - Interactive catalog projection supplies no affected-closure plan and does not claim certification eligibility. [89]

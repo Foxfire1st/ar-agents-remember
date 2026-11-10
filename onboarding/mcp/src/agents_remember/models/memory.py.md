@@ -130,8 +130,6 @@ and D-33 names the memory-quality and citation surfaces.
 - Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. [2]
 
 
-- `DriftSummary.status` uses the same shared `DriftStatus` alias. [5]
-- The context-packet wire face includes its matching `error` field. [6]
 
 
 
@@ -169,3 +167,6 @@ and D-33 names the memory-quality and citation surfaces.
 
 
 - The two optional quality fields are declared rather than merely tolerated flexible extras. [9]
+
+- `DriftSummary.status` uses the same shared `DriftStatus` alias. [5]
+- The context-packet wire face includes its matching `error` field. [6]

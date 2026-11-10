@@ -37,7 +37,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3b359cc760a49814e70319c5b4850eaa262351a",
+            "blob": "17c7b4ba661d205be5d116ff99a93f0f19f34d39",
             "content": "sha256:3125f6c5c96edaeb59ff9f4ce68d7c584bcc3714d07dd8ce8d58a73d6c0128cd",
             "locator": {
               "kind": "symbol",
@@ -576,7 +576,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3b359cc760a49814e70319c5b4850eaa262351a",
+            "blob": "17c7b4ba661d205be5d116ff99a93f0f19f34d39",
             "content": "sha256:e09c864664a80dd3c43a30c28d705d90e2de5f7edfe22f97fd507ed2769fbffe",
             "locator": {
               "kind": "symbol",
@@ -593,11 +593,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a74244f8dff8b3cae163ef87730b710dce2c8013",
-            "content": "sha256:624b25ff701c56cadce092ae405d4429a816bb6a18e01a4ff58ef38474d03040",
+            "blob": "0eaef8fb2966ce40738225cccbbb3814c89da5c5",
+            "content": "sha256:78180989561acac0d64631f2d3766ea0661355ee738075a3766a8f600eae127c",
             "locator": {
-              "kind": "symbol",
-              "name": "fresh_host_block"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
           },
@@ -674,12 +673,12 @@
       ]
     },
     "4": {
-      "note": "Paseo settings own strict nested runtime fields and the explicit unconfigured-runtime refusal.\n\nAnchor: `mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py`",
+      "note": "Anchor: `mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "f3b359cc760a49814e70319c5b4850eaa262351a",
-            "content": "sha256:7b8df97155eabd898fb95afc71d84ffed215b90ff1352424f0d47eb40e208537",
+            "blob": "17c7b4ba661d205be5d116ff99a93f0f19f34d39",
+            "content": "sha256:a9aada22fb5a2b55c87d71ecaf62c6ca6cd1f76f9717fe01580d750fc10ba7a4",
             "locator": {
               "kind": "file"
             },
@@ -710,7 +709,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "825208f3241118550bd4b710b5e746422eeec8bd",
+            "blob": "f0866515684aa632f534294be7451aa0a58b5589",
             "content": "sha256:6b6b2bf502c8b69429486d810824094b1ebc4429f1d02b6a7bad30200c667f33",
             "locator": {
               "kind": "symbol",

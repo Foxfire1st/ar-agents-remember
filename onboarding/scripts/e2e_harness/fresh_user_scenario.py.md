@@ -36,7 +36,7 @@ This account is current source interpretation only. It creates no executed test/
 - Scenario fixture and reporting imports use the e2e_harness-qualified module identities. The runner and test select the scripts root, and the test loader uses importlib.import_module for those shared identities. [13]
 - Anchor: One recorded invocation/result, not inferred completion. [1]
 - Anchor: Actual candidate package-source guard. [3]
-- Anchor: Ordered current fixture chain without the deleted free-agent step. [4]
+[4]
 - Anchor: Two fixture chains and their independent invariant results. [5]
 - Anchor: Citation preview work order, not rewritten memory. [7]
 - Anchor: Missing-enclosure citation step remains blocked by name. [8]

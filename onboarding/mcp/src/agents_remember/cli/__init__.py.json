@@ -21,16 +21,14 @@
       ]
     },
     "2": {
-      "note": "The umbrella entrypoint dispatches subcommands for this package. Anchor: `main`",
+      "note": "The umbrella entrypoint dispatches subcommands for this package. Anchor: `main`\n\nAnchor: `main`",
       "targets": [
         {
           "anchor": {
-            "blob": "009c76004ec4b54cf39affd07edbc7882459d597",
-            "content": "sha256:0796b7cd542aee468c8cae5e9a7f9b722f79aabab1b7b1597b7f0e747777eddf",
+            "blob": "14c64a93cfdee1ea751b35280444aae0bf50eafa",
+            "content": "sha256:d90cd30b05a5d3b40d32437042370e19b15967731fa072ce70b44d17522a32d6",
             "locator": {
-              "end": 209,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },

@@ -1,6 +1,24 @@
 {
   "path": "mcp/tests/test_knowledge_validator.py",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+        "content": "sha256:55612250c727612f2407f36f791217c6f73e4899f8709173fecadbbe40a93807",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_carried_file_sidecar_without_markdown_is_migration_debt"
+        }
+      },
+      "facet": "A carried sidecar without Markdown keeps its advisory migration debt.",
+      "id": "PRF-ZC7N5W",
+      "invariant": "INV-R1F96Z",
+      "origin": {
+        "handoffEntry": "MIK-R217@v1-empty-memory",
+        "leaf": "260928-MIK-L204"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

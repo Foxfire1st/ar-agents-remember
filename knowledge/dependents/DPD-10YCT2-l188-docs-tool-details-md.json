@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "40475ce5dbd82a4b45ebd637b4ffcfa2dc2e7e02",
-    "commit": "81180617aed517835314526b8309d37d5be8b3b7",
+    "codeTree": "5be86e031913a59eeb03a465f1b86fa1a22170ba",
+    "commit": "b9856a62a07735382b6f0c16525d33ed23d0f13d",
     "role": "curator",
     "statement": "The reference's new knowledge-census, knowledge-copies and memory-backfill sections match the registered commands, but its runtime_install section still says the install replaces AGENTS.md targets and that a run without an experiment copies them back, which the code no longer does.",
-    "task": "260928-MIK-L84",
+    "task": "260928-MIK-L204",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -69,8 +69,8 @@
     },
     {
       "anchor": {
-        "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
-        "content": "sha256:162e27ef3c05f6f21f2da9209dda01ce969d0a1e6f2d62a562343e1f145b8165",
+        "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
+        "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
         "locator": {
           "kind": "symbol",
           "name": "converted_knowledge_check"

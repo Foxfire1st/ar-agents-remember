@@ -19,8 +19,8 @@ a caller-supplied cache path. The memory source head is checked against the actu
 remain authoritative.
 
 `resolve_memory_candidate_pair` compares the requested address and repository with the admitted
-contract, rereads that same contract, and requires an external leaf with live code, memory,
-and onboarding paths. It proves both worktrees belong to the recorded repositories, the
+contract, rereads that same contract, and requires an external leaf with live code and memory
+worktrees. Its derived onboarding child may be absent before the first card exists. It proves both worktrees belong to the recorded repositories, the
 recorded work branches are actually checked out, each source head equals its recorded base or the
 exact recorded integrated landing for a completed leaf, and each base is an ancestor of its work
 branch. It then emits the strict pair identity and its canonical digest. This completed-leaf
@@ -65,8 +65,6 @@ No configured external domain source applies.
 
 ### Repo-Internal References
 
-- The pair resolver derives the consumer cache path, excludes it from the digest, and proves real branch/base authority. [1]
-- Pair resolution and digest construction are centralized. [2]
 - Requested authority is compared before candidate work begins. [3]
 - Work branch, accepted source head, and ancestry are all proven without mutation. [4]
 
@@ -77,3 +75,6 @@ repositories.
 
 
 No separate external implementation source applies to this file.
+
+- The pair resolver derives the consumer cache path, excludes it from the digest, and proves real branch/base authority. [1]
+- Pair resolution and digest construction are centralized. [2]

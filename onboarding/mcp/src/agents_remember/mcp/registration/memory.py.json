@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+        "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
         "content": "sha256:14d3e28109cc04c1a36750066b033359105473bf7276e620816572d5d1e909e8",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+        "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
         "content": "sha256:14d3e28109cc04c1a36750066b033359105473bf7276e620816572d5d1e909e8",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
-        "content": "sha256:99b4e1c479b74f286fc5a135f5d047e6dc51d2c0bce04e0df11e22034f93f0ac",
+        "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+        "content": "sha256:22a16fa5e06b93600248318969bdaa92fc3eadaa85884358ee5bbb049f754e00",
         "locator": {
           "kind": "file"
         }
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
             "content": "sha256:dc303c009fee10719834f1b3294579d032ff9b1a31dfe7e8d0fccd3a7e702d4d",
             "locator": {
               "kind": "symbol",
@@ -106,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
             "content": "sha256:e680829e47db58265b7a93e8d891f6a09ba122ed9a80bec82f3dcc04a8a1cfad",
             "locator": {
               "end": 93,
@@ -172,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1eb24acc070f595e897bb14b141d62af845cf14",
+            "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
             "content": "sha256:4a22ee9b6321b636b8277d22c6d5fd5735eb65cc24655fd564b6b99b9760dce1",
             "locator": {
               "kind": "symbol",
@@ -184,7 +184,7 @@
         },
         {
           "anchor": {
-            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
             "content": "sha256:cab05899bedafd53520adfbc53526a3b92c684ac434bf63cceea0f3d82a66b0a",
             "locator": {
               "end": 201,
@@ -201,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
             "content": "sha256:f6773d34aa7cd5ce69e5776b325f65d0464896d68cd92d4c204388caf6d77d59",
             "locator": {
               "end": 91,
@@ -213,7 +213,7 @@
         },
         {
           "anchor": {
-            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
             "content": "sha256:6264a9090f02cc8d816656020f15ce2537faf2ac797e1499009c7119bebc659e",
             "locator": {
               "end": 82,
@@ -226,16 +226,14 @@
       ]
     },
     "19": {
-      "note": "Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call.  Anchor: `_register_memory_health_tools`",
+      "note": "Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call.  Anchor: `_register_memory_health_tools`\n\nAnchor: `_register_memory_health_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
-            "content": "sha256:99b4e1c479b74f286fc5a135f5d047e6dc51d2c0bce04e0df11e22034f93f0ac",
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:22a16fa5e06b93600248318969bdaa92fc3eadaa85884358ee5bbb049f754e00",
             "locator": {
-              "end": 224,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -275,7 +273,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
             "content": "sha256:8c8970683147f31767f3c402cb5be5e66ff82056236a64dead9f16f9747fc52e",
             "locator": {
               "kind": "symbol",
@@ -291,7 +289,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
             "content": "sha256:8ac100494368c3d2ba1b2423415b8f18f11e9292d7761156e3ab77975ea90634",
             "locator": {
               "end": 52,

@@ -1,7 +1,6 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
       "guarded_by_test"
     ],
     "justification": "The root/route templates and authoring instruction must agree or the first attributed tree silently contains legacy cards."
@@ -27,7 +26,7 @@
     "leaf": "260928-MIK-L45",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Bootstrap onboarding cards are written in the converted shape: no metadata table, no Update History, citation tables as fixer input, currentness from reference anchors.",
   "status": "proposed",

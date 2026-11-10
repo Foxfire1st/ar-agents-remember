@@ -193,11 +193,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6f19d716614b209612597c6edbf85090014aac3",
-            "content": "sha256:60cb10c962c281de167b8c9f199e2c4b7a7eccaa8279ae40fe7b64a5560b1eb5",
+            "blob": "dcbd9ce3d1bcc4f2805f2ccf47e3b8a14119ec63",
+            "content": "sha256:5cdaf2e9510dbdc04146abcef8ff00e91a0b4d27dce7faac33bd6a7da5e9d974",
             "locator": {
-              "kind": "symbol",
-              "name": "admit_bootstrap_context"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py"
           },

@@ -42,7 +42,7 @@ comes from the selected contract when `selector.contract_path` exists and loads
 task root, worktree group, memory mode, worktrees and ledger path come from the contract when there is one.
 The effective memory root is the contract's memory worktree when it has one. `system_root` and the docs
 root fall back to the coordination root's `system` and `docs` when the memory root has none. The onboarding
-root is the effective memory root's `onboarding` directory when it exists and the selected root's otherwise.
+root is always the contract memory worktree's `onboarding` child when that worktree is named, even when the child is absent. Without a contract memory worktree, the existing effective-child selection applies.
 Cross-repository settings are resolved against the workspace and the coordination root.
 
 ### What is recorded
@@ -77,11 +77,9 @@ widens that exception.
 - Explicit settings must imply an existing memory root. [7]
 - The public entry requires a contract reader and branches on the onboarding-root hint. [8]
 
-- The selection path of the context. [9]
 
 - The coordination root of a selected contract, with the path probe and resolution recorded. [10]
 
-- The context is filled from roots, settings and the optional contract. [11]
 
 - Root absence, appearance, retargeting and removal each recompute a kept view; a present removed root is refused by name. [12]
 - A root probe that raises is recorded as unreadable and nothing is kept. 
@@ -92,3 +90,6 @@ widens that exception.
 - The onboarding gate's settings resolution records the absent memory settings and the contract it read, and no file it did not open. [15]
 
 - Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py::_root_errors - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The selection path of the context.  Anchor: `_context_from_selection` [9]
+- The context is filled from roots, settings and the optional contract.  Anchor: `build_coordination_context` [11]

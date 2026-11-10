@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:738dcc12afb5069d83bbaf654829369d67176c280f7cb145ed95dc6795d8e9b7",
             "locator": {
               "end": 475,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:97cc61f95d0183ade1819d4faf5f6bc08d3e8dc5d56e0aeae32704a32016c746",
             "locator": {
               "end": 361,
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:df34f6c8d5d81c487d7fe0d88923a35dfa476050591a601c848e23cdf860a9ef",
             "locator": {
               "end": 239,
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:651d5a58597c0461f4af65d5c51e243b7450e7dfda5d949266b2f1898b0cdc0b",
             "locator": {
               "end": 247,
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:f50603ed8c15cd7f21dc4c019d29fa9e8b8ac173ef230b40a74ee8e334b1c658",
             "locator": {
               "end": 204,
@@ -96,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:567936ab02ea740e7646f58ee47a38c27440f90ef567d31261d9e9e440159bf7",
             "locator": {
               "end": 129,
@@ -114,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:7f67d3c5510f3e2703e0330a5f2f0bf198127702575f14c7a313d94cb1213ab5",
             "locator": {
               "end": 64,
@@ -132,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:c8b94afc53a501a5dcda40aa62695d69e69dca3f5d76cc09d0b08e3370e3c825",
             "locator": {
               "end": 88,
@@ -204,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:a33ad250e5a93cd08005a63314140fbd0850b7d84bd6544215836d0382df3079",
             "locator": {
               "end": 638,
@@ -240,12 +240,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
-            "content": "sha256:b41f85965533924cde4b4a5cd4c49e2204a10079f21ee7f36d514188d5da672c",
+            "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
+            "content": "sha256:cedcdbd5cf960e1ec08e535abc2e8d739e43963cb736ad9bbcb1faed388ca748",
             "locator": {
-              "end": 9,
-              "kind": "line_range",
-              "start": 7
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator/repository-foundation.md"
           },
@@ -258,12 +256,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
-            "content": "sha256:beaeac203348f0407ee0a84764c0252aaaafcd0637d70c6fdb7a5df3681e9fd2",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:d3c1273715f3b7fcc23d52d26d9e97f95de76f183b00dd1411403b29f9e9b21b",
             "locator": {
-              "end": 139,
-              "kind": "line_range",
-              "start": 135
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -330,12 +326,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6719736af9f5e6f16757dadf8d1899554e1d0bf",
-            "content": "sha256:5f6e2ef25d289f3f1d5f88343012fa451c082d71e5d3b1677dac382c8bb0e9a0",
+            "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
+            "content": "sha256:cedcdbd5cf960e1ec08e535abc2e8d739e43963cb736ad9bbcb1faed388ca748",
             "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 9
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator/repository-foundation.md"
           },
@@ -384,12 +378,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ea90130dcfe2cc748716312aa1d58dca5fa9783",
-            "content": "sha256:b523e6c1a9bc94d392e5455d3e11e891f30ad40a92255e96534c61844d8e5705",
+            "blob": "bfa0e900805e61cca784cc1ff46e1e15fcea75fc",
+            "content": "sha256:e8273f95fb816c142bfa5711a9887fe639fc0e5fa4f7eb4da685f1a645e5b3d6",
             "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 18
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
           },
@@ -402,7 +394,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:a2843c2e511dba543a0d77f749de654f6603ff9624a2a82d9e84c6cbad930819",
             "locator": {
               "end": 409,
@@ -434,31 +426,16 @@
       ]
     },
     "31": {
-      "note": "The bootstrap operation writes user settings in step 4, initializes the memory root in step 5, reads what the baseline will carry in step 6, adopts the baseline in step 7, and reports the knowledge foundation's state in step 8.\n\nAnchor: `user_settings_init`",
+      "note": "The bootstrap operation writes user settings in step 4, initializes the memory root in step 5, reads what the baseline will carry in step 6, adopts the baseline in step 7, and reports the knowledge foundation's state in step 8.",
       "targets": [
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
-            "content": "sha256:eff794644e5f44b23002709a33555eb0e970d34d5d9374f75a4e8d1ec8b5a271",
+            "blob": "4684108df7310811b1e02a2f9889b34c350dcb13",
+            "content": "sha256:1a9a92eef605905e95d0727f1efc72821ab490886da1d750190546ffc515b0da",
             "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 53
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
-            "content": "sha256:f2b26e1facca757bb09f39200dde0b1517683c87e343a762eb152d0241a60d3f",
-            "locator": {
-              "end": 426,
-              "kind": "line_range",
-              "start": 417
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md"
           },
           "kind": "code"
         }
@@ -469,7 +446,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a7ce955b33a464350060ee68a79725e9c4c5a7a",
+            "blob": "6d3c3b347c8f4a225fc2d55cb2e18ed1332cb6d6",
             "content": "sha256:3c9b1c9b113f02667159ea22b593e4bf32e219571a29d0f4a031a0800438a5d1",
             "locator": {
               "end": 65,
@@ -487,7 +464,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3458e3fc0098efef807d3caecf8d421a68515f5",
+            "blob": "4684108df7310811b1e02a2f9889b34c350dcb13",
             "content": "sha256:8416ba3b3a81408298fde7656f4dac22c93d82f309988ed0969eeecbc961e8ec",
             "locator": {
               "end": 139,
@@ -505,14 +482,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa70f3a747d7811e471147a211eecf3dcbe55940",
-            "content": "sha256:3bf2812a7068c74811647353db6d219e25b0896eff6398f79ac77d48dd420868",
+            "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
+            "content": "sha256:cedcdbd5cf960e1ec08e535abc2e8d739e43963cb736ad9bbcb1faed388ca748",
             "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 59
+              "kind": "file"
             },
-            "path": "skills/c-14-knowledge-bootstrap/SKILL.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/repository-foundation.md"
           },
           "kind": "code"
         }
@@ -613,7 +588,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:f70a4edbd2ef2483d5a6967515fc1dced1349d59ea2dc34a75da65e8e17f17d1",
             "locator": {
               "end": 654,
@@ -792,7 +767,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:0247c086ffba00152c8ed84564a28a29a1729116eb5a307c6c22b43b211e54cc",
             "locator": {
               "end": 329,
@@ -900,7 +875,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6b9ea88e1d9cce0a3389bf96bd60791329b9aca",
+            "blob": "f9a6ca2e4eba21a38fa2d8e13b6f1325f0efc234",
             "content": "sha256:4741fb489e8d66cd1966d0d22011f7d9f26f3e2f68c8337b65461b61b9bf5fc6",
             "locator": {
               "end": 18,
@@ -954,7 +929,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:7798c7dfae844b7d0f02528f6ab8f0a0911c42ae3c8adc1e8c829c2f1e95acdc",
             "locator": {
               "end": 571,
@@ -1155,7 +1130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:24c00e8fe28ebcf62a8baffea7584aac58cd0c7dbcb3c1cdd0b7e3224d408a02",
             "locator": {
               "end": 60,
@@ -1173,7 +1148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:0a3f323f7cb770078212ac474df2d2828e66659abda10e0fb075116fa5a0da46",
             "locator": {
               "end": 320,
@@ -1227,7 +1202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6f19d716614b209612597c6edbf85090014aac3",
+            "blob": "dcbd9ce3d1bcc4f2805f2ccf47e3b8a14119ec63",
             "content": "sha256:1281f6633f9bb20611f062582f5468d29f4241988c7bee9a3d13bfcf5133f8f2",
             "locator": {
               "end": 319,
@@ -1281,7 +1256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:ef76a9d1279864c96925c50acd98028437cbb8bbd4d264212947ca4322268220",
             "locator": {
               "end": 382,
@@ -1317,12 +1292,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
-            "content": "sha256:f9c53cd2c1c681a3c237c83a169afba1086a1306246f597fab8b838d55c2c4a7",
+            "blob": "0f13aa36add4fd90f876d70606d7d3d78fb18891",
+            "content": "sha256:372195841d094e06b210b477bcb0e83a251450c677f6fc3d8982d5ef57c5bf22",
             "locator": {
-              "end": 73,
-              "kind": "line_range",
-              "start": 43
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_validate.py"
           },
@@ -1371,7 +1344,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33274e262d9f6c3fb7d21165f10c24f84ac63974",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:ead1e0462c9108cb77c73982c0deb764c7eb0880c987848bc2ab20529a72a552",
             "locator": {
               "end": 397,
@@ -1605,14 +1578,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81a6f45a57bf031b989f36b9f1ba9bf9a6b249b3",
-            "content": "sha256:e12ede06070dd714ee05013bf110c8a9703e06c9f495b747055f273e6c872e60",
+            "blob": "aa1d293a87e368705f0de0e40c4e46ad3955cee2",
+            "content": "sha256:038991b16997ebfd9477b880fe679535b51674c60eb38caebf5b4d0bb0208450",
             "locator": {
-              "end": 379,
-              "kind": "line_range",
-              "start": 374
+              "kind": "file"
             },
-            "path": "skills/c-13-install-and-onboard/SKILL.md"
+            "path": "docs/guides/carryover-from-branch.md"
           },
           "kind": "code"
         }

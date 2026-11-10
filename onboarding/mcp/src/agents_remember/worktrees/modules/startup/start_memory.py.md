@@ -20,8 +20,8 @@ The existing worktree/mTime preparation keeps its dry-run boundary: no worktree 
 
 
 - External-only preparation, exact source ref, no fallback [12]
+- One remaining recovery choice [15]
 
 - Missing repository routes to the blocked state [13]
 - Removed answer refused by name, never honored [14]
-- One remaining recovery choice [15]
 - Protected source ref required, never created [16]

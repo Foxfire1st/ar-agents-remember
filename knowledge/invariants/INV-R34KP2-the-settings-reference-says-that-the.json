@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L113",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The settings reference says that the user's file is closed and why, and gives the two commands for folder and file with the configuration folder the product reads, quoted so that a path with a space stays whole; the product emits the same two commands for the exact path.",
   "status": "accepted",

@@ -1,0 +1,42 @@
+{
+  "confirmed": {
+    "codeTree": "5be86e031913a59eeb03a465f1b86fa1a22170ba",
+    "commit": "b9856a62a07735382b6f0c16525d33ed23d0f13d",
+    "role": "curator",
+    "statement": "The tool reference correctly requires contract-scoped leaf measurement and distinguishes quality readiness from coherence; an absent card directory changes neither documented authority.",
+    "task": "260928-MIK-L204",
+    "uncommitted": true
+  },
+  "document": "docs/reference/mcp-tools.md",
+  "id": "DPD-X6G7K3",
+  "origin": {
+    "handoff": {
+      "path": "L204-curator-handoff-draft.json"
+    },
+    "handoffEntry": "L204-dependent-mcp-tools",
+    "leaf": "260928-MIK-L204",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "anchor": {
+        "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
+        "content": "sha256:a6fcc7a15019b01f3e3984df1fa653a8ff8650070ac1d0b537f19b24797e8249",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_leaf_memory_scope"
+        },
+        "path": "mcp/src/agents_remember/application/memory_scope.py"
+      },
+      "heading": "Leaf memory scope",
+      "kind": "anchor"
+    },
+    {
+      "blob": "1aa84cfdcb5c7c6a23646593b11f05bd874192c7",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/memory_quality/knowledge_inputs.py"
+    }
+  ]
+}

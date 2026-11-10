@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "40475ce5dbd82a4b45ebd637b4ffcfa2dc2e7e02",
-    "commit": "81180617aed517835314526b8309d37d5be8b3b7",
+    "codeTree": "5be86e031913a59eeb03a465f1b86fa1a22170ba",
+    "commit": "b9856a62a07735382b6f0c16525d33ed23d0f13d",
     "role": "curator",
     "statement": "The packaged copy is byte-identical to docs/tool-details.md, so it carries the same accurate new command sections and the same outdated runtime_install claim that AGENTS.md targets are installed and restored.",
-    "task": "260928-MIK-L84",
+    "task": "260928-MIK-L204",
     "uncommitted": true
   },
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -55,7 +55,7 @@
       "revision": 2
     },
     {
-      "blob": "6ef8feb28ccdaed331797747b61028e85aed2b6a",
+      "blob": "89ecc502ddc0532ded53d31e1a392a3307573da7",
       "kind": "file",
       "path": "docs/tool-details.md"
     }
