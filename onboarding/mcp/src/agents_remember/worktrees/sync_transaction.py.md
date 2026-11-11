@@ -12,7 +12,7 @@ Contract-addressed driver for resumable source synchronization.
 
 ### Logic
 
-Input validation and stable journal routing precede mutation. Only merge-memory/skip-memory and continue/cancel are admitted. Dirty moving candidates are parked/restored under their own recorded stash. [1] [2]
+Input validation and stable journal routing precede mutation. Only merge-memory/skip-memory, an omitted or `repository-default` sync source, and continue/cancel are admitted. Dirty moving candidates are parked/restored under their own recorded stash. [1] [2]
 
 Code settles before memory; _paired_code supplies its result for structural memory merge and validation. _continue_resolution selects the retained side and finishes staged merge or parked reapply before automatic progress resumes. Journal merge/converted-fast-forward refusal violations (first 50 plus total). Merge repair revalidates; incoming-tree refusal names source repair, cancel and fresh sync. Memory completion clears refusal. [4] [6] [9]
 
@@ -24,11 +24,15 @@ routes damaged/missing journal recovery, quarantine, identity validation, active
 terminal replay, or new admission. The operation returns typed results; no lock remains held while
 an agent resolves conflicts between calls.
 
-Admission resolves actual code/memory source tips and builds typed `SyncSideRecord` plans for
-already-current, fast-forward, merge, or skip behavior. It no longer performs a ledger mapping
+Admission resolves actual code/memory source tips through `resolve_sync_sources` (the contract's own
+source line, or with `sync_source="repository-default"` each repository's default branch; a default it
+cannot resolve answers `sync-source-unavailable` and nothing moves) and builds typed `SyncSideRecord`
+plans for already-current, fast-forward, merge, or skip behavior. It performs no ledger mapping
 preflight. `_already_current_result` uses the recorded bases and participating branch ancestry,
-independently of cached rows. A divergent memory plan still requires its explicit merge/skip choice,
-and that admitted choice cannot change during continuation.
+independently of cached rows; a repository-default sync keeps the contract's base pair, so only the
+branch ancestry decides. A divergent memory plan requires its explicit merge/skip choice,
+and that admitted choice, like the admitted sync source, cannot change during continuation
+(`sync-input-mismatch`).
 
 Before a moving non-temporary side is parked, preflight proves its checkout and rejects real
 content conflicts or an active `MERGE_HEAD` outside the sync admission. A merely dirty candidate is
@@ -43,12 +47,22 @@ content conflicts remain in the retained worktree. The driver reads `content_con
 refreshing both merge-resolution and parked-WIP-resolution failures, so a memory-cache conflict is
 not presented as content requiring agent judgment.
 
+A continue first refuses with `sync-source-moved` when a recorded repository default is no longer the
+repository's default branch (the source strategy's `moved_default`, the one live default read) or when a
+source line has left the tip the sync carries (`moved_source_sides` in `sync_transaction_sources`). A
+continue of a parked-candidate reapply checks unmerged paths first, then measures the parked authoring
+against the resolved tree (`sync_parked_omissions.measure`) and writes the full report
+(`sync_omission_report.write_report`); a report it cannot read or write answers
+`sync-resolution-incomplete` with that error and settles nothing. While items are missing it journals the
+report path and count on the side and answers `sync-resolution-incomplete` with an `omissions` block,
+keeping the stash; it settles the side only when nothing remains.
+
 Completed paths, resume, and cancellation restore parked work through the focused authority/recovery
 owners. `_reconcile_completed_sides` can recognize an already committed operation-owned merge;
 finalization waits for the participating sides and parked work to be settled. Exact checkout,
 source, parent/ref, journal, and admitted-choice checks remain in force.
 
-**The memory merge is validated against the code side's result (MIK-R22 rule 8).** `_run_side` and
+**The memory merge is validated against the code side's result.** `_run_side` and
 `_finish_retained_merge` pass `paired_code=_paired_code(record)` into `start_side_merge` and
 `continue_side_merge`. `_paired_code` returns the code side's `resultHead` (as a `PairedCode` with the
 code repository) once the code side is `completed`, and `None` otherwise; `sync_transaction_git` then
@@ -61,7 +75,7 @@ the files in the memory worktree, stage them, then rerun `worktree_sync` (with
 `resolution_action='cancel'`. The phase is not changed and the merge stays staged, so the same call
 resumes and re-validates.
 
-**The crossing sync's owner and report (MIK-R24 rule 8).** `_run_side` also passes
+**The crossing sync's owner and report.** `_run_side` also passes
 `crossing_owner=("leaf" if record.contractKind == "leaf" else "master", record.taskId)` into
 `start_side_merge`, so a crossing sync knows whose history file takes the moved no-impact markers (a leaf),
 or which task's `<task-id>-crossing-<n>.json` takes a record conflict's row (a master line). The
@@ -87,8 +101,8 @@ consumer artifact on the memory side, not a second source of sync truth.
 - Validator refusal is never committed around.
 
 - New moving-side admission cannot adopt an unrelated active merge.
-- **The sync preflight judges its exact memory sides before any move (MIK-R46).**
-  `_sync_side_outcome` names `preSyncHead`, `sourceCommit`, and a merge's exact base.
+- **The sync preflight judges its exact memory sides before any move.**
+  `sync_side_outcome` (in `sync_transaction_cutover.py`, reached through `cutover_locked`) names `preSyncHead`, `sourceCommit`, and a merge's exact base.
   Already-current and `skip-memory` perform no memory move and remain admitted. A fast-forward from legacy
   target to converted source adopts conversion; two legacy sides refuse, and a converted target refuses a legacy
   source that would leave the text format. A merge of three legacy sides refuses rather than taking plain Git;

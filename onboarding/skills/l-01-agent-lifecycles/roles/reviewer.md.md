@@ -92,13 +92,13 @@ Current role duty remains targeted/scoped evidence with failed or unrun results 
 
 ## Current composition and authoring contract
 
-Reviewer requires explicit independent assignment, exact seam/mode, approved revisions and ruling, immutable candidate and attempts, bound catalogs and check contract. Inputs, complete standing-criterion reporting, sealed findings, route coverage, verdict, producer list, route reports and immutable journal remain inline. Complete-diff review is not filtered by invariant attribution.
+Reviewer requires explicit independent assignment, exact seam/mode, approved revisions and ruling, immutable candidate and attempts, bound catalogs and check contract. The brief names no catalogs and the Reviewer chooses none: it binds them from the review type's row in the binding table and names them in the verdict's Catalog Binding section. It also asks the Worker for passing coding-guidelines handover results bound to the candidate tree and withholds code PASS without them. Inputs, complete standing-criterion reporting, sealed findings, route coverage, verdict, producer list, route reports and immutable journal remain inline. Complete-diff review is not filtered by invariant attribution.
 
 The numbered steps hold knowledge before/after/family/sibling inspection and producer preservation, expectedKnowledgeEffects adjudication and the `cutCards`/`addedFiles` memory checks inline; the master-exit completeness duty is inline as well. Procedures sit behind "Before you …, read" pointers: `operations/review.md` (intake and leaf verdict handover, boundaries, code-round recording, round-limit verification, record-only recheck), `reference/review-baseline.md` (route partitioning, baseline evidence checks, the three lenses, sealing and focused-test selection), `reference/knowledge/use.md#reviewer-inspect-every-changed-file`, `reference/knowledge/commands.md`, `reference/message-handover.md`, `reference/sandbox-actors.md` and `operations/orientation.md` for developer questions.
 
 The same Reviewer records code rounds and the separate memory lane; neither recording is Manager gate acceptance. Memory IDs/reports/count stay separate, with the same ordinary limit and recorded approval for extras. Only a recorded passed last round plus a matching review step permits its own set_step done; cold reads, blocked verdicts and progress do not. No matching step means report and set nothing. Record-only unchanged-candidate checks retain the last round, and scoped fix verification cannot silently reset the sealed baseline.
 
-When the candidate changes instruction texts, the Reviewer reviews them against `system/skill-writing-guidelines.md` when present, as it reviews code against `system/coding-guidelines.md`. For a finding about every member of a set, it scripts a scan of the whole candidate and reruns that scan during verification.
+When the candidate changes instruction texts, the Reviewer reviews them against `system/skill-writing-guidelines.md` when present, as it reviews code against `system/coding-guidelines.md` (code-seam criterion CS-7 checks every added or altered line). For a finding about every member of a set, it scripts a scan of the whole candidate and reruns that scan during verification.
 
 No role starts, code/onboarding writes or Git publication are granted. Non-leaf seam recipients and owner recording, immutable attempt history, exact caller identity, permission stops and scratch/report custody remain.
 
@@ -152,7 +152,7 @@ The Reviewer's closing paragraph sends temporary files, experiments and working 
 
 - Reviewer intake uses exact rendered/JSON paths and actual scoped read schemas, reads only the assigned seam and writes only contained task-local report artifacts. [10]
 
-- Reviewer requires the dispatched exact stable IDs and versions, the durable approval record, exact candidate and Worker attempts, and its bound catalogs and repository tools rather than choosing a rubric on the spot. [11]
+- Reviewer requires the dispatched exact stable IDs and versions, the durable approval record, exact candidate and Worker attempts and the repository's tools; the catalogs come from the review type's row in the binding table, never from the brief or a choice during the review, and the verdict's Catalog Binding section names them. [11]
 
 - Reviewer inspects every changed file of the complete candidate diff and reads the baseline detail at step 4; a subset never replaces the Curator's complete authoring memory-quality operation. [12]
 
@@ -160,7 +160,7 @@ The Reviewer's closing paragraph sends temporary files, experiments and working 
 
 - Each exact requirement revision is adjudicated accepted or rejected against its Worker attempt/candidate in a separate immutable reviewer record in the same leaf journal; Worker and earlier records stay unchanged. [14]
 
-- The Reviewer emits every bound standing criterion, sealed findings, complete route coverage, a seam-shaped verdict and producer-data handoff list plus durable per-route reports. [15]
+- The Reviewer emits every bound standing criterion, sealed findings, complete route coverage, a seam-shaped verdict with its Catalog Binding section filled, a producer-data handoff list and durable per-route reports. [15]
 
 - The Reviewer records ordinary leaf CODE begin/result and separate MEMORY rounds with unchanged code state; Manager records beyond-settings authorization and retains gate acceptance. [17]
 

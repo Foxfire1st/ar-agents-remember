@@ -19,7 +19,7 @@ Landing cut/add observations are report-only; use the measurement owner and cano
 
 The runtime style registry now contains only document-shape checks for diff markers, entity-catalog alignment and tables. Its pre-refresh population is entity alignment; its post-refresh population is drift plus those style checks. Legacy Update History, citation range resolution and claim reopening were removed. The public controller refuses unconverted operational input before running the registry; declaration of phase lists does not imply automatic execution by ordinary closeout.
 
-On converted trees the drift slot runs `knowledge.converted`: the knowledge validator with refusing stale-reference findings and separate report-only landing observations. The three surviving document-shape checks run normally; no legacy not-applicable compatibility check remains. A supplied `KnowledgeBasePort` provides the comparison base and its named failure. When that port fails, `R24.7-converted-base` refuses and base-dependent `R22.6-anchor-path` refusals are withheld while independently measurable references remain reported. Without a port, the helper attempts converted memory `HEAD` and returns no bases if it is unreadable or unconverted; these are distinct composition contracts, not a universal named-refusal promise.
+On converted trees the drift slot runs `knowledge.converted`: the knowledge validator with refusing stale-reference findings and separate report-only landing observations. The three surviving document-shape checks run normally; no legacy not-applicable compatibility check remains. A supplied `KnowledgeBasePort` provides the comparison bases (`HEAD` first and, during a merge, `MERGE_HEAD` too) and their named failure. When that port fails, `R24.7-converted-base` refuses and base-dependent `R22.6-anchor-path` refusals are withheld while independently measurable references remain reported. Without a port, the helper attempts converted memory `HEAD` and returns no bases if it is unreadable or unconverted; these are distinct composition contracts, not a universal named-refusal promise.
 
 The application controller owns synchronous/start/poll transport and contract-scoped composition. Its completed whole result retains the computed finding populations; `application/memory_quality/answer.py` selects bounded blocking entries in repair, missing-onboarding and stale-index order. The controller computes that answer once and retains its status/recovery fields beside the whole result, keeping delivery sampling separate from full result retention. It revalidates scope before and after checking, binds the comparison-base port, checks candidate stability, and combines quality, missing onboarding, route-index alignment, governing-overview resolution and knowledge-gate findings. The full leaf-scoped run publishes one deterministic enclosure checklist and its structured attestation. Repository-only diagnostics do not establish candidate acceptance.
 
@@ -184,7 +184,9 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Retained reference account (no fresh execution or acceptance inferred): The measures in Doc12's order. [39]
 - Retained reference account (no fresh execution or acceptance inferred): The registration with the validator. [40]
 - Retained reference account (no fresh execution or acceptance inferred): Stale references are report-only. [41]
-- Retained reference account (no fresh execution or acceptance inferred): The converted run's legacy-format checks and its validator slot.  Anchor: `LEGACY_FORMAT_CHECKS` `converted_knowledge_check` [42]
+
+- The converted run's one validator and reference-state check, `knowledge.converted`. [42]
+
 - Retained reference account (no fresh execution or acceptance inferred): The runner's dispatch by format.  Anchor: `_converted_check` [43]
 - Retained reference account (no fresh execution or acceptance inferred): The commit route's optional base converter. [44]
 - Retained reference account (no fresh execution or acceptance inferred): The escaping rule on the validator's grammar. [45]
@@ -212,7 +214,9 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Retained reference account (no fresh execution or acceptance inferred): The section's lead: the gate counts each open item. [70]
 - Retained reference account (no fresh execution or acceptance inferred): A converted card's kind and source. [71]
 - Retained reference account (no fresh execution or acceptance inferred): What the task edited on a converted tree. [72]
-- Retained reference account (no fresh execution or acceptance inferred): The converted check's bases. [73]
+
+- The converted check's bases: HEAD first and, during a merge, MERGE_HEAD too, each kept only when converted. [73]
+
 - Retained reference account (no fresh execution or acceptance inferred): The re-recording scoped to one sidecar. [74]
 - Retained reference account (no fresh execution or acceptance inferred): A history file closed in a base or a frozen commit is left out of the re-anchor check. [75]
 - Retained reference account (no fresh execution or acceptance inferred): A later row of another disposition that would replace the leaf's changed row is found. [76]

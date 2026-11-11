@@ -10,7 +10,7 @@ Pins the master chain-proof admission of a publication merge: the admission is a
 
 ## Code Commentary
 
-A helper builds an admitted shape from a workflow, parent set and merge tree, and the suites then work the rule from both directions: the publication merge is admitted, and a merge that is not the publication merge keeps its refusal. A further suite exercises the rule on real Git objects rather than modeled input, and the last pins the refusal text a caller sees today, so a change in wording is visible rather than silent.
+A helper builds an admitted shape from a workflow, parent set and merge tree, and the suites then work the rule from both directions: the publication merge is admitted, and a merge that is not the publication merge keeps its refusal. A further suite exercises the rule on real Git objects rather than modeled input.
 
 ## Invariants And Boundaries
 
@@ -35,7 +35,3 @@ The suite proves the admission rule and its refusals over constructed and real o
 
 
 - The rule is exercised on real Git objects, not only modeled input. [4]
-
-
-
-- The refusal text a caller sees today is pinned. [5]

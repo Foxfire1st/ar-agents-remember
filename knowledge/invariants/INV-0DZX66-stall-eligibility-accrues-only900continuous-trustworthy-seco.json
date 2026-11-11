@@ -9,7 +9,7 @@
   "applicability": "Started tasks in the queue's stall builder and the observation clock the pass records for them.",
   "conditions": [
     "Eligible only at stage started with a complete, known host observation.",
-    "One occurrence after 900 continuous trustworthy seconds with no bound agent in a turn, where a permission wait and a running subagent both count as working.",
+    "One occurrence after 900 continuous trustworthy seconds with no bound agent in a turn, where a permission wait, a running subagent and a declared wait whose check is still to come (until sixty seconds past its due time) all count as working.",
     "The interval resets whenever eligibility, observation or the host's boot continuity is lost, rather than accruing across the gap."
   ],
   "exclusions": [
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L190",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Stall eligibility accrues only900continuous trustworthy seconds and resets across eligibility, observation or boot gaps.",
+  "statement": "Stall eligibility accrues only 900 continuous trustworthy seconds and resets across eligibility, observation or boot gaps.",
   "status": "proposed",
   "supersedes": []
 }

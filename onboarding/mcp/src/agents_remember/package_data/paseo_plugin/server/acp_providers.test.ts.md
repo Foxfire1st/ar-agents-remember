@@ -4,23 +4,23 @@
 
 [Route overview](../overview.md)
 
-The package test for the provider verdict: it drives the loader over the vendored Paseo 0.12
+The package test for the provider verdict: it drives the loader over the synthetic Paseo 0.15.4
 host tree and asserts which providers the plugin reads as ACP.
 
 ## What it establishes
 
-The verdict is what decides whether a seat may declare a helper wait at all, so the test pins
-both halves of it: which provider modules the loader finds in a host's `acp-providers.json` and
+The verdict decides which seats are on ACP, which the plugin uses to choose a seat's wake sentence
+(any seat may declare a wait), so the test pins both halves of it: which provider modules the loader finds in a host's `acp-providers.json` and
 which of those the classifier calls ACP. It runs against the synthetic host tree under
-`server/fixtures/paseo-0-12/` rather than a real Paseo install, so the same fixture set answers
+`server/fixtures/paseo-0-15/` rather than a real Paseo install, so the same fixture set answers
 for every provider the leaf names — `acp-agent`, `claude`, `codex-app-server`, `copilot-acp`,
 `cursor-acp`, `generic-acp`, `kimi-acp`, `kiro-acp`, the two mock agents, `omp`, `opencode`,
 `pi` and `trae-acp`, with `plugin-process.js` and the manifest supplying the rest of the host's
 shape.
 
-A test here that fails means a seat either loses the right to declare a wait it should have, or
-gains one it should not — which is the failure the declaration path was reproached for in
-production, not a cosmetic difference in a loader.
+A test here that fails means the plugin reads a provider's connection wrongly. The case over a
+real installed Paseo is skipped, not failed, when none is installed or when the installed version
+is not the pinned one that `paseo_host/contract.json` names.
 
 ## Reading it beside the others
 

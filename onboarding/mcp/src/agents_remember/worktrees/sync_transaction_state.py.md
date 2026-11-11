@@ -12,19 +12,19 @@ Strict enclosure-root durable state for one resumable sync generation.
 
 ### Logic
 
-Side records pin repositories/worktrees/branches, source/pre-sync/base facts, authority refs, phase progress, file conflicts, structural report and parked stash/path facts. Operation records bind generation and original bases; quarantine preserves damaged evidence without rollback authority.
+Side records pin repositories/worktrees/branches, source/pre-sync/base facts, authority refs, phase progress, file conflicts, structural report, parked stash/path facts, and the omission report path and count a continue found for parked authoring the resolved tree lacks. Operation records bind generation and original bases; quarantine preserves damaged evidence without rollback authority.
 
 _retain_nonempty_knowledge_keys preserves opaque nonempty legacy conflicts/decisions to block continuation, with cancel available; only empty values are dropped. because a sync already in flight at retirement must resume/cancel. No current row diagnosis/decision is stored; other extras remain forbidden.
 
-The stable store rejects malformed/nonregular normal records and preserves evidence before explicit recovery. Projection distinguishes retained merge from parked reapply, and empty structural report is omitted.
+The stable store rejects malformed/nonregular normal records and preserves evidence before explicit recovery. Projection distinguishes retained merge from parked reapply, and an empty structural report, an empty omission report and a zero omitted-item count are omitted.
 
 
 `SyncOperationRecord` records one generation, canonical contract/task/kind, original bases, phase,
-memory policy, both sides, and timestamps. `SyncQuarantineRecord` is terminal proof that corrupt
+memory policy, the sync source (the contract's own line or `repository-default`) with the contract's source branches at admission, both sides, and timestamps. `SyncQuarantineRecord` is terminal proof that corrupt
 evidence was archived without rollback authority. The store path is
 `reports/sync-operation.json` (`SYNC_OPERATION_RECORD_NAME`); the pre-move
 `.lifecycle/sync-operation.json` survives only as `legacy_sync_operation_path` read tolerance, and
-after canonical publication the writer attempts to retire the legacy copy. Authority refs derive from a hash of the contract path.
+after canonical publication the writer attempts to retire the legacy copy. Authority refs derive from a hash of the contract path; a repository-default side pins its resolved branch under `sync_side_default_source_prefix`, where the ref name carries the branch.
 
 `SyncOperationStore` strictly lstat/opens without following nonregular entries, parses only operation
 or quarantine records, writes atomically, preserves raw malformed bytes, and can atomically archive
@@ -60,7 +60,7 @@ explicit recovery.
 candidate on `SyncSideRecord`: `""` means nothing parked, `parked` means the candidate is in the
 recorded stash, `restore-conflict` means it could not be reapplied onto the carried result and still
 needs its resolver, and `restored` means it is back in the worktree. Because `SyncSideRecord` is
-frozen and `extra="forbid"`, these fields are part of the durable journal schema, so unsupported extra fields are refused rather than silently misread; the retained-fingerprint field defaults empty for older journals.
+frozen and `extra="forbid"`, these fields are part of the durable journal schema, so unsupported extra fields are refused rather than silently misread; the retained-fingerprint field defaults empty for older journals. A continue that found parked authoring the resolved tree lacks journals the full report's path and the missing-item count as `SyncSideRecord.omissionReport` (at most 4,096 characters) and `omittedItems`; settling the side clears both.
 
 
 **`crossingReport` carries a structural memory-merge diagnostic report, not only a converting crossing.**
@@ -70,10 +70,8 @@ producer writes a report for conflict versions, converted sides or nonzero refer
 diagnostics (renumbered references, kept evidence lines or skipped cards), including all-converted
 merges. The resolution payload names and summarises it; a nonempty `converted` report field selects
 crossing wording, otherwise it describes a structural knowledge merge. The wrap serializer
-`_omit_empty_optional_state` omits an empty `crossingReport` and empty retired database keys,
-but preserves nonempty values. Architect ruling N2 (2026-09-29) historically kept the extension
-out of ordinary journals; it is not a current crossing-only restriction or an exact pre-MIK-R24
-schema promise. `retainedTreeDigests` remains serialized and defaults to `{}` for older journals.
+`_omit_empty_optional_state` omits an empty `crossingReport`, an empty `omissionReport`, a zero `omittedItems` and empty retired database keys,
+but preserves nonempty values. `retainedTreeDigests` remains serialized and defaults to `{}` for older journals.
 These defaults describe old-journal read tolerance, not executed compatibility with an older runtime.
 
 ## Evidence

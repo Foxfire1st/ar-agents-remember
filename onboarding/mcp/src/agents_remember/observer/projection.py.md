@@ -26,11 +26,11 @@ step notes are projected but have no corresponding truncation flag and are not d
 task-page nested-row renderer. Projection is observation only, never review or lifecycle authority.
 
 
-L23 adds optional `lifecycleOperation` state to `EnclosureNode`; the browser receives task-addressed operation progress without internal operation identity.
+`EnclosureNode` carries optional `lifecycleOperation` state; the browser receives task-addressed operation progress without internal operation identity.
 
 ### Logic
 
-`TaskState` carries authored `stage` and optional runtime `activity` and `eventAt`; it no longer declares a served `ageSeconds`. The browser computes task-event display age from `eventAt`. This is not removal of the separate task-document/file-age fields, which the ruling routes outside this leaf. `TaskEntry` adds qualified key/reference, summary, bound worktrees, one parent, ordered children and `TaskCounts`. Optional `TaskListDisagreement` rows carry served list/record discrepancies, including the original unresolvable master literal; the field does not create a parallel task surface or a membership-authoring endpoint. `WorkspaceProjection.tasks` and `taskCounts` replace lifecycle and parallel series collections; top-level enclosures are the unbound remainder. `task_entries.build_task_entries` is the single stage/activity and membership producer, not this DTO module or the client.
+`TaskState` carries authored `stage` and optional runtime `activity` (`works`, `waiting`, `paused` or `unknown`) and `eventAt`; it declares no served `ageSeconds`. `waitingSeats` lists one `WaitingSeat` per waiting seat and is present only for a started task whose agents do not work and one of whose seats has a declared wait with its check still to come; `activity` is then `waiting`, not `paused`, and `TaskCounts` counts `waiting` beside works, paused and unknown. The browser computes task-event display age from `eventAt`. This is not removal of the separate task-document/file-age fields. `TaskEntry` adds qualified key/reference, summary, bound worktrees, one parent, ordered children and `TaskCounts`. Optional `TaskListDisagreement` rows carry served list/record discrepancies, including the original unresolvable master literal; the field does not create a parallel task surface or a membership-authoring endpoint. `WorkspaceProjection.tasks` and `taskCounts` replace lifecycle and parallel series collections; top-level enclosures are the unbound remainder. `task_entries.build_task_entries` is the single stage/activity and membership producer, not this DTO module or the client.
 
 Reader DTOs retain canonical references, lump/segment graph nodes and legacy bare-ref lifting, typed sprint seats and commanded-master links. `TaskSummary` holds reader content; `TaskDocNode` adds full identity, status and membership. Display fields do not choose occupants, authorize relationships or infer task completion from a host turn. Enclosure `lifecycleId` still binds operations, and `LifecycleOperationProjection` remains operation progress rather than session activity.
 
@@ -39,7 +39,7 @@ Reader DTOs retain canonical references, lump/segment graph nodes and legacy bar
 The Python schema is the source for generated TypeScript and JSON schema artifacts.
 
 
-**L184 — INV-VDWN33.** The observer's projection is what the dashboard receives, so the fact's presence is decided here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+**INV-VDWN33.** The observer's projection is what the dashboard receives, so the fact's presence is decided here.
 
 ## L126 Product-Record Marking Field
 
@@ -96,23 +96,19 @@ No cross-repository implementation dependency governs this file.
 
 ## L23 Engine Process Lineage
 
-`EngineProcessNode` now carries the optional strict source-lineage projection.
+`EngineProcessNode` carries the optional strict source-lineage projection.
 The observer exposes resolved admission facts to operations; it does not compare
 branches or synthesize recovery locally.
 
-## L23 Lifecycle Model Package Review
+## Lifecycle Model Import
 
-Observer projection now imports `LifecycleOperationProjection` from
-`models.lifecycles.operation`. Engine-process composition and the task-derived source-lineage
-projection remain unchanged; this is an ownership-only model move.
+Observer projection imports `LifecycleOperationProjection` from
+`models.lifecycles.operation`.
 
 
-## 260815-DAG-L12 Render-Ready Graph View
+## Render-Ready Graph View
 
-> **Retained historical source account — superseded by the current contract:**
-> `TaskDocNode` gains the optional `executionGraphView` field (L12-R4): the render-ready per-node sprint graph (`observer/projection_graph.TaskExecutionGraphView`) the dashboard renders directly — node kind, master ref + title, leaf ids + titles, derived wave index, mechanically derived frontier state, execution nature, and predecessors with reasons. The field is `None` for documents without a graph (backward compatible); the dashboard never joins raw refs or re-derives waves.
-
-Current view: the field is defined by `projection_task_documents.TaskDocNode`. A sprint may receive its persisted-graph view; an ordinary master may instead receive a derived dependency Order graph without a persisted `executionGraph`. The server prefers a nonempty Order graph over the sprint-view fallback. The DTO remains optional, and the browser renders served nodes rather than joining refs or deriving waves.
+The optional `executionGraphView` field is defined by `projection_task_documents.TaskDocNode`. A sprint may receive its persisted-graph view; an ordinary master may instead receive a derived dependency Order graph without a persisted `executionGraph`. The server prefers a nonempty Order graph over the sprint-view fallback. The DTO remains optional, and the browser renders served nodes rather than joining refs or deriving waves.
 
 
 ## 260821-CLIVE Disposable Queue And Discard History Projection
@@ -128,8 +124,8 @@ come from the dedicated closeout projection module.
 
 `CloseoutQueueNode` serves one exact-current disposable scheduling projection to the dashboard:
 service condition, optional source classification/fingerprint, bounded `sourceProblems`, and
-`members` as `CloseoutCandidateNode` rows. Since 260913-LCA-L6 the `members` array carries no item
-ceiling — the `max_length=256` was removed with the candidate cap, so the served node reports
+`members` as `CloseoutCandidateNode` rows. The `members` array carries no item
+ceiling, so the served node reports
 however many candidates the sprint has waiting. `sourceProblems` keeps `max_length=256` and
 `CloseoutCandidateNode.reasons` keeps its own `max_length=256`; nothing else on this node is bounded
 by that number.

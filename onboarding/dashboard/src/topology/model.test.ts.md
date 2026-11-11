@@ -42,7 +42,7 @@ Minimal typed enclosure/native-entry fixtures inspect returned node parents/iden
 No open file-local todos.
 
 
-**L184 — INV-XZYGEB.** The topology model is where the label's text is chosen, so its test holds the no-clock form. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+**INV-XZYGEB.** The topology model is where the label's text is chosen, so its test holds the no-clock form.
 
 ## Evidence
 
@@ -74,7 +74,7 @@ No meaningful cross-repo references found.
 
 ## Series-Contract Notes
 
-Topology tests construct `EnclosureNode` fixtures with `enclosureId`, `leafId` and `taskRoot` fields. Since 260703-L11 the fixture also carries the required existence-truth flags `codeWorktreeExists`/`memoryWorktreeExists` (defaulted `true`); active-group admission remains separate from those fixture flags. The current suite uses these fixtures for native task and checkout/enclosure identity, not former provider parenting.
+Topology tests construct `EnclosureNode` fixtures with `enclosureId`, `leafId` and `taskRoot` fields. The fixture also carries the required existence-truth flags `codeWorktreeExists`/`memoryWorktreeExists` (defaulted `true`); active-group admission remains separate from those fixture flags. The current suite uses these fixtures for native task and checkout/enclosure identity, not former provider parenting.
 
 ## Historical provider-parenting test account
 

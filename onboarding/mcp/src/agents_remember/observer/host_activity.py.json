@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "da618388bae65920ebfc8a4d5defdc152336df08",
-        "content": "sha256:7f02ea0213c25d1b3bdf2f04eec18a794d20c6eae41b394c36935d320c0d415b",
+        "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+        "content": "sha256:4068df6c631fa984e595da9b3abc5135a913ac457dfbbeeba2b26ca5cd9423d3",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "da618388bae65920ebfc8a4d5defdc152336df08",
-        "content": "sha256:7f02ea0213c25d1b3bdf2f04eec18a794d20c6eae41b394c36935d320c0d415b",
+        "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+        "content": "sha256:4068df6c631fa984e595da9b3abc5135a913ac457dfbbeeba2b26ca5cd9423d3",
         "locator": {
           "kind": "file"
         }
@@ -32,8 +32,26 @@
         "handoffEntry": "L190-R1-F04",
         "leaf": "260928-MIK-L190"
       },
-      "rationale": "Validated native host facts retain agent, prompt, boot/completeness and running-subagent information.",
+      "rationale": "Validated native host facts retain agent, prompt, boot/completeness, running-subagent information and each seat's declared wait.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+        "content": "sha256:ea494ea06174759ceaa98fb0fa4ed9ddbb474248fc239c5e139413aa8466460a",
+        "locator": {
+          "kind": "symbol",
+          "name": "DeclaredWait"
+        }
+      },
+      "id": "RLZ-R8M94T",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "MIK-R60@v9.7",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Strict read model of the published wait.",
+      "role": "support"
     }
   ],
   "references": {
@@ -42,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da618388bae65920ebfc8a4d5defdc152336df08",
-            "content": "sha256:7f02ea0213c25d1b3bdf2f04eec18a794d20c6eae41b394c36935d320c0d415b",
+            "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+            "content": "sha256:4068df6c631fa984e595da9b3abc5135a913ac457dfbbeeba2b26ca5cd9423d3",
             "locator": {
               "kind": "file"
             }

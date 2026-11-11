@@ -12,7 +12,7 @@ Compose grouped Now, Tasks and Masters indexes, the master completed-task previe
 
 Rows follow served children/stages/counts and exact keys; Now owns active work. Master completed preview shows newest five plus all-link via CompletedTaskList; sprint completed rows keep served order. Positions stay full-list-based. Discarded audit remains separate from aborted/live completion, without slice/series matching.
 
-Now reads served started/planned/completed/aborted counts and resolves matching children by key. Task cells use entry major-step counts and cached summary steps; master cells use served child counts. Summary review aggregates remain whole-round facts. Can start next renders only ready graph nodes and is not a task-start permission.
+Now reads served started/planned/completed/aborted counts and resolves matching children by key. Task cells use entry major-step counts and cached summary steps; master cells use served child counts, written by `activityPhrase` — works, a waiting count only when nonzero, then paused, all dropped while host activity is unknown — beside the shared task word. Summary review aggregates remain whole-round facts. Can start next renders only ready graph nodes and is not a task-start permission.
 
 `TaskChildrenBlock` also renders the entry's served list disagreements through `ListDisagreements`. A disagreement alone keeps the block present, even with no child groups. The discrepancy count belongs to its own subheading, not to the live child count, and no task JSON or parent link is repaired by rendering it.
 

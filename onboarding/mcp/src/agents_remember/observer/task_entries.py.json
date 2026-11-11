@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+        "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
         "content": "sha256:4d73bc201adcf3e1d83326ef3945271c823b12c2bea11d49fcf2b755a14eac26",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-        "content": "sha256:510623323eed533a9a5132dda425f0d11dcfeeb2aedc68924e039a62d60ebf87",
+        "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+        "content": "sha256:6c429c875db19fdc9ee8d700401a84c60ec6f922410d1526babcd79dbdcc0f52",
         "locator": {
           "kind": "file"
         }
@@ -38,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-        "content": "sha256:613fe3ed19e28d70036cee9fdfa7e9139b0d357f28aba2346a9e61d6df6a2771",
+        "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+        "content": "sha256:8ca067a86d2ee83d9c1b56d58218d06b03dc5fe4f8d930335be216512b7848c0",
         "locator": {
           "kind": "symbol",
           "name": "build_task_entries"
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+        "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
         "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+        "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
         "content": "sha256:0eb38b6e2fc63076263a6b8e0b7d2fc798a9d7220c2a0fbf0d8729eaaf73e2e5",
         "locator": {
           "kind": "symbol",
@@ -92,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-        "content": "sha256:c5dd1e2305a20ba936649eb75ff0d84791f7f60e558984b8d5069b5a4aae7318",
+        "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+        "content": "sha256:97b5afbcb4c4f92a14c39ada1467d8a0b0098a8ad5d950e0f7b481bd53adf329",
         "locator": {
           "kind": "symbol",
           "name": "task_state"
@@ -110,8 +110,44 @@
     },
     {
       "anchor": {
-        "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-        "content": "sha256:613fe3ed19e28d70036cee9fdfa7e9139b0d357f28aba2346a9e61d6df6a2771",
+        "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+        "content": "sha256:4630f102f8f2ac6f7a3c69ef1795a315caaa687366fe9d02378a08c20bf00fc8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_waiting_seats"
+        }
+      },
+      "id": "RLZ-KHS853",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "MIK-R60@v9.7",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Builds each task's waitingSeats.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+        "content": "sha256:080ae29ef3eaf13d80df4263139b135e70617c2eaff70fcaab27708060994246",
+        "locator": {
+          "kind": "symbol",
+          "name": "agent_waits"
+        }
+      },
+      "id": "RLZ-M3YHT5",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "MIK-R60@v9.7",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The one definition of a waiting seat, read by the task state and the stall clock.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+        "content": "sha256:8ca067a86d2ee83d9c1b56d58218d06b03dc5fe4f8d930335be216512b7848c0",
         "locator": {
           "kind": "symbol",
           "name": "build_task_entries"
@@ -128,7 +164,7 @@
     },
     {
       "anchor": {
-        "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+        "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
         "content": "sha256:d1fdd46de7e3835f6ab74f75cdd7e66c814beb79b729db03939b5fd86b3711eb",
         "locator": {
           "kind": "symbol",
@@ -151,12 +187,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:91b911a7b116915a9f4572f0350614d892e89149a358912e01ac7a60ba21bbdf",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:8ca067a86d2ee83d9c1b56d58218d06b03dc5fe4f8d930335be216512b7848c0",
             "locator": {
-              "end": 245,
-              "kind": "line_range",
-              "start": 61
+              "kind": "symbol",
+              "name": "build_task_entries"
             }
           },
           "kind": "code"
@@ -168,39 +203,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:391ea037f277b2f08970b140cd25ccab7d83e2b52ee9b2d8cb3b9c2371ba7732",
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:b6d9c2a233ab692cd21be5f04d61ee7138d343e9c2d0eacf74a3bf70cb26ab16",
             "locator": {
-              "end": 94,
+              "kind": "symbol",
+              "name": "eventAge"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:f72df02b7dbf7ffd43b74f2b40495f3d9804750d0f7a51469cd09c69fca53a46",
+            "locator": {
+              "end": 103,
               "kind": "line_range",
-              "start": 72
+              "start": 73
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
             "content": "sha256:0712aa3526279a573e1a32870b50b5837e2784b22be8aafcc063039e63b29e57",
             "locator": {
-              "end": 459,
+              "end": 460,
               "kind": "line_range",
-              "start": 452
+              "start": 453
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bc164a94462c83d4491167bce3b58a8ce7003b54",
-            "content": "sha256:5d52b165e8e79110a60086bd568de20f412567a469d0be57ebb1d9c2d725caf2",
-            "locator": {
-              "end": 156,
-              "kind": "line_range",
-              "start": 126
-            },
-            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },
           "kind": "code"
         }
@@ -211,12 +245,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
             "content": "sha256:63760c15950a3b9e89e91991b26a60e778e57486a1e3e5bd02a27100235bdc89",
             "locator": {
-              "end": 65,
+              "end": 66,
               "kind": "line_range",
-              "start": 50
+              "start": 51
             }
           },
           "kind": "code"
@@ -241,24 +275,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:a461fa4127666f8570b5ac561ba7f7f60a95c6b46219541e9a34ca0cf3415833",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:76bd62182513d9ed10cc580fc5a358def615b1ce0dd7d8b7828a3ae60445214e",
             "locator": {
-              "end": 248,
+              "end": 324,
               "kind": "line_range",
-              "start": 147
+              "start": 296
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:a9698c32fa9a20bab81fc0f683925767fc43a427ce913e1f3c157c94cc3c4f95",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:ee9a7b94ba0aa56862d632811a4d0b128aa495307d53aec69f208cb1afadc314",
             "locator": {
-              "end": 417,
+              "end": 493,
               "kind": "line_range",
-              "start": 339
+              "start": 417
             }
           },
           "kind": "code"

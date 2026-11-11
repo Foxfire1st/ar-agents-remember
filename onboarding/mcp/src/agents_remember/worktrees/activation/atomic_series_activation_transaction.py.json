@@ -4,8 +4,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
-        "content": "sha256:e71545a97e242442cfa52f08b7074f034a8253e1ac4274932e75bf578b0d9d4f",
+        "blob": "a6b1a5c76b1754c4a6fa5636a490044404c89dc2",
+        "content": "sha256:9a3b9b6f278605ae183032780b1f4aec320fa6178388afd08320d7a09006bd3b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_legacy_series_memory_refusal"
+        }
+      },
+      "id": "RLZ-M7TMYY",
+      "invariant": "INV-HN9XYV",
+      "origin": {
+        "handoffEntry": "L60-F2-series-sync-source",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Reads the source branch through strategy.source_branch, so sync_source is honoured.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
+        "content": "sha256:16b21c9de9fdde48820d2058649ab371a83e711f9443d3c5587bbdc21f97abbf",
         "locator": {
           "kind": "symbol",
           "name": "_legacy_series_memory_refusal"
@@ -18,6 +36,25 @@
         "leaf": "260928-MIK-L46"
       },
       "rationale": "The series preflight mirrors exact-side outcomes before publishing reconciling activation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
+        "content": "sha256:7d408a3a29d447bfa1a6e8532b9b8c6530113cdb5554d0d3152661269451e5c5",
+        "locator": {
+          "end": 431,
+          "kind": "line_range",
+          "start": 431
+        }
+      },
+      "id": "RLZ-X8HQW3",
+      "invariant": "INV-J7BZWN",
+      "origin": {
+        "handoffEntry": "L60-F3-retry-hints-carry-sync-source",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The admission refusal's retry arguments repeat the caller's source.",
       "role": "enforcement"
     }
   ],
@@ -64,11 +101,11 @@
       ]
     },
     "2": {
-      "note": "The transaction translates expected activation errors through the shared structured admission projection.",
+      "note": "The transaction translates expected activation errors through the shared structured admission projection. The refusal's retry arguments repeat the caller's sync source.",
       "targets": [
         {
           "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
             "content": "sha256:473c0a0178a7b9e87bd85c7e51eea422cac4082a9d871b4faa4eed7f7580bd31",
             "locator": {
               "kind": "symbol",
@@ -79,8 +116,8 @@
         },
         {
           "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
-            "content": "sha256:b639538336c50fb346cecaf89e91bf7450d9116c7f47406592f46c28f6d6635b",
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
+            "content": "sha256:4408cc221f9399b160d5dd9880955c4b5643c5c40e81b90f3a4b0884e764ed59",
             "locator": {
               "kind": "symbol",
               "name": "_admission_refusal"
@@ -95,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
             "content": "sha256:82a0467e81acda8134452cb44246bd38e3d67121d07bc23793e8ba7e05db8703",
             "locator": {
               "kind": "symbol",
@@ -107,25 +144,25 @@
       ]
     },
     "4": {
-      "note": "The internal sync driver publishes reconciling, proves continue/cancel ownership, and advances only this contract to active.\n\nAnchor: `_sync_selected_atomic_series_under_authority`",
+      "note": "The internal sync driver publishes reconciling, proves continue/cancel ownership, and advances only this contract to active.",
       "targets": [
         {
           "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
-            "content": "sha256:a9b15768aaeddcc49e9ac662237ac67cd5fff449295a8849a2cb2f97d84d2f95",
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
+            "content": "sha256:e370a21edb86ff0f1d487a2fed9f7cca1822251cc79b10321aaa4baceb876842",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_sync_selected_atomic_series_under_authority"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
-            "content": "sha256:e370a21edb86ff0f1d487a2fed9f7cca1822251cc79b10321aaa4baceb876842",
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
+            "content": "sha256:42e83d5cfaf2d6426cb931620db3de42c4edf50ce01a7e68af4f60edf23bbf31",
             "locator": {
-              "kind": "symbol",
-              "name": "_sync_selected_atomic_series_under_authority"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -137,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
             "content": "sha256:ea05cd69d2800a2c3aa4fabb826af781496ab06d3aa7a199b00d121bda4f49f4",
             "locator": {
               "kind": "symbol",
@@ -148,7 +185,7 @@
         },
         {
           "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
             "content": "sha256:d859ade20e14875fb6e8933036d66394899f9ba1d0037a0d02155fcbd2bf2516",
             "locator": {
               "kind": "symbol",
@@ -164,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
             "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
             "locator": {
               "kind": "symbol",

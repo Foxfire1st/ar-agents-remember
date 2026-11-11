@@ -1,0 +1,93 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_cutover.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f4fe8a2b047ae0a7829ff8a0b7bc65b430c93343",
+        "content": "sha256:d10edae2b82b5bdd3eb5ad9d247812f1b4edf2124d7803f42a3eaee9a3c6483a",
+        "locator": {
+          "kind": "symbol",
+          "name": "cutover_locked"
+        }
+      },
+      "id": "RLZ-YXSCM8",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Admission judges exact moving memory sides before preview or Git movement; already-current and skip-memory do not move memory, and converted-source adoption/crossing remain available.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f4fe8a2b047ae0a7829ff8a0b7bc65b430c93343",
+        "content": "sha256:2e2894ee3182f05ae7b80e652dc48f0f1a8c157c9f923488339cdbadeecfeb9c",
+        "locator": {
+          "kind": "symbol",
+          "name": "sync_side_outcome"
+        }
+      },
+      "id": "RLZ-ZTF0YF",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
+      },
+      "rationale": "This owner judges the pinned target/source/merge-base sides; it refuses all-legacy movement and converted-target rollback while admitting crossing or converted-source adoption.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The outcome names the judged sides and admits crossing, adoption or all-converted shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4fe8a2b047ae0a7829ff8a0b7bc65b430c93343",
+            "content": "sha256:2e2894ee3182f05ae7b80e652dc48f0f1a8c157c9f923488339cdbadeecfeb9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_side_outcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Legacy and out-of-format outcomes and unanswered probes refuse before anything moves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4fe8a2b047ae0a7829ff8a0b7bc65b430c93343",
+            "content": "sha256:d10edae2b82b5bdd3eb5ad9d247812f1b4edf2124d7803f42a3eaee9a3c6483a",
+            "locator": {
+              "kind": "symbol",
+              "name": "cutover_locked"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Fresh admission asks the preflight before the participating-side checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:b7ed29f9cf9266098f274714d356259c5ec9b6e3ab80cef7c5f9a333d349c52c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_participating_sides"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

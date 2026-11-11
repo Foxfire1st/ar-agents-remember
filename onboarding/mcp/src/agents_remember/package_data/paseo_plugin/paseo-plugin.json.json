@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "24412411496b5a9bebf3d5bace8701d8bd5192cb",
-        "content": "sha256:b23fd5ca7947429b9fe8cb65ac2378dddb38f253cc1683a00ab2555cf5c4ea44",
+        "blob": "5a7ad1b1029b09c751e6d60da0e6dcda1527342d",
+        "content": "sha256:1f4e4f044c0382c93e6d0d0d50a55bff18f628028d81b85ea297c83be3ab3ddf",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "24412411496b5a9bebf3d5bace8701d8bd5192cb",
-        "content": "sha256:665afae75aabd2914a0a381e4dbc851ce145f7c1cb2a4334e6e1e32ec6d9d751",
+        "blob": "5a7ad1b1029b09c751e6d60da0e6dcda1527342d",
+        "content": "sha256:2ee21b8b0e6a8ce3be484b6a8c2f593ed13efe4a0fdc9cf020151d1de0bd7348",
         "locator": {
           "end": 5,
           "kind": "line_range",
@@ -44,8 +44,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24412411496b5a9bebf3d5bace8701d8bd5192cb",
-            "content": "sha256:b23fd5ca7947429b9fe8cb65ac2378dddb38f253cc1683a00ab2555cf5c4ea44",
+            "blob": "5a7ad1b1029b09c751e6d60da0e6dcda1527342d",
+            "content": "sha256:1f4e4f044c0382c93e6d0d0d50a55bff18f628028d81b85ea297c83be3ab3ddf",
             "locator": {
               "end": 7,
               "kind": "line_range",
@@ -57,16 +57,16 @@
       ]
     },
     "2": {
-      "note": "The plugin manifest requires Paseo >=0.12.0.",
+      "note": "The plugin manifest requires Paseo >=0.15.0.",
       "targets": [
         {
           "anchor": {
-            "blob": "24412411496b5a9bebf3d5bace8701d8bd5192cb",
-            "content": "sha256:b23fd5ca7947429b9fe8cb65ac2378dddb38f253cc1683a00ab2555cf5c4ea44",
+            "blob": "5a7ad1b1029b09c751e6d60da0e6dcda1527342d",
+            "content": "sha256:2ee21b8b0e6a8ce3be484b6a8c2f593ed13efe4a0fdc9cf020151d1de0bd7348",
             "locator": {
-              "end": 7,
+              "end": 5,
               "kind": "line_range",
-              "start": 1
+              "start": 5
             }
           },
           "kind": "code"

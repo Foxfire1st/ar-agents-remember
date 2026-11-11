@@ -144,7 +144,7 @@
         },
         {
           "anchor": {
-            "blob": "62502853b1c6bb6eac0b6a35f5d7146e87255ee4",
+            "blob": "0073056ad9df27c87365b0f9004653d15172e706",
             "content": "sha256:7a36164266770154ae790a060eab4591c668621ca2d9663496ac2cfa7fd817c2",
             "locator": {
               "end": 193,
@@ -198,12 +198,12 @@
         },
         {
           "anchor": {
-            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
             "content": "sha256:177fca6a059e1ee8b373f832a2725a9b97761ec3b03fa9bf5f72b9a8929f8619",
             "locator": {
-              "end": 609,
+              "end": 611,
               "kind": "line_range",
-              "start": 575
+              "start": 577
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -211,12 +211,12 @@
         },
         {
           "anchor": {
-            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
             "content": "sha256:30130bf59300f0b9bd54a089663da88bb8ef3c1a3f323e9b87903068f1c39041",
             "locator": {
-              "end": 581,
+              "end": 583,
               "kind": "line_range",
-              "start": 547
+              "start": 549
             },
             "path": "dashboard/src/types/projection.ts"
           },

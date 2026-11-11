@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cc4b073aed8e9afae046d1aa5eedf086d0cd825c",
-        "content": "sha256:500e51f9b33a3b40d023ec1e44a88c4640e469e6335c90a219ea954f485d1bf3",
+        "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+        "content": "sha256:9b65a81a30d17e2ed99b282e85d0a2f7fb038ce30e966585ada8b7fe7e69e3c5",
         "locator": {
           "kind": "file"
         }
@@ -17,6 +17,42 @@
       },
       "rationale": "Host provider settings are still read and forwarded through the serving boundary.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+        "content": "sha256:8c68db359fff338a685aecdecd705519dc6a0dfd7d406c6a52914b7011b68a32",
+        "locator": {
+          "kind": "symbol",
+          "name": "IDLE_RUNTIME_CLEANUP_SETTING"
+        }
+      },
+      "id": "RLZ-AHMJ5V",
+      "invariant": "INV-MAZGMS",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The 0.15.4 key path.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+        "content": "sha256:fd07d9209dd0b397b73daddc5af0d752638eacdb96c298db7286ac503a42cb6a",
+        "locator": {
+          "kind": "symbol",
+          "name": "daemon_settings"
+        }
+      },
+      "id": "RLZ-PTCH31",
+      "invariant": "INV-MAZGMS",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Writes the key false (live) with the other daemon settings.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -25,8 +61,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc4b073aed8e9afae046d1aa5eedf086d0cd825c",
-            "content": "sha256:ad11b4ec4d7f0007ee62a12c3ba8a1679c801a434f68a44305827c85e70e02e6",
+            "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+            "content": "sha256:fd07d9209dd0b397b73daddc5af0d752638eacdb96c298db7286ac503a42cb6a",
             "locator": {
               "kind": "symbol",
               "name": "daemon_settings"
@@ -41,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc4b073aed8e9afae046d1aa5eedf086d0cd825c",
+            "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
             "content": "sha256:710b69084d866c838184f67b062fa89c9707766bf85f24c25b0ecea12eeac7b1",
             "locator": {
               "kind": "symbol",
@@ -52,12 +88,12 @@
         },
         {
           "anchor": {
-            "blob": "cc4b073aed8e9afae046d1aa5eedf086d0cd825c",
+            "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
             "content": "sha256:daf202af2bd7715065ff04e2357995d3e988efd2675cd9445c418d3a039f44fc",
             "locator": {
-              "end": 81,
+              "end": 89,
               "kind": "line_range",
-              "start": 71
+              "start": 79
             }
           },
           "kind": "code"
@@ -69,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc4b073aed8e9afae046d1aa5eedf086d0cd825c",
+            "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
             "content": "sha256:fca5c1e6fb98d35236efab27311bcdcf8c5aa824cfb7a2ba428698fb9e22dec4",
             "locator": {
               "kind": "symbol",

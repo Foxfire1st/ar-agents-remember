@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The shared line, its authority copy, the recovery detail and the size budget must agree, so one statement keeps every seat told the same way to declare a wait."
+  },
+  "applicability": "The always-on wait line that every role capsule receives and its recovery detail.",
+  "conditions": [
+    "The line is composed from core/authority.md into each capsule."
+  ],
+  "exclusions": [
+    "Role-specific wait rules, which live in their own texts."
+  ],
+  "id": "INV-K48GZ2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-skills --check; capsule budget tests; packet v8 named core/invariants.md, but the line's source is core/authority.md"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v8.6",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The always-on wait line tells every seat, on any harness, how to declare a helper wait or a background wait (each process, pid or log, expected end, check in N minutes 1-30, default 3), that a harness wake continues its own work, and names role_message on agents-remember-task in the no-progress-message rule; its source is core/authority.md (AU10.3), and core/authority.md:100 counts a declared background wait as not silent; the recovery detail counts either declared wait as a wait.",
+  "status": "proposed",
+  "supersedes": []
+}

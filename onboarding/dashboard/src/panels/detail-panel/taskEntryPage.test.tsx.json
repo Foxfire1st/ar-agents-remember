@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a88f1162f7e8d33e50e26c654cd35c32a92613fa",
+        "blob": "2384ba06d4248111eba2f798ddea95d75836ce01",
         "content": "sha256:97bd482a37a903525295a3e8cbbb5094b8922daf9b19cea722c0ba1a3bfd1819",
         "locator": {
           "kind": "symbol",
@@ -26,10 +26,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a88f1162f7e8d33e50e26c654cd35c32a92613fa",
-            "content": "sha256:19c1ae5f064ab825441de6cb2d29177e4816dea2d7618bdf2d8b49ddae823a84",
+            "blob": "2384ba06d4248111eba2f798ddea95d75836ce01",
+            "content": "sha256:34c5c6e05e8ec985aa5e4040325c9ec468216fc16e769250abd3cf5536fe0f95",
             "locator": {
-              "end": 110,
+              "end": 111,
               "kind": "line_range",
               "start": 27
             }
@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a88f1162f7e8d33e50e26c654cd35c32a92613fa",
-            "content": "sha256:e288b6792061ad0c8d9d993de54eb53fe80b61c9ae96e0064ed04a6cb0a06aed",
+            "blob": "2384ba06d4248111eba2f798ddea95d75836ce01",
+            "content": "sha256:8c9be8921490a19a299b3c038d7d64447e2b9612bdeef3a3f36f83e512ced18f",
             "locator": {
-              "end": 153,
+              "end": 155,
               "kind": "line_range",
-              "start": 113
+              "start": 114
             }
           },
           "kind": "test"
@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a88f1162f7e8d33e50e26c654cd35c32a92613fa",
-            "content": "sha256:b5bedfd00b0910d0d82b6e0dc2afbd05157a70528fb89fd1e54735f8d5d2d2e6",
+            "blob": "2384ba06d4248111eba2f798ddea95d75836ce01",
+            "content": "sha256:8ddb6035080313a8ac94971b4381fe009bae08dde8002971a4da2c4543b6a1e5",
             "locator": {
-              "end": 199,
+              "end": 202,
               "kind": "line_range",
-              "start": 154
+              "start": 156
             }
           },
           "kind": "test"

@@ -10,14 +10,14 @@ Provide the shared page-block, row, in-place text, status and progress presentat
 
 ## Code Commentary
 
-`DocView` enumerates own views; Block draws a heading/count only when composed. Shared `TaskStatusKey` maps served stage/activity to label and tone for task surfaces. Unknown host activity keeps the row's word at `started`, while the shell reports host unavailability once; the underlying served status key remains `unknown`. `TaskStatusWord` advances the served host-event age using the visible display clock. Neither its label mapping nor display time decides stage or activity.
+`DocView` enumerates own views; Block draws a heading/count only when composed. Shared `TaskStatusKey` maps served stage/activity to label and tone for task surfaces. Unknown host activity keeps the row's word at `started`, while the shell reports host unavailability once; the underlying served status key remains `unknown`. A served `waiting` task reads `waiting for <what>`, where `waitWhat` (from `waitWords.ts`) joins the wait names (`subagents`, `background`) of its served `waitingSeats` with "and" and the word says only `waiting` when no seat is served; its hover, when seats are served, is `waitLines` (also from `waitWords.ts`), one line per seat with role, agent id, what it waits for since when, the check due and the seat's own words. `TaskStatusWord` advances the served host-event age using the visible display clock. Neither its label mapping nor display time decides stage or activity.
 
 `Clip` renders Markdown in a single line with an accessible more/less control when measured overflow requires it. Without usable layout it falls back to a text-length threshold; an opened truncated summary is explicitly labelled a preview. It does not fetch content or claim the preview is a full string.
 
 Expandable rows use `opensOn`: only a direct row Enter/Space toggles it, and a click on a nested link/button or a click ending text selection is not a request to open the row. This prevents following a register link from also changing row expansion. `StepMarks` shows individual marks up to twelve states, then switches to an aggregate progress bar. Its optional cached steps payload passes one matching major-step entry to each StepDot: with a payload, pointer rest can reveal step and nested-detail text without a request. Missing payload leaves a plain mark; populations above twelve use the aggregate bar without per-step tooltips. Callers own the alignment between states, steps and served counts.
 
 
-**L184 — INV-XZYGEB.** This module holds the word every place renders and the formatter the exact detail uses, so both obligations are realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+**INV-XZYGEB.** This module holds the word every place renders and the limit hover lines that write the exact reset through `formatLimitTime` from `limitTime.ts`, so both obligations are realized here.
 
 ## Boundaries
 

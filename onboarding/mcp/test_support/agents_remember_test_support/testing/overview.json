@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
             "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
             "locator": {
               "kind": "symbol",
@@ -53,8 +53,8 @@
         },
         {
           "anchor": {
-            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
-            "content": "sha256:261b62cab695890333ccdcc5fde705a49532d741ccda1d4d049b5a3a18246c87",
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:3659fd2d0978bf74bc0402c6b69bea03dd81b2c7c2e6765977a54c8bd65a88ff",
             "locator": {
               "kind": "symbol",
               "name": "CURATION_POLICY_STATEMENTS"
@@ -135,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
             "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,125 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_completion.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a3944a10acef72f6ac7b30c4c6930bc7b9b80718",
+        "content": "sha256:9c9d7e056784adfff83fdf82fda66eaaa7f05197e219889d6d2e163e2675e83e",
+        "locator": {
+          "kind": "symbol",
+          "name": "successful_crossings"
+        }
+      },
+      "id": "RLZ-GP3TR9",
+      "invariant": "INV-0J9FS1",
+      "origin": {
+        "handoffEntry": "L66-W4-07",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "The success projection is the consumer that carries report identity and counts into successful responses.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a3944a10acef72f6ac7b30c4c6930bc7b9b80718",
+        "content": "sha256:b3bd5873fb021e12afb48c83cc6f97b54115b6b28692752069559aeb4fa85fdf",
+        "locator": {
+          "kind": "symbol",
+          "name": "completed_sync_result"
+        }
+      },
+      "id": "RLZ-NBK3VH",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Replays the same repair-debt answer when a sync is recovered, so a recovered merge reports no less than the merge that ran.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The answer refuses a contract pair that is not the finalized one and names state, sources and debt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3944a10acef72f6ac7b30c4c6930bc7b9b80718",
+            "content": "sha256:b3bd5873fb021e12afb48c83cc6f97b54115b6b28692752069559aeb4fa85fdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "completed_sync_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "\"Moved again\" reads the recorded source branches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3944a10acef72f6ac7b30c4c6930bc7b9b80718",
+            "content": "sha256:1859b831b42ec2f372057fda10db992903b053dc8152dace101df46a905b069a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_moved_again"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Crossing summaries come from the journaled reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3944a10acef72f6ac7b30c4c6930bc7b9b80718",
+            "content": "sha256:9c9d7e056784adfff83fdf82fda66eaaa7f05197e219889d6d2e163e2675e83e",
+            "locator": {
+              "kind": "symbol",
+              "name": "successful_crossings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Journaled memory repair debt is named with its rules and statement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3944a10acef72f6ac7b30c4c6930bc7b9b80718",
+            "content": "sha256:85526802ec869191c99308acdb85f87ce90898485233bdda31161e4c90b400d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_name_memory_repair_debt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Finalization answers through the completed result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:508ca301ab0193366606183c55a9dc3ecca5ca52fb0b3c65d03d7e2044c5b87d",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_sync"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

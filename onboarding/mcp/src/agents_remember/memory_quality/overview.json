@@ -410,12 +410,12 @@
       ]
     },
     "42": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The converted run's legacy-format checks and its validator slot.  Anchor: `LEGACY_FORMAT_CHECKS` `converted_knowledge_check`",
+      "note": "The converted run's one validator and reference-state check, `knowledge.converted`.",
       "targets": [
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
-            "content": "sha256:28e46a97acfd3f09eed82839a898ba1bdbb80a6a828de5b8fa08816edc37b2e5",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "content": "sha256:2e69db208aa0490529b32c66de182289095715d38cbf757016d93656ac044482",
             "locator": {
               "kind": "file"
             },
@@ -1077,12 +1077,12 @@
       ]
     },
     "73": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The converted check's bases.",
+      "note": "The converted check's bases: HEAD first and, during a merge, MERGE_HEAD too, each kept only when converted.",
       "targets": [
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
-            "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "content": "sha256:3464a8a1b074f5a636063b2700da63e952c9a8a9ab7072c561dd43af44c295b6",
             "locator": {
               "kind": "symbol",
               "name": "_comparison_bases"
@@ -1229,12 +1229,12 @@
         },
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
             "content": "sha256:0c3f2788ff884f42e88f054f36b4a54b4fda3d916dda2029f3186a7cc67a5cac",
             "locator": {
-              "end": 197,
+              "end": 198,
               "kind": "line_range",
-              "start": 81
+              "start": 82
             },
             "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
           },
@@ -1286,8 +1286,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
-            "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "content": "sha256:3464a8a1b074f5a636063b2700da63e952c9a8a9ab7072c561dd43af44c295b6",
             "locator": {
               "kind": "symbol",
               "name": "_comparison_bases"
@@ -1298,7 +1298,7 @@
         },
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
             "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
             "locator": {
               "kind": "symbol",
@@ -1310,8 +1310,8 @@
         },
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
-            "content": "sha256:28e46a97acfd3f09eed82839a898ba1bdbb80a6a828de5b8fa08816edc37b2e5",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "content": "sha256:2e69db208aa0490529b32c66de182289095715d38cbf757016d93656ac044482",
             "locator": {
               "kind": "file"
             },

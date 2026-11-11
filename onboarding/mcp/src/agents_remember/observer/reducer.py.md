@@ -10,9 +10,9 @@ Pure assembly of workspace task, worktree and analytical projections from suppli
 
 ## Code Commentary
 
-`project_workspace` enriches enclosures with exactly integrate/cleanup availability, builds Engine Room facts, then calls `build_task_entries` once with canonical task sources, worktrees and `HostActivitySnapshot`. It publishes tasks, taskCounts and unbound enclosures, active worktree groups and closeout queues. The former providers collection is absent. Metrics carry only the ignored host-agent count; task counts are published on `taskCounts` beside the tasks, and no staleness histogram is projected.
+`project_workspace` enriches enclosures with exactly integrate/cleanup availability, builds Engine Room facts, then takes the one task-entry join its caller supplies (the input reader builds it once per pass) or, when none is supplied, calls `build_task_entries` once with canonical task sources, worktrees, `HostActivitySnapshot` and the pass clock `now`, at which declared waits are judged. It publishes tasks, taskCounts and unbound enclosures, active worktree groups and closeout queues. No providers collection is published. Metrics carry only the ignored host-agent count; task counts are published on `taskCounts` beside the tasks, and no staleness histogram is projected.
 
-Attention and analytics remain pure over supplied facts: the queue is built once from the providers, the drift findings, the joined task entries, the native attention facts and the pass clock, and it appends no second interpretation of task state. Authored planned/aborted/completed stages are not overridden by activity; unavailable host facts are not proof of pause or completion. There is no `project_lifecycle`, correction fold, synthetic persistent lifecycle or stale-heartbeat abandonment. Enclosure action prerequisite/refusal distinctions and landing-operation ownership survive independently.
+Attention and analytics remain pure over supplied facts: the queue is built once from the drift snapshots, the start-progress entries, the native attention facts, the joined task entries and the pass clock, with the reconciled acknowledgements suppressing matching rows, and it appends no second interpretation of task state. Authored planned/aborted/completed stages are not overridden by activity; unavailable host facts are not proof of pause or completion. There is no `project_lifecycle`, correction fold, synthetic persistent lifecycle or stale-heartbeat abandonment. Enclosure action prerequisite/refusal distinctions and landing-operation ownership survive independently.
 
 ### Retained L56 converted-memory boundary
 
@@ -31,9 +31,3 @@ This account is current source interpretation only. It creates no executed test/
 - The facade composes metrics and the narrowed analytical bundle, including closeout queue input, without verification-age rollups. Current counts are task-entry-owned; lifecycle-only counting describes the predecessor, not the current native task fold. [18]
 
 - The current WorkspaceProjection constructor publishes native tasks/counts, unbound enclosures, active groups, queues, host metric and analytics, with no providers collection. [19]
-
-## Historical provider collection
-
-These former current claims are retained as history, not as instructions or present implementation evidence.
-
-> It publishes tasks, taskCounts and unbound enclosures, providers, active worktree groups and closeout queues.

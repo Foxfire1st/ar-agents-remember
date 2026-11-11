@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The converted-drift surfaces, the leaf route and the repair cases (MIK-R44@v2), split from the module that keeps the drift measurement and the baseline adoption.
+The converted-drift surfaces, the leaf route and the repair cases, split from the module that keeps the drift measurement and the baseline adoption.
 
 ## Code Commentary
 
@@ -41,4 +41,4 @@ The repair cases are judged on state, not on a message: an interrupted run leave
 
 - A hook that rewrites and stages layout bytes is refused with no commit and the branch where it was. [3]
 
-- The live drift surfaces are the context_packet registration, docs/tool-details.md, the lifecycle skill's knowledge, curation and handoff files and the c-10 skill copies. [4]
+- The live drift surfaces are the context_packet registration, docs/tool-details.md, the lifecycle skill's knowledge, curation and handoff files and the l-01-agent-lifecycles corpus. [4]

@@ -6,12 +6,12 @@
 
 ## Purpose
 
-**The `knowledge.converted` check's comparison base: one base for every consumer (MIK-R24 rule 7; L37 review
-R3-1).** The memory-quality run validates the converted working tree against the memory worktree's `HEAD`. When
+**The `knowledge.converted` check's comparison base: one base for every consumer.** The memory-quality run validates the converted working tree against the memory worktree's `HEAD`. When
 `HEAD` is unconverted (the converting leaf before its closeout, or a line that has crossed) the base must be `HEAD`'s
 conversion, exactly as the gate, the worklist and the writer see it. Then a carried reference to a file the
 candidate deleted or moved is reported (`R22.6-carried-stale`), not refused as a newly written anchor
-(`R22.6-anchor-path`).
+(`R22.6-anchor-path`). During a merge the bases are the writer's two, `HEAD` and `MERGE_HEAD`, so the check never
+refuses what the writer was allowed to write.
 
 ## Code Commentary
 
@@ -25,7 +25,8 @@ The landing report has a separate leaf-base port. `leaf_base_request` selects th
 ### Logic
 
 - `_port(code)` wraps `knowledge_writer.base_side.writer_bases` as a `KnowledgeBasePort`: `(memory root, candidate)
-  -> (base, problem)`.
+  -> (bases, problem)`, where `bases` is the converted sides `HEAD`, then `MERGE_HEAD` during a merge
+  (`BaseSides.validation_bases`).
 - `converted_check_base(scope, coordination_root)` is the port of a memory-quality run: the code root is the
   scope's quality code root, the fallback is the contract's code base commit B when the scope has a contract, and
   the cache is the coordination root's shared converted-base cache.
@@ -56,8 +57,8 @@ The landing report has a separate leaf-base port. `leaf_base_request` selects th
 ### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The design authority is `MIK-R24@v1` rule 7 and the L37 decision of 2026-10-01T11:12:11 (R3-1) in `37_cutover-to-text-storage.json`; it lives outside the code and memory
-repositories, so it is named here and not cited as a row.
+`Domain Documentation` entries). The design authority is the text-storage cutover's requirement and its review decision in the task records; it
+lives outside the code and memory repositories, so it is not cited as a row.
 
 No configured live documentation source was available for this pass.
 

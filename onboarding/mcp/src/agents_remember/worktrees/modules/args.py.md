@@ -4,20 +4,19 @@
 
 Defines the typed cross-layer DTO that carries worktree operation inputs from
 the MCP application entry points and the worktree CLI into the worktree domain functions.
-`WorktreeArgs` replaces the loosely typed `argparse.Namespace` that previously
-flowed across those layers (F17), giving every layer a single explicit field set
-to read and write.
+`WorktreeArgs` gives every layer a single explicit field set to read and write
+instead of a loosely typed `argparse.Namespace`.
 ## Code Commentary
 
 ### Logic
 
 The internal transport carries one normalized code/memory closeout input and the actual landed code/memory-content commits. Integration has no separate ledger commit message, and PR landing has no ledger commit argument. Consumer-cache data never enters the Git output tuple.
 
-`WorktreeArgs` now carries an optional `quality_certification` field for the organizational full-gate proof, and (CCR-R22@v1, L22, commit `685f83c44055`) the optional `certification_profile: Path | None` field: the configured repository-relative certification profile reference forwarded by the application entry points and lifecycle worker into closeout/integration, which the quality gate resolves and admits before any code commit.
+`WorktreeArgs` carries the optional `certification_profile: Path | None` field: the configured repository-relative certification profile reference forwarded by the application entry points and lifecycle worker into closeout/integration, which the quality gate resolves and admits before any code commit.
 
-L23 adds worker-injected operation fingerprint, candidate-tree, and progress callback fields to `WorktreeArgs`; CLI namespaces cannot populate these plane-owned controls.
+`WorktreeArgs` carries worker-injected operation key/generation, candidate-tree, and progress callback fields; CLI namespaces cannot populate these plane-owned controls.
 
-**Historical (retired by MIK-R26 rule 2).** L40 once carried `knowledge_resolution: AuthoredReconciliation | None` for the authored reconciliation of a refused knowledge-dataset merge. That route was removed with the canonical database's merge step: every managed sync now merges knowledge files through the structural merge (MIK-R24 rule 8 step 3), so no authored knowledge-reconciliation decision is carried on this transport and the field does not exist in the current DTO. The field's old pairing with `resolution_action='reconcile'` and `sync_input_refusal` is retained here only as history; the current DTO's normalized closeout input and integration facts are unchanged by the removal.
+The DTO carries no authored knowledge-reconciliation field (`knowledge_resolution` does not exist), and `sync_input_refusal` admits only `continue` or `cancel` as a resolution action.
 
 `WorktreeArgs` is a `@dataclass(frozen=True)`. Every field carries a default, so
 any operation can construct just the subset it needs without supplying the rest;
@@ -33,12 +32,12 @@ instance via `replace`. This tolerates argparse subparsers that only populate th
 arguments they declare and tests that construct partial namespaces, so any field
 the namespace omits keeps its dataclass default rather than raising.
 
-`retry_provider_setup: bool = False` remains an internal DTO field (GitHub #53).
+`retry_provider_setup: bool = False` is an internal DTO field.
 Existing-contract retry refuses while a live setup heartbeat exists, then uses
 the normal provider preflight. Both retired CGC/GrepAI provider IDs are always
 disabled, so this path does not relaunch their background setup.
 
-`stale_base_choice: str | None = None` (GitHub #54): the stale-base preflight
+`stale_base_choice: str | None = None`: the stale-base preflight
 recovery selector for worktree start — `fast-forward` (ff stale local source
 branches, then proceed) or `proceed-stale` (explicit override); `None` means
 block when a source branch is behind/diverged from its upstream.
@@ -50,12 +49,20 @@ unchanged through application/registration/CLI adapters. The transaction journal
 memory choice; a later continue/cancel addresses the same contract generation and cannot silently
 change it.
 
-`lifecycle_id: str = ""` (slice 2c): the observable-lifecycle id the application entry point
+`sync_source: SyncSource | None = None` names the one selectable sync source besides the contract's
+own source line: `repository-default`, which makes a sync pull each repository's default branch
+while keeping the contract's base pair. `None` means the contract's own line. The alias lives in the
+public worktree model with the other sync vocabularies, and the MCP `worktree_sync` tool carries it in
+through the application layer's resolution input; the worktree CLI parser declares no argument for
+it, so a CLI namespace leaves it `None`. `sync_input_refusal` refuses any other value, and the
+transaction journals the admitted source so a continue or cancel cannot change it.
+
+`lifecycle_id: str = ""`: the observable-lifecycle id the application entry point
 resolves (the active lifecycle's id, or a fresh mint when none is active) and
 threads through to `_build_start_contract`, which stamps it into the contract's
 `lifecycle:` block — the durable resume anchor.
 
-`gate_policy: GatePolicy = DEFAULT_GATE_POLICY` (260703-L4) is the parsed
+`gate_policy: GatePolicy = DEFAULT_GATE_POLICY` is the parsed
 server-side gate delegation policy threaded from MCP config into worktree
 closeout. Existing CLI/tests that omit it keep the all-human default.
 ### Conventions
@@ -77,7 +84,8 @@ No configured external source applies.
 
 ### Repo-Internal References
 
-- `WorktreeArgs` implements the retained boundary described above. [10]
+- `WorktreeArgs` implements the retained boundary described above. The following current source boundaries establish the ledger-retirement behavior. [10]
+
 The following current source boundaries establish the ledger-retirement behavior.
 
 - `report_operation_progress` publishes progress through the exact worker-owned callback. [13]
@@ -107,7 +115,7 @@ facts between modules. Public callers still address the canonical task and never
 operation, process, lease, or approval identifiers.
 ## 260821-CLIVE-L1 Internal Transport
 
-`WorktreeArgs` no longer carries raw code and memory closeout message strings. Closeout execution receives one optional `EffectiveCloseoutInput`, populated only after validation; integration and PR landing carry only their actual code/memory output facts. This prevents worker, preview, recovery, and commit code from independently normalizing or defaulting closeout subjects.
+`WorktreeArgs` carries no raw code and memory closeout message strings. Closeout execution receives one optional `EffectiveCloseoutInput`, populated only after validation; integration and PR landing carry only their actual code/memory output facts. This prevents worker, preview, recovery, and commit code from independently normalizing or defaulting closeout subjects.
 ## 260821-CLIVE-L2 Current Contract
 
 The current source seams include `WorktreeArgs`, `report_operation_progress`. This module remains a public execution adapter over closed admission and exact mutation-owner reread; it does not duplicate reader exception families or lifecycle authority.

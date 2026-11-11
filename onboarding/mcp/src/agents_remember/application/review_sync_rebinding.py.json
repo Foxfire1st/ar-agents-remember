@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/application/review_sync_rebinding.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+        "content": "sha256:84902733d9a837e315a051bfb5a9c4288401531c2b00eb2c6280caf60788f30d",
+        "locator": {
+          "kind": "symbol",
+          "name": "rebinding_result_block"
+        }
+      },
+      "id": "RLZ-6PDVMD",
+      "invariant": "INV-RNX24H",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Gives omissions their own review advice state, omissions-awaiting-reconciliation.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module docstring states what it measures — the exact post-sync code and memory candidates against one retained tree comparison — and that a missing comparison, capture or evidence is a result state rather than an admission gate, with historical v1 records readable but proving no memory-tree coverage.",
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
             "content": "sha256:4c9c5a7d3f62c7400e1dab3c421e62326b360a771ad0dc66e15964dbd55b77ba",
             "locator": {
               "kind": "symbol",
@@ -19,10 +38,12 @@
         },
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:4fb55b1623af8696ebb8c0b94f3db870bfa7b4826d13386771be5b44f5238535",
             "locator": {
-              "kind": "file"
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -34,8 +55,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             }
@@ -49,8 +70,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             }
@@ -64,8 +85,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             }
@@ -79,8 +100,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             }
@@ -94,8 +115,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             }
@@ -109,8 +130,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             }
@@ -124,8 +145,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             }
@@ -135,12 +156,12 @@
       ]
     },
     "19": {
-      "note": "**The generation vocabulary in this block's own words, with the selection owner's answer carried beside it.**\n\nAnchor: `_no_generation_block`",
+      "note": "When a finished sync has no selected comparison, the block carries the selection owner's state and detail as its own. \\|  \\| Anchor: `_nothing_to_bind_block`",
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             }
@@ -150,12 +171,12 @@
       ]
     },
     "2": {
-      "note": "The module's surface: the two result dataclasses, the per-generation reader and the result block, with the record types imported from the knowledge model module.\n\nAnchor: `__all__`",
+      "note": "The module's surface: the two result dataclasses, the per-generation reader and the result block, with the record types imported from the knowledge model module. \\|  \\| Anchor: `ReviewSyncRebindingPublication` `ReviewSyncRebindingRead`",
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             }
@@ -165,12 +186,12 @@
       ]
     },
     "21": {
-      "note": "The shipped capture owner's refusal converted into a state rather than an exception.\n\nAnchor: `_resolved_capture`",
+      "note": "The shipped capture owner's refusal converted into a state rather than an exception. \\|  \\| Anchor: `_ResolvedSourceUnmeasurable`",
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             }
@@ -304,7 +325,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
             "content": "sha256:1f64ea4d8bdae2397c176a965614efb2ac534341dc2b6c4cc05fcdbe217d42ea",
             "locator": {
               "kind": "symbol",
@@ -354,8 +375,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
-            "content": "sha256:bbb78251410816eadf042a2a830aa80b49cba552da4ddedc15da284b6fb36888",
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
             "locator": {
               "kind": "file"
             },
@@ -489,8 +510,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             }
@@ -504,7 +525,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
             "content": "sha256:aaea9b433ad7f6075eb18e20f7d04a3c99ad5738a5c4236baa4a39f0c664d767",
             "locator": {
               "kind": "symbol",
@@ -516,12 +537,12 @@
       ]
     },
     "6": {
-      "note": "**The five states that carried nothing, each with the store fact it observed.**",
+      "note": "**The six states that carried nothing, each with the store fact it observed.**",
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:5b74811f5b27ce9bf72dea79f259162b5f8a1f6c2748142792c15f8e7e1889e5",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:162bd8366975f02a0e5dbbee61d86297abb6425946c01582d1028c883eb7220f",
             "locator": {
               "kind": "symbol",
               "name": "_CARRIED_NOTHING"
@@ -536,7 +557,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
             "content": "sha256:864b4a2b09b5bf0d4e5813682e9d748b63ca37c57cd1e5c4dadc4f3e1a24a28d",
             "locator": {
               "kind": "symbol",
@@ -548,12 +569,12 @@
       ]
     },
     "8": {
-      "note": "The resolved source side as a state, with the named reason it could not be measured.\n\nAnchor: `_ResolvedCapture`",
+      "note": "The resolved code side's capture failure becomes the state `source-unmeasured` with the capture owner's named reason. \\|  \\| Anchor: `_ResolvedSourceUnmeasurable`",
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             }
@@ -567,8 +588,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             }

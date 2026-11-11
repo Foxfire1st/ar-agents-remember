@@ -10,7 +10,7 @@ Exact Git reading, carrying, parking, reapply proof and cancellation support for
 
 ## Hot Path Summary
 
-`_read` supplies exact refs and complete stash inventory; `_proof` constructs the native expected reapply; `_stash` parks/reapplies work; `_cancel` assesses ownership and preserves unattributable bytes before discard; `_merge` owns converted-memory carry/validation; `_base` supplies shared result vocabulary.
+`_read` supplies exact refs, complete stash inventory and exact revision blobs; `_proof` constructs the native expected reapply; `_stash` parks/reapplies work; `_cancel` assesses ownership and preserves unattributable bytes before discard; `_merge` owns converted-memory carry/validation; `_base` supplies shared result vocabulary.
 
 ## Operating Model
 

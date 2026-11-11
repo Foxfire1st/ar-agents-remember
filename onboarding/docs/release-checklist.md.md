@@ -28,7 +28,12 @@ published.
   updates the exact version, the Linux-x64 archive URL and its SHA-256 together, and no other
   platform is claimed. `scripts/check-host-contract.py` plus the focused host-release tests
   bind the installed lock entry, manifest, plugin SDK, locked integrity/resolution and Node
-  version/platform URL.
+  version/platform URL. Two further items cover what no gate runs: in a scratch copy of
+  `paseo_plugin/` the plugin's development dependencies are installed with the product
+  Node/npm and its typecheck and test scripts run against the new plugin SDK (the plugin keeps
+  no lock), and the new host is provisioned from the candidate into a scratch prefix and home
+  on a free port, never the developer's installation, to check that the AR plugin loads before
+  the release is tagged.
 - Install and first-run smoke: a fresh `uvx agents-remember-mcp==<version>` starts and serves
   the tool list; `runtime_install(dry_run=true)` previews cleanly and
   `runtime_install(dry_run=false, install_provider_deps=false)` applies; `python3
@@ -61,7 +66,9 @@ provider install, status, query or cleanup procedure.
 - Release notes live in GitHub Releases with no changelog file; the canonical tag is `mcp-vX.Y.Z`. [1]
 - The targeted/full Dagger gates are consumed once and not rerun; the PR-only check is deterministic and not acceptance. [2]
 - Version sync covers the package version, the `SERVER_VERSION` fallback and the README status line. [3]
-- Host contract, whole-lock regeneration, Node pin and the host-contract check. [4]
+
+- Host contract, whole-lock regeneration, Node pin and the host-contract check, then a scratch-copy plugin typecheck and test run and a scratch provision of the new host that no gate runs. [4]
+
 - Fresh `uvx` start, dry-run then apply of `runtime_install`, and the skill-sync check. [5]
 - Setup works with no provider configuration; an older file's retired keys are reported once as unused and leftover folders are reported with sizes. [6]
 - Docs must match the shipped tool surface; the release lands by PR, the tag is proven reachable before publishing, and a GitHub Release is created. [7]

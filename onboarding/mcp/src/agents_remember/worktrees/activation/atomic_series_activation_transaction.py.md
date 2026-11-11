@@ -20,7 +20,12 @@ skip-memory remain admitted; legacy fast-forward pairs and all-legacy merge trip
 converted source proceeds; a converted target refuses an out-of-format legacy source. Mixed or all-converted
 merges retain their normal transaction. Missing branches and unanswered early probes proceed to the existing
 transaction's named judgment, not an invented early format result. In-flight continue/cancel retain their
-own selection authority. A certain legacy refusal therefore publishes no reconciling state.
+own selection authority. A certain legacy refusal therefore publishes no reconciling state. The check
+reads the memory source branch the sync will pull, through the source strategy
+(`source_strategy(args.sync_source).source_branch`): on a `sync_source="repository-default"` call that is
+the memory repository's default branch, not the contract's own line. The current-pair proof that gates
+`active` reads the pair `source_pair` (in `sync_transaction_sources`) names for the contract's own
+source line.
 
 
 
@@ -49,20 +54,20 @@ with the refused pass's own message kept at the end.
 Admission refusals retain the exact contract path and any explicit `memory_sync_choice` and
 `resolution_action` in executable `worktree_sync` retry arguments. A successful sync pass whose
 source pair moved again still returns blocked implementation admission. These are current source
-rules; the deleted transition suite supplies no current execution evidence.
+rules.
 
-CCR-R25 routes expected activation failures through `_AdmissionRefusalRequest` and the shared
+Expected activation failures are routed through `_AdmissionRefusalRequest` and the shared
 `atomic_series_admission_projection`. The refusal path reuses an error's retained observation when
 available, otherwise performs a bounded read-only observation, then emits the exact contract
 fingerprint, activation facts, retry precondition, and status action. There is no
 "waiting: named blocker owns the source-pair selection" branch and no foreign-blocker summary: every
 refusal this path describes is corrective action on the addressed contract, and selection is per
-contract, so another master is never reported as this contract's blocker. This changes the public
+contract, so another master is never reported as this contract's blocker. The projection is the public
 explanation only; selector publication, source sync, continuation/cancellation ownership, and the
 reconciling-to-active transition remain in the same transaction.
 
-cit:([`_admission_refusal`], mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:229-277)
-cit:([`_sync_selected_atomic_series_under_authority`], mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226)
+cit:([`_admission_refusal`], mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:419-467)
+cit:([`_sync_selected_atomic_series_under_authority`], mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:397-416)
 
 ### Conventions
 
@@ -98,7 +103,9 @@ No Domain Documentation source is configured for this memory root.
 ### Repo-Internal References
 
 - Selector publication and this contract's exact continuation/cancellation ownership live in the activation authority. [1]
-- The transaction translates expected activation errors through the shared structured admission projection. [2]
+
+- The transaction translates expected activation errors through the shared structured admission projection. The refusal's retry arguments repeat the caller's sync source. [2]
+
 - The selecting entry point refuses invalid inputs first, then re-reads the exact contract before reconciliation. [3]
 
 - The internal sync driver publishes reconciling, proves continue/cancel ownership, and advances only this contract to active. [4]
@@ -112,4 +119,4 @@ No cross-repository source is configured for this memory root.
 
 ## CCR-L42 current candidate
 
-Atomic-series admission refusals now preserve the full source detail directly in retry arguments and public summary/detail; the former bounded-detail truncation wrapper is gone, while activation ownership and retry routing remain unchanged.
+Atomic-series admission refusals carry the full source detail, untruncated, in the public `summary` and `detail` beside the executable retry arguments; activation ownership and retry routing are as described above.

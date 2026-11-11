@@ -73,6 +73,7 @@ A pointer names the action it must come before, what the file holds, and where t
 - Link directly to the file the agent needs, not to a file that points onward to it.
 - Say what the file holds in words that name its content; "for the applicable conditions and actions" says nothing.
 - When a detail file serves several actions, the pointer links the section for this action.
+- When an always-loaded sentence asks for an action done with an Agents Remember tool, or points to a detail section that does, that sentence names the tool, for example: "Before editing a file, call `knowledge_read` (`view="source_context"`) on it; read [knowledge use](…) to interpret the result." The detail file keeps the how-to. Agents often do not open a detail file, and tools are loaded on demand, so a tool named only in the detail gives the agent no reason to load it. A pointer whose detail involves no tool stays as it is.
 
 **When a detail file earns its read**
 

@@ -66,12 +66,12 @@
       ]
     },
     "38": {
-      "note": "The native workspace fold consumes supplied structural, task and host facts and publishes one TaskEntry collection with counts.\n\nAnchor: `project_workspace`",
+      "note": "The native workspace fold consumes supplied structural, task and host facts and publishes one TaskEntry collection with counts.",
       "targets": [
         {
           "anchor": {
-            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
-            "content": "sha256:3e1f8743a78f2ff0224d4c1c22bd8ff0d9019949af1c942601853cebca386204",
+            "blob": "a95148ac75c865e5846b8994fe331ba5fb2ad1f7",
+            "content": "sha256:b67c1f6e987ed016e6495d3760b30de7f0db389af5d6bb403fa7366f01b23a06",
             "locator": {
               "kind": "symbol",
               "name": "project_workspace"
@@ -83,12 +83,12 @@
       ]
     },
     "39": {
-      "note": "Native state separates canonical stage, optional host activity and contributing eventAt.\n\nAnchor: `TaskState`",
+      "note": "Native state separates canonical stage, optional host activity and contributing eventAt.",
       "targets": [
         {
           "anchor": {
-            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
-            "content": "sha256:547d65d6d0b433cae876cf724e68072e618693d82797005287db781304a46dee",
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:fe9ca863cfcf6e071b01eec7e19ab0cc07db6748f5a092ed6d0343dcfd714514",
             "locator": {
               "kind": "symbol",
               "name": "TaskState"
@@ -100,12 +100,12 @@
       ]
     },
     "40": {
-      "note": "Terminal/planned stage wins; an unknown host cannot establish paused, and timestamp selection uses the contributing agents.\n\nAnchor: `task_state`",
+      "note": "Terminal/planned stage wins; an unknown host cannot establish paused or waiting, and timestamp selection uses the working agents, else the earliest waiting seat's declared-wait start, else the observed agents.",
       "targets": [
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:c5dd1e2305a20ba936649eb75ff0d84791f7f60e558984b8d5069b5a4aae7318",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:97b5afbcb4c4f92a14c39ada1467d8a0b0098a8ad5d950e0f7b481bd53adf329",
             "locator": {
               "kind": "symbol",
               "name": "task_state"
@@ -117,12 +117,12 @@
       ]
     },
     "41": {
-      "note": "The one task join creates native identity/membership and binds contracts by exact task identity.\n\nAnchor: `build_task_entries`",
+      "note": "The one task join creates native identity/membership and binds contracts by exact task identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:613fe3ed19e28d70036cee9fdfa7e9139b0d357f28aba2346a9e61d6df6a2771",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:8ca067a86d2ee83d9c1b56d58218d06b03dc5fe4f8d930335be216512b7848c0",
             "locator": {
               "kind": "symbol",
               "name": "build_task_entries"
@@ -134,12 +134,12 @@
       ]
     },
     "42": {
-      "note": "Published host states admit only the declared vocabulary and timezone-aware event timestamps.\n\nAnchor: `PublishedAgentActivity`",
+      "note": "Published host states admit only the declared vocabulary and timezone-aware event timestamps.",
       "targets": [
         {
           "anchor": {
-            "blob": "da618388bae65920ebfc8a4d5defdc152336df08",
-            "content": "sha256:bf1efb90fded60a112126321d7f8f0c871c21b48ede172894de918660797b75c",
+            "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+            "content": "sha256:e9491d4291d3092cc13624c060fde336375bc9669ad67b7b731ef73a933a68a3",
             "locator": {
               "kind": "symbol",
               "name": "PublishedAgentActivity"
@@ -155,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da618388bae65920ebfc8a4d5defdc152336df08",
+            "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
             "content": "sha256:52aeb74957de86c9196f6f2ed21f0b958f7adaba398fc727905cbe2f5773717b",
             "locator": {
               "kind": "symbol",
@@ -309,7 +309,7 @@
         },
         {
           "anchor": {
-            "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+            "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
             "content": "sha256:ccde3b25061b069a2429e931455f47c710766f7f0556b30f25fc45813e490b6b",
             "locator": {
               "end": 46,
@@ -322,7 +322,7 @@
         },
         {
           "anchor": {
-            "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+            "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
             "content": "sha256:5520816210b8fd9bc65b0d783cca25f07e69099338650af3d77d15fde2e9ed86",
             "locator": {
               "end": 82,
@@ -335,7 +335,7 @@
         },
         {
           "anchor": {
-            "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+            "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
             "content": "sha256:39c0c8e0f58f3cfa9952c8e6a96ec63f4b70aae8465b3571f6be0c8e57b3dfdb",
             "locator": {
               "end": 118,
@@ -348,10 +348,10 @@
         },
         {
           "anchor": {
-            "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
-            "content": "sha256:8214cc93e25d32ebdb773fea777bccf1086f9f427c7eeaa113eeb2f4e97a04a7",
+            "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
+            "content": "sha256:c1a9551b221755e5a2db952274f50b8e1957db718c24a3c2c07f93bf14e57ea4",
             "locator": {
-              "end": 203,
+              "end": 204,
               "kind": "line_range",
               "start": 159
             },
@@ -361,12 +361,12 @@
         },
         {
           "anchor": {
-            "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+            "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
             "content": "sha256:85bf25e1031e124f92f64dee5408743cbb073a1f155d8548b0c7552ecd8ffbaa",
             "locator": {
-              "end": 237,
+              "end": 238,
               "kind": "line_range",
-              "start": 206
+              "start": 207
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
           },
@@ -387,7 +387,7 @@
         },
         {
           "anchor": {
-            "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
+            "blob": "edb4ac727ca2888b5c529ec054650c50cb51ef52",
             "content": "sha256:b4956c91f6beffbc24d4d3a9fd94f1cf90c8f16cd109f97788e754a106a7cd49",
             "locator": {
               "end": 252,
@@ -400,10 +400,10 @@
         },
         {
           "anchor": {
-            "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
-            "content": "sha256:52a82454a7d2706788b716cf83fe84e3b5e9846e2182e4c1397b37376149ba20",
+            "blob": "edb4ac727ca2888b5c529ec054650c50cb51ef52",
+            "content": "sha256:f202f72139c1f9912aacb540fd739ebae675b929d9608fce1d6faecadab82462",
             "locator": {
-              "end": 477,
+              "end": 479,
               "kind": "line_range",
               "start": 439
             },
@@ -435,12 +435,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:e04b243dd9746767c6c473a927163ae99b97875eaf72233b43fe6dc5b43f456c",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
             "locator": {
-              "end": 219,
-              "kind": "line_range",
-              "start": 147
+              "kind": "symbol",
+              "name": "_place_listed_child"
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -448,12 +447,12 @@
         },
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:a9698c32fa9a20bab81fc0f683925767fc43a427ce913e1f3c157c94cc3c4f95",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:ee9a7b94ba0aa56862d632811a4d0b128aa495307d53aec69f208cb1afadc314",
             "locator": {
-              "end": 417,
+              "end": 493,
               "kind": "line_range",
-              "start": 339
+              "start": 417
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },

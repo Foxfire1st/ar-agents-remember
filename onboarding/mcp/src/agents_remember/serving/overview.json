@@ -449,12 +449,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:4bb3900359d83c245bbb06778d92bfd62b4b6b6b09e7e5b1f357277277f97634",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:8ca067a86d2ee83d9c1b56d58218d06b03dc5fe4f8d930335be216512b7848c0",
             "locator": {
-              "end": 223,
-              "kind": "line_range",
-              "start": 151
+              "kind": "symbol",
+              "name": "build_task_entries"
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -462,12 +461,12 @@
         },
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
             "content": "sha256:16d8ca417b7d5c248481b1875b0737610c295a7003275c9599c6b6c1e4971338",
             "locator": {
-              "end": 345,
+              "end": 421,
               "kind": "line_range",
-              "start": 267
+              "start": 343
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -475,25 +474,12 @@
         },
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:e04b243dd9746767c6c473a927163ae99b97875eaf72233b43fe6dc5b43f456c",
-            "locator": {
-              "end": 219,
-              "kind": "line_range",
-              "start": 147
-            },
-            "path": "mcp/src/agents_remember/observer/task_entries.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
             "content": "sha256:2e3d0f7b73581184814e67983f84f48e68f04f43994be827653c34fd18149436",
             "locator": {
-              "end": 341,
+              "end": 417,
               "kind": "line_range",
-              "start": 263
+              "start": 339
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },

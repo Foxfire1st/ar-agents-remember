@@ -130,7 +130,7 @@ The recurring projection path uses projected status plus the latest landing snap
 - The shared store-root resolver. [1]
 
 
-- project_and_write drives the pure project_workspace assembler with retained structural and analytical inputs. The assembler enriches enclosure actions, builds native task entries from task sources and host activity, and returns their tasks/counts and unbound enclosures alongside retained attention/Engine Room analytics and metrics. Provider refresh and provider display inputs are absent. The pure enclosure-action helpers still gate integrate/cleanup by durable closeout/integration/cleanup facts; there is no project_lifecycle fold. [3]
+- project_and_write drives the pure project_workspace assembler with retained structural and analytical inputs, including the task-entry join the input reader built for the pass. The assembler enriches enclosure actions, takes that join (it builds native task entries from task sources, host activity and the pass clock only when a caller supplies none), and returns their tasks/counts and unbound enclosures alongside retained attention/Engine Room analytics and metrics. Provider refresh and provider display inputs are absent. The pure enclosure-action helpers still gate integrate/cleanup by durable closeout/integration/cleanup facts; there is no project_lifecycle fold. [3]
 
 
 - The worker-owned state refreshes task inputs. [4]
@@ -170,7 +170,8 @@ the state object. `state.read(...)` is called with a `ProjectionReaders(repo_sur
 `RefreshPass(now=moment, refresh=refresh or ProjectionRefresh.full())`.
 
 - Input acquisition and reclamation belong to the worker-owned state. [7]
-- The complete acquired input bundle is represented by `ProjectionInputs`.
+
+- The complete acquired input bundle is represented by `ProjectionInputs`. [8]
 
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projections/projection_inputs.py:161-298 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 7bf564a663bb61f12844dee39538dd09a1633cdb. Retired means the anchor no longer stands, not that the cited subject was deleted [8]
 - `project_and_write` invokes the input state rather than owning those reads itself. [9]

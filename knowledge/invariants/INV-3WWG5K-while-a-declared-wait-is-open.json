@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Host activity, task projection, stall watch and the dashboard views carry the wait in different files, so one statement keeps all surfaces saying the same thing."
+  },
+  "applicability": "AR's task, operations and stall-watch surfaces while a declared wait is open.",
+  "conditions": [
+    "A declared wait is open and its check is still to come."
+  ],
+  "exclusions": [
+    "Paseo's own agent list, which AR does not change."
+  ],
+  "id": "INV-3WWG5K",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_entries.py, mcp/tests/test_attention_native_kinds.py; dashboard Vitest 2209 pass; scratch-host view data partD/logs/view-waiting.json"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v9.7",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "While a declared wait is open, AR's surfaces show the seat and its task as waiting (what for, since when, check due): the host-activity record carries declaredWait without moving the host's idle state, the task projection reports activity 'waiting' with waitingSeats, the dashboard task and operations views show it, and the stall watch treats a seat whose check is still to come (plus 60 s grace) as busy; Paseo's own agent list is untouched.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d49c4b3ee776a1dadfa652fbc14bdb3765457d06",
-            "content": "sha256:076935d4dbc457d92333634d51a95d3870758e72a18cf71896ad515893349cbd",
+            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+            "content": "sha256:cbbe653b315395ef2da54e42b201a5f5f2958d15816226993642c93b9a294f67",
             "locator": {
-              "end": 395,
+              "end": 397,
               "kind": "line_range",
-              "start": 335
+              "start": 336
             },
             "path": "dashboard/src/cockpit/Cockpit.test.tsx"
           },

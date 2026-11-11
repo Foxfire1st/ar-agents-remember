@@ -10,6 +10,8 @@ Records exact-owner native helper updates and turn-end events for a fixture host
 
 ## Code Commentary
 
+The recorder registers through `server.addHook` (`agent.open.before` and `agent.turn.after`). Because the turn-end hook carries an empty timeline from Paseo 0.13, it records the agent's held timeline read through `agents.ref(id).timeline.refetch` in the hook's place, each item with its row's turn id.
+
 ### Invariants And Boundaries
 
 Readiness and recording-window markers distinguish subscription snapshots from actual events. Restarts and errors invalidate the window; plugin code alone proves no loaded recorder or captured event.

@@ -8,12 +8,9 @@ Synthetic role facts, timelines and a controlled sender exercise the whole silen
 
 The leaf rule is its own group: a completed leaf turn with no hand-off sends the seat one message after the 60-second wait and its parent no line; the third and fourth sends give the parent the counted line and the seat nothing; the third end's marked line leaves only at the end of its own wait and a turn start inside that wait cancels it; an archived or permission-waiting seat at the wait's end gets nothing and a row is written. Each non-silent end (failed, canceled, permission, child in a turn, archived, reply to a waiting sender) leaves the seat alone with its reason, a replaced timeline falls back to the last `user_message`, and a child is found by its `paseo.parent-agent-id` label even when its turn began before the plugin loaded. A hand-off, or a turn begun by another agent's message, resets the run; the plugin's own message does not. A Manager turn is never sent back. Hand-off recognition is exercised on the five exact captured rows from `fixtures/evidence-rows.json` — the L104 Curator's escaped answer included — and on rows of each other form built as the pinned mappers build them, including the four Hermes title forms, a cut answer, a shell row that only mentions `role_message`, and a `role_start` row, which is no leaf hand-off.
 
-The size assertion checks the source constants, not settings reload. The contributed-handler case invokes the actual `registerParentWakeEvents` against a mock event registry and host sender. The suite remains a host-free composition: it consumes captured row values, not live SDK callbacks, and proves no plugin load, live delivery or cross-harness wakeup.
+The size assertion checks the source constants, not settings reload. The contributed-handler cases invoke the actual `registerParentWakeEvents` against a mock `addHook` registry under the Paseo 0.15 hook names and a host sender whose timeline read returns an empty, readable turn. The suite remains a host-free composition: it consumes captured row values, not live SDK callbacks, and proves no plugin load, live delivery or cross-harness wakeup.
 
 ## Evidence
 
 
 - The host-free suite retains suppression/deferral/retry/restart controls and adds actual parent-wake registration against a mock registry with explicit steer sends. [1]
-
-
-**L184 — INV-1ZKP4R.** These cases hold the turn-end reading the publication is built from. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.

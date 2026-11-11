@@ -1,0 +1,123 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_sources.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d9a1143389ecb674fae28670511b2e7ae8035ad2",
+        "content": "sha256:69734662e1222721f0b91c4f372d9fcb7bad741d287ac530ccc68a11c490b997",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_sync_sources"
+        }
+      },
+      "id": "RLZ-35D38N",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Selects each side's source branch and tip: the repository default for sync_source=\"repository-default\", the recorded parent line otherwise.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Admission resolves the strategy's branches to tips, the memory side only for external memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9a1143389ecb674fae28670511b2e7ae8035ad2",
+            "content": "sha256:69734662e1222721f0b91c4f372d9fcb7bad741d287ac530ccc68a11c490b997",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_sync_sources"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The own-line pair the activation gate reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9a1143389ecb674fae28670511b2e7ae8035ad2",
+            "content": "sha256:452b7e4116df7c96c73adcb42afe45fe0b318f709f4ba2b58d5794d134e0b092",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_pair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A rebuilt side's pinned default is admitted only when unique and at the pinned source commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9a1143389ecb674fae28670511b2e7ae8035ad2",
+            "content": "sha256:04b94e2e69fadc7b29411c3f933022c6a56f5abd93fdddf62d6c3f54941e0ccc",
+            "locator": {
+              "kind": "symbol",
+              "name": "recovered_default_branch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A pinned code default marks the rebuilt record as a repository-default generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9a1143389ecb674fae28670511b2e7ae8035ad2",
+            "content": "sha256:609ce6faedbc0b2b128da558860572c38bf02948964fa79f21797f87d313681e",
+            "locator": {
+              "kind": "symbol",
+              "name": "recovered_source_strategy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A continue onto a moved or unreadable source tip returns a refusal naming cancel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9a1143389ecb674fae28670511b2e7ae8035ad2",
+            "content": "sha256:9fd781231e7e9617d73b71f11ee6933617e664516c6a12ed5ab5ae6268aba922",
+            "locator": {
+              "kind": "symbol",
+              "name": "moved_source_sides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An unresolvable default answers `sync-source-unavailable` before anything moves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:64f0bf5b361e1717a1859952247c02d1fbb5cc2f2ab3019370ec01cc50ecc4ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_and_run"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

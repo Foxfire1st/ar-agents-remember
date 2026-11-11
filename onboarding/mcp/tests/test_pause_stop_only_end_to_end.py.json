@@ -103,12 +103,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d10964f21e3c76aa32694f3f0a93ec04188987e8",
+            "blob": "aba71ec71952433a1356dd2336cde60169db599a",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 704,
+              "end": 713,
               "kind": "line_range",
-              "start": 704
+              "start": 713
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -178,12 +178,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d10964f21e3c76aa32694f3f0a93ec04188987e8",
+            "blob": "aba71ec71952433a1356dd2336cde60169db599a",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 704,
+              "end": 713,
               "kind": "line_range",
-              "start": 704
+              "start": 713
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -425,12 +425,12 @@
         },
         {
           "anchor": {
-            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
             "content": "sha256:a8768b1add6b6636c56184ec2fc8ee90c3210ab32314cb7477c3ff41aad2379c",
             "locator": {
-              "end": 515,
+              "end": 516,
               "kind": "line_range",
-              "start": 466
+              "start": 467
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

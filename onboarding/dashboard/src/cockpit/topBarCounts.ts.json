@@ -1,0 +1,109 @@
+{
+  "path": "dashboard/src/cockpit/topBarCounts.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ea395f2fb601961432e7256188d45952c08bfc19",
+        "content": "sha256:3c990ec584876b48cbbe9fb161e4b70686959f98859e6b334c8381518fe29d88",
+        "locator": {
+          "kind": "symbol",
+          "name": "topBarCountsLine"
+        }
+      },
+      "id": "RLZ-XT3RN1",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N13",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Header bucket wording uses the shared statusLabel for the seven native stage/activity keys; the line's own visibility rules belong to the host-unknown invariant, not to this link.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The line writes each shown count with the shared status word, joined by a middle dot, and adds the unavailability notice while host activity is unknown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea395f2fb601961432e7256188d45952c08bfc19",
+            "content": "sha256:3c990ec584876b48cbbe9fb161e4b70686959f98859e6b334c8381518fe29d88",
+            "locator": {
+              "kind": "symbol",
+              "name": "topBarCountsLine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "While host activity is unknown the activity counts are left out; otherwise waiting shows only when nonzero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea395f2fb601961432e7256188d45952c08bfc19",
+            "content": "sha256:366478d781bd4ed76ea6a3cf189357ee9fe3dbd9828ebe9c7866421d93b1f4f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "shown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The activity counts are works, waiting and paused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea395f2fb601961432e7256188d45952c08bfc19",
+            "content": "sha256:575e0a4c0043db211b2c58a15632a5b3a9239319b9bad1e80e645e886bfbc4b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ACTIVITY_KEYS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "TopBar renders the line in its task-counts span.\n\nAnchor: `topBarCountsLine`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:cd306a61f123a88d7e812db8897081159d20f4c928f125c56aaa445e4345a09c",
+            "locator": {
+              "end": 920,
+              "kind": "line_range",
+              "start": 918
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Host activity is unknown while the served unknown count is above zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectHostActivityUnknown"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

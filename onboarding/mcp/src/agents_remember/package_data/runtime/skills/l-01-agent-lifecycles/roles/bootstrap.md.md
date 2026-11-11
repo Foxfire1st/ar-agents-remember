@@ -2,60 +2,27 @@
 
 ## Message/file transport
 
-Past-epoch account (retained wording): This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
-
-Custody: the preceding sentence(s) retain their original target blob(s) `fde55d2ad1129fead83a4561a005af560d720d55`; live reference 15 labels only the separately stated current account below.
 
 Bootstrap starts no role and messages none; developer questions go in its own chat, and it reports the setup state without task-transaction messaging.
 
-Past-epoch account (retained wording): - Messages wake; complete payloads and evidence travel as files.
-
-Custody: the preceding sentence(s) retain their original target blob(s) `fde55d2ad1129fead83a4561a005af560d720d55`; live reference 15 labels only the separately stated current account below.
 
 - Bootstrap starts no role and messages none; its developer questions go in its own chat.
 
 
 ## Current operative account — MIK-R112
 
-The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current manifest’s bootstrap tool list has five retained setup tools.
-- Role still forbids task/code/knowledge authoring and delegates its procedure.
-
-### Superseded inventory
-
-- Pre-repair card claim: Evidence says the bootstrap manifest declares five tools. This is superseded archival wording, not a current prescription.
-
-### Source and authority bounds
-
-- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md:20-24`.
-- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md:70-90`.
-- Source comparison: `.agents/skills/l-01-agent-lifecycles/composition-manifest.json:roles.bootstrap.tools`.
-
-Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
-
-## Current source contract evidence
-
-
-- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.
-
+- The role's setup surfaces are five tools on `agents-remember-task`: `runtime_install`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt` and `user_settings_init`.
+- The role forbids task, code and knowledge authoring and leaves its ordered steps to the Bootstrap operation.
 
 
 ## Synced current-source qualification
 
-The read surface names context_packet, server_info and read_ar_files; resolve_context is removed. Ask which cards govern a path, then open them natively. The current prohibition explicitly names `retire_child`, alongside task, role-start, closeout and other mutations outside the setup surface; it does not currently name `message_child` or `rename_*`. The earlier three-name account belongs to the predecessor wording. Five setup tools remains a source manifest count, not an execution result.
-
-The source-owner repair restored the explicit workspace.scratchRoot temporary-file boundary, with report/evidence collection separately owned. It is present in canonical and generated copies; the earlier missing-paragraph observation is superseded, not a removal authority or a live launch measurement.
-
+The read surface names `context_packet`, `server_info` and `read_ar_files` on `agents-remember-task`. Ask `read_ar_files` which cards govern a path, then open them natively. The prohibition names `retire_child` alongside task, role-start, closeout and other mutations outside the setup surface.
 
 
 - The packaged Bootstrap copy forbids retire_child alongside the other task, role-start and closeout calls outside its setup surfaces. [17]
 
-
-## Historical original card — preserved, not the current operative account
-
-<details>
-<summary>Retained original source accounts and producer history</summary>
 
 ## Governing Overview
 
@@ -63,11 +30,10 @@ The source-owner repair restored the explicit workspace.scratchRoot temporary-fi
 
 ## Purpose
 
-The portable **bootstrap** lifecycle: the tenth canonical role in the `l-01-agent-lifecycles`
-registry, and the free agent for a new user's first hour. It establishes what Agents Remember is
-and what the developer has to decide, then takes one repository from *nothing usable* to *a memory
-root that resolves* through the surfaces that own each step — memory root, spear branch, first
-onboarding, first attributed baseline, indexing — and reports what actually happened.
+The **bootstrap** role is the free agent for a new user's first hour. It establishes what Agents
+Remember is and what the developer has to decide, then takes one repository to a memory root that
+resolves through the surfaces that own each step — user settings, memory root, spear branch and
+first attributed baseline — and reports what actually happened.
 
 It is a sync-propagated (`scripts/sync-skills.py`) package-data copy of the canonical
 `skills/l-01-agent-lifecycles/roles/bootstrap.md`. A `role=bootstrap` session opens it through the
@@ -77,61 +43,36 @@ shared deterministic compiler like every other role; it is not a second instruct
 
 ### Logic
 
-The role is a **free agent**, and that is a developer ruling rather than a description: *"It is not
-a task related agent. Can't be. It needs to be free agent. All what it needs is that can 'call'."*
-A regular agent — the developer's own session in the AR dashboard is the intended caller — starts it
-by **opening a session with this role and no task document**. There is no task document, no leaf, no
+The role is a **free agent**: the user starts it with one call from their own chat, and nothing
+dispatches it. There is no task document, no leaf, no
 worktree, no gate, no requirement packet and no dispatch brief, and their absence is normal rather
 than an error to repair.
 
-Two consequences the text states as its own shape, not as gaps:
+It has no task altitude: setting up the workspace grants it no task authority, and it creates no
+task document, development leaf, enclosure or gate and dispatches no work.
 
-- **It has no task altitude, deliberately.** `bootstrap` is absent from the task layer's
-  sprint/master/leaf role sets and from the structural-seat admission rules. Adding one is the wrong
-  fix: an altitude is what would make it the task-coupled seat the ruling removed.
-- **It is not reachable by `dispatch_agent`.** That transaction addresses a seat by canonical task
-  document and dispatches rather than opens. It belongs to the task-bound pipeline; this seat is
-  correctly outside it.
 
-The gate admits it **by name**: `serving/task_binding.py` keeps one exported, commented set of roles
-for which no document is required, and `260921-ICR-L32` changed the **membership** of that set on the
-developer's 2026-09-24 ruling rather than its shape — it is now
-`TASKLESS_SEAT_ROLES = {"chat", "terminal", "bootstrap", "curator"}` — while
-`serving/terminal_task_assignment.py` reads the same set rather than restating it. This seat is one of
-the four names in it, and a taskless `curator` session is another (see the seat-policy note below).
-Without that admission a `role=bootstrap` call would be refused `task-binding-required` before any
-session was created. Being taskless also means the structural **altitude check does not run** for the role, with
-or without a document: there is no altitude to validate against. A supplied document is still
-resolved, so a bad reference is still refused as `task-binding-invalid`.
-
-**Its instructions are its compiled capsule, and nothing else.** A task seat is booted by the brief
-its dispatcher pins; this agent has no dispatcher and no brief, so the compiled capsule for
-`(bootstrap, bootstrap)` is its instruction source. Its composed instruction blocks are
-`role:bootstrap` and `operation:bootstrap`, in the role-specific composition order; shared core
-blocks are not injected. The manifest declares the role with `altitude: "free-agent"`
-and no templates or criteria catalogs.
+**Its instructions are this role file and the Bootstrap operation.** Nothing dispatches it, so no
+brief adds to them.
 
 **Its subject is the first hour, and it points rather than restates.** The ordered workflow and the
-failure-state inventory live in `operations/bootstrap.md`; the steps themselves belong to the skills
-that own them (`c-00-initialize-memory-repo`, `c-03-repo-bootstrap`, `c-10-adopt-memory-baseline`,
-`c-02-memory-quality-control`, `c-08-ar-coordination-context-resolver`, `c-13-install-and-onboard`).
+failure-state inventory live in `operations/bootstrap.md`; the steps themselves belong to the `c-*`
+procedures the operation names.
 The role is explicitly **not** a general maintenance posture: once a repository has a resolving
 context, ordinary work belongs to the lifecycle roles, and a later request to "tidy" a working
-installation is refused with the owning skill named. It is also not a thin alias for the free-chat
-launcher and not a fourth router condition.
+installation is refused with the owning skill named.
 
-**Role-seat immutability applies**: the session stays bootstrap for its lifetime, and a pasted brief
-for another role is refused and reported rather than absorbed.
 
 ### Conventions
 
-- Role sources are concise, parseable and self-contained. The compact capsule policy supersedes fixed section order and minimum length; role-specific tests protect the duties that matter.
+- Role sources are concise, parseable and self-contained rather than held to a fixed section order or minimum length; role-specific tests protect the duties that matter.
 - Editing it means editing the canonical `skills/l-01-agent-lifecycles/roles/bootstrap.md` and
   running `python scripts/sync-skills.py`; the single generated package copy is never hand-edited.
 - Its permitted surface is a positive list, and it is deliberately narrow: the setup surfaces, the
   read-only resolution/retrieval surfaces, native reads, and exactly one artifact — its own report.
-  Everything task-shaped (`worktree_*`, `task_doc`, `lifecycle_*`, `gate_*`, `dispatch_agent`,
-  `closeout_*`, `direct_landing`, the inbox role tools) is named as *not* this seat's machinery.
+  Everything task-shaped (`worktree_*`, `task_doc`, `lifecycle_finalize_task`, `role_start`,
+  `closeout_*`, `direct_landing`, `retire_child`, `task_reopen` and the others the role lists) is
+  named as *not* this seat's machinery.
 - Each step is read back from the tools after every mutating call: a step is complete when a
   follow-up call says so, not when the call returned without raising.
 
@@ -139,21 +80,11 @@ for another role is refused and reported rather than absorbed.
 
 - **A free agent is not a task seat.** No card, projection, notifier expectation or lifecycle badge
   may present `bootstrap` as a task-bound role, and the absent task altitude must not be "fixed".
-- **Delivery of its capsule is another leaf's work, and this card claims no delivery.** A session
-  started with `AR_SPAWN_ROLE=bootstrap` reaches the runtime with its role and hosted identity and is
-  then booted with **no instructions at all** until the capsule is delivered to a launch; the
-  session-start directive expects a brief that nothing sends. Name that gap wherever readiness is
-  reported; do not describe the seat as ready when it cannot be instructed.
 - **Its report is its only handoff.** A free agent has no lifecycle row and no terminal state, so
-  `lifecycle_finalize_task`, `worktree_cleanup`, closeout/integration and the deliverable-evidence
-  hold point have nothing to act on. That is the designed outcome, and it forbids inventing a
+  `lifecycle_finalize_task`, `worktree_*` and closeout calls have nothing to act on. That is the designed outcome, and it forbids inventing a
   "bootstrap completed" projection or inferring completion from a process exit.
 - **The role does not duplicate a `c-*` procedure.** A copy of a procedure here would drift from its
   owner, so the text carries none.
-- **No onboarding documentation inside code** (the packet's boundary): the setup knowledge lives in
-  the instruction corpus and the capsule, and code-resident setup prose is a pointer at the corpus.
-- **The capsule is delivered in argv.** Its rendered size counts against the OS argument limit, so
-  this seat is one of the consumers of the stated compiled-capsule size bound.
 
 ### Todos
 
@@ -210,32 +141,6 @@ No sibling-repository contract defines this role file.
 
 No meaningful cross-repo references found.
 
-## 260921-ICR-L27 The First-Hour Seat Reaches The Knowledge Foundation And Authors Nothing
-
-`260921-ICR-L27` (`ICR-R27@v1`) gives this role the half of the knowledge bootstrap that exists **before
-a task does**. The role's step 5 makes it the carrier that reads the state at the declared knowledge
-location, reports it, and hands the authoring to a curator — on a task document for a real task, or
-through the taskless writer an instructed session holds — while authoring no records itself. The reason
-is the opener's gate, stated in the role file in the product's own vocabulary: a session opened for the
-curator **with no task document is refused** (`task-binding-required`), while this seat is admitted
-taskless.
-> **Seat-policy note at L27's bytes (dated 2026-09-24).** This records the policy of the candidate that curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus that leaf's working-tree delta, where a document-less `curator` session was refused `task-binding-required` because `TASKLESS_SEAT_ROLES` was `{"chat", "terminal", "bootstrap"}`. That was true of those bytes and is **superseded** — whether `curator` joined the set was then a product decision under revision, and it was taken in `260921-ICR-L32`.
->
-> **Seat-policy note at these bytes (L32 curation, dated 2026-09-24T17:20+02:00).** At the bytes this curation read — code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus this leaf's working-tree delta — `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap", "curator"}`: a document-less `curator` session is **admitted** and receives the curator capsule, while every other role is still refused `task-binding-required`. Read the sentences above as the policy **at these bytes**, not as a permanent property of the product.
-
-Three smaller edits carry the same obligation: step 2 adds `c-14-knowledge-bootstrap` to the skills this
-seat points at rather than restating; step 3 adds the **commit word** for the foundation as a decision
-that is asked for rather than assumed; and the Outputs template gains a
-`Knowledge foundation: <not-recorded | recorded at <identity> | unusable: <code and path> | not run, and
-why>` line, with a matching self-check row. The prohibition list gains "Never author knowledge records
-either", and the step states plainly that **a repository whose knowledge is not recorded is not reported
-as ready** — the onboarding and the baseline can both be complete while the foundation is still absent,
-and those are separate facts rather than one verdict.
-
-**This card describes a generated copy**, propagated from `skills/l-01-agent-lifecycles/roles/bootstrap.md`
-by `scripts/sync-skills.py` into this package-owned copy and the eight harness starter packages.
-
-</details>
 
 - Bootstrap writes one report at the launch handover's taskReportPath and states that exact path on the report's first line. [3]
 

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The always-on texts of eight roles, the shared every-role text and the launch assignment all carry pointers, so one statement keeps a tool from being named only behind an unopened detail file."
+  },
+  "applicability": "Every always-on role text and operation text composed into a role capsule.",
+  "conditions": [
+    "The text asks for an action done with an Agents Remember tool, or points to a detail section that does."
+  ],
+  "exclusions": [
+    "A pointer whose detail involves no tool, which stays unchanged."
+  ],
+  "id": "INV-GWA6VR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/260928-MIK-L60-evidence/partC/pointers.md (every pointer marked) and rendered capsules in notes/reports/260928-MIK-L60-evidence/partC/"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v7.1-2",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An always-on instruction that asks for an action done with an AR tool, or points to a detail section that does, names the tool in the pointing sentence; every always-on role text and operation text composed into capsules was examined pointer by pointer.",
+  "status": "proposed",
+  "supersedes": []
+}

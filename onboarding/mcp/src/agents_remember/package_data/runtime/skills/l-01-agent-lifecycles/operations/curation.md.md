@@ -4,16 +4,10 @@
 
 MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance.
 
-This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
-
-
-- MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance.
-
-
 
 ## Message/file transport
 
-This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
+This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template.
 
 - Messages wake; complete payloads and evidence travel as files.
 
@@ -29,7 +23,6 @@ Name immutable baseline/candidate records with scoped knowledge_read, open the n
 ## Current source contract evidence
 
 
-
 ## Purpose
 
 Reconcile current intent, ruled change intent and implemented reality, maintain affected onboarding, and author justified knowledge through the existing admitted writer.
@@ -40,7 +33,7 @@ MEMORY review keeps separate sealed reports, finding IDs and its own pass count,
 
 On an AR-launched Paseo capsule, `documents[0].taskDocReadArgs` supplies exact rendered_path and json_path file locations, opened with the harness's own file tools. task_doc writes and does not read. AR calls use agents-remember-task and the actual reader schemas: knowledge_read takes memoryRoot; context_packet and read_ar_files both take the exact supplied leaf task_context with the canonical task reference and enclosure contract. Read immutable baseline/candidate knowledge before semantic changes, contain outputs in the selected memory root and read admitted records back.
 
-MIK’s writer remains authoritative. On converted memory, normally admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and has no `--baseline`, `--publish` or `--publish-to` option. Capsule-specific missing writer/command admission is reported as records not written; it does not erase MIK’s writer or admit another runtime/internal writer.
+On converted memory, normally admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and has no `--baseline`, `--publish` or `--publish-to` option. Capsule-specific missing writer/command admission is reported as records not written; it admits no other runtime or internal writer.
 
 Normal curation requires the complete contract-scoped memory-quality operation, repair or exact blocked escalation of every curator-actionable finding, and reruns until the raw quality checklist is ready. Missing/stale coherence is cleared by the existing prepare → publish → validate authority. Scoped checks cannot stand for that full operation.
 
@@ -49,7 +42,6 @@ Before converted-memory closeout, an independent seat that authored none of the 
 An explicitly report-only admission supplies only its requested report/upstream message and claims none of this normal pass complete.
 
 Author semantic scope and each target’s rationale. Examine a family’s own guarantee, exact memberships and unchanged siblings; retain them explicitly only when a successor is justified. Declare inspected external sources and read each measured plane’s own state. Use the existing comparison producer with the admitted source-bound package and carry its actual immutable generation or refusal, including unchanged-knowledge work.
-
 
 
 ## Foundation carrier and writer admission
@@ -64,7 +56,7 @@ Canonical skills/l-01-agent-lifecycles/operations/curation.md owns the instructi
 
 ## Invariants And Boundaries
 
-Do not edit source/task-status/lifecycle/Git state, invent a dataset destination or source stamp, fabricate family membership, or route a refusal through another installation. Native clarification uses the actual parent/task role via bound messaging; developer questions go to the parent when one exists, and only a parentless session uses its own chat. The former own-chat-only account is historical, not the current route.
+Do not edit source/task-status/lifecycle/Git state, invent a dataset destination or source stamp, fabricate family membership, or route a refusal through another installation. Native clarification uses the actual parent/task role via bound messaging; developer questions go to the parent when one exists, and only a parentless session uses its own chat.
 
 ## The Same Authoring Fields, Mirrored (MIK-R48)
 
@@ -84,9 +76,9 @@ Before converted-memory closeout, a seat that authored none of the leaf cards or
 
 ### Logic
 
-Since leaf `260921-ICR-L45`, workflow step 3 states that every hand-off target carries its own authored
-`rationale` and optional `role` as the hand-off template states, that the writer never generates a
-rationale, and that an unexplained target refuses its entry (`realization_rationale_absent`).
+The hand-off template states that every hand-off target carries its own authored `rationale` and optional
+`role`, that the writer never generates a rationale, and that an unexplained target refuses its entry
+(`realization_rationale_absent`); a Curator receiving a target without one authors it from the evidence.
 This package copy is generated from the canonical root file by `scripts/sync-skills.py`.
 
 ### Invariants And Boundaries
@@ -101,27 +93,6 @@ This package copy is generated from the canonical root file by `scripts/sync-ski
 No additional work is asserted by this card. Actual project publication and semantic acceptance remain separately evidenced outcomes.
 
 ## Evidence
-
-
-Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
-
-> Finding: Bound native intake, report-only admission and converted MIK file writer.
->
-> Anchor: lines 54-113
->
-> Source caption: mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:54-113
-
-> Finding: Exact family/sibling/source coverage and admitted comparison producer.
->
-> Anchor: lines 114-179
->
-> Source caption: mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:114-179
-
-> Finding: Complete normal curation guards, role/write prohibitions and handoff.
->
-> Anchor: lines 181-310
->
-> Source caption: mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:181-310
 
 
 ### Repo-Internal References
@@ -160,7 +131,6 @@ No meaningful cross-repository implementation dependency.
 
 
 - Before ingest, each hand-off target requires an authored rationale, directly or through an applicable entry-level default; the writer refuses unexplained targets on every run, before any file is written. [2]
-
 
 
 - Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot, and context_packet and read_ar_files both use the leaf task_context.

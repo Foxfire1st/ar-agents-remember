@@ -155,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
             "content": "sha256:a638b2d5ffd49759707403c35afb2c49fff0c98265a9482b5cc5acf02927ccce",
             "locator": {
-              "end": 692,
+              "end": 705,
               "kind": "line_range",
-              "start": 692
+              "start": 705
             },
             "path": "dashboard/src/types/projection.ts"
           },

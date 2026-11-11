@@ -134,12 +134,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
             "content": "sha256:350d0d6985d73d679254b267097841715e6a0c2f6c0b8280e9721b5c1d70eb2b",
             "locator": {
-              "end": 370,
+              "end": 371,
               "kind": "line_range",
-              "start": 366
+              "start": 367
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -147,12 +147,12 @@
         },
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
             "content": "sha256:c2d699400575ad6ab78c30a6441b8243181d27c8922437c6704286cde095c593",
             "locator": {
-              "end": 236,
+              "end": 242,
               "kind": "line_range",
-              "start": 219
+              "start": 225
             },
             "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
           },

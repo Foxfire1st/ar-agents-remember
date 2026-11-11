@@ -1910,12 +1910,12 @@
       ]
     },
     "216": {
-      "note": "The recovery's journaled decisions and its bounded cycling refusal.",
+      "note": "Each sync side's journal record: its pinned authority and progress, the parked candidate, a continue's omission report, and a legacy database conflict kept unparsed so that a continued sync refuses.",
       "targets": [
         {
           "anchor": {
-            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
-            "content": "sha256:3cd4b35e51a782b191c1f8ba54076b555c9b3710b77e809dca2d5534110b6799",
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:837a11c3a1c94fa8f478adf644caabc3aa542e311d4816774dd4e939ae1cfcd9",
             "locator": {
               "kind": "symbol",
               "name": "SyncSideRecord"
@@ -2935,14 +2935,15 @@
       ]
     },
     "265": {
-      "note": "The operation: read, author, check history, render, validate, then write or refuse.\n\nAnchor: `write_knowledge`",
+      "note": "The operation: read, author, check history, render, validate, then write or refuse.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
-            "content": "sha256:7fdd22a5c098b7645dcbb18b54f3ed58f98b8504c69bc155a9e3493e0e3e44d0",
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:ca3e7cf649704c7674d2ce0f77d8a659b6f7e0372f289a3ac9615af67d4da00b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "write_knowledge"
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },
@@ -2950,11 +2951,10 @@
         },
         {
           "anchor": {
-            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
-            "content": "sha256:ac11a3c6477deddbf468986d1231aa299df50804ac8d8a33856ac2f166d559f0",
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:169cd09ef917795325317f364b432751267cf3d46f674364b6e170a89b401570",
             "locator": {
-              "kind": "symbol",
-              "name": "write_knowledge"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },
@@ -2967,7 +2967,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
             "content": "sha256:fbcded7d21926324d4c4a1decd4bc85781d3a8850515172b454ce5e5ba240a56",
             "locator": {
               "kind": "symbol",
@@ -4217,7 +4217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
             "content": "sha256:a6e265e444834737cdd8a5cf31ae14d6c5a125d733c689102c0782e16cefde9d",
             "locator": {
               "kind": "symbol",
@@ -4229,7 +4229,7 @@
         },
         {
           "anchor": {
-            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
             "content": "sha256:2f7d2ad4a4cd3cc20be5b06e706ebe882b6764f5976c76859f09995674bd3c7a",
             "locator": {
               "end": 158,
@@ -5044,7 +5044,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
             "content": "sha256:228f60a32f02597b678534f7a9baf03f83513c245bf5547b5680c14b39903e48",
             "locator": {
               "kind": "symbol",
@@ -5535,12 +5535,12 @@
       ]
     },
     "374": {
-      "note": "The writer's base: HEAD, or its conversion.",
+      "note": "The writer's bases: HEAD, or its conversion, and during a merge MERGE_HEAD beside it.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1012c896e87b8e1474e947f3f4b80bb65316a1f",
-            "content": "sha256:9b296d64cb4ade3c6280ffcc1880a66116114faf329ab1f8b8ee6a2f432e14f4",
+            "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+            "content": "sha256:bdbd0752c7d85bf21305120e423b87300488f37f90c3e523e091899d5ea650fa",
             "locator": {
               "kind": "symbol",
               "name": "writer_bases"
@@ -5606,7 +5606,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fff8295eb14ca495404cbd00775068f9a3ff8aa4",
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
             "content": "sha256:236642db2982595241c732e3f784105e83f865c26b7c32d6078107786a77f4d5",
             "locator": {
               "kind": "symbol",
@@ -7036,7 +7036,7 @@
         },
         {
           "anchor": {
-            "blob": "861c389d81f395584673bd0dfc2616de8ed2f6ef",
+            "blob": "4c9113205c91605b2f9068cfd8b2379f8cc21969",
             "content": "sha256:929d06cd2b572431d92a31360ef8f56bbbe7bf86d209a8e653fc51dcf96f387b",
             "locator": {
               "kind": "symbol",
@@ -7048,7 +7048,7 @@
         },
         {
           "anchor": {
-            "blob": "861c389d81f395584673bd0dfc2616de8ed2f6ef",
+            "blob": "4c9113205c91605b2f9068cfd8b2379f8cc21969",
             "content": "sha256:7c70a3a8ca954a2318c9081cdc45e724afae94492bc3f1de31034dc202c93251",
             "locator": {
               "kind": "symbol",
@@ -7094,7 +7094,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a80733809cbf60af7617defb6e31923ca95cf87a",
+            "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
             "content": "sha256:b2f0cb7b94e3dafa7d280e836159aeccd592b57d7d7ded1274769761662edf7d",
             "locator": {
               "kind": "symbol",
@@ -7244,12 +7244,12 @@
       ]
     },
     "462": {
-      "note": "**Retained historical source account — superseded by the current route account:** Writer validates before finish and appends raised questions before knowledge files.\n\nAnchor: `write_knowledge`",
+      "note": "Writer validates before finish and appends raised questions before knowledge files.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
-            "content": "sha256:7fdd22a5c098b7645dcbb18b54f3ed58f98b8504c69bc155a9e3493e0e3e44d0",
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:169cd09ef917795325317f364b432751267cf3d46f674364b6e170a89b401570",
             "locator": {
               "kind": "file"
             },
@@ -8409,7 +8409,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
             "content": "sha256:95db1d32261a937c22e831b13a18e1f70edaa118479dc989b34aac10655cc425",
             "locator": {
               "kind": "symbol",

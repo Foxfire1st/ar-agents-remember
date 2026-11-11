@@ -21,56 +21,12 @@
       ]
     },
     "10": {
-      "note": "The builders whose parameters are being pinned: `projection`, `taskEntry`, `taskSummary`, `provider`, `action` and `observerEvent`, each taking an `Overrides<O, Node>`.  Earlier card anchor caption (historical provenance): `lifecycle` `taskDoc` `projection` Source caption: `projection` `taskEntry` `taskSummary` `provider` `action` `observerEvent`",
+      "note": "The builders whose parameters are being pinned: `projection`, `taskEntry`, `taskSummary`, `action` and `observerEvent`, each taking an `Overrides<O, Node>`.",
       "targets": [
         {
           "anchor": {
-            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
-            "content": "sha256:fa043074e33f2bf4c2dc606a7bc5c1664ed3d52c09af65f3df1e2986be56ce79",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
-            "content": "sha256:fa043074e33f2bf4c2dc606a7bc5c1664ed3d52c09af65f3df1e2986be56ce79",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
-            "content": "sha256:fa043074e33f2bf4c2dc606a7bc5c1664ed3d52c09af65f3df1e2986be56ce79",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
-            "content": "sha256:fa043074e33f2bf4c2dc606a7bc5c1664ed3d52c09af65f3df1e2986be56ce79",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
-            "content": "sha256:fa043074e33f2bf4c2dc606a7bc5c1664ed3d52c09af65f3df1e2986be56ce79",
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:ca949a7feaa7e40320e660e3b58629780946c36e8dab87a8d4b3ba5d0dc952ab",
             "locator": {
               "kind": "file"
             },

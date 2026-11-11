@@ -84,7 +84,7 @@ being pinned is the `exactOptionalPropertyTypes`-off rule described in the TSCon
 
 
 
-- The builders whose parameters are being pinned: `projection`, `taskEntry`, `taskSummary`, `action` and `observerEvent`, each taking an `Overrides<O, Node>`.  Earlier card anchor caption (historical provenance): `lifecycle` `taskDoc` `projection` Source caption: `projection` `taskEntry` `taskSummary` `provider` `action` `observerEvent` [10]
+- The builders whose parameters are being pinned: `projection`, `taskEntry`, `taskSummary`, `action` and `observerEvent`, each taking an `Overrides<O, Node>`. [10]
 
 
 

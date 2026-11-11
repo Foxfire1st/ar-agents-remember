@@ -2,9 +2,7 @@
 
 ## Current operative account — MIK-R112
 
-The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
-
-- Binding UUID/reference validation and seven emitted variables remain.
+- The binding validates minted UUIDs and each role class's task references, and emits seven binding variables.
 - This file owns the per-launch host exclusion record and provider-option construction. Claude alone receives the exact `mcp__agents-remember` disallowed-tools rule, merged with existing host deny rules; Codex, Hermes/ACP, Pi and unknown providers receive no verified exclusion. No user or folder configuration is rewritten.
 - Unknown harnesses have no verified exclusion; no user/folder configuration rewrite is authorized.
 
@@ -12,9 +10,7 @@ The current source facts below replace the former operative inventory. The separ
 
 - Source comparison: `mcp/src/agents_remember/application/agent_binding.py:40-106`.
 - Source comparison: `mcp/src/agents_remember/application/agent_binding.py:115-173`.
-- Source comparison: `mcp/src/agents_remember/application/agent_binding.py:203-294`.
-
-Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+- Source comparison: `mcp/src/agents_remember/application/agent_binding.py:179-260`.
 
 ## Historical original card — preserved, not the current operative account
 

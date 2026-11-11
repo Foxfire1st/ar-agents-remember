@@ -46,11 +46,16 @@ operation for the dashboard to wait on. The JSON Schema remains generated from t
 - `LifecycleOperationProjection.taskIntent` is an optional `TaskIntentIdentity`
   reference defaulting to null; `TaskIntentIdentity` requires the 64-hex
   `digest` and constrains `schema` to `task-intent/v1`.
+- `TaskEntry.activity` has the closed values `works`, `waiting`, `paused` and `unknown`, `TaskCounts`
+  has an integer `waiting` (default 0), and `TaskEntry` has an optional `waitingSeats` array of closed
+  `WaitingSeat` objects: `agentId`, `waitsFor` (`subagent` and/or `background`) and `since` are
+  required; `role`, `checkDueAt` and `detail` may be absent/null. This exposes what the producer
+  serves for a waiting task, not browser authority over it.
 
 ### Conventions
 
 
-**L184 — INV-XZYGEB.** The schema is the contract the client is generated and checked against, so the fact's shape is stated here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+**INV-XZYGEB.** The schema is the contract the client is generated and checked against, so the fact's shape is stated here.
 
 ## L126 Product-Record Wire Flag
 

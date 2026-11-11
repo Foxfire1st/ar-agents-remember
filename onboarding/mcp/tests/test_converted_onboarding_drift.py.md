@@ -6,7 +6,7 @@
 
 ## Purpose
 
-One case per rule of converted onboarding drift (MIK-R44@v2): a converted tree takes the converted branch
+One case per rule of converted onboarding drift: a converted tree takes the converted branch
 instead of legacy discovery, the result names every measured field, empty, unreadable and unbuildable trees
 report truthfully, and every consumer of the measurement returns the same answer. The baseline cases cover
 blocking, adoption and the refusal paths either side of the commit.
@@ -34,7 +34,7 @@ blocking, adoption and the refusal paths either side of the commit.
   over the full findings, not the limited sample.
 - **Baseline states.** `test_baseline_states_for_converted_trees` reports `ready`, `blocked-drift` and
   `blocked-invalid` distinctly; `test_accept_drift_never_clears_a_validator_violation` keeps validator refusal independent of drift acceptance.
-  The former stale-anchor-adopts case moved to `test_converted_onboarding_baseline.py`, where drift acceptance still refuses the stale reference and only a repaired pair adopts;
+  The stale-anchor case lives in `test_converted_onboarding_baseline.py`, where drift acceptance still refuses the stale reference and only a repaired pair adopts;
   `test_first_baseline_commits_exactly_the_validated_tree` requires the commit to record the staged tree
   validation passed.
 - **Nothing on refusal.** `test_dry_run_and_refusal_change_nothing` keeps the index, the refs and every file
@@ -44,7 +44,7 @@ blocking, adoption and the refusal paths either side of the commit.
 
 ### Conventions
 
-Adoption-path fixtures now use `card=True` current anchors. This preserves the validated-tree, dry-run and CLI assertions while letting them reach their intended transaction behavior under the anchor validator.
+Adoption-path fixtures use `card=True` current anchors. This preserves the validated-tree, dry-run and CLI assertions while letting them reach their intended transaction behavior under the anchor validator.
 
 The measurement is taken once and read by every consumer in a case, so two consumers disagreeing is the
 failure the case looks for.
@@ -61,7 +61,8 @@ failure the case looks for.
 
 
 - The converted result names every measured field. [2]
-- Empty, missing and unbuildable-base trees report truthfully, never as checked zero. [3]
+
+- Empty, missing and unbuildable-base trees report truthfully, never as checked-zero. [3]
 
 
 

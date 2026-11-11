@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The facade's retry and the series transaction's refusal sit in two files and must repeat the same source choice, so one statement keeps the two hints in step."
+  },
+  "applicability": "The retry hints worktree_sync issues before a sync journal exists: the retry after the contract changed during the source refresh, and a series admission refusal's retry arguments.",
+  "conditions": [
+    "The caller named a source (sync_source=\"repository-default\") or none, which is the contract's own line.",
+    "No sync journal exists yet; with a journal an omitted sync_source takes the journal's choice."
+  ],
+  "exclusions": [
+    "Hints built from a journal, which need no source argument.",
+    "The other retry arguments (memory_sync_choice, resolution_action), which keep their own rules."
+  ],
+  "id": "INV-J7BZWN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/260928-MIK-L60-evidence/freeze3/fail-before.txt"
+      ],
+      "path": "plan7.json"
+    },
+    "handoffEntry": "L60-F3-retry-hints-carry-sync-source",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A retry hint that worktree_sync issues before a sync journal exists carries the caller's sync_source, so following it repeats a repository-default sync from the default branch instead of the contract's own line: the contract-changed retry and the series admission refusal's retry arguments both add the source strategy's request_args; once a journal exists an omitted sync_source takes the journal's choice, so journal-based hints need nothing.",
+  "status": "proposed",
+  "supersedes": []
+}

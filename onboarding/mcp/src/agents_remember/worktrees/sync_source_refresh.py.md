@@ -14,10 +14,15 @@ protected-source authority.
 
 ### Logic
 
-`fetch_source_upstreams` builds the code target and optional external-memory target, resolves each
-source branch's configured upstream, and reports `no-upstream`, `fetched`, or `failed` per side.
-Offline or remote-less state is returned as evidence; later sync proceeds from exact local branch
-facts pinned only after repository integration authority is acquired.
+`fetch_source_upstreams(contract, sync_source)` builds the code target and optional external-memory
+target, resolves each source branch's configured upstream, and reports `no-upstream`, `fetched`, or
+`failed` per side. A source branch is the contract's own source line, or with
+`sync_source="repository-default"` the repository's default branch (`source_strategy(sync_source).source_branch`: the code repository's
+default and the memory repository's default), because that is the line the sync will pull. A default
+that cannot be resolved (`BranchAuthorityUnavailable`) is reported as `default` with state
+`unresolved` and the error text, never raised, and any target built before it is still fetched; the
+sync admission answers it by name. Offline or remote-less state is returned as evidence; later sync proceeds from exact local
+branch facts pinned only after repository integration authority is acquired.
 
 ### Conventions
 

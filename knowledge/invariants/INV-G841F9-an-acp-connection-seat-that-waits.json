@@ -5,11 +5,11 @@
     ],
     "justification": "The provision is split across four files that do different work: the declaration detector and the check scheduler decide in the plugin's turn-end state, the provider set resolves and persists the verdict the decision obeys, the subagent tracker is where a helper's own report disqualifies its provider, and the launch route appends the instruction that tells the seat to declare; a change to any one alone leaves the others waiting for a signal that never comes."
   },
-  "applicability": "Every role agent the AR Paseo plugin launches or watches on a host that keeps the agent's turn open between messages, where the provider is on an ACP connection the plugin's own discovery names.",
+  "applicability": "Every role agent the AR Paseo plugin launches or watches on a host that keeps the agent's turn open between messages.",
   "conditions": [
     "The seat's declaration is a line starting `WAITING FOR SUBAGENTS:` in its last assistant message of the turn.",
     "The check that follows a declared end repeats what the plugin's own verdict says rather than a list copied from the host.",
-    "A seat on a provider that is not ACP keeps the ordinary silent-end path.",
+    "A seat on any provider, ACP or not, that declares a helper wait has a declared wait; a seat that declares nothing keeps the ordinary silent-end path, and the plugin's provider verdict only decides whether the launch appends the declaration instruction and which closing sentence the seat message carries.",
     "The plugin's verdict file is written by staging and rename and read by both the launch and the turn-end decision."
   ],
   "exclusions": [
@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L203",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "An ACP-connection seat that waits for its own background helpers ends the waiting turn with a WAITING FOR SUBAGENTS declaration and progress report, is asked for progress every 3 minutes while idle, and no harness gains any installed component.",
+  "statement": "A seat that waits for its own helpers ends the waiting turn with a WAITING FOR SUBAGENTS declaration and progress report, is asked for progress every 3 minutes while idle, and no harness gains any installed component.",
   "status": "proposed",
   "supersedes": []
 }

@@ -34,7 +34,7 @@ Source existence is checked before card lookup, so a source-absent row cannot ac
 
 The separate `knowledge_read` route selects text trees through derived indexes. Its source-context path selections use family-complete selection and continuation machinery: entries at the path, their invariants, one expanded family hop, other families advertised without recursive expansion, and the governing route chain. A family seed expands that family directly. Currentness observes the code tree the read names; it does not replace that tree with working-tree bytes. Paired ordinary reads historically observe `HEAD^{tree}` and disclose that uncommitted edits are excluded; explicit knowledge reads use their declared code tree.
 
-The file writer reads a handoff, authors records/entries/history, mechanically carries surviving anchors and validates the whole output before writing. A proof may name a JavaScript or TypeScript case by its exact lines when no name reaches it, and a still_rejected reconsideration row may re-point a fired link to where its code now lives; the range is resolved in `knowledge_writer/case_proof.py`, the re-point in `knowledge_writer/repoint.py`, and the command's own raise refusal and its four fixed causes in `knowledge_write_command.py`. A `raise` the command cannot publish is refused whole and names the mounted `knowledge_write` with the absolute contract and hand-off paths. Onboarding rows receive candidate source sets and counted flags, and a known paired memory base governs comparison rather than a persisted flag. Membership/no-family and decision/facet record rows use canonical subject aliases, stable rerun identities and candidate revisions; foreign-owner evidence survives reason-only rewrites without duplication. New row kinds do not authorize unsupported producers. Registry-declared writer reports allow across-run repair and name the later refusing route. The existing overview-order/numbered-citation validation and task-owned reconsideration questions remain. File writing is explicit and is not Git acceptance.
+The file writer reads a handoff, authors records/entries/history, mechanically carries surviving anchors and validates the whole output before writing. During a merge it validates against both merge parents, `HEAD` and `MERGE_HEAD`, each converted when the candidate needs it, and the memory-quality check reads the same bases through `knowledge_writer/base_side.py`. A proof may name a JavaScript or TypeScript case by its exact lines when no name reaches it, and a still_rejected reconsideration row may re-point a fired link to where its code now lives; the range is resolved in `knowledge_writer/case_proof.py`, the re-point in `knowledge_writer/repoint.py`, and the command's own raise refusal and its four fixed causes in `knowledge_write_command.py`. A `raise` the command cannot publish is refused whole and names the mounted `knowledge_write` with the absolute contract and hand-off paths. Onboarding rows receive candidate source sets and counted flags, and a known paired memory base governs comparison rather than a persisted flag. Membership/no-family and decision/facet record rows use canonical subject aliases, stable rerun identities and candidate revisions; foreign-owner evidence survives reason-only rewrites without duplication. New row kinds do not authorize unsupported producers. Registry-declared writer reports allow across-run repair and name the later refusing route. The existing overview-order/numbered-citation validation and task-owned reconsideration questions remain. File writing is explicit and is not Git acceptance.
 
 Onboarding source selection preserves existing trace authority. Without a trace item, uncovered unexplained groups supply their complete member-path union; the existing snapshot authoring owner binds candidate blobs. The selector does not trust blob values from group metadata or alter the gate's equality check.
 
@@ -155,7 +155,7 @@ The knowledge-gate adapters carry explicit leaf identity and persistence policy.
 
 ### Independent landing base and bounded answer
 
-`memory_quality/converted_base.py` supplies a separate admitted leaf-base request/port for landing observations. The quality controller and `MemoryQualityAdapter.drift_context` pass that port beside the existing validator base; they do not replace HEAD/conversion-based validator classification, candidate revalidation or certification guards. The converted drift-slot result retains cut-card and added-file observations against the contract base, including committed leaf progress. `memory_quality/answer.py` carries complete counts and bounded slim first rows without expanding normal delivery or treating report-only observations as blocking work. This extends composition and presentation only, not prepared-closeout eligibility, Git publication or semantic acceptance.
+`memory_quality/converted_base.py` supplies a separate admitted leaf-base request/port for landing observations. The quality controller and `MemoryQualityAdapter.drift_context` pass that port beside the existing validator bases; they do not replace HEAD/conversion-based validator classification, candidate revalidation or certification guards. The converted drift-slot result retains cut-card and added-file observations against the contract base, including committed leaf progress. `memory_quality/answer.py` carries complete counts and bounded slim first rows without expanding normal delivery or treating report-only observations as blocking work. This extends composition and presentation only, not prepared-closeout eligibility, Git publication or semantic acceptance.
 
 ## Invariants And Boundaries
 
@@ -784,7 +784,9 @@ The `memory_quality` application package shares its bounded run registry between
 - The retained opened-file selector and composed CURRENT_GENERATION carry the one-schema opened/created-file contract, not registry or mixed-generation dispatch. [202]
 - The shipped comparison it composes and adds nothing to, and the adapter call that invokes it — now one step of a composition that measures the inventory first and branches on the selector. [209]
 - Historical L20 matrix/view-kind selection is retired with the envelope tables. The current review adapter reads no matrix; a requested records collection publishes no records page and receives its named refusal. [210]
-- The recovery's journaled decisions and its bounded cycling refusal. [216]
+
+- Each sync side's journal record: its pinned authority and progress, the parked candidate, a continue's omission report, and a legacy database conflict kept unparsed so that a continued sync refuses. [216]
+
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: The old ingest placement/baseline adapter is retired; current file ingest does not place that database half. Historical account: **The adapter that declares the baseline argument and passes it into that selection — and, since 260915-KS-L45, derives its candidate directory from the contract and places the baseline into the review's own half.** [222]
 - Historical baseline-argument account; references and targets remain for custody. Current knowledge-ingest declares contract, hand-off list, authorization, commit/json and crossing arguments, with no settings option, and dispatches the admitted converted file writer. The baseline-placement argument and route are retired. [509]
 - The transaction seam that routes the conflict and narrows the agent's list. [228]
@@ -889,7 +891,9 @@ The `memory_quality` application package shares its bounded run registry between
 - The facts computed once per read over the lane; a dataset review unchanged. [370]
 - Implementation (a) with only the carry exempt, and (b) through the lane's links. [371]
 - The one carry rule, shared with the worklist. [372]
-- The writer's base: HEAD, or its conversion. [374]
+
+- The writer's bases: HEAD, or its conversion, and during a merge MERGE_HEAD beside it. [374]
+
 - The census's comparison base on a converting leaf. [375]
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current knowledge_write_admission declares repository-bootstrap provenance only; the frozen database writer guard is retired. Historical account: The database writer's front door refuses a frozen or locked database. [376]
 - A seed the tree does not hold is refused. [377]
@@ -930,7 +934,9 @@ The `memory_quality` application package shares its bounded run registry between
 - **Retained historical source account — superseded by the current route account:** Legacy onboarding returns a named legacy knowledge block; converted references use sidecars. [459]
 - **Retained historical source account — superseded by the current route account:** Legacy onboarding returns a named legacy knowledge block; converted references use sidecars. [488]
 - **Retained historical source account — superseded by the current route account:** Projection scope includes explicit role and launcher rows. [461]
-- **Retained historical source account — superseded by the current route account:** Writer validates before finish and appends raised questions before knowledge files. [462]
+
+- Writer validates before finish and appends raised questions before knowledge files. [462]
+
 - **Retained historical source account — superseded by the current route account:** Each gate kind has its own predicate and changed records require governing rows. [463]
 - **Retained historical source account — superseded by the current route account:** Every retained revision is a head; multiple heads remain ambiguous. [464]
 - **Retained historical source account — superseded by the current route account:** Claim-only page revisions participate in exact roster membership projection. [466]

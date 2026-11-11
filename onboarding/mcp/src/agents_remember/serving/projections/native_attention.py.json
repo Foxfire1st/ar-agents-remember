@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
-        "content": "sha256:cf38726bb2f2728226e011954f6bafb53deb969f152680d778200162ff7ce95d",
+        "blob": "edb4ac727ca2888b5c529ec054650c50cb51ef52",
+        "content": "sha256:5e9f0463ee8339e630bdc306f1fe1a333ee32d25e32cebe5c0430cd61511d7a8",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
-        "content": "sha256:cf38726bb2f2728226e011954f6bafb53deb969f152680d778200162ff7ce95d",
+        "blob": "edb4ac727ca2888b5c529ec054650c50cb51ef52",
+        "content": "sha256:5e9f0463ee8339e630bdc306f1fe1a333ee32d25e32cebe5c0430cd61511d7a8",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +37,26 @@
     },
     {
       "anchor": {
-        "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
-        "content": "sha256:cf38726bb2f2728226e011954f6bafb53deb969f152680d778200162ff7ce95d",
+        "blob": "edb4ac727ca2888b5c529ec054650c50cb51ef52",
+        "content": "sha256:f202f72139c1f9912aacb540fd739ebae675b929d9608fce1d6faecadab82462",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_stall_clocks"
+        }
+      },
+      "id": "RLZ-F8CFCG",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "MIK-R60@v9.7",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "A waiting seat breaks the stall interval, so the attention queue does not raise it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "edb4ac727ca2888b5c529ec054650c50cb51ef52",
+        "content": "sha256:5e9f0463ee8339e630bdc306f1fe1a333ee32d25e32cebe5c0430cd61511d7a8",
         "locator": {
           "kind": "file"
         }
@@ -54,8 +72,8 @@
     },
     {
       "anchor": {
-        "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
-        "content": "sha256:cf38726bb2f2728226e011954f6bafb53deb969f152680d778200162ff7ce95d",
+        "blob": "edb4ac727ca2888b5c529ec054650c50cb51ef52",
+        "content": "sha256:5e9f0463ee8339e630bdc306f1fe1a333ee32d25e32cebe5c0430cd61511d7a8",
         "locator": {
           "kind": "file"
         }
@@ -71,8 +89,8 @@
     },
     {
       "anchor": {
-        "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
-        "content": "sha256:cf38726bb2f2728226e011954f6bafb53deb969f152680d778200162ff7ce95d",
+        "blob": "edb4ac727ca2888b5c529ec054650c50cb51ef52",
+        "content": "sha256:5e9f0463ee8339e630bdc306f1fe1a333ee32d25e32cebe5c0430cd61511d7a8",
         "locator": {
           "kind": "file"
         }
@@ -88,8 +106,8 @@
     },
     {
       "anchor": {
-        "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
-        "content": "sha256:cf38726bb2f2728226e011954f6bafb53deb969f152680d778200162ff7ce95d",
+        "blob": "edb4ac727ca2888b5c529ec054650c50cb51ef52",
+        "content": "sha256:5e9f0463ee8339e630bdc306f1fe1a333ee32d25e32cebe5c0430cd61511d7a8",
         "locator": {
           "kind": "file"
         }

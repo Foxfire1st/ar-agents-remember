@@ -16,7 +16,7 @@ The location splitter recursively removes absolute-path string values from mappi
 
 The delegating spy captures post-validation wholes at `finalize_tool_response` before projection, without replacing product behavior. Detail readback compares the complete parsed mapping to that independent whole and enforces the existing detail-file byte budget; it does not assert raw JSON formatting equality or impose a delivered-token ceiling on the file. Deleting a dropped field or changing a retained value is tested by the consuming discriminator tests, not by executing this support file itself.
 
-The task-document illustration now includes `put_open_question` in `_L111_TASK_DOC_UPDATED`, with the synthetic text `put_open_question applied`. This is an operation-specific updated-answer example, not proof of task ownership, concurrent keyed publication or a live operation result.
+The task-document illustration includes `put_open_question` in `_L111_TASK_DOC_UPDATED`, with the synthetic text `put_open_question applied`. This is an operation-specific updated-answer example, not proof of task ownership, concurrent keyed publication or a live operation result.
 
 ## Evidence
 

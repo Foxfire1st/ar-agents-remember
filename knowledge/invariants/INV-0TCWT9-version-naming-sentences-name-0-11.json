@@ -8,11 +8,11 @@
   },
   "applicability": "Version attribution in host and plugin source explanations and in source-derived fixtures, when a build moves its host pin.",
   "conditions": [
-    "A sentence names the release actually examined for its claim; a confirmation repeated on the new release moves to 0.12.0, and one that was not repeated keeps its version.",
+    "A sentence names the release actually examined for its claim; a confirmation repeated on the new release moves to the release the build pins, and one that was not repeated keeps its version.",
     "Package and source inspection, a visible chat, a recorded assertion and an actual message-route observation stay distinct claims."
   ],
   "exclusions": [
-    "No browser-test claim is recorded on 0.12.0 that the sandbox did not make.",
+    "No browser-test claim is recorded on the pinned release that the sandbox did not make.",
     "No host-kink removal or model-catalog availability is inferred from the version move."
   ],
   "id": "INV-0TCWT9",
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L123",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A sentence that names the host version names the release actually examined for its claim: a confirmation repeated on the new release moves to 0.12.0, a confirmation that was not repeated keeps the version it was confirmed at, and every such sentence names the kind of evidence behind it.",
+  "statement": "A sentence that names the host version names the release actually examined for its claim: a confirmation repeated on the new release moves to the release the build pins, a confirmation that was not repeated keeps the version it was confirmed at, and every such sentence names the kind of evidence behind it.",
   "status": "proposed",
   "supersedes": []
 }

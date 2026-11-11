@@ -76,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
             "content": "sha256:ca4eb0d1b1ab38922e22dcb92c3f657574a7ee17fd786e8bce96a0c8410f5446",
             "locator": {
-              "end": 353,
+              "end": 354,
               "kind": "line_range",
-              "start": 308
+              "start": 309
             },
             "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
           },
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
             "content": "sha256:d1fdd46de7e3835f6ab74f75cdd7e66c814beb79b729db03939b5fd86b3711eb",
             "locator": {
               "kind": "symbol",

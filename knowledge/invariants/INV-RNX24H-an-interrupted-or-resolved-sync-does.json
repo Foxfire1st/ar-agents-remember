@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Measurement, journal and result reporting live in separate files, so one statement keeps an omitted parked line from being settled silently."
+  },
+  "applicability": "A sync whose resolution or interruption could drop work held in the parked candidate.",
+  "conditions": [
+    "The sync parked a candidate and kept its stash.",
+    "Each omission is measured against the parked content, not taken from a label."
+  ],
+  "exclusions": [
+    "A preview, which reports omissions and writes nothing.",
+    "Cache-only conflict or index state, which is not parked content."
+  ],
+  "id": "INV-RNX24H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_sync_parked_omissions.py (6 tests) and mcp/tests/test_sync_parked_candidate.py; final focused union"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v5.2",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An interrupted or resolved sync does not lose parked work: a resolution that omits lines or files the parked candidate held stops with sync-resolution-incomplete and an omission report, keeps the parked stash, and settles only when each omission is restored or reconciled with evidence the sync re-measures (a bare reconciled label is no evidence); preview reports omissions without writing.",
+  "status": "proposed",
+  "supersedes": []
+}

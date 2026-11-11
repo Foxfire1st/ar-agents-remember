@@ -9,12 +9,10 @@
 The shared typed fixture builders for native TaskEntry identity/status/membership/counts and separate TaskSummary content, plus retained operational projection and event shapes. SERVED and EMPTY_ANALYTICS remain generated-mirror checked, not generated sample values.
 This remains the shared typed construction/clone boundary, not a universal guarantee that every fixture field is copied from a served sample; copied, derived and explicitly neutral defaults retain distinct provenance.
 
-R6 in one sentence: a test whose fixture is authored by the consumer cannot detect producer drift. This
-leaf proved it twice — a test asserted `refusedPolarity === "amber"` against a fixture that set the
-field itself, on a model that is `extra="forbid"` server-side; and three tests built a master
+A test whose fixture is authored by the consumer cannot detect producer drift. The source header's example is a master
 `TaskSubTaskRefNode` carrying `createdAt`, which its server model omits
-cit:(["tests built a master", `TaskSubTaskRefNode`, "which its server model omits"], dashboard/src/test/fixtures/wire.ts:6-6). **Both fixtures were written with
-`as SomeWireType`, and an assertion skips excess-property checking, so both compiled.**
+cit:(["tests built a master", `TaskSubTaskRefNode`, "which its server model omits"], dashboard/src/test/fixtures/wire.ts:6-6). **A fixture written with
+`as SomeWireType` compiles anyway, because an assertion skips excess-property checking.**
 
 ## Code Commentary
 
@@ -31,7 +29,7 @@ implements both update and check modes cit:([`check`, `main`], scripts/sync-proj
 The fixture contract documents that `snapshot.json` is the independent hand-authored sample while
 schema generation closes producer fields and vocabulary a sample can miss
 The sample introduces no served field missing from the mirror. cit:(["has no served field the mirror is missing"], dashboard/src/test/contract.test.ts:477-479); The sample covers declared structural paths except explicit residue. cit:(["reaches every declared path except the named residue"], dashboard/src/test/contract.test.ts:493-497); Every sampled registered vocabulary value must be legal. cit:(["carries only values the mirror's vocabulary declares, at every registered path"], dashboard/src/test/contract.test.ts:517-526).
-The generator’s explicit `--check` command remains available. The former Python drift-test module was retired; it is not current acceptance evidence.
+The generator’s explicit `--check` command runs the drift check.
 
 The chain, as drawn in the source:
 
@@ -48,16 +46,16 @@ shapes and vocabularies the fixture contract explicitly measures.
 
 ### Logic
 
-- **`SERVED`** cit:(["export const SERVED: WorkspaceProjection = asServedProjection(snapshot)"], dashboard/src/test/fixtures/wire.ts:66-66) — `asServedProjection(snapshot)`, the fixture read as the projection the server
+- **`SERVED`** cit:(["export const SERVED: WorkspaceProjection = asServedProjection(snapshot)"], dashboard/src/test/fixtures/wire.ts:62-62) — `asServedProjection(snapshot)`, the fixture read as the projection the server
   would have sent.
 - Native taskEntry and taskSummary split identity/status/membership/counts from content; planned stage and empty/zero defaults are neutral fixture values, not native provenance. projection carries tasks/taskCounts without metricsFor. Retained operational builders stay mirror-checked.
-- **`observerEvent`** cit:(["An observer-event envelope", "separate contract from the projection", "base cannot come from", `observerEvent`], dashboard/src/test/fixtures/wire.ts:370-375) — same reasoning: the event channel (`types/event.ts` ←
+- **`observerEvent`** cit:(["An observer-event envelope", "separate contract from the projection", "base cannot come from", `observerEvent`], dashboard/src/test/fixtures/wire.ts:274-278) — same reasoning: the event channel (`types/event.ts` ←
   `observer/events.py`) is a separate contract from the projection, so its base cannot come from
   `snapshot.json`.
-- **`reparsed(source)`** cit:(["A byte-fresh copy of a projection", "tests need in order to prove", "on purpose. The round-trip answers", "routing it through", "parameter type cannot narrow", "clone keeps the source's type honestly", `reparsed`], dashboard/src/test/fixtures/wire.ts:389-398) — `structuredClone`, deliberately not `JSON.parse(JSON.stringify(…))`.
+- **`reparsed(source)`** cit:(["A byte-fresh copy of a projection", "tests need in order to prove", "on purpose. The round-trip answers", "routing it through", "parameter type cannot narrow", "clone keeps the source's type honestly", `reparsed`], dashboard/src/test/fixtures/wire.ts:293-301) — `structuredClone`, deliberately not `JSON.parse(JSON.stringify(…))`.
   The round-trip answers `any`, and `any` assigns to anything, so routing it through
   `asServedProjection` LOOKS like a check and is vacuous — a parameter type cannot narrow an argument
-  that is already `any`. This exact function was making that mistake before rule 3 was written, and
+  that is already `any`.
   `wireFixtureGuard.test.ts` cites `fixtures/wire.ts::reparsed` by name when it plants the `any` probe.
 
 ### Conventions
@@ -77,7 +75,7 @@ shapes and vocabularies the fixture contract explicitly measures.
   sample pin; a derived or neutral default supplies type-correct construction, not producer-value
   evidence. Neutral task entry/summary defaults are fixture construction, not evidence of copied producer values; do not broaden them into native provenance.
 - `projection()` carries explicit tasks/taskCounts; no browser lifecycle bucket derivation belongs in the builder.
-- The removed conversationWire fixture grammar has no current builder/consumer home; this module targets only retained projection/event contracts.
+- This module builds only projection and observer-event contracts.
 
 ### Todos
 
@@ -92,11 +90,11 @@ shapes and vocabularies the fixture contract explicitly measures.
    `wireFixtureGuard.ts` covers some of that residue and `fixtureOverrides.test.ts` asserts the rest as a
    known pass.
 
-No stale "generated snapshot" wording remains: the source now explicitly pairs the hand-maintained
+The source pairs the hand-maintained
 sample with the generated producer-to-TypeScript contract
 cit:(["is NOT generated; it remains a hand-maintained", "producer-to-TypeScript link is generated and checked"], dashboard/src/test/fixtures/wire.ts:22-23). The two `generatedAt` field
-references remain ordinary projection data cit:(["generatedAt: SERVED.generatedAt", "ts: SERVED.generatedAt"], dashboard/src/test/fixtures/wire.ts:338-338; dashboard/src/test/fixtures/wire.ts:382-382). The three docstrings that used to contradict the header now read "the sampled
-payload" cit:(["The sampled payload"], dashboard/src/test/fixtures/wire.ts:65-65), "A row the snapshot is expected to carry" cit:(["A row the snapshot is expected to carry"], dashboard/src/test/fixtures/wire.ts:69-69) and "absent from the snapshot" cit:(["absent from the snapshot"], dashboard/src/test/fixtures/wire.ts:350-350).
+references are ordinary projection data cit:(["generatedAt: SERVED.generatedAt", "ts: SERVED.generatedAt"], dashboard/src/test/fixtures/wire.ts:253-253; dashboard/src/test/fixtures/wire.ts:285-285). The docstrings call the sample "the sampled
+payload" cit:(["The sampled payload"], dashboard/src/test/fixtures/wire.ts:61-61) and "A row the snapshot is expected to carry" cit:(["A row the snapshot is expected to carry"], dashboard/src/test/fixtures/wire.ts:65-65).
 
 ## Evidence
 

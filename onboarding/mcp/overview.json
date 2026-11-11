@@ -2208,7 +2208,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -2574,7 +2574,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
             "content": "sha256:527858aaaf2a6ebe16c028201fbd79c8c09ed72cf4237f0f087a999d6d5295c3",
             "locator": {
               "end": 25,
@@ -2610,7 +2610,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
             "content": "sha256:35a25b2c5ce29181a871db3be75c5e3b54065f48d39c51cc26ada21739694921",
             "locator": {
               "end": 81,
@@ -3172,7 +3172,7 @@
         },
         {
           "anchor": {
-            "blob": "27cde45f71617a873b3d3c7c33c8fc7a59871503",
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
             "content": "sha256:44a4a3c46c23bb58709ed5a5622cc1fd4d8a18c4400f8d5214151d68a146c18d",
             "locator": {
               "end": 251,
@@ -3185,7 +3185,7 @@
         },
         {
           "anchor": {
-            "blob": "27cde45f71617a873b3d3c7c33c8fc7a59871503",
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
             "content": "sha256:07107728aaac2fd5b429aacacfaae0cce32c6156b7a8da8a80e5c859560b5c09",
             "locator": {
               "end": 797,
@@ -3482,14 +3482,15 @@
       ]
     },
     "324": {
-      "note": "Task stage is authored; only started tasks receive known bound host activity and contributing event time.\n\nAnchor: `task_state`",
+      "note": "Task stage is authored; only started tasks receive known bound host activity and contributing event time.",
       "targets": [
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:510623323eed533a9a5132dda425f0d11dcfeeb2aedc68924e039a62d60ebf87",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:97b5afbcb4c4f92a14c39ada1467d8a0b0098a8ad5d950e0f7b481bd53adf329",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "task_state"
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -3497,11 +3498,10 @@
         },
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:c5dd1e2305a20ba936649eb75ff0d84791f7f60e558984b8d5069b5a4aae7318",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:6c429c875db19fdc9ee8d700401a84c60ec6f922410d1526babcd79dbdcc0f52",
             "locator": {
-              "kind": "symbol",
-              "name": "task_state"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -3749,12 +3749,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:a7b99dfafe0eab9621c995e8cbd58dedf9ec0719b4c20b2b2479aac73e903a25",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:3cf2b91b810b06fa1919857793ea531d4bdc3c96f5680ba50d66ff447e83ed0c",
             "locator": {
-              "end": 295,
+              "end": 371,
               "kind": "line_range",
-              "start": 218
+              "start": 296
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -3762,12 +3762,12 @@
         },
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:a9698c32fa9a20bab81fc0f683925767fc43a427ce913e1f3c157c94cc3c4f95",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:ee9a7b94ba0aa56862d632811a4d0b128aa495307d53aec69f208cb1afadc314",
             "locator": {
-              "end": 417,
+              "end": 493,
               "kind": "line_range",
-              "start": 339
+              "start": 417
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -3883,7 +3883,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f77a42f23ffa1fbd4b6e3fb5afb2ff8292f97776",
+            "blob": "5ec4c4fce720e19a599f8c48c9500f3f0afdfb63",
             "content": "sha256:f90369ebb6a1e9a200bdf02875931ed2cc489aa535fad98987e28075f3ab7340",
             "locator": {
               "end": 20,
@@ -3901,7 +3901,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f77a42f23ffa1fbd4b6e3fb5afb2ff8292f97776",
+            "blob": "5ec4c4fce720e19a599f8c48c9500f3f0afdfb63",
             "content": "sha256:4474886a3f15296f84a61ac2db08f96c7d1d1590f7ce6aa229a8fc182f5e2d7b",
             "locator": {
               "end": 58,
@@ -4197,7 +4197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27cde45f71617a873b3d3c7c33c8fc7a59871503",
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
             "content": "sha256:c968c1884cff2af1a86b7b33d364870c7af2cc16de93126ea32c6bee30f4b8f2",
             "locator": {
               "end": 1219,
@@ -4210,7 +4210,7 @@
         },
         {
           "anchor": {
-            "blob": "27cde45f71617a873b3d3c7c33c8fc7a59871503",
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
             "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
             "locator": {
               "end": 1248,
@@ -5989,7 +5989,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",

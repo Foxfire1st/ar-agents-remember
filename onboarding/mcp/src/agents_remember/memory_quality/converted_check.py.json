@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
+        "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
         "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
+        "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+        "content": "sha256:3ad84e0e8d01ad283b4dce64157c5bc56b113bcdbb925e88996fecd7200e5655",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeBasePort"
+        }
+      },
+      "id": "RLZ-69D7NV",
+      "invariant": "INV-EZEJQD",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.3",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The base port returns every converted parent the candidate is compared with, HEAD first and MERGE_HEAD during a merge.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
         "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
         "locator": {
           "kind": "symbol",
@@ -40,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
+        "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
         "content": "sha256:e8c735e2c57dda2f3dddf3e6b3e0a17629d04f5f9542f2e7a20f823dd61296a0",
         "locator": {
           "end": 6,
@@ -59,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
+        "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
         "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
         "locator": {
           "kind": "symbol",
@@ -74,6 +92,24 @@
       },
       "rationale": "The result attaches source notes to each sidecar field and target.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+        "content": "sha256:3464a8a1b074f5a636063b2700da63e952c9a8a9ab7072c561dd43af44c295b6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_comparison_bases"
+        }
+      },
+      "id": "RLZ-SEERA1",
+      "invariant": "INV-EZEJQD",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.3",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Runs the converted check once per base, so both parents are seen.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -82,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
             "content": "sha256:4f4d571509f070b6b194d8cc2e2e4397b1c13948dd9445303efc599732feb22d",
             "locator": {
               "kind": "symbol",
@@ -98,8 +134,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
-            "content": "sha256:28e46a97acfd3f09eed82839a898ba1bdbb80a6a828de5b8fa08816edc37b2e5",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "content": "sha256:2e69db208aa0490529b32c66de182289095715d38cbf757016d93656ac044482",
             "locator": {
               "kind": "file"
             }
@@ -146,8 +182,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
-            "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "content": "sha256:3464a8a1b074f5a636063b2700da63e952c9a8a9ab7072c561dd43af44c295b6",
             "locator": {
               "kind": "symbol",
               "name": "_comparison_bases"
@@ -157,7 +193,7 @@
         },
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
             "content": "sha256:2ea7090ba8f226dac8a812a416add05ecbe607a0b29ca776b4ae8d61b1231d28",
             "locator": {
               "kind": "symbol",
@@ -173,7 +209,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
             "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
             "locator": {
               "kind": "symbol",
@@ -184,8 +220,8 @@
         },
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
-            "content": "sha256:28e46a97acfd3f09eed82839a898ba1bdbb80a6a828de5b8fa08816edc37b2e5",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "content": "sha256:2e69db208aa0490529b32c66de182289095715d38cbf757016d93656ac044482",
             "locator": {
               "kind": "file"
             }
@@ -199,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
             "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
             "locator": {
               "kind": "symbol",
@@ -210,8 +246,8 @@
         },
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
-            "content": "sha256:28e46a97acfd3f09eed82839a898ba1bdbb80a6a828de5b8fa08816edc37b2e5",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "content": "sha256:2e69db208aa0490529b32c66de182289095715d38cbf757016d93656ac044482",
             "locator": {
               "kind": "file"
             }
@@ -225,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e341cf9a3d7c4ee60b2e336d577392f391216ff",
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
             "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
             "locator": {
               "kind": "symbol",

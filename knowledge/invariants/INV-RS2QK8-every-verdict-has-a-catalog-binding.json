@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The verdict template variants and the Reviewer text must agree on one section, so a verdict cannot leave out which catalogs were bound."
+  },
+  "applicability": "Every verdict the Reviewer writes.",
+  "conditions": [
+    "The verdict template's Catalog Binding section is filled with the review type, the catalogs its table gives and, for each conditional catalog, whether it is bound and why."
+  ],
+  "exclusions": [
+    "The catalog contents themselves, which belong to the criteria files."
+  ],
+  "id": "INV-RS2QK8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "freeze 2's verdict fills it (round 2)"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v12.6",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every verdict has a Catalog Binding section naming the review type, the catalogs its table gives and, for each conditional catalog, whether it is bound and why; doctrine is bound when role files are included.",
+  "status": "proposed",
+  "supersedes": []
+}

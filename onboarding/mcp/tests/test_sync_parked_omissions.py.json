@@ -1,0 +1,153 @@
+{
+  "path": "mcp/tests/test_sync_parked_omissions.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2ba0824878eaa6f20ad6bb878a7087f68d11567e",
+        "content": "sha256:73613e30b88ca5e3cfb64a29fda45a335860a6a0e5d85c2bf0121cc9e59da96c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZACVBE",
+      "invariant": "INV-RNX24H",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Proves report, custody, re-measured evidence, bare-label refusal, preview without writes and the memory side.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A dropping resolution stops with a report and keeps the stash; restoring it settles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ba0824878eaa6f20ad6bb878a7087f68d11567e",
+            "content": "sha256:0f2cb7d1e6d17c3fb54bbd4a90db4461eee06d5354003e9a4faaf95f517b3566",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_resolution_that_drops_parked_authoring_is_reported_and_kept"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recorded replacement evidence is re-measured before a settle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ba0824878eaa6f20ad6bb878a7087f68d11567e",
+            "content": "sha256:ff9f85a072b91ee67cf5595f7b62eb0067c2996510f26aa0fe5651e7ad4436e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recorded_reconciliation_evidence_is_remeasured_before_a_settle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A bare reconciled label is no evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ba0824878eaa6f20ad6bb878a7087f68d11567e",
+            "content": "sha256:64904f940e91a55254617099d71728b6db90b5dcd161161eec2433baf3feefb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bare_reconciled_label_is_no_evidence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A preview reports omissions without writing or moving anything.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ba0824878eaa6f20ad6bb878a7087f68d11567e",
+            "content": "sha256:1d22fc13efc5e293e37253d5b0c868dc5209a79c2166f08e24a1592c83561317",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_reports_omissions_without_writing_or_moving"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A malformed report refuses and keeps every byte.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ba0824878eaa6f20ad6bb878a7087f68d11567e",
+            "content": "sha256:cc938dbbf296f883525852a277cc05626f240538cc8d575084fc9b599d5f5495",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_malformed_report_refuses_and_keeps_every_byte"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A replacement outside the worktree is no evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ba0824878eaa6f20ad6bb878a7087f68d11567e",
+            "content": "sha256:4966223c617feb5bcecd20f8507bdc792d69e1872c3cfa5114174388db1ef93a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_replacement_outside_the_worktree_is_no_evidence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Blob reads do not grow with the items one path omits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ba0824878eaa6f20ad6bb878a7087f68d11567e",
+            "content": "sha256:655f20443cbbe771b06558ff7303bd584abcc03a91cb828b42bd441ab1efcde0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_blob_reads_do_not_grow_with_the_items_one_path_omits"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A resumed reapply with a recorded report answers the omissions block and its own advice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ba0824878eaa6f20ad6bb878a7087f68d11567e",
+            "content": "sha256:10b602bf68091a7b3b9905c8347f9d70ba9742f048b5d9671f755a9a1d93d0da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_resumed_reapply_with_a_recorded_report_awaits_reconciliation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

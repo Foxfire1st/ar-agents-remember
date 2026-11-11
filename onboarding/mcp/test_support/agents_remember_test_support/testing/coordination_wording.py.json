@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4438e49778bc3ac9e81b3bab2a1ade91d9c508f2",
-            "content": "sha256:d15f1825ddbb662dd904709c932d529808980222cfcc70391519752b16bf7492",
+            "blob": "36d804a3c22f393f9af02706048f73c6db76e1a8",
+            "content": "sha256:6a063f2c6ed3c54faeadc287c845666bf828a5218c58642ea026b31c02b8f50a",
             "locator": {
               "kind": "symbol",
               "name": "CURRENT_COORDINATION_CLAUSES"
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4438e49778bc3ac9e81b3bab2a1ade91d9c508f2",
-            "content": "sha256:71d8687a5beeb42f85f4acd46b80199495bb05e528b60d363354b1e68de9d691",
+            "blob": "36d804a3c22f393f9af02706048f73c6db76e1a8",
+            "content": "sha256:d5c0af6b8236e35c5c2f99e32e086efd3816a13eba057133d6e3d385654e67c8",
             "locator": {
               "kind": "file"
             }

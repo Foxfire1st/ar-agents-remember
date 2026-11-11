@@ -1,0 +1,125 @@
+{
+  "path": "dashboard/src/panels/detail-panel/waitWords.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ef873d0fce95d4c8be313f68c176497834eb29d2",
+        "content": "sha256:4064589400818a173ac473a762571e3a8b05ed09369c87dba09d877fba6bde1d",
+        "locator": {
+          "kind": "symbol",
+          "name": "waitLines"
+        }
+      },
+      "id": "RLZ-8XY228",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "MIK-R60@v9.7",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Names what each seat waits for, since when and the check due (moved from pageParts.tsx in freeze 2; the detail page and the row hover share it).",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Wait names map subagent to subagents and background to background.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef873d0fce95d4c8be313f68c176497834eb29d2",
+            "content": "sha256:ef1f83a38916b24264ebb7b5d1b3b3c4b4dc6ac534a2bfb8b7c2f5b6b3f87111",
+            "locator": {
+              "kind": "symbol",
+              "name": "WAIT_NAMES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The word joins the distinct wait names with and.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef873d0fce95d4c8be313f68c176497834eb29d2",
+            "content": "sha256:829cb56b11978fe6f13d768b08b527b44fac939c5b99f6c80045a1739e41eb7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "waitWhat"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One line per seat: role or seat, agent, what since when, the check due when served and the seat's words.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef873d0fce95d4c8be313f68c176497834eb29d2",
+            "content": "sha256:4064589400818a173ac473a762571e3a8b05ed09369c87dba09d877fba6bde1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "waitLines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The task word reads waiting for the joined names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:a3e8bfcda5452c0561a5b25d65a8cb051244831c721a5f863a7c844a7eff6dd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskWordAt"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The word's hover is the seat lines when seats are served.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:3b07de106c22d941fa6e9bcff9f211c532c4d39c699ab298dec683326fcbebc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "wordTitle"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A waiting row's hover adds the seat lines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
+            "content": "sha256:5bb7efc2883d83508721794693c84d2ac5aefb8dc806028cad4f972bf2d7ed2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "waitHoverLines"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

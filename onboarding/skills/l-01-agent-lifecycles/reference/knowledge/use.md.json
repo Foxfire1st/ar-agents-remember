@@ -112,12 +112,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
-            "content": "sha256:58b2d1a5811957680ed915906020e5e9dd8872a0e169d2f099b07a1920eda7e9",
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:6276f61bb90fb517f1f42e8583cbafca5bfd28dd34ebec8780dbc2d7baa594b9",
             "locator": {
-              "end": 69,
+              "end": 70,
               "kind": "line_range",
-              "start": 69
+              "start": 70
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },

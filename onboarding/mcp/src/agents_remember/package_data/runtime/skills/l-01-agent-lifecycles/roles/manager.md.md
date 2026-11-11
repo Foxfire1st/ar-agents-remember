@@ -2,29 +2,13 @@
 
 ## Current supported-pair account — R100/R116 composition
 
-Past-epoch account (retained wording): A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager.
-
-Custody: the preceding sentence(s) retain their original target blob(s) `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`; live reference 8 labels only the separately stated current account below.
 
 Manager starts Worker at build, Reviewer at the Worker freeze and Curator after code PASS, each through an individual role_start. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager.
-
-This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
-
-
-
-
-Past-epoch account (retained wording): - A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager.
-
-Custody: the preceding sentence(s) retain their original target blob(s) `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`; live reference 8 labels only the separately stated current account below.
-
-- Manager starts Worker at build, Reviewer at the Worker freeze and Curator after code PASS, each through an individual role_start. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager.
-
-
 
 
 ## Message/file transport and return addressing
 
-Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. Ordinary report-written notices and final report-path returns use the supplied parent role/task address, including an instructed reporting-recipient change. Developer-needed questions remain addressed to the actual parent/instructed-recipient ID. These are distinct message purposes, not an ID exception to the return rule. Fixed launch-parent identity and existing role/peer/write/acceptance boundaries remain preserved.
+Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. Ordinary report-written notices and final report-path returns use the supplied parent role/task address, including an instructed reporting-recipient change. Developer-needed questions remain addressed to the actual parent/instructed-recipient ID.
 
 
 ## Governing Overview
@@ -43,13 +27,10 @@ Each of these stages repairs faults in its own work or instrument and corrects i
 
 Use the supplied sprint/master/requirement/candidate/report references. Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Each leaf owns one primary requirement; inherited/adjacent requirements remain constraints. Leaf work uses the AR paired enclosure rather than an independent Paseo worktree.
 
-Past-epoch account (retained wording): Start a leaf’s Worker, Reviewer and Curator as one `role_start_set` under the selected master and retain their actual IDs. Worker opens at once; Reviewer and Curator are held until their first addressed work, unless Reviewer work is supplied in the call. The leaf's Reviewer sends finding-specific repair to the same Worker directly; independent review runs when required by task/plan, and fix verification preserves its sealed baseline.
-
-Custody: the preceding sentence(s) retain their original target blob(s) `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`; live reference 8 labels only the separately stated current account below.
 
 Start Worker at build, Reviewer at the Worker freeze and Curator after code PASS, using individual `role_start` calls under the selected master and retaining their actual IDs. The leaf's Reviewer sends finding-specific repair to the same Worker directly; independent review runs when required by task/plan, and fix verification preserves its sealed baseline.
 
-Inspect actual deliverables, complete changed-file diff, checks and reports before handoff. Preserve requirement/finding IDs and separate implementation, review, curation and publication facts. Its own decisions cover leaf order and starts, operational problems, ordinary requirement readings, repair rounds, landing checks and delegated closeout/integration; only the four developer-needed categories plus the once-only final report go to the parent or the instructed reporting recipient. A real parent is addressed from the handover; dashboard launch needs none.
+Inspect actual deliverables, complete changed-file diff, checks and reports before handoff. Preserve requirement/finding IDs and separate implementation, review, curation and publication facts. Its own decisions cover leaf order and starts, operational problems, ordinary requirement readings, repair rounds, landing checks and delegated closeout/integration; only the five developer-decision occasions plus the once-only final report go to the parent or the instructed reporting recipient. A real parent is addressed from the handover; dashboard launch needs none.
 
 ## Logic
 
@@ -87,11 +68,7 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 ## Evidence
 
 
-
-
 - The generated role carries its canonical repair-loop instructions without independent authority.
-
-
 
 
 ### Repo-Internal References
@@ -101,31 +78,11 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 | Selected-master scope, bound leaf loop, evidence inspection and AR publication ownership. | lines 8-24 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:8-24 |
 
 
-
-
-
-
 - The packaged manager is one master-scoped owner of the leaf closeout chain. Source caption: `# Manager`
-
-
-
-
-
-
-
 
 
 - Its hosted child dispatch uses structural task document and role. Source caption: `role_start`
 
-
-
-
-
-
-
-Past-epoch account (retained wording): - Its starts follow `../operations/coordination.md`: a start names the role and the exact canonical references, and a leaf's Worker, Reviewer and Curator are started as one set with `role_start_set`.
-
-Custody: the preceding sentence(s) retain their original target blob(s) `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`; live reference 4 labels only the separately stated current account below.
 
 - Its starts follow `../operations/coordination.md`: each stage uses individual `role_start` with exact canonical references—Worker at build, Reviewer at freeze and Curator after code PASS.
 
@@ -138,16 +95,10 @@ Custody: the preceding sentence(s) retain their original target blob(s) `3c2cfd9
 This packaged copy derives from the canonical roles/manager.md. The Manager retains its master’s leaf diff, direct repair and transaction ownership. A check or investigation belonging to no leaf may be assigned to Investigator within the Manager’s admitted master; leaf checks remain with the actual Worker or Reviewer. A forbidden start is sent to the known parent, or named as a blocker without one. This added delegation permission does not require an Orchestrator above one master or transfer onboarding/code ownership. Mirror synchronization remains the owner; this file adds no independent instruction.
 
 
-
-
 - This source owns the stated current Investigator scope or canonical vocabulary.
 
 
-
 ## Current Contract Evidence
-
-
-
 
 
 - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.

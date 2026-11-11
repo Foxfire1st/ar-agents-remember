@@ -12,14 +12,14 @@ Typed public projections for resumable sync results.
 
 ### Logic
 
-Results distinguish policy choice, previews, retained merge, parked reapply, terminal replay and quarantine; retained conflict results include any journaled validationRefusal without changing continue/cancel addresses. Retained conflicts name side, worktree/files, owner and contract-addressed continue/cancel. [1]
+Results distinguish policy choice, previews, retained merge, parked reapply, terminal replay and quarantine; retained conflict results include any journaled validationRefusal without changing continue/cancel addresses. Retained conflicts name side, worktree/files, owner and contract-addressed continue/cancel. A parked-candidate resolution whose last continue found parked authoring missing also carries an `omissions` block (side, report path, item count) and the `reconcile_sync_omissions` next operation. A repository-default preview adds `syncSource` and the resolved `sources` (branch and commit per side). [1]
 
-_resolution_guidance uses supported continue for both retained forms. A structural report adds item summary and crossing-conflict marker guidance, distinguishing crossing from all-converted structural merge. No row-decision placeholder or reconcile action remains. [2] [3]
+_resolution_guidance uses supported continue for both retained forms. A structural report adds item summary and crossing-conflict marker guidance, distinguishing crossing from all-converted structural merge. No row-decision placeholder or reconcile resolution action remains; `reconcile_sync_omissions` is a next-operation label whose arguments are the `continue` call. [2] [3]
 
 Previews mutate no index/stash/commit. Completed continuation recomputes worklist through its owner; quarantine proves no unrecorded restoration. [8] [9] [11]
 
 
-**A structural memory-merge resolution names its report (MIK-R24 rule 8).** When the side record
+**A structural memory-merge resolution names its report.** When the side record
 journals a nonempty `crossingReport`, `resolution_required` adds `resolution.crossing`, the output
 of `knowledge_crossing.crossing_summary`: the report path, conflicted-item count, first 100
 `(path, item, reason)` entries with a truncation flag, cards taken from each side, moved marker
@@ -29,13 +29,14 @@ is nonempty; both forms name the report and the validator-refused `crossing-conf
 All-converted merges may journal reports for conflicts or nonzero alignment diagnostics. When
 `crossingReport` is empty, no report-derived resolution block or sentence is added.
 
-**The `continue` replay of a completed sync recomputes the worklist (MIK-R08 rule 8).**
-`terminal_resolution_replay` with `resolution_action='continue'` on a completed generation now returns
-`with_recomputed_worklist(completed_sync_result(...), contract)`, so the replay carries the same optional
-`knowledgeWorklist` summary as the original finalization (review R1 F2). A worklist failure leaves the
-replayed result unchanged.
+**The `continue` replay of a completed sync recomputes the worklist.**
+`terminal_resolution_replay` with `resolution_action='continue'` on a completed generation returns
+`with_recomputed_worklist(completed_sync_result(...), contract)` (both imported through
+`sync_transaction_recovery`; `completed_sync_result` is defined in `sync_transaction_completion`), so the
+replay carries the same optional `knowledgeWorklist` summary as the original finalization. A worklist
+failure leaves the replayed result unchanged.
 
-Resolution previews read `content_conflicts(side)`: memory-side root memory.md is excluded while code-side files and genuine memory content remain visible. `resolution_validation_preview` delegates the exact staged-content/MERGE_HEAD proof. `parked_wip_validation_preview` reports whether the real reapply conflicts are settled; it does not mutate an index, drop a stash, or create a commit.
+Resolution previews read `content_conflicts(side)`: memory-side root memory.md is excluded while code-side files and genuine memory content remain visible. `resolution_validation_preview` delegates the exact staged-content/MERGE_HEAD proof. `parked_wip_validation_preview` reports whether the real reapply conflicts are settled and measures the same parked-omission inventory a continue would publish, naming the omissions and the full report's path without writing the report; it is ready only when no unmerged path and no omitted item remains; a report the owner left unreadable answers `sync-resolution-incomplete` with that error, as the continue would; and it does not mutate an index, drop a stash, or create a commit.
 
 ### Invariants And Boundaries
 
@@ -56,7 +57,7 @@ No new file-local follow-up is identified by this source reconciliation.
 
 ### Docs References
 
-No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source rather than an invented external reference.
 
 
 ### Repo-Internal References

@@ -1,16 +1,53 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/base_side.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+        "content": "sha256:d1f3ddb98fb4902f4eda549b67c107eeaa920b63d559a647e4dfbc6f3a7c0239",
+        "locator": {
+          "kind": "symbol",
+          "name": "_with_incoming"
+        }
+      },
+      "id": "RLZ-0KHDGQ",
+      "invariant": "INV-EZEJQD",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.3",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Adds the MERGE_HEAD side as the incoming base when a merge is in progress.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+        "content": "sha256:102c95c7aff0814095c3666debacae754b4df8a8bde7f3d898140bbf0db0433a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_merge_head"
+        }
+      },
+      "id": "RLZ-1NP8RW",
+      "invariant": "INV-EZEJQD",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.3",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Reads MERGE_HEAD; absence means no merge in progress.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module docstring: one base for every reader, and a named problem when it cannot be built.\n\nAnchor: \"so one base is\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e1012c896e87b8e1474e947f3f4b80bb65316a1f",
-            "content": "sha256:5109d067c9ddba4098ca71937a0e510d78d39e60dfe6358ca8ac299d763e6540",
+            "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+            "content": "sha256:acc8d8a85fbad896cd9cb5f3d398efefa0426fe4b858b477c800d4786d667ecc",
             "locator": {
-              "end": 21,
+              "end": 28,
               "kind": "line_range",
               "start": 1
             }
@@ -20,12 +57,12 @@
       ]
     },
     "2": {
-      "note": "The writer's base for a memory worktree, or the named problem.",
+      "note": "The writer's bases for a memory worktree, HEAD and during a merge MERGE_HEAD, or the named problem.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1012c896e87b8e1474e947f3f4b80bb65316a1f",
-            "content": "sha256:9b296d64cb4ade3c6280ffcc1880a66116114faf329ab1f8b8ee6a2f432e14f4",
+            "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+            "content": "sha256:bdbd0752c7d85bf21305120e423b87300488f37f90c3e523e091899d5ea650fa",
             "locator": {
               "kind": "symbol",
               "name": "writer_bases"
@@ -36,12 +73,12 @@
       ]
     },
     "3": {
-      "note": "HEAD's tree, or its conversion when HEAD is unconverted and the candidate is converted.",
+      "note": "A side's tree, HEAD's or MERGE_HEAD's, or its conversion when that side is unconverted and the candidate is converted.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1012c896e87b8e1474e947f3f4b80bb65316a1f",
-            "content": "sha256:6f8b29b1d7aa291009b8270c2bb1c1b0180be75965a8673ff758a6fefbc7712c",
+            "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+            "content": "sha256:b3bf5b0752cb28a39d930b6747c2c5cf95ad3be3c8cde7b90d86bdf0f2a20042",
             "locator": {
               "kind": "symbol",
               "name": "_side"
@@ -56,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1012c896e87b8e1474e947f3f4b80bb65316a1f",
+            "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
             "content": "sha256:83d6754f0fe43591c89b710ad6a6b6c474c54b6a9ad86621f3b86c060bf7d51c",
             "locator": {
               "kind": "symbol",
@@ -72,8 +109,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fff8295eb14ca495404cbd00775068f9a3ff8aa4",
-            "content": "sha256:80c03b60b51a0663375ba8aa56bb07abbacc528b11829821ec978f003f427d83",
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:f216c1e5ab8e725242ca791fa8d1076802b01890395eafcca883da4b26928e1b",
             "locator": {
               "kind": "symbol",
               "name": "load"

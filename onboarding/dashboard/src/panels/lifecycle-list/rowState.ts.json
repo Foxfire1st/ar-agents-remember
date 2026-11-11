@@ -3,12 +3,29 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
+        "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
+        "content": "sha256:eb7364d6f97d5a86d22ccd68c558c53a29de0284605e5dadc640f07faf707333",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7Y170J",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "MIK-R60@v9.7",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Row hover and band for a waiting task.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
         "content": "sha256:c3fd8a7c8d84e764e3cfa4bd5bec4492ed7110680cbb54bf0bbf9246ecfd9ee2",
         "locator": {
-          "end": 50,
+          "end": 51,
           "kind": "line_range",
-          "start": 47
+          "start": 48
         }
       },
       "id": "RLZ-86SP7E",
@@ -22,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
-        "content": "sha256:a05f7dec62e0fe21b6103d722e9aeebfc81a0627e21616b0033e1f19b4016c8f",
+        "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
+        "content": "sha256:076bbe20c3487229760bb819ea2f3ba9fc5018aca6a1aabb8325c84bd27650ff",
         "locator": {
           "kind": "symbol",
           "name": "rowHover"
@@ -35,13 +52,13 @@
         "handoffEntry": "MIK-R144@v1 rule 3b / one word",
         "leaf": "260928-MIK-L144"
       },
-      "rationale": "The row's hover is composed by rowHover: title, the unauthored-document notice, state and stage, repository, current step, progress with abandoned and discarded counts, the served limit lines and the host event, joined into one string. The earlier caption named this format while pointing at the helpers above the function that returns it.",
+      "rationale": "The row's hover is composed by rowHover: title, the unauthored-document notice, state, the served limit lines or waiting-seat lines, stage, repository, current step, progress with abandoned and discarded counts and the host event, joined into one string.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
-        "content": "sha256:47a9c12fb366e47e94ebf7e04005bffe23591f7eeda0fa804df279c8104b962d",
+        "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
+        "content": "sha256:eb7364d6f97d5a86d22ccd68c558c53a29de0284605e5dadc640f07faf707333",
         "locator": {
           "kind": "file"
         }
@@ -57,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
+        "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
         "content": "sha256:1c747c07ebc5e837acdc43734ef2463946c45d7eea5d1225abebf7e0c2129a57",
         "locator": {
           "kind": "symbol",
@@ -76,12 +93,12 @@
   ],
   "references": {
     "1": {
-      "note": "The hover explicitly selects its actual rendered fields; scope and full reference path are not among them. This corrects an earlier Curator wording overstatement, not product behavior.\n\nAnchor: `rowHover`",
+      "note": "The hover explicitly selects its actual rendered fields; scope and full reference path are not among them.\n\nAnchor: `rowHover`",
       "targets": [
         {
           "anchor": {
-            "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
-            "content": "sha256:47a9c12fb366e47e94ebf7e04005bffe23591f7eeda0fa804df279c8104b962d",
+            "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
+            "content": "sha256:eb7364d6f97d5a86d22ccd68c558c53a29de0284605e5dadc640f07faf707333",
             "locator": {
               "kind": "file"
             }
@@ -95,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
+            "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
             "content": "sha256:8ff04c09e3c52fb4f89c14c6b1130d027d2b72d1d8e603a6abc07203cde3543d",
             "locator": {
               "kind": "symbol",
@@ -111,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
+            "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
             "content": "sha256:1c747c07ebc5e837acdc43734ef2463946c45d7eea5d1225abebf7e0c2129a57",
             "locator": {
               "kind": "symbol",
