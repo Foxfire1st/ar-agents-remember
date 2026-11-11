@@ -14,14 +14,13 @@ switches, the right-rail River/Chat toggle and its persistence, and the resizabl
 
 ### Logic
 
-- The suite mounts `CockpitShell`. MIK-R79 moved the opening view from Operations to Chats, so cases
-  that need the railed Operations context now mount `CockpitShell initialView="operations"`.
-- The full-bleed case now switches to **File Viewer** and asserts the File Viewer pane is present;
+- The suite mounts `CockpitShell`. The opening view is Chats, so cases
+  that need the railed Operations context mount `CockpitShell initialView="operations"`.
+- The full-bleed case switches to **File Viewer** and asserts the File Viewer pane is present;
   the Engine Room's removed dashboard entry is covered instead by the initial-view matrix, which
   mounts `memory`, `hangar`, `engine` and `topology` through `initialView` and asserts each page
   renders with its expected `data-fullbleed` and rail visibility.
-- Keep-alive, rail-toggle, persistence and rail-width assertions are otherwise unchanged.
-- Since MIK-R122 the toggle cases assert the same document-chat node across the River/Chat
+- The toggle cases assert the same document-chat node across the River/Chat
   switch (hidden, never unmounted) and both rail asides stay mounted under full-bleed views.
 
 ### Conventions
@@ -45,7 +44,7 @@ No additional work is asserted by this card.
 
 ### FEUI-L9R Reviewed Candidate Delta
 
-The serving-build suite now distinguishes a stale executing bundle from a matching one. It pins
+The serving-build suite distinguishes a stale executing bundle from a matching one. It pins
 `data-client-build-current="false"` plus a tooltip reload cue for a mismatch (no explicit
 reload-dashboard-client control exists), and `true` with no redundant reload button
 for an exact fingerprint match. The test never exercises an automatic reload
@@ -55,7 +54,7 @@ because the product contract requires operator timing.
 
 The current canonical Chats test asserts one directly mounted Role chats pane, Operations initial state and no separate Sessions route. Chats has neither the old mode selector nor a SessionsView child. Hide/show uses the same pane; the export-shape check retains the other memoized layers without claiming SessionsView as a current Chats mount.
 
-L15 adds the servingBuild stamp assertions (renders commit + boot time when present; absent-field tolerance for old payloads).
+The servingBuild stamp assertions cover commit + boot time when present and absent-field tolerance for old payloads.
 
 Native direct/master/child/worktree-bound entries hydrate once per unchanged body revision through task deltas. Late task-A answers cannot contaminate task B. Fetch stubs model mounted composition, not production fallback or a real server.
 
@@ -70,11 +69,11 @@ A local `seed(stateName)` applies a `GALLERY` fixture projection to the real Zus
   assertion; the sole current RoleChatsPane JSX mount establishes source cardinality.
 - Header rollup reads published taskCounts. The initial-nonzero case asserts the stage counts, exactly one `host activity unavailable` notice, and no works/paused wording in the header. The separate 0→1→0 case asserts initial works/paused figures and no notice; at one it asserts a notice and no works wording; on return to zero it asserts only notice removal. It does not assert post-return figure restoration, paused suppression or exact notice count in the one phase, per-row suppression, or native host availability.
 - Rail cases distinguish task activity from attention severity, preserve accessible names and scope axe checks under existing jsdom exclusions.
-- Gallery severity counts and server order remain; qualified native task selection no longer comes from an attention-origin lifecycle opener. The sidebar selection case clicks first, second, then first native task, waits for each task id in the reader, and asserts its option is focused with `aria-selected="true"`; the `scrollIntoView` spy is called three times. This preserves the reveal/focus/selection contract under native sidebar selection rather than the retired attention-layer opener. Render assertions are not browser/backend persistence proof.
+- Gallery severity counts and server order remain; qualified native task selection does not come from an attention-origin lifecycle opener. The sidebar selection case clicks first, second, then first native task, waits for each task id in the reader, and asserts its option is focused with `aria-selected="true"`; the `scrollIntoView` spy is called three times. This preserves the reveal/focus/selection contract under native sidebar selection rather than the retired attention-layer opener. Render assertions are not browser/backend persistence proof.
 
 Typed taskEntry/taskSummary/projection/taskTree replace local taskDoc, parallel SeriesNode and metricsFor lifecycle rollups: identity/status stay on the entry, reader prose in summary.
 
-The listed `totalTokens`/`stalenessHistogram` cells describe the superseded literals, not the current metrics contract. Current `Metrics` carries only `ignoredHostAgents`, and task counts live in `taskCounts` (planned, started, aborted, completed, works, paused, unknown); neither `lifecycleCount` nor `metricsFor` exists.
+The listed `totalTokens`/`stalenessHistogram` cells describe the superseded literals, not the current metrics contract. Current `Metrics` carries only `ignoredHostAgents`, and task counts live in `taskCounts` (planned, started, aborted, completed, works, waiting, paused, unknown); neither `lifecycleCount` nor `metricsFor` exists.
 
 ### Invariants And Boundaries
 
@@ -92,9 +91,7 @@ No task-independent technical debt was identified during FEUI-L9R review.
 
 ### Docs References
 
-No domain documentation source is configured for this repository. The requirement packet
-`MIK-R79@v1` (rules 1 and 16) fixes the opening view, the product bar and the retained pages; it
-lives outside the code and memory repositories, so it is named here and not cited as a row.
+No domain documentation source is configured for this repository.
 
 No configured live documentation source was available for this pass.
 

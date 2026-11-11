@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The writer base side and the quality check each choose comparison bases in different files, so one statement keeps them from judging against one parent only."
+  },
+  "applicability": "Memory writes and memory-quality checks run while the memory tree is mid-merge.",
+  "conditions": [
+    "MERGE_HEAD exists beside HEAD in the memory work tree."
+  ],
+  "exclusions": [
+    "A tree with no merge in progress, which compares against its recorded base only."
+  ],
+  "id": "INV-EZEJQD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_writer_merge_bases.py (3 passed, fail-before shown)"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v5.3",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "During a merge the knowledge writer and the memory-quality check validate against both merge parents: HEAD and MERGE_HEAD are both comparison bases.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
+        "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
         "content": "sha256:012d7f3d967f181785205f452f928dff02fd7fe94ebb2a02a58b7aecf0995ad2",
         "locator": {
-          "end": 1037,
+          "end": 1042,
           "kind": "line_range",
-          "start": 1022
+          "start": 1027
         }
       },
       "id": "RLZ-DYXENX",
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
+        "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
         "content": "sha256:37ab52d75cfba4752d4e9a645af8035b5afdf0b780c127d4bb69f64466a4dc51",
         "locator": {
-          "end": 1194,
+          "end": 1199,
           "kind": "line_range",
-          "start": 1194
+          "start": 1199
         }
       },
       "id": "RLZ-FFEWN8",
@@ -42,8 +42,8 @@
     },
     {
       "anchor": {
-        "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
-        "content": "sha256:6ffd29935c5ed39dac28a798b802d9cfc03b2e1f70d73d7dd0afb1537862e689",
+        "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
+        "content": "sha256:f0e1d52696c658b709c9b9dd31cf0c6abca3d1e69b6a5c1514639c579aaaaaaa",
         "locator": {
           "kind": "file"
         }
@@ -59,12 +59,12 @@
     },
     {
       "anchor": {
-        "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
+        "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
         "content": "sha256:c1d8008db2562e414b16242dddf7a3d460e6ed3ef52e590cb835a8e1feb3e99d",
         "locator": {
-          "end": 525,
+          "end": 530,
           "kind": "line_range",
-          "start": 516
+          "start": 521
         }
       },
       "id": "RLZ-JV8KJG",
@@ -78,7 +78,7 @@
     },
     {
       "anchor": {
-        "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
+        "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
         "content": "sha256:eb492c0f0960ad99c02c5eaa495514433ef989d5886a8905f08d590fae501a85",
         "locator": {
           "end": 60,
@@ -94,18 +94,39 @@
       },
       "rationale": "The section a user reads: why the file is closed, the command before an edit, the command that closes both again, and where the product names an open file.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
+        "content": "sha256:429b1492467e8ef27167c02841dd311729e0b1a9a9a1400b6d4116179aa1b766",
+        "locator": {
+          "end": 298,
+          "kind": "line_range",
+          "start": 298
+        }
+      },
+      "id": "RLZ-T59PTD",
+      "invariant": "INV-MAZGMS",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Documents the written key.",
+      "role": "presentation"
     }
   ],
   "references": {
     "4": {
-      "note": "Anchor: `openUserSettings`",
+      "note": "`server_info` names a file or folder it finds open to writing under `openUserSettings`, with both commands written out for the exact path, and names nothing while both are closed.\n\nAnchor: `openUserSettings`",
       "targets": [
         {
           "anchor": {
-            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
-            "content": "sha256:6ffd29935c5ed39dac28a798b802d9cfc03b2e1f70d73d7dd0afb1537862e689",
+            "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
+            "content": "sha256:88812089245fa6403203fbdcac191ce34829b59935c0a72ba4c22df2016227ef",
             "locator": {
-              "kind": "file"
+              "end": 60,
+              "kind": "line_range",
+              "start": 55
             }
           },
           "kind": "code"
@@ -117,19 +138,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
+            "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
             "content": "sha256:101fef371e5a1826dda080bd40e1152d87cbe0a145295e40dc8e6cba404bb926",
             "locator": {
-              "end": 1198,
+              "end": 1203,
               "kind": "line_range",
-              "start": 1190
+              "start": 1195
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
+            "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
             "content": "sha256:5819bd68e8f485b8358e37dc1901bc0d027bc82378c1eff8886d681860720cb5",
             "locator": {
               "end": 171,
@@ -141,24 +162,24 @@
         },
         {
           "anchor": {
-            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
+            "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
             "content": "sha256:10b3111502fc934ea5f0ab2b030343c4aaa3f324af00625ecbd4008cc4ca650c",
             "locator": {
-              "end": 996,
+              "end": 1001,
               "kind": "line_range",
-              "start": 992
+              "start": 997
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
+            "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
             "content": "sha256:28ff62537aaecc3db74413a7a3ac1aaae69677d74a6eaa9e2cc17a03354a066e",
             "locator": {
-              "end": 400,
+              "end": 405,
               "kind": "line_range",
-              "start": 390
+              "start": 395
             }
           },
           "kind": "code"
@@ -170,12 +191,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
+            "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
             "content": "sha256:f54ae3e12143bd244243086141999177a99a01f1e4c488ffa4fa16d0b19a1cd1",
             "locator": {
-              "end": 704,
+              "end": 709,
               "kind": "line_range",
-              "start": 677
+              "start": 682
             }
           },
           "kind": "code"
@@ -187,12 +208,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6346ebbf6b698db78bf0818d90fb978a1517f2e8",
+            "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
             "content": "sha256:68586d44d8715931aba2bde00f066e1b337863af624d87df6615a32e1dbdfb30",
             "locator": {
-              "end": 675,
+              "end": 680,
               "kind": "line_range",
-              "start": 670
+              "start": 675
             }
           },
           "kind": "code"

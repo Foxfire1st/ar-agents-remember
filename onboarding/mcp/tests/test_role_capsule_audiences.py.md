@@ -51,8 +51,8 @@ tables with `inverse_v13_short_rules()` and `inverse_v13_paths()`).
   review lane.
 - **Pinned audiences.** `test_real_operation_audiences_preserve_pinned_common_and_only_addressed_paragraphs` and
   `test_operation_audience_markings_preserve_pinned_bytes_and_immutable_closeout` pin the current bytes with the
-  `V13_*` tables, require that undoing only the admitted short-rule edits and the pinned reference-path moves
-  reproduces the `D656_*` digests, and keep the immutable closeout text intact.
+  `V13_*` tables, require that undoing only the admitted tool-name, catalog-drop and short-rule edits and the
+  pinned reference-path moves reproduces the `D656_*` digests, and keep the immutable closeout text intact.
 - **Repair limit.** `test_repairing_roles_stop_after_three_repairs_of_the_same_check_or_finding` stops a role
   after three repairs of the same subject.
 

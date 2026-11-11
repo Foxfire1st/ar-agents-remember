@@ -327,14 +327,15 @@
       ]
     },
     "21": {
-      "note": "The public terminal route the whole-tool cases call.\n\nAnchor: `lifecycle_finalize_task_tool`",
+      "note": "The public terminal route the whole-tool cases call.",
       "targets": [
         {
           "anchor": {
-            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
-            "content": "sha256:bbb78251410816eadf042a2a830aa80b49cba552da4ddedc15da284b6fb36888",
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:4e8196e941fb43e63fb6854a5666176542e8a6ae1c28085ce979fa1f060ee59d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "lifecycle_finalize_task_tool"
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -342,11 +343,10 @@
         },
         {
           "anchor": {
-            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
-            "content": "sha256:4e8196e941fb43e63fb6854a5666176542e8a6ae1c28085ce979fa1f060ee59d",
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
             "locator": {
-              "kind": "symbol",
-              "name": "lifecycle_finalize_task_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -411,12 +411,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d10964f21e3c76aa32694f3f0a93ec04188987e8",
+            "blob": "aba71ec71952433a1356dd2336cde60169db599a",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 738,
+              "end": 747,
               "kind": "line_range",
-              "start": 738
+              "start": 747
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -481,12 +481,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d10964f21e3c76aa32694f3f0a93ec04188987e8",
+            "blob": "aba71ec71952433a1356dd2336cde60169db599a",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 738,
+              "end": 747,
               "kind": "line_range",
-              "start": 738
+              "start": 747
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -21,11 +21,12 @@ version, and `configured()`/`invalid_config()` produce a valid
 or schema-invalid configuration. `record()` writes the home's process record naming a pid, `reader()` answers
 what `/proc` says about a pid the fake holds, `recorded_pid()` is the live process Paseo would act on, and
 `kill_daemon()` removes the daemon and its record. `converged()` reports what the daemon runs with and whether
-anything was left behind.
+anything was left behind. `START_ONLY` and `LIVE` name the daemon settings a provision applies at start and live;
+`agents.idleRuntimeCleanup` is a live one.
 
 - **Settings writers.** `write_runtime_block()` writes the host authority into the MCP settings file a config
   names, `_write_block()` leaves every other key alone, and `write_user_settings_block()` writes the developer's
-  own file through the guard — only the MIK-R137 subjects do that. `write_plugin()` writes the plugin tree.
+  own file through the guard — only the user-settings guard and host-release contract cases call it. `write_plugin()` writes the plugin tree.
 - **Staged failures.** `Interrupted` marks a provisioning process that died before a call, `refused()`/`ok()` build
   the answers, and `file_states()` returns inode, modification time and content digest of every file below the
   roots, so a case can prove nothing changed.

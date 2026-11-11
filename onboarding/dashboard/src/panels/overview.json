@@ -628,7 +628,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
             "content": "sha256:fdcdb9033e970815e15397034c79750afd89d5897393474c5cf7ab584ee74728",
             "locator": {
               "end": 800,
@@ -1441,7 +1441,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
             "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
               "end": 75,
@@ -1454,7 +1454,7 @@
         },
         {
           "anchor": {
-            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
             "content": "sha256:632d8c0504d1039767c5561c2363427d4dd772f6e9f76a40df99bbd0aecd8f45",
             "locator": {
               "end": 834,
@@ -1467,7 +1467,7 @@
         },
         {
           "anchor": {
-            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
             "content": "sha256:1c33cac434aa55f75aea8509f3c0eb861bc9293dfcb368897af8f700018f9c66",
             "locator": {
               "end": 719,
@@ -2107,8 +2107,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
-            "content": "sha256:dc09e97aa36b6f85702e098e15f9afa4678107ca1a3e2e736a686e0c233052b2",
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
             "locator": {
               "kind": "file"
             },
@@ -2139,8 +2139,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
-            "content": "sha256:47a9c12fb366e47e94ebf7e04005bffe23591f7eeda0fa804df279c8104b962d",
+            "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
+            "content": "sha256:eb7364d6f97d5a86d22ccd68c558c53a29de0284605e5dadc640f07faf707333",
             "locator": {
               "kind": "file"
             },
@@ -2183,12 +2183,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
             "content": "sha256:008405cd80acbe73ee37a16c867a2678d9dba5263997961af4df2ca3a6c94e40",
             "locator": {
-              "end": 146,
+              "end": 147,
               "kind": "line_range",
-              "start": 96
+              "start": 97
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -2196,12 +2196,12 @@
         },
         {
           "anchor": {
-            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
             "content": "sha256:7e2587c5e54f3d912c72949970d049517445cbed2c87453589dfbff7050150f7",
             "locator": {
-              "end": 207,
+              "end": 208,
               "kind": "line_range",
-              "start": 185
+              "start": 186
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -2209,12 +2209,12 @@
         },
         {
           "anchor": {
-            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
             "content": "sha256:d1a6bf379243a82a145a201827e7974a42706b6c3255998b457657246ec0e6c6",
             "locator": {
-              "end": 212,
+              "end": 213,
               "kind": "line_range",
-              "start": 206
+              "start": 207
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -2284,7 +2284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
+            "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
             "content": "sha256:1c747c07ebc5e837acdc43734ef2463946c45d7eea5d1225abebf7e0c2129a57",
             "locator": {
               "kind": "symbol",
@@ -2297,14 +2297,15 @@
       ]
     },
     "198": {
-      "note": "The row's native title is gone from every ancestor of a step mark while its own cells keep the hover text.\n\nAnchor: `TaskRowLine`",
+      "note": "The row's native title is gone from every ancestor of a step mark while its own cells keep the hover text.",
       "targets": [
         {
           "anchor": {
-            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
-            "content": "sha256:dc09e97aa36b6f85702e098e15f9afa4678107ca1a3e2e736a686e0c233052b2",
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:1e8ebd806e26a9f3025336bdd95c7291f2bcab5175e78e58b22d78c3ad386546",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TaskRowLine"
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -2312,11 +2313,10 @@
         },
         {
           "anchor": {
-            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
-            "content": "sha256:1e8ebd806e26a9f3025336bdd95c7291f2bcab5175e78e58b22d78c3ad386546",
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskRowLine"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -2356,7 +2356,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
             "content": "sha256:1eff69e5c56a21b35d68e856cfc14df01eb74c55b851910912f9e64261692075",
             "locator": {
               "end": 788,
@@ -2466,7 +2466,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
             "content": "sha256:9e29a6f39a93a440da8f1d2d92bd0a81f51c92296063aab804777b188d187de0",
             "locator": {
               "end": 600,
@@ -2506,7 +2506,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
             "content": "sha256:43a1c97bd022af137cd909968fba7bff200f95c7b44ae4c9dffd2703f21f5a5c",
             "locator": {
               "end": 882,
@@ -3265,18 +3265,18 @@
       ]
     },
     "39": {
-      "note": "The header count itself. **Withdrawn in part:** the tooltip this row cited stated *what* the count counts, and the L33 revert removed it with the landed-leaf change — the h2 is again a bare `Tasks · {count}`.",
+      "note": "The header count itself: the h2 is a bare `Tasks · {count}` with no tooltip saying what the count counts.",
       "targets": [
         {
           "anchor": {
-            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
-            "content": "sha256:27e5788d5d9d73d24a81dbc0a5a74bfa82c9c3b3af99e52af796e90b468a8a3d",
+            "blob": "83b4bd442bbeab34f2f4e4d7d95140c60cc3bee6",
+            "content": "sha256:8b757399da4e112d5124db74fe382507568aded023a23e103e1156ae7202ce7a",
             "locator": {
-              "end": 655,
+              "end": 189,
               "kind": "line_range",
-              "start": 655
+              "start": 189
             },
-            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+            "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx"
           },
           "kind": "code"
         }
@@ -3305,7 +3305,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
             "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
               "kind": "symbol",
@@ -3322,7 +3322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
             "content": "sha256:0e083528be45ad099dc01a9c0c450064660ea4947830ae120697f07fd2b38969",
             "locator": {
               "end": 723,
@@ -3340,7 +3340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
             "content": "sha256:0e083528be45ad099dc01a9c0c450064660ea4947830ae120697f07fd2b38969",
             "locator": {
               "end": 723,
@@ -3358,7 +3358,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
             "content": "sha256:c6f3f2966177305411eeff99d537a7f97c18ad607a2d33dc6ad239fc4d4ce1a8",
             "locator": {
               "kind": "symbol",
@@ -3370,7 +3370,7 @@
         },
         {
           "anchor": {
-            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
             "content": "sha256:7d848921fbedbcb47a35a4619f64fd504a105dcf4386c364e35bccd9755eefb5",
             "locator": {
               "kind": "symbol",
@@ -3382,7 +3382,7 @@
         },
         {
           "anchor": {
-            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
             "content": "sha256:c0420b2dd5bea4a4f594d8ed95ced8b024a0ed142835e84b314d6e1d298ec012",
             "locator": {
               "kind": "symbol",
@@ -3394,7 +3394,7 @@
         },
         {
           "anchor": {
-            "blob": "e48a797e5a9fe921905ee4d51bff0e401b02ef43",
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
             "content": "sha256:fdbcca409a845b5ec0a408ab1849630b644e54948c9faeb6905fb090804f5d3d",
             "locator": {
               "end": 21,
@@ -3442,7 +3442,7 @@
         },
         {
           "anchor": {
-            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
             "content": "sha256:ab381fa39ef1b0eafc49c03f625ed3e711249682ff8ff69844f17ca13021aa90",
             "locator": {
               "end": 128,
@@ -3460,7 +3460,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c4bfdcc65e75f29c980bfeb6e40798588acfa0",
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
             "content": "sha256:57e2f656bc20222f62328519d9d1cb2e901ebceaae50dfbc50c5bceaa6af534f",
             "locator": {
               "kind": "symbol",
@@ -3502,14 +3502,15 @@
       ]
     },
     "52": {
-      "note": "LifecycleList consumes native entry rows and preserves grouping, selection and one-shot reveal without the removed lifecycle hierarchy adapter.\n\nAnchor: `LifecycleListImpl`",
+      "note": "LifecycleList consumes native entry rows and preserves grouping, selection and one-shot reveal without the removed lifecycle hierarchy adapter.",
       "targets": [
         {
           "anchor": {
-            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
-            "content": "sha256:dc09e97aa36b6f85702e098e15f9afa4678107ca1a3e2e736a686e0c233052b2",
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:bbc7b0fe58999dbd030c5abe46a562e305e99b89851efa272158979e7916b9d0",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "LifecycleListImpl"
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -3517,11 +3518,10 @@
         },
         {
           "anchor": {
-            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
-            "content": "sha256:bbc7b0fe58999dbd030c5abe46a562e305e99b89851efa272158979e7916b9d0",
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleListImpl"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -3547,14 +3547,15 @@
       ]
     },
     "54": {
-      "note": "Native task stage/activity/eventAt replaces the removed session State/Phase live-terminal partition as the Operations state input. This is a distinct model, not a renamed session vocabulary.\n\nAnchor: `TaskState`",
+      "note": "Native task stage/activity/eventAt replaces the removed session State/Phase live-terminal partition as the Operations state input. This is a distinct model, not a renamed session vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
-            "content": "sha256:8f897ee97a5df4ec6bc2cdb53e32669158ad72e83b1d826e0af636eb31908a32",
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:fe9ca863cfcf6e071b01eec7e19ab0cc07db6748f5a092ed6d0343dcfd714514",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TaskState"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -3562,11 +3563,10 @@
         },
         {
           "anchor": {
-            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
-            "content": "sha256:547d65d6d0b433cae876cf724e68072e618693d82797005287db781304a46dee",
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskState"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -3579,8 +3579,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
-            "content": "sha256:f6b5bf5a981ee7a6120113585214555db8fbb1e14381b488209bca7a7fddd52a",
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:7849f98e85f0c21dc59a2f2e13cf3c526ee19b8f6e2d0cf725fb28f0272c51cd",
             "locator": {
               "kind": "symbol",
               "name": "BASE_TASK_ENTRY"
@@ -3592,14 +3592,15 @@
       ]
     },
     "56": {
-      "note": "The typed native projection factory supplies tasks/taskCounts and analytics defaults. Mirror-conforming sampled shape is not producer completeness or fresh test/runtime acceptance.\n\nAnchor: `projection`",
+      "note": "The typed native projection factory supplies tasks/taskCounts and analytics defaults. Mirror-conforming sampled shape is not producer completeness or fresh test/runtime acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
-            "content": "sha256:fa043074e33f2bf4c2dc606a7bc5c1664ed3d52c09af65f3df1e2986be56ce79",
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:93447b3d1b8e0b58434d69e28b4087f511555c78974168c8582a07db3485d3fb",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "projection"
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -3607,11 +3608,10 @@
         },
         {
           "anchor": {
-            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
-            "content": "sha256:5cb7fbe6d55bf218f6615f9a264b89257449d7a729c81da4504a3ae023d45104",
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:ca949a7feaa7e40320e660e3b58629780946c36e8dab87a8d4b3ba5d0dc952ab",
             "locator": {
-              "kind": "symbol",
-              "name": "projection"
+              "kind": "file"
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -3624,10 +3624,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b8a418329ea075dc4649d2cc2c5317cf2871254",
-            "content": "sha256:4d56ceb34aff1c1ab03a444773af74d8c4c7437f1562f92bec1d6fe929044b8c",
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:3ddc7ae1afef1eb6f21798e7acd08bee784418f7b945a9919e371660d0891edd",
             "locator": {
-              "end": 1939,
+              "end": 1954,
               "kind": "line_range",
               "start": 1801
             },

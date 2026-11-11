@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "cabc32e07d3729616a174486c43624dd58bcbb7b",
+        "blob": "a625f100c801bea1cb9717637d2070e265404514",
         "content": "sha256:8231e420630317f165fea1146ac7cb9f724e0579c8428f36d48c43eb9e2af86b",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "cabc32e07d3729616a174486c43624dd58bcbb7b",
+        "blob": "a625f100c801bea1cb9717637d2070e265404514",
         "content": "sha256:8231e420630317f165fea1146ac7cb9f724e0579c8428f36d48c43eb9e2af86b",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "cabc32e07d3729616a174486c43624dd58bcbb7b",
+        "blob": "a625f100c801bea1cb9717637d2070e265404514",
         "content": "sha256:40a62f1c987b26223a1cbf9bcd1fc4e67b2dfba0f7716dc3c107f6b2a9d2231d",
         "locator": {
           "kind": "symbol",
@@ -60,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cabc32e07d3729616a174486c43624dd58bcbb7b",
-            "content": "sha256:2c8f4376e717707dd6ed5cc8f86ce200e99865cd45ef039bdca8c79c0d2e5f86",
+            "blob": "a625f100c801bea1cb9717637d2070e265404514",
+            "content": "sha256:0563a45fff8d47b45806ec4c7ddae0dcaa2dd4bc6f90425d2cbf458bc7f5cb9d",
             "locator": {
               "kind": "symbol",
               "name": "PaseoRuntimeTests"
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cabc32e07d3729616a174486c43624dd58bcbb7b",
+            "blob": "a625f100c801bea1cb9717637d2070e265404514",
             "content": "sha256:606b1bf54d5745fcb7088bc909065ddfee5403da1f4b64edd5e95d58aec40799",
             "locator": {
               "kind": "symbol",

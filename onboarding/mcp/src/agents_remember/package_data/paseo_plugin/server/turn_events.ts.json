@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ff66e28b794c20c503abe40cc212800377e83e12",
-        "content": "sha256:0c52c951e3456426838b275bda41d71b489fd39594c60f82d8d57d538c6d0aa1",
+        "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+        "content": "sha256:568a277f057a7be11e46e1b8255faa17e5ec4e9c4157c14f40b504e84b279294",
         "locator": {
           "kind": "symbol",
           "name": "readHostState"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "ff66e28b794c20c503abe40cc212800377e83e12",
-        "content": "sha256:c1c921b09bbc56936a355f24f7c1cd0714e3969df5fbb59abfdf5207aae8130d",
+        "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+        "content": "sha256:6fa1ad0856163ab84ae6cff86e2b2dddab559b817d4a3d797ee22805709e78aa",
         "locator": {
           "kind": "symbol",
           "name": "registerParentWakeEvents"
@@ -34,13 +34,13 @@
         "handoffEntry": "L172-TURN-END-WAKE",
         "leaf": "260928-MIK-L172"
       },
-      "rationale": "Feeds the host event, timeline and turn id to the decision, reads the host's agent state and parent label for the silence and send gates, sinks every decision row to the plugin's log, and returns the cleanup that ends pending waits.",
+      "rationale": "Feeds the host event, the ended turn's timeline read through readTurnTimeline (timeline.refetch, null when unreadable) and the turn id to the decision, reads the host's agent state and parent label for the silence and send gates, sinks every decision row to the plugin's log, and returns the cleanup that ends pending waits.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "ff66e28b794c20c503abe40cc212800377e83e12",
-        "content": "sha256:8b7e25a99d324874787dec3345aa36d2c6aefc3eb439ffe6eb6ed50ad7a12c14",
+        "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+        "content": "sha256:a022a1f0bfb2c78cec71b089c85e08077b7e7c2a76b42f94f39a8cfca3576a7a",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "ff66e28b794c20c503abe40cc212800377e83e12",
+        "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
         "content": "sha256:3a81f54404a2eb7a0d1f1c86bdd394d1be61542af325e73076ffeaba09f38421",
         "locator": {
           "kind": "symbol",
@@ -71,6 +71,42 @@
       },
       "rationale": "Spells the host label that names a child's parent, so the seat's children are found by the link the host publishes rather than by a plugin-owned registry.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+        "content": "sha256:01e300a63fc3e5ec4598ed5b7d689328c394e9ae85f6ce753592536fdd55fc20",
+        "locator": {
+          "kind": "symbol",
+          "name": "readTurnTimeline"
+        }
+      },
+      "id": "RLZ-6CDZFK",
+      "invariant": "INV-HERZ7X",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.3",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Reads the turn through timeline.refetch instead of the hook's empty timeline.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+        "content": "sha256:6fa1ad0856163ab84ae6cff86e2b2dddab559b817d4a3d797ee22805709e78aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "registerParentWakeEvents"
+        }
+      },
+      "id": "RLZ-HAGFJ4",
+      "invariant": "INV-HERZ7X",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.3",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Uses readTurnTimeline on agent.turn.after to decide hand-over or seat message.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -79,8 +115,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff66e28b794c20c503abe40cc212800377e83e12",
-            "content": "sha256:8b7e25a99d324874787dec3345aa36d2c6aefc3eb439ffe6eb6ed50ad7a12c14",
+            "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+            "content": "sha256:a022a1f0bfb2c78cec71b089c85e08077b7e7c2a76b42f94f39a8cfca3576a7a",
             "locator": {
               "kind": "file"
             }

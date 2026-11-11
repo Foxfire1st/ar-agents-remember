@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a3c96c80333a5a4df48c75a2eed1d0a6f35b8953",
-        "content": "sha256:dc3b92ccc5f113c811daf85fb673d96d59eddbb12dea67adca9e24c3bd1e645e",
+        "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
+        "content": "sha256:7c27827ff9392c3c78ec33310857c7fbc49991cb7c44fb7b2e5e0b0ada5bd551",
         "locator": {
           "end": 18,
           "kind": "line_range",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "a3c96c80333a5a4df48c75a2eed1d0a6f35b8953",
-        "content": "sha256:11335f10dbe222d6ee98423f1c713cda7261d8c39657377ae0dfa211c0d3092e",
+        "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
+        "content": "sha256:a496e358679e573614fb505010f2f501f8b158c688a24332091576cdd943e2ca",
         "locator": {
           "kind": "file"
         }
@@ -40,16 +40,16 @@
   ],
   "references": {
     "1": {
-      "note": "The plugin's development SDK is pinned to 0.12.0.",
+      "note": "The plugin's development SDK `@getpaseo/plugin` is pinned to 0.15.4.",
       "targets": [
         {
           "anchor": {
-            "blob": "a3c96c80333a5a4df48c75a2eed1d0a6f35b8953",
-            "content": "sha256:edb570c57d692e59b1e813098dfba2eb6f652234809e805a2f8ed67d263f7290",
+            "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
+            "content": "sha256:7c27827ff9392c3c78ec33310857c7fbc49991cb7c44fb7b2e5e0b0ada5bd551",
             "locator": {
-              "end": 26,
+              "end": 18,
               "kind": "line_range",
-              "start": 1
+              "start": 18
             }
           },
           "kind": "code"
@@ -57,16 +57,16 @@
       ]
     },
     "2": {
-      "note": "Current source owner or exact assertion described above.",
+      "note": "The manifest lists the plugin's shipped files and declares the `typecheck` and `test` scripts the release checklist runs in a scratch copy.",
       "targets": [
         {
           "anchor": {
-            "blob": "a3c96c80333a5a4df48c75a2eed1d0a6f35b8953",
-            "content": "sha256:edb570c57d692e59b1e813098dfba2eb6f652234809e805a2f8ed67d263f7290",
+            "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
+            "content": "sha256:3e76fb0ec26c7120083452690d5918eddfc05f3fdcbce465e30f5aa6ff31e8bf",
             "locator": {
-              "end": 26,
+              "end": 16,
               "kind": "line_range",
-              "start": 1
+              "start": 5
             }
           },
           "kind": "code"

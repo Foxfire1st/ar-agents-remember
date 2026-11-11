@@ -4,12 +4,12 @@
   "realizes": [],
   "references": {
     "10": {
-      "note": "`WorktreeArgs` implements the retained boundary described above.  The following current source boundaries establish the ledger-retirement behavior.",
+      "note": "`WorktreeArgs` implements the retained boundary described above. The following current source boundaries establish the ledger-retirement behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa84ca4a28ab5525e684961f1858766ac211abb7",
-            "content": "sha256:a3e5679cc6a6cdca7a93331f84673ee8bd78b4f24beca1236fd6a9a113459644",
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
+            "content": "sha256:16909810c747239109ba8d1c32692dd59bbd28bca8f289821c345d0080ddb9c6",
             "locator": {
               "kind": "symbol",
               "name": "WorktreeArgs"
@@ -24,8 +24,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa84ca4a28ab5525e684961f1858766ac211abb7",
-            "content": "sha256:a3e5679cc6a6cdca7a93331f84673ee8bd78b4f24beca1236fd6a9a113459644",
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
+            "content": "sha256:16909810c747239109ba8d1c32692dd59bbd28bca8f289821c345d0080ddb9c6",
             "locator": {
               "kind": "symbol",
               "name": "WorktreeArgs"
@@ -40,12 +40,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa84ca4a28ab5525e684961f1858766ac211abb7",
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
             "content": "sha256:047cfa468e99dbf1415f6caacbf8a5b09301bf9edfb371314797b0a8e7b232dd",
             "locator": {
-              "end": 120,
+              "end": 121,
               "kind": "line_range",
-              "start": 117
+              "start": 118
             }
           },
           "kind": "code"
@@ -57,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa84ca4a28ab5525e684961f1858766ac211abb7",
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
             "content": "sha256:047cfa468e99dbf1415f6caacbf8a5b09301bf9edfb371314797b0a8e7b232dd",
             "locator": {
               "kind": "symbol",
@@ -73,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
             "content": "sha256:2b9aaf2cbc302df9659dd78655d80e3d18ea666700ab8dad26b007b8bc118b93",
             "locator": {
               "kind": "symbol",
@@ -85,7 +85,7 @@
         },
         {
           "anchor": {
-            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
             "content": "sha256:5e9062f0836ba065be875d6c3d8cfcf6f6212150edf3daacd4322b2654482cd7",
             "locator": {
               "kind": "symbol",
@@ -115,32 +115,11 @@
       ]
     },
     "16": {
-      "note": "Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`.\n\nAnchor: `from_namespace` `build_parser`",
+      "note": "Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa84ca4a28ab5525e684961f1858766ac211abb7",
-            "content": "sha256:f913c0be00540e770fceedd9ac4fb23021691495ccaceb69849c8b5c31f24cd7",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
-            "content": "sha256:732a87f2837e120295c0abd9e2a432657a50fbddda8f1ec98194d8e5be2fe2a6",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/cli.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aa84ca4a28ab5525e684961f1858766ac211abb7",
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
             "content": "sha256:b8ee544a7c3d76078b145b34a925959caa10038cef5165fd834158251b2591d0",
             "locator": {
               "kind": "symbol",
@@ -156,6 +135,27 @@
             "locator": {
               "kind": "symbol",
               "name": "build_parser"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cli.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
+            "content": "sha256:aa5fda34dde0755a15aa9f1d706e5c0bfe973689ff8774eeb5c501a2726680d6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
+            "content": "sha256:732a87f2837e120295c0abd9e2a432657a50fbddda8f1ec98194d8e5be2fe2a6",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cli.py"
           },

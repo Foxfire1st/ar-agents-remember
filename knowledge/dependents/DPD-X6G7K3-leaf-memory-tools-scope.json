@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "5be86e031913a59eeb03a465f1b86fa1a22170ba",
-    "commit": "b9856a62a07735382b6f0c16525d33ed23d0f13d",
+    "codeTree": "7e0a86a75b0d857cbf5e7a66598843db75cb4dc4",
+    "commit": "700979c170c47e6cc072b6c6e651eff3339e8df6",
     "role": "curator",
-    "statement": "The tool reference correctly requires contract-scoped leaf measurement and distinguishes quality readiness from coherence; an absent card directory changes neither documented authority.",
-    "task": "260928-MIK-L204",
+    "statement": "The tool reference's worktree_sync row now describes sync_source=\"repository-default\" (kept base pair, journalled sources and pinned tips, one sync-log entry, sync-source-moved on continue) as the code does, and its contract-scoped leaf measurement and quality-versus-coherence statements are unchanged and still true.",
+    "task": "260928-MIK-L60",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {

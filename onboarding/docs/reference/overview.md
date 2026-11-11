@@ -182,7 +182,8 @@ Historical source account (detached from live reference 11; mcp/src/agents_remem
 
 - The public tool document names `PUBLIC_TOOLS` in `public_roster.py` as the roster and says its tables name every registered public tool; it documents converted knowledge reads, integrity/worklist, file-writing-without-Git knowledge_write and separate coherence authority. [2]
 
-- [3]
+- Anchor: `is NOT an MCP authority file` [3]
+
 - Setup reports the knowledge state and hands foundation work to the user-started Architect's regular task and its Curator; the following provider stage retires providers. [24]
 
 - The host-runtime section keeps paseoRuntime in the active MCP authority file, reads it per use, lets cold Bootstrap create an absent block once, preserves an existing block and refuses unknown host keys. [5]

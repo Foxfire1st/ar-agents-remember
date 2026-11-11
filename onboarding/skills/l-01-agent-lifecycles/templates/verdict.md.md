@@ -35,7 +35,7 @@ independent rationale. Missing rationale, invalid citations, wrong-class proof, 
 or absent developer approval forces rejection, and any rejected revision forbids an overall pass.
 
 The verdict separately records route coverage, bound criteria catalogs, durable-evidence lifecycle
-proof, and ranked findings. Fix verification rechecks only sealed outstanding identifiers and their fixes while retaining
+proof, and ranked findings. Every verdict fills its Catalog Binding section with the review type, the catalogs the Reviewer's binding table gives for it and, for each conditional catalog, whether its condition holds for this change and why; a verdict without that section is incomplete, and the Criteria Catalog Results table then covers every bound catalog. Fix verification rechecks only sealed outstanding identifiers and their fixes while retaining
 accepted rows. Rule 4 takes the three review lenses from `reference/review-baseline.md#check-baseline-evidence`.
 
 Each adjudication is a separate immutable reviewer record bound to the exact worker attempt,
@@ -99,4 +99,4 @@ The verified byte-equal package copy is derived output, not an independent role/
 
 - Reviewer records its ordinary CODE begin/result under the task document; Manager retains gate acceptance and recorded beyond-settings approval. Code PASS first goes to Manager to start Curator; peer artifacts travel directly as files, MEMORY stays separate and ready-for-closeout names both verdicts. Repaired-item verification is an ordinary round within the settings limit. [5]
 
-- Verdict structure binds exact independent candidate evidence, immutable per-attempt adjudication and monotonic sealed successor scope; CODE and MEMORY remain separate and no verdict decides the gate. [6]
+- Verdict structure binds exact independent candidate evidence, immutable per-attempt adjudication and monotonic sealed successor scope, and names the bound catalogs in its Catalog Binding section (a verdict without it is incomplete); CODE and MEMORY remain separate and no verdict decides the gate. [6]

@@ -115,7 +115,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e6c25daf3eb9e6306f3d8198ce2108f26e7783b",
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
             "content": "sha256:8c2becfadaf1ba12345a93ed610585038b103dbd7f59b6d85aabde9d687a7b9c",
             "locator": {
               "kind": "symbol",
@@ -148,12 +148,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
-            "content": "sha256:f99dee2daa7c12f714742a3d1e3cd1c2f61d619b732187ae057690e80770f581",
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
             "locator": {
-              "end": 5318,
+              "end": 6371,
               "kind": "line_range",
-              "start": 5309
+              "start": 6362
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },

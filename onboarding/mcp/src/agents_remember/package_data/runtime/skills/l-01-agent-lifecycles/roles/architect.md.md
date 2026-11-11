@@ -2,27 +2,13 @@
 
 ## Current supported-pair account — R100/R116 composition
 
-Past-epoch account (retained wording): Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
-
-Custody: the preceding sentence(s) retain their original target blob(s) `0ae6b320075e6ba40c38064b985eadb31b596fe9`; live reference 5 labels only the separately stated current account below.
 
 Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. For permission-held receipts, the Architect follows the child-permission notice procedure and the no-resubmission rule for held messages. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
-
-This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
-
-
-Past-epoch account (retained wording): - Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
-
-Custody: the preceding sentence(s) retain their original target blob(s) `0ae6b320075e6ba40c38064b985eadb31b596fe9`; live reference 5 labels only the separately stated current account below.
-
-- Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. For permission-held receipts, the Architect follows the child-permission notice procedure and the no-resubmission rule for held messages. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
-
 
 
 ## Message/file transport
 
-This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
-
+This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template.
 
 
 ## Governing Overview
@@ -32,11 +18,6 @@ This packaged copy makes role messages short wake-ups naming requested work or a
 ## Current naming and source qualification
 
 Before planning repository work, resolve the repository's memory layer through `context_packet` on agents-remember-task, then name relevant records through knowledge_read on agents-remember-task bound to repository/code tree, then open the named files natively. Surface source/approved-requirement conflicts rather than silently reconciling them.
-
-## Current source contract evidence
-
-
-- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.
 
 
 ## Purpose
@@ -106,7 +87,6 @@ This packaged copy derives from the canonical roles/architect.md. The Architect 
 
 
 ## Current Contract Evidence
-
 
 
 - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Reading the empty hook timeline would leave every hand-over unrecognised, so a seat's finished work would never wake its parent."
+  },
+  "applicability": "The plugin's reading of an ended turn on Paseo 0.13 and later.",
+  "conditions": [
+    "The turn-ended hook supplies an empty timeline."
+  ],
+  "exclusions": [
+    "Hosts before 0.13, whose hook carried the timeline."
+  ],
+  "id": "INV-HERZ7X",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "plugin tests 250 pass / 1 skip (\"Paseo 0.15.4 hook shape: the turn read through refetch recognises a hand-over\"); notes/reports/260928-MIK-L60-evidence/partB/step-log.md hand-over row"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v6.3",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "From Paseo 0.13 the turn-ended hook carries an empty timeline, so the plugin reads the ended turn through context.paseo.agents.ref(id).timeline.refetch and still recognises a hand-over.",
+  "status": "proposed",
+  "supersedes": []
+}

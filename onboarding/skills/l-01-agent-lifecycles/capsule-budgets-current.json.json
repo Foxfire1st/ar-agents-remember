@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
-        "content": "sha256:b8c7c756415ad8f589f7ce9f3df4d321e4cd54da524f15fe11c9fba34e7e509c",
+        "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+        "content": "sha256:f0cd683eba89fceef7e269a1c7fbf3ead041e2e66d4976e59eee70c9e9ad378e",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
-        "content": "sha256:fe2af8a6f2d9befc25c902aaf924018ecdad010c2a64cf3e34db3bb2f332d18b",
+        "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+        "content": "sha256:23beaae89775b40e9aad457c8561cce841137dfff33f837339a979e0e6ab64eb",
         "locator": {
           "end": 5028,
           "kind": "line_range",
@@ -34,13 +34,13 @@
         "handoffEntry": "L84-P5-25",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "measuredCurrentRenewal88048054R8 is the only sub-record with current:true and its digest words (2,266) equal the final every-role digest; the decision-level currentDigestMapSha256 c7df5fbe equals the current digest-map.json.",
+      "rationale": "measuredCurrentRenewalL60PartDD750 is the only sub-record with current:true and its digest words (2,327) equal the final every-role digest; the decision-level currentDigestMapSha256 6d93e314 equals the current digest-map.json. measuredCurrentRenewal88048054R8 is now historical (historicalTree 9a933de3).",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
-        "content": "sha256:8a5b2e6ecf2509662b3fef1d0e524f903031cc4b7b45d749166a0f37c3918dd3",
+        "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+        "content": "sha256:aa9e2252078c7f858168e56239c002afbcfc5f07929a5948ec63321fb6e9cd53",
         "locator": {
           "end": 15,
           "kind": "line_range",
@@ -53,7 +53,26 @@
         "handoffEntry": "L84-P5-25",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "The decision-level currentDigestMapSha256 c7df5fbe equals the current digest-map.json.",
+      "rationale": "The decision-level currentDigestMapSha256 6d93e314 equals the current digest-map.json.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+        "content": "sha256:16e33f8515db8e2fe4fb605e540d2659e1109c4593e16b00a7cdc679cc19db3d",
+        "locator": {
+          "end": 5101,
+          "kind": "line_range",
+          "start": 5101
+        }
+      },
+      "id": "RLZ-QPK1VY",
+      "invariant": "INV-K48GZ2",
+      "origin": {
+        "handoffEntry": "MIK-R60@v8.6",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Renewal record for the grown digest and recovery detail (D656).",
       "role": "support"
     }
   ],
@@ -63,8 +82,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
-            "content": "sha256:b8c7c756415ad8f589f7ce9f3df4d321e4cd54da524f15fe11c9fba34e7e509c",
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:f0cd683eba89fceef7e269a1c7fbf3ead041e2e66d4976e59eee70c9e9ad378e",
             "locator": {
               "kind": "file"
             }
@@ -78,8 +97,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
-            "content": "sha256:b8c7c756415ad8f589f7ce9f3df4d321e4cd54da524f15fe11c9fba34e7e509c",
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:f0cd683eba89fceef7e269a1c7fbf3ead041e2e66d4976e59eee70c9e9ad378e",
             "locator": {
               "kind": "file"
             }
@@ -93,8 +112,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
-            "content": "sha256:b8c7c756415ad8f589f7ce9f3df4d321e4cd54da524f15fe11c9fba34e7e509c",
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:f0cd683eba89fceef7e269a1c7fbf3ead041e2e66d4976e59eee70c9e9ad378e",
             "locator": {
               "kind": "file"
             }
@@ -108,12 +127,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
-            "content": "sha256:f99dee2daa7c12f714742a3d1e3cd1c2f61d619b732187ae057690e80770f581",
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
             "locator": {
-              "end": 5318,
+              "end": 6371,
               "kind": "line_range",
-              "start": 5309
+              "start": 6362
             }
           },
           "kind": "code"
@@ -125,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e6c25daf3eb9e6306f3d8198ce2108f26e7783b",
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
             "content": "sha256:c5db175a68c58fd0264dc35bea94d6a1bcf9ee7d37c4ad78247a36d6f565009a",
             "locator": {
               "kind": "symbol",
@@ -142,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e6c25daf3eb9e6306f3d8198ce2108f26e7783b",
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
             "content": "sha256:f8c97087b082cc61ff1dbc6f179a6ea20db12d8ff9422c20b48bb78de0686c1e",
             "locator": {
               "end": 135,

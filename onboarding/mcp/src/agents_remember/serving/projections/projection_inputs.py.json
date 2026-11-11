@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c24805fbc70e2548898568ec162737009c1bf601",
-        "content": "sha256:b62bf58d7d54176cbe990779da8891281adc9f0984d8e24aa0347fced92fbe8c",
+        "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+        "content": "sha256:6184881d3ef224de20764ed5dd58c33fc7e38d8bfa2363182a328f4739a17977",
         "locator": {
           "kind": "file"
         }
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "c24805fbc70e2548898568ec162737009c1bf601",
-        "content": "sha256:b62bf58d7d54176cbe990779da8891281adc9f0984d8e24aa0347fced92fbe8c",
+        "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+        "content": "sha256:6184881d3ef224de20764ed5dd58c33fc7e38d8bfa2363182a328f4739a17977",
         "locator": {
           "kind": "file"
         }
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "c24805fbc70e2548898568ec162737009c1bf601",
+        "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
         "content": "sha256:789ac37fb033896703cc84871be425a5a1daa3f8ce20458947d8c49fb956a9a6",
         "locator": {
           "kind": "symbol",
@@ -56,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "c24805fbc70e2548898568ec162737009c1bf601",
-        "content": "sha256:b62bf58d7d54176cbe990779da8891281adc9f0984d8e24aa0347fced92fbe8c",
+        "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+        "content": "sha256:6184881d3ef224de20764ed5dd58c33fc7e38d8bfa2363182a328f4739a17977",
         "locator": {
           "kind": "file"
         }
@@ -73,8 +73,8 @@
     },
     {
       "anchor": {
-        "blob": "c24805fbc70e2548898568ec162737009c1bf601",
-        "content": "sha256:b62bf58d7d54176cbe990779da8891281adc9f0984d8e24aa0347fced92fbe8c",
+        "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+        "content": "sha256:6184881d3ef224de20764ed5dd58c33fc7e38d8bfa2363182a328f4739a17977",
         "locator": {
           "kind": "file"
         }
@@ -90,8 +90,8 @@
     },
     {
       "anchor": {
-        "blob": "c24805fbc70e2548898568ec162737009c1bf601",
-        "content": "sha256:b62bf58d7d54176cbe990779da8891281adc9f0984d8e24aa0347fced92fbe8c",
+        "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+        "content": "sha256:6184881d3ef224de20764ed5dd58c33fc7e38d8bfa2363182a328f4739a17977",
         "locator": {
           "kind": "file"
         }
@@ -156,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c24805fbc70e2548898568ec162737009c1bf601",
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
             "content": "sha256:c764fe81c6219344b74013ef3bb25a11a92503228e4f3b24514e110856314936",
             "locator": {
               "kind": "symbol",
@@ -167,7 +167,7 @@
         },
         {
           "anchor": {
-            "blob": "c24805fbc70e2548898568ec162737009c1bf601",
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
             "content": "sha256:f03d24460a6c0b25e5a7bb5b94f9766207f3551155e27aa69f462d7a23da23e8",
             "locator": {
               "kind": "symbol",
@@ -178,7 +178,7 @@
         },
         {
           "anchor": {
-            "blob": "c24805fbc70e2548898568ec162737009c1bf601",
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
             "content": "sha256:c764fe81c6219344b74013ef3bb25a11a92503228e4f3b24514e110856314936",
             "locator": {
               "kind": "symbol",
@@ -189,7 +189,7 @@
         },
         {
           "anchor": {
-            "blob": "c24805fbc70e2548898568ec162737009c1bf601",
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
             "content": "sha256:f03d24460a6c0b25e5a7bb5b94f9766207f3551155e27aa69f462d7a23da23e8",
             "locator": {
               "kind": "symbol",
@@ -259,21 +259,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c24805fbc70e2548898568ec162737009c1bf601",
-            "content": "sha256:b62bf58d7d54176cbe990779da8891281adc9f0984d8e24aa0347fced92fbe8c",
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:5d6afa1edd0685b517f4bcb1577bc8a3709921b62e7e6cb0b6cc5c12f17b744b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RepoSurfaceReader"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c24805fbc70e2548898568ec162737009c1bf601",
-            "content": "sha256:5d6afa1edd0685b517f4bcb1577bc8a3709921b62e7e6cb0b6cc5c12f17b744b",
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:e95ca6ef4f2be52ec48402d13851e1fab71f1936509ae2d2f600bd963b24ffaa",
             "locator": {
               "kind": "symbol",
-              "name": "RepoSurfaceReader"
+              "name": "ProjectionInputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:7d8adfdb6418d0e64ef6c45a1c0fa71e0041a5e39dbd50db4efeb581d800baf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:6184881d3ef224de20764ed5dd58c33fc7e38d8bfa2363182a328f4739a17977",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -644,8 +644,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9a6ca2e4eba21a38fa2d8e13b6f1325f0efc234",
-            "content": "sha256:4a9647f5e0eaf574af5a618f6aeaa7dae3fe1b90454c815e0e89e96d3da1b79c",
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
             "locator": {
               "kind": "file"
             },
@@ -739,7 +739,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -790,7 +790,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
             "content": "sha256:589f2cf80782d37464131fb8068c59515ac08c384d15c0618850501e0161bff4",
             "locator": {
               "end": 73,
@@ -862,12 +862,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
             "content": "sha256:57b461db3dcb97557fa3361023f8de23e327901659cd1425b5889f368fd94649",
             "locator": {
-              "end": 73,
+              "end": 74,
               "kind": "line_range",
-              "start": 73
+              "start": 74
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -967,7 +967,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -1462,7 +1462,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
             "content": "sha256:589f2cf80782d37464131fb8068c59515ac08c384d15c0618850501e0161bff4",
             "locator": {
               "end": 73,
@@ -1599,7 +1599,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0705377736134c9767d83a7e83487069840a4592",
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
             "content": "sha256:527858aaaf2a6ebe16c028201fbd79c8c09ed72cf4237f0f087a999d6d5295c3",
             "locator": {
               "end": 25,
@@ -1678,7 +1678,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
             "content": "sha256:adb8bc6672eb5d8e744cb5cfce52ef86901751d39a8ae5772a2b985655ca8acc",
             "locator": {
               "end": 196,
@@ -1722,7 +1722,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
             "content": "sha256:6038be5814e8f452acee52a8e9f79ebec01003bfacf61434586409c39243e5d7",
             "locator": {
               "end": 112,
@@ -1766,12 +1766,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
-            "content": "sha256:355d2913057c37a8245b34894cb37b50443726aecdd92675b1000a05b5eed630",
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:3975ddc1f60620446aeac3015498f3a7bf168671a74106312224692c56a7b0a4",
             "locator": {
-              "end": 75,
+              "end": 76,
               "kind": "line_range",
-              "start": 75
+              "start": 76
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -2273,14 +2273,15 @@
       ]
     },
     "335": {
-      "note": "The server builds entries from authored documents and declared relations, independently binding worktrees.\n\nAnchor: `build_task_entries`",
+      "note": "The server builds entries from authored documents and declared relations, independently binding worktrees.",
       "targets": [
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:510623323eed533a9a5132dda425f0d11dcfeeb2aedc68924e039a62d60ebf87",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:8ca067a86d2ee83d9c1b56d58218d06b03dc5fe4f8d930335be216512b7848c0",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "build_task_entries"
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -2288,11 +2289,10 @@
         },
         {
           "anchor": {
-            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
-            "content": "sha256:613fe3ed19e28d70036cee9fdfa7e9139b0d357f28aba2346a9e61d6df6a2771",
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:6c429c875db19fdc9ee8d700401a84c60ec6f922410d1526babcd79dbdcc0f52",
             "locator": {
-              "kind": "symbol",
-              "name": "build_task_entries"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -2333,7 +2333,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4071c218f26dd0b00193f0d591f38519b84b260a",
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
             "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
             "locator": {
               "end": 58,
@@ -2580,8 +2580,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "610f911b67e24fbd4cc05a6a9fa4e0fae50ced2e",
-            "content": "sha256:092be61bbc689fe860e5718e42f2f01d020f0e6c9e8814b7d122ef33cd97e0ad",
+            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+            "content": "sha256:d20df717b378f566eed4a0b8759c045e05844f53711d396f36e5d77c8d44a2bb",
             "locator": {
               "end": 68,
               "kind": "line_range",
@@ -2688,7 +2688,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
             "content": "sha256:ccc8390918d834c06073f607a6aaf9bffcd58acbbe4d032ccd858b44c0690592",
             "locator": {
               "end": 88,
@@ -2977,16 +2977,16 @@
       ]
     },
     "365": {
-      "note": "Current capsule limits live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`, which the live budget guard enforces: role ceilings Architect 5,441 words; Manager 4,522; Curator 4,537; Reviewer 4,049; Bootstrap 4,000; other roles 3,722. Its current round-8 sub-record counts 34 capsules and 38 declared step details; declared step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,266 words against an equal 2,266-word ceiling. Exact-path limits carry the larger of the predecessor limit and the actual size, and new paths take their actual size. `capsule-budgets.json` is the frozen historical registry (D681/D682 figures); the guard checks its bytes by hash and still reads only its handover token budgets from it. These are stored declarations, not a new compilation or test run.",
+      "note": "Current capsule limits live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`, which the live budget guard enforces: role ceilings Architect 5,474 words; Manager 4,562; Curator 4,537; Reviewer 4,112; Bootstrap 4,000; other roles 3,742. Its current sub-record is `measuredCurrentRenewalWaitsAndCodingGuidelines`; the current measurements cover 34 capsules and 38 declared step details, declared step details have a 2,500-word ceiling, and the every-role digest measures 2,327 words against an equal 2,327-word ceiling. A limit rises to the actual size only where the actual size exceeds it. `capsule-budgets.json` is the frozen historical registry; the guard checks its bytes by hash and still reads only its handover token budgets from it. These are stored declarations, not a new compilation or test run.",
       "targets": [
         {
           "anchor": {
-            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
-            "content": "sha256:f99dee2daa7c12f714742a3d1e3cd1c2f61d619b732187ae057690e80770f581",
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
             "locator": {
-              "end": 5318,
+              "end": 6371,
               "kind": "line_range",
-              "start": 5309
+              "start": 6362
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
@@ -2994,12 +2994,12 @@
         },
         {
           "anchor": {
-            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
-            "content": "sha256:4b1885fa8d857b3d16689566ac3a51f71126997664a24b3733c493165b62e51f",
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:5564dd1bee04cc41fc567342a0aaf8ff0373ab568c48725432fe2dbb59df1054",
             "locator": {
-              "end": 4751,
+              "end": 6361,
               "kind": "line_range",
-              "start": 4743
+              "start": 6322
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
@@ -3007,12 +3007,12 @@
         },
         {
           "anchor": {
-            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
-            "content": "sha256:ea28febb5d3a24513ca9e517d91504d8a3846465f62439d0bfb43e4eaa445f50",
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:ae3e14fc87c83ab3e43b3323dcd28d144a54032b1733e1cca4c96821504beb0d",
             "locator": {
-              "end": 5025,
+              "end": 5481,
               "kind": "line_range",
-              "start": 5025
+              "start": 5481
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
@@ -3033,7 +3033,7 @@
         },
         {
           "anchor": {
-            "blob": "7e6c25daf3eb9e6306f3d8198ce2108f26e7783b",
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
             "content": "sha256:2fb05d08cfa4eb8da599b6c3fd9bcc24e545a5f6d9ac5646fbf6a2ba594ceb0c",
             "locator": {
               "end": 129,
@@ -3376,7 +3376,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
             "content": "sha256:0444cb8a8a73eb0a6819da8feda60678cb07f14a34b7b96efcb287a7e07f9276",
             "locator": {
               "end": 174,
@@ -3639,7 +3639,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
             "content": "sha256:81d7ff8fc8c18376dcadb68e747b9ee15ff4e928242e7fc0a8c710a84c89cb19",
             "locator": {
               "end": 55,
@@ -3774,7 +3774,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
             "content": "sha256:3b0c228ab352698cf746ed3ee50615da3a505370ac106c479079610e6fa0d5be",
             "locator": {
               "kind": "symbol",

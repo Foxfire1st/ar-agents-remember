@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
-        "content": "sha256:85e79187becdd644146a83bc7be1c9e55cd253f4ce275c1bb6d64f2e19f75fd2",
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:dc63de2522f1ac561f541ae7c2d3be17c4948cba8d8092507906642aec6141e0",
+        "locator": {
+          "kind": "symbol",
+          "name": "HOST_ACTIVITY_HOOKS"
+        }
+      },
+      "id": "RLZ-3QQ1Y5",
+      "invariant": "INV-2SNZPZ",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.5",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The 0.15 hook names the host-activity publisher listens on.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:a1a632794615dab7dff780d1278e0ffcd823c377afb2232d71a93767a82764b6",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +38,27 @@
     },
     {
       "anchor": {
-        "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
-        "content": "sha256:85e79187becdd644146a83bc7be1c9e55cd253f4ce275c1bb6d64f2e19f75fd2",
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:3096a7635d2c8e877b340a43d698b57006f6639c98f6881baea46d8b12f43fb4",
+        "locator": {
+          "end": 190,
+          "kind": "line_range",
+          "start": 190
+        }
+      },
+      "id": "RLZ-62NJVX",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "MIK-R60@v9.7",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Publishes the open wait per agent without touching state or eventAt.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:a1a632794615dab7dff780d1278e0ffcd823c377afb2232d71a93767a82764b6",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +74,8 @@
     },
     {
       "anchor": {
-        "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
-        "content": "sha256:7be4f5d0929f4322c0a4ff05d882687e9b1d241191174cc10430dd9e08886105",
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:2d6717f0724a29d94dedcfb9283e86124022f276f50527744b35f4314cfd88b3",
         "locator": {
           "kind": "symbol",
           "name": "HostActivityPublisher"
@@ -55,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
-        "content": "sha256:85e79187becdd644146a83bc7be1c9e55cd253f4ce275c1bb6d64f2e19f75fd2",
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:a1a632794615dab7dff780d1278e0ffcd823c377afb2232d71a93767a82764b6",
         "locator": {
           "kind": "file"
         }
@@ -69,6 +106,24 @@
       },
       "rationale": "The publication is written here, so both the completeness rule and the subagent facts are realized here.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:af09b043612cbf3744dc93871622238a9d03fc2fd52ae06ca4ec1a94e94536c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "registerHostActivityEvents"
+        }
+      },
+      "id": "RLZ-TY3FZ2",
+      "invariant": "INV-2SNZPZ",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.5",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Registers each hook with server.addHook.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -77,12 +132,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
             "content": "sha256:46f09631fe83ff27c8e641f6c2645b7a37306d573906f43f7fc7ba94b315b495",
             "locator": {
-              "end": 138,
+              "end": 143,
               "kind": "line_range",
-              "start": 96
+              "start": 101
             }
           },
           "kind": "code"
@@ -94,12 +149,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
-            "content": "sha256:36bc49ebe22f72a71be95d08297724854cd2b2d73a332a5e3e0e184477ffaa8a",
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:4312a771f3345a7d9dad094e444c67a2d42f08991e6ddc1ee7e649eade0ec5c4",
             "locator": {
-              "end": 177,
+              "end": 337,
               "kind": "line_range",
-              "start": 140
+              "start": 291
             }
           },
           "kind": "code"
@@ -111,12 +166,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
             "content": "sha256:e2c43e0d39c5ad7cbbb554f536c7124bee0ad338d0cc1ecca2208920e1150846",
             "locator": {
-              "end": 212,
+              "end": 232,
               "kind": "line_range",
-              "start": 184
+              "start": 204
             }
           },
           "kind": "code"
@@ -128,8 +183,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
-            "content": "sha256:85e79187becdd644146a83bc7be1c9e55cd253f4ce275c1bb6d64f2e19f75fd2",
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:a1a632794615dab7dff780d1278e0ffcd823c377afb2232d71a93767a82764b6",
             "locator": {
               "kind": "file"
             }
@@ -143,36 +198,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
             "content": "sha256:7429bf7c971a89a711bef8875b08d591a0179eccda5ad68d0c0152648b93aba5",
             "locator": {
-              "end": 38,
+              "end": 43,
               "kind": "line_range",
-              "start": 32
+              "start": 37
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
             "content": "sha256:12106014b1a9c8e85f5c88e609b9551f018668acbe6fea993a1d2a8fc4f4facd",
             "locator": {
-              "end": 457,
+              "end": 477,
               "kind": "line_range",
-              "start": 452
+              "start": 472
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
-            "content": "sha256:5d8d1c69d056e6764d21c877c202ccf544a1ab47d28527b7e1a3dd0d159887bf",
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:69a3b1116db63d6bb56133f6cf5ead1d860af823c1d18ae6fdc2458ca4d55c9b",
             "locator": {
-              "end": 506,
+              "end": 530,
               "kind": "line_range",
-              "start": 471
+              "start": 491
             }
           },
           "kind": "code"

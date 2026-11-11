@@ -63,12 +63,12 @@
         },
         {
           "anchor": {
-            "blob": "bc164a94462c83d4491167bce3b58a8ce7003b54",
-            "content": "sha256:dfc6d6ce8ef975fac5e82a30eacde63c043fb59fc573bd9e3068d3a448312071",
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:ea54a20c4095eea1da2102e9aa63897ba4cf05b3db6ffe71938faa3b1529da26",
             "locator": {
-              "end": 108,
+              "end": 113,
               "kind": "line_range",
-              "start": 73
+              "start": 75
             },
             "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },

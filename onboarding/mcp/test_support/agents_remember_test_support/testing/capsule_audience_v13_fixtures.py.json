@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01322ca33dd186fe19fcccab405ab30a611a9bef",
-            "content": "sha256:c7353b5ba8dbdc97f938f82d56f948e14d9de36fa192bafd8b2135a4c451fc01",
+            "blob": "90b6cf7f44f028f14437706319906e5553901024",
+            "content": "sha256:92b3ec32ccf1900f9678ee7ce368257f49346cfd4f5a449345b1ce5e943aa008",
             "locator": {
               "kind": "file"
             }
@@ -22,7 +22,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01322ca33dd186fe19fcccab405ab30a611a9bef",
+            "blob": "90b6cf7f44f028f14437706319906e5553901024",
             "content": "sha256:a81ee146d660eac4d56a8e0d8822cbf9746e76c315c8e62b3825f43983f6edc5",
             "locator": {
               "kind": "symbol",
@@ -34,12 +34,12 @@
       ]
     },
     "3": {
-      "note": "Each admitted short-rule span must occur once and is replaced by its earlier text.",
+      "note": "Each admitted short-rule span must occur once and each admitted tool-name or catalog-drop span at most once, and each is replaced by its earlier text.",
       "targets": [
         {
           "anchor": {
-            "blob": "01322ca33dd186fe19fcccab405ab30a611a9bef",
-            "content": "sha256:47f7f857970f375816dd924504556c22ad1df9e763e06e18c30e7692c2e64920",
+            "blob": "90b6cf7f44f028f14437706319906e5553901024",
+            "content": "sha256:7b1ff962852f3a48ee8199f15783e3dd0600b2db45783899b6929d8f06bb3187",
             "locator": {
               "kind": "symbol",
               "name": "inverse_v13_short_rules"
@@ -54,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01322ca33dd186fe19fcccab405ab30a611a9bef",
+            "blob": "90b6cf7f44f028f14437706319906e5553901024",
             "content": "sha256:e7315cc84a0ff6c6864cb65c0e331738097914670103cae4ce8fc6cdfaf623de",
             "locator": {
               "kind": "symbol",

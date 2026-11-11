@@ -16,29 +16,29 @@ heads were restored when deterministic authority is absent or incomplete.
 
 `finalize_sync` re-reads and validates the contract and completed work branches, writes the new base
 pair plus sync log including actual `codeHeadTo`/`memoryHeadTo` produced heads for landing-chain merge admission, publishes the terminal journal first, then removes temporary worktrees and refs, and
-finally (since MIK-R08) returns the completed result through `with_recomputed_worklist`.
+finally returns the completed result through `with_recomputed_worklist`. What it writes comes from the source strategy (`sync_source_strategy`): a repository-default sync keeps the base pair and writes only its sync-log entry, which also names the source branches and incoming tips; the entry is appended once, because an entry a dead finalization already wrote is recognised as this generation's own (`finalized`, through `owns_log_entry`).
 `_require_completed_branches` proves each final branch head is the exact operation-created head, and
 performs no ledger re-judgement: a completed memory side is proved as Git history, and the derived
 `memory.md` it carries is left to the projection that rebuilds it.
-`completed_sync_result` reconstructs success and distinguishes a current pair from moved-again or
-explicit memory-skipped outcomes. `cancel_sync` first proves all-side ownership, then publishes cancelling, rolls back operation-owned output, returns every parked candidate, proves original contract bases, publishes cancelled and retires its stashes and authority.
+The completed answer comes from `completed_sync_result` in `sync_transaction_completion`, which reconstructs success and distinguishes a current pair from moved-again or
+explicit memory-skipped outcomes; "moved again" is read against the source branches the sync recorded, and a repository-default pass says the worktree carries that line with the pair unchanged and answers `syncSource`. `cancel_sync` first proves all-side ownership, then publishes cancelling, rolls back operation-owned output, returns every parked candidate, proves original contract bases, publishes cancelled and retires its stashes and authority. For a repository-default generation `_cancelled_contract` removes only the sync-log entry that generation wrote and never changes the pair.
 
-**A completed sync recomputes the leaf's worklist (MIK-R08 rule 8, architect ruling 1).** The sync moved
-the base pair, so B and K_B moved with it. `with_recomputed_worklist(result, contract)` calls
+**A completed sync recomputes the leaf's worklist.** A sync on the contract's own line moved
+the base pair, so B and K_B moved with it (a repository-default sync keeps the pair). `with_recomputed_worklist(result, contract)` calls
 `recompute_knowledge_worklist(contract)` and, when it returns a summary, sets
 `result.payload["knowledgeWorklist"]`; otherwise the result is untouched. `recompute_knowledge_worklist`
 looks up the bound `WorktreeServices.knowledge_worklist` port, reloads the contract (which now holds the new
 base pair) and calls `port.recompute`. The port lookup, the reload and the recompute sit inside one guard:
 an unbound bundle or port, or **any** exception, returns `None`. Both `finalize_sync` and the `continue`
 replay of a completed generation (`sync_transaction_results.terminal_resolution_replay`) use it, so both
-report the worklist of the base pair the sync wrote. Since MIK-R66 the completed result also carries the
-journaled crossing summaries (`successful_crossings`): the same `crossing_summary` view the resolution
+report the worklist of the base pair the sync wrote. The completed result also carries the
+journaled crossing summaries (`successful_crossings` in `sync_transaction_completion`): the same `crossing_summary` view the resolution
 response carries, so a successful sync reports its report identity and alignment counts too.
 
 Unreadable or identity-invalid journals fail closed until explicit cancel. Cancellation first
 archives exact raw bytes or an opaque nonregular entry. With no refs it writes terminal quarantine
 and explicitly makes no heads-restored claim. With refs it reconstructs complete sides, proves
-rollback, and cancels; partial authority restores only complete provable sides and returns bounded
+rollback, and cancels; a default-source ref marks the rebuilt record as a repository-default generation, so that cancel deletes that ref too, and the partial-authority path deletes it as well; partial authority restores only complete provable sides and returns bounded
 manual-repair evidence for what remains. Missing journals follow the same ref-proof path. Terminal
 cleanup is idempotent and republishes strict bytes after residue removal.
 
@@ -50,14 +50,14 @@ After all sides are proven, cancellation publishes cancelling, discards only att
 
 Archive evidence is preserved before repair. Manual repair payloads expose contract bases, observed
 worktree/branch/MERGE_HEAD/ref facts, required proof checks, and the exact retry call, but no private
-ambient inference.
+ambient inference. `manual_repair_result` answers the phase and the cancel arguments, and an `omissions` block when its caller passes one.
 
 ### Invariants And Boundaries
 
 - Terminal journal publication precedes deletion of recovery authority.
 - The completed-branch proof is a Git proof: it never re-reads, or requires rows from, the ledger a
   completed memory side carries.
-- Cancellation restores pinned pre-sync state; it may undo only the unfinished generation's proven finalized pair and exact trailing sync-log heads. Unrelated contract changes still refuse.
+- Cancellation restores pinned pre-sync state; it may undo only the unfinished generation's proven finalized pair and exact trailing sync-log heads. Unrelated contract changes still refuse. A repository-default generation never moved the pair, so cancel removes only its own trailing sync-log entry.
 - Corrupt evidence is archived before quarantine or ref-based rollback.
 - No-refs quarantine means usable terminal sync state, not a false rollback-success claim.
 - Partial authority is preserved for manual repair; incomplete refs are not deleted wholesale.

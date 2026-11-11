@@ -151,8 +151,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
               "kind": "file"
             },
@@ -163,14 +163,15 @@
       ]
     },
     "17": {
-      "note": "**The check that a record describes *this* generation, which is what makes a foreign record `unavailable` instead of a measurement.**\n\nAnchor: `rebinding_names_the_generation`",
+      "note": "**The check that a record describes *this* generation, which is what makes a foreign record `unavailable` instead of a measurement.**",
       "targets": [
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:2041778e24d3e02e388ff1e8c53a0f38eb01389f038d9122d50d5a5a04432bc1",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:43e97bbfff8c9ea5f5a60f7d2d5bc0151c22f923c0099b7c145be087275ad862",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "rebinding_names_the_generation"
             },
             "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
           },
@@ -178,11 +179,10 @@
         },
         {
           "anchor": {
-            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
-            "content": "sha256:43e97bbfff8c9ea5f5a60f7d2d5bc0151c22f923c0099b7c145be087275ad862",
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
-              "kind": "symbol",
-              "name": "rebinding_names_the_generation"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
           },
@@ -497,14 +497,15 @@
       ]
     },
     "25": {
-      "note": "The sync tool's projection point, where the write half is attached after the Git work has finished.\n\nAnchor: `worktree_sync_tool`",
+      "note": "The sync tool's projection point, where the write half is attached after the Git work has finished.",
       "targets": [
         {
           "anchor": {
-            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
-            "content": "sha256:bbb78251410816eadf042a2a830aa80b49cba552da4ddedc15da284b6fb36888",
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "worktree_sync_tool"
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -512,11 +513,10 @@
         },
         {
           "anchor": {
-            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
-            "content": "sha256:8e0d747e51053cb3f8f394cc56e2231d82dc661c50824500a0efd4ed322b4af4",
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_sync_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

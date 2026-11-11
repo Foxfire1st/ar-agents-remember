@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**The memory-quality run on a converted memory tree (MIK-R24 rule 5).** A converted card has no metadata
+**The memory-quality run on a converted memory tree.** A converted card has no metadata
 table, no Update History and no citation tables, so the checks that read those have nothing to check.
 Currentness comes from anchors instead, so the integrity slot runs the knowledge validator plus the
 stale-reference report. `memory_quality/check.run_memory_quality_check` dispatches here when the tree
@@ -29,13 +29,14 @@ The converted check optionally joins landing observations to `reportOnlyFindings
 
 - `converted_knowledge_check(memory_root, code_root, *, base=None)` validates the working tree
   (`validate_tree`) against the supplied source reader. A direct `Path` input uses `CodeDirectory`; full quality dispatch supplies `QualitySourceFiles`. Its K_B comes from `_comparison_bases`:
-  without a `base` port, the repository's converted `HEAD` when it has one (`_committed_base`); with one
-  (L37 review R3-1), whatever the `KnowledgeBasePort` returns, which the application binds to `HEAD` or, when
-  `HEAD` is unconverted, to its conversion from the shared converted-base cache (MIK-R24 rule 7). A base the
+  without a `base` port, the repository's converted `HEAD` when it has one (`_committed_base`); with one,
+  whatever the `KnowledgeBasePort` returns (the converted bases, `HEAD` first and during a merge
+  `MERGE_HEAD` too, each kept only when converted), which the application binds to `HEAD` or, when `HEAD` is
+  unconverted, to its conversion from the shared converted-base cache. A base the
   port cannot build is one refusing finding, `R24.7-converted-base` at `knowledge/layout.json`
   (`_unbuildable_base`), never a comparison against nothing. The base decides only the base-dependent
   `R22.6-anchor-path` refusal; `R198.1-reference-anchor` is base-independent, so a carried anchor whose
-  blob or content identity does not hold at the paired code tree is a finding (MIK-R198 rule 5).
+  blob or content identity does not hold at the paired code tree is a finding.
   Refusing violations are findings, stale reference anchors among them; validator reports are
   report-only. The check name is `knowledge.converted`, and the
   result also carries the reference state counts.
@@ -53,7 +54,7 @@ The converted check optionally joins landing observations to `reportOnlyFindings
 ### Invariants And Boundaries
 
 - A stale reference anchor is a finding here, the validator's `R198.1-reference-anchor` refusal; `citation_fix` or curator re-authoring refreshes it.
-- `ok` is exactly `not findings`; stale reference anchors change it, and only landing observations stay report-only. Historical run counts are not a measurement of this candidate.
+- `ok` is exactly `not findings`; stale reference anchors change it, and only landing observations stay report-only.
 
 ### Todos
 
@@ -64,11 +65,9 @@ None recorded.
 ### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
-`260928_maintained-invariant-knowledge` (with the architect rulings in the task's leaf document
-`24_conversion-and-boundary-crossing.json`) and the coordination-root note Doc14
-(`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
-code and memory repositories, so they are named here and not cited as rows.
+`Domain Documentation` entries). The design authority is the conversion and boundary-crossing requirement with its architect rulings in the task
+records, and the coordination-root note on the text-canonical knowledge layout; they live outside the code and
+memory repositories, so they are not cited as rows.
 
 No configured live documentation source was available for this pass.
 

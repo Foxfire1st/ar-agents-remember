@@ -152,8 +152,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
-            "content": "sha256:32588e1f8d8cb2f22e4ca3342630f20ef0e26ae0e75b071854362bb7155471f3",
+            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+            "content": "sha256:d7a9af76297cafb27a49e8e96a65f8eb12f8f888f8a1fae438ee25e57b490bc3",
             "locator": {
               "kind": "symbol",
               "name": "test_a_worker_hands_its_frozen_report_directly_to_the_reviewer"
@@ -169,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24097f68edf03ae3a3644ac6a62383cb17c0f0f5",
+            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
             "content": "sha256:7bc2ba3197ef6a4994f23c6570f2f1b152d10166661a59d92562744ea86b244e",
             "locator": {
               "kind": "symbol",

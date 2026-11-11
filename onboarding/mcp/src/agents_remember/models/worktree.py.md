@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Strict sync projections include optional validationRefusal and crossing, preserving refusal/conflict answers.
+Strict sync projections include optional validationRefusal and crossing, preserving refusal/conflict answers. `SyncResolutionInput` carries one sync call's choices: the `action` (`continue`/`cancel`) for a retained conflict and the optional `source` (`repository-default` pulls each repository's default branch; `None` is the contract's own source line). `WorktreeSyncResponse` also declares optional `syncSource`, `sources` (per side a `SyncSourceProjection`: the resolved branch and its tip) and `omissions` (a `SyncOmissionsProjection`: the side, the report path and the omission counts; a resumed resolution carries only the side, the report and the count still outstanding), and its `invalidField` can name `sync_source`.
 
 ## Code Commentary
 
@@ -15,7 +15,7 @@ Strict sync projections include optional validationRefusal and crossing, preserv
 WorktreeSummary is the strict context summary, distinct from flexible command envelopes. Its optional taskDocumentCopies string carries a notice only when the copy checker emits one. Absence means no notice, not exhaustive byte equality or acceptance of every copy. Existing state and source-lineage fields retain their own domain meanings.
 
 > **Retained historical source account — superseded by the current contract:**
-> `WorktreeSummary` is the strict context-packet shape for the `c-09-git-worktree-manager` lifecycle. Its vocabulary fields are typed, and the shared wire vocabularies are declared in this module — except the memory mode, which is imported from the kernel. `WorktreeState` is the one alias still declared here. The command response models remain flexible because worktree service results can carry operation-specific planning and closeout fields.
+> `WorktreeSummary` is the strict context-packet shape for the `c-09-git-worktree-manager` lifecycle. Its vocabulary fields are typed, and the shared wire vocabularies are declared in this module — except the memory mode, which is imported from the kernel. The command response models remain flexible because worktree service results can carry operation-specific planning and closeout fields.
 
 > **Retained historical source account — superseded by the current contract:**
 > Where each vocabulary is declared: `workflowKind` is `WorkflowKind` (`chat-task`/`light-task`); `memoryMode` is `ReadableMemoryMode` (`external`/`disabled`), imported from `kernel.memory_mode` — the readable vocabulary, not the startable one, so an existing contract that carries the removed `disabled` mode is shown as it is today; `humanReviewStatus`, `closeoutStatus` (imported as the published wire name `LifecycleStatus`), `integrationStatus` (now incl. `checkpointed`), `cleanup`, `phase` (`WorktreePhase`, 8 members), `nextOperation`, `nextTool`, and `state` (`WorktreeState`, local on purpose: `application.worktree_status` constructs this model directly and is its sole writer).
@@ -57,13 +57,15 @@ The following source-backed definitions and producer seams retain the broader re
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** SyncResolutionProjection describes agent-owned side/worktree/files and wipRestore without deciding conflict content. [120]
 
-- **Retained historical source account — superseded by the current contract:** SyncResolutionInput admits only its declared optional action. [121]
+- SyncResolutionInput admits only its declared optional action and source. [121]
+
 - **Retained historical source account — superseded by the current contract:** WorkflowKind is the shared chat-task/light-task wire vocabulary. [122]
 - **Retained historical source account — superseded by the current contract:** The guidance module imports NextOperation, NextTool and WorktreePhase from the model and obtains guidance by calling lifecycle_guidance(contract). Recovery aliases remain separate. [123]
 
 - **Retained historical source account — superseded by the current contract:** TaskDocResponse is a ToolResponse rather than a WorktreeCommandResponse and declares nextTool as str or None; the worktree roster validator does not govern this class.
 
-- **Retained historical source account — superseded by the current contract:** worktree_sync_tool admits its configured contract, delegates to the worktree manager and forwards resolution.action as resolution_action. [125]
+- worktree_sync_tool admits its configured contract, delegates to the worktree manager and forwards resolution.action as resolution_action and resolution.source as sync_source. [125]
+
 - **Retained historical source account — superseded by the current contract:** SourceLineageEdge, SourceLineageRecovery and SourceLineageProjection expose the typed source-lineage boundary. [126]
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** WorktreeSummary is the strict context-packet shape with typed lifecycle and worktree vocabulary fields. [127]
@@ -137,7 +139,7 @@ The following source-backed definitions and producer seams retain the broader re
 
 ## 260928-MIK-L198 — the response envelope names the outside scratch root
 
-`WorktreeCommandResponse` gains two optional fields: `outsideScratch`, naming the outside scratch root an ending removed or left with its reason, and `outsideScratchReconcile`, carrying the sweep that ran beside the answer. Both default to `None`, so an operation that touched no root omits them and no existing response changes shape.
+`WorktreeCommandResponse` has two optional fields: `outsideScratch`, naming the outside scratch root an ending removed or left with its reason, and `outsideScratchReconcile`, carrying the sweep that ran beside the answer. Both default to `None`, so an operation that touched no root omits them and no existing response changes shape.
 
 - Strict context-packet shape incl. readable `memoryMode`  Anchor: `WorktreeSummary` [114]
 
@@ -166,7 +168,7 @@ The following source-backed definitions and producer seams retain the broader re
 - **Retained historical source account — superseded by the current contract:** WorktreeCommandResponse declares the next-move triple: nextAction, nextTool and nextArgs.  Anchor: `WorktreeCommandResponse` [147]
 
 
-- **Retained historical source account — superseded by the current contract:** WorktreeCommandResponse declares the next-move triple, while WorktreeSyncResponse and WorktreeOperationControlResponse narrow nextTool.  Anchor: `WorktreeCommandResponse` `WorktreeSyncResponse` `WorktreeOperationControlResponse` [163]
+- WorktreeCommandResponse declares the next-move triple, while WorktreeSyncResponse and WorktreeOperationControlResponse narrow nextTool. [163]
 
 
 - WorktreeSummary is the strict context summary, distinct from flexible command envelopes. Its optional taskDocumentCopies string carries a notice only when the copy checker emits one. Absence means no notice, not exhaustive byte equality or acceptance of every copy. Existing state and source-lineage fields retain their own domain meanings. [164]

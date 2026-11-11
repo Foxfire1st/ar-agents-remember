@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f498cb202266eae5d69227b1dbe954dce990b22",
-            "content": "sha256:4c54d152f86910ab315f18faff6a9c2ec182afe9273095fb217583d23833432e",
+            "blob": "286fda06b2c638a72f1bf20a62494fc594734ca0",
+            "content": "sha256:9bf5a63fb945c740e2f23e5e447be5cab836b62c71950b5ce99a76ce14fc424b",
             "locator": {
               "kind": "symbol",
               "name": "ROLE_POINTER_ACTIONS"
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f498cb202266eae5d69227b1dbe954dce990b22",
-            "content": "sha256:e50a132f5c1f1cc9758407411940acffa41115c6f335e24f4e489a38ec086776",
+            "blob": "286fda06b2c638a72f1bf20a62494fc594734ca0",
+            "content": "sha256:9655acd2ff892398e4e47cf94d64ba68bd13619d5b082e99a42eb838a11ee29f",
             "locator": {
               "kind": "file"
             }
@@ -38,7 +38,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f498cb202266eae5d69227b1dbe954dce990b22",
+            "blob": "286fda06b2c638a72f1bf20a62494fc594734ca0",
             "content": "sha256:6213f6a1ca7c3cfc20bec23f4af05f3c3b5041f7e6502b85778cf54f767c90e7",
             "locator": {
               "kind": "symbol",
@@ -54,8 +54,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f498cb202266eae5d69227b1dbe954dce990b22",
-            "content": "sha256:e50a132f5c1f1cc9758407411940acffa41115c6f335e24f4e489a38ec086776",
+            "blob": "286fda06b2c638a72f1bf20a62494fc594734ca0",
+            "content": "sha256:9655acd2ff892398e4e47cf94d64ba68bd13619d5b082e99a42eb838a11ee29f",
             "locator": {
               "kind": "file"
             }
@@ -69,8 +69,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f498cb202266eae5d69227b1dbe954dce990b22",
-            "content": "sha256:e50a132f5c1f1cc9758407411940acffa41115c6f335e24f4e489a38ec086776",
+            "blob": "286fda06b2c638a72f1bf20a62494fc594734ca0",
+            "content": "sha256:9655acd2ff892398e4e47cf94d64ba68bd13619d5b082e99a42eb838a11ee29f",
             "locator": {
               "kind": "file"
             }

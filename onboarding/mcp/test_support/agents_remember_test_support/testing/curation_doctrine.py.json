@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+        "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
         "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+        "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
         "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+        "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
         "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,25 @@
     },
     {
       "anchor": {
-        "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+        "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+        "content": "sha256:3659fd2d0978bf74bc0402c6b69bea03dd81b2c7c2e6765977a54c8bd65a88ff",
+        "locator": {
+          "kind": "symbol",
+          "name": "CURATION_POLICY_STATEMENTS"
+        }
+      },
+      "id": "RLZ-JGHMRV",
+      "invariant": "INV-GWA6VR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v7.1-2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Requires each Curator pointer sentence to name the AR tool it asks for, so a role text that drops the tool name fails the corpus guard.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
         "content": "sha256:8f981c11f1290686733d9086a5107bdf08e1dfc3328aa7937b4143a226db6598",
         "locator": {
           "end": 571,
@@ -81,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
             "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
             "locator": {
               "kind": "symbol",
@@ -97,8 +115,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
-            "content": "sha256:261b62cab695890333ccdcc5fde705a49532d741ccda1d4d049b5a3a18246c87",
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:3659fd2d0978bf74bc0402c6b69bea03dd81b2c7c2e6765977a54c8bd65a88ff",
             "locator": {
               "kind": "symbol",
               "name": "CURATION_POLICY_STATEMENTS"
@@ -113,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
             "content": "sha256:80e23f169ad36abba8bc3cc96a01cb023726735e99839b386125c1821c2b0461",
             "locator": {
               "kind": "symbol",
@@ -129,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
             "content": "sha256:debeac8cac97a796bf8a8abb553c6449ce20d0ebe002c6f53f4f7a95202fdee2",
             "locator": {
               "kind": "symbol",
@@ -178,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
             "content": "sha256:47e847ec3a92737fe465f022a2037299013b89d5f11fe48345571a8a93b54840",
             "locator": {
               "kind": "symbol",
@@ -194,8 +212,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
-            "content": "sha256:261b62cab695890333ccdcc5fde705a49532d741ccda1d4d049b5a3a18246c87",
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:3659fd2d0978bf74bc0402c6b69bea03dd81b2c7c2e6765977a54c8bd65a88ff",
             "locator": {
               "kind": "symbol",
               "name": "CURATION_POLICY_STATEMENTS"
@@ -210,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b2f17f7209f3dfb86fdb18267b2b2acccaece4e",
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
             "content": "sha256:debeac8cac97a796bf8a8abb553c6449ce20d0ebe002c6f53f4f7a95202fdee2",
             "locator": {
               "kind": "symbol",

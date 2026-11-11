@@ -11,7 +11,7 @@ The dashboard's stand-in for the server: one `WorkspaceProjection` payload shape
 TypeScript mirror against the sample), `test/fixtures/wire.ts` (which takes retained builder
 bases from it), and `data/store.test.ts`.
 
-Task entries carry native identity, stage/activity, ordered child keys, counts, nested summaries and bound worktrees. Optional reader, completion, dependency and graph values remain hand-authored shape examples, not native finalization, dependency resolution or scheduling proof.
+Task entries carry native identity, stage/activity, ordered child keys, counts, nested summaries and bound worktrees. The first sample task is a waiting master (`activity: "waiting"` with one `waitingSeats` row for a manager seat that waits for both subagents and background, with a check due), and the sampled `taskCounts` count it under `waiting`, so the generated waiting fields are sampled. Optional reader, completion, dependency and graph values remain hand-authored shape examples, not native finalization, dependency resolution or scheduling proof.
 
 **It is NOT generated.** This file is a hand-maintained sample. The TypeScript mirror it is checked
 against is generated and stale-checked from the Pydantic projection schema, so sample coverage and

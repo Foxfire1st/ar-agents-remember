@@ -22,7 +22,7 @@ Wide Operations columns use saved widths and give a hidden sidebar's width to th
 
 The shell publishes the shown page and repository for tray provenance and filing scope: Review names its repository, Operations names the viewed document's repository, and File Viewer leaves repository publication to its own owner. The Tray button is outside the four-view tab group, and the page-wide tray layer is outside the railed body.
 
-TopBar consumes served counts and ordered queue state, shows waiting only when nonzero, and names unavailable host activity. It renders the serving-build stamp owned by `serving-build-stamp/ServingBuildStamp.tsx`; a serving build mismatch is a diagnostic tooltip there. EffectsToggle updates local effects state/storage; shared animation and boot state remain separate owners. Task selection and the Engine Room stable-empty process fallback remain separate projections. [69] [70] [71] [94]
+TopBar consumes served counts and ordered queue state. Its task-count line comes from `topBarCountsLine` in `topBarCounts.ts`: it adds a `waiting` count only when a task waits, and drops the works, waiting and paused words while host activity is unknown, naming that unavailability once; the attention chip (`⚠ N waiting`) draws only when the queue is nonempty. It renders the serving-build stamp owned by `serving-build-stamp/ServingBuildStamp.tsx`; a serving build mismatch is a diagnostic tooltip there. EffectsToggle updates local effects state/storage; shared animation and boot state remain separate owners. Task selection and the Engine Room stable-empty process fallback remain separate projections. [69] [70] [71] [94]
 
 ## Evidence
 
@@ -60,7 +60,7 @@ No configured domain documentation; source owners support this current account.
 
 
 
-- The header uses shared labels for served taskCounts, omits works/paused words when host observation is unknown, and reports host activity unavailable once rather than drawing an unknown-count bucket. [94]
+- The header's count line uses shared labels for served taskCounts, adds a waiting count only while a task waits, omits works, waiting and paused words when host observation is unknown, and reports host activity unavailable once rather than drawing an unknown-count bucket. [94]
 
 
 

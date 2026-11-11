@@ -52,5 +52,17 @@ No pair is invented to fill the gap and no second route re-reads the record.
 ### The workflow gate
 
 `landing_workflow` reads the one value that governs the repository's code and memory pair from that
-pair's memory settings. A series whose memory worktree is unknown, absent or still on markdown
-settings lands locally: a missing key means `local`, and this proof never invents a workflow.
+pair's memory settings. A contract that has a memory worktree reads `system/settings.json` there
+(`parse_landing_settings`). A series contract has no memory worktree of its own, so
+`_branch_landing_workflow` reads the same file as a Git object at the tip of the series' memory work
+branch, with no checkout. A series whose memory repository or work branch is unknown or does not
+resolve, whose settings file is absent at that tip, or that is still on markdown settings lands
+locally: a missing key means `local`, and this proof never invents a workflow. An unresolved branch
+is left to the chain proof to refuse in its own words. A settings file that is present but is not
+valid JSON, or that names a workflow this product does not implement, is refused at the parse
+exactly as the worktree read refuses it, and never reads as `local`.
+
+The gate above belongs to the rule in this file only. The chain proof separately admits a published
+pull-request merge by its exact shape (`_published_landing` in `series_merge_admission.py`), with no
+workflow and no authority record, so under `local` this rule admits nothing while that shape check
+still recognises a merge that published one recorded landing.

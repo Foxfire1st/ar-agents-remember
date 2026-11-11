@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
         "content": "sha256:a801839c908a1556102e5b810654315d8fd55ec1bc2e0c7936d1c87416e36d9a",
         "locator": {
           "end": 17,
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
-        "content": "sha256:9d53d054f96ed5825a90c34ec46af97b615b2b10a9f56215e79e428d79f509ce",
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:d93f0f515c2ea493d145d063ee7e6b98a7a555cf1b6298f28ef5ffbcb4fc684a",
         "locator": {
           "kind": "file"
         }
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
         "content": "sha256:8d5cece31a056c6dfee460571a08b10320d084ffcd3d9689f2665073898b505e",
         "locator": {
           "end": 43,
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
         "content": "sha256:504a3d76f4d3082d9e46f23392ddd2feb9cfa1e10871342fd207c591d4839ac3",
         "locator": {
           "end": 124,
@@ -77,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
-        "content": "sha256:9d53d054f96ed5825a90c34ec46af97b615b2b10a9f56215e79e428d79f509ce",
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:d93f0f515c2ea493d145d063ee7e6b98a7a555cf1b6298f28ef5ffbcb4fc684a",
         "locator": {
           "kind": "file"
         }
@@ -94,8 +94,27 @@
     },
     {
       "anchor": {
-        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
-        "content": "sha256:1e02634cecb808b144f41c7a79412e5269aad2fade9577bcc56a8a4542989cd2",
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:0b5793a5eed7f39d50472afc02642112829537759300ebe9e0997e4415bf22ba",
+        "locator": {
+          "end": 106,
+          "kind": "line_range",
+          "start": 106
+        }
+      },
+      "id": "RLZ-PGN9GF",
+      "invariant": "INV-K48GZ2",
+      "origin": {
+        "handoffEntry": "MIK-R60@v8.6",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The authored source of that digest line (unit AU10.3).",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:01ae3bdc5473b0963bfe36428c2ea853518d8a651e0451e04c61bad822ffb2e0",
         "locator": {
           "end": 108,
           "kind": "line_range",
@@ -108,13 +127,13 @@
         "handoffEntry": "L62-CUR-6414-continuation",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "The shared handover-and-wait section bans watchers, polling and timer loops for every role, and states native helper collection within the turn and the declared ACP helper wait with its progress check and no parent progress message.",
+      "rationale": "The shared handover-and-wait section bans watchers, polling and timer loops for every role, and states native helper collection within the turn and, on any harness, the declared helper wait (`WAITING FOR SUBAGENTS:`) and background-process wait (`WAITING FOR BACKGROUND:`) with their `check in <N> minutes` check (1 to 30, default 3), no parent progress message, and that a declared wait is not a silent end.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
-        "content": "sha256:9d53d054f96ed5825a90c34ec46af97b615b2b10a9f56215e79e428d79f509ce",
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:d93f0f515c2ea493d145d063ee7e6b98a7a555cf1b6298f28ef5ffbcb4fc684a",
         "locator": {
           "kind": "file"
         }
@@ -130,8 +149,8 @@
     },
     {
       "anchor": {
-        "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
-        "content": "sha256:770dca9b9df063334899eea2f18f89454690f1083ee6d307afa918d10e6b8513",
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:0b5793a5eed7f39d50472afc02642112829537759300ebe9e0997e4415bf22ba",
         "locator": {
           "end": 106,
           "kind": "line_range",
@@ -154,7 +173,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
             "content": "sha256:8225c6fb00b3dc55bfbac8431ef07d9a5b44597bd060bf433c2d006ff44ebe80",
             "locator": {
               "end": 27,
@@ -171,7 +190,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4cac005f50cd39fcbe2cba32e2808dde16cfcc8",
+            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
             "content": "sha256:88dd1ddd5da803a340087dbb72957ffdc9c23004c057c3ca51cd4e0b9de78bdc",
             "locator": {
               "end": 140,

@@ -208,7 +208,7 @@ be the wrong fix. `mcp/tests/test_worktree_status_terminal_next_tool.py` drives 
 - The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move.  Anchor: "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" [12]
 
 
-- **Retained historical source account — superseded by the current contract:** `SyncOperationProjection` is an explicit optional field on the context-facing worktree model. [3]
+- `SyncOperationProjection` is an explicit optional field on the context-facing worktree model. [3]
 
 
 - **Retained historical source account — superseded by the current contract:** `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. [9]

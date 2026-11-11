@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The criterion, the doctrine pointer, the Reviewer role text and the verdict tables are four files that must agree, so one statement keeps every code review checking changed lines against the coding guidelines."
+  },
+  "applicability": "The Reviewer's review of any code change in a repository whose memory layer carries system/coding-guidelines.md.",
+  "conditions": [
+    "The memory root is reachable as workspace.memoryRoot and the file exists.",
+    "The change adds or alters lines in source code, tests or product messages."
+  ],
+  "exclusions": [
+    "A repository without the file, where the criterion reads nothing.",
+    "Instruction texts, which the Reviewer checks against the skill-writing guidelines instead."
+  ],
+  "id": "INV-42NQQG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/260928-MIK-L60-evidence/freeze2/partE (texts before and after, rendered Reviewer capsule); freeze 2's verdict runs CS-7"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v10.1-4",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Code-seam criterion CS-7 checks every line a candidate adds or alters in source code, tests and product messages against system/coding-guidelines.md under workspace.memoryRoot, where it exists, including Source Comment Scope with its bounded L<leaf>-R<n>/L<leaf>-S<n> exception; doctrine D-6 is reduced to a pointer to CS-7; the Reviewer reviews code against the coding guidelines and instruction texts against the skill-writing guidelines, in two sentences; every verdict table carries a CS-7 row.",
+  "status": "proposed",
+  "supersedes": []
+}

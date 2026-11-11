@@ -1,13 +1,33 @@
 {
   "path": "skills/l-01-agent-lifecycles/criteria/doctrine.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4728c8b76220f20c2df94aba239de9167c7977ae",
+        "content": "sha256:2e70e85a3990878db1f504e05170e0719403c8bd7bd373eb13bda95b267b700e",
+        "locator": {
+          "end": 33,
+          "kind": "line_range",
+          "start": 33
+        }
+      },
+      "id": "RLZ-0YWAAA",
+      "invariant": "INV-42NQQG",
+      "origin": {
+        "handoffEntry": "MIK-R60@v10.1-4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "D-6 now points to CS-7 instead of restating the check.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "Canonical doctrine source binds its review through the Reviewer table and the shared catalog rules.",
       "targets": [
         {
           "anchor": {
-            "blob": "77a79bf45a97634bd9f3182dd16d99236493da4d",
+            "blob": "4728c8b76220f20c2df94aba239de9167c7977ae",
             "content": "sha256:b11038435b45913a12abd38565a6f36db84252243c5b417cb8b1669564c75c0d",
             "locator": {
               "end": 5,
@@ -24,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
             "content": "sha256:1f762636392a1025af19edf0cff6729b687350a2575e221e185d8ea49c58d5f3",
             "locator": {
-              "end": 62,
+              "end": 63,
               "kind": "line_range",
-              "start": 44
+              "start": 45
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -42,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
             "content": "sha256:8f2ee02adb5091afb65c3d528c202589d6edd193ad5ecc44c7c9035a3392ad13",
             "locator": {
               "end": 31,
@@ -60,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "77a79bf45a97634bd9f3182dd16d99236493da4d",
+            "blob": "4728c8b76220f20c2df94aba239de9167c7977ae",
             "content": "sha256:5d8946a2d4e3f42affb01558f451b38f7eeccfaeff6b27ffd7d3a23425953816",
             "locator": {
               "end": 19,
@@ -77,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "77a79bf45a97634bd9f3182dd16d99236493da4d",
+            "blob": "4728c8b76220f20c2df94aba239de9167c7977ae",
             "content": "sha256:b96f2389dcb0c71564595bb051cbac0d3bb6f4163cc37c078f9ab7cf9be3d803",
             "locator": {
               "end": 25,
@@ -94,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "77a79bf45a97634bd9f3182dd16d99236493da4d",
+            "blob": "4728c8b76220f20c2df94aba239de9167c7977ae",
             "content": "sha256:a65ba21546b98093bfc2a97eb8a0eea0e72121e884e2731267bf49689e4b9028",
             "locator": {
               "end": 29,
@@ -107,16 +127,16 @@
       ]
     },
     "7": {
-      "note": "D-6 checks source comments against the repository's Source Comment Scope, including its bounded requirement-identifier exception.",
+      "note": "D-6 is a pointer: code-seam criterion CS-7 owns the check of source comments against the repository's Source Comment Scope, including its bounded requirement-identifier exception.",
       "targets": [
         {
           "anchor": {
-            "blob": "77a79bf45a97634bd9f3182dd16d99236493da4d",
-            "content": "sha256:48e7c1188d69556d888d6ce64fb13bf802bfb4e1666558f65294859e02c7f329",
+            "blob": "4728c8b76220f20c2df94aba239de9167c7977ae",
+            "content": "sha256:325c867e3b4175b0a370efc0c133e468da51df00c3c3a784a03f838cef4a0242",
             "locator": {
-              "end": 33,
+              "end": 31,
               "kind": "line_range",
-              "start": 31
+              "start": 29
             }
           },
           "kind": "code"
@@ -128,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "184327da1e5d1f280a1b44f65f0c18aa2d034869",
+            "blob": "56cbc03e2c77342364358f8f0cb498b39f2b8d45",
             "content": "sha256:383951438d9f9e749a2deabc09dcc10dee8056b6e2e6ae15e681c00d66d07cb7",
             "locator": {
               "end": 29,

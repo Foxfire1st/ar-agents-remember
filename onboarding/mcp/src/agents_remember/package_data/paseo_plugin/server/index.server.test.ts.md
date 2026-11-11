@@ -10,6 +10,4 @@ The plugin's contribution takes its one subagent subscription from the first hos
 
 ## Code Commentary
 
-The cases drive the real contribution with a fake host context: a lifecycle hook first, the snapshot RPC first, both, a readiness that fails and a readiness that is deferred. Every read of the activity publication is the file the publisher itself wrote, so the case cannot pass on a hand-made fixture.
-
-**L184 — INV-VDWN33.** These cases hold the receiving side of the number the bridge now sends. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+The cases drive the real contribution with a fake host context whose `addHook` records the Paseo 0.15 hook names: a lifecycle hook first, the snapshot RPC first, both, a readiness that fails and a readiness that is deferred. Every read of the activity publication is the file the publisher itself wrote, so the case cannot pass on a hand-made fixture.

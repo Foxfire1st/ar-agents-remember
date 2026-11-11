@@ -4,7 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
+        "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+        "content": "sha256:c107c84de41b7068acf7100742d571c8c6d96ba7c4aa61c4e51f1476c390acab",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_sync"
+        }
+      },
+      "id": "RLZ-EX1X7C",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Publishes the sync_source parameter on the worktree_sync tool.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
         "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
         "locator": {
           "kind": "symbol",
@@ -27,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
             "content": "sha256:1c64b32caf234c0c43e07186253e6775527e246baed49f8269d6373a1e90a25c",
             "locator": {
               "kind": "symbol",
@@ -38,7 +56,7 @@
         },
         {
           "anchor": {
-            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
             "content": "sha256:5a195ea8fb7f02e420cc51dd1eaa0c78cdb24df450156a9c82e25708d7964e24",
             "locator": {
               "kind": "symbol",
@@ -67,28 +85,15 @@
       ]
     },
     "11": {
-      "note": "**Retained historical source account — superseded by the current contract:** **The pairing this registrar performs, and the vocabulary the decision is typed by.** Historical KS-L40 caption: commit74c6c693 paired resolution_action and knowledge_resolution into SyncResolutionInput; b52adc8 removed that authored-reconciliation input. On current source the registrar constructs action-only SyncResolutionInput(action=resolution_action), with continue/cancel vocabulary. The retained historical pairing account remains superseded.",
+      "note": "The pairing this registrar performs: worktree_sync builds SyncResolutionInput(action=resolution_action, source=sync_source) from the shared continue/cancel and repository-default vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
-            "content": "sha256:790dae73611804194f883c5ac4f1ee30708ee20339a085cdea89d611ea23c46f",
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:4f2475b65b2a9470e35d676b1721991f967f5828bdd6299c7cefd71c19724142",
             "locator": {
-              "end": 202,
-              "kind": "line_range",
-              "start": 175
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
-            "content": "sha256:11ff3c4c19259b7a62b72f0cafecfd04eeeca6cdd032b7811c1af4694cb40a14",
-            "locator": {
-              "end": 87,
-              "kind": "line_range",
-              "start": 86
+              "kind": "symbol",
+              "name": "SyncResolutionInput"
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -96,12 +101,24 @@
         },
         {
           "anchor": {
-            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
-            "content": "sha256:3bb1db0cf79e680c28ede9577bb884ad984242f4be8d086307df0b299e70c7ff",
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:9d0fdf91fa52db3fabfcd66582e7e94f169646d2a9c7cffb265cc44089173dbb",
             "locator": {
-              "end": 165,
+              "end": 197,
               "kind": "line_range",
-              "start": 162
+              "start": 174
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:11ff3c4c19259b7a62b72f0cafecfd04eeeca6cdd032b7811c1af4694cb40a14",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 86
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -114,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
             "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
             "locator": {
               "kind": "symbol",
@@ -126,12 +143,12 @@
       ]
     },
     "13": {
-      "note": "The flat registrars retain their existing locator/provider/transaction owners while compact descriptions name outcomes and the longer reference. Status can include a copied-file drift notice. Current sync accepts contract_path, memory_sync_choice, resolution_action and dry_run; it packs only the admitted continue/cancel action. Content resolution is authored/staged in files, not a knowledge_resolution/reconcile input. Generic pause state/next wording invents neither a resume verb nor publication authority. The current worktree_sync source description is535 characters under the unchanged600 limit; its state list, next-call/log guidance, pre-sync review, raw-memory-merge boundary and landing/fast-forward judgments remain. Description compression changes neither signature nor forwarding behavior and is not live registration evidence.",
+      "note": "Current sync accepts contract_path, memory_sync_choice, resolution_action, dry_run and sync_source and packs the continue/cancel action and the repository-default source into one SyncResolutionInput; its compact description is 600 characters with whitespace collapsed, at the 600 limit.",
       "targets": [
         {
           "anchor": {
-            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
-            "content": "sha256:59abaad5244554e405946dfece37df1be3de69ae4a8b9ed9ec1fd5d9a3ff55dd",
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:087297c73a5bf5fe7d9fa1fc2c40195fdc944f637813ab2d1f507c4615396e12",
             "locator": {
               "kind": "file"
             }
@@ -145,8 +162,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
-            "content": "sha256:59abaad5244554e405946dfece37df1be3de69ae4a8b9ed9ec1fd5d9a3ff55dd",
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:087297c73a5bf5fe7d9fa1fc2c40195fdc944f637813ab2d1f507c4615396e12",
             "locator": {
               "kind": "file"
             }
@@ -156,12 +173,12 @@
       ]
     },
     "2": {
-      "note": "Current public sync packs only the four admitted arguments and continue/cancel action; knowledge_resolution/reconcile are historical.",
+      "note": "Current public sync takes five arguments and packs the continue/cancel action and the repository-default source into one SyncResolutionInput; there is no knowledge_resolution argument.",
       "targets": [
         {
           "anchor": {
-            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
-            "content": "sha256:59abaad5244554e405946dfece37df1be3de69ae4a8b9ed9ec1fd5d9a3ff55dd",
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:087297c73a5bf5fe7d9fa1fc2c40195fdc944f637813ab2d1f507c4615396e12",
             "locator": {
               "kind": "file"
             }

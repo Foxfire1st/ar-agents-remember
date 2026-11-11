@@ -10,11 +10,11 @@ The reading half of the shipped curation-instruction guard: normalized exact ret
 scans remain separate from the positive policy check for the two compact native curation
 sources. The normal MIK authoring policy requires complete memory quality and coherence;
 report-only admission does not claim that authoring pass complete. The module is free of
-pytest. Its projection census is now derived from the canonical repository declaration; callers still supply staged or synthetic trees for the scans.
+pytest. Its projection census is derived from the canonical repository declaration; callers still supply staged or synthetic trees for the scans.
 
 ## Current source account
 
-The positive policy table now names only operations/curation.md and roles/curator.md and is read through missing_curation_policy_statements. It retains the normalized exact retired-wording and loop-gate scanners. Each retired row keeps the base surface that shipped its statement in `sources`, with a distinctive probe that matches no kept live wording and a reason naming the sentence’s specific obsolete duty. This is an exact wording guard; novel semantic contradictions are outside that scan.
+The positive policy table names only operations/curation.md and roles/curator.md and is read through missing_curation_policy_statements. It retains the normalized exact retired-wording and loop-gate scanners. Each retired row keeps the base surface that shipped its statement in `sources`, with a distinctive probe that matches no kept live wording and a reason naming the sentence’s specific obsolete duty. This is an exact wording guard; novel semantic contradictions are outside that scan.
 
 ## Code Commentary
 
@@ -28,7 +28,7 @@ in which the sentence is a defect **when it returns**, and it keeps a retained d
 developer request still governs full code quality and full tests — from reading as a regression.
 
 `CURATION_POLICY_STATEMENTS` names only `operations/curation.md` and `roles/curator.md`.
-The operation tuple declares its complete-curation rule, the `prepare`, `publish`, `validate` order, the complete check set with a per-check result, the full `memory_quality_check` operation, repair or escalation of every Curator-actionable finding, the repeat-until-ready condition and the coherence continuation. The Curator role tuple declares two pointer sentences that send the reader to the operation's complete-curation-checks and authority-gates sections before it acts.
+The operation tuple declares its complete-curation rule, the `prepare`, `publish`, `validate` order, the complete check set with a per-check result, the full `memory_quality_check` operation, repair or escalation of every Curator-actionable finding, the repeat-until-ready condition and the coherence continuation. The Curator role tuple declares two pointer sentences that send the reader to the operation's complete-curation-checks and authority-gates sections before it acts, each naming the tool it asks for (`memory_quality_check` and `curator_coherence` on `agents-remember-task`).
 `missing_curation_policy_statements` reports a missing file or a file that lacks any one of its
 declared clauses; a source passes only when every declared clause is present.
 The canonical test checks every marker, while exact generated-copy byte equality is the
@@ -78,7 +78,7 @@ The retired registry additionally names the actual shipped sentences replaced by
 
 ## Current scoped contract
 
-The Curator positive entry requires both of its pointer sentences, each naming its section anchor in `operations/curation.md`; the operation entry requires all seven of its clauses. This is an exact clause-presence check, not a wider retirement matcher or an automatic meaning check; retired matching stays source-confined.
+The Curator positive entry requires both of its pointer sentences, each naming its section anchor in `operations/curation.md` and its tool; the operation entry requires all seven of its clauses. This is an exact clause-presence check, not a wider retirement matcher or an automatic meaning check; retired matching stays source-confined.
 
 ## Evidence
 

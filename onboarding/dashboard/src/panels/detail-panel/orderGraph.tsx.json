@@ -171,11 +171,11 @@
         {
           "anchor": {
             "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
-            "content": "sha256:14d599290343af74c66b9fa8be5de7b3449035054b86bd4ac6c7d73cbc451bc9",
+            "content": "sha256:b7e0393a3f3cc6341e8d2943eb028092410adcea30e95f22c2eab26320e93f53",
             "locator": {
               "end": 156,
               "kind": "line_range",
-              "start": 123
+              "start": 124
             }
           },
           "kind": "code"
@@ -194,12 +194,12 @@
         },
         {
           "anchor": {
-            "blob": "bc164a94462c83d4491167bce3b58a8ce7003b54",
-            "content": "sha256:a7d31073a2ef5dc9812fd57e66016ec03e020cdbe39dff625f6a30dcefcd76ee",
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:83840dfa9d07a36af705e950d0bac49290fafdcc113a57b84e7fa5a92d808a1b",
             "locator": {
-              "end": 101,
+              "end": 106,
               "kind": "line_range",
-              "start": 69
+              "start": 71
             },
             "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },

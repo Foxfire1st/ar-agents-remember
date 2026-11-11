@@ -232,7 +232,7 @@ Source comments explain the technical **why** of the code and must stand alone f
 3. Keep the technical constraint, evidence boundary, invariant, or trade-off that a future maintainer needs to preserve.
 4. Product-role vocabulary is allowed when it names a real runtime role, and shipped `docs/design/` pointers are allowed when they explain the product contract.
 5. Put workflow history and review provenance in Git history, task artifacts, and onboarding rather than source comments.
-6. Bounded `L<leaf>-R<n>` / `L<leaf>-S<n>` requirement identifiers naming a durable leaf requirement or step are allowed in source comments and are the preferred way to tie a comment to its contract (doctrine D-6, reconciled at 260815-DAG-L15). This carves out the bounded identifier convention only: task, chat, review, decision-item, or report provenance and paths stay out of source comments.
+6. Bounded `L<leaf>-R<n>` / `L<leaf>-S<n>` requirement identifiers naming a durable leaf requirement or step are allowed in source comments and are the preferred way to tie a comment to its contract (the Reviewer's code-seam criterion CS-7 checks every changed line against this rule and this exception). This carves out the bounded identifier convention only: task, chat, review, decision-item, or report provenance and paths stay out of source comments.
 
 ## Required Agent Behavior Before Editing
 

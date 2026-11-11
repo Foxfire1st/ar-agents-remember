@@ -13,7 +13,7 @@ that the public resolver facade offers.
 
 `parse_coordination_settings(settings_path)` returns `(StorageSettings, CrossRepoSettings)`.
 
-`parse_landing_settings(settings_path)` returns the landing workflow the same repository's settings choose. Markdown settings predate the setting and carry no key for it, so they answer with the default; a JSON sibling is read through `parse_json_landing_settings`, which is the one place a value this product does not implement is refused.
+`parse_landing_settings(settings_path)` returns the landing workflow the same repository's settings choose. Markdown settings predate the setting and carry no key for it, so they answer with the default; a JSON sibling's text is parsed by `parse_landing_settings_text`, which refuses text that is not JSON naming where it came from, and is read through `parse_json_landing_settings`, which is the one place a value this product does not implement is refused. `worktrees/publication_admission` parses the settings file at a memory work branch tip through the same `parse_landing_settings_text`.
 
 1. The JSON sibling of the given path (`path_settings_path_for`, the same name with `.json`) is probed
    first. When it exists it is the only file parsed (`parse_json_settings`); the Markdown file is not opened.
@@ -46,5 +46,3 @@ is recorded and the answers are the same. The text is decoded as UTF-8 with `\r\
 - The absent JSON sibling and the consumed Markdown bytes are recorded; a JSON file that appears is a change. [5]
 
 - A settings file changed and restored while a worklist child reads it is seen with the bytes actually parsed. 
-
-- Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py::_settings_reads - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

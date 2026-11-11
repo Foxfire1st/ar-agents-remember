@@ -43,32 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
-            "content": "sha256:3e1f8743a78f2ff0224d4c1c22bd8ff0d9019949af1c942601853cebca386204",
-            "locator": {
-              "kind": "symbol",
-              "name": "project_workspace"
-            },
-            "path": "mcp/src/agents_remember/observer/reducer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
-            "content": "sha256:3e1f8743a78f2ff0224d4c1c22bd8ff0d9019949af1c942601853cebca386204",
-            "locator": {
-              "kind": "symbol",
-              "name": "project_workspace"
-            },
-            "path": "mcp/src/agents_remember/observer/reducer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
-            "content": "sha256:3e1f8743a78f2ff0224d4c1c22bd8ff0d9019949af1c942601853cebca386204",
+            "blob": "a95148ac75c865e5846b8994fe331ba5fb2ad1f7",
+            "content": "sha256:b67c1f6e987ed016e6495d3760b30de7f0db389af5d6bb403fa7366f01b23a06",
             "locator": {
               "kind": "symbol",
               "name": "project_workspace"

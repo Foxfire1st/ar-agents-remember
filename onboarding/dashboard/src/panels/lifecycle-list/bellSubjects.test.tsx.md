@@ -26,6 +26,4 @@ prove.
 
 ## Evidence boundary
 
-Source-level React tests at the reviewed freeze, in the dashboard suite. No test was run for this leaf, so they
-are not an executed witness, and they are not a live-page witness either:
-MIK-R200 evidence item 6 is unrun and carried to L36, and the CPU/resource measurement of item 7 is unrun.
+Source-level React tests in the dashboard suite; they are not an executed witness and not a live-page witness.

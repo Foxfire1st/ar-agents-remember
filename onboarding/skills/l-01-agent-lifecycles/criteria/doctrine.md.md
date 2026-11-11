@@ -16,7 +16,7 @@ The standing list is D-1 through D-6. D-1 requires a real file-and-mechanism anc
 
 D-4 distinguishes organizational masters, whose leaves land directly on super, from atomic masters with an intermediate integration branch. It rejects feature/fix work on main, super or atomic integration branches, while retaining the narrow conflict-resolution and plane-owned ref-movement exception. D-5 separates detected graph/readiness facts and stable tie-breaking from role-owned dependency, execution-nature, priority and reprioritization judgments.
 
-D-6 checks source comments against the repository's `system/coding-guidelines.md` Source Comment Scope section, when present, including its bounded requirement-identifier exception.
+D-6 only points to code-seam criterion CS-7, which owns the check of source comments against the repository's `system/coding-guidelines.md` Source Comment Scope, including its bounded requirement-identifier exception.
 
 Baseline review, fix-verification on sealed evidence, the brief's novel lenses (default two) and the promotion ratchet follow the shared catalog review rules in `criteria/code-seam.md`, which this catalog points to before either mode. The catalog is a review source, not permission to execute a review or a transaction gate.
 
@@ -34,7 +34,7 @@ The rows cite canonical source text and narrowly relevant neighbor definitions. 
 
 - D-5 separates detected facts from explicit role judgment and labels tie-breaking as such. [6]
 
-- D-6 checks source comments against the repository's Source Comment Scope, including its bounded requirement-identifier exception. [7]
+- D-6 is a pointer: code-seam criterion CS-7 owns the check of source comments against the repository's Source Comment Scope, including its bounded requirement-identifier exception. [7]
 
 - Novel lenses and the promotion ratchet apply to baseline review, not sealed fix-verification. [8]
 

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Tests for the knowledge merge in managed sync: the structural merge of knowledge files on converted or crossing memory merges, the conversion boundary, and the reference alignment through the real transaction (MIK-R66).
+Tests for the knowledge merge in managed sync: the structural merge of knowledge files on converted or crossing memory merges, the conversion boundary, and the reference alignment through the real transaction.
 
 ## Code Commentary
 

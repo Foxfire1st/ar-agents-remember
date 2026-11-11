@@ -1,0 +1,142 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_parked_omissions.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1526750cbb6c917939a870c1e2f93a8c5c104eb2",
+        "content": "sha256:235abaf198bc954d1baed96c0ae67a902ef824bd67b21107aecfafd205f4c1e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "journal_omissions"
+        }
+      },
+      "id": "RLZ-GFR92Z",
+      "invariant": "INV-RNX24H",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Persists the omission report path on the side record so the stop survives a resume.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "1526750cbb6c917939a870c1e2f93a8c5c104eb2",
+        "content": "sha256:343b93dc3206a20734f1cda208fbb24505b7dedadcdb425c006ff409f237298b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_EvidenceReader"
+        }
+      },
+      "id": "RLZ-M0N1KA",
+      "invariant": "INV-RNX24H",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Re-measures recorded reconciliation evidence against the resolved content before a settle (holds), reading each blob once.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1526750cbb6c917939a870c1e2f93a8c5c104eb2",
+        "content": "sha256:7f2caaa7368219c93aa4e40036b9fecbaf257697339b5741f703277e931a66c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "measure"
+        }
+      },
+      "id": "RLZ-PJ992P",
+      "invariant": "INV-RNX24H",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Measures each omitted line, file and identity against the parked candidate and the resolution.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Every parked path is read once and judged against the resolved tree; nothing is written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1526750cbb6c917939a870c1e2f93a8c5c104eb2",
+            "content": "sha256:7f2caaa7368219c93aa4e40036b9fecbaf257697339b5741f703277e931a66c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Added lines missing and removed lines retained are counted per line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1526750cbb6c917939a870c1e2f93a8c5c104eb2",
+            "content": "sha256:c6983b27ae1e567cc43aba32dd67d54b6f3ab700660d55e87d41711d12123a31",
+            "locator": {
+              "kind": "symbol",
+              "name": "_line_omissions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The refusal names the stash as potentially the only saved copy and the way on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1526750cbb6c917939a870c1e2f93a8c5c104eb2",
+            "content": "sha256:808c3abc7b4a2d740fd251d5bb31b918064958cdffb595363a9afa2c18b1c688",
+            "locator": {
+              "kind": "symbol",
+              "name": "summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Recorded evidence is re-measured; an escaping replacement path or an off-line commit is no evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1526750cbb6c917939a870c1e2f93a8c5c104eb2",
+            "content": "sha256:343b93dc3206a20734f1cda208fbb24505b7dedadcdb425c006ff409f237298b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EvidenceReader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The report path and outstanding count are journaled on the side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1526750cbb6c917939a870c1e2f93a8c5c104eb2",
+            "content": "sha256:235abaf198bc954d1baed96c0ae67a902ef824bd67b21107aecfafd205f4c1e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "journal_omissions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

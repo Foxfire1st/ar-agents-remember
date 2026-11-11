@@ -2,16 +2,12 @@
 
 ## Current supported-pair account — R100/R116 composition
 
-The only changed permission seam now answers held, propagates the named child permission upward, and leaves eventual delivery to the product; no prompt is answered and no duplicate message is sent. Sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent-ID developer questions retain their distinct authority.
-
-This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
-
-- The only changed permission seam now answers held, propagates the named child permission upward, and leaves eventual delivery to the product; no prompt is answered and no duplicate message is sent. Sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent-ID developer questions retain their distinct authority.
+When a send answers `held`, the Orchestrator follows the held-delivery rule: the product queues eventual delivery and the message is never resent. A child waiting at a permission prompt is named to the Orchestrator's parent, or to the developer in its own chat without one, and each parent passes the notice upward unchanged.
 
 
 ## Message/file transport and return addressing
 
-Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. Ordinary report-written notices and final report-path returns use the supplied parent role/task address, including an instructed reporting-recipient change. Developer-needed questions remain addressed to the actual parent/instructed-recipient ID. These are distinct message purposes, not an ID exception to the return rule. Fixed launch-parent identity and existing role/peer/write/acceptance boundaries remain preserved.
+Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. Developer-decision messages and the one finished-or-unfinishable report-path message go with `role_message` on `agents-remember-task` to the parent agent ID in the handover.
 
 
 ## Governing Overview
@@ -28,7 +24,7 @@ Read only the canonical task/packet/report/predecessor facts needed for the curr
 
 Start distinct Manager, Worker, Reviewer and Curator agents only under the selected sprint; reuse each existing Manager named by the Architect and start one Manager per other master. Keep actual IDs, reconcile unknown starts by the same request ID and follow assignments through bound messages/results without a separate poller.
 
-Verify each Manager's delivery and aggregate evidence; it may inspect the supplied actual diffs for acceptance without taking over the leaf-diff or repair loop, which the Manager owns. Request independent review and affected curation when the brief or risk requires it. Carry producer Curator handoff data verbatim and co-resolve it rather than paraphrasing.
+Verify each Manager's delivery and aggregate evidence; it may inspect the supplied actual diffs for acceptance without taking over the leaf-diff or repair loop, which the Manager owns. Request independent review and affected curation when the brief or risk requires it. The leaf's Worker and Reviewer send their Curator hand-off lists directly to the Curator with producer data unchanged; the Orchestrator reads their reports for state and does not relay that data.
 
 ## Conventions
 
@@ -36,7 +32,7 @@ Canonical skills/l-01-agent-lifecycles/roles/orchestrator.md owns the instructio
 
 ## Invariants And Boundaries
 
-Paseo turn status is execution metadata, not AR acceptance/landing. Developer decisions remain in the own chat; a parent-bound coordinating role sends only the four developer-needed categories plus the once-only final report to its actual parent, while ordinary requirement readings and operational rulings stay with the role. No fabricated task, identity, duplicate execution or second semantic ledger.
+Paseo turn status is execution metadata, not AR acceptance/landing. A parent-bound Orchestrator sends its parent only the five developer-decision occasions, child permission notices and the one finished-or-unfinishable report path, while ordinary requirement readings and operational rulings stay with it; without a parent it reports in its own chat. No fabricated task, identity, duplicate execution or second semantic ledger.
 
 ## Code Commentary
 
@@ -87,18 +83,6 @@ No sibling repository evidence is needed for this doctrine file.
 
 No meaningful cross-repo references found.
 
-### 260731-EFA-L17 — Quality Altitude Ladder
-
-The orchestrator consumes targeted worker checks and scoped curator checks. Full quality, full tests,
-certification, and review remain explicit operations; closeout and integration
-do not infer a quality gate or launch those tools automatically. Full memory quality is not optional:
-normal curation always runs the complete `memory_quality_check`, and a scoped check cannot replace it.
-
-## L23 Final Candidate Disposition
-
-The orchestrator observes closeout and integration through canonical task status. The ordinary path
-publishes the authorized Git transaction; any explicit quality or review operation remains with its
-own lifecycle owner.
 
 ## Current Investigator contract impact
 

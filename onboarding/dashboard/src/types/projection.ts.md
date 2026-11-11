@@ -30,7 +30,7 @@ direct-grant, discard, graph and dependency additions remain optional as declare
 of its findings preview. Supported older-recording recovery is not permission to invent a
 malformed present review object missing those counts. `TaskEntry` separately owns key/id/title,
 served stage, ordered membership, counts, major-step totals and worktrees; its `reference`,
-`activity` and `summary` are optional. Optional `TaskListDisagreement[]` carries served list/record
+`activity`, `summary` and `waitingSeats` are optional. `activity` is `works`, `waiting`, `paused` or `unknown`; `waitingSeats` is a `WaitingSeat[]` whose members require `agentId`, `waitsFor` (`subagent` and/or `background`) and `since` and carry optional `role`, `checkDueAt` and `detail`; `TaskCounts` requires a `waiting` count. Optional `TaskListDisagreement[]` carries served list/record
 discrepancies with required kind and record reference and optional row id, recordMaster reference,
 original masterLiteral or actual parent key. It is neither a second task entry nor a
 browser-authored membership edge. `TaskSummary` is reader content, not a second status authority.

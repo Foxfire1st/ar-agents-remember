@@ -49,12 +49,12 @@
         },
         {
           "anchor": {
-            "blob": "bc164a94462c83d4491167bce3b58a8ce7003b54",
-            "content": "sha256:a7d31073a2ef5dc9812fd57e66016ec03e020cdbe39dff625f6a30dcefcd76ee",
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:83840dfa9d07a36af705e950d0bac49290fafdcc113a57b84e7fa5a92d808a1b",
             "locator": {
-              "end": 101,
+              "end": 106,
               "kind": "line_range",
-              "start": 69
+              "start": 71
             },
             "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },
@@ -83,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62502853b1c6bb6eac0b6a35f5d7146e87255ee4",
+            "blob": "0073056ad9df27c87365b0f9004653d15172e706",
             "content": "sha256:aedb7a80865364699bc57c775b34a29f3c7582c8894aea19db83408b61248e5f",
             "locator": {
               "end": 163,

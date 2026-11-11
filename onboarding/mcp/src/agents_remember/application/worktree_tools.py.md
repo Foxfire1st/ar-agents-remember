@@ -124,10 +124,11 @@ stale-snapshot session sees WHY setup was skipped instead of silently
 diverging from its boot config. `worktree_start_tool` forwards
 `stale_base_choice` (GitHub #54) into
 `WorktreeArgs` for the stale-base preflight recovery; the application entry point adds no
-behavior of its own. `worktree_sync_tool` (GitHub #54 sub-task D) is the
+behavior of its own. `worktree_sync_tool` is the
 contract-path-based application entry point for the mid-task base sync: it confines
 `contract_path` through configured-contract admission and forwards typed
-`MemorySyncChoice`, typed `SyncResolutionAction` (`continue`/`cancel`), and `dry_run` to
+`MemorySyncChoice`, typed `SyncResolutionAction` (`continue`/`cancel`), the typed `SyncSource`
+(`repository-default`, from `SyncResolutionInput.source`, passed as `sync_source`), and `dry_run` to
 `git_worktree_manager.sync_result`. The contract path, not a public operation id, addresses a
 retained generation.
 
@@ -202,7 +203,7 @@ ambient is installed (CLI/tests).
 
 ## 260831-LOCR-L30/L34 Checkpoint Landing Entry Point
 
-`worktree_checkpoint_landing_tool(config, *, contract_path, strategy="ff-only", dry_run=False)` cit:([`worktree_checkpoint_landing_tool`], mcp/src/agents_remember/application/worktree_tools.py:474-512) is the application entry point for the
+`worktree_checkpoint_landing_tool(config, *, contract_path, strategy="ff-only", dry_run=False)` is the application entry point for the
 partial-master landing route. It admits the configured contract, builds `WorktreeArgs` with
 `approved=not dry_run` and the configured `gate_policy` (the same seam-guard pass-through
 `worktree_integrate_tool` uses), and delegates to
@@ -274,7 +275,7 @@ Application adapters admit configured contract addresses and pass typed requests
   coordination root unless a specific tool owns a setup target.
 - Worktree operations call package services directly; CLI entrypoints remain
   print adapters.
-- Sync status and control are contract-addressed. `resolution_action` is typed and the application
+- Sync status and control are contract-addressed. `resolution_action` and `sync_source` are typed and the application
   facade must not invent a public operation-id selector or queue-derived lifecycle fallback.
 - Stable sync journal evidence remains observable across contract read failure once the canonical
   lifecycle locator establishes the enclosure root.
@@ -354,7 +355,7 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 
 - Public status observes the stable journal through the canonical locator and preserves it in the result. [2]
 
-- Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. [3]
+- Public sync forwards typed memory choice, continue/cancel control and the repository-default source after configured-contract admission. \|  \| Anchor: `worktree_sync_tool` `_configured_control_refusal` [3]
 
 
 - The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. [4]
@@ -389,7 +390,7 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 - Worktree service behavior is owned by the worktree modules, which this manager module re-exports. [22]
 
 
-- **The sync measures its own rebinding after the Git transaction and its contract write, so no review obligation can gate or refuse a completed sync (`ICR-R22@v1`); what it measured is a carrying sync's own resolved pair, published additively on the result.** [23]
+- **The sync measures its own rebinding after the Git transaction and its contract write, so no review obligation can gate or refuse a completed sync; what it measured is a carrying sync's own resolved pair, published additively on the result.** \|  \| Anchor: `worktree_sync_tool` `rebinding_result_block` `resolved_pair_completed` [23]
 
 
 ## Series-Contract Notes
@@ -481,15 +482,12 @@ through unchecked — a deliberate, pinned boundary rather than a silent one.
 
 ## Current Landed Composition
 
-Status now delegates its contract/terminal projection to `application.worktree_status.project_contract_status`. Closeout apply forwards typed `corrective_dispositions` into durable admission, and certification contract refusals are translated through the shared certification refusal owner. Preview does not launch the operation.
+Status delegates its contract/terminal projection to `application.worktree_status.project_contract_status`. Closeout apply forwards typed `corrective_dispositions` into durable admission, and certification contract refusals are translated through the shared certification refusal owner. Preview does not launch the operation.
 
 ## 260921-ICR-L22 The Sync Measures Its Own Rebinding After The Transaction And Can Never Gate It
 
-`260921-ICR-L22` (`ICR-R22@v1`) changes this adapter in two places and adds no measurement logic of its
-own: one import (`:14`) and the sync entry point's final return. `worktree_sync_tool` (`:353-375`) now
-builds the delegated result into `payload` (`:371`) and returns
-`rebinding_result_block(configured.contract, payload)` (`:375`) instead of returning that result
-directly; the module is **1030 → 1035 lines**.
+`worktree_sync_tool` adds no measurement logic of its own: it builds the delegated result
+into `payload` and returns `rebinding_result_block(configured.contract, payload)`.
 
 **The order is the contract.** The block runs *after* the sync has finished its Git work and written
 its contract, so the measurement never participates in the transaction's admission: a completed sync is
@@ -497,18 +495,18 @@ returned unchanged, and a review obligation can never become a gate on the Git t
 describes. Every failure is a state on the payload rather than a refusal — a capture the worktree
 refused (`source-unmeasured`), an unreadable generation record, a filesystem that refuses the write,
 and a payload that is not a carrying sync at all — because the owner,
-`application/review_sync_rebinding.py`'s `rebinding_result_block` (`:316-323`), reports each of them as
+`application/review_sync_rebinding.py`'s `rebinding_result_block`, reports each of them as
 a `state` and never raises.
 
 **What is measured is a finished sync that carried the official line.** `resolved_pair_completed`
-(`:196-220`) requires the operation, a successful result and one of the three carrying states, so a
+requires the operation, a successful result and one of the three carrying states, so a
 preview (`would-sync`) and an `already-current` leaf are told apart by name rather than by a payload key
-happening to be absent; and `record_review_sync_rebinding` (`:271-313`) measures the sync's own result
+happening to be absent; and `record_review_sync_rebinding` measures the sync's own result
 payload rather than re-reading the journal, re-running a merge or touching the parked candidate. A
-published rebinding writes `review_rebinding` onto the result — the measured state, the generation it
-supersedes with its binding and manifest digests, the reviewed and resolved candidate trees with the
-code match fact, the knowledge state and digest on both sides, the successor action, and the durable
-evidence reference with its read-back — while a sync with nothing to bind states that instead. The
+published rebinding writes `review_rebinding` onto the result — the measured state, the retained
+comparison with its digest, the resolved code and memory heads and candidate trees with the code and
+memory match, the successor action, the statement, and the durable evidence reference with its digest
+and read-back — while a sync with nothing to bind states that instead. The
 field is additive: a caller that does not read it sees the sync result it always saw.
 
 

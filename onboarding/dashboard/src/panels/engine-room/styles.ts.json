@@ -158,12 +158,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
             "content": "sha256:6d5a8fd358ca69062732d0582b02c7da212699924831f1a0bca28dcd94c67685",
             "locator": {
-              "end": 294,
+              "end": 295,
               "kind": "line_range",
-              "start": 294
+              "start": 295
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },

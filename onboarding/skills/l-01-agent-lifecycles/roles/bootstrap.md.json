@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
-        "content": "sha256:e494f19e216c1713613cb333a569e63e49018362ba2853f4458398ed9ded6f13",
+        "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+        "content": "sha256:11994559aec49ff91c037d4b276c7870c355754696cf062692a875802ca61d3f",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
-        "content": "sha256:e494f19e216c1713613cb333a569e63e49018362ba2853f4458398ed9ded6f13",
+        "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+        "content": "sha256:11994559aec49ff91c037d4b276c7870c355754696cf062692a875802ca61d3f",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
-        "content": "sha256:e494f19e216c1713613cb333a569e63e49018362ba2853f4458398ed9ded6f13",
+        "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+        "content": "sha256:11994559aec49ff91c037d4b276c7870c355754696cf062692a875802ca61d3f",
         "locator": {
           "kind": "file"
         }
@@ -51,6 +51,23 @@
       },
       "rationale": "The governing role bounds Bootstrap to setup and a user-started Architect handover.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+        "content": "sha256:11994559aec49ff91c037d4b276c7870c355754696cf062692a875802ca61d3f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DR3798",
+      "invariant": "INV-GWA6VR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v7.1-2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Always-on role text whose tool-involving pointers now name their tool.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -59,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
             "content": "sha256:7b8d340a98eb0b9052c3424ad3724e50c6a2ffb13b4c652870ab7352a5a30fd2",
             "locator": {
               "end": 54,
@@ -71,7 +88,7 @@
         },
         {
           "anchor": {
-            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
             "content": "sha256:6ecfc010da88268e8f8db34b32a17fd822a5ce6a658660a9e60655d9c4d275b5",
             "locator": {
               "end": 30,
@@ -83,8 +100,8 @@
         },
         {
           "anchor": {
-            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
-            "content": "sha256:1e022bc8f8a6c8de34d61b0ec9096dc57cbfd9a1d9016287a5a006b99bf02843",
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:dd2ab5407d960755a08062f3d9701c82f06386bbc098fee4fd1b596ea1a42244",
             "locator": {
               "end": 24,
               "kind": "line_range",
@@ -95,7 +112,7 @@
         },
         {
           "anchor": {
-            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
             "content": "sha256:269e6e485ca98e685afebb7785a4d1c8e6d3e39361f5bac9e8ba1c9d2976f358",
             "locator": {
               "end": 56,
@@ -112,8 +129,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5f8678ea08f3aadc513f14e4b6c57b2e848384e",
-            "content": "sha256:7afb050cc1d65a066e1c13aa5a6b20f5d38734cfe969cb4d214362625413107b",
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:6209a4125f593ecbfc2b6178c68fd02f9fdebbdc4b37708dc9cff2d1657f0233",
             "locator": {
               "end": 52,
               "kind": "line_range",

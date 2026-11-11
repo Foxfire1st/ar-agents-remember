@@ -1,13 +1,33 @@
 {
   "path": "skills/l-01-agent-lifecycles/criteria/code-seam.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "56cbc03e2c77342364358f8f0cb498b39f2b8d45",
+        "content": "sha256:5adfbe9341e00cf2db8a63a34d4fab958a4b3d98ab93d609ee06996de6a1dfdf",
+        "locator": {
+          "end": 58,
+          "kind": "line_range",
+          "start": 58
+        }
+      },
+      "id": "RLZ-0GGF6A",
+      "invariant": "INV-42NQQG",
+      "origin": {
+        "handoffEntry": "MIK-R60@v10.1-4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The criterion itself.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "No external or domain document defines these criteria; promotion cites catching evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "184327da1e5d1f280a1b44f65f0c18aa2d034869",
+            "blob": "56cbc03e2c77342364358f8f0cb498b39f2b8d45",
             "content": "sha256:cfc4e46ecfb95846e911666d17025f18dd90fc40f7d5d5b69721dfaa855825a3",
             "locator": {
               "end": 29,
@@ -24,10 +44,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "184327da1e5d1f280a1b44f65f0c18aa2d034869",
-            "content": "sha256:fcf74c26ea7418ef53a7139b034453212156f54b9fb044a7b8de6e3e5b6c1cb4",
+            "blob": "56cbc03e2c77342364358f8f0cb498b39f2b8d45",
+            "content": "sha256:946957c33b8fad5f3047610de25b009567e42cee2b57b2025f61745ed846bbb6",
             "locator": {
-              "end": 70,
+              "end": 74,
               "kind": "line_range",
               "start": 31
             }
@@ -41,10 +61,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "184327da1e5d1f280a1b44f65f0c18aa2d034869",
-            "content": "sha256:2d9bde33b60855371a67f0235e0305e387e07bdd58763a3568380392ec1681de",
+            "blob": "56cbc03e2c77342364358f8f0cb498b39f2b8d45",
+            "content": "sha256:c3b81c76de343acfb9d143e8410c4d6fc7bd02f9e84664f06cee3e644bb9c4a1",
             "locator": {
-              "end": 74,
+              "end": 78,
               "kind": "line_range",
               "start": 1
             }
@@ -58,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "184327da1e5d1f280a1b44f65f0c18aa2d034869",
+            "blob": "56cbc03e2c77342364358f8f0cb498b39f2b8d45",
             "content": "sha256:8a996cc2cd295f837d7a9b3c37fa51c2385405c73bb7fdd440b3c2bf2c729923",
             "locator": {
-              "end": 74,
+              "end": 78,
               "kind": "line_range",
-              "start": 72
+              "start": 76
             }
           },
           "kind": "code"

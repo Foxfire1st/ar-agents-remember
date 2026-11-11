@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
-        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
-        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
         "content": "sha256:38a4834dc2dba60ca9b9146a51899241bc6de67efa6968a9f896939865129db7",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
         "content": "sha256:2588180a98991eaeb9596655ec9be3b3c1c20562d9abbee5a85c3ec8bbe2ea40",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
-        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
-        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -111,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
-        "content": "sha256:e254a7d83e9d0c46f8ca2487305e131b228a772c4f0f4d238b0d70e7073b3641",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:ba1854d4ceef78061e734a7ada78d8db3368dd80140085656f7aaa2a9a3eceb7",
         "locator": {
           "end": 301,
           "kind": "line_range",
@@ -125,15 +125,15 @@
         "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
         "leaf": "260928-MIK-L123"
       },
-      "rationale": "This exact comment extent names the selected Paseo0.11.1 release and web-build identifier. It does not bind the separate re-read/chat-seen statement at271-273, and supplies no recorded browser assertion.",
+      "rationale": "This exact comment extent names the selected Paseo 0.15.4 release and web-build identifier index-5b20acda…; it does not bind the separate re-read statements at 310-314, and supplies no recorded browser assertion.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
-        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
         "locator": {
-          "end": 693,
+          "end": 695,
           "kind": "line_range",
           "start": 156
         }
@@ -149,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
         "content": "sha256:08cd33668f4ccad39a12d4db29dc861c4c587a9fd356b4f28a153d0a0c3da485",
         "locator": {
           "kind": "symbol",
@@ -167,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
         "content": "sha256:dc2febbb6af49e5234bfc30e74df9fc6cb40241d185d0f37c39eab80914bbafa",
         "locator": {
           "kind": "symbol",
@@ -185,7 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
         "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
         "locator": {
           "kind": "symbol",
@@ -203,8 +203,8 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
-        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -221,8 +221,8 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
-        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -239,8 +239,8 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
-        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -257,7 +257,7 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
         "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
         "locator": {
           "kind": "symbol",
@@ -275,7 +275,7 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
         "content": "sha256:03ad0b7d322a9517452725becde2a0ffd7b5d6be0f2311c32d9e8ac550c05890",
         "locator": {
           "kind": "symbol",
@@ -293,8 +293,8 @@
     },
     {
       "anchor": {
-        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
-        "content": "sha256:4d0b85612cbb056de0c4af30dbed5e100621c7e70deb255cbc9765d2958f6974",
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:ae437f8aa369dad5a8af8556a7e70f368eb1ee11dd0fc84df0287864af9652d1",
         "locator": {
           "end": 31,
           "kind": "line_range",
@@ -317,7 +317,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
             "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
             "locator": {
               "end": 140,
@@ -334,7 +334,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
             "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
             "locator": {
               "end": 149,
@@ -351,10 +351,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
-            "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
             "locator": {
-              "end": 693,
+              "end": 695,
               "kind": "line_range",
               "start": 156
             }
@@ -368,12 +368,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
             "content": "sha256:2588180a98991eaeb9596655ec9be3b3c1c20562d9abbee5a85c3ec8bbe2ea40",
             "locator": {
-              "end": 549,
+              "end": 551,
               "kind": "line_range",
-              "start": 528
+              "start": 530
             }
           },
           "kind": "code"
@@ -421,10 +421,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
-            "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
             "locator": {
-              "end": 693,
+              "end": 695,
               "kind": "line_range",
               "start": 156
             }
@@ -438,12 +438,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
             "content": "sha256:e5d6cc8e118f10b0d34fde8973aa85a7c25baaa598cc4acbd4ac3f21b0c62efb",
             "locator": {
-              "end": 445,
+              "end": 447,
               "kind": "line_range",
-              "start": 439
+              "start": 441
             }
           },
           "kind": "code"
@@ -455,12 +455,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
             "content": "sha256:8464eedf48c97b38b9e0bdccb1f461507055ead867f1cd2c707179aa52c1c587",
             "locator": {
-              "end": 489,
+              "end": 491,
               "kind": "line_range",
-              "start": 483
+              "start": 485
             }
           },
           "kind": "code"

@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
             "content": "sha256:9d00407991a5ac2ae6112d754bf7c6f06f544820a425de0cb7b78edc726abb74",
             "locator": {
               "kind": "symbol",
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
             "content": "sha256:0706dfc4562c880f95f98d8fdad559874303a430ebcb1741084ad177511e0ebb",
             "locator": {
               "kind": "symbol",
@@ -87,7 +87,7 @@
         },
         {
           "anchor": {
-            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
             "content": "sha256:afe1894e1b77ea9e75f46345823da8ff8fec2569a186055696d01cb45c3e586b",
             "locator": {
               "kind": "symbol",
@@ -99,7 +99,7 @@
         },
         {
           "anchor": {
-            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
             "content": "sha256:8e8886b140a2acdffb0c32730ebec13ecf0845f2cea0ec84dd2e2ae6bd1cb126",
             "locator": {
               "kind": "symbol",
@@ -111,7 +111,7 @@
         },
         {
           "anchor": {
-            "blob": "378b7f339eacceba242b7ad8f1a2775995243533",
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
             "content": "sha256:01ffaef2d8cf6864badeec9f7cf750fe03824303fac0d987254d6e80bcd41a2e",
             "locator": {
               "kind": "symbol",
@@ -128,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2fb15ff4b0e4fc28c8be6a41b1c58655d1c7601",
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
             "content": "sha256:101ead936a2281d53dcc064b7e2a2ab0d53b92ef3ef7b34b668673007895c860",
             "locator": {
               "end": 21,
@@ -146,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2fb15ff4b0e4fc28c8be6a41b1c58655d1c7601",
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
             "content": "sha256:a214788c7f3ded989faab65e778fbe2a488b8b5f299146a6c67e314447458733",
             "locator": {
               "end": 66,
@@ -159,7 +159,7 @@
         },
         {
           "anchor": {
-            "blob": "b2fb15ff4b0e4fc28c8be6a41b1c58655d1c7601",
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
             "content": "sha256:dd28d5e7d44d5d60e64ee8be8ae6172dabfbe433f25d335b275d9e3759b47109",
             "locator": {
               "end": 76,
@@ -177,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2fb15ff4b0e4fc28c8be6a41b1c58655d1c7601",
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
             "content": "sha256:76e1552838503ed65fc0d36446743b6dbf4326173608a48869635895b979befb",
             "locator": {
               "end": 22,
@@ -190,7 +190,7 @@
         },
         {
           "anchor": {
-            "blob": "b2fb15ff4b0e4fc28c8be6a41b1c58655d1c7601",
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
             "content": "sha256:e14d6ca126d5b033fc5bc8fcb86d95b1355f23c6bd2a36ad21a5c434f1cf45e5",
             "locator": {
               "end": 30,
@@ -203,7 +203,7 @@
         },
         {
           "anchor": {
-            "blob": "b2fb15ff4b0e4fc28c8be6a41b1c58655d1c7601",
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
             "content": "sha256:3c56d187d271da6631d4a03368cb99d9a368bfd9d738a1a65b5231caee2ac7c3",
             "locator": {
               "end": 35,
@@ -216,7 +216,7 @@
         },
         {
           "anchor": {
-            "blob": "b2fb15ff4b0e4fc28c8be6a41b1c58655d1c7601",
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
             "content": "sha256:2ef28a676cf0b1906bf0a7c6e6c0221d6b73bbedc61cf5a5ddb9d6c65ee6a830",
             "locator": {
               "end": 32,
@@ -229,7 +229,7 @@
         },
         {
           "anchor": {
-            "blob": "b2fb15ff4b0e4fc28c8be6a41b1c58655d1c7601",
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
             "content": "sha256:8f737f9902d96cfe2e46e21334559c9c4a7eace8fcdc44e6b64cb87abf3c479f",
             "locator": {
               "end": 40,
@@ -242,7 +242,7 @@
         },
         {
           "anchor": {
-            "blob": "b2fb15ff4b0e4fc28c8be6a41b1c58655d1c7601",
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
             "content": "sha256:101ead936a2281d53dcc064b7e2a2ab0d53b92ef3ef7b34b668673007895c860",
             "locator": {
               "end": 45,
@@ -260,7 +260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
             "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 63,
@@ -273,7 +273,7 @@
         },
         {
           "anchor": {
-            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
             "content": "sha256:f09e2a7603ca5170ce006640483bb3a39b78651f2cec337b01313723b2dcdd3c",
             "locator": {
               "end": 66,
@@ -287,12 +287,12 @@
       ]
     },
     "8": {
-      "note": "Caller 2: the fixture module reads the served projection's fields when constructing the `BASE_*` builders.\n\nAnchor: `BASE_LIFECYCLE`",
+      "note": "Caller 2: the fixture module reads the served projection's fields when constructing the `BASE_*` builders.\n\nAnchor: `asServedProjection`",
       "targets": [
         {
           "anchor": {
-            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
-            "content": "sha256:fa043074e33f2bf4c2dc606a7bc5c1664ed3d52c09af65f3df1e2986be56ce79",
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:ca949a7feaa7e40320e660e3b58629780946c36e8dab87a8d4b3ba5d0dc952ab",
             "locator": {
               "kind": "file"
             },

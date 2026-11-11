@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
         "content": "sha256:922996d688a0da0b1b5ea5a4a8a115a7bbc3a4d464e26834da27e36fa9a9613c",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
         "content": "sha256:630defe29a0c2a1845cab84ad949294c8213b3e9fb96fecc25b043e1ae8d0d1e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,169 @@
     },
     {
       "anchor": {
-        "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:e1313da8f56b303cb703c063979ceede04d9f96d1f81d2fec9252dcab608a86f",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_pinned_authority"
+        }
+      },
+      "id": "RLZ-9AXMKT",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "require_pinned_authority asks the journal's strategy for the default-source ref it must check (160).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:7f721e32abafe703b0d3c6e1f7f66ea25148fed031b5ace96e9bcacf899e5d3f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_side_contract"
+        }
+      },
+      "id": "RLZ-BBPEH9",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "_require_side_contract compares the contract's own source branch with the recorded one through journal_source_branch (260-265).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:7ded4584d75bd0d66abef0c4dea9f4c6c024cc3571ddbc44584e112b0ab463e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "complete_side_from_refs"
+        }
+      },
+      "id": "RLZ-DBH07E",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Rebuilds a side and its source branch from the pinned default-source ref name, so resume needs no task document.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:df20c5fc6f50a38ec260bbaa6172fe162e85a7fc4a91c4ccffe824d3e1692782",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_finalizable_contract"
+        }
+      },
+      "id": "RLZ-E9N8Y2",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "require_finalizable_contract accepts the contract code base at the strategy's target (target_code_base, 279), which a default sync keeps unchanged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:5e272c22cc08b6237bb712684d8ad38c400ba8b7fd693e8a3a046c66ccb7d962",
+        "locator": {
+          "kind": "symbol",
+          "name": "settle_resolved_parked_wip"
+        }
+      },
+      "id": "RLZ-EBT9G1",
+      "invariant": "INV-RNX24H",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "settle_resolved_parked_wip clears the journaled omission report and count only when the side settles (721-728), so a settled sync carries no stale omission.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:80d1610f228ba9d72ea9b088dc869c26928e10d1861d0aaefbddc7c59f45123d",
+        "locator": {
+          "kind": "symbol",
+          "name": "pin_authority"
+        }
+      },
+      "id": "RLZ-F65140",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "pin, require and delete each rebuild the strategy from the journal's syncSource (143, 157, 175), so the pin set follows the recorded choice.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:e7ccfa5ee84155c1f48195b0ead457be0001019f22fd4236e203ae0e46cc7d51",
+        "locator": {
+          "kind": "symbol",
+          "name": "delete_authority"
+        }
+      },
+      "id": "RLZ-H7JQHD",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "delete_authority removes the default-source pin with the others (178-180), so a finished or cancelled sync leaves no pin.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:d028a8fe2bfab6fd2a9097ac6cfd8f5d7dafa4043a48a071b7c2b2d22ed3da61",
+        "locator": {
+          "kind": "symbol",
+          "name": "side_record"
+        }
+      },
+      "id": "RLZ-JDBC36",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "side_record records the default branch instead of the contract line when given (75-76).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:8bee8debcc97521a56dd713f0884c3e94df8d496ab8a7efc08ec7efb3468b0d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "authority_refs_exist"
+        }
+      },
+      "id": "RLZ-R5KBRT",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "authority_refs_exist counts a pinned default-source ref as authority (197-198), so ref recovery sees a default sync.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
         "content": "sha256:24779f813bd8290b1748e51b97be0fca07d3572973add82c75462be577077837",
         "locator": {
           "kind": "symbol",
@@ -57,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
         "content": "sha256:e47cadf755d462cd525b383d9702a3f905592d6e3aa2e4070147ca2144468a8b",
         "locator": {
           "kind": "symbol",
@@ -75,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
         "content": "sha256:630defe29a0c2a1845cab84ad949294c8213b3e9fb96fecc25b043e1ae8d0d1e",
         "locator": {
           "kind": "symbol",
@@ -93,7 +255,25 @@
     },
     {
       "anchor": {
-        "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:541ad345ff83c9dacb613b072e0526e18a9d5839a532b0d2b147ee833f4d0eea",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_record_contract"
+        }
+      },
+      "id": "RLZ-V8JT3Y",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The code side check now receives the record (248), so its source branch is judged through the journal's strategy.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
         "content": "sha256:630defe29a0c2a1845cab84ad949294c8213b3e9fb96fecc25b043e1ae8d0d1e",
         "locator": {
           "kind": "symbol",
@@ -116,8 +296,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
-            "content": "sha256:610da19fbdf8f06d13d74b3047ba0e21b3938a0ebca6c1185c87dfe38b4d0e66",
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:d028a8fe2bfab6fd2a9097ac6cfd8f5d7dafa4043a48a071b7c2b2d22ed3da61",
             "locator": {
               "kind": "symbol",
               "name": "side_record"
@@ -127,12 +307,13 @@
         },
         {
           "anchor": {
-            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
-            "content": "sha256:f04f4f5f1ed7dffe628fdddb0303806d65ca769204519c3d1ea953676b963613",
+            "blob": "d9a1143389ecb674fae28670511b2e7ae8035ad2",
+            "content": "sha256:452b7e4116df7c96c73adcb42afe45fe0b318f709f4ba2b58d5794d134e0b092",
             "locator": {
               "kind": "symbol",
               "name": "source_pair"
-            }
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_sources.py"
           },
           "kind": "code"
         }
@@ -143,8 +324,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
-            "content": "sha256:4c03ad5007a5a3a33517bac5162f58e38550ca395df2e4569a4c71f96a2fe194",
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:80d1610f228ba9d72ea9b088dc869c26928e10d1861d0aaefbddc7c59f45123d",
             "locator": {
               "kind": "symbol",
               "name": "pin_authority"
@@ -154,8 +335,8 @@
         },
         {
           "anchor": {
-            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
-            "content": "sha256:b3c567649571e693bef6410ed9f5205920a7b410e190bd6fcbc2b334f38962a4",
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:e1313da8f56b303cb703c063979ceede04d9f96d1f81d2fec9252dcab608a86f",
             "locator": {
               "kind": "symbol",
               "name": "require_pinned_authority"
@@ -170,8 +351,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
-            "content": "sha256:54752aca1563316956fdeda67007fbe3df351ef1252ac5c4650045859ded929d",
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:541ad345ff83c9dacb613b072e0526e18a9d5839a532b0d2b147ee833f4d0eea",
             "locator": {
               "kind": "symbol",
               "name": "require_record_contract"
@@ -181,7 +362,7 @@
         },
         {
           "anchor": {
-            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
             "content": "sha256:938284b4dab9d820f24656f4527d44eda425dfc1db7b4f96f5bff0f87743a684",
             "locator": {
               "kind": "symbol",
@@ -197,7 +378,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
             "content": "sha256:24779f813bd8290b1748e51b97be0fca07d3572973add82c75462be577077837",
             "locator": {
               "kind": "symbol",
@@ -208,8 +389,8 @@
         },
         {
           "anchor": {
-            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
-            "content": "sha256:5a11dae4f361d70040042c06be4ff0b16b8d269451a83ef7f743da9f7adf37b7",
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:5e272c22cc08b6237bb712684d8ad38c400ba8b7fd693e8a3a046c66ccb7d962",
             "locator": {
               "kind": "symbol",
               "name": "settle_resolved_parked_wip"
@@ -224,7 +405,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
             "content": "sha256:24779f813bd8290b1748e51b97be0fca07d3572973add82c75462be577077837",
             "locator": {
               "kind": "symbol",
@@ -240,7 +421,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
             "content": "sha256:630defe29a0c2a1845cab84ad949294c8213b3e9fb96fecc25b043e1ae8d0d1e",
             "locator": {
               "kind": "symbol",
@@ -256,8 +437,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
-            "content": "sha256:909c5c90cb36d2a10983aaa829421ad83371f0a5d5f5b27fdb08fd400053c90a",
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:bc6d38632c06e37a2c49dd470445bc369a002d1ee99a340aa8e5f6f5d572848f",
             "locator": {
               "kind": "file"
             }

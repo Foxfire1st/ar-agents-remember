@@ -81,12 +81,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
-            "content": "sha256:3bb1db0cf79e680c28ede9577bb884ad984242f4be8d086307df0b299e70c7ff",
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:4f2475b65b2a9470e35d676b1721991f967f5828bdd6299c7cefd71c19724142",
             "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 162
+              "kind": "symbol",
+              "name": "SyncResolutionInput"
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -94,10 +93,10 @@
         },
         {
           "anchor": {
-            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
-            "content": "sha256:8e0d747e51053cb3f8f394cc56e2231d82dc661c50824500a0efd4ed322b4af4",
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
             "locator": {
-              "end": 370,
+              "end": 371,
               "kind": "line_range",
               "start": 349
             },
@@ -174,7 +173,7 @@
         },
         {
           "anchor": {
-            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
             "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
             "locator": {
               "kind": "symbol",

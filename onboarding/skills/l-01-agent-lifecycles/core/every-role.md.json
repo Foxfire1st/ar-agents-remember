@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
-        "content": "sha256:d8f0986fc0beaecc3ae5d3eb51d7ee10bca38b6101125e8ad347a808c7c9940b",
+        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+        "content": "sha256:bd5f642568a16b212d99a96f46cbd4296dad6f896fba09e43331b96679fd902a",
         "locator": {
           "end": 63,
           "kind": "line_range",
@@ -17,13 +17,13 @@
         "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-continuation",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "For its Curator audience these two shared lines deliver helper collection and the declared ACP wait/continuation facet; they are not a claim about all other digest duties.",
+      "rationale": "For its Curator audience these two shared lines deliver helper collection and the declared wait/continuation facet on any harness (`WAITING FOR SUBAGENTS:` for helpers, `WAITING FOR BACKGROUND:` for a process the seat started, `check in <N> minutes`); they are not a claim about all other digest duties.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
-        "content": "sha256:4009f7279b367a22bd8d8245ef48394f6ce67fee99ce667aeff624cbc941498e",
+        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+        "content": "sha256:fed9eb1908a57057bffc44fe5f38dd028d624e4a06c56d03e4c2c3df78a8193f",
         "locator": {
           "end": 63,
           "kind": "line_range",
@@ -36,17 +36,17 @@
         "handoffEntry": "L62-CUR-6414-continuation",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "Shared digest explicitly preserves native within-turn collection and ACP declared-wait behavior.",
+      "rationale": "Shared digest explicitly preserves native within-turn collection and the declared helper and background wait behavior on any harness.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
         "content": "sha256:c3f3e2b4092731aaf56133904887433a289f0b29c993cc0e5425dfeee1eec41c",
         "locator": {
-          "end": 131,
+          "end": 133,
           "kind": "line_range",
-          "start": 131
+          "start": 133
         }
       },
       "id": "RLZ-DAQF88",
@@ -60,7 +60,26 @@
     },
     {
       "anchor": {
-        "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+        "content": "sha256:9eb4bebc4833c06bbdc6d1ea71621a417743e89b603c80e800dc6b53256ca201",
+        "locator": {
+          "end": 63,
+          "kind": "line_range",
+          "start": 63
+        }
+      },
+      "id": "RLZ-ECXHS8",
+      "invariant": "INV-K48GZ2",
+      "origin": {
+        "handoffEntry": "MIK-R60@v8.6",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The always-on line every seat carries.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
         "content": "sha256:0423c63d873969296820c17d7e9628363f5f7928d402a36fb0e86317d7995afa",
         "locator": {
           "end": 77,
@@ -79,8 +98,8 @@
     },
     {
       "anchor": {
-        "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
-        "content": "sha256:1b54ee0fa983cbdc19b9a6b6987cf2fec66321f4fc4dc5de580784ca8611fe87",
+        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+        "content": "sha256:8c27af7759b59ab754b18b3d0f7bda1666656788eeaa70fa8a31618e738249ac",
         "locator": {
           "kind": "file"
         }
@@ -96,12 +115,12 @@
     },
     {
       "anchor": {
-        "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
         "content": "sha256:94911875e5e2a8f43621fff80235373d45d9755de8ae61b4c1bace6fa903828b",
         "locator": {
-          "end": 127,
+          "end": 129,
           "kind": "line_range",
-          "start": 127
+          "start": 129
         }
       },
       "id": "RLZ-MVDAQ8",
@@ -112,6 +131,23 @@
       },
       "rationale": "Closeout tree identity comes from the latest named passing verdict files, preserving Manager gate/evidence ownership.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+        "content": "sha256:8c27af7759b59ab754b18b3d0f7bda1666656788eeaa70fa8a31618e738249ac",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RXRS9D",
+      "invariant": "INV-GWA6VR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v7.1-2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Shared always-on digest; line 83 (option C) names task_doc on agents-remember-task for Architect, Orchestrator, Manager and Worker.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -120,10 +156,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
-            "content": "sha256:1b54ee0fa983cbdc19b9a6b6987cf2fec66321f4fc4dc5de580784ca8611fe87",
+            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+            "content": "sha256:8c27af7759b59ab754b18b3d0f7bda1666656788eeaa70fa8a31618e738249ac",
             "locator": {
-              "end": 149,
+              "end": 151,
               "kind": "line_range",
               "start": 1
             }
@@ -155,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
             "content": "sha256:6ce7f2282bb2c70bbbb00af7bdf717ed6b5543e28e987a826f373de710e9c19f",
             "locator": {
               "end": 17,
@@ -172,12 +208,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c160eadc1b24aa17bc869512766c2fb757f10374",
+            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
             "content": "sha256:51d510abac5e2045394115cfbafa29fd2cfdca30ed869635078434d082cf7698",
             "locator": {
-              "end": 115,
+              "end": 117,
               "kind": "line_range",
-              "start": 105
+              "start": 107
             }
           },
           "kind": "code"

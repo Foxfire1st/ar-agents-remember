@@ -1,0 +1,107 @@
+{
+  "path": "dashboard/src/panels/detail-panel/limitTime.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The formatter keeps date, seconds, three fractional digits and the time-zone name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "162ee9e0f76114018920bf3dfb75c320ef7b05b4",
+            "content": "sha256:c798660d6a9ab360d3642658b615962b56deea9aa467786665687e98d9000f00",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIMIT_TIME"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A finer, nonzero served fraction is written verbatim beside the localized time; an unparsable string is returned as served.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "162ee9e0f76114018920bf3dfb75c320ef7b05b4",
+            "content": "sha256:0afa29934dc08fd6ec82bcc8d2c4805ab90b452deb6bb7f5ee3847463ebe3bf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "formatLimitTime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The pattern that finds a fraction longer than three digits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "162ee9e0f76114018920bf3dfb75c320ef7b05b4",
+            "content": "sha256:1ceba96593c4ba501c9b4acc47185461d680de2e8e618902eda9da4e7f191f6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUB_MILLISECOND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The limited seat lines write each reset through it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:8c20815a22205299b59c197439e65749a973f061c54a81fc59a9529032cca6ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "limitSeatLines"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The wait lines write the wait's start and check due through it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef873d0fce95d4c8be313f68c176497834eb29d2",
+            "content": "sha256:4064589400818a173ac473a762571e3a8b05ed09369c87dba09d877fba6bde1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "waitLines"
+            },
+            "path": "dashboard/src/panels/detail-panel/waitWords.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The tray writes a held delivery's limit end through it.\n\nAnchor: `formatLimitTime`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3254cf1a26804a324dbaf17134d30291ce625468",
+            "content": "sha256:980307f87dbcc49ef60b98c05618cdf4d78e66507c294cae263724675990b7fb",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/tray/TraySent.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

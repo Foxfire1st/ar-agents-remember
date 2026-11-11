@@ -11,11 +11,14 @@ rules cover baseline coverage, the two routes for a finding after sealing, basel
 lenses and the promotion ratchet. The standing code-seam criteria verify production wiring end to
 end (CS-1), hunt fail-open shapes (CS-2), require validate-then-mutate (CS-3) and check scaling,
 bounded resources, reclamation and quiescence for every loop, store, log or queue a change touches
-(CS-6). The file holds the "no event, message or row outranks system health" invariant.
+(CS-6) and check every line a change adds or alters against the repository's `system/coding-guidelines.md`
+(CS-7). The file holds the "no event, message or row outranks system health" invariant.
 
 ## Code Commentary
 
 ### Logic
+
+CS-7 reads `system/coding-guidelines.md` under `workspace.memoryRoot`, where present, and checks every line the change adds or alters in source code, tests and product messages against it, in particular its Source Comment Scope with the bounded `L<leaf>-R<n>` / `L<leaf>-S<n>` requirement-identifier exception; a line that breaks it is a finding. Doctrine D-6 is now only a pointer to CS-7.
 
 The quiescence property of CS-6 demands a multi-cycle zero-input simulation for any
 feedback actor whose output is a member of its own input class. Its ruled invariant says

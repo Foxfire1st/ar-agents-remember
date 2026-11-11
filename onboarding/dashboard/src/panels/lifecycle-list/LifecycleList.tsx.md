@@ -14,7 +14,7 @@ bell. It neither authors task state nor widens row admission.
 
 ### Admission and durable identity
 
-Every served TaskEntry is admitted, including planned/terminal/addressless rows without worktrees. Exact parent/children drive BY REPO; shared stage/activity drives BY PHASE, whose group order is `works`, `paused`, `unknown`, `started`, `planned`, `completed`, `aborted` (`PHASE_ORDER`). No document/series/session join remains; addressless entries only limit document navigation.
+Every served TaskEntry is admitted, including planned/terminal/addressless rows without worktrees. Exact parent/children drive BY REPO; shared stage/activity drives BY PHASE, whose group order is `works`, `waiting`, `paused`, `unknown`, `started`, `planned`, `completed`, `aborted` (`PHASE_ORDER`); a task served as waiting forms its own `waiting` group. No document/series/session join remains; addressless entries only limit document navigation.
 
 
 
@@ -30,7 +30,7 @@ The existing collapsed-parent set stays persisted by useCollapsedTaskGroups. Ope
 
 The row uses shared taskStatusKey/TaskStatusWord from entry stage/activity, with display-only host-event age. rowBand orders own works first, then started, planned and terminal entries; it does not prioritize gates, inbox or chat facts.
 
-Progress reads entry stepsDone/stepsTotal for task summaries or served child counts for parents, excluding aborted from the denominator and preserving aborted/discarded audit in hover. Up to twelve major-step marks may expose cached pointer detail; larger populations use an aggregate bar. For non-task forms the figure prefixes progress with served `counts.works` and `counts.paused` unless the served global unknown-activity count is nonzero. A nonzero workspace unknown-activity count suppresses these activity figures on every row; the shell reports unavailability once. Task forms show cached `StepMarks` instead. No per-row unknown flag is added. No local child-status recount or physical-worktree admission is introduced.
+Progress reads entry stepsDone/stepsTotal for task summaries or served child counts for parents, excluding aborted from the denominator and preserving aborted/discarded audit in hover. Up to twelve major-step marks may expose cached pointer detail; larger populations use an aggregate bar. For non-task forms the figure prefixes progress with the served counts that `activityPhrase` writes — `counts.works`, `counts.waiting` (only when nonzero) and `counts.paused` — unless the served global unknown-activity count is nonzero. A nonzero workspace unknown-activity count suppresses these activity figures on every row; the shell reports unavailability once. Task forms show cached `StepMarks` instead. No per-row unknown flag is added. No local child-status recount or physical-worktree admission is introduced.
 
 There is no PickupDismiss or operator-inbox dismissal interaction in LifecycleList. The mark wrapper remains named inside ListBoxItem option semantics; accessibility must not depend on a removed action. Row selection/hover keep their retained owner without restoring press suppression for a deleted button.
 
@@ -55,7 +55,7 @@ TaskStatusWord uses one shared visible clock to advance published host-event age
 MIK-R175 rules 1-2: neither the row line nor the figure box carries a `title`, because either is an ancestor of the step dots and the browser showed the nearest one over them. The row's hover text moved onto its own cells — id, title, repository, status word and the count figure — so the rest of the row keeps it, and the figure renders only when it has a value.
 
 
-**L184 — INV-7GVWYD.** This list renders the row, its hover and its mark, and also the group label, so it is where the two kinds of place are told apart. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+**INV-7GVWYD.** This list renders the row, its hover and its mark, and also the group label, so it is where the two kinds of place are told apart.
 
 ## Evidence
 
@@ -125,7 +125,7 @@ MIK-R175 rules 1-2: neither the row line nor the figure box carries a `title`, b
 
 
 
-- Non-task forms suppress child works/paused figures when the served unknown-activity count is nonzero; BY PHASE keeps the explicit works-to-aborted order through its group comparator. [38]
+- Non-task forms suppress the child works/waiting/paused figure when the served unknown-activity count is nonzero; BY PHASE keeps the explicit works-to-aborted order, with waiting between works and paused, through its group comparator. [38]
 
 
 - Explicit disclosure releases a drawn-open parent or fold, while every selection transition expires prior release keys. [39]

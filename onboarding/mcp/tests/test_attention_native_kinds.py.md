@@ -7,13 +7,15 @@
 ## Purpose
 
 Pins each builder's row: identity, class, the task it opens, the settled deadline, the dismissibility every kind
-now carries, and the newest-first ranking a mixed native queue takes through the real queue builder.
+carries, and the newest-first ranking a mixed native queue takes through the real queue builder.
 
 ## Code Commentary
 
 The deadline cases pin no row at 899 seconds and one at 900 — whose id carries the interval start it was
 published under — no row for a working or unknown task, none for a planned, completed or aborted stage, and the
 identity `task-stalled:{key}:{interval start}` with its task reference.
+
+The last case pins that a declared wait is no stall: a task whose `activity` is `waiting` yields no row whatever its stall clock (:574-580). That the stall reader itself counts no silence while a seat's declared wait has its check to come is pinned in `mcp/tests/test_attention_native_wait_clock.py`.
 
 The stall-break cases are the ones that matter for the detail: the row's detail does not move while only the age
 grows, an old task event stamp never dates the interval, a paused master suppresses its started child, the same
@@ -27,19 +29,15 @@ operational queue takes.
 
 ### 20261023-L190-v2 Identity, Dismissibility And Newest-First
 
-Three things the v1 cases asserted are now their opposite. The stall id carries the interval start, so the 899/900
-case computes its expectation from the same `_ago(idle_seconds)` stamp the facts carry (:171-178), and the
+The stall id carries the interval start, so the 899/900
+case computes its expectation from the same `_ago(idle_seconds)` stamp the facts carry (:171-177), and the
 detail-stability case holds that stamp fixed while advancing `now` — an age-only pass moves `waitSeconds` under an
-id that does not move (:194-207). The three live kinds assert `dismissible is True` (:152, :191, :317). The mixed
-native/operational queue asserts newest-first: provider alarm, then the notice, then the dated prompts, then the
-held row, then the stalled task (:359-414).
-
-The builders' caps (`MAX_PERMISSION_ITEMS`, `MAX_HELD_ITEMS`, `MAX_TERMINAL_ITEMS`) and the fixed detail sentence
-are unchanged.
+id that does not move (:193-206). The three live kinds assert `dismissible is True` (:151, :190, :316). The mixed
+native/operational queue asserts newest-first: the notice, then the dated prompts, then the
+held row, then the stalled task (:354-405).
 
 ## Evidence boundary
 
-Source-level pytest cases at the reviewed freeze, in memory over facts and the real `build_attention_queue`, not
-a live-page witness and no measurement: MIK-R200 evidence item 6 is unrun and carried to L36, item 7 unrun. The
-surviving provider, setup and start kinds are covered by `mcp/tests/test_observer_projection_attention.py`, not
-here.
+Source-level pytest cases, in memory over facts and the real `build_attention_queue`, not a live-page witness and
+no measurement. The remaining operational kinds and the refusal of the retired provider kinds are covered by
+`mcp/tests/test_observer_projection_attention.py`, not here.

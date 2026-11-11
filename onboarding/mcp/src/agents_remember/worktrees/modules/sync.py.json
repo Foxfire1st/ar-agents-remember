@@ -1,25 +1,35 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/sync.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "01126833169e813a52a3c52c94933b2a1f23d4fc",
+        "content": "sha256:21bc356d0623960dd82b5203678e506b608bed36f7e7d074075ebbfa2e93f895",
+        "locator": {
+          "end": 92,
+          "kind": "line_range",
+          "start": 92
+        }
+      },
+      "id": "RLZ-MV8F7D",
+      "invariant": "INV-J7BZWN",
+      "origin": {
+        "handoffEntry": "L60-F3-retry-hints-carry-sync-source",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The contract-changed retry repeats the caller's source.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The public facade validates input, keeps preview mutation-free, refreshes outside the lock, rereads under authority, and dispatches by contract kind.\n\nAnchor: `sync_result` `_sync_live`",
+      "note": "The public facade validates input, keeps preview mutation-free, refreshes outside the lock, rereads under authority (a changed contract answers a retry hint that repeats the caller's sync source), and dispatches by contract kind.",
       "targets": [
         {
           "anchor": {
-            "blob": "66921e3196ecd77e8387e26544dd70bc51daef3e",
-            "content": "sha256:8be9196d3fb9fa962b306e3329f9776f3da2c3586027e9329b75433af82258e0",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "66921e3196ecd77e8387e26544dd70bc51daef3e",
-            "content": "sha256:d9a2ce0b4b9480cb22600c5c2a1a190f2b3c29e74fe8f5c249ef90872d77e99c",
+            "blob": "01126833169e813a52a3c52c94933b2a1f23d4fc",
+            "content": "sha256:d07ece5f235d0911c138ddec6012b0b52eeb7ab5a38c1484b72db55da23291b7",
             "locator": {
               "kind": "symbol",
               "name": "sync_result"
@@ -29,11 +39,21 @@
         },
         {
           "anchor": {
-            "blob": "66921e3196ecd77e8387e26544dd70bc51daef3e",
-            "content": "sha256:57676232d84c5756ef9f3933b3b10a5a58c9774b5d96c625282968c17fe10d8f",
+            "blob": "01126833169e813a52a3c52c94933b2a1f23d4fc",
+            "content": "sha256:ff6fb6546afb32665e9e8bbcf9a85f7c5be4a6d918e1ee85ac7211b953d62bbd",
             "locator": {
               "kind": "symbol",
               "name": "_sync_live"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "01126833169e813a52a3c52c94933b2a1f23d4fc",
+            "content": "sha256:7c26c19337415ef2552cd125f5005fc7b840a0823b19704dabb8c12076247870",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -45,8 +65,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d46e597e17705e1b0155f61dd64c9e147408ec1",
-            "content": "sha256:fc636e752a2ab37f96acddcd352b9ce0923afeb9e4d1acdabffc5fc45187e223",
+            "blob": "336c31ff2ff1b694b77fbececd13eb938156714f",
+            "content": "sha256:eddd2c21151f695828edca8859e0c100f268afde8a0edf31ee3021808ae10077",
             "locator": {
               "kind": "symbol",
               "name": "fetch_source_upstreams"
@@ -62,18 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
-            "content": "sha256:a9b15768aaeddcc49e9ac662237ac67cd5fff449295a8849a2cb2f97d84d2f95",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
             "content": "sha256:5a07c603afd747ea33a5d098cd85e3ba5b4c5e079f79e5fd0cb541631ca38944",
             "locator": {
               "kind": "symbol",
@@ -85,11 +94,22 @@
         },
         {
           "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
             "content": "sha256:e370a21edb86ff0f1d487a2fed9f7cca1822251cc79b10321aaa4baceb876842",
             "locator": {
               "kind": "symbol",
               "name": "_sync_selected_atomic_series_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
+            "content": "sha256:42e83d5cfaf2d6426cb931620db3de42c4edf50ce01a7e68af4f60edf23bbf31",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
           },
@@ -102,7 +122,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
             "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
             "locator": {
               "kind": "symbol",
@@ -119,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
             "content": "sha256:888445edc330c6b525441a393fc1814ef0a452abccf4087af43ae902183bc703",
             "locator": {
               "kind": "symbol",
@@ -131,7 +151,7 @@
         },
         {
           "anchor": {
-            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
             "content": "sha256:3d9b939eb29f132e44d631724a82208fb910a5a42a3da32fb3c2a6b242b0316f",
             "locator": {
               "kind": "symbol",
@@ -143,12 +163,12 @@
         },
         {
           "anchor": {
-            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
-            "content": "sha256:691ac61934d8139ecb1bd3d501e4b24f1c21db133ccf6b8a25f7d7fbeca61555",
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:4bd53554c2386e3f119649108446d93ed3385a6f8acd59d909223e941c3ebc3e",
             "locator": {
-              "end": 460,
+              "end": 482,
               "kind": "line_range",
-              "start": 266
+              "start": 282
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },
@@ -156,12 +176,25 @@
         },
         {
           "anchor": {
-            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
             "content": "sha256:e0e4a9f87d31a3e90f98f58d5e2426559c2e901472a3df021f58adf1dcc098f3",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 485
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:f6b40b0639832b3ceb7ee62d73ad30376d7019f48d77751a2ad024a735b67cb6",
             "locator": {
               "end": 479,
               "kind": "line_range",
-              "start": 463
+              "start": 280
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },
@@ -169,25 +202,12 @@
         },
         {
           "anchor": {
-            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
-            "content": "sha256:6be71ead2ab0fa062b8d25688243be05d7de8629793066ee285653165e3928d7",
-            "locator": {
-              "end": 457,
-              "kind": "line_range",
-              "start": 263
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
             "content": "sha256:cdbb70fe8b0319a8544a4e80e6d34e73417d82d9299e8aac73ac4ae9e2830d8a",
             "locator": {
-              "end": 476,
+              "end": 498,
               "kind": "line_range",
-              "start": 460
+              "start": 482
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },
@@ -195,25 +215,12 @@
         },
         {
           "anchor": {
-            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
-            "content": "sha256:e6fdb1dc3e34a794def7b4b61f7a07ba1a61aabb254990beaa7abbade73bb577",
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:9b9965707664c67a963c71e0ee4eb41acedceaf30f4b7ba947d0e45133cb6620",
             "locator": {
-              "end": 397,
+              "end": 419,
               "kind": "line_range",
-              "start": 203
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
-            "content": "sha256:36611dc2800797d2ff86636c217f058a71895a77817df1b2b2bdcec1e72d984c",
-            "locator": {
-              "end": 416,
-              "kind": "line_range",
-              "start": 400
+              "start": 219
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },

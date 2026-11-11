@@ -190,12 +190,12 @@
         },
         {
           "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
             "content": "sha256:ea05cd69d2800a2c3aa4fabb826af781496ab06d3aa7a199b00d121bda4f49f4",
             "locator": {
-              "end": 480,
+              "end": 486,
               "kind": "line_range",
-              "start": 466
+              "start": 472
             },
             "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
           },
@@ -203,12 +203,12 @@
         },
         {
           "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
             "content": "sha256:d859ade20e14875fb6e8933036d66394899f9ba1d0037a0d02155fcbd2bf2516",
             "locator": {
-              "end": 521,
+              "end": 527,
               "kind": "line_range",
-              "start": 483
+              "start": 489
             },
             "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
           },

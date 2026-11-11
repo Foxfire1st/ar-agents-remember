@@ -32,7 +32,7 @@ The source cases cover:
 - an ACP Worker’s delegate_task call without a declaration arms only the ordinary sixty-second wake;
 - an Investigator’s declaration gets checks, and its silent end keeps its existing parent-line behavior;
 - only the last assistant message decides, with the exact keyword at a line start behind supported markers; lowercase and mid-line text do not declare;
-- a non-ACP seat keeps the ordinary wake behavior;
+- a non-ACP seat's helper declaration is a declared wait too and gets the same check, and its silent end keeps the non-ACP message text, which names the helper declaration;
 - the plugin distinguishes its own progress check from an external message;
 - archiving ends the declared wait and cancels its check;
 - shedding a limited check at the deferred-fleet cap writes one check-skipped row and arms no resume;
@@ -45,4 +45,4 @@ silence, and that a declared end is not a hand-off.
 
 The clock is driven, not waited on, so the three-minute boundary is asserted exactly rather than
 approximately. The row kinds these paths write are covered in `server/turn_ended.ts`; the
-provider verdict that decides who may declare at all is covered by `server/acp_providers.test.ts`.
+provider verdict that decides an ACP seat's wake sentence is covered by `server/acp_providers.test.ts`, and the background wait by `server/background_wait.test.ts`.

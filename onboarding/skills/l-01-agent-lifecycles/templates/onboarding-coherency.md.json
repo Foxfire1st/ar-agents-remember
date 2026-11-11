@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
             "content": "sha256:294a6e24d00c3d09f380c3eea55239063584f63a63651801f9b1d4f2b4b50328",
             "locator": {
-              "end": 71,
+              "end": 72,
               "kind": "line_range",
-              "start": 71
+              "start": 72
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "846c943c1f5061ebb7247b66a94a05cd5d2cfeb0",
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
             "content": "sha256:c13b623226b4f8a8f27a74e6aca53edf3b89ae42ae31f375dc053db0492e6f59",
             "locator": {
-              "end": 94,
+              "end": 95,
               "kind": "line_range",
-              "start": 94
+              "start": 95
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -146,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
             "content": "sha256:5fedb153c332e95b32fefe486d1da529afcc62d409d1791ce0d2a8572f4a8ac8",
             "locator": {
               "end": 62,
@@ -164,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
             "content": "sha256:275b225de5ac6b2d7a15a3ae2a7d46e86a6698ddd550bc41f1687989fd34be94",
             "locator": {
               "end": 81,
@@ -182,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
             "content": "sha256:8f50640da2d94e09cf1dc538da784d7394195b516df1cb2f2856c6e459ef0c6d",
             "locator": {
               "end": 18,
@@ -200,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6e5be7a99c17cec84558941b4c2ad0d064a8afc",
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
             "content": "sha256:3a60d5fde180318908cece087286d7e497f8758cf61f57d0cc0ee595670a5bf1",
             "locator": {
               "end": 107,

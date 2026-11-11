@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1d568e1859411f9cdc6f53110802f8833a7d7bbe",
-        "content": "sha256:eeee87337f9f842a50424190b54b7013d7d74ea7464f193fc21d17826a0712e8",
+        "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
+        "content": "sha256:3f5edeed93dc365ee636395c070a071ad2e794cb7885b8314e7f2dbdb06d38d8",
         "locator": {
           "kind": "symbol",
           "name": "ToolAnswerLogTests.test_concurrent_details_cannot_both_spend_the_same_log_budget"

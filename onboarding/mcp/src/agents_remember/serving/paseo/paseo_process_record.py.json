@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
-        "content": "sha256:36619c9d8e1b0de03f22fa80021619e453a171348c64e63977d783531b929eb0",
+        "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+        "content": "sha256:4148858e54956c31ca751fb1ea4266263bf8e9434fb1a310f480ae246989d197",
         "locator": {
           "end": 7,
           "kind": "line_range",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
+        "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
         "content": "sha256:6482cf2320845c9faec45f6ebf5dc9d5d8e34cb6df521f5cdcaa1f484f9098d9",
         "locator": {
           "end": 43,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
+        "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
         "content": "sha256:dcfdf587dff67a56e5a8529786a589deb29aa6b5d1f0b342e17122417b9ea283",
         "locator": {
           "end": 96,
@@ -65,7 +65,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
+            "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
             "content": "sha256:89ca2b671107da33d70a1214d576e719008cf92e3e9b9da985b899a554edfbda",
             "locator": {
               "kind": "symbol",
@@ -81,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
+            "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
             "content": "sha256:42a45851cdcf3a33159f8893529cf007484a7c01887e414fdd9e57b463b4859e",
             "locator": {
               "kind": "symbol",
@@ -93,12 +93,12 @@
       ]
     },
     "3": {
-      "note": "The module describes the 0.11.1 boot-id-first stop predicate without treating liveness as proof of home ownership.",
+      "note": "The module describes the boot-id-first stop predicate Paseo 0.11.1 to 0.15.4 uses, without treating liveness as proof of home ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
-            "content": "sha256:e365b6d127ac062fd9735a4da8f987f6c2fbc9eecedfe8336f12b4651a14d460",
+            "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+            "content": "sha256:715b1638b4fbfebcafc96a09a757c1a7fe1a17e4128990f351b1ab3a992faa97",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -114,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11061bf758c1771cdf54a0cbc4e516c9f6b77892",
+            "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
             "content": "sha256:6482cf2320845c9faec45f6ebf5dc9d5d8e34cb6df521f5cdcaa1f484f9098d9",
             "locator": {
               "kind": "symbol",
