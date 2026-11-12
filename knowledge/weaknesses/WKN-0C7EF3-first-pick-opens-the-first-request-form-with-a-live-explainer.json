@@ -1,0 +1,30 @@
+{
+  "anchor": {
+    "blob": "6413f12bafcbb3a2598bec286bc3bac8cabcec74",
+    "content": "sha256:3c55cb3b5f12b28ae1db342075412f311506a6ddd596b23ef04933a3e74c57ee",
+    "locator": {
+      "end": 126,
+      "kind": "line_range",
+      "start": 110
+    },
+    "path": "dashboard/src/explainer/columnState.ts"
+  },
+  "id": "WKN-0C7EF3",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-38",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The page reads the state of the explainer only when the chat sidebar is shown, so before the sidebar has been shown once the first pick opens the first-request form although an explainer is live."
+}

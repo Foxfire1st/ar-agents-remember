@@ -40,16 +40,14 @@
       ]
     },
     "10": {
-      "note": "The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the Quickstart, the canonical runtime section and the local-wheel Install And Run block.\n\nAnchor: `Install And Run`",
+      "note": "The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the What you need, Install steps, Start and stop the dashboard and the host, Tools, and More sections.",
       "targets": [
         {
           "anchor": {
-            "blob": "c97404162b4fcabd667a70a44a1c2326d22d9bbb",
-            "content": "sha256:8946f618ed38947a07df8cbb7a29054975d1d6a155ae3dd97fbeebcc178508df",
+            "blob": "4b56225df1e1b9484032b43ded65f6d976b27340",
+            "content": "sha256:f10136623746d89ad6e4ebe1131c778fed127a3ff967446f17ebd07fefe334ba",
             "locator": {
-              "end": 113,
-              "kind": "line_range",
-              "start": 15
+              "kind": "file"
             },
             "path": "mcp/README.md"
           },

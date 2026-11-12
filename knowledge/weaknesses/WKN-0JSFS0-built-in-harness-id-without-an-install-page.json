@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "2f783bd16246b9c1d169fd35ee33f0908e937c91",
+    "content": "sha256:01d99c5c6f83c2d31bc26562ee7f00a643410150f865dc13860b0caf638c47ba",
+    "locator": {
+      "kind": "symbol",
+      "name": "HARNESS_IDS"
+    },
+    "path": "mcp/src/agents_remember/kernel/harnesses.py"
+  },
+  "id": "WKN-0JSFS0",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-weakness-14",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The harness loader knows the built-in id eve, for which the documentation holds no install page."
+}

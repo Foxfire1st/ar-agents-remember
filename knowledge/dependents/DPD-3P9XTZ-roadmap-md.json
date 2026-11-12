@@ -1,0 +1,44 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "The page is new in this task; its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate and the page was read whole.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "ROADMAP.md",
+  "id": "DPD-3P9XTZ",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-dependent-ROADMAP-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_writer/reconsideration.py"
+    },
+    {
+      "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+    },
+    {
+      "blob": "9bcdb167add6397ce6e3a05aa184d9476eee05d3",
+      "kind": "file",
+      "path": "docs/concepts.md"
+    },
+    {
+      "blob": "da5b2cc1947b7501219211e54234f50f81032071",
+      "kind": "file",
+      "path": "docs/benchmarks-methodology.md"
+    }
+  ]
+}

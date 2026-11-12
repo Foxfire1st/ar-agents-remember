@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "02488160059666d9bd7383472baa03db8c36105b",
+    "content": "sha256:a1f35f5c78ff9ac45290256da4932d53d10a169096b9964d7184adc4210590c5",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "examples/mcp/settings.example.json"
+  },
+  "id": "WKN-QD5Y5V",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-weakness-13",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The example settings file that the settings reference names holds three keys that the reference does not describe: version, benchmarksEnabled and retirement."
+}

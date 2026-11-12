@@ -43,6 +43,7 @@ publication is a visible difference rather than a payload claim.
 
 The module's public drivers, each one call into a registered tool:
 
+
 | Driver | Public entry point |
 | --- | --- |
 | `_status` | `worktree_status_tool` |
@@ -213,6 +214,7 @@ No meaningful cross-repo references found.
 
 
 - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [13]
+
 
 
 - The lifecycle catalog names this suite among the consumers of the checkpoint-landing and curator-coherence shared-support artifacts. [11]

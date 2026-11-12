@@ -1,10 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
       "prevents_costly_mistake"
     ],
-    "justification": "Realized in the page and in each inbound caption that describes it, so a reader arriving from eight different directions is told the same thing. The costly mistake is the one this leaf fixes: a live guide that promises an installation no product path performs."
+    "justification": "The public provider page told a reader that a retired provider could be enabled; its retirement account prevents that misreading, and the criterion is retained as the reason the record existed."
   },
   "applicability": "The public provider page and every tracked inbound reference to it.",
   "conditions": [
@@ -29,6 +28,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The public provider page is a retirement and cleanup account, and every verified inbound link describes that retirement instead of promising an opt-in provider setup.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

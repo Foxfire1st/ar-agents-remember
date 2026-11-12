@@ -485,8 +485,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14c64a93cfdee1ea751b35280444aae0bf50eafa",
-            "content": "sha256:d90cd30b05a5d3b40d32437042370e19b15967731fa072ce70b44d17522a32d6",
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
             "locator": {
               "kind": "file"
             },
@@ -1052,16 +1052,14 @@
       ]
     },
     "276": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational, and reference map. Anchor: `Start Here`",
+      "note": "The docs index owns the start-here, install, operational and reference map. Anchor: `Start here`.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbe4d811fb65009206986c45ac951ee676a08a79",
-            "content": "sha256:32c4508d8c7fed802d30886700d26dcc6cfa29fe57ec2e511d2ae25f932a32b6",
+            "blob": "2d3ceb132dfa3453008d7038f5e4e3e2359e74fc",
+            "content": "sha256:863afb7007e06103c25dae486479e5a051696f8e4c47cbdaac5126da3015563a",
             "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 23
+              "kind": "file"
             },
             "path": "docs/README.md"
           },
@@ -1139,16 +1137,14 @@
       ]
     },
     "281": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Contributor guidance separates host feedback from Dagger-owned certifying evidence and defines the retained protection policy.\n\nAnchor: `## Quality gates`",
+      "note": "Contributor guidance separates host feedback from Dagger-owned certifying evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "bad174f5c8c114dc40837c9d847d35d746f59567",
-            "content": "sha256:9259c90e6f88d9341d436169bfe73964ad5e34c7bd5b8880aad5b6b8a2827a4d",
+            "blob": "245db25a9abfd0d99d27675f48f86635765d48d8",
+            "content": "sha256:178c2a9d92a86da14bcdbf4e90c36114219ec67a9feedcbfbf7cf7eaee59fca0",
             "locator": {
-              "end": 64,
-              "kind": "line_range",
-              "start": 64
+              "kind": "file"
             },
             "path": "CONTRIBUTING.md"
           },
@@ -1157,16 +1153,14 @@
       ]
     },
     "282": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Provider guidance keeps provider runtime paths under configured provider roots.\n\nAnchor: `providers/runners/grepai`",
+      "note": "The runtime layout reference states that no part of the product starts, indexes or queries a search provider.",
       "targets": [
         {
           "anchor": {
-            "blob": "b2cfe595977a5397139802662d26e5ea37fc4362",
-            "content": "sha256:031640738b5b8551e2bdb7184e5cacf043c5b0f718025737b069e1abc0f55608",
+            "blob": "0ac6dbda5c19bbba4ee44bbe65f14a5e403bb0cc",
+            "content": "sha256:7a83e584abbbf5d92ae0ec338ff4d6974fb4095eecd139efad119ceaa0a98d16",
             "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 103
+              "kind": "file"
             },
             "path": "docs/reference/runtime-layout.md"
           },
@@ -2630,16 +2624,14 @@
       ]
     },
     "35": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational and reference map.\n\nAnchor: `Start Here`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational and reference map.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbe4d811fb65009206986c45ac951ee676a08a79",
-            "content": "sha256:32c4508d8c7fed802d30886700d26dcc6cfa29fe57ec2e511d2ae25f932a32b6",
+            "blob": "2d3ceb132dfa3453008d7038f5e4e3e2359e74fc",
+            "content": "sha256:863afb7007e06103c25dae486479e5a051696f8e4c47cbdaac5126da3015563a",
             "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 23
+              "kind": "file"
             },
             "path": "docs/README.md"
           },
@@ -2905,37 +2897,6 @@
         }
       ]
     },
-    "363": {
-      "note": "Current budget guidance agrees with the root declaration.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
-            "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
-            "locator": {
-              "end": 335,
-              "kind": "line_range",
-              "start": 321
-            },
-            "path": "pyproject.toml"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bad174f5c8c114dc40837c9d847d35d746f59567",
-            "content": "sha256:54b7900bd3a717483370deaa05e4919139eb4cca6f55da506c1849ae679b63eb",
-            "locator": {
-              "end": 86,
-              "kind": "line_range",
-              "start": 83
-            },
-            "path": "CONTRIBUTING.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "364": {
       "note": "Development evaluation commands, concrete trial orchestration and attempt accounting have separate responsibilities.",
       "targets": [
@@ -3107,6 +3068,38 @@
         }
       ]
     },
+    "368": {
+      "note": "Current budget guidance agrees with the root declaration. Target: pyproject.toml.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:030596cef7d9fea970513ce9975de6839a71c38510ba0531432b1dc3f75be9a8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "369": {
+      "note": "Current budget guidance agrees with the root declaration. Target: CONTRIBUTING.md.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245db25a9abfd0d99d27675f48f86635765d48d8",
+            "content": "sha256:178c2a9d92a86da14bcdbf4e90c36114219ec67a9feedcbfbf7cf7eaee59fca0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "CONTRIBUTING.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "37": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves reachability from main.",
       "targets": [
@@ -3160,12 +3153,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bad174f5c8c114dc40837c9d847d35d746f59567",
-            "content": "sha256:792f889a8430e2e155f148b71f218a63e7cee5b22ff6d8923edd16930be54a4d",
+            "blob": "245db25a9abfd0d99d27675f48f86635765d48d8",
+            "content": "sha256:178c2a9d92a86da14bcdbf4e90c36114219ec67a9feedcbfbf7cf7eaee59fca0",
             "locator": {
-              "end": 187,
-              "kind": "line_range",
-              "start": 64
+              "kind": "file"
             },
             "path": "CONTRIBUTING.md"
           },
@@ -3194,12 +3185,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d19e9bdf51497de71bacf7a9830b69978d96dc7",
-            "content": "sha256:e1e3d8365a62fc5a5f5f54f499dc4c5e7203b70b369e307d47f30e350c5eb4b7",
+            "blob": "f1b37e4512c41640d3bfdcf863bb702060adeefb",
+            "content": "sha256:7a6ce2acaef43c714cd4cf042d5a40ca0c4f26254778df5705b8e6558cc0ee4e",
             "locator": {
-              "end": 53,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "docs/design/python-pytest-bootstrap.md"
           },
@@ -3212,12 +3201,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27dd0858bebf6610971f6c4babbe6930da63fdf0",
-            "content": "sha256:e031bcf6ba0c8196da860d1cfb8a3e1516109874a3b47c8cf6eb3d6ff2bd88d5",
+            "blob": "345e9e4cdeb8701bb31e267faa00c4e6b6bbeb44",
+            "content": "sha256:18466b9f2e8066e1d7eb376d22cb06a18e97de4d6193b7f1006074ebe18687f6",
             "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "docs/design/python-test-evidence.md"
           },
@@ -3481,12 +3468,12 @@
       ]
     },
     "74": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The cutover lock refuses an unconverted memory line and names the crossing sync.\n\nAnchor: `cutover_lock_refusal`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The cutover lock refuses an unconverted memory line and names the crossing sync.",
       "targets": [
         {
           "anchor": {
-            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
-            "content": "sha256:e5004d73df5641d389a1812c7f9773b98beb179d83f8400047c198497d49a342",
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:299e20bd8b429ee9b9bd297e5e884b38171e7a4d9e485b633f99fbb8d7188da1",
             "locator": {
               "kind": "file"
             },

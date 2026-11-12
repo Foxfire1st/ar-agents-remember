@@ -1,0 +1,134 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 2 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/getting-started.md",
+  "id": "DPD-MQCJK4",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-getting-started-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+      "kind": "file",
+      "path": "mcp/pyproject.toml"
+    },
+    {
+      "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/dashboard.py"
+    },
+    {
+      "blob": "7625b34c2c0d36ce1713bb7436c5e24a114b1ef8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
+    },
+    {
+      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+    },
+    {
+      "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+      "kind": "file",
+      "path": "scripts/sync-dashboard.py"
+    },
+    {
+      "blob": "e640511ffad3eb7e67c1de5b38581748a9214a53",
+      "kind": "file",
+      "path": "dashboard/package.json"
+    },
+    {
+      "blob": "5fa43f169fb341dff7f3842ee51d822ef98b1e32",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/user_settings_init.py"
+    },
+    {
+      "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/memory_init.py"
+    },
+    {
+      "blob": "63cdd4af0f74c96d9ea324025b176003dc6269d8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts"
+    },
+    {
+      "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+    },
+    {
+      "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+    },
+    {
+      "blob": "9125b43d7f08f23eb26bcfe0b5cf989ea3592615",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
+    },
+    {
+      "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
+    },
+    {
+      "blob": "6216846b9873e811e50cff4756b0f5ca57b58fa0",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/dashboard_daemon.py"
+    },
+    {
+      "blob": "3c55dde69055fa5b21e25ce2e244744766ee073a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/discovery.py"
+    },
+    {
+      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+    },
+    {
+      "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/runtime.py"
+    },
+    {
+      "blob": "0eaef8fb2966ce40738225cccbbb3814c89da5c5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
+    },
+    {
+      "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+    },
+    {
+      "blob": "ebc8c5d98f2dcd79e95dd250d25550e76a7215e7",
+      "kind": "file",
+      "path": "dashboard/package-lock.json"
+    },
+    {
+      "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+      "kind": "file",
+      "path": ".github/workflows/publish-mcp-to-pypi.yml"
+    }
+  ]
+}

@@ -9,7 +9,6 @@
   "id": "FAM-GDXSJG",
   "members": [
     "INV-63Z0MN",
-    "INV-DKN3CG",
     "INV-NNQR91"
   ],
   "origin": {
@@ -20,10 +19,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "routes": [
     "dashboard/src/cockpit",
-    "docs",
     "skills/l-01-agent-lifecycles",
     "mcp/src/agents_remember/package_data/runtime/skills",
     "mcp/src/agents_remember/application/skill_resources",

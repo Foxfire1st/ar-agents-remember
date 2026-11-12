@@ -1,0 +1,69 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 1 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/guides/use-external-memory.md",
+  "id": "DPD-9F0Q8G",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-guides-use-external-memory-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+    },
+    {
+      "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+    },
+    {
+      "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/context_packet.py"
+    },
+    {
+      "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/memory/baseline.py"
+    },
+    {
+      "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/memory_init.py"
+    },
+    {
+      "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+    },
+    {
+      "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
+    },
+    {
+      "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+    },
+    {
+      "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+    }
+  ]
+}

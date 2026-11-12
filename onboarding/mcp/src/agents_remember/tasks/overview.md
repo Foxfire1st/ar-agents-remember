@@ -91,6 +91,7 @@ The inherited L4 policy forbids topology edits from promoting live leaf branches
 
 These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
 
+
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
@@ -172,6 +173,7 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Maintenance scope is lifecycle; declarations are normative; invalidation classes are limited [43]
 - Exact requirements remain mandatory beside packets; resolution and confinement precede packet bytes [44]
 - Partial review content addressing refuses and record canonical digest is checked [45]
+
 - Current preflight checks model fields rather than distribution versions [46]
 - Source comparison precedes ordered publication/invalidation/rebuild with reported projection failures [47]
 - Shared reopen reset owns typed cleanup and frozen-landing removal [48]

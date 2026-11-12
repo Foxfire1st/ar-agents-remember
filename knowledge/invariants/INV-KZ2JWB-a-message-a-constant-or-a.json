@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The same product text lives in a worktree refusal, the first-conversion constant, the memory scaffold and the CLI help; all four must name the remedy and no page, or a reader follows a page the product no longer keeps in step."
+  },
+  "applicability": "Every message, constant or docstring of the product that told the reader to make the first conversion or to upgrade the served build.",
+  "conditions": [
+    "The text names the command or the remedy.",
+    "The text names no page of the documentation."
+  ],
+  "exclusions": [
+    "Instructions in documentation pages themselves, which the page owns."
+  ],
+  "id": "INV-KZ2JWB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "evidence/v9/item5-product-source.md (each changed line before and after); evidence/v9-fresh-reader/named-by-product.md (the search over the product source: it names six pages, all exist); mcp/tests/test_memory_mode_removal.py and mcp/tests/test_knowledge_correction_guidance.py pass in the clean-copy run f3"
+      ],
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "MIK-R97@v9 part F item 8",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A message, a constant or a docstring of the product that told the reader to make the first conversion or to upgrade the served build names the command or the remedy and no page of the documentation.",
+  "status": "proposed",
+  "supersedes": []
+}

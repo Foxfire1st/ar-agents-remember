@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A row for one of the nine in the agents' command table would present that command to every role that reads the table, so the check refuses the row. Refusing a mention would be the opposite mistake: it would fail the three guide lines that tell knowledge-convert to the user of a memory repository cloned before memory_init, so the check requires no mention and refuses none."
+  },
+  "applicability": "The nine command names of the set UNDOCUMENTED_COMMANDS, in the instruction consistency check and the CLI parser.",
+  "conditions": [
+    "The names are registered commands.",
+    "The check refuses no mention of them: three lines of two guide pages name knowledge-convert.",
+    "The check requires no documentation row and no mention for them.",
+    "The check refuses a row for one of them in the agents' command table."
+  ],
+  "exclusions": [
+    "Every public command outside the set: the check requires one complete row in the agents' command table for it."
+  ],
+  "id": "INV-SJ6T7P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_instruction_corpus.py::test_each_public_command_requires_its_documentation_owner; mcp/tests/test_instruction_consistency.py::test_complete_instruction_documentation_and_registered_descriptions; evidence/v9/item3-dropped-assertions.md; both modules pass in the clean-copy run f3"
+      ],
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "MIK-R97@v9 part F item 7 (the consistency check)",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The nine command names of the set UNDOCUMENTED_COMMANDS are registered commands outside the agents' command table: the consistency check requires no row and no mention for them and refuses a row for one of them in that table. One of them, knowledge-convert, is told in three lines of two guide pages, for a memory repository that was cloned before memory_init.",
+  "status": "proposed",
+  "supersedes": []
+}

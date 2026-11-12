@@ -131,7 +131,7 @@
         },
         {
           "anchor": {
-            "blob": "74bff535a61ae8c8531da0c57aee985359afb57e",
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
             "content": "sha256:43d488b8f085d000371db395f0f9ded1d856123893b2225ad1ea8b29d291e4d4",
             "locator": {
               "kind": "symbol",
@@ -167,50 +167,6 @@
               "name": "SERVED_TAIL_FIELDS"
             },
             "path": "mcp/src/agents_remember/serving/served_state.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "Evidence design separates development and diagnostic artifacts from immutable certifying publication and records Candidate A retirement.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e1a9fe9e6408743b43fff94eb66dff41560582e",
-            "content": "sha256:0f32e088d04addeb10f51efa2a18fe84430eb08a1bf3afc9bf2c6dff1a3d4b31",
-            "locator": {
-              "end": 69,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "docs/design/python-evidence-system.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7e1a9fe9e6408743b43fff94eb66dff41560582e",
-            "content": "sha256:61675ef8d759e1e5e956a285a61215789cf95098ba051424fac96f78796ccaff",
-            "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 145
-            },
-            "path": "docs/design/python-evidence-system.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "27dd0858bebf6610971f6c4babbe6930da63fdf0",
-            "content": "sha256:82837766f8f62f680815b6cbe3a591ef1da097a48609dd85007fb3346047c7bb",
-            "locator": {
-              "end": 28,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "docs/design/python-test-evidence.md"
           },
           "kind": "code"
         }
@@ -295,6 +251,54 @@
               "name": "_paths"
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Evidence design separates development and diagnostic artifacts from immutable certifying publication. Target: docs/design/python-evidence-system.md.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d41a67a3304e4b26e25cf5513344b5f3df647e1e",
+            "content": "sha256:8eed4e17ae1a3e02971065fad11a1a67ec79b908624674596f6cbcb9ca8336cd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/design/python-evidence-system.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Evidence design separates development and diagnostic artifacts from immutable certifying publication. Target: docs/design/python-evidence-system.md.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d41a67a3304e4b26e25cf5513344b5f3df647e1e",
+            "content": "sha256:8eed4e17ae1a3e02971065fad11a1a67ec79b908624674596f6cbcb9ca8336cd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/design/python-evidence-system.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Evidence design separates development and diagnostic artifacts from immutable certifying publication. Target: docs/design/python-test-evidence.md.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "345e9e4cdeb8701bb31e267faa00c4e6b6bbeb44",
+            "content": "sha256:18466b9f2e8066e1d7eb376d22cb06a18e97de4d6193b7f1006074ebe18687f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/design/python-test-evidence.md"
           },
           "kind": "code"
         }

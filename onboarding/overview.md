@@ -701,8 +701,10 @@ Past-epoch source custody: `skills/l-01-agent-lifecycles/capsule-budgets.json`, 
 
 - In task_doc construction, _build_doc refuses kind="light" with a TaskDocError directing the caller to a master or subTask; when kind is omitted, a leaf contract selects subTask and otherwise the default is master. [98]
 - Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section. [21]
+
 - Retained reference account (no fresh execution or acceptance inferred): The cutover lock refuses an unconverted memory line and names the crossing sync. [74]
 - Retained reference account (no fresh execution or acceptance inferred): An external-memory start requires the memory repository and its source branch and creates the worktree. [93]
+
 - build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
 - The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority. [146]
 - New files outside onboarding/, knowledge/ and system/ are listed with individual sizeBytes and summed bytes. [312]
@@ -748,15 +750,11 @@ Past-epoch source custody: `skills/l-01-agent-lifecycles/capsule-budgets.json`, 
 
 - Retained reference account (no fresh execution or acceptance inferred): Repository instructions define certifying delivery, enforcing checks, and diagnostic-only coverage and production CRAP. [34]
 
-- Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational and reference map. [35]
 
 - Retained reference account (no fresh execution or acceptance inferred): Runtime asset sync treats the root runtime folders as canonical and has a check form. [36]
 - Retained reference account (no fresh execution or acceptance inferred): GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves reachability from main. [37]
 - Retained reference account (no fresh execution or acceptance inferred): The staged-quality owner prepares the staged candidate, runs the targeted quality gate and requires published evidence for exactly that tree. [39]
-- Retained reference account (no fresh execution or acceptance inferred): Contributor guidance separates host feedback from Dagger-owned certifying evidence. [40]
 - Retained reference account (no fresh execution or acceptance inferred): The MCP settings example: coordination root, workspace root, transcript root, repositories, providers, timeout caps, and the dashboard, provider-degradation and retirement settings. [42]
-- Retained reference account (no fresh execution or acceptance inferred): Development commands, budgets, diagnostic metrics and isolation. [44]
-- Retained reference account (no fresh execution or acceptance inferred): Certifying publication and accepting consumers. [45]
 - Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix for the admitted candidate and exact memory inputs; no removed adapter is thereby bound and ordinary closeout does not acquire this certificate automatically. [48]
 - Retained reference account (no fresh execution or acceptance inferred): Git attribution is the source of the consumer ledger. [50]
 - Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree. [51]
@@ -853,14 +851,11 @@ Past-epoch source custody: `skills/l-01-agent-lifecycles/capsule-budgets.json`, 
 
 - Retained reference account (no fresh execution or acceptance inferred): The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval. [275]
 
-- Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational, and reference map. Anchor: `Start Here` [276]
 
 - Retained reference account (no fresh execution or acceptance inferred): Runtime asset sync treats root runtime folders as canonical and exposes a check form. [277]
 - Retained reference account (no fresh execution or acceptance inferred): GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating. [278]
 - Retained reference account (no fresh execution or acceptance inferred): The staged-quality boundary refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality; the transaction-only closeout no longer imports it. [279]
 - Retained reference account (no fresh execution or acceptance inferred): The staged-quality owner enforces its exact-candidate delivery boundary. [280]
-- Retained reference account (no fresh execution or acceptance inferred): Contributor guidance separates host feedback from Dagger-owned certifying evidence and defines the retained protection policy. [281]
-- Retained reference account (no fresh execution or acceptance inferred): Provider guidance keeps provider runtime paths under configured provider roots. [282]
 
 - Retained reference account (no fresh execution or acceptance inferred): The MCP settings example declares repository and coordination authority. Anchor: `coordinationRoot` [283]
 
@@ -970,7 +965,8 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [342]
 
-- Current budget guidance agrees with the root declaration. [363]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, the full check and the curator worklist publication.  Anchor: `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist` [46]
 - Retained reference account (no fresh execution or acceptance inferred): The interactive catalog names missing authority without eligibility. [47]
 - Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, full check and curator worklist publication.  Anchor: `_resolve_execution` [285]
@@ -983,3 +979,13 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Current capsule limits live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`, which the live budget guard enforces: role ceilings Architect 5,474 words; Manager 4,562; Curator 4,537; Reviewer 4,112; Bootstrap 4,000; other roles 3,742. Its current sub-record is `measuredCurrentRenewalWaitsAndCodingGuidelines`; the current measurements cover 34 capsules and 38 declared step details, declared step details have a 2,500-word ceiling, and the every-role digest measures 2,327 words against an equal 2,327-word ceiling. A limit rises to the actual size only where the actual size exceeds it. `capsule-budgets.json` is the frozen historical registry; the guard checks its bytes by hash and still reads only its handover token budgets from it. These are stored declarations, not a new compilation or test run. [365]
 
 - AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares Worker, Reviewer and Curator as sibling leaf seats: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. Past-epoch composition account: A capsule contains the selected role and one operation; `core/` is compiler metadata, not shared injected instructions. Current delivery: The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest is delivered separately in the first message; its revision contributes to capsule semantic identity, without injecting the larger core doctrine into rendered instructions. Missing or unsupported selection fields refuse rather than being inferred from nearby documents. [366]
+
+- Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational and reference map. [35]
+- Retained reference account (no fresh execution or acceptance inferred): Contributor guidance separates host feedback from Dagger-owned certifying evidence. [40]
+- Retained reference account (no fresh execution or acceptance inferred): Development commands, budgets, diagnostic metrics and isolation. [44]
+- Retained reference account (no fresh execution or acceptance inferred): Certifying publication and accepting consumers. [45]
+- The docs index owns the start-here, install, operational and reference map. Anchor: `Start here`. [276]
+- Contributor guidance separates host feedback from Dagger-owned certifying evidence. [281]
+- The runtime layout reference states that no part of the product starts, indexes or queries a search provider. [282]
+- Current budget guidance agrees with the root declaration. Target: pyproject.toml. [368]
+- Current budget guidance agrees with the root declaration. Target: CONTRIBUTING.md. [369]

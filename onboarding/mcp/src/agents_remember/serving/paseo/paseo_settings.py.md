@@ -20,3 +20,5 @@ The daemon settings provision owns and which of their changes require a host res
 - The restart reasons of a running daemon. [2]
 
 - The setting comparison works on a configured document without the CLI. [3]
+
+- The cleanup key written false in the daemon-settings tuple, with its key constant. [4]

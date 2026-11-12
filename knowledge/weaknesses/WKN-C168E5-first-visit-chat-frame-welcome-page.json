@@ -1,0 +1,37 @@
+{
+  "anchor": {
+    "blob": "63cdd4af0f74c96d9ea324025b176003dc6269d8",
+    "content": "sha256:732ad30d942e3371b616a1d77863a69fb72c772e1d23ff8a19a5db498b19043b",
+    "locator": {
+      "end": 124,
+      "kind": "line_range",
+      "start": 113
+    },
+    "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts"
+  },
+  "id": "WKN-C168E5",
+  "kind": "fault",
+  "measurement": {
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "date": "2026-11-11",
+    "how": "time from the first load of the dashboard in a new browser context until it shows 'embedded chat control unavailable', on the sandbox built from the candidate",
+    "number": 20.9,
+    "unit": "s"
+  },
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-weakness-01",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "On a browser's first visit the embedded chat frame stays on the host's welcome page, and the plug-in reloads it only once, so the dashboard reports the chat control as unavailable until the user presses Retry."
+}

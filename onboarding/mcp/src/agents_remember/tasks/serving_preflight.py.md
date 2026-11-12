@@ -24,8 +24,8 @@ restore class.
 1. **Model self-probe** — the process that will serve is the MCP server running the tool for
    in-process invocations, so it checks `TaskDocument.model_fields` for
    `executionNature`/`executionGraph`; a missing field raises `TopologyServingBuildError`
-   (`task-execution-topology-serving-build-unsupported`) naming the missing fields and pointing at
-   `docs/reference/execution-topology-migration.md`.
+   (`task-execution-topology-serving-build-unsupported`) naming the missing fields and telling the
+   reader to upgrade the served build before authoring an execution graph.
 
 The installed-distribution leg is gone. `TOPOLOGY_SERVING_VERSION_FLOOR`, `_installed_distribution`,
 `_is_editable_install` and `_below_floor` no longer exist in the tree: a task-plane edit does not
@@ -66,10 +66,12 @@ cannot parse. The topology probe above is unchanged.
 ### Docs References
 
 
-- The operator contract for served-build preflight (section 4): run authoring through the deployed serving server; refresh the rc7 venv. [1]
+
+
 
 
 ### Repo-Internal References
+
 
 - The preflight gate is now the model self-probe alone: `require_serving_topology_schema` refuses when the running build's `TaskDocument.model_fields` lack the topology fields. The installed-distribution leg and its helpers `_installed_distribution`, `_is_editable_install`, `_below_floor`, and `TOPOLOGY_SERVING_VERSION_FLOOR` no longer exist in the tree — a task-plane edit never consults the installed distribution version. [2]
 - Wired before any write in graph authoring. [3]

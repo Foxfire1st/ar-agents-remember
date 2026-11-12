@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A page that no index links is invisible to a reader and silently rots; the check measures reach from the one documentation index."
+  },
+  "applicability": "Every tracked file under docs/.",
+  "conditions": [
+    "A link from docs/README.md reaches the file directly or through one index page."
+  ],
+  "exclusions": [
+    "Files outside docs/."
+  ],
+  "id": "INV-6TJFDH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_public_docs_check.py::test_an_unreached_page_is_named; mcp/tests/test_public_docs_check.py::test_a_page_behind_two_index_pages_is_named; clean-copy run f3: 21 passed"
+      ],
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "MIK-R97@v1 rule 7 (reach)",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every file under docs/ is reached from docs/README.md, directly or through one index page.",
+  "status": "proposed",
+  "supersedes": []
+}

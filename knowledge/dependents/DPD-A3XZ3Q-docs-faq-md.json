@@ -1,0 +1,109 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/FAQ.md",
+  "id": "DPD-A3XZ3Q",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-FAQ-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/context_packet.py"
+    },
+    {
+      "blob": "1300c0f2c4c2c8c5952840f36b310dd84330a6a1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+    },
+    {
+      "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/core.py"
+    },
+    {
+      "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+    },
+    {
+      "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+    },
+    {
+      "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+    },
+    {
+      "blob": "051064215b92685affb72eb32fdd83ad2824db4b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py"
+    },
+    {
+      "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/ledger_projection.py"
+    },
+    {
+      "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+    },
+    {
+      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+    },
+    {
+      "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+    },
+    {
+      "blob": "2774385e740c199b89101abd2864c721614071c1",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/reference/curator/change-routing.md"
+    },
+    {
+      "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
+    },
+    {
+      "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "blob": "402f54b3bcf759ffce9556a74e0242d2bcc1d770",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/coordination_context/setting_values.py"
+    },
+    {
+      "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+    },
+    {
+      "blob": "01e3bc7cff6c674cffddec983f62fd73b2c1f7c1",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/templates/leaf-task.md"
+    }
+  ]
+}

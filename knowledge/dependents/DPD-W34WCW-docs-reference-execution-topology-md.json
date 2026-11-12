@@ -1,0 +1,109 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "The page is new in this task; its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate and the page was read whole; 1 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/reference/execution-topology.md",
+  "id": "DPD-W34WCW",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-reference-execution-topology-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "20f58808c1d618e11ba44426f4a9998be9753891",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/serving_preflight.py"
+    },
+    {
+      "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+    },
+    {
+      "blob": "e92bddc1623c4272a1b026d7731edc5fd0b7fbfd",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_docs/task_execution_graph_mutations.py"
+    },
+    {
+      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+    },
+    {
+      "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
+    },
+    {
+      "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
+    },
+    {
+      "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive.py"
+    },
+    {
+      "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/document.py"
+    },
+    {
+      "blob": "74a34d2a801e7b63315e46af96838110416ffb7c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/task_execution_edges.py"
+    },
+    {
+      "blob": "51df804526b093b0732b0df91f4d6c76d901809d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/task_document_ref.py"
+    },
+    {
+      "blob": "d726047c998e661b9558afbb303820ddfb5deb18",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/scheduling_mode.py"
+    },
+    {
+      "blob": "b814692a49df324c2495b8abf40a050f54a211f5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue.py"
+    },
+    {
+      "blob": "e7e289de6f8e2c65b3e67f4c2a4380e2b2a9d1be",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py"
+    },
+    {
+      "blob": "6327e089b3c2ef77df1cb26ed8516bd6a23a48a3",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py"
+    },
+    {
+      "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+    },
+    {
+      "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/memory_init.py"
+    },
+    {
+      "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py"
+    }
+  ]
+}

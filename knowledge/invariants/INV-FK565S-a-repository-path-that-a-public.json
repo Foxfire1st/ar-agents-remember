@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A named path that does not exist makes a reader's command or edit fail; the check judges every named path that no other check owns."
+  },
+  "applicability": "Every public document that names a repository path in prose or a code span.",
+  "conditions": [
+    "The named path is not Git-ignored.",
+    "The path is not under mcp/src/agents_remember/ or skills/, which the instruction consistency test owns."
+  ],
+  "exclusions": [
+    "Paths Git ignores, which are build products.",
+    "Paths owned by the instruction consistency test."
+  ],
+  "id": "INV-FK565S",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_public_docs_check.py::test_a_missing_repository_path_is_named; mcp/tests/test_public_docs_check.py::test_a_path_that_git_ignores_or_another_check_owns_is_not_judged; mcp/tests/test_public_docs_check.py::test_a_named_path_behind_a_symbolic_link_does_not_stop_the_check; clean-copy run f3: 21 passed"
+      ],
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "MIK-R97@v1 rule 7 (named paths)",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A repository path that a public document names exists in the tree, unless Git ignores it or the instruction consistency test owns it.",
+  "status": "proposed",
+  "supersedes": []
+}

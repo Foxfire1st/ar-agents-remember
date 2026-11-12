@@ -28,7 +28,7 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The MCP tool reference's worktree_cleanup and worktree_abandon rows state the bounded pre-locator (no-remains) exception and that it records the why in the surviving contract.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": [
     "INV-NY15B8"
   ]

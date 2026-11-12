@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+    "content": "sha256:e445df196d884fffbeacd317717f7a52752c61f811a6edb077c3143f3cc0ee14",
+    "locator": {
+      "kind": "symbol",
+      "name": "_register_worktree_start_tools"
+    },
+    "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+  },
+  "id": "WKN-FRS2Q6",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-weakness-07",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "Tool schemas offer arguments that do nothing on a fresh installation: memory_mode, skip_provider_setup and retry_provider_setup here, install_provider_deps and no_cache of runtime_install, and the target host-authority of user_settings_init."
+}

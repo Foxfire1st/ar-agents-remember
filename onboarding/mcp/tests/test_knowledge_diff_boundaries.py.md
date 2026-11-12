@@ -47,6 +47,7 @@ and default production observation support the integration classification.
 
 **What each group of cases protects:**
 
+
 | Group | Nodes | The property |
 | --- | --- | --- |
 | the expansion and the visible gap | `:152`, `:198` | Both requested tree ids and both roots; the reproducing command carrying the two tree ids and no `HEAD`; the three authored changed paths are a subset of attributed paths, the attributed/unattributed lists are disjoint, and the unattributed list is exactly the singleton gap; this node does not assert attributed-set equality or exclude extra attributed paths; and the unattributed path listed, counted with its reason and surviving a display filter |
@@ -209,5 +210,6 @@ No configured cross-repository evidence is claimed.
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:353-353 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:801-801 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1203-1203 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2030-2030 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2741-2741 - the bytes it recorded now occur 92 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2784-2784 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:624-624 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1937-1937 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1981-1981 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2336-2336 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 
 - The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence. [50]

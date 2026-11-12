@@ -109,4 +109,5 @@ Current source: The current lifecycle catalog declares test_evidence_catalog_gat
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1-4036 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f2b7c648f540efb9d64ceea22e11e651cb5cc914. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
+
 - The lifecycle catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer of mcp/tests/_evidence_catalog_fixture.py, mcp/tests/_user_settings_guard.py and mcp/tests/fixtures/repository_profiles/node/package-lock.json. These artifact registrations establish no invocation or passing result. [26]

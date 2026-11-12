@@ -1,5 +1,6 @@
 # Python Quality Verification Overview
 
+
 | Field | Value |
 
 | --- | --- |
@@ -129,9 +130,9 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 
 - The current root policy is 10000 unit and 2000 integration selected cases. Collection rejects a lane above its declared ceiling; the raise changes headroom and preserves the guard. [12]
 
+
 - The current root policy is 10000 unit and 2000 integration selected cases. Collection rejects a lane above its declared ceiling; the raise changes headroom and preserves the guard. [1]
 
-- Certifying publication and accepting consumers. [2]
 
 - Exact profile scope and suite execution. [13]
 
@@ -172,3 +173,5 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 - Interactive catalog names missing authority without eligibility. [11]
 
 - Helper test imports, source figures, historical Git pin and conditional record availability. [25]
+
+- Certifying publication and accepting consumers. [2]

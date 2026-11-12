@@ -1,0 +1,134 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 1 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/design/canvas-host.md",
+  "id": "DPD-7YCJ2B",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-design-canvas-host-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "ba79fc48cc97689f936b1a0038c1cea35a33f307",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/policy.py"
+    },
+    {
+      "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/protocol.py"
+    },
+    {
+      "blob": "4422d62baf17f38d797d6d80f2e3ecec80afc61d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/evidence.py"
+    },
+    {
+      "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/readiness.py"
+    },
+    {
+      "blob": "463f5d42482415a98b7acd08b6be102c6dc95af2",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/sessions.py"
+    },
+    {
+      "blob": "560327480bc431b5c381b1341fecbfe988acdd33",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/presenter.py"
+    },
+    {
+      "blob": "7023fff18bb31c51522522b5b9b1b4d72eda64ce",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/presenter_store.py"
+    },
+    {
+      "blob": "12d3544d0612e6c41fa105bf58b2ae1a05160667",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/presenter_host.py"
+    },
+    {
+      "blob": "b4dd69ffa2141b0e24ed49d9d835e75c341c5b8d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/presenter_tools.py"
+    },
+    {
+      "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+    },
+    {
+      "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/app.py"
+    },
+    {
+      "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/canvas.py"
+    },
+    {
+      "blob": "11960a98eead6a9c175e735a90d526443314a73a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/write_guard.py"
+    },
+    {
+      "blob": "aa089823366e841ed9abf5135593690101d757ac",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_instructions.py"
+    },
+    {
+      "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+    },
+    {
+      "blob": "31e67c873dfef47cf8000cdc33df3d9f2474ee07",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
+    },
+    {
+      "blob": "cb60621d4815ba32787b76354b62b3911962c1fe",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/canvas/canvasModel.ts"
+    },
+    {
+      "blob": "2efc0689986925be972c37f8fff310afce761c25",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/knowledge/review_frame.py"
+    },
+    {
+      "blob": "6c1f7689bbd3f21fbd5472470387e5a2da7ec990",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/knowledge/review_evidence.py"
+    },
+    {
+      "blob": "ce5f9ae6d24b8c755e4b85b0d44b520623128a40",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/explainer_routes.py"
+    },
+    {
+      "blob": "806ea7cf701ae370faec61958c6bf638b1b6f096",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/review-presenter.md"
+    },
+    {
+      "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/explainer/RevisionFrame.tsx"
+    }
+  ]
+}

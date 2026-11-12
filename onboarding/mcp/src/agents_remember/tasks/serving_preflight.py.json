@@ -1,36 +1,36 @@
 {
   "path": "mcp/src/agents_remember/tasks/serving_preflight.py",
   "proves": [],
-  "realizes": [],
-  "references": {
-    "1": {
-      "note": "The operator contract for served-build preflight (section 4): run authoring through the deployed serving server; refresh the rc7 venv.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "44f621b66ed8904f45825e9ac54b6edbe411f5c1",
-            "content": "sha256:cce043ca4c4cebb2e3e47de56b6a8699ad23120ca577a5a1797ca3d70d015f03",
-            "locator": {
-              "end": 91,
-              "kind": "line_range",
-              "start": 65
-            },
-            "path": "docs/reference/execution-topology-migration.md"
-          },
-          "kind": "code"
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "20f58808c1d618e11ba44426f4a9998be9753891",
+        "content": "sha256:a828a1a48ab25657eb35d0865484ba389ad596c71b4e3863104e2b99fafbaf9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_serving_topology_schema"
         }
-      ]
-    },
+      },
+      "id": "RLZ-AZ22GM",
+      "invariant": "INV-KZ2JWB",
+      "origin": {
+        "handoffEntry": "MIK-R97@v9 part F item 8",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "Its refusal tells the user to upgrade the served build and names no page.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
     "2": {
       "note": "The preflight gate is now the model self-probe alone: `require_serving_topology_schema` refuses when the running build's `TaskDocument.model_fields` lack the topology fields. The installed-distribution leg and its helpers `_installed_distribution`, `_is_editable_install`, `_below_floor`, and `TOPOLOGY_SERVING_VERSION_FLOOR` no longer exist in the tree — a task-plane edit never consults the installed distribution version.",
       "targets": [
         {
           "anchor": {
-            "blob": "8e3ddf6d6df585c983e84488db22515b68d68a78",
-            "content": "sha256:031f34472164fadd42917d1321e0d3fc494d066df14503c1293ab2a5691e49ce",
+            "blob": "20f58808c1d618e11ba44426f4a9998be9753891",
+            "content": "sha256:6842d39f56830b9abdeec0977f834b840e41957004e372706cadf4f0c88e1ab2",
             "locator": {
-              "kind": "symbol",
-              "name": "require_serving_topology_schema"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -151,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e3ddf6d6df585c983e84488db22515b68d68a78",
+            "blob": "20f58808c1d618e11ba44426f4a9998be9753891",
             "content": "sha256:82fd6bdc8ca3bc80cd92dc3a3b9769dcbf9c20bd5282766e4764b7105b23401e",
             "locator": {
               "kind": "symbol",

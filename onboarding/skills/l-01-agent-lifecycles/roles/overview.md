@@ -144,7 +144,12 @@ Manager receives the clean-sync focused-test result for its own preview; no clea
 
 - Worker and reviewer roles define the two independent halves of per-ID acceptance. [13]
 
-- The graph-less atomic-sequential default describes sprint shape; nothing serializes the masters. [14]
+
+
+- The graph-less atomic-sequential default describes sprint shape; nothing serializes the masters. Target: skills/l-01-agent-lifecycles/criteria/plan-review.md. [68]
+
+- The graph-less atomic-sequential default describes sprint shape; nothing serializes the masters. Target: docs/reference/execution-topology.md. [69]
+
 
 - The ordinary converted-memory onboarding row is updated with a counted card change or no_impact, and the writer binds it to every covered source file's blob. [17]
 

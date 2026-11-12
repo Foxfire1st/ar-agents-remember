@@ -255,6 +255,7 @@ shares a dataset with another.
 
 - **The worked review of the design's §8 journey, and the case that closes it: a stale assessment is never reused.**
 
+
 | The lane row this module occupies. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/test-evidence-lanes.toml:111-113 |
 
 
@@ -333,6 +334,7 @@ rather than passing a parallel keyword beside the request".
 `test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read` there verbatim;
 its account of the three requests (refresh, plain read, malformed spelling) moved with it. `render`
 stays here, and that module imports it.
+
 
 
 

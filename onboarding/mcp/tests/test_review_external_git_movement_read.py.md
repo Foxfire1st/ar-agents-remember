@@ -93,6 +93,7 @@ against, and that assertion is filed under Repo-Internal References.
 > Retained earlier citation wording: - **A lifecycle consumer row that names this module, so the artifact census still counts it.**
 
 
+
 - **The documented section the matrix case asserts against, generated from the production table.** [29]
 
 ### Cross-Repo References

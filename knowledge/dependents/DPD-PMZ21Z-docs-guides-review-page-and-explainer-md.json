@@ -1,0 +1,274 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "The page is new in this task; its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate and the page was read whole; 52 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/guides/review-page-and-explainer.md",
+  "id": "DPD-PMZ21Z",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-guides-review-page-and-explainer-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+      "kind": "file",
+      "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+    },
+    {
+      "blob": "3a95dab3d3b1d2c6d67aa03480e0490509bfa53b",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/reviewHash.ts"
+    },
+    {
+      "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/reviewChat.ts"
+    },
+    {
+      "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+    },
+    {
+      "blob": "b05e12945020a3cab2a0739fdcc215348575db22",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/ReviewHeader.tsx"
+    },
+    {
+      "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+    },
+    {
+      "blob": "9359520be3c86d227edf47ab4ec8a98fbb8b1652",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/tree/SortMenu.tsx"
+    },
+    {
+      "blob": "85b7d078187e60ea2a62158ba8e483226e6be3b9",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/changeSetRanks.ts"
+    },
+    {
+      "blob": "58b9ff0db23af4be37b0571352c3c0ed7e918b6c",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/ChangeBadges.tsx"
+    },
+    {
+      "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/changeTriage.ts"
+    },
+    {
+      "blob": "63f485ddfc5fd3933c60ba9520d4b3562330e3cb",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/MeaningEffects.tsx"
+    },
+    {
+      "blob": "c54ebdeece623741811faa01c79dd13973e09055",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/explainer/ExplanationSwitch.tsx"
+    },
+    {
+      "blob": "1926c27748de9fca4de29be92f9d9d9a81da0fba",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/explainer/RevisionSelector.tsx"
+    },
+    {
+      "blob": "8226535713632fabfb41a99f2a5939827f8b47fc",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/explainer/explainerModel.ts"
+    },
+    {
+      "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.tsx"
+    },
+    {
+      "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+      "kind": "file",
+      "path": "dashboard/src/explainer/model.ts"
+    },
+    {
+      "blob": "5dca27cf936519a33c742bd2e5310d0096cc642f",
+      "kind": "file",
+      "path": "dashboard/src/explainer/ExplainerColumnPanels.tsx"
+    },
+    {
+      "blob": "bd0ddae2d3c48c4a32032a444960546953687854",
+      "kind": "file",
+      "path": "dashboard/src/explainer/FirstRequestForm.tsx"
+    },
+    {
+      "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+      "kind": "file",
+      "path": "dashboard/src/tray/traySend.ts"
+    },
+    {
+      "blob": "08be2a48139f6518ce255710b8a3361359891354",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/explainer_maintenance.py"
+    },
+    {
+      "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/tools/explainer_control.py"
+    },
+    {
+      "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/document.py"
+    },
+    {
+      "blob": "806ea7cf701ae370faec61958c6bf638b1b6f096",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/review-presenter.md"
+    },
+    {
+      "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+    },
+    {
+      "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
+      "kind": "file",
+      "path": "dashboard/src/panels/detail-panel/entryState.tsx"
+    },
+    {
+      "blob": "5c98513154d7af15893bd4a4343aba6486b97179",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/worklistState.ts"
+    },
+    {
+      "blob": "fb3673e391e127346cf2d3310decd68af3efe750",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/SubjectJudgment.tsx"
+    },
+    {
+      "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+    },
+    {
+      "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
+    },
+    {
+      "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+    },
+    {
+      "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+    },
+    {
+      "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+      "kind": "file",
+      "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+    },
+    {
+      "blob": "6413f12bafcbb3a2598bec286bc3bac8cabcec74",
+      "kind": "file",
+      "path": "dashboard/src/explainer/columnState.ts"
+    },
+    {
+      "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/Cockpit.tsx"
+    },
+    {
+      "blob": "ea5b52c5b44c5cbc9d2e35ca26e403d5f1550bcc",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/review_worklist_answers.py"
+    },
+    {
+      "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/review_frame_store.py"
+    },
+    {
+      "blob": "0bab3e5070078a9c42079e5b7a0a3f9b7ad2a96c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/master_architect_record.py"
+    },
+    {
+      "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+    },
+    {
+      "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
+    },
+    {
+      "blob": "6c1f7689bbd3f21fbd5472470387e5a2da7ec990",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/knowledge/review_evidence.py"
+    },
+    {
+      "blob": "74cf7008b2b215ecbf1e7d652827078c07e80c88",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/explainer_watcher.py"
+    },
+    {
+      "blob": "17c29d737a408027f41db631d9d7a21e155e4841",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/explainer_access.py"
+    },
+    {
+      "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+    },
+    {
+      "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+    },
+    {
+      "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+    },
+    {
+      "blob": "fb6082f143e28bb9f441482475286bbcec140d6b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
+    },
+    {
+      "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+    },
+    {
+      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+    },
+    {
+      "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
+    },
+    {
+      "blob": "f0866515684aa632f534294be7451aa0a58b5589",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+    }
+  ]
+}

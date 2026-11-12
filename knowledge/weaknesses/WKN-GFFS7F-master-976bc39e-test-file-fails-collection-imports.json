@@ -1,11 +1,15 @@
 {
   "anchor": {
-    "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
-    "content": "sha256:57963a8c05a50b4d7b23ed1e71af1f6df4675bb345acf2864f756afcd68470ec",
+    "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+    "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
     "locator": {
       "kind": "file"
     },
     "path": "mcp/src/agents_remember/cli/__main__.py"
+  },
+  "closed": {
+    "commit": "8d2e754789e30f0d3be10fdd33f83cf6fe367141",
+    "task": "260928-MIK-L138"
   },
   "id": "WKN-GFFS7F",
   "kind": "debt",
@@ -17,12 +21,12 @@
     "leaf": "260928-MIK-L118",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L118"
   },
-  "state": "open",
-  "statement": "On master 976bc39e the test file fails at collection (it imports `application.provider_tools`, which L112 removed); L109 and L52 Workers both measured it on clean master. `cli/__main__.py` and `registration/core.py` carry ruff PLR0915 and F401. Untouched by L52/L109; treat on another date (L109 may touch read_boundary — its Reviewer judges)."
+  "state": "closed",
+  "statement": "The collection failure and the ruff findings this record named are gone before this leaf: commit 8d2e75478 (L138) made the tests a removal left unloadable load and run, and no file imports application.provider_tools; ruff check --select PLR0915,F401 passes on both cli/__main__.py and mcp/registration/core.py."
 }

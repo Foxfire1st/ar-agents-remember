@@ -19,10 +19,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
-    "mcp",
-    "docs/reference"
+    "mcp"
   ],
   "schema": "ar-family/v1",
   "status": "retired",

@@ -1,17 +1,53 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+        "content": "sha256:867f0752d4ae2affe36ec51f3d801f5a0304da4f8c45c4256242d592f5c9a740",
+        "locator": {
+          "kind": "symbol",
+          "name": "UNDOCUMENTED_COMMANDS"
+        }
+      },
+      "id": "RLZ-3FRRQP",
+      "invariant": "INV-SJ6T7P",
+      "origin": {
+        "handoffEntry": "MIK-R97@v9 part F item 7 (the consistency check)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It is the named set of the nine command names for which the check demands no row and no mention.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+        "content": "sha256:5c0f8ecbb0cdbde47fcbbe6ed8dc1c9cec0d36502d9d70c94982fdb70c41f9a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "assert_public_command_reference"
+        }
+      },
+      "id": "RLZ-MRXRMP",
+      "invariant": "INV-SJ6T7P",
+      "origin": {
+        "handoffEntry": "MIK-R97@v9 part F item 7 (the consistency check)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It requires the nine to be registered commands, requires one complete row in the agents' command table for every other public command, and fails on a row for one of the nine.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Commands, tools and operations come from the real parser, live registration and the dispatcher, without starting a server.",
+      "note": "Commands, tools and operations come from the real parser, live registration and the dispatcher, without starting a server. (whole file)",
       "targets": [
         {
           "anchor": {
-            "blob": "d02d97afb8ea4ea5d4e301b3bd8b5f4075f6115f",
-            "content": "sha256:34f6e1354229d128f9898b5c3707710e9462523c4c6204eb13ef34fa9622cdc0",
+            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+            "content": "sha256:b584f0249510e82a01fede2a058bf475ee1a11b14f970424863d86f6d4fe8bb8",
             "locator": {
-              "kind": "symbol",
-              "name": "load_registry"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -19,15 +55,14 @@
       ]
     },
     "2": {
-      "note": "The corpus is every text file in skills and docs plus the root README.",
+      "note": "The corpus is every text file in skills and docs plus the root README. (whole file)",
       "targets": [
         {
           "anchor": {
-            "blob": "d02d97afb8ea4ea5d4e301b3bd8b5f4075f6115f",
-            "content": "sha256:6e1830355fc54f0df130590f5a1304e608a6512837b2965d379422a0a7cd01fa",
+            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+            "content": "sha256:b584f0249510e82a01fede2a058bf475ee1a11b14f970424863d86f6d4fe8bb8",
             "locator": {
-              "kind": "symbol",
-              "name": "read_corpus"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -35,15 +70,14 @@
       ]
     },
     "3": {
-      "note": "Per-line findings cover retired terms, unregistered names, unknown operations and missing paths.",
+      "note": "Per-line findings cover retired terms, unregistered names, unknown operations and missing paths. (whole file)",
       "targets": [
         {
           "anchor": {
-            "blob": "d02d97afb8ea4ea5d4e301b3bd8b5f4075f6115f",
-            "content": "sha256:627fd9f07276ef95c0bcfcbccf2c1f5bf975512f67f1236d2c12ab60453aa87e",
+            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+            "content": "sha256:b584f0249510e82a01fede2a058bf475ee1a11b14f970424863d86f6d4fe8bb8",
             "locator": {
-              "kind": "symbol",
-              "name": "_surface_findings"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -51,15 +85,14 @@
       ]
     },
     "4": {
-      "note": "The full check adds command-documentation and knowledge-name coverage.",
+      "note": "The full check adds knowledge-name coverage; a migration command of an earlier installation needs no documentation row. (whole file)",
       "targets": [
         {
           "anchor": {
-            "blob": "d02d97afb8ea4ea5d4e301b3bd8b5f4075f6115f",
-            "content": "sha256:b5888c8c75e1b3c50411df99991a449dd881f025a81c7b6a629785238cf1b473",
+            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+            "content": "sha256:b584f0249510e82a01fede2a058bf475ee1a11b14f970424863d86f6d4fe8bb8",
             "locator": {
-              "kind": "symbol",
-              "name": "check_consistency"
+              "kind": "file"
             }
           },
           "kind": "code"

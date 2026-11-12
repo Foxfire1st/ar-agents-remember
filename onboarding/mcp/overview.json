@@ -79,8 +79,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14c64a93cfdee1ea751b35280444aae0bf50eafa",
-            "content": "sha256:d90cd30b05a5d3b40d32437042370e19b15967731fa072ce70b44d17522a32d6",
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
             "locator": {
               "kind": "file"
             },
@@ -518,12 +518,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d19e9bdf51497de71bacf7a9830b69978d96dc7",
-            "content": "sha256:e1e3d8365a62fc5a5f5f54f499dc4c5e7203b70b369e307d47f30e350c5eb4b7",
+            "blob": "f1b37e4512c41640d3bfdcf863bb702060adeefb",
+            "content": "sha256:7a6ce2acaef43c714cd4cf042d5a40ca0c4f26254778df5705b8e6558cc0ee4e",
             "locator": {
-              "end": 53,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "docs/design/python-pytest-bootstrap.md"
           },
@@ -532,16 +530,14 @@
       ]
     },
     "151": {
-      "note": "**Retained historical source account — superseded by the current route account:** Certifying publication and accepting consumers.\n\nAnchor: `# Python Test Evidence Authority`",
+      "note": "**Retained historical source account — superseded by the current route account:** Certifying publication and accepting consumers.",
       "targets": [
         {
           "anchor": {
-            "blob": "27dd0858bebf6610971f6c4babbe6930da63fdf0",
-            "content": "sha256:e031bcf6ba0c8196da860d1cfb8a3e1516109874a3b47c8cf6eb3d6ff2bd88d5",
+            "blob": "345e9e4cdeb8701bb31e267faa00c4e6b6bbeb44",
+            "content": "sha256:18466b9f2e8066e1d7eb376d22cb06a18e97de4d6193b7f1006074ebe18687f6",
             "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "docs/design/python-test-evidence.md"
           },
@@ -1649,12 +1645,12 @@
       ]
     },
     "225": {
-      "note": "**Retained historical source account — superseded by the current route account:** The lock every memory route asks.\n\nAnchor: `cutover_lock_refusal`",
+      "note": "**Retained historical source account — superseded by the current route account:** The lock every memory route asks.",
       "targets": [
         {
           "anchor": {
-            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
-            "content": "sha256:e5004d73df5641d389a1812c7f9773b98beb179d83f8400047c198497d49a342",
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:299e20bd8b429ee9b9bd297e5e884b38171e7a4d9e485b633f99fbb8d7188da1",
             "locator": {
               "kind": "file"
             },
@@ -3244,36 +3240,6 @@
         }
       ]
     },
-    "311": {
-      "note": "The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
-            "content": "sha256:5878d501febc1c0680371d9eb5e808cefcae684dc59f28d5d5049be367ad0738",
-            "locator": {
-              "kind": "symbol",
-              "name": "TARGETS"
-            },
-            "path": "scripts/sync-runtime.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "89ecc502ddc0532ded53d31e1a392a3307573da7",
-            "content": "sha256:31cacb87830e073b464b4e469eb42cea522da5139af0f2d7ce654c9ccaa25442",
-            "locator": {
-              "end": 8,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "312": {
       "note": "Named reporting and refusing routes.",
       "targets": [
@@ -4579,7 +4545,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
             "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
             "locator": {
               "kind": "symbol",
@@ -4788,7 +4754,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14c64a93cfdee1ea751b35280444aae0bf50eafa",
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
             "content": "sha256:9e558da01a53d54790fceb28322c6df46062d4f9cf64f8714e2a3b0a017d7184",
             "locator": {
               "kind": "symbol",
@@ -5236,6 +5202,38 @@
               "name": "register_server"
             },
             "path": "mcp/src/agents_remember/serving/server_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "401": {
+      "note": "The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: scripts/sync-runtime.py.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+            "content": "sha256:dceaaeb409c88e3dab61c281e08b69e072d58e379f9433a71a12e8bdd1676aec",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/sync-runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "402": {
+      "note": "The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "026b25cfc0f0c7c01ed4aeebd60f00747b7b7c52",
+            "content": "sha256:4f2fa3f90efe007ade1dc9b2b9e8dd563c71534065c763eb6227b357112a69dd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
           },
           "kind": "code"
         }
@@ -5805,7 +5803,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14c64a93cfdee1ea751b35280444aae0bf50eafa",
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
             "content": "sha256:bb18696d259d64016fee4989761364cc24939165e8776f2a56fa25407b61992b",
             "locator": {
               "end": 107,
@@ -5823,7 +5821,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "736a32a2d7f5e75bd4e0c8130f2e33d9e33ab1b2",
+            "blob": "5edff91c427661cc617bc9022414d7bf4dddbf24",
             "content": "sha256:e631c1b11216c787ff9129d0c0258450160d463f25b66772f9dd5615d6796756",
             "locator": {
               "kind": "symbol",
@@ -5874,7 +5872,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f30dcc31374ad83426d9fc3e54da4f1ea830b8c3",
+            "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
             "content": "sha256:b7c70df72a0edef3458b02428b0556c7960dbc8dd3926584f6d6b0cc3cb521f6",
             "locator": {
               "kind": "symbol",
@@ -5886,7 +5884,7 @@
         },
         {
           "anchor": {
-            "blob": "f30dcc31374ad83426d9fc3e54da4f1ea830b8c3",
+            "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
             "content": "sha256:f8476a4a9bd418d7ccb9cbdaaf8f04c73c2956c31312a47eb084ccbcae842490",
             "locator": {
               "kind": "symbol",
@@ -5954,12 +5952,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14c64a93cfdee1ea751b35280444aae0bf50eafa",
-            "content": "sha256:9e73f573ed34af7fd155142465f2f3e40de38dde47eadd3e2514c947bb702428",
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
             "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 101
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -6006,12 +6002,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14c64a93cfdee1ea751b35280444aae0bf50eafa",
-            "content": "sha256:9e73f573ed34af7fd155142465f2f3e40de38dde47eadd3e2514c947bb702428",
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
             "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 101
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -6056,12 +6050,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14c64a93cfdee1ea751b35280444aae0bf50eafa",
-            "content": "sha256:9e73f573ed34af7fd155142465f2f3e40de38dde47eadd3e2514c947bb702428",
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
             "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 101
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -6122,12 +6114,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14c64a93cfdee1ea751b35280444aae0bf50eafa",
-            "content": "sha256:9e73f573ed34af7fd155142465f2f3e40de38dde47eadd3e2514c947bb702428",
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
             "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 101
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -6207,12 +6197,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14c64a93cfdee1ea751b35280444aae0bf50eafa",
-            "content": "sha256:9e73f573ed34af7fd155142465f2f3e40de38dde47eadd3e2514c947bb702428",
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
             "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 101
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },

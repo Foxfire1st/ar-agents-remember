@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+    "content": "sha256:48d2a7fd0ef42986a9ec3e7c52a3fd10726d7ef7e0c1557a34c6fca70f100256",
+    "locator": {
+      "kind": "symbol",
+      "name": "_install_runtime"
+    },
+    "path": "mcp/src/agents_remember/install/runtime.py"
+  },
+  "id": "WKN-43K9EQ",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-weakness-09",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "An install removes the scripts folder and every file of docs under the coordination root that the package does not carry, and install/experiment.py removes three AGENTS.md files there, so a file that a user put in one of these places is lost."
+}

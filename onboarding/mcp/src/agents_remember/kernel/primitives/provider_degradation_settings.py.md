@@ -98,4 +98,5 @@ No meaningful cross-repo references found.
 
 Settings parsing is a repository-local MCP boundary; no external system or sibling repo involved.
 
+
 - The `providerDegradation` settings block is documented with its full key list, defaults, and behavior in the settings reference. [1]

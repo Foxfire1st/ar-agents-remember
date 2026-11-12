@@ -1,5 +1,6 @@
 # Agents Remember Python Verification Infrastructure Overview
 
+
 | Field | Value |
 | --- | --- |
 | sourceRoute | `mcp/test_support/agents_remember_test_support` |
@@ -111,7 +112,12 @@ Retained earlier citation wording, outside its current number: - Root configurat
 
 - The projection generator derives the serialized TypeScript and schema contracts from the Pydantic declarations and folds the served definitions into the same output. `ServedWorkspaceProjection` declares the served tail fields `servingBuild`, `watcherHealth`, `checkoutBinding`, `buildCurrentness` and `servingProcessId`. [15]
 
-- Evidence design separates development and diagnostic artifacts from immutable certifying publication and records Candidate A retirement. [16]
+
+
+- Evidence design separates development and diagnostic artifacts from immutable certifying publication. Target: docs/design/python-evidence-system.md. [20]
+- Evidence design separates development and diagnostic artifacts from immutable certifying publication. Target: docs/design/python-evidence-system.md. [21]
+- Evidence design separates development and diagnostic artifacts from immutable certifying publication. Target: docs/design/python-test-evidence.md. [22]
+
 - Case budgets are root declarations rather than overview-owned constants. [17]
 - Dagger owns the retained build and retry cache bindings. [18]
 - Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin. [5]

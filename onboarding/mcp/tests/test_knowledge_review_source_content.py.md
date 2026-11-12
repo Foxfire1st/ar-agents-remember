@@ -64,6 +64,7 @@ only the packet's boundary forbids it.
 
 **The twenty cases, in the four groups the module's own section comments mark:**
 
+
 | Case | Property |
 | --- | --- |
 | `test_a_modified_file_opens_both_endpoints_own_bytes` | the modified path opens the base tree's bytes and the captured tree's, each read independently, and the two differ exactly as those objects do; the answer also names the objects it rests on |
@@ -182,6 +183,7 @@ No meaningful cross-repo references found.
 
 - The entry callback forwards the optional comparison number to the comparison-aware owner. [23]
 - The content request still names the listed before/after tree ids. [24]
+
 
 
 

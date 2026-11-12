@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "8ec9eae52d111189212dc74616cf6dc886f7799c",
+    "content": "sha256:fefd555f0dd2a46a9bc251dcb31727bc221010c65598d59b70e20a9d3ceba234",
+    "locator": {
+      "kind": "symbol",
+      "name": "STORED_GATE_WAY_OUT"
+    },
+    "path": "mcp/src/agents_remember/kernel/primitives/gate_vocab.py"
+  },
+  "id": "WKN-S8EF5N",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-weakness-04",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "Product messages still name commands that only an installation of an earlier version needs: removed-stores here and in install/removed_stores.py, and upgrade-user-settings in kernel/primitives/user_settings_location.py."
+}

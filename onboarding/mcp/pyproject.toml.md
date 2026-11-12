@@ -191,7 +191,8 @@ later reader does not have to reconstruct it from a report.
 - MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. [9]
 
 
-- The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the Quickstart, the canonical runtime section and the local-wheel Install And Run block. [10]
+
+- The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the What you need, Install steps, Start and stop the dashboard and the host, Tools, and More sections. [10]
 
 
 - `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. [11]

@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+    "content": "sha256:a8d7c447297ccb3d3f2925371266db4a811a78558b569e19ea40529984a5bba5",
+    "locator": {
+      "kind": "symbol",
+      "name": "install_runtime_from_config"
+    },
+    "path": "mcp/src/agents_remember/install/runtime.py"
+  },
+  "id": "WKN-57WMZH",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-weakness-18",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The provider stop inside runtime_install reads a generated settings document that declares no provider, so it selects nothing whatever the settings file enables, while the dashboard's safety loop reads the file that --config names and a comment in providers/watcher_service.py says both use the same reader."
+}

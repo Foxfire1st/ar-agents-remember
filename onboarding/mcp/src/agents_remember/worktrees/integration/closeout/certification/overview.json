@@ -198,12 +198,12 @@
         },
         {
           "anchor": {
-            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
             "content": "sha256:d18b97551fc9ee9481aeddd0ffeb4e95f6a6914c99773eeae81f2b574f669443",
             "locator": {
-              "end": 175,
+              "end": 168,
               "kind": "line_range",
-              "start": 166
+              "start": 159
             },
             "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
@@ -211,12 +211,12 @@
         },
         {
           "anchor": {
-            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
             "content": "sha256:031abfc9123516ba7c8877ea5c701eef3ea5ecc7abc73b827eff3f76cdee95eb",
             "locator": {
-              "end": 188,
+              "end": 181,
               "kind": "line_range",
-              "start": 178
+              "start": 171
             },
             "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
@@ -224,12 +224,12 @@
         },
         {
           "anchor": {
-            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
             "content": "sha256:af1d0a747365e3772c8f77729547bd3cb547184e938ae5114e22a223be3a45c1",
             "locator": {
-              "end": 187,
+              "end": 180,
               "kind": "line_range",
-              "start": 187
+              "start": 180
             },
             "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
@@ -237,12 +237,12 @@
         },
         {
           "anchor": {
-            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
             "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
             "locator": {
-              "end": 228,
+              "end": 221,
               "kind": "line_range",
-              "start": 202
+              "start": 195
             },
             "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },

@@ -8,12 +8,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d19e9bdf51497de71bacf7a9830b69978d96dc7",
-            "content": "sha256:e1e3d8365a62fc5a5f5f54f499dc4c5e7203b70b369e307d47f30e350c5eb4b7",
+            "blob": "f1b37e4512c41640d3bfdcf863bb702060adeefb",
+            "content": "sha256:7a6ce2acaef43c714cd4cf042d5a40ca0c4f26254778df5705b8e6558cc0ee4e",
             "locator": {
-              "end": 53,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "docs/design/python-pytest-bootstrap.md"
           },
@@ -286,12 +284,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27dd0858bebf6610971f6c4babbe6930da63fdf0",
-            "content": "sha256:e031bcf6ba0c8196da860d1cfb8a3e1516109874a3b47c8cf6eb3d6ff2bd88d5",
+            "blob": "345e9e4cdeb8701bb31e267faa00c4e6b6bbeb44",
+            "content": "sha256:18466b9f2e8066e1d7eb376d22cb06a18e97de4d6193b7f1006074ebe18687f6",
             "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "docs/design/python-test-evidence.md"
           },
