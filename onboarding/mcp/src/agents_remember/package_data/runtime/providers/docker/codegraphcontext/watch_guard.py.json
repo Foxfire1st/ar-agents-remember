@@ -2,15 +2,6 @@
   "path": "mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "No relevant external documentation source is configured for this file.\n\nAnchor: `# Sources`\n\nOut of scope: out of scope for the code census: the target, system/sources.md, is present at its blob in the memory tree and is cited from this code record deliberately; nothing here is deleted.",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "system/sources.md:1-3"
-        }
-      ]
-    },
     "2": {
       "note": "The guard waits for a genuine PONG, clears poisoned graph keys below the threshold, and execs cgc with the original arguments.",
       "targets": [

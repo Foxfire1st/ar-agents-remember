@@ -48,7 +48,7 @@ it `os.execvp`s `cgc` with the original arguments.
 No external domain documentation is configured for this repository; the
 resolved `system/sources.md` currently contains no entries.
 
-- No relevant external documentation source is configured for this file. [1]
+- No relevant external documentation source is configured for this file.
 
 ### Repo-Internal References
 

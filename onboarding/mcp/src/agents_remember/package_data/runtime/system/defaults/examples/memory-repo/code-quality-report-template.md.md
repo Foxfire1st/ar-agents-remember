@@ -79,4 +79,4 @@ No relevant external documentation found.
 
 The live memory layer carries a project-specific copy beside `system/tools.md`.
 
-- The local memory-layer template is the project-specific copy used by `agents-remember` agents. [4]
+- The local memory-layer template is the project-specific copy used by `agents-remember` agents.
