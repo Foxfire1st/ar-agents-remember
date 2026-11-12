@@ -6,7 +6,7 @@ The retained action client is `postAttentionDismiss`. Its input and JSON body co
 
 
 
-- The current AttentionQueue caller uses suppressAttention before posting and releaseAttention for failed results; this is caller behavior, not an execution or server-authority claim. [5]
+- The current AttentionQueue caller uses suppressAttention before posting and releaseAttention for failed results; this is caller behavior, not an execution or server-authority claim. [6]
 
 
 

@@ -145,7 +145,7 @@ Anchor: `useReviewCatalogue` `intentReviewEntries`
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/changeset.py:147-213 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ee7dabb917b4d8d205da097032c3de3cced909e3; mcp/src/agents_remember/serving/changeset.py:591-634 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f141d164265e926be9249acf6ae680ccf9ffae61. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- The optional marks and the marked pane. [1]
+- The optional marks and the marked pane. [52]
 
 - The two extracted view builders, each with its marks gutter. [2]
 
@@ -155,86 +155,86 @@ Anchor: `useReviewCatalogue` `intentReviewEntries`
 
 - The rendered rail and its per-leaf counters, and the click that opens one leaf's own range. [6]
 
-- The named refusal and the named measured-empty pane, i.e. the two states that are not a missing selection. [7]
+- The named refusal and the named measured-empty pane, i.e. the two states that are not a missing selection. [53]
 
-- The cockpit re-target that keeps the opened leaf inside this route's takeover. [8]
+- The cockpit re-target that keeps the opened leaf inside this route's takeover. [54]
 
-- The L3 read-only change-set API this screen consumes. [9]
+- The L3 read-only change-set API this screen consumes. [1]
 
-- The same-origin client wrapping that API. [10]
+- The same-origin client wrapping that API. [55]
 
-- The reused read-only CodeMirror pane + theme + lang map. [13]
+- The reused read-only CodeMirror pane + theme + lang map. [58]
 
-- The markdown renderer the sidecar column + rendered-markdown toggle reuse. [14]
+- The markdown renderer the sidecar column + rendered-markdown toggle reuse. [59]
 
-- The siege-tank empty-state backdrop shown until a file is picked. [15]
+- The siege-tank empty-state backdrop shown until a file is picked. [7]
 
-- The target variant this route's type gained. [16]
+- The target variant this route's type gained. [60]
 
-- The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector. [17]
+- The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector. [61]
 
-- **The reviewer entry: offered for every leaf beside the working/committed actions (the recorded comparison for a closed leaf, `ICR-R12`).** [18]
+- **The reviewer entry: offered for every leaf beside the working/committed actions (the recorded comparison for a closed leaf, `ICR-R12`).** [62]
 
-- **The identity the entry carries instead of a filesystem path: the task context only — `review: {}` for every leaf, live or closed, so a landed leaf opens the review on the pair it delivered rather than its own numbered record.** [19]
+- **The identity the entry carries instead of a filesystem path: the task context only — `review: {}` for every leaf, live or closed, so a landed leaf opens the review on the pair it delivered rather than its own numbered record.** [63]
 
-- **The read that supplies the subject now belongs to the reviewer, taking the comparison's task context and nothing else.** [20]
+- **The read that supplies the subject now belongs to the reviewer, taking the comparison's task context and nothing else.** [64]
 
-- **The entry’s code-or-memory worktree existence flags select the working control and live-versus-recorded review context.** [21]
+- **The entry’s code-or-memory worktree existence flags select the working control and live-versus-recorded review context.** [65]
 
-- **The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.** [24]
+- **The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.** [67]
 
-- The detail-panel entry that hands the viewer this leaf's targets: the committed change set and the Intent review entry, whose target carries the task context and no subject. [25]
+- The detail-panel entry that hands the viewer this leaf's targets: the committed change set and the Intent review entry, whose target carries the task context and no subject. [68]
 
-- The surface that receives it and asks for the task's own review. [26]
+- The surface that receives it and asks for the task's own review. [69]
 
-- One file's diff reads on the comparison's trees [28]
+- One file's diff reads on the comparison's trees [70]
 
-- Lane filters apply over the held lane facts [29]
+- Lane filters apply over the held lane facts [71]
 
-- Persisted flags use component state and localStorage. [30]
+- Persisted flags use component state and localStorage. [72]
 
-- Shared numbering, theme and language construction. [31]
+- Shared numbering, theme and language construction. [73]
 
-Retired at the fifth freeze d59c3493: dashboard/src/panels/file-viewer/markGutter.tsx:292-379 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d3a22213ad3124603b0210afb7e3d049c5589b82. Retired means the anchor no longer stands, not that the cited subject was deleted [32]
+Retired at the fifth freeze d59c3493: dashboard/src/panels/file-viewer/markGutter.tsx:292-379 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d3a22213ad3124603b0210afb7e3d049c5589b82. Retired means the anchor no longer stands, not that the cited subject was deleted [74]
 
-- Diff highlight styling, fitting and effect teardown. [33]
+- Diff highlight styling, fitting and effect teardown. [75]
 
-- The net and leaf summaries are computed separately, over different ranges; leaf working reads require a live worktree, and committed lists publish unrecorded state. [35]
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/changeset.py:147-213 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ee7dabb917b4d8d205da097032c3de3cced909e3; mcp/src/agents_remember/serving/changeset.py:591-634 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f141d164265e926be9249acf6ae680ccf9ffae61. Retired means the anchor no longer stands, not that the cited subject was deleted [35]
+- The net and leaf summaries are computed separately, over different ranges; leaf working reads require a live worktree, and committed lists publish unrecorded state. [77]
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/changeset.py:147-213 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ee7dabb917b4d8d205da097032c3de3cced909e3; mcp/src/agents_remember/serving/changeset.py:591-634 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f141d164265e926be9249acf6ae680ccf9ffae61. Retired means the anchor no longer stands, not that the cited subject was deleted [77]
 
-- Recorded leaf endpoints use closeout cells or their recorded integrated equivalents. [36]
+- Recorded leaf endpoints use closeout cells or their recorded integrated equivalents. [78]
 
-- Master generation digest, selection and currentness use declared or pinned endpoint pairs. [37]
+- Master generation digest, selection and currentness use declared or pinned endpoint pairs. [79]
 
-- The counters control distinguishes loading, unrecorded, unmeasured, empty and failure and discloses the reason. [38]
+- The counters control distinguishes loading, unrecorded, unmeasured, empty and failure and discloses the reason. [80]
 
-- Leaf entry construction gates working reads, not Intent Review. [40]
+- Leaf entry construction gates working reads, not Intent Review. [81]
 
-- Review dispatch, back, mode switches and node opens clear or replace the cockpit takeover. [41]
+- Review dispatch, back, mode switches and node opens clear or replace the cockpit takeover. [82]
 
-- The reviewer catalogue remains task-bound; navigation threads recorded history and current generation. [42]
+- The reviewer catalogue remains task-bound; navigation threads recorded history and current generation. [83]
 
-- Recorded comparison ranges retain exact code/memory operands and named unavailable-tree states. [44]
+- Recorded comparison ranges retain exact code/memory operands and named unavailable-tree states. [84]
 
-- A list problem and selected-file problem have distinct display owners rather than silently leaving a stale successful pane. [47]
+- A list problem and selected-file problem have distinct display owners rather than silently leaving a stale successful pane. [86]
 
-- The partner predicate excludes slash-suffixed overview/entities and .index bases, but root onboarding/overview.md strips to bare overview and can produce an affordance. Target existence/read success is not established; this predicate already exists at both actual BASE operands. [49]
+- The partner predicate excludes slash-suffixed overview/entities and .index bases, but root onboarding/overview.md strips to bare overview and can produce an affordance. Target existence/read success is not established; this predicate already exists at both actual BASE operands. [88]
 
-- Current expression excerpts pass marks, file origins and the page collapse setting to a content-sized DiffPane; fitted mark updates reconfigure existing gutters, and card Full file is retired. [34]
+- Current expression excerpts pass marks, file origins and the page collapse setting to a content-sized DiffPane; fitted mark updates reconfigure existing gutters, and card Full file is retired. [76]
 
-- The changed-file rail remains mounted and shares one visibility state across wide and narrow workspace orientation. [50]
+- The changed-file rail remains mounted and shares one visibility state across wide and narrow workspace orientation. [89]
 
-- The header toggle owns changeset-left visibility outside the changed-file rail. [51]
+- The header toggle owns changeset-left visibility outside the changed-file rail. [90]
 
-- The shell that hosts the takeover + restores the rails. [11]
+- The shell that hosts the takeover + restores the rails. [56]
 
-Anchor: `ChangeSetButton` [12]
+Anchor: `ChangeSetButton` [57]
 
-Anchor: `boundSeriesGeneration` `SeriesGenerationTag` [22]
+Anchor: `boundSeriesGeneration` `SeriesGenerationTag` [66]
 
-Anchor: `peekChangeSet` `loadChangeSet` `useChangesetLoad` [45]
+Anchor: `peekChangeSet` `loadChangeSet` `useChangesetLoad` [85]
 
-- The existing viewer composes delegated filters and one badge map from held facts; same-generation comparison context can accept late matching worklist/lane data without reopening another comparison. [48]
+- The existing viewer composes delegated filters and one badge map from held facts; same-generation comparison context can accept late matching worklist/lane data without reopening another comparison. [87]
 
 Retired at the fifth freeze d59c3493: dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted. [5]
 

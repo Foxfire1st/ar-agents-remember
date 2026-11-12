@@ -81,8 +81,8 @@ showing. A settled success or failure is retained across later hide/show cycles,
 StrictMode effects share the in-flight request instead of multiplying boot reads; the component is
 memoized between meaningful `active` transitions.
 
-- The page owns files-left visibility and publishes only its active repository for tray context. [7]
-- The Explorer remains mounted when hidden; its external toggle and code target stay in the page. [8]
+- The page owns files-left visibility and publishes only its active repository for tray context. [9]
+- The Explorer remains mounted when hidden; its external toggle and code target stay in the page. [10]
 
 - The shell that registers + keeps this view mounted across tab switches. [5]
 

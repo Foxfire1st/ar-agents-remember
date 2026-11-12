@@ -39,7 +39,7 @@ The converted measurement adds its own optional keys to `DriftSummaryPacket`: `b
 `codeRoot`, `sidecarCount`, `states`, `violationCount`, `violationSample`, `reportOnlyCount` and
 `unreadableSidecars`. Legacy fields are never invented for a converted card, and vice versa.
 
-- The packet carries the converted measurement fields alongside the legacy ones. [5]
+- The packet carries the converted measurement fields alongside the legacy ones. [4]
 
 - The tool response model that dropped its third copy of the enum for the same alias. [3]
 

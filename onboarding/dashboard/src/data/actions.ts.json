@@ -59,7 +59,7 @@
         }
       ]
     },
-    "5": {
+    "6": {
       "note": "The current AttentionQueue caller uses suppressAttention before posting and releaseAttention for failed results; this is caller behavior, not an execution or server-authority claim. \\[5]",
       "targets": [
         {

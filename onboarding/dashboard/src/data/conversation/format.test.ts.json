@@ -19,7 +19,7 @@
         }
       ]
     },
-    "2": {
+    "3": {
       "note": "Three current source cases assert duration strings, large-value humanization and em-dash for NaN/negative values; this is no execution result. [2]\n\nAnchor: Current assertion body",
       "targets": [
         {

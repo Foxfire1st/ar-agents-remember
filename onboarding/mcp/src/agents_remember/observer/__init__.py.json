@@ -3,7 +3,7 @@
   "proves": [],
   "realizes": [],
   "references": {
-    "9": {
+    "10": {
       "note": "Explicit facade exports workspace schema, event storage and pure assembly only.\n\nAnchor: `__all__`",
       "targets": [
         {

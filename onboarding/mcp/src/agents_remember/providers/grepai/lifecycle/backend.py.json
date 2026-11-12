@@ -76,10 +76,36 @@
             "path": "mcp/src/agents_remember/providers/lifecycle/compose_runtime.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:161d911b8b73c4b9bfe55e54b5268f26730a08695fce47afde4897d4eeb983bb",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/compose_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:2099e464bfbd3fbc3c9ef12dcdc968b208e87fed8ef44d4ceb7fd835ff1836d9",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 272
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/compose_runtime.py"
+          },
+          "kind": "code"
         }
       ]
     },
-    "4": {
+    "5": {
       "note": "grepai_backend_status still returns internal container-state, network/data/port and readiness diagnostics, and grepai_backend_start_context retains its settings/layout record. The advertised PUBLIC_TOOLS literal has no provider-status tool; these backend helpers do not restore an MCP provider-status surface.",
       "targets": [
         {

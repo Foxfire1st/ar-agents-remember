@@ -70,4 +70,4 @@ importing the package never drags in the providers/worktrees machinery.
 ## Evidence
 
 
-- Explicit facade exports workspace schema, event storage and pure assembly only. [9]
+- Explicit facade exports workspace schema, event storage and pure assembly only. [10]

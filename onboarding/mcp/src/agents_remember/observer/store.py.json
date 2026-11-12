@@ -91,7 +91,7 @@
         }
       ]
     },
-    "3": {
+    "5": {
       "note": "The read helper reports whether an existing shared lock was actually acquired; it does not perform a lockless read.",
       "targets": [
         {
@@ -107,7 +107,7 @@
         }
       ]
     },
-    "4": {
+    "6": {
       "note": "Serving, not the helper, owns the guarded missing-lock base/file window and the confirmed-hold fallback.",
       "targets": [
         {
